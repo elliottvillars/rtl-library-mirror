@@ -1,0 +1,9 @@
+{
+	"version": "1.0",
+	"modules": {
+		"BCD_COUNTER_BD": {
+			"proto_instances": {
+			}
+		}
+	}
+}
