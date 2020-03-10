@@ -1,0 +1,13 @@
+[engines]
+smtbmc
+
+[options]
+mode prove
+depth 16
+
+[files]
+dynamic_clock_divider.v
+
+[script]
+read_verilog -formal dynamic_clock_divider.v
+prep -top dynamic_clock_divider
