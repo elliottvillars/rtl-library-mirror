@@ -1,0 +1,13 @@
+# running in spb/src/
+read_verilog -formal single_port_bram.v
+prep -top single_port_bram
+memory_nordff
+async2sync
+chformal -assume -early
+chformal -live -fair -cover -remove
+opt_clean
+setundef -anyseq
+opt -keepdc -fast
+check
+hierarchy -simcheck
+write_ilang ../model/design.il

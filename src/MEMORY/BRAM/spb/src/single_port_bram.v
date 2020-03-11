@@ -36,7 +36,7 @@ end
 			if($past(i_WRITE_ENABLE) == 1)
 				assert(r_RAM[$past(i_WRITE_ADDRESS)] == $past(i_WRITE_DATA));
 			else
-				assert(r_RAM[i_WRITE_ADDRESS] == $past(r_RAM[i_WRITE_ADDRESS]));//FIXME
+				assert(r_RAM[i_WRITE_ADDRESS] == $past(r_RAM[i_WRITE_ADDRESS]));
 			if($past(i_READ_ENABLE) == 1)
 				assert(o_READ_DATA == r_RAM[$past(i_READ_ADDRESS)]);
 			else

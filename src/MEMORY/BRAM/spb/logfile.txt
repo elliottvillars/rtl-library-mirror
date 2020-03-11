@@ -1,0 +1,39 @@
+SBY 13:36:21 [spb] Removing direcory 'spb'.
+SBY 13:36:21 [spb] Copy 'single_port_bram.v' to 'spb/src/single_port_bram.v'.
+SBY 13:36:21 [spb] engine_0: smtbmc
+SBY 13:36:21 [spb] base: starting process "cd spb/src; yosys -ql ../model/design.log ../model/design.ys"
+SBY 13:36:21 [spb] base: finished (returncode=0)
+SBY 13:36:21 [spb] smt2: starting process "cd spb/model; yosys -ql design_smt2.log design_smt2.ys"
+SBY 13:36:21 [spb] smt2: finished (returncode=0)
+SBY 13:36:21 [spb] engine_0.basecase: starting process "cd spb; yosys-smtbmc --presat --unroll --noprogress -t 25 --append 0 --dump-vcd engine_0/trace.vcd --dump-vlogtb engine_0/trace_tb.v --dump-smtc engine_0/trace.smtc model/design_smt2.smt2"
+SBY 13:36:21 [spb] engine_0.induction: starting process "cd spb; yosys-smtbmc --presat --unroll -i --noprogress -t 25 --append 0 --dump-vcd engine_0/trace_induct.vcd --dump-vlogtb engine_0/trace_induct_tb.v --dump-smtc engine_0/trace_induct.smtc model/design_smt2.smt2"
+SBY 13:36:21 [spb] engine_0.induction: ##   0:00:00  Solver: yices
+SBY 13:36:21 [spb] engine_0.basecase: ##   0:00:00  Solver: yices
+SBY 13:36:21 [spb] engine_0.induction: ##   0:00:00  Trying induction in step 25..
+SBY 13:36:21 [spb] engine_0.basecase: ##   0:00:00  Checking assumptions in step 0..
+SBY 13:36:21 [spb] engine_0.basecase: ##   0:00:00  Checking assertions in step 0..
+SBY 13:36:21 [spb] engine_0.induction: ##   0:00:00  Trying induction in step 24..
+SBY 13:36:21 [spb] engine_0.basecase: ##   0:00:00  Checking assumptions in step 1..
+SBY 13:36:21 [spb] engine_0.basecase: ##   0:00:00  Checking assertions in step 1..
+SBY 13:36:21 [spb] engine_0.induction: ##   0:00:00  Trying induction in step 23..
+SBY 13:36:21 [spb] engine_0.induction: ##   0:00:00  Trying induction in step 22..
+SBY 13:36:21 [spb] engine_0.basecase: ##   0:00:00  Checking assumptions in step 2..
+SBY 13:36:21 [spb] engine_0.basecase: ##   0:00:00  Checking assertions in step 2..
+SBY 13:36:21 [spb] engine_0.induction: ##   0:00:00  Trying induction in step 21..
+SBY 13:36:21 [spb] engine_0.basecase: ##   0:00:00  BMC failed!
+SBY 13:36:21 [spb] engine_0.basecase: ##   0:00:00  Assert failed in single_port_bram: single_port_bram.v:39
+SBY 13:36:21 [spb] engine_0.basecase: ##   0:00:00  Writing trace to VCD file: engine_0/trace.vcd
+SBY 13:36:21 [spb] engine_0.induction: ##   0:00:00  Trying induction in step 20..
+SBY 13:36:21 [spb] engine_0.basecase: ##   0:00:00  Writing trace to Verilog testbench: engine_0/trace_tb.v
+SBY 13:36:21 [spb] engine_0.basecase: ##   0:00:00  Writing trace to constraints file: engine_0/trace.smtc
+SBY 13:36:21 [spb] engine_0.induction: ##   0:00:00  Trying induction in step 19..
+SBY 13:36:21 [spb] engine_0.basecase: ##   0:00:00  Status: FAILED (!)
+SBY 13:36:21 [spb] engine_0.induction: ##   0:00:00  Trying induction in step 18..
+SBY 13:36:21 [spb] engine_0.basecase: finished (returncode=1)
+SBY 13:36:21 [spb] engine_0: Status returned by engine for basecase: FAIL
+SBY 13:36:21 [spb] engine_0.induction: terminating process
+SBY 13:36:21 [spb] summary: Elapsed clock time [H:MM:SS (secs)]: 0:00:00 (0)
+SBY 13:36:21 [spb] summary: Elapsed process time [H:MM:SS (secs)]: 0:00:00 (0)
+SBY 13:36:21 [spb] summary: engine_0 (smtbmc) returned FAIL for basecase
+SBY 13:36:21 [spb] summary: counterexample trace: spb/engine_0/trace.vcd
+SBY 13:36:21 [spb] DONE (FAIL, rc=2)
