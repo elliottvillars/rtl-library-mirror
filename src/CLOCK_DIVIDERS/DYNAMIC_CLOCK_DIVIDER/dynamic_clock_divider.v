@@ -100,7 +100,10 @@ end
 						if($past(r_Count) != i_DIV_VALUE)
 							assert(o_ENABLE_OUT == 0);
 						else
+						begin
 							assert(o_ENABLE_OUT == 1);
+							assert(r_Count == 0);
+						end
 					end
 				end
 			end
