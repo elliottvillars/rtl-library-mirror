@@ -19,7 +19,7 @@
  |                                                                            |
  \----------------------------------------------------------------------------/
 
- Yosys 0.9 (git sha1 UNKNOWN, clang 9.0.0 -march=x86-64 -mtune=generic -O2 -fno-plt -fPIC -Os)
+ Yosys 0.9+932 (git sha1 65f197e2, clang 6.0.0-1ubuntu2 -fPIC -Os)
 
 
 -- Executing script file `design_smt2.ys' --
@@ -31,32 +31,32 @@ Input filename: design.il
 
 === dynamic_clock_divider ===
 
-   Number of wires:                 64
-   Number of wire bits:            312
+   Number of wires:                 99
+   Number of wire bits:            347
    Number of public wires:           6
    Number of public wire bits:      68
    Number of memories:               0
    Number of memory bits:            0
    Number of processes:              0
-   Number of cells:                 67
-     $add                            2
-     $anyseq                         9
-     $assert                         3
-     $assume                         4
-     $dff                           11
-     $eq                             4
+   Number of cells:                105
+     $add                            1
+     $anyseq                        19
+     $assert                         5
+     $assume                         5
+     $dff                           16
+     $eq                             5
      $ge                             1
      $initstate                      1
      $logic_and                      4
      $logic_not                      2
-     $mux                           21
+     $mux                           41
      $ne                             2
      $not                            3
 
 3. Executing SMT2 backend.
 Creating SMT-LIBv2 representation of module dynamic_clock_divider.
 
-End of script. Logfile hash: 601df2caf6
-CPU: user 0.00s system 0.00s, MEM: 17.85 MB total, 7.16 MB resident
-Yosys 0.9 (git sha1 UNKNOWN, clang 9.0.0 -march=x86-64 -mtune=generic -O2 -fno-plt -fPIC -Os)
-Time spent: 63% 2x write_smt2 (0 sec), 33% 2x read_ilang (0 sec), ...
+End of script. Logfile hash: 841b52960f
+CPU: user 0.01s system 0.00s, MEM: 44.52 MB total, 8.23 MB resident
+Yosys 0.9+932 (git sha1 65f197e2, clang 6.0.0-1ubuntu2 -fPIC -Os)
+Time spent: 59% 2x write_smt2 (0 sec), 38% 2x read_ilang (0 sec), ...

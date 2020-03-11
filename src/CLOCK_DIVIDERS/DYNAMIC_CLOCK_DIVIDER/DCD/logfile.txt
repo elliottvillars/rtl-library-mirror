@@ -1,46 +1,44 @@
-SBY 16:19:57 [DCD] Removing direcory 'DCD'.
-SBY 16:19:57 [DCD] Copy 'dynamic_clock_divider.v' to 'DCD/src/dynamic_clock_divider.v'.
-SBY 16:19:57 [DCD] engine_0: smtbmc
-SBY 16:19:57 [DCD] base: starting process "cd DCD/src; yosys -ql ../model/design.log ../model/design.ys"
-SBY 16:19:57 [DCD] base: finished (returncode=0)
-SBY 16:19:57 [DCD] smt2: starting process "cd DCD/model; yosys -ql design_smt2.log design_smt2.ys"
-SBY 16:19:57 [DCD] smt2: finished (returncode=0)
-SBY 16:19:57 [DCD] engine_0.basecase: starting process "cd DCD; yosys-smtbmc --presat --unroll --noprogress -t 16 --append 0 --dump-vcd engine_0/trace.vcd --dump-vlogtb engine_0/trace_tb.v --dump-smtc engine_0/trace.smtc model/design_smt2.smt2"
-SBY 16:19:57 [DCD] engine_0.induction: starting process "cd DCD; yosys-smtbmc --presat --unroll -i --noprogress -t 16 --append 0 --dump-vcd engine_0/trace_induct.vcd --dump-vlogtb engine_0/trace_induct_tb.v --dump-smtc engine_0/trace_induct.smtc model/design_smt2.smt2"
-SBY 16:19:57 [DCD] engine_0.basecase: ##   0:00:00  Solver: yices
-SBY 16:19:57 [DCD] engine_0.induction: ##   0:00:00  Solver: yices
-SBY 16:19:57 [DCD] engine_0.basecase: ##   0:00:00  Checking assumptions in step 0..
-SBY 16:19:57 [DCD] engine_0.basecase: ##   0:00:00  Checking assertions in step 0..
-SBY 16:19:57 [DCD] engine_0.induction: ##   0:00:00  Trying induction in step 16..
-SBY 16:19:57 [DCD] engine_0.induction: ##   0:00:00  Trying induction in step 15..
-SBY 16:19:57 [DCD] engine_0.basecase: ##   0:00:00  Checking assumptions in step 1..
-SBY 16:19:57 [DCD] engine_0.basecase: ##   0:00:00  Checking assertions in step 1..
-SBY 16:19:57 [DCD] engine_0.induction: ##   0:00:00  Trying induction in step 14..
-SBY 16:19:57 [DCD] engine_0.induction: ##   0:00:00  Trying induction in step 13..
-SBY 16:19:57 [DCD] engine_0.basecase: ##   0:00:00  Checking assumptions in step 2..
-SBY 16:19:57 [DCD] engine_0.basecase: ##   0:00:00  Checking assertions in step 2..
-SBY 16:19:57 [DCD] engine_0.induction: ##   0:00:00  Trying induction in step 12..
-SBY 16:19:57 [DCD] engine_0.induction: ##   0:00:00  Trying induction in step 11..
-SBY 16:19:57 [DCD] engine_0.basecase: ##   0:00:00  Checking assumptions in step 3..
-SBY 16:19:57 [DCD] engine_0.basecase: ##   0:00:00  Checking assertions in step 3..
-SBY 16:19:57 [DCD] engine_0.induction: ##   0:00:00  Trying induction in step 10..
-SBY 16:19:57 [DCD] engine_0.basecase: ##   0:00:00  Checking assumptions in step 4..
-SBY 16:19:57 [DCD] engine_0.basecase: ##   0:00:00  Checking assertions in step 4..
-SBY 16:19:57 [DCD] engine_0.induction: ##   0:00:00  Trying induction in step 9..
-SBY 16:19:57 [DCD] engine_0.basecase: ##   0:00:00  BMC failed!
-SBY 16:19:57 [DCD] engine_0.basecase: ##   0:00:00  Assert failed in dynamic_clock_divider: dynamic_clock_divider.v:100
-SBY 16:19:57 [DCD] engine_0.basecase: ##   0:00:00  Writing trace to VCD file: engine_0/trace.vcd
-SBY 16:19:57 [DCD] engine_0.induction: ##   0:00:00  Trying induction in step 8..
-SBY 16:19:57 [DCD] engine_0.basecase: ##   0:00:00  Writing trace to Verilog testbench: engine_0/trace_tb.v
-SBY 16:19:57 [DCD] engine_0.basecase: ##   0:00:00  Writing trace to constraints file: engine_0/trace.smtc
-SBY 16:19:57 [DCD] engine_0.basecase: ##   0:00:00  Status: FAILED (!)
-SBY 16:19:57 [DCD] engine_0.induction: ##   0:00:00  Trying induction in step 7..
-SBY 16:19:57 [DCD] engine_0.induction: ##   0:00:00  Trying induction in step 6..
-SBY 16:19:57 [DCD] engine_0.basecase: finished (returncode=1)
-SBY 16:19:57 [DCD] engine_0: Status returned by engine for basecase: FAIL
-SBY 16:19:57 [DCD] engine_0.induction: terminating process
-SBY 16:19:57 [DCD] summary: Elapsed clock time [H:MM:SS (secs)]: 0:00:00 (0)
-SBY 16:19:57 [DCD] summary: Elapsed process time [H:MM:SS (secs)]: 0:00:00 (0)
-SBY 16:19:57 [DCD] summary: engine_0 (smtbmc) returned FAIL for basecase
-SBY 16:19:57 [DCD] summary: counterexample trace: DCD/engine_0/trace.vcd
-SBY 16:19:57 [DCD] DONE (FAIL, rc=2)
+SBY 22:16:44 [DCD] Removing direcory 'DCD'.
+SBY 22:16:44 [DCD] Copy 'dynamic_clock_divider.v' to 'DCD/src/dynamic_clock_divider.v'.
+SBY 22:16:44 [DCD] engine_0: smtbmc
+SBY 22:16:44 [DCD] base: starting process "cd DCD/src; yosys -ql ../model/design.log ../model/design.ys"
+SBY 22:16:44 [DCD] base: finished (returncode=0)
+SBY 22:16:44 [DCD] smt2: starting process "cd DCD/model; yosys -ql design_smt2.log design_smt2.ys"
+SBY 22:16:44 [DCD] smt2: finished (returncode=0)
+SBY 22:16:44 [DCD] engine_0.basecase: starting process "cd DCD; yosys-smtbmc --presat --unroll --noprogress -t 16 --append 0 --dump-vcd engine_0/trace.vcd --dump-vlogtb engine_0/trace_tb.v --dump-smtc engine_0/trace.smtc model/design_smt2.smt2"
+SBY 22:16:44 [DCD] engine_0.induction: starting process "cd DCD; yosys-smtbmc --presat --unroll -i --noprogress -t 16 --append 0 --dump-vcd engine_0/trace_induct.vcd --dump-vlogtb engine_0/trace_induct_tb.v --dump-smtc engine_0/trace_induct.smtc model/design_smt2.smt2"
+SBY 22:16:44 [DCD] engine_0.induction: ##   0:00:00  Solver: yices
+SBY 22:16:44 [DCD] engine_0.basecase: ##   0:00:00  Solver: yices
+SBY 22:16:44 [DCD] engine_0.basecase: ##   0:00:00  Checking assumptions in step 0..
+SBY 22:16:44 [DCD] engine_0.basecase: ##   0:00:00  Checking assertions in step 0..
+SBY 22:16:44 [DCD] engine_0.induction: ##   0:00:00  Trying induction in step 16..
+SBY 22:16:44 [DCD] engine_0.induction: ##   0:00:00  Trying induction in step 15..
+SBY 22:16:44 [DCD] engine_0.basecase: ##   0:00:00  Checking assumptions in step 1..
+SBY 22:16:44 [DCD] engine_0.basecase: ##   0:00:00  Checking assertions in step 1..
+SBY 22:16:44 [DCD] engine_0.induction: ##   0:00:00  Trying induction in step 14..
+SBY 22:16:44 [DCD] engine_0.basecase: ##   0:00:00  Checking assumptions in step 2..
+SBY 22:16:44 [DCD] engine_0.induction: ##   0:00:00  Trying induction in step 13..
+SBY 22:16:44 [DCD] engine_0.basecase: ##   0:00:00  Checking assertions in step 2..
+SBY 22:16:44 [DCD] engine_0.induction: ##   0:00:00  Trying induction in step 12..
+SBY 22:16:44 [DCD] engine_0.basecase: ##   0:00:00  Checking assumptions in step 3..
+SBY 22:16:44 [DCD] engine_0.basecase: ##   0:00:00  Checking assertions in step 3..
+SBY 22:16:44 [DCD] engine_0.induction: ##   0:00:00  Trying induction in step 11..
+SBY 22:16:44 [DCD] engine_0.induction: ##   0:00:00  Trying induction in step 10..
+SBY 22:16:44 [DCD] engine_0.basecase: ##   0:00:00  Checking assumptions in step 4..
+SBY 22:16:44 [DCD] engine_0.basecase: ##   0:00:00  Checking assertions in step 4..
+SBY 22:16:44 [DCD] engine_0.basecase: ##   0:00:00  BMC failed!
+SBY 22:16:44 [DCD] engine_0.basecase: ##   0:00:00  Assert failed in dynamic_clock_divider: dynamic_clock_divider.v:101
+SBY 22:16:44 [DCD] engine_0.basecase: ##   0:00:00  Writing trace to VCD file: engine_0/trace.vcd
+SBY 22:16:44 [DCD] engine_0.induction: ##   0:00:00  Trying induction in step 9..
+SBY 22:16:44 [DCD] engine_0.basecase: ##   0:00:00  Writing trace to Verilog testbench: engine_0/trace_tb.v
+SBY 22:16:44 [DCD] engine_0.basecase: ##   0:00:00  Writing trace to constraints file: engine_0/trace.smtc
+SBY 22:16:44 [DCD] engine_0.basecase: ##   0:00:00  Status: failed
+SBY 22:16:44 [DCD] engine_0.induction: ##   0:00:00  Trying induction in step 8..
+SBY 22:16:44 [DCD] engine_0.basecase: finished (returncode=1)
+SBY 22:16:44 [DCD] engine_0: Status returned by engine for basecase: FAIL
+SBY 22:16:44 [DCD] engine_0.induction: terminating process
+SBY 22:16:44 [DCD] summary: Elapsed clock time [H:MM:SS (secs)]: 0:00:00 (0)
+SBY 22:16:44 [DCD] summary: Elapsed process time [H:MM:SS (secs)]: 0:00:00 (0)
+SBY 22:16:44 [DCD] summary: engine_0 (smtbmc) returned FAIL for basecase
+SBY 22:16:44 [DCD] summary: counterexample trace: DCD/engine_0/trace.vcd
+SBY 22:16:44 [DCD] DONE (FAIL, rc=2)

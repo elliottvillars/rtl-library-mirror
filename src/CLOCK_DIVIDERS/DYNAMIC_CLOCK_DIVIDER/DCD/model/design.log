@@ -19,7 +19,7 @@
  |                                                                            |
  \----------------------------------------------------------------------------/
 
- Yosys 0.9 (git sha1 UNKNOWN, clang 9.0.0 -march=x86-64 -mtune=generic -O2 -fno-plt -fPIC -Os)
+ Yosys 0.9+932 (git sha1 65f197e2, clang 6.0.0-1ubuntu2 -fPIC -Os)
 
 
 -- Executing script file `../model/design.ys' --
@@ -47,134 +47,146 @@ Module dynamic_clock_divider directly or indirectly contains formal properties -
 Cleaned up 0 empty switches.
 
 2.2.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
-Marked 1 switch rules as full_case in process $proc$dynamic_clock_divider.v:82$30 in module dynamic_clock_divider.
-Marked 2 switch rules as full_case in process $proc$dynamic_clock_divider.v:55$25 in module dynamic_clock_divider.
-Marked 3 switch rules as full_case in process $proc$dynamic_clock_divider.v:33$20 in module dynamic_clock_divider.
+Marked 2 switch rules as full_case in process $proc$dynamic_clock_divider.v:82$34 in module dynamic_clock_divider.
+Marked 2 switch rules as full_case in process $proc$dynamic_clock_divider.v:55$29 in module dynamic_clock_divider.
+Marked 3 switch rules as full_case in process $proc$dynamic_clock_divider.v:33$24 in module dynamic_clock_divider.
 Removed a total of 0 dead cases.
 
-2.2.3. Executing PROC_INIT pass (extract init attributes).
-Found init rule in `\dynamic_clock_divider.$proc$dynamic_clock_divider.v:100$90'.
-  Set init value: $formal$dynamic_clock_divider.v:100$19_EN = 1'0
-Found init rule in `\dynamic_clock_divider.$proc$dynamic_clock_divider.v:91$88'.
-  Set init value: $formal$dynamic_clock_divider.v:91$18_EN = 1'0
-Found init rule in `\dynamic_clock_divider.$proc$dynamic_clock_divider.v:90$86'.
-  Set init value: $formal$dynamic_clock_divider.v:90$17_EN = 1'0
-Found init rule in `\dynamic_clock_divider.$proc$dynamic_clock_divider.v:85$84'.
-  Set init value: $formal$dynamic_clock_divider.v:85$16_EN = 1'0
+2.2.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 2 redundant assignments.
+Promoted 28 assignments to connections.
 
-2.2.4. Executing PROC_ARST pass (detect async resets in processes).
+2.2.4. Executing PROC_INIT pass (extract init attributes).
+Found init rule in `\dynamic_clock_divider.$proc$dynamic_clock_divider.v:105$114'.
+  Set init value: $formal$dynamic_clock_divider.v:105$23_EN = 1'0
+Found init rule in `\dynamic_clock_divider.$proc$dynamic_clock_divider.v:103$112'.
+  Set init value: $formal$dynamic_clock_divider.v:103$22_EN = 1'0
+Found init rule in `\dynamic_clock_divider.$proc$dynamic_clock_divider.v:101$110'.
+  Set init value: $formal$dynamic_clock_divider.v:101$21_EN = 1'0
+Found init rule in `\dynamic_clock_divider.$proc$dynamic_clock_divider.v:92$108'.
+  Set init value: $formal$dynamic_clock_divider.v:92$20_EN = 1'0
+Found init rule in `\dynamic_clock_divider.$proc$dynamic_clock_divider.v:91$106'.
+  Set init value: $formal$dynamic_clock_divider.v:91$19_EN = 1'0
+Found init rule in `\dynamic_clock_divider.$proc$dynamic_clock_divider.v:86$104'.
+  Set init value: $formal$dynamic_clock_divider.v:86$18_EN = 1'0
+Found init rule in `\dynamic_clock_divider.$proc$dynamic_clock_divider.v:85$102'.
+  Set init value: $formal$dynamic_clock_divider.v:85$17_EN = 1'0
 
-2.2.5. Executing PROC_MUX pass (convert decision trees to multiplexers).
-Creating decoders for process `\dynamic_clock_divider.$proc$dynamic_clock_divider.v:100$90'.
-     1/1: $0$formal$dynamic_clock_divider.v:100$19_EN[0:0]$91
-Creating decoders for process `\dynamic_clock_divider.$proc$dynamic_clock_divider.v:91$88'.
-     1/1: $0$formal$dynamic_clock_divider.v:91$18_EN[0:0]$89
-Creating decoders for process `\dynamic_clock_divider.$proc$dynamic_clock_divider.v:90$86'.
-     1/1: $0$formal$dynamic_clock_divider.v:90$17_EN[0:0]$87
-Creating decoders for process `\dynamic_clock_divider.$proc$dynamic_clock_divider.v:85$84'.
-     1/1: $0$formal$dynamic_clock_divider.v:85$16_EN[0:0]$85
-Creating decoders for process `\dynamic_clock_divider.$proc$dynamic_clock_divider.v:76$74'.
-     1/6: $0$formal$dynamic_clock_divider.v:79$14_EN[0:0]$80
-     2/6: $0$formal$dynamic_clock_divider.v:79$14_CHECK[0:0]$79
-     3/6: $0$formal$dynamic_clock_divider.v:78$12_EN[0:0]$78
-     4/6: $0$formal$dynamic_clock_divider.v:78$12_CHECK[0:0]$77
-     5/6: $0$formal$dynamic_clock_divider.v:77$10_EN[0:0]$76
-     6/6: $0$formal$dynamic_clock_divider.v:77$10_CHECK[0:0]$75
-Creating decoders for process `\dynamic_clock_divider.$proc$dynamic_clock_divider.v:82$30'.
-     1/18: $0$past$dynamic_clock_divider.v:100$9$0[31:0]$39
-     2/18: $0$past$dynamic_clock_divider.v:99$8$0[31:0]$38
-     3/18: $0$past$dynamic_clock_divider.v:97$7$0[0:0]$37
-     4/18: $0$past$dynamic_clock_divider.v:97$6$0[0:0]$36
-     5/18: $0$past$dynamic_clock_divider.v:95$5$0[0:0]$35
-     6/18: $0$past$dynamic_clock_divider.v:95$4$0[0:0]$34
-     7/18: $0$past$dynamic_clock_divider.v:88$3$0[0:0]$33
-     8/18: $0$past$dynamic_clock_divider.v:86$2$0[0:0]$32
-     9/18: $0$past$dynamic_clock_divider.v:85$1$0[0:0]$31
-    10/18: $0$formal$dynamic_clock_divider.v:85$16_EN[0:0]$41
-    11/18: $0$formal$dynamic_clock_divider.v:85$16_CHECK[0:0]$40
-    12/18: $0\r_PAST_VALID[0:0]
-    13/18: $0$formal$dynamic_clock_divider.v:90$17_EN[0:0]$43
-    14/18: $0$formal$dynamic_clock_divider.v:90$17_CHECK[0:0]$42
-    15/18: $0$formal$dynamic_clock_divider.v:91$18_EN[0:0]$45
-    16/18: $0$formal$dynamic_clock_divider.v:91$18_CHECK[0:0]$44
-    17/18: $0$formal$dynamic_clock_divider.v:100$19_EN[0:0]$47
-    18/18: $0$formal$dynamic_clock_divider.v:100$19_CHECK[0:0]$46
-Creating decoders for process `\dynamic_clock_divider.$proc$dynamic_clock_divider.v:55$25'.
+2.2.5. Executing PROC_ARST pass (detect async resets in processes).
+
+2.2.6. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\dynamic_clock_divider.$proc$dynamic_clock_divider.v:105$114'.
+Creating decoders for process `\dynamic_clock_divider.$proc$dynamic_clock_divider.v:103$112'.
+Creating decoders for process `\dynamic_clock_divider.$proc$dynamic_clock_divider.v:101$110'.
+Creating decoders for process `\dynamic_clock_divider.$proc$dynamic_clock_divider.v:92$108'.
+Creating decoders for process `\dynamic_clock_divider.$proc$dynamic_clock_divider.v:91$106'.
+Creating decoders for process `\dynamic_clock_divider.$proc$dynamic_clock_divider.v:86$104'.
+Creating decoders for process `\dynamic_clock_divider.$proc$dynamic_clock_divider.v:85$102'.
+Creating decoders for process `\dynamic_clock_divider.$proc$dynamic_clock_divider.v:76$92'.
+Creating decoders for process `\dynamic_clock_divider.$proc$dynamic_clock_divider.v:82$34'.
+     1/10: $0$formal$dynamic_clock_divider.v:91$19_EN[0:0]$50
+     2/10: $0$formal$dynamic_clock_divider.v:91$19_CHECK[0:0]$49
+     3/10: $0$formal$dynamic_clock_divider.v:92$20_EN[0:0]$52
+     4/10: $0$formal$dynamic_clock_divider.v:92$20_CHECK[0:0]$51
+     5/10: $0$formal$dynamic_clock_divider.v:101$21_EN[0:0]$54
+     6/10: $0$formal$dynamic_clock_divider.v:101$21_CHECK[0:0]$53
+     7/10: $0$formal$dynamic_clock_divider.v:103$22_EN[0:0]$56
+     8/10: $0$formal$dynamic_clock_divider.v:103$22_CHECK[0:0]$55
+     9/10: $0$formal$dynamic_clock_divider.v:105$23_EN[0:0]$58
+    10/10: $0$formal$dynamic_clock_divider.v:105$23_CHECK[0:0]$57
+Creating decoders for process `\dynamic_clock_divider.$proc$dynamic_clock_divider.v:55$29'.
      1/1: $0\o_ENABLE_OUT[0:0]
-Creating decoders for process `\dynamic_clock_divider.$proc$dynamic_clock_divider.v:33$20'.
+Creating decoders for process `\dynamic_clock_divider.$proc$dynamic_clock_divider.v:33$24'.
      1/1: $0\r_Count[31:0]
 
-2.2.6. Executing PROC_DLATCH pass (convert process syncs to latches).
-No latch inferred for signal `\dynamic_clock_divider.$formal$dynamic_clock_divider.v:77$10_CHECK' from process `\dynamic_clock_divider.$proc$dynamic_clock_divider.v:76$74'.
-No latch inferred for signal `\dynamic_clock_divider.$formal$dynamic_clock_divider.v:77$10_EN' from process `\dynamic_clock_divider.$proc$dynamic_clock_divider.v:76$74'.
-No latch inferred for signal `\dynamic_clock_divider.$formal$dynamic_clock_divider.v:78$12_CHECK' from process `\dynamic_clock_divider.$proc$dynamic_clock_divider.v:76$74'.
-No latch inferred for signal `\dynamic_clock_divider.$formal$dynamic_clock_divider.v:78$12_EN' from process `\dynamic_clock_divider.$proc$dynamic_clock_divider.v:76$74'.
-No latch inferred for signal `\dynamic_clock_divider.$formal$dynamic_clock_divider.v:79$14_CHECK' from process `\dynamic_clock_divider.$proc$dynamic_clock_divider.v:76$74'.
-No latch inferred for signal `\dynamic_clock_divider.$formal$dynamic_clock_divider.v:79$14_EN' from process `\dynamic_clock_divider.$proc$dynamic_clock_divider.v:76$74'.
+2.2.7. Executing PROC_DLATCH pass (convert process syncs to latches).
+No latch inferred for signal `\dynamic_clock_divider.$formal$dynamic_clock_divider.v:77$11_CHECK' from process `\dynamic_clock_divider.$proc$dynamic_clock_divider.v:76$92'.
+No latch inferred for signal `\dynamic_clock_divider.$formal$dynamic_clock_divider.v:77$11_EN' from process `\dynamic_clock_divider.$proc$dynamic_clock_divider.v:76$92'.
+No latch inferred for signal `\dynamic_clock_divider.$formal$dynamic_clock_divider.v:78$13_CHECK' from process `\dynamic_clock_divider.$proc$dynamic_clock_divider.v:76$92'.
+No latch inferred for signal `\dynamic_clock_divider.$formal$dynamic_clock_divider.v:78$13_EN' from process `\dynamic_clock_divider.$proc$dynamic_clock_divider.v:76$92'.
+No latch inferred for signal `\dynamic_clock_divider.$formal$dynamic_clock_divider.v:79$15_CHECK' from process `\dynamic_clock_divider.$proc$dynamic_clock_divider.v:76$92'.
+No latch inferred for signal `\dynamic_clock_divider.$formal$dynamic_clock_divider.v:79$15_EN' from process `\dynamic_clock_divider.$proc$dynamic_clock_divider.v:76$92'.
 
-2.2.7. Executing PROC_DFF pass (convert process syncs to FFs).
-Creating register for signal `\dynamic_clock_divider.\r_PAST_VALID' using process `\dynamic_clock_divider.$proc$dynamic_clock_divider.v:82$30'.
-  created $dff cell `$procdff$149' with positive edge clock.
-Creating register for signal `\dynamic_clock_divider.$past$dynamic_clock_divider.v:85$1$0' using process `\dynamic_clock_divider.$proc$dynamic_clock_divider.v:82$30'.
-  created $dff cell `$procdff$150' with positive edge clock.
-Creating register for signal `\dynamic_clock_divider.$past$dynamic_clock_divider.v:86$2$0' using process `\dynamic_clock_divider.$proc$dynamic_clock_divider.v:82$30'.
-  created $dff cell `$procdff$151' with positive edge clock.
-Creating register for signal `\dynamic_clock_divider.$past$dynamic_clock_divider.v:88$3$0' using process `\dynamic_clock_divider.$proc$dynamic_clock_divider.v:82$30'.
-  created $dff cell `$procdff$152' with positive edge clock.
-Creating register for signal `\dynamic_clock_divider.$past$dynamic_clock_divider.v:95$4$0' using process `\dynamic_clock_divider.$proc$dynamic_clock_divider.v:82$30'.
-  created $dff cell `$procdff$153' with positive edge clock.
-Creating register for signal `\dynamic_clock_divider.$past$dynamic_clock_divider.v:95$5$0' using process `\dynamic_clock_divider.$proc$dynamic_clock_divider.v:82$30'.
-  created $dff cell `$procdff$154' with positive edge clock.
-Creating register for signal `\dynamic_clock_divider.$past$dynamic_clock_divider.v:97$6$0' using process `\dynamic_clock_divider.$proc$dynamic_clock_divider.v:82$30'.
-  created $dff cell `$procdff$155' with positive edge clock.
-Creating register for signal `\dynamic_clock_divider.$past$dynamic_clock_divider.v:97$7$0' using process `\dynamic_clock_divider.$proc$dynamic_clock_divider.v:82$30'.
-  created $dff cell `$procdff$156' with positive edge clock.
-Creating register for signal `\dynamic_clock_divider.$past$dynamic_clock_divider.v:99$8$0' using process `\dynamic_clock_divider.$proc$dynamic_clock_divider.v:82$30'.
-  created $dff cell `$procdff$157' with positive edge clock.
-Creating register for signal `\dynamic_clock_divider.$past$dynamic_clock_divider.v:100$9$0' using process `\dynamic_clock_divider.$proc$dynamic_clock_divider.v:82$30'.
-  created $dff cell `$procdff$158' with positive edge clock.
-Creating register for signal `\dynamic_clock_divider.$formal$dynamic_clock_divider.v:85$16_CHECK' using process `\dynamic_clock_divider.$proc$dynamic_clock_divider.v:82$30'.
-  created $dff cell `$procdff$159' with positive edge clock.
-Creating register for signal `\dynamic_clock_divider.$formal$dynamic_clock_divider.v:85$16_EN' using process `\dynamic_clock_divider.$proc$dynamic_clock_divider.v:82$30'.
-  created $dff cell `$procdff$160' with positive edge clock.
-Creating register for signal `\dynamic_clock_divider.$formal$dynamic_clock_divider.v:90$17_CHECK' using process `\dynamic_clock_divider.$proc$dynamic_clock_divider.v:82$30'.
-  created $dff cell `$procdff$161' with positive edge clock.
-Creating register for signal `\dynamic_clock_divider.$formal$dynamic_clock_divider.v:90$17_EN' using process `\dynamic_clock_divider.$proc$dynamic_clock_divider.v:82$30'.
-  created $dff cell `$procdff$162' with positive edge clock.
-Creating register for signal `\dynamic_clock_divider.$formal$dynamic_clock_divider.v:91$18_CHECK' using process `\dynamic_clock_divider.$proc$dynamic_clock_divider.v:82$30'.
-  created $dff cell `$procdff$163' with positive edge clock.
-Creating register for signal `\dynamic_clock_divider.$formal$dynamic_clock_divider.v:91$18_EN' using process `\dynamic_clock_divider.$proc$dynamic_clock_divider.v:82$30'.
-  created $dff cell `$procdff$164' with positive edge clock.
-Creating register for signal `\dynamic_clock_divider.$formal$dynamic_clock_divider.v:100$19_CHECK' using process `\dynamic_clock_divider.$proc$dynamic_clock_divider.v:82$30'.
-  created $dff cell `$procdff$165' with positive edge clock.
-Creating register for signal `\dynamic_clock_divider.$formal$dynamic_clock_divider.v:100$19_EN' using process `\dynamic_clock_divider.$proc$dynamic_clock_divider.v:82$30'.
-  created $dff cell `$procdff$166' with positive edge clock.
-Creating register for signal `\dynamic_clock_divider.\o_ENABLE_OUT' using process `\dynamic_clock_divider.$proc$dynamic_clock_divider.v:55$25'.
-  created $dff cell `$procdff$167' with positive edge clock.
-Creating register for signal `\dynamic_clock_divider.\r_Count' using process `\dynamic_clock_divider.$proc$dynamic_clock_divider.v:33$20'.
-  created $dff cell `$procdff$168' with positive edge clock.
+2.2.8. Executing PROC_DFF pass (convert process syncs to FFs).
+Creating register for signal `\dynamic_clock_divider.\r_PAST_VALID' using process `\dynamic_clock_divider.$proc$dynamic_clock_divider.v:82$34'.
+  created $dff cell `$procdff$221' with positive edge clock.
+Creating register for signal `\dynamic_clock_divider.$past$dynamic_clock_divider.v:85$1$0' using process `\dynamic_clock_divider.$proc$dynamic_clock_divider.v:82$34'.
+  created $dff cell `$procdff$222' with positive edge clock.
+Creating register for signal `\dynamic_clock_divider.$past$dynamic_clock_divider.v:86$2$0' using process `\dynamic_clock_divider.$proc$dynamic_clock_divider.v:82$34'.
+  created $dff cell `$procdff$223' with positive edge clock.
+Creating register for signal `\dynamic_clock_divider.$past$dynamic_clock_divider.v:87$3$0' using process `\dynamic_clock_divider.$proc$dynamic_clock_divider.v:82$34'.
+  created $dff cell `$procdff$224' with positive edge clock.
+Creating register for signal `\dynamic_clock_divider.$past$dynamic_clock_divider.v:89$4$0' using process `\dynamic_clock_divider.$proc$dynamic_clock_divider.v:82$34'.
+  created $dff cell `$procdff$225' with positive edge clock.
+Creating register for signal `\dynamic_clock_divider.$past$dynamic_clock_divider.v:96$5$0' using process `\dynamic_clock_divider.$proc$dynamic_clock_divider.v:82$34'.
+  created $dff cell `$procdff$226' with positive edge clock.
+Creating register for signal `\dynamic_clock_divider.$past$dynamic_clock_divider.v:96$6$0' using process `\dynamic_clock_divider.$proc$dynamic_clock_divider.v:82$34'.
+  created $dff cell `$procdff$227' with positive edge clock.
+Creating register for signal `\dynamic_clock_divider.$past$dynamic_clock_divider.v:98$7$0' using process `\dynamic_clock_divider.$proc$dynamic_clock_divider.v:82$34'.
+  created $dff cell `$procdff$228' with positive edge clock.
+Creating register for signal `\dynamic_clock_divider.$past$dynamic_clock_divider.v:98$8$0' using process `\dynamic_clock_divider.$proc$dynamic_clock_divider.v:82$34'.
+  created $dff cell `$procdff$229' with positive edge clock.
+Creating register for signal `\dynamic_clock_divider.$past$dynamic_clock_divider.v:101$9$0' using process `\dynamic_clock_divider.$proc$dynamic_clock_divider.v:82$34'.
+  created $dff cell `$procdff$230' with positive edge clock.
+Creating register for signal `\dynamic_clock_divider.$past$dynamic_clock_divider.v:102$10$0' using process `\dynamic_clock_divider.$proc$dynamic_clock_divider.v:82$34'.
+  created $dff cell `$procdff$231' with positive edge clock.
+Creating register for signal `\dynamic_clock_divider.$formal$dynamic_clock_divider.v:85$17_CHECK' using process `\dynamic_clock_divider.$proc$dynamic_clock_divider.v:82$34'.
+  created $dff cell `$procdff$232' with positive edge clock.
+Creating register for signal `\dynamic_clock_divider.$formal$dynamic_clock_divider.v:85$17_EN' using process `\dynamic_clock_divider.$proc$dynamic_clock_divider.v:82$34'.
+  created $dff cell `$procdff$233' with positive edge clock.
+Creating register for signal `\dynamic_clock_divider.$formal$dynamic_clock_divider.v:86$18_CHECK' using process `\dynamic_clock_divider.$proc$dynamic_clock_divider.v:82$34'.
+  created $dff cell `$procdff$234' with positive edge clock.
+Creating register for signal `\dynamic_clock_divider.$formal$dynamic_clock_divider.v:86$18_EN' using process `\dynamic_clock_divider.$proc$dynamic_clock_divider.v:82$34'.
+  created $dff cell `$procdff$235' with positive edge clock.
+Creating register for signal `\dynamic_clock_divider.$formal$dynamic_clock_divider.v:91$19_CHECK' using process `\dynamic_clock_divider.$proc$dynamic_clock_divider.v:82$34'.
+  created $dff cell `$procdff$236' with positive edge clock.
+Creating register for signal `\dynamic_clock_divider.$formal$dynamic_clock_divider.v:91$19_EN' using process `\dynamic_clock_divider.$proc$dynamic_clock_divider.v:82$34'.
+  created $dff cell `$procdff$237' with positive edge clock.
+Creating register for signal `\dynamic_clock_divider.$formal$dynamic_clock_divider.v:92$20_CHECK' using process `\dynamic_clock_divider.$proc$dynamic_clock_divider.v:82$34'.
+  created $dff cell `$procdff$238' with positive edge clock.
+Creating register for signal `\dynamic_clock_divider.$formal$dynamic_clock_divider.v:92$20_EN' using process `\dynamic_clock_divider.$proc$dynamic_clock_divider.v:82$34'.
+  created $dff cell `$procdff$239' with positive edge clock.
+Creating register for signal `\dynamic_clock_divider.$formal$dynamic_clock_divider.v:101$21_CHECK' using process `\dynamic_clock_divider.$proc$dynamic_clock_divider.v:82$34'.
+  created $dff cell `$procdff$240' with positive edge clock.
+Creating register for signal `\dynamic_clock_divider.$formal$dynamic_clock_divider.v:101$21_EN' using process `\dynamic_clock_divider.$proc$dynamic_clock_divider.v:82$34'.
+  created $dff cell `$procdff$241' with positive edge clock.
+Creating register for signal `\dynamic_clock_divider.$formal$dynamic_clock_divider.v:103$22_CHECK' using process `\dynamic_clock_divider.$proc$dynamic_clock_divider.v:82$34'.
+  created $dff cell `$procdff$242' with positive edge clock.
+Creating register for signal `\dynamic_clock_divider.$formal$dynamic_clock_divider.v:103$22_EN' using process `\dynamic_clock_divider.$proc$dynamic_clock_divider.v:82$34'.
+  created $dff cell `$procdff$243' with positive edge clock.
+Creating register for signal `\dynamic_clock_divider.$formal$dynamic_clock_divider.v:105$23_CHECK' using process `\dynamic_clock_divider.$proc$dynamic_clock_divider.v:82$34'.
+  created $dff cell `$procdff$244' with positive edge clock.
+Creating register for signal `\dynamic_clock_divider.$formal$dynamic_clock_divider.v:105$23_EN' using process `\dynamic_clock_divider.$proc$dynamic_clock_divider.v:82$34'.
+  created $dff cell `$procdff$245' with positive edge clock.
+Creating register for signal `\dynamic_clock_divider.\o_ENABLE_OUT' using process `\dynamic_clock_divider.$proc$dynamic_clock_divider.v:55$29'.
+  created $dff cell `$procdff$246' with positive edge clock.
+Creating register for signal `\dynamic_clock_divider.\r_Count' using process `\dynamic_clock_divider.$proc$dynamic_clock_divider.v:33$24'.
+  created $dff cell `$procdff$247' with positive edge clock.
 
-2.2.8. Executing PROC_CLEAN pass (remove empty switches from decision trees).
-Removing empty process `dynamic_clock_divider.$proc$dynamic_clock_divider.v:100$90'.
-Removing empty process `dynamic_clock_divider.$proc$dynamic_clock_divider.v:91$88'.
-Removing empty process `dynamic_clock_divider.$proc$dynamic_clock_divider.v:90$86'.
-Removing empty process `dynamic_clock_divider.$proc$dynamic_clock_divider.v:85$84'.
-Removing empty process `dynamic_clock_divider.$proc$dynamic_clock_divider.v:76$74'.
-Found and cleaned up 5 empty switches in `\dynamic_clock_divider.$proc$dynamic_clock_divider.v:82$30'.
-Removing empty process `dynamic_clock_divider.$proc$dynamic_clock_divider.v:82$30'.
-Found and cleaned up 2 empty switches in `\dynamic_clock_divider.$proc$dynamic_clock_divider.v:55$25'.
-Removing empty process `dynamic_clock_divider.$proc$dynamic_clock_divider.v:55$25'.
-Found and cleaned up 3 empty switches in `\dynamic_clock_divider.$proc$dynamic_clock_divider.v:33$20'.
-Removing empty process `dynamic_clock_divider.$proc$dynamic_clock_divider.v:33$20'.
-Cleaned up 10 empty switches.
+2.2.9. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Removing empty process `dynamic_clock_divider.$proc$dynamic_clock_divider.v:105$114'.
+Removing empty process `dynamic_clock_divider.$proc$dynamic_clock_divider.v:103$112'.
+Removing empty process `dynamic_clock_divider.$proc$dynamic_clock_divider.v:101$110'.
+Removing empty process `dynamic_clock_divider.$proc$dynamic_clock_divider.v:92$108'.
+Removing empty process `dynamic_clock_divider.$proc$dynamic_clock_divider.v:91$106'.
+Removing empty process `dynamic_clock_divider.$proc$dynamic_clock_divider.v:86$104'.
+Removing empty process `dynamic_clock_divider.$proc$dynamic_clock_divider.v:85$102'.
+Removing empty process `dynamic_clock_divider.$proc$dynamic_clock_divider.v:76$92'.
+Found and cleaned up 6 empty switches in `\dynamic_clock_divider.$proc$dynamic_clock_divider.v:82$34'.
+Removing empty process `dynamic_clock_divider.$proc$dynamic_clock_divider.v:82$34'.
+Found and cleaned up 2 empty switches in `\dynamic_clock_divider.$proc$dynamic_clock_divider.v:55$29'.
+Removing empty process `dynamic_clock_divider.$proc$dynamic_clock_divider.v:55$29'.
+Found and cleaned up 3 empty switches in `\dynamic_clock_divider.$proc$dynamic_clock_divider.v:33$24'.
+Removing empty process `dynamic_clock_divider.$proc$dynamic_clock_divider.v:33$24'.
+Cleaned up 11 empty switches.
 
 2.3. Executing OPT_EXPR pass (perform const folding).
 Optimizing module dynamic_clock_divider.
-<suppressed ~14 debug messages>
+<suppressed ~17 debug messages>
 
 2.4. Executing OPT_CLEAN pass (remove unused cells and wires).
 Finding unused cells or wires in module \dynamic_clock_divider..
-Removed 1 unused cells and 69 unused wires.
+Removed 1 unused cells and 101 unused wires.
 <suppressed ~3 debug messages>
 
 2.5. Executing CHECK pass (checking for obvious problems).
@@ -188,8 +200,8 @@ Optimizing module dynamic_clock_divider.
 
 2.6.2. Executing OPT_MERGE pass (detect identical cells).
 Finding identical cells in module `\dynamic_clock_divider'.
-<suppressed ~24 debug messages>
-Removed a total of 8 cells.
+<suppressed ~33 debug messages>
+Removed a total of 11 cells.
 
 2.6.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
 Running muxtree optimizer on module \dynamic_clock_divider..
@@ -197,7 +209,7 @@ Running muxtree optimizer on module \dynamic_clock_divider..
   Evaluating internal representation of mux trees.
   Analyzing evaluation results.
 Removed 0 multiplexer ports.
-<suppressed ~8 debug messages>
+<suppressed ~12 debug messages>
 
 2.6.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
   Optimizing cells in module \dynamic_clock_divider.
@@ -212,8 +224,8 @@ Removed a total of 3 cells.
 
 2.6.7. Executing OPT_CLEAN pass (remove unused cells and wires).
 Finding unused cells or wires in module \dynamic_clock_divider..
-Removed 0 unused cells and 11 unused wires.
-<suppressed ~3 debug messages>
+Removed 0 unused cells and 14 unused wires.
+<suppressed ~4 debug messages>
 
 2.6.8. Executing OPT_EXPR pass (perform const folding).
 Optimizing module dynamic_clock_divider.
@@ -226,7 +238,7 @@ Running muxtree optimizer on module \dynamic_clock_divider..
   Evaluating internal representation of mux trees.
   Analyzing evaluation results.
 Removed 0 multiplexer ports.
-<suppressed ~7 debug messages>
+<suppressed ~11 debug messages>
 
 2.6.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
   Optimizing cells in module \dynamic_clock_divider.
@@ -247,14 +259,13 @@ Optimizing module dynamic_clock_divider.
 2.6.16. Finished OPT passes. (There is nothing left to do.)
 
 2.7. Executing WREDUCE pass (reducing word size of cells).
-Removed top 31 bits (of 32) from port B of cell dynamic_clock_divider.$add$dynamic_clock_divider.v:46$24 ($add).
-Removed top 31 bits (of 32) from port B of cell dynamic_clock_divider.$and$dynamic_clock_divider.v:86$50 ($and).
-Removed top 31 bits (of 32) from port Y of cell dynamic_clock_divider.$and$dynamic_clock_divider.v:86$50 ($and).
-Removed top 31 bits (of 32) from port B of cell dynamic_clock_divider.$and$dynamic_clock_divider.v:86$52 ($and).
-Removed top 31 bits (of 32) from port Y of cell dynamic_clock_divider.$and$dynamic_clock_divider.v:86$52 ($and).
-Removed top 31 bits (of 32) from port B of cell dynamic_clock_divider.$add$dynamic_clock_divider.v:100$65 ($add).
-Removed top 31 bits (of 32) from wire dynamic_clock_divider.$and$dynamic_clock_divider.v:86$50_Y.
-Removed top 31 bits (of 32) from wire dynamic_clock_divider.$and$dynamic_clock_divider.v:86$52_Y.
+Removed top 31 bits (of 32) from port B of cell dynamic_clock_divider.$and$dynamic_clock_divider.v:87$62 ($and).
+Removed top 31 bits (of 32) from port Y of cell dynamic_clock_divider.$and$dynamic_clock_divider.v:87$62 ($and).
+Removed top 31 bits (of 32) from port B of cell dynamic_clock_divider.$and$dynamic_clock_divider.v:87$64 ($and).
+Removed top 31 bits (of 32) from port Y of cell dynamic_clock_divider.$and$dynamic_clock_divider.v:87$64 ($and).
+Removed top 31 bits (of 32) from port B of cell dynamic_clock_divider.$add$dynamic_clock_divider.v:101$77 ($add).
+Removed top 31 bits (of 32) from wire dynamic_clock_divider.$and$dynamic_clock_divider.v:87$62_Y.
+Removed top 31 bits (of 32) from wire dynamic_clock_divider.$and$dynamic_clock_divider.v:87$64_Y.
 
 2.8. Executing MEMORY_DFF pass (merging $dff cells to $memrd and $memwr).
 
@@ -288,24 +299,24 @@ Removed 0 unused cells and 2 unused wires.
 
 === dynamic_clock_divider ===
 
-   Number of wires:                 57
-   Number of wire bits:            305
+   Number of wires:                 83
+   Number of wire bits:            331
    Number of public wires:           6
    Number of public wire bits:      68
    Number of memories:               0
    Number of memory bits:            0
    Number of processes:              0
-   Number of cells:                 60
-     $add                            2
-     $assert                         3
-     $assume                         4
-     $dff                           13
-     $eq                             4
+   Number of cells:                 89
+     $add                            1
+     $assert                         5
+     $assume                         5
+     $dff                           19
+     $eq                             5
      $ge                             1
      $initstate                      1
      $logic_and                      4
      $logic_not                      2
-     $mux                           21
+     $mux                           41
      $ne                             2
      $not                            3
 
@@ -319,8 +330,8 @@ found and reported 0 problems.
 
 5. Executing OPT_CLEAN pass (remove unused cells and wires).
 Finding unused cells or wires in module \dynamic_clock_divider..
-Removed 2 unused cells and 1 unused wires.
-<suppressed ~3 debug messages>
+Removed 3 unused cells and 2 unused wires.
+<suppressed ~4 debug messages>
 
 6. Executing SETUNDEF pass (replace undef values with defined constants).
 
@@ -334,7 +345,7 @@ Finding identical cells in module `\dynamic_clock_divider'.
 Removed a total of 0 cells.
 
 7.3. Executing OPT_RMDFF pass (remove dff with constant values).
-Promoting init spec $formal$dynamic_clock_divider.v:85$16_EN = 1'0 to constant driver in module dynamic_clock_divider.
+Promoting init spec $formal$dynamic_clock_divider.v:85$17_EN = 1'0 to constant driver in module dynamic_clock_divider.
 Promoted 1 init specs to constant drivers.
 
 7.4. Executing OPT_CLEAN pass (remove unused cells and wires).
@@ -375,7 +386,7 @@ Module dynamic_clock_divider directly or indirectly contains formal properties -
 10. Executing ILANG backend.
 Output filename: ../model/design.il
 
-End of script. Logfile hash: f4cb2b096a
-CPU: user 0.11s system 0.00s, MEM: 18.16 MB total, 9.03 MB resident
-Yosys 0.9 (git sha1 UNKNOWN, clang 9.0.0 -march=x86-64 -mtune=generic -O2 -fno-plt -fPIC -Os)
-Time spent: 31% 8x opt_clean (0 sec), 16% 7x opt_expr (0 sec), ...
+End of script. Logfile hash: 43ca566396
+CPU: user 0.07s system 0.00s, MEM: 45.30 MB total, 10.34 MB resident
+Yosys 0.9+932 (git sha1 65f197e2, clang 6.0.0-1ubuntu2 -fPIC -Os)
+Time spent: 28% 8x opt_clean (0 sec), 18% 7x opt_expr (0 sec), ...

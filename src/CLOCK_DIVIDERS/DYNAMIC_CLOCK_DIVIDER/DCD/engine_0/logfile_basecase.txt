@@ -10,8 +10,8 @@
 ##   0:00:00  Checking assumptions in step 4..
 ##   0:00:00  Checking assertions in step 4..
 ##   0:00:00  BMC failed!
-##   0:00:00  Assert failed in dynamic_clock_divider: dynamic_clock_divider.v:100
+##   0:00:00  Assert failed in dynamic_clock_divider: dynamic_clock_divider.v:101
 ##   0:00:00  Writing trace to VCD file: engine_0/trace.vcd
 ##   0:00:00  Writing trace to Verilog testbench: engine_0/trace_tb.v
 ##   0:00:00  Writing trace to constraints file: engine_0/trace.smtc
-##   0:00:00  Status: FAILED (!)
+##   0:00:00  Status: failed

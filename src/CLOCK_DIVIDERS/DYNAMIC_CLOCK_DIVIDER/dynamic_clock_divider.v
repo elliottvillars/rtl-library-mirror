@@ -83,6 +83,7 @@ end
 	begin
 		r_PAST_VALID = 1;
 		assume(i_CLK != $past(i_CLK));
+		assume($stable(i_DIV_VALUE));
 		if(r_PAST_VALID == 1 && $rose(i_CLK))
 		begin
 			if($past(i_RST) == 1)
@@ -97,21 +98,12 @@ end
 					if($stable(i_ENABLE) && $past(i_ENABLE) == 1)
 					begin
 						if($past(r_Count) != i_DIV_VALUE)
-							assert(r_Count == $past(r_Count) + 1);
+							assert(o_ENABLE_OUT == 0);
+						else
+							assert(o_ENABLE_OUT == 1);
 					end
 				end
 			end
-			//else
-			//begin
-			//if($past(i_ENABLE == 1))
-			//assert(r_Count == $past(r_Count) + 1);
-			//end
-			//if($past(r_Count == i_DIV_VALUE && i_ENABLE == 1))
-			//assert(o_ENABLE_OUT == 1);
-			//else
-			//assert(o_ENABLE_OUT == 0);
-			//if($past(r_Count >= i_DIV_VALUE))
-			//assert(r_Count == 0);
 		end
 	end
 `endif
