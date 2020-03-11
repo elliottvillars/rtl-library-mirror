@@ -5,7 +5,7 @@ module generic_ROM #(parameter p_ADDR_WIDTH = 4,parameter p_DATA_WIDTH = 8)(
 	output reg [p_DATA_WIDTH-1:0] o_DATA
 );
 
-reg [p_DATA_WIDTH-1:0] r_ROM [2**p_ADDR_WIDTH-1:0];
+reg [p_DATA_WIDTH-1:0] r_ROM [0:2**p_ADDR_WIDTH-1];
 
 initial $readmemh("ROM.bin",r_ROM);
 
