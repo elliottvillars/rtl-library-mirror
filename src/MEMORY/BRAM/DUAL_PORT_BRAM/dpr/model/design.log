@@ -47,233 +47,272 @@ Module dual_port_bram directly or indirectly contains formal properties -> setti
 Cleaned up 0 empty switches.
 
 2.2.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
-Marked 2 switch rules as full_case in process $proc$dual_port_bram.v:46$48 in module dual_port_bram.
-Marked 2 switch rules as full_case in process $proc$dual_port_bram.v:30$31 in module dual_port_bram.
-Marked 2 switch rules as full_case in process $proc$dual_port_bram.v:18$26 in module dual_port_bram.
+Marked 2 switch rules as full_case in process $proc$dual_port_bram.v:51$57 in module dual_port_bram.
+Marked 2 switch rules as full_case in process $proc$dual_port_bram.v:30$40 in module dual_port_bram.
+Marked 2 switch rules as full_case in process $proc$dual_port_bram.v:18$35 in module dual_port_bram.
 Removed a total of 0 dead cases.
 
 2.2.3. Executing PROC_INIT pass (extract init attributes).
-Found init rule in `\dual_port_bram.$proc$dual_port_bram.v:66$138'.
-  Set init value: $formal$dual_port_bram.v:66$25_EN = 1'0
-Found init rule in `\dual_port_bram.$proc$dual_port_bram.v:64$136'.
-  Set init value: $formal$dual_port_bram.v:64$24_EN = 1'0
-Found init rule in `\dual_port_bram.$proc$dual_port_bram.v:62$134'.
-  Set init value: $formal$dual_port_bram.v:62$23_EN = 1'0
-Found init rule in `\dual_port_bram.$proc$dual_port_bram.v:60$132'.
-  Set init value: $formal$dual_port_bram.v:60$22_EN = 1'0
-Found init rule in `\dual_port_bram.$proc$dual_port_bram.v:58$130'.
-  Set init value: $formal$dual_port_bram.v:58$21_EN = 1'0
-Found init rule in `\dual_port_bram.$proc$dual_port_bram.v:53$128'.
-  Set init value: $formal$dual_port_bram.v:53$20_EN = 1'0
-Found init rule in `\dual_port_bram.$proc$dual_port_bram.v:52$126'.
-  Set init value: $formal$dual_port_bram.v:52$19_EN = 1'0
-Found init rule in `\dual_port_bram.$proc$dual_port_bram.v:51$124'.
-  Set init value: $formal$dual_port_bram.v:51$18_EN = 1'0
-Found init rule in `\dual_port_bram.$proc$dual_port_bram.v:50$122'.
-  Set init value: $formal$dual_port_bram.v:50$17_EN = 1'0
-Found init rule in `\dual_port_bram.$proc$dual_port_bram.v:49$120'.
-  Set init value: $formal$dual_port_bram.v:49$16_EN = 1'0
-Found init rule in `\dual_port_bram.$proc$dual_port_bram.v:43$115'.
+Found init rule in `\dual_port_bram.$proc$dual_port_bram.v:74$172'.
+  Set init value: $formal$dual_port_bram.v:74$34_EN = 1'0
+Found init rule in `\dual_port_bram.$proc$dual_port_bram.v:72$170'.
+  Set init value: $formal$dual_port_bram.v:72$33_EN = 1'0
+Found init rule in `\dual_port_bram.$proc$dual_port_bram.v:70$168'.
+  Set init value: $formal$dual_port_bram.v:70$32_EN = 1'0
+Found init rule in `\dual_port_bram.$proc$dual_port_bram.v:68$166'.
+  Set init value: $formal$dual_port_bram.v:68$31_EN = 1'0
+Found init rule in `\dual_port_bram.$proc$dual_port_bram.v:66$164'.
+  Set init value: $formal$dual_port_bram.v:66$30_EN = 1'0
+Found init rule in `\dual_port_bram.$proc$dual_port_bram.v:64$162'.
+  Set init value: $formal$dual_port_bram.v:64$29_EN = 1'0
+Found init rule in `\dual_port_bram.$proc$dual_port_bram.v:59$160'.
+  Set init value: $formal$dual_port_bram.v:59$28_EN = 1'0
+Found init rule in `\dual_port_bram.$proc$dual_port_bram.v:58$158'.
+  Set init value: $formal$dual_port_bram.v:58$27_EN = 1'0
+Found init rule in `\dual_port_bram.$proc$dual_port_bram.v:57$156'.
+  Set init value: $formal$dual_port_bram.v:57$26_EN = 1'0
+Found init rule in `\dual_port_bram.$proc$dual_port_bram.v:56$154'.
+  Set init value: $formal$dual_port_bram.v:56$25_EN = 1'0
+Found init rule in `\dual_port_bram.$proc$dual_port_bram.v:55$152'.
+  Set init value: $formal$dual_port_bram.v:55$24_EN = 1'0
+Found init rule in `\dual_port_bram.$proc$dual_port_bram.v:54$150'.
+  Set init value: $formal$dual_port_bram.v:54$23_EN = 1'0
+Found init rule in `\dual_port_bram.$proc$dual_port_bram.v:43$139'.
   Set init value: \r_PAST_VALID = 1'0
 
 2.2.4. Executing PROC_ARST pass (detect async resets in processes).
 
 2.2.5. Executing PROC_MUX pass (convert decision trees to multiplexers).
-Creating decoders for process `\dual_port_bram.$proc$dual_port_bram.v:66$138'.
-     1/1: $0$formal$dual_port_bram.v:66$25_EN[0:0]$139
-Creating decoders for process `\dual_port_bram.$proc$dual_port_bram.v:64$136'.
-     1/1: $0$formal$dual_port_bram.v:64$24_EN[0:0]$137
-Creating decoders for process `\dual_port_bram.$proc$dual_port_bram.v:62$134'.
-     1/1: $0$formal$dual_port_bram.v:62$23_EN[0:0]$135
-Creating decoders for process `\dual_port_bram.$proc$dual_port_bram.v:60$132'.
-     1/1: $0$formal$dual_port_bram.v:60$22_EN[0:0]$133
-Creating decoders for process `\dual_port_bram.$proc$dual_port_bram.v:58$130'.
-     1/1: $0$formal$dual_port_bram.v:58$21_EN[0:0]$131
-Creating decoders for process `\dual_port_bram.$proc$dual_port_bram.v:53$128'.
-     1/1: $0$formal$dual_port_bram.v:53$20_EN[0:0]$129
-Creating decoders for process `\dual_port_bram.$proc$dual_port_bram.v:52$126'.
-     1/1: $0$formal$dual_port_bram.v:52$19_EN[0:0]$127
-Creating decoders for process `\dual_port_bram.$proc$dual_port_bram.v:51$124'.
-     1/1: $0$formal$dual_port_bram.v:51$18_EN[0:0]$125
-Creating decoders for process `\dual_port_bram.$proc$dual_port_bram.v:50$122'.
-     1/1: $0$formal$dual_port_bram.v:50$17_EN[0:0]$123
-Creating decoders for process `\dual_port_bram.$proc$dual_port_bram.v:49$120'.
-     1/1: $0$formal$dual_port_bram.v:49$16_EN[0:0]$121
-Creating decoders for process `\dual_port_bram.$proc$dual_port_bram.v:44$116'.
-     1/2: $0$formal$dual_port_bram.v:44$14_EN[0:0]$118
-     2/2: $0$formal$dual_port_bram.v:44$14_CHECK[0:0]$117
-Creating decoders for process `\dual_port_bram.$proc$dual_port_bram.v:43$115'.
+Creating decoders for process `\dual_port_bram.$proc$dual_port_bram.v:74$172'.
+     1/1: $0$formal$dual_port_bram.v:74$34_EN[0:0]$173
+Creating decoders for process `\dual_port_bram.$proc$dual_port_bram.v:72$170'.
+     1/1: $0$formal$dual_port_bram.v:72$33_EN[0:0]$171
+Creating decoders for process `\dual_port_bram.$proc$dual_port_bram.v:70$168'.
+     1/1: $0$formal$dual_port_bram.v:70$32_EN[0:0]$169
+Creating decoders for process `\dual_port_bram.$proc$dual_port_bram.v:68$166'.
+     1/1: $0$formal$dual_port_bram.v:68$31_EN[0:0]$167
+Creating decoders for process `\dual_port_bram.$proc$dual_port_bram.v:66$164'.
+     1/1: $0$formal$dual_port_bram.v:66$30_EN[0:0]$165
+Creating decoders for process `\dual_port_bram.$proc$dual_port_bram.v:64$162'.
+     1/1: $0$formal$dual_port_bram.v:64$29_EN[0:0]$163
+Creating decoders for process `\dual_port_bram.$proc$dual_port_bram.v:59$160'.
+     1/1: $0$formal$dual_port_bram.v:59$28_EN[0:0]$161
+Creating decoders for process `\dual_port_bram.$proc$dual_port_bram.v:58$158'.
+     1/1: $0$formal$dual_port_bram.v:58$27_EN[0:0]$159
+Creating decoders for process `\dual_port_bram.$proc$dual_port_bram.v:57$156'.
+     1/1: $0$formal$dual_port_bram.v:57$26_EN[0:0]$157
+Creating decoders for process `\dual_port_bram.$proc$dual_port_bram.v:56$154'.
+     1/1: $0$formal$dual_port_bram.v:56$25_EN[0:0]$155
+Creating decoders for process `\dual_port_bram.$proc$dual_port_bram.v:55$152'.
+     1/1: $0$formal$dual_port_bram.v:55$24_EN[0:0]$153
+Creating decoders for process `\dual_port_bram.$proc$dual_port_bram.v:54$150'.
+     1/1: $0$formal$dual_port_bram.v:54$23_EN[0:0]$151
+Creating decoders for process `\dual_port_bram.$proc$dual_port_bram.v:44$140'.
+     1/6: $0$formal$dual_port_bram.v:48$21_EN[0:0]$146
+     2/6: $0$formal$dual_port_bram.v:48$21_CHECK[0:0]$145
+     3/6: $0$formal$dual_port_bram.v:47$19_EN[0:0]$144
+     4/6: $0$formal$dual_port_bram.v:47$19_CHECK[0:0]$143
+     5/6: $0$formal$dual_port_bram.v:46$17_EN[0:0]$142
+     6/6: $0$formal$dual_port_bram.v:46$17_CHECK[0:0]$141
+Creating decoders for process `\dual_port_bram.$proc$dual_port_bram.v:43$139'.
      1/1: $1\r_PAST_VALID[0:0]
-Creating decoders for process `\dual_port_bram.$proc$dual_port_bram.v:46$48'.
-     1/30: $0$past$dual_port_bram.v:66$9$0[7:0]$57
-     2/30: $0$past$dual_port_bram.v:66$8$0[3:0]$56
-     3/30: $0$past$dual_port_bram.v:65$7$0[0:0]$55
-     4/30: $0$past$dual_port_bram.v:62$6$0[3:0]$54
-     5/30: $0$past$dual_port_bram.v:61$5$0[0:0]$53
-     6/30: $0$past$dual_port_bram.v:58$4$0[3:0]$52
-     7/30: $0$past$dual_port_bram.v:57$3$0[0:0]$51
-     8/30: $0$past$dual_port_bram.v:55$2$0[0:0]$50
-     9/30: $0$past$dual_port_bram.v:49$1$0[0:0]$49
-    10/30: $0$formal$dual_port_bram.v:53$20_EN[0:0]$67
-    11/30: $0$formal$dual_port_bram.v:53$20_CHECK[0:0]$66
-    12/30: $0$formal$dual_port_bram.v:52$19_EN[0:0]$65
-    13/30: $0$formal$dual_port_bram.v:52$19_CHECK[0:0]$64
-    14/30: $0$formal$dual_port_bram.v:51$18_EN[0:0]$63
-    15/30: $0$formal$dual_port_bram.v:51$18_CHECK[0:0]$62
-    16/30: $0$formal$dual_port_bram.v:50$17_EN[0:0]$61
-    17/30: $0$formal$dual_port_bram.v:50$17_CHECK[0:0]$60
-    18/30: $0$formal$dual_port_bram.v:49$16_EN[0:0]$59
-    19/30: $0$formal$dual_port_bram.v:49$16_CHECK[0:0]$58
-    20/30: $0\r_PAST_VALID[0:0]
-    21/30: $0$formal$dual_port_bram.v:58$21_EN[0:0]$69
-    22/30: $0$formal$dual_port_bram.v:58$21_CHECK[0:0]$68
-    23/30: $0$formal$dual_port_bram.v:60$22_EN[0:0]$71
-    24/30: $0$formal$dual_port_bram.v:60$22_CHECK[0:0]$70
-    25/30: $0$formal$dual_port_bram.v:62$23_EN[0:0]$73
-    26/30: $0$formal$dual_port_bram.v:62$23_CHECK[0:0]$72
-    27/30: $0$formal$dual_port_bram.v:64$24_EN[0:0]$75
-    28/30: $0$formal$dual_port_bram.v:64$24_CHECK[0:0]$74
-    29/30: $0$formal$dual_port_bram.v:66$25_EN[0:0]$77
-    30/30: $0$formal$dual_port_bram.v:66$25_CHECK[0:0]$76
-Creating decoders for process `\dual_port_bram.$proc$dual_port_bram.v:30$31'.
-     1/12: $0$memwr$\r_RAM$dual_port_bram.v:33$10_EN[7:0]$34
-     2/12: $0$memwr$\r_RAM$dual_port_bram.v:33$10_DATA[7:0]$33
-     3/12: $0$memwr$\r_RAM$dual_port_bram.v:33$10_ADDR[3:0]$32
-     4/12: $0$memwr$\r_RAM$dual_port_bram.v:35$11_EN[7:0]$37
-     5/12: $0$memwr$\r_RAM$dual_port_bram.v:35$11_DATA[7:0]$36
-     6/12: $0$memwr$\r_RAM$dual_port_bram.v:35$11_ADDR[3:0]$35
-     7/12: $0$memwr$\r_RAM$dual_port_bram.v:37$12_EN[7:0]$40
-     8/12: $0$memwr$\r_RAM$dual_port_bram.v:37$12_DATA[7:0]$39
-     9/12: $0$memwr$\r_RAM$dual_port_bram.v:37$12_ADDR[3:0]$38
-    10/12: $0$memwr$\r_RAM$dual_port_bram.v:39$13_EN[7:0]$43
-    11/12: $0$memwr$\r_RAM$dual_port_bram.v:39$13_DATA[7:0]$42
-    12/12: $0$memwr$\r_RAM$dual_port_bram.v:39$13_ADDR[3:0]$41
-Creating decoders for process `\dual_port_bram.$proc$dual_port_bram.v:18$26'.
+Creating decoders for process `\dual_port_bram.$proc$dual_port_bram.v:51$57'.
+     1/37: $0$past$dual_port_bram.v:74$12$0[7:0]$69
+     2/37: $0$past$dual_port_bram.v:74$11$0[3:0]$68
+     3/37: $0$past$dual_port_bram.v:73$10$0[0:0]$67
+     4/37: $0$past$dual_port_bram.v:72$9$0[7:0]$66
+     5/37: $0$past$dual_port_bram.v:72$8$0[3:0]$65
+     6/37: $0$past$dual_port_bram.v:71$7$0[0:0]$64
+     7/37: $0$past$dual_port_bram.v:68$6$0[3:0]$63
+     8/37: $0$past$dual_port_bram.v:67$5$0[0:0]$62
+     9/37: $0$past$dual_port_bram.v:64$4$0[3:0]$61
+    10/37: $0$past$dual_port_bram.v:63$3$0[0:0]$60
+    11/37: $0$past$dual_port_bram.v:61$2$0[0:0]$59
+    12/37: $0$past$dual_port_bram.v:54$1$0[0:0]$58
+    13/37: $0$formal$dual_port_bram.v:59$28_EN[0:0]$81
+    14/37: $0$formal$dual_port_bram.v:59$28_CHECK[0:0]$80
+    15/37: $0$formal$dual_port_bram.v:58$27_EN[0:0]$79
+    16/37: $0$formal$dual_port_bram.v:58$27_CHECK[0:0]$78
+    17/37: $0$formal$dual_port_bram.v:57$26_EN[0:0]$77
+    18/37: $0$formal$dual_port_bram.v:57$26_CHECK[0:0]$76
+    19/37: $0$formal$dual_port_bram.v:56$25_EN[0:0]$75
+    20/37: $0$formal$dual_port_bram.v:56$25_CHECK[0:0]$74
+    21/37: $0$formal$dual_port_bram.v:55$24_EN[0:0]$73
+    22/37: $0$formal$dual_port_bram.v:55$24_CHECK[0:0]$72
+    23/37: $0$formal$dual_port_bram.v:54$23_EN[0:0]$71
+    24/37: $0$formal$dual_port_bram.v:54$23_CHECK[0:0]$70
+    25/37: $0\r_PAST_VALID[0:0]
+    26/37: $0$formal$dual_port_bram.v:64$29_EN[0:0]$83
+    27/37: $0$formal$dual_port_bram.v:64$29_CHECK[0:0]$82
+    28/37: $0$formal$dual_port_bram.v:66$30_EN[0:0]$85
+    29/37: $0$formal$dual_port_bram.v:66$30_CHECK[0:0]$84
+    30/37: $0$formal$dual_port_bram.v:68$31_EN[0:0]$87
+    31/37: $0$formal$dual_port_bram.v:68$31_CHECK[0:0]$86
+    32/37: $0$formal$dual_port_bram.v:70$32_EN[0:0]$89
+    33/37: $0$formal$dual_port_bram.v:70$32_CHECK[0:0]$88
+    34/37: $0$formal$dual_port_bram.v:72$33_EN[0:0]$91
+    35/37: $0$formal$dual_port_bram.v:72$33_CHECK[0:0]$90
+    36/37: $0$formal$dual_port_bram.v:74$34_EN[0:0]$93
+    37/37: $0$formal$dual_port_bram.v:74$34_CHECK[0:0]$92
+Creating decoders for process `\dual_port_bram.$proc$dual_port_bram.v:30$40'.
+     1/12: $0$memwr$\r_RAM$dual_port_bram.v:33$13_EN[7:0]$43
+     2/12: $0$memwr$\r_RAM$dual_port_bram.v:33$13_DATA[7:0]$42
+     3/12: $0$memwr$\r_RAM$dual_port_bram.v:33$13_ADDR[3:0]$41
+     4/12: $0$memwr$\r_RAM$dual_port_bram.v:35$14_EN[7:0]$46
+     5/12: $0$memwr$\r_RAM$dual_port_bram.v:35$14_DATA[7:0]$45
+     6/12: $0$memwr$\r_RAM$dual_port_bram.v:35$14_ADDR[3:0]$44
+     7/12: $0$memwr$\r_RAM$dual_port_bram.v:37$15_EN[7:0]$49
+     8/12: $0$memwr$\r_RAM$dual_port_bram.v:37$15_DATA[7:0]$48
+     9/12: $0$memwr$\r_RAM$dual_port_bram.v:37$15_ADDR[3:0]$47
+    10/12: $0$memwr$\r_RAM$dual_port_bram.v:39$16_EN[7:0]$52
+    11/12: $0$memwr$\r_RAM$dual_port_bram.v:39$16_DATA[7:0]$51
+    12/12: $0$memwr$\r_RAM$dual_port_bram.v:39$16_ADDR[3:0]$50
+Creating decoders for process `\dual_port_bram.$proc$dual_port_bram.v:18$35'.
      1/2: $0\o_READ_DATA_B[7:0]
      2/2: $0\o_READ_DATA_A[7:0]
 
 2.2.6. Executing PROC_DLATCH pass (convert process syncs to latches).
-No latch inferred for signal `\dual_port_bram.$formal$dual_port_bram.v:44$14_CHECK' from process `\dual_port_bram.$proc$dual_port_bram.v:44$116'.
-No latch inferred for signal `\dual_port_bram.$formal$dual_port_bram.v:44$14_EN' from process `\dual_port_bram.$proc$dual_port_bram.v:44$116'.
+No latch inferred for signal `\dual_port_bram.$formal$dual_port_bram.v:46$17_CHECK' from process `\dual_port_bram.$proc$dual_port_bram.v:44$140'.
+No latch inferred for signal `\dual_port_bram.$formal$dual_port_bram.v:46$17_EN' from process `\dual_port_bram.$proc$dual_port_bram.v:44$140'.
+No latch inferred for signal `\dual_port_bram.$formal$dual_port_bram.v:47$19_CHECK' from process `\dual_port_bram.$proc$dual_port_bram.v:44$140'.
+No latch inferred for signal `\dual_port_bram.$formal$dual_port_bram.v:47$19_EN' from process `\dual_port_bram.$proc$dual_port_bram.v:44$140'.
+No latch inferred for signal `\dual_port_bram.$formal$dual_port_bram.v:48$21_CHECK' from process `\dual_port_bram.$proc$dual_port_bram.v:44$140'.
+No latch inferred for signal `\dual_port_bram.$formal$dual_port_bram.v:48$21_EN' from process `\dual_port_bram.$proc$dual_port_bram.v:44$140'.
 
 2.2.7. Executing PROC_DFF pass (convert process syncs to FFs).
-Creating register for signal `\dual_port_bram.\r_PAST_VALID' using process `\dual_port_bram.$proc$dual_port_bram.v:46$48'.
-  created $dff cell `$procdff$230' with positive edge clock.
-Creating register for signal `\dual_port_bram.$past$dual_port_bram.v:49$1$0' using process `\dual_port_bram.$proc$dual_port_bram.v:46$48'.
-  created $dff cell `$procdff$231' with positive edge clock.
-Creating register for signal `\dual_port_bram.$past$dual_port_bram.v:55$2$0' using process `\dual_port_bram.$proc$dual_port_bram.v:46$48'.
-  created $dff cell `$procdff$232' with positive edge clock.
-Creating register for signal `\dual_port_bram.$past$dual_port_bram.v:57$3$0' using process `\dual_port_bram.$proc$dual_port_bram.v:46$48'.
-  created $dff cell `$procdff$233' with positive edge clock.
-Creating register for signal `\dual_port_bram.$past$dual_port_bram.v:58$4$0' using process `\dual_port_bram.$proc$dual_port_bram.v:46$48'.
-  created $dff cell `$procdff$234' with positive edge clock.
-Creating register for signal `\dual_port_bram.$past$dual_port_bram.v:61$5$0' using process `\dual_port_bram.$proc$dual_port_bram.v:46$48'.
-  created $dff cell `$procdff$235' with positive edge clock.
-Creating register for signal `\dual_port_bram.$past$dual_port_bram.v:62$6$0' using process `\dual_port_bram.$proc$dual_port_bram.v:46$48'.
-  created $dff cell `$procdff$236' with positive edge clock.
-Creating register for signal `\dual_port_bram.$past$dual_port_bram.v:65$7$0' using process `\dual_port_bram.$proc$dual_port_bram.v:46$48'.
-  created $dff cell `$procdff$237' with positive edge clock.
-Creating register for signal `\dual_port_bram.$past$dual_port_bram.v:66$8$0' using process `\dual_port_bram.$proc$dual_port_bram.v:46$48'.
-  created $dff cell `$procdff$238' with positive edge clock.
-Creating register for signal `\dual_port_bram.$past$dual_port_bram.v:66$9$0' using process `\dual_port_bram.$proc$dual_port_bram.v:46$48'.
-  created $dff cell `$procdff$239' with positive edge clock.
-Creating register for signal `\dual_port_bram.$formal$dual_port_bram.v:49$16_CHECK' using process `\dual_port_bram.$proc$dual_port_bram.v:46$48'.
-  created $dff cell `$procdff$240' with positive edge clock.
-Creating register for signal `\dual_port_bram.$formal$dual_port_bram.v:49$16_EN' using process `\dual_port_bram.$proc$dual_port_bram.v:46$48'.
-  created $dff cell `$procdff$241' with positive edge clock.
-Creating register for signal `\dual_port_bram.$formal$dual_port_bram.v:50$17_CHECK' using process `\dual_port_bram.$proc$dual_port_bram.v:46$48'.
-  created $dff cell `$procdff$242' with positive edge clock.
-Creating register for signal `\dual_port_bram.$formal$dual_port_bram.v:50$17_EN' using process `\dual_port_bram.$proc$dual_port_bram.v:46$48'.
-  created $dff cell `$procdff$243' with positive edge clock.
-Creating register for signal `\dual_port_bram.$formal$dual_port_bram.v:51$18_CHECK' using process `\dual_port_bram.$proc$dual_port_bram.v:46$48'.
-  created $dff cell `$procdff$244' with positive edge clock.
-Creating register for signal `\dual_port_bram.$formal$dual_port_bram.v:51$18_EN' using process `\dual_port_bram.$proc$dual_port_bram.v:46$48'.
-  created $dff cell `$procdff$245' with positive edge clock.
-Creating register for signal `\dual_port_bram.$formal$dual_port_bram.v:52$19_CHECK' using process `\dual_port_bram.$proc$dual_port_bram.v:46$48'.
-  created $dff cell `$procdff$246' with positive edge clock.
-Creating register for signal `\dual_port_bram.$formal$dual_port_bram.v:52$19_EN' using process `\dual_port_bram.$proc$dual_port_bram.v:46$48'.
-  created $dff cell `$procdff$247' with positive edge clock.
-Creating register for signal `\dual_port_bram.$formal$dual_port_bram.v:53$20_CHECK' using process `\dual_port_bram.$proc$dual_port_bram.v:46$48'.
-  created $dff cell `$procdff$248' with positive edge clock.
-Creating register for signal `\dual_port_bram.$formal$dual_port_bram.v:53$20_EN' using process `\dual_port_bram.$proc$dual_port_bram.v:46$48'.
-  created $dff cell `$procdff$249' with positive edge clock.
-Creating register for signal `\dual_port_bram.$formal$dual_port_bram.v:58$21_CHECK' using process `\dual_port_bram.$proc$dual_port_bram.v:46$48'.
-  created $dff cell `$procdff$250' with positive edge clock.
-Creating register for signal `\dual_port_bram.$formal$dual_port_bram.v:58$21_EN' using process `\dual_port_bram.$proc$dual_port_bram.v:46$48'.
-  created $dff cell `$procdff$251' with positive edge clock.
-Creating register for signal `\dual_port_bram.$formal$dual_port_bram.v:60$22_CHECK' using process `\dual_port_bram.$proc$dual_port_bram.v:46$48'.
-  created $dff cell `$procdff$252' with positive edge clock.
-Creating register for signal `\dual_port_bram.$formal$dual_port_bram.v:60$22_EN' using process `\dual_port_bram.$proc$dual_port_bram.v:46$48'.
-  created $dff cell `$procdff$253' with positive edge clock.
-Creating register for signal `\dual_port_bram.$formal$dual_port_bram.v:62$23_CHECK' using process `\dual_port_bram.$proc$dual_port_bram.v:46$48'.
-  created $dff cell `$procdff$254' with positive edge clock.
-Creating register for signal `\dual_port_bram.$formal$dual_port_bram.v:62$23_EN' using process `\dual_port_bram.$proc$dual_port_bram.v:46$48'.
-  created $dff cell `$procdff$255' with positive edge clock.
-Creating register for signal `\dual_port_bram.$formal$dual_port_bram.v:64$24_CHECK' using process `\dual_port_bram.$proc$dual_port_bram.v:46$48'.
-  created $dff cell `$procdff$256' with positive edge clock.
-Creating register for signal `\dual_port_bram.$formal$dual_port_bram.v:64$24_EN' using process `\dual_port_bram.$proc$dual_port_bram.v:46$48'.
-  created $dff cell `$procdff$257' with positive edge clock.
-Creating register for signal `\dual_port_bram.$formal$dual_port_bram.v:66$25_CHECK' using process `\dual_port_bram.$proc$dual_port_bram.v:46$48'.
-  created $dff cell `$procdff$258' with positive edge clock.
-Creating register for signal `\dual_port_bram.$formal$dual_port_bram.v:66$25_EN' using process `\dual_port_bram.$proc$dual_port_bram.v:46$48'.
-  created $dff cell `$procdff$259' with positive edge clock.
-Creating register for signal `\dual_port_bram.$memwr$\r_RAM$dual_port_bram.v:33$10_ADDR' using process `\dual_port_bram.$proc$dual_port_bram.v:30$31'.
-  created $dff cell `$procdff$260' with positive edge clock.
-Creating register for signal `\dual_port_bram.$memwr$\r_RAM$dual_port_bram.v:33$10_DATA' using process `\dual_port_bram.$proc$dual_port_bram.v:30$31'.
-  created $dff cell `$procdff$261' with positive edge clock.
-Creating register for signal `\dual_port_bram.$memwr$\r_RAM$dual_port_bram.v:33$10_EN' using process `\dual_port_bram.$proc$dual_port_bram.v:30$31'.
-  created $dff cell `$procdff$262' with positive edge clock.
-Creating register for signal `\dual_port_bram.$memwr$\r_RAM$dual_port_bram.v:35$11_ADDR' using process `\dual_port_bram.$proc$dual_port_bram.v:30$31'.
-  created $dff cell `$procdff$263' with positive edge clock.
-Creating register for signal `\dual_port_bram.$memwr$\r_RAM$dual_port_bram.v:35$11_DATA' using process `\dual_port_bram.$proc$dual_port_bram.v:30$31'.
-  created $dff cell `$procdff$264' with positive edge clock.
-Creating register for signal `\dual_port_bram.$memwr$\r_RAM$dual_port_bram.v:35$11_EN' using process `\dual_port_bram.$proc$dual_port_bram.v:30$31'.
-  created $dff cell `$procdff$265' with positive edge clock.
-Creating register for signal `\dual_port_bram.$memwr$\r_RAM$dual_port_bram.v:37$12_ADDR' using process `\dual_port_bram.$proc$dual_port_bram.v:30$31'.
-  created $dff cell `$procdff$266' with positive edge clock.
-Creating register for signal `\dual_port_bram.$memwr$\r_RAM$dual_port_bram.v:37$12_DATA' using process `\dual_port_bram.$proc$dual_port_bram.v:30$31'.
-  created $dff cell `$procdff$267' with positive edge clock.
-Creating register for signal `\dual_port_bram.$memwr$\r_RAM$dual_port_bram.v:37$12_EN' using process `\dual_port_bram.$proc$dual_port_bram.v:30$31'.
-  created $dff cell `$procdff$268' with positive edge clock.
-Creating register for signal `\dual_port_bram.$memwr$\r_RAM$dual_port_bram.v:39$13_ADDR' using process `\dual_port_bram.$proc$dual_port_bram.v:30$31'.
-  created $dff cell `$procdff$269' with positive edge clock.
-Creating register for signal `\dual_port_bram.$memwr$\r_RAM$dual_port_bram.v:39$13_DATA' using process `\dual_port_bram.$proc$dual_port_bram.v:30$31'.
-  created $dff cell `$procdff$270' with positive edge clock.
-Creating register for signal `\dual_port_bram.$memwr$\r_RAM$dual_port_bram.v:39$13_EN' using process `\dual_port_bram.$proc$dual_port_bram.v:30$31'.
-  created $dff cell `$procdff$271' with positive edge clock.
-Creating register for signal `\dual_port_bram.\o_READ_DATA_A' using process `\dual_port_bram.$proc$dual_port_bram.v:18$26'.
+Creating register for signal `\dual_port_bram.\r_PAST_VALID' using process `\dual_port_bram.$proc$dual_port_bram.v:51$57'.
   created $dff cell `$procdff$272' with positive edge clock.
-Creating register for signal `\dual_port_bram.\o_READ_DATA_B' using process `\dual_port_bram.$proc$dual_port_bram.v:18$26'.
+Creating register for signal `\dual_port_bram.$past$dual_port_bram.v:54$1$0' using process `\dual_port_bram.$proc$dual_port_bram.v:51$57'.
   created $dff cell `$procdff$273' with positive edge clock.
+Creating register for signal `\dual_port_bram.$past$dual_port_bram.v:61$2$0' using process `\dual_port_bram.$proc$dual_port_bram.v:51$57'.
+  created $dff cell `$procdff$274' with positive edge clock.
+Creating register for signal `\dual_port_bram.$past$dual_port_bram.v:63$3$0' using process `\dual_port_bram.$proc$dual_port_bram.v:51$57'.
+  created $dff cell `$procdff$275' with positive edge clock.
+Creating register for signal `\dual_port_bram.$past$dual_port_bram.v:64$4$0' using process `\dual_port_bram.$proc$dual_port_bram.v:51$57'.
+  created $dff cell `$procdff$276' with positive edge clock.
+Creating register for signal `\dual_port_bram.$past$dual_port_bram.v:67$5$0' using process `\dual_port_bram.$proc$dual_port_bram.v:51$57'.
+  created $dff cell `$procdff$277' with positive edge clock.
+Creating register for signal `\dual_port_bram.$past$dual_port_bram.v:68$6$0' using process `\dual_port_bram.$proc$dual_port_bram.v:51$57'.
+  created $dff cell `$procdff$278' with positive edge clock.
+Creating register for signal `\dual_port_bram.$past$dual_port_bram.v:71$7$0' using process `\dual_port_bram.$proc$dual_port_bram.v:51$57'.
+  created $dff cell `$procdff$279' with positive edge clock.
+Creating register for signal `\dual_port_bram.$past$dual_port_bram.v:72$8$0' using process `\dual_port_bram.$proc$dual_port_bram.v:51$57'.
+  created $dff cell `$procdff$280' with positive edge clock.
+Creating register for signal `\dual_port_bram.$past$dual_port_bram.v:72$9$0' using process `\dual_port_bram.$proc$dual_port_bram.v:51$57'.
+  created $dff cell `$procdff$281' with positive edge clock.
+Creating register for signal `\dual_port_bram.$past$dual_port_bram.v:73$10$0' using process `\dual_port_bram.$proc$dual_port_bram.v:51$57'.
+  created $dff cell `$procdff$282' with positive edge clock.
+Creating register for signal `\dual_port_bram.$past$dual_port_bram.v:74$11$0' using process `\dual_port_bram.$proc$dual_port_bram.v:51$57'.
+  created $dff cell `$procdff$283' with positive edge clock.
+Creating register for signal `\dual_port_bram.$past$dual_port_bram.v:74$12$0' using process `\dual_port_bram.$proc$dual_port_bram.v:51$57'.
+  created $dff cell `$procdff$284' with positive edge clock.
+Creating register for signal `\dual_port_bram.$formal$dual_port_bram.v:54$23_CHECK' using process `\dual_port_bram.$proc$dual_port_bram.v:51$57'.
+  created $dff cell `$procdff$285' with positive edge clock.
+Creating register for signal `\dual_port_bram.$formal$dual_port_bram.v:54$23_EN' using process `\dual_port_bram.$proc$dual_port_bram.v:51$57'.
+  created $dff cell `$procdff$286' with positive edge clock.
+Creating register for signal `\dual_port_bram.$formal$dual_port_bram.v:55$24_CHECK' using process `\dual_port_bram.$proc$dual_port_bram.v:51$57'.
+  created $dff cell `$procdff$287' with positive edge clock.
+Creating register for signal `\dual_port_bram.$formal$dual_port_bram.v:55$24_EN' using process `\dual_port_bram.$proc$dual_port_bram.v:51$57'.
+  created $dff cell `$procdff$288' with positive edge clock.
+Creating register for signal `\dual_port_bram.$formal$dual_port_bram.v:56$25_CHECK' using process `\dual_port_bram.$proc$dual_port_bram.v:51$57'.
+  created $dff cell `$procdff$289' with positive edge clock.
+Creating register for signal `\dual_port_bram.$formal$dual_port_bram.v:56$25_EN' using process `\dual_port_bram.$proc$dual_port_bram.v:51$57'.
+  created $dff cell `$procdff$290' with positive edge clock.
+Creating register for signal `\dual_port_bram.$formal$dual_port_bram.v:57$26_CHECK' using process `\dual_port_bram.$proc$dual_port_bram.v:51$57'.
+  created $dff cell `$procdff$291' with positive edge clock.
+Creating register for signal `\dual_port_bram.$formal$dual_port_bram.v:57$26_EN' using process `\dual_port_bram.$proc$dual_port_bram.v:51$57'.
+  created $dff cell `$procdff$292' with positive edge clock.
+Creating register for signal `\dual_port_bram.$formal$dual_port_bram.v:58$27_CHECK' using process `\dual_port_bram.$proc$dual_port_bram.v:51$57'.
+  created $dff cell `$procdff$293' with positive edge clock.
+Creating register for signal `\dual_port_bram.$formal$dual_port_bram.v:58$27_EN' using process `\dual_port_bram.$proc$dual_port_bram.v:51$57'.
+  created $dff cell `$procdff$294' with positive edge clock.
+Creating register for signal `\dual_port_bram.$formal$dual_port_bram.v:59$28_CHECK' using process `\dual_port_bram.$proc$dual_port_bram.v:51$57'.
+  created $dff cell `$procdff$295' with positive edge clock.
+Creating register for signal `\dual_port_bram.$formal$dual_port_bram.v:59$28_EN' using process `\dual_port_bram.$proc$dual_port_bram.v:51$57'.
+  created $dff cell `$procdff$296' with positive edge clock.
+Creating register for signal `\dual_port_bram.$formal$dual_port_bram.v:64$29_CHECK' using process `\dual_port_bram.$proc$dual_port_bram.v:51$57'.
+  created $dff cell `$procdff$297' with positive edge clock.
+Creating register for signal `\dual_port_bram.$formal$dual_port_bram.v:64$29_EN' using process `\dual_port_bram.$proc$dual_port_bram.v:51$57'.
+  created $dff cell `$procdff$298' with positive edge clock.
+Creating register for signal `\dual_port_bram.$formal$dual_port_bram.v:66$30_CHECK' using process `\dual_port_bram.$proc$dual_port_bram.v:51$57'.
+  created $dff cell `$procdff$299' with positive edge clock.
+Creating register for signal `\dual_port_bram.$formal$dual_port_bram.v:66$30_EN' using process `\dual_port_bram.$proc$dual_port_bram.v:51$57'.
+  created $dff cell `$procdff$300' with positive edge clock.
+Creating register for signal `\dual_port_bram.$formal$dual_port_bram.v:68$31_CHECK' using process `\dual_port_bram.$proc$dual_port_bram.v:51$57'.
+  created $dff cell `$procdff$301' with positive edge clock.
+Creating register for signal `\dual_port_bram.$formal$dual_port_bram.v:68$31_EN' using process `\dual_port_bram.$proc$dual_port_bram.v:51$57'.
+  created $dff cell `$procdff$302' with positive edge clock.
+Creating register for signal `\dual_port_bram.$formal$dual_port_bram.v:70$32_CHECK' using process `\dual_port_bram.$proc$dual_port_bram.v:51$57'.
+  created $dff cell `$procdff$303' with positive edge clock.
+Creating register for signal `\dual_port_bram.$formal$dual_port_bram.v:70$32_EN' using process `\dual_port_bram.$proc$dual_port_bram.v:51$57'.
+  created $dff cell `$procdff$304' with positive edge clock.
+Creating register for signal `\dual_port_bram.$formal$dual_port_bram.v:72$33_CHECK' using process `\dual_port_bram.$proc$dual_port_bram.v:51$57'.
+  created $dff cell `$procdff$305' with positive edge clock.
+Creating register for signal `\dual_port_bram.$formal$dual_port_bram.v:72$33_EN' using process `\dual_port_bram.$proc$dual_port_bram.v:51$57'.
+  created $dff cell `$procdff$306' with positive edge clock.
+Creating register for signal `\dual_port_bram.$formal$dual_port_bram.v:74$34_CHECK' using process `\dual_port_bram.$proc$dual_port_bram.v:51$57'.
+  created $dff cell `$procdff$307' with positive edge clock.
+Creating register for signal `\dual_port_bram.$formal$dual_port_bram.v:74$34_EN' using process `\dual_port_bram.$proc$dual_port_bram.v:51$57'.
+  created $dff cell `$procdff$308' with positive edge clock.
+Creating register for signal `\dual_port_bram.$memwr$\r_RAM$dual_port_bram.v:33$13_ADDR' using process `\dual_port_bram.$proc$dual_port_bram.v:30$40'.
+  created $dff cell `$procdff$309' with positive edge clock.
+Creating register for signal `\dual_port_bram.$memwr$\r_RAM$dual_port_bram.v:33$13_DATA' using process `\dual_port_bram.$proc$dual_port_bram.v:30$40'.
+  created $dff cell `$procdff$310' with positive edge clock.
+Creating register for signal `\dual_port_bram.$memwr$\r_RAM$dual_port_bram.v:33$13_EN' using process `\dual_port_bram.$proc$dual_port_bram.v:30$40'.
+  created $dff cell `$procdff$311' with positive edge clock.
+Creating register for signal `\dual_port_bram.$memwr$\r_RAM$dual_port_bram.v:35$14_ADDR' using process `\dual_port_bram.$proc$dual_port_bram.v:30$40'.
+  created $dff cell `$procdff$312' with positive edge clock.
+Creating register for signal `\dual_port_bram.$memwr$\r_RAM$dual_port_bram.v:35$14_DATA' using process `\dual_port_bram.$proc$dual_port_bram.v:30$40'.
+  created $dff cell `$procdff$313' with positive edge clock.
+Creating register for signal `\dual_port_bram.$memwr$\r_RAM$dual_port_bram.v:35$14_EN' using process `\dual_port_bram.$proc$dual_port_bram.v:30$40'.
+  created $dff cell `$procdff$314' with positive edge clock.
+Creating register for signal `\dual_port_bram.$memwr$\r_RAM$dual_port_bram.v:37$15_ADDR' using process `\dual_port_bram.$proc$dual_port_bram.v:30$40'.
+  created $dff cell `$procdff$315' with positive edge clock.
+Creating register for signal `\dual_port_bram.$memwr$\r_RAM$dual_port_bram.v:37$15_DATA' using process `\dual_port_bram.$proc$dual_port_bram.v:30$40'.
+  created $dff cell `$procdff$316' with positive edge clock.
+Creating register for signal `\dual_port_bram.$memwr$\r_RAM$dual_port_bram.v:37$15_EN' using process `\dual_port_bram.$proc$dual_port_bram.v:30$40'.
+  created $dff cell `$procdff$317' with positive edge clock.
+Creating register for signal `\dual_port_bram.$memwr$\r_RAM$dual_port_bram.v:39$16_ADDR' using process `\dual_port_bram.$proc$dual_port_bram.v:30$40'.
+  created $dff cell `$procdff$318' with positive edge clock.
+Creating register for signal `\dual_port_bram.$memwr$\r_RAM$dual_port_bram.v:39$16_DATA' using process `\dual_port_bram.$proc$dual_port_bram.v:30$40'.
+  created $dff cell `$procdff$319' with positive edge clock.
+Creating register for signal `\dual_port_bram.$memwr$\r_RAM$dual_port_bram.v:39$16_EN' using process `\dual_port_bram.$proc$dual_port_bram.v:30$40'.
+  created $dff cell `$procdff$320' with positive edge clock.
+Creating register for signal `\dual_port_bram.\o_READ_DATA_A' using process `\dual_port_bram.$proc$dual_port_bram.v:18$35'.
+  created $dff cell `$procdff$321' with positive edge clock.
+Creating register for signal `\dual_port_bram.\o_READ_DATA_B' using process `\dual_port_bram.$proc$dual_port_bram.v:18$35'.
+  created $dff cell `$procdff$322' with positive edge clock.
 
 2.2.8. Executing PROC_CLEAN pass (remove empty switches from decision trees).
-Removing empty process `dual_port_bram.$proc$dual_port_bram.v:66$138'.
-Removing empty process `dual_port_bram.$proc$dual_port_bram.v:64$136'.
-Removing empty process `dual_port_bram.$proc$dual_port_bram.v:62$134'.
-Removing empty process `dual_port_bram.$proc$dual_port_bram.v:60$132'.
-Removing empty process `dual_port_bram.$proc$dual_port_bram.v:58$130'.
-Removing empty process `dual_port_bram.$proc$dual_port_bram.v:53$128'.
-Removing empty process `dual_port_bram.$proc$dual_port_bram.v:52$126'.
-Removing empty process `dual_port_bram.$proc$dual_port_bram.v:51$124'.
-Removing empty process `dual_port_bram.$proc$dual_port_bram.v:50$122'.
-Removing empty process `dual_port_bram.$proc$dual_port_bram.v:49$120'.
-Removing empty process `dual_port_bram.$proc$dual_port_bram.v:44$116'.
-Removing empty process `dual_port_bram.$proc$dual_port_bram.v:43$115'.
-Found and cleaned up 4 empty switches in `\dual_port_bram.$proc$dual_port_bram.v:46$48'.
-Removing empty process `dual_port_bram.$proc$dual_port_bram.v:46$48'.
-Found and cleaned up 2 empty switches in `\dual_port_bram.$proc$dual_port_bram.v:30$31'.
-Removing empty process `dual_port_bram.$proc$dual_port_bram.v:30$31'.
-Found and cleaned up 2 empty switches in `\dual_port_bram.$proc$dual_port_bram.v:18$26'.
-Removing empty process `dual_port_bram.$proc$dual_port_bram.v:18$26'.
-Cleaned up 8 empty switches.
+Removing empty process `dual_port_bram.$proc$dual_port_bram.v:74$172'.
+Removing empty process `dual_port_bram.$proc$dual_port_bram.v:72$170'.
+Removing empty process `dual_port_bram.$proc$dual_port_bram.v:70$168'.
+Removing empty process `dual_port_bram.$proc$dual_port_bram.v:68$166'.
+Removing empty process `dual_port_bram.$proc$dual_port_bram.v:66$164'.
+Removing empty process `dual_port_bram.$proc$dual_port_bram.v:64$162'.
+Removing empty process `dual_port_bram.$proc$dual_port_bram.v:59$160'.
+Removing empty process `dual_port_bram.$proc$dual_port_bram.v:58$158'.
+Removing empty process `dual_port_bram.$proc$dual_port_bram.v:57$156'.
+Removing empty process `dual_port_bram.$proc$dual_port_bram.v:56$154'.
+Removing empty process `dual_port_bram.$proc$dual_port_bram.v:55$152'.
+Removing empty process `dual_port_bram.$proc$dual_port_bram.v:54$150'.
+Removing empty process `dual_port_bram.$proc$dual_port_bram.v:44$140'.
+Removing empty process `dual_port_bram.$proc$dual_port_bram.v:43$139'.
+Found and cleaned up 5 empty switches in `\dual_port_bram.$proc$dual_port_bram.v:51$57'.
+Removing empty process `dual_port_bram.$proc$dual_port_bram.v:51$57'.
+Found and cleaned up 2 empty switches in `\dual_port_bram.$proc$dual_port_bram.v:30$40'.
+Removing empty process `dual_port_bram.$proc$dual_port_bram.v:30$40'.
+Found and cleaned up 2 empty switches in `\dual_port_bram.$proc$dual_port_bram.v:18$35'.
+Removing empty process `dual_port_bram.$proc$dual_port_bram.v:18$35'.
+Cleaned up 9 empty switches.
 
 2.3. Executing OPT_EXPR pass (perform const folding).
 Optimizing module dual_port_bram.
-<suppressed ~11 debug messages>
+<suppressed ~14 debug messages>
 
 2.4. Executing OPT_CLEAN pass (remove unused cells and wires).
 Finding unused cells or wires in module \dual_port_bram..
-Removed 0 unused cells and 101 unused wires.
+Removed 0 unused cells and 123 unused wires.
 <suppressed ~1 debug messages>
 
 2.5. Executing CHECK pass (checking for obvious problems).
@@ -287,8 +326,8 @@ Optimizing module dual_port_bram.
 
 2.6.2. Executing OPT_MERGE pass (detect identical cells).
 Finding identical cells in module `\dual_port_bram'.
-<suppressed ~18 debug messages>
-Removed a total of 6 cells.
+<suppressed ~27 debug messages>
+Removed a total of 9 cells.
 
 2.6.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
 Running muxtree optimizer on module \dual_port_bram..
@@ -296,26 +335,26 @@ Running muxtree optimizer on module \dual_port_bram..
   Evaluating internal representation of mux trees.
   Analyzing evaluation results.
 Removed 0 multiplexer ports.
-<suppressed ~24 debug messages>
+<suppressed ~26 debug messages>
 
 2.6.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
   Optimizing cells in module \dual_port_bram.
-    Consolidated identical input bits for $mux cell $procmux$189:
-      Old ports: A=8'00000000, B=8'11111111, Y=$0$memwr$\r_RAM$dual_port_bram.v:33$10_EN[7:0]$34
-      New ports: A=1'0, B=1'1, Y=$0$memwr$\r_RAM$dual_port_bram.v:33$10_EN[7:0]$34 [0]
-      New connections: $0$memwr$\r_RAM$dual_port_bram.v:33$10_EN[7:0]$34 [7:1] = { $0$memwr$\r_RAM$dual_port_bram.v:33$10_EN[7:0]$34 [0] $0$memwr$\r_RAM$dual_port_bram.v:33$10_EN[7:0]$34 [0] $0$memwr$\r_RAM$dual_port_bram.v:33$10_EN[7:0]$34 [0] $0$memwr$\r_RAM$dual_port_bram.v:33$10_EN[7:0]$34 [0] $0$memwr$\r_RAM$dual_port_bram.v:33$10_EN[7:0]$34 [0] $0$memwr$\r_RAM$dual_port_bram.v:33$10_EN[7:0]$34 [0] $0$memwr$\r_RAM$dual_port_bram.v:33$10_EN[7:0]$34 [0] }
-    Consolidated identical input bits for $mux cell $procmux$198:
-      Old ports: A=8'11111111, B=8'00000000, Y=$0$memwr$\r_RAM$dual_port_bram.v:35$11_EN[7:0]$37
-      New ports: A=1'1, B=1'0, Y=$0$memwr$\r_RAM$dual_port_bram.v:35$11_EN[7:0]$37 [0]
-      New connections: $0$memwr$\r_RAM$dual_port_bram.v:35$11_EN[7:0]$37 [7:1] = { $0$memwr$\r_RAM$dual_port_bram.v:35$11_EN[7:0]$37 [0] $0$memwr$\r_RAM$dual_port_bram.v:35$11_EN[7:0]$37 [0] $0$memwr$\r_RAM$dual_port_bram.v:35$11_EN[7:0]$37 [0] $0$memwr$\r_RAM$dual_port_bram.v:35$11_EN[7:0]$37 [0] $0$memwr$\r_RAM$dual_port_bram.v:35$11_EN[7:0]$37 [0] $0$memwr$\r_RAM$dual_port_bram.v:35$11_EN[7:0]$37 [0] $0$memwr$\r_RAM$dual_port_bram.v:35$11_EN[7:0]$37 [0] }
-    Consolidated identical input bits for $mux cell $procmux$207:
-      Old ports: A=8'00000000, B=8'11111111, Y=$0$memwr$\r_RAM$dual_port_bram.v:37$12_EN[7:0]$40
-      New ports: A=1'0, B=1'1, Y=$0$memwr$\r_RAM$dual_port_bram.v:37$12_EN[7:0]$40 [0]
-      New connections: $0$memwr$\r_RAM$dual_port_bram.v:37$12_EN[7:0]$40 [7:1] = { $0$memwr$\r_RAM$dual_port_bram.v:37$12_EN[7:0]$40 [0] $0$memwr$\r_RAM$dual_port_bram.v:37$12_EN[7:0]$40 [0] $0$memwr$\r_RAM$dual_port_bram.v:37$12_EN[7:0]$40 [0] $0$memwr$\r_RAM$dual_port_bram.v:37$12_EN[7:0]$40 [0] $0$memwr$\r_RAM$dual_port_bram.v:37$12_EN[7:0]$40 [0] $0$memwr$\r_RAM$dual_port_bram.v:37$12_EN[7:0]$40 [0] $0$memwr$\r_RAM$dual_port_bram.v:37$12_EN[7:0]$40 [0] }
-    Consolidated identical input bits for $mux cell $procmux$216:
-      Old ports: A=8'11111111, B=8'00000000, Y=$0$memwr$\r_RAM$dual_port_bram.v:39$13_EN[7:0]$43
-      New ports: A=1'1, B=1'0, Y=$0$memwr$\r_RAM$dual_port_bram.v:39$13_EN[7:0]$43 [0]
-      New connections: $0$memwr$\r_RAM$dual_port_bram.v:39$13_EN[7:0]$43 [7:1] = { $0$memwr$\r_RAM$dual_port_bram.v:39$13_EN[7:0]$43 [0] $0$memwr$\r_RAM$dual_port_bram.v:39$13_EN[7:0]$43 [0] $0$memwr$\r_RAM$dual_port_bram.v:39$13_EN[7:0]$43 [0] $0$memwr$\r_RAM$dual_port_bram.v:39$13_EN[7:0]$43 [0] $0$memwr$\r_RAM$dual_port_bram.v:39$13_EN[7:0]$43 [0] $0$memwr$\r_RAM$dual_port_bram.v:39$13_EN[7:0]$43 [0] $0$memwr$\r_RAM$dual_port_bram.v:39$13_EN[7:0]$43 [0] }
+    Consolidated identical input bits for $mux cell $procmux$231:
+      Old ports: A=8'00000000, B=8'11111111, Y=$0$memwr$\r_RAM$dual_port_bram.v:33$13_EN[7:0]$43
+      New ports: A=1'0, B=1'1, Y=$0$memwr$\r_RAM$dual_port_bram.v:33$13_EN[7:0]$43 [0]
+      New connections: $0$memwr$\r_RAM$dual_port_bram.v:33$13_EN[7:0]$43 [7:1] = { $0$memwr$\r_RAM$dual_port_bram.v:33$13_EN[7:0]$43 [0] $0$memwr$\r_RAM$dual_port_bram.v:33$13_EN[7:0]$43 [0] $0$memwr$\r_RAM$dual_port_bram.v:33$13_EN[7:0]$43 [0] $0$memwr$\r_RAM$dual_port_bram.v:33$13_EN[7:0]$43 [0] $0$memwr$\r_RAM$dual_port_bram.v:33$13_EN[7:0]$43 [0] $0$memwr$\r_RAM$dual_port_bram.v:33$13_EN[7:0]$43 [0] $0$memwr$\r_RAM$dual_port_bram.v:33$13_EN[7:0]$43 [0] }
+    Consolidated identical input bits for $mux cell $procmux$240:
+      Old ports: A=8'11111111, B=8'00000000, Y=$0$memwr$\r_RAM$dual_port_bram.v:35$14_EN[7:0]$46
+      New ports: A=1'1, B=1'0, Y=$0$memwr$\r_RAM$dual_port_bram.v:35$14_EN[7:0]$46 [0]
+      New connections: $0$memwr$\r_RAM$dual_port_bram.v:35$14_EN[7:0]$46 [7:1] = { $0$memwr$\r_RAM$dual_port_bram.v:35$14_EN[7:0]$46 [0] $0$memwr$\r_RAM$dual_port_bram.v:35$14_EN[7:0]$46 [0] $0$memwr$\r_RAM$dual_port_bram.v:35$14_EN[7:0]$46 [0] $0$memwr$\r_RAM$dual_port_bram.v:35$14_EN[7:0]$46 [0] $0$memwr$\r_RAM$dual_port_bram.v:35$14_EN[7:0]$46 [0] $0$memwr$\r_RAM$dual_port_bram.v:35$14_EN[7:0]$46 [0] $0$memwr$\r_RAM$dual_port_bram.v:35$14_EN[7:0]$46 [0] }
+    Consolidated identical input bits for $mux cell $procmux$249:
+      Old ports: A=8'00000000, B=8'11111111, Y=$0$memwr$\r_RAM$dual_port_bram.v:37$15_EN[7:0]$49
+      New ports: A=1'0, B=1'1, Y=$0$memwr$\r_RAM$dual_port_bram.v:37$15_EN[7:0]$49 [0]
+      New connections: $0$memwr$\r_RAM$dual_port_bram.v:37$15_EN[7:0]$49 [7:1] = { $0$memwr$\r_RAM$dual_port_bram.v:37$15_EN[7:0]$49 [0] $0$memwr$\r_RAM$dual_port_bram.v:37$15_EN[7:0]$49 [0] $0$memwr$\r_RAM$dual_port_bram.v:37$15_EN[7:0]$49 [0] $0$memwr$\r_RAM$dual_port_bram.v:37$15_EN[7:0]$49 [0] $0$memwr$\r_RAM$dual_port_bram.v:37$15_EN[7:0]$49 [0] $0$memwr$\r_RAM$dual_port_bram.v:37$15_EN[7:0]$49 [0] $0$memwr$\r_RAM$dual_port_bram.v:37$15_EN[7:0]$49 [0] }
+    Consolidated identical input bits for $mux cell $procmux$258:
+      Old ports: A=8'11111111, B=8'00000000, Y=$0$memwr$\r_RAM$dual_port_bram.v:39$16_EN[7:0]$52
+      New ports: A=1'1, B=1'0, Y=$0$memwr$\r_RAM$dual_port_bram.v:39$16_EN[7:0]$52 [0]
+      New connections: $0$memwr$\r_RAM$dual_port_bram.v:39$16_EN[7:0]$52 [7:1] = { $0$memwr$\r_RAM$dual_port_bram.v:39$16_EN[7:0]$52 [0] $0$memwr$\r_RAM$dual_port_bram.v:39$16_EN[7:0]$52 [0] $0$memwr$\r_RAM$dual_port_bram.v:39$16_EN[7:0]$52 [0] $0$memwr$\r_RAM$dual_port_bram.v:39$16_EN[7:0]$52 [0] $0$memwr$\r_RAM$dual_port_bram.v:39$16_EN[7:0]$52 [0] $0$memwr$\r_RAM$dual_port_bram.v:39$16_EN[7:0]$52 [0] $0$memwr$\r_RAM$dual_port_bram.v:39$16_EN[7:0]$52 [0] }
   Optimizing cells in module \dual_port_bram.
 Performed a total of 4 changes.
 
@@ -327,8 +366,8 @@ Removed a total of 0 cells.
 
 2.6.7. Executing OPT_CLEAN pass (remove unused cells and wires).
 Finding unused cells or wires in module \dual_port_bram..
-Removed 0 unused cells and 6 unused wires.
-<suppressed ~7 debug messages>
+Removed 0 unused cells and 9 unused wires.
+<suppressed ~8 debug messages>
 
 2.6.8. Executing OPT_EXPR pass (perform const folding).
 Optimizing module dual_port_bram.
@@ -341,7 +380,7 @@ Running muxtree optimizer on module \dual_port_bram..
   Evaluating internal representation of mux trees.
   Analyzing evaluation results.
 Removed 0 multiplexer ports.
-<suppressed ~24 debug messages>
+<suppressed ~26 debug messages>
 
 2.6.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
   Optimizing cells in module \dual_port_bram.
@@ -362,22 +401,22 @@ Optimizing module dual_port_bram.
 2.6.16. Finished OPT passes. (There is nothing left to do.)
 
 2.7. Executing WREDUCE pass (reducing word size of cells).
-Removed top 31 bits (of 32) from port B of cell dual_port_bram.$and$dual_port_bram.v:55$84 ($and).
-Removed top 31 bits (of 32) from port Y of cell dual_port_bram.$and$dual_port_bram.v:55$84 ($and).
-Removed top 31 bits (of 32) from port B of cell dual_port_bram.$and$dual_port_bram.v:55$86 ($and).
-Removed top 31 bits (of 32) from port Y of cell dual_port_bram.$and$dual_port_bram.v:55$86 ($and).
-Removed top 7 bits (of 8) from FF cell dual_port_bram.$procdff$262 ($dff).
-Removed top 7 bits (of 8) from FF cell dual_port_bram.$procdff$265 ($dff).
-Removed top 7 bits (of 8) from FF cell dual_port_bram.$procdff$268 ($dff).
-Removed top 7 bits (of 8) from FF cell dual_port_bram.$procdff$271 ($dff).
-Removed top 31 bits (of 32) from wire dual_port_bram.$and$dual_port_bram.v:55$84_Y.
-Removed top 31 bits (of 32) from wire dual_port_bram.$and$dual_port_bram.v:55$86_Y.
+Removed top 31 bits (of 32) from port B of cell dual_port_bram.$and$dual_port_bram.v:61$101 ($and).
+Removed top 31 bits (of 32) from port Y of cell dual_port_bram.$and$dual_port_bram.v:61$101 ($and).
+Removed top 31 bits (of 32) from port B of cell dual_port_bram.$and$dual_port_bram.v:61$103 ($and).
+Removed top 31 bits (of 32) from port Y of cell dual_port_bram.$and$dual_port_bram.v:61$103 ($and).
+Removed top 7 bits (of 8) from FF cell dual_port_bram.$procdff$311 ($dff).
+Removed top 7 bits (of 8) from FF cell dual_port_bram.$procdff$314 ($dff).
+Removed top 7 bits (of 8) from FF cell dual_port_bram.$procdff$317 ($dff).
+Removed top 7 bits (of 8) from FF cell dual_port_bram.$procdff$320 ($dff).
+Removed top 31 bits (of 32) from wire dual_port_bram.$and$dual_port_bram.v:61$101_Y.
+Removed top 31 bits (of 32) from wire dual_port_bram.$and$dual_port_bram.v:61$103_Y.
 
 2.8. Executing MEMORY_DFF pass (merging $dff cells to $memrd and $memwr).
-Checking cell `$memwr$\r_RAM$dual_port_bram.v:33$100' in module `\dual_port_bram': merged $dff to cell.
-Checking cell `$memwr$\r_RAM$dual_port_bram.v:35$101' in module `\dual_port_bram': merged $dff to cell.
-Checking cell `$memwr$\r_RAM$dual_port_bram.v:37$102' in module `\dual_port_bram': merged $dff to cell.
-Checking cell `$memwr$\r_RAM$dual_port_bram.v:39$103' in module `\dual_port_bram': merged $dff to cell.
+Checking cell `$memwr$\r_RAM$dual_port_bram.v:33$120' in module `\dual_port_bram': merged $dff to cell.
+Checking cell `$memwr$\r_RAM$dual_port_bram.v:35$121' in module `\dual_port_bram': merged $dff to cell.
+Checking cell `$memwr$\r_RAM$dual_port_bram.v:37$122' in module `\dual_port_bram': merged $dff to cell.
+Checking cell `$memwr$\r_RAM$dual_port_bram.v:39$123' in module `\dual_port_bram': merged $dff to cell.
 
 2.9. Executing OPT_CLEAN pass (remove unused cells and wires).
 Finding unused cells or wires in module \dual_port_bram..
@@ -386,17 +425,18 @@ Removed 12 unused cells and 14 unused wires.
 
 2.10. Executing MEMORY_COLLECT pass (generating $mem cells).
 Collecting $memrd, $memwr and $meminit for memory `\r_RAM' in module `\dual_port_bram':
-  $memwr$\r_RAM$dual_port_bram.v:33$100 ($memwr)
-  $memwr$\r_RAM$dual_port_bram.v:35$101 ($memwr)
-  $memwr$\r_RAM$dual_port_bram.v:37$102 ($memwr)
-  $memwr$\r_RAM$dual_port_bram.v:39$103 ($memwr)
-  $memrd$\r_RAM$dual_port_bram.v:21$28 ($memrd)
-  $memrd$\r_RAM$dual_port_bram.v:25$30 ($memrd)
-  $memrd$\r_RAM$dual_port_bram.v:39$47 ($memrd)
-  $memrd$\r_RAM$dual_port_bram.v:35$45 ($memrd)
-  $memrd$\r_RAM$dual_port_bram.v:58$90 ($memrd)
-  $memrd$\r_RAM$dual_port_bram.v:62$94 ($memrd)
-  $memrd$\r_RAM$dual_port_bram.v:66$98 ($memrd)
+  $memwr$\r_RAM$dual_port_bram.v:33$120 ($memwr)
+  $memwr$\r_RAM$dual_port_bram.v:35$121 ($memwr)
+  $memwr$\r_RAM$dual_port_bram.v:37$122 ($memwr)
+  $memwr$\r_RAM$dual_port_bram.v:39$123 ($memwr)
+  $memrd$\r_RAM$dual_port_bram.v:21$37 ($memrd)
+  $memrd$\r_RAM$dual_port_bram.v:25$39 ($memrd)
+  $memrd$\r_RAM$dual_port_bram.v:39$56 ($memrd)
+  $memrd$\r_RAM$dual_port_bram.v:35$54 ($memrd)
+  $memrd$\r_RAM$dual_port_bram.v:64$107 ($memrd)
+  $memrd$\r_RAM$dual_port_bram.v:68$111 ($memrd)
+  $memrd$\r_RAM$dual_port_bram.v:72$115 ($memrd)
+  $memrd$\r_RAM$dual_port_bram.v:74$118 ($memrd)
 
 2.11. Executing OPT pass (performing simple optimizations).
 
@@ -421,25 +461,25 @@ Removed 0 unused cells and 2 unused wires.
 
 === dual_port_bram ===
 
-   Number of wires:                 93
-   Number of wire bits:            280
+   Number of wires:                108
+   Number of wire bits:            312
    Number of public wires:          14
    Number of public wire bits:      54
    Number of memories:               0
    Number of memory bits:            0
    Number of processes:              0
-   Number of cells:                 87
-     $assert                         5
-     $assume                         6
-     $dff                           26
-     $eq                             3
+   Number of cells:                105
+     $assert                         6
+     $assume                         9
+     $dff                           32
+     $eq                             4
      $initstate                      1
      $logic_and                      2
      $logic_not                      3
      $mem                            1
-     $mux                           34
-     $ne                             5
-     $not                            1
+     $mux                           38
+     $ne                             6
+     $not                            3
 
 2.13. Executing CHECK pass (checking for obvious problems).
 checking module dual_port_bram..
@@ -451,8 +491,8 @@ found and reported 0 problems.
 
 5. Executing OPT_CLEAN pass (remove unused cells and wires).
 Finding unused cells or wires in module \dual_port_bram..
-Removed 5 unused cells and 5 unused wires.
-<suppressed ~6 debug messages>
+Removed 6 unused cells and 6 unused wires.
+<suppressed ~7 debug messages>
 
 6. Executing SETUNDEF pass (replace undef values with defined constants).
 
@@ -489,7 +529,7 @@ Module dual_port_bram directly or indirectly contains formal properties -> setti
 10. Executing ILANG backend.
 Output filename: ../model/design.il
 
-End of script. Logfile hash: 9413cf2db6
-CPU: user 0.14s system 0.00s, MEM: 18.27 MB total, 9.88 MB resident
+End of script. Logfile hash: f822765110
+CPU: user 0.13s system 0.00s, MEM: 18.37 MB total, 10.23 MB resident
 Yosys 0.9 (git sha1 UNKNOWN, clang 9.0.0 -march=x86-64 -mtune=generic -O2 -fno-plt -fPIC -Os)
-Time spent: 31% 7x opt_clean (0 sec), 12% 6x opt_expr (0 sec), ...
+Time spent: 30% 7x opt_clean (0 sec), 11% 6x opt_expr (0 sec), ...

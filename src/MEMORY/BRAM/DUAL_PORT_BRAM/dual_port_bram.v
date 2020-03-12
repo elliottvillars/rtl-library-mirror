@@ -41,33 +41,39 @@ end
 
 `ifdef FORMAL
 	reg r_PAST_VALID = 0;
-	initial assume(i_CLK == 0);
+	initial 
+	begin	
+	assume(i_CLK == 0);
+	assume(i_WRITE_ENABLE_A == 0);
+	assume(i_WRITE_ENABLE_B == 0);
+end
 
-	always@(posedge i_CLK)
+always@(posedge i_CLK)
+begin
+	r_PAST_VALID <= 1;
+	assume($changed(i_CLK));
+	assume(i_READ_ADDRESS_A != i_WRITE_ADDRESS_A);
+	assume(i_READ_ADDRESS_B != i_WRITE_ADDRESS_B);
+	assume(i_WRITE_ADDRESS_A != i_READ_ADDRESS_B);
+	assume(i_WRITE_ADDRESS_B != i_READ_ADDRESS_A);
+	assume(i_WRITE_ADDRESS_A != i_WRITE_ADDRESS_B);
+
+	if(r_PAST_VALID == 1 && $rose(i_CLK))
 	begin
-		r_PAST_VALID <= 1;
-		assume($changed(i_CLK));
-		assume(i_READ_ADDRESS_A != i_WRITE_ADDRESS_A);
-		assume(i_READ_ADDRESS_B != i_WRITE_ADDRESS_B);
-		assume(i_WRITE_ADDRESS_A != i_READ_ADDRESS_B);
-		assume(i_WRITE_ADDRESS_B != i_READ_ADDRESS_A);
-		
-		if(r_PAST_VALID == 1 && $rose(i_CLK))
-		begin
-			if($past(i_READ_ENABLE_A) == 1)
-				assert(o_READ_DATA_A == r_RAM[$past(i_READ_ADDRESS_A)]);
-			else
-				assert(o_READ_DATA_A == 0);
-			if($past(i_READ_ENABLE_B) == 1)
-				assert(o_READ_DATA_B == r_RAM[$past(i_READ_ADDRESS_B)]);
-			else
-				assert(o_READ_DATA_B == 0);
-			if($past(i_WRITE_ENABLE_A) == 1)//FIXME
-				assert(r_RAM[$past(i_WRITE_ADDRESS_A)] == $past(i_WRITE_DATA_A));
-			//if($past(i_WRITE_ENABLE_B) == 1)
-				//assert(r_RAM[$past(i_WRITE_ADDRESS_B)] == $past(i_WRITE_DATA_B));
-		end
-
+		if($past(i_READ_ENABLE_A) == 1)
+			assert(o_READ_DATA_A == r_RAM[$past(i_READ_ADDRESS_A)]);
+		else
+			assert(o_READ_DATA_A == 0);
+		if($past(i_READ_ENABLE_B) == 1)
+			assert(o_READ_DATA_B == r_RAM[$past(i_READ_ADDRESS_B)]);
+		else
+			assert(o_READ_DATA_B == 0);
+		if($past(i_WRITE_ENABLE_A) == 1)
+			assert(r_RAM[$past(i_WRITE_ADDRESS_A)] == $past(i_WRITE_DATA_A));
+		if($past(i_WRITE_ENABLE_B) == 1)
+			assert(r_RAM[$past(i_WRITE_ADDRESS_B)] == $past(i_WRITE_DATA_B));
 	end
+
+end
 `endif
 endmodule

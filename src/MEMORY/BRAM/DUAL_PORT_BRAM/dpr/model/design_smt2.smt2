@@ -60,213 +60,252 @@
 ; yosys-smt2-wire i_CLK 1
 (declare-fun |dual_port_bram#13| (|dual_port_bram_s|) Bool) ; \i_CLK
 (define-fun |dual_port_bram_n i_CLK| ((state |dual_port_bram_s|)) Bool (|dual_port_bram#13| state))
-; yosys-smt2-register $past$dual_port_bram.v:66$9$0 8
-(declare-fun |dual_port_bram#14| (|dual_port_bram_s|) (_ BitVec 8)) ; $past$dual_port_bram.v:66$9$0
-(define-fun |dual_port_bram_n $past$dual_port_bram.v:66$9$0| ((state |dual_port_bram_s|)) (_ BitVec 8) (|dual_port_bram#14| state))
-; yosys-smt2-register $past$dual_port_bram.v:66$8$0 4
-(declare-fun |dual_port_bram#15| (|dual_port_bram_s|) (_ BitVec 4)) ; $past$dual_port_bram.v:66$8$0
-(define-fun |dual_port_bram_n $past$dual_port_bram.v:66$8$0| ((state |dual_port_bram_s|)) (_ BitVec 4) (|dual_port_bram#15| state))
-; yosys-smt2-register $past$dual_port_bram.v:62$6$0 4
-(declare-fun |dual_port_bram#16| (|dual_port_bram_s|) (_ BitVec 4)) ; $past$dual_port_bram.v:62$6$0
-(define-fun |dual_port_bram_n $past$dual_port_bram.v:62$6$0| ((state |dual_port_bram_s|)) (_ BitVec 4) (|dual_port_bram#16| state))
-; yosys-smt2-register $past$dual_port_bram.v:58$4$0 4
-(declare-fun |dual_port_bram#17| (|dual_port_bram_s|) (_ BitVec 4)) ; $past$dual_port_bram.v:58$4$0
-(define-fun |dual_port_bram_n $past$dual_port_bram.v:58$4$0| ((state |dual_port_bram_s|)) (_ BitVec 4) (|dual_port_bram#17| state))
-; yosys-smt2-register $formal$dual_port_bram.v:66$25_EN 1
-(declare-fun |dual_port_bram#18| (|dual_port_bram_s|) (_ BitVec 1)) ; $formal$dual_port_bram.v:66$25_EN
-(define-fun |dual_port_bram_n $formal$dual_port_bram.v:66$25_EN| ((state |dual_port_bram_s|)) Bool (= ((_ extract 0 0) (|dual_port_bram#18| state)) #b1))
-; yosys-smt2-register $formal$dual_port_bram.v:66$25_CHECK 1
-(declare-fun |dual_port_bram#19| (|dual_port_bram_s|) (_ BitVec 1)) ; $formal$dual_port_bram.v:66$25_CHECK
-(define-fun |dual_port_bram_n $formal$dual_port_bram.v:66$25_CHECK| ((state |dual_port_bram_s|)) Bool (= ((_ extract 0 0) (|dual_port_bram#19| state)) #b1))
-; yosys-smt2-register $formal$dual_port_bram.v:64$24_EN 1
-(declare-fun |dual_port_bram#20| (|dual_port_bram_s|) (_ BitVec 1)) ; $formal$dual_port_bram.v:64$24_EN
-(define-fun |dual_port_bram_n $formal$dual_port_bram.v:64$24_EN| ((state |dual_port_bram_s|)) Bool (= ((_ extract 0 0) (|dual_port_bram#20| state)) #b1))
-; yosys-smt2-register $formal$dual_port_bram.v:64$24_CHECK 1
-(declare-fun |dual_port_bram#21| (|dual_port_bram_s|) (_ BitVec 1)) ; $formal$dual_port_bram.v:64$24_CHECK
-(define-fun |dual_port_bram_n $formal$dual_port_bram.v:64$24_CHECK| ((state |dual_port_bram_s|)) Bool (= ((_ extract 0 0) (|dual_port_bram#21| state)) #b1))
-; yosys-smt2-register $formal$dual_port_bram.v:62$23_EN 1
-(declare-fun |dual_port_bram#22| (|dual_port_bram_s|) (_ BitVec 1)) ; $formal$dual_port_bram.v:62$23_EN
-(define-fun |dual_port_bram_n $formal$dual_port_bram.v:62$23_EN| ((state |dual_port_bram_s|)) Bool (= ((_ extract 0 0) (|dual_port_bram#22| state)) #b1))
-; yosys-smt2-register $formal$dual_port_bram.v:62$23_CHECK 1
-(declare-fun |dual_port_bram#23| (|dual_port_bram_s|) (_ BitVec 1)) ; $formal$dual_port_bram.v:62$23_CHECK
-(define-fun |dual_port_bram_n $formal$dual_port_bram.v:62$23_CHECK| ((state |dual_port_bram_s|)) Bool (= ((_ extract 0 0) (|dual_port_bram#23| state)) #b1))
-; yosys-smt2-register $formal$dual_port_bram.v:60$22_EN 1
-(declare-fun |dual_port_bram#24| (|dual_port_bram_s|) (_ BitVec 1)) ; $formal$dual_port_bram.v:60$22_EN
-(define-fun |dual_port_bram_n $formal$dual_port_bram.v:60$22_EN| ((state |dual_port_bram_s|)) Bool (= ((_ extract 0 0) (|dual_port_bram#24| state)) #b1))
-; yosys-smt2-register $formal$dual_port_bram.v:60$22_CHECK 1
-(declare-fun |dual_port_bram#25| (|dual_port_bram_s|) (_ BitVec 1)) ; $formal$dual_port_bram.v:60$22_CHECK
-(define-fun |dual_port_bram_n $formal$dual_port_bram.v:60$22_CHECK| ((state |dual_port_bram_s|)) Bool (= ((_ extract 0 0) (|dual_port_bram#25| state)) #b1))
-; yosys-smt2-register $formal$dual_port_bram.v:58$21_EN 1
-(declare-fun |dual_port_bram#26| (|dual_port_bram_s|) (_ BitVec 1)) ; $formal$dual_port_bram.v:58$21_EN
-(define-fun |dual_port_bram_n $formal$dual_port_bram.v:58$21_EN| ((state |dual_port_bram_s|)) Bool (= ((_ extract 0 0) (|dual_port_bram#26| state)) #b1))
-; yosys-smt2-register $formal$dual_port_bram.v:58$21_CHECK 1
-(declare-fun |dual_port_bram#27| (|dual_port_bram_s|) (_ BitVec 1)) ; $formal$dual_port_bram.v:58$21_CHECK
-(define-fun |dual_port_bram_n $formal$dual_port_bram.v:58$21_CHECK| ((state |dual_port_bram_s|)) Bool (= ((_ extract 0 0) (|dual_port_bram#27| state)) #b1))
-; yosys-smt2-register $eq$dual_port_bram.v:65$97_Y 1
-(declare-fun |dual_port_bram#28| (|dual_port_bram_s|) (_ BitVec 1)) ; $eq$dual_port_bram.v:65$97_Y
-(define-fun |dual_port_bram_n $eq$dual_port_bram.v:65$97_Y| ((state |dual_port_bram_s|)) Bool (= ((_ extract 0 0) (|dual_port_bram#28| state)) #b1))
-; yosys-smt2-register $eq$dual_port_bram.v:61$93_Y 1
-(declare-fun |dual_port_bram#29| (|dual_port_bram_s|) (_ BitVec 1)) ; $eq$dual_port_bram.v:61$93_Y
-(define-fun |dual_port_bram_n $eq$dual_port_bram.v:61$93_Y| ((state |dual_port_bram_s|)) Bool (= ((_ extract 0 0) (|dual_port_bram#29| state)) #b1))
-; yosys-smt2-register $eq$dual_port_bram.v:57$89_Y 1
-(declare-fun |dual_port_bram#30| (|dual_port_bram_s|) (_ BitVec 1)) ; $eq$dual_port_bram.v:57$89_Y
-(define-fun |dual_port_bram_n $eq$dual_port_bram.v:57$89_Y| ((state |dual_port_bram_s|)) Bool (= ((_ extract 0 0) (|dual_port_bram#30| state)) #b1))
-; yosys-smt2-register $and$dual_port_bram.v:55$84_Y 1
-(declare-fun |dual_port_bram#31| (|dual_port_bram_s|) (_ BitVec 1)) ; $and$dual_port_bram.v:55$84_Y
-(define-fun |dual_port_bram_n $and$dual_port_bram.v:55$84_Y| ((state |dual_port_bram_s|)) Bool (= ((_ extract 0 0) (|dual_port_bram#31| state)) #b1))
-(define-fun |dual_port_bram#32| ((state |dual_port_bram_s|)) Bool (distinct (|dual_port_bram#7| state) (|dual_port_bram#12| state))) ; $0$formal$dual_port_bram.v:53$20_CHECK[0:0]$66
-; yosys-smt2-assume 0 dual_port_bram.v:53
-(define-fun |dual_port_bram_u 0| ((state |dual_port_bram_s|)) Bool (or (|dual_port_bram#32| state) (not true))) ; $assume$dual_port_bram.v:53$109
-(define-fun |dual_port_bram#33| ((state |dual_port_bram_s|)) Bool (distinct (|dual_port_bram#8| state) (|dual_port_bram#11| state))) ; $0$formal$dual_port_bram.v:52$19_CHECK[0:0]$64
-; yosys-smt2-assume 1 dual_port_bram.v:52
-(define-fun |dual_port_bram_u 1| ((state |dual_port_bram_s|)) Bool (or (|dual_port_bram#33| state) (not true))) ; $assume$dual_port_bram.v:52$108
-(define-fun |dual_port_bram#34| ((state |dual_port_bram_s|)) Bool (distinct (|dual_port_bram#11| state) (|dual_port_bram#7| state))) ; $0$formal$dual_port_bram.v:51$18_CHECK[0:0]$62
-; yosys-smt2-assume 2 dual_port_bram.v:51
-(define-fun |dual_port_bram_u 2| ((state |dual_port_bram_s|)) Bool (or (|dual_port_bram#34| state) (not true))) ; $assume$dual_port_bram.v:51$107
-(define-fun |dual_port_bram#35| ((state |dual_port_bram_s|)) Bool (distinct (|dual_port_bram#12| state) (|dual_port_bram#8| state))) ; $0$formal$dual_port_bram.v:50$17_CHECK[0:0]$60
-; yosys-smt2-assume 3 dual_port_bram.v:50
-(define-fun |dual_port_bram_u 3| ((state |dual_port_bram_s|)) Bool (or (|dual_port_bram#35| state) (not true))) ; $assume$dual_port_bram.v:50$106
-(define-fun |dual_port_bram#36| ((state |dual_port_bram_s|)) Bool (distinct (|dual_port_bram#31| state) (ite (|dual_port_bram#13| state) #b1 #b0))) ; $0$formal$dual_port_bram.v:49$16_CHECK[0:0]$58
-; yosys-smt2-assume 4 dual_port_bram.v:49
-(define-fun |dual_port_bram_u 4| ((state |dual_port_bram_s|)) Bool (or (|dual_port_bram#36| state) (not true))) ; $assume$dual_port_bram.v:49$105
-(define-fun |dual_port_bram#37| ((state |dual_port_bram_s|)) (_ BitVec 1) (bvnot (ite (|dual_port_bram#13| state) #b1 #b0))) ; $0$formal$dual_port_bram.v:44$14_CHECK[0:0]$117
-(define-fun |dual_port_bram#38| ((state |dual_port_bram_s|)) Bool (|dual_port_bram_is| state)) ; $0$formal$dual_port_bram.v:44$14_EN[0:0]$118
-; yosys-smt2-assume 5 dual_port_bram.v:44
-(define-fun |dual_port_bram_u 5| ((state |dual_port_bram_s|)) Bool (or (= ((_ extract 0 0) (|dual_port_bram#37| state)) #b1) (not (|dual_port_bram#38| state)))) ; $assume$dual_port_bram.v:44$104
-; yosys-smt2-assert 0 dual_port_bram.v:66
-(define-fun |dual_port_bram_a 0| ((state |dual_port_bram_s|)) Bool (or (= ((_ extract 0 0) (|dual_port_bram#19| state)) #b1) (not (= ((_ extract 0 0) (|dual_port_bram#18| state)) #b1)))) ; $assert$dual_port_bram.v:66$114
-; yosys-smt2-assert 1 dual_port_bram.v:64
-(define-fun |dual_port_bram_a 1| ((state |dual_port_bram_s|)) Bool (or (= ((_ extract 0 0) (|dual_port_bram#21| state)) #b1) (not (= ((_ extract 0 0) (|dual_port_bram#20| state)) #b1)))) ; $assert$dual_port_bram.v:64$113
-; yosys-smt2-assert 2 dual_port_bram.v:62
-(define-fun |dual_port_bram_a 2| ((state |dual_port_bram_s|)) Bool (or (= ((_ extract 0 0) (|dual_port_bram#23| state)) #b1) (not (= ((_ extract 0 0) (|dual_port_bram#22| state)) #b1)))) ; $assert$dual_port_bram.v:62$112
-; yosys-smt2-assert 3 dual_port_bram.v:60
-(define-fun |dual_port_bram_a 3| ((state |dual_port_bram_s|)) Bool (or (= ((_ extract 0 0) (|dual_port_bram#25| state)) #b1) (not (= ((_ extract 0 0) (|dual_port_bram#24| state)) #b1)))) ; $assert$dual_port_bram.v:60$111
-; yosys-smt2-assert 4 dual_port_bram.v:58
-(define-fun |dual_port_bram_a 4| ((state |dual_port_bram_s|)) Bool (or (= ((_ extract 0 0) (|dual_port_bram#27| state)) #b1) (not (= ((_ extract 0 0) (|dual_port_bram#26| state)) #b1)))) ; $assert$dual_port_bram.v:58$110
-; yosys-smt2-anyseq dual_port_bram#39 1 $auto$setundef.cc:524:execute$279
-(declare-fun |dual_port_bram#39| (|dual_port_bram_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2305:Anyseq$280
-; yosys-smt2-anyseq dual_port_bram#40 1 $auto$setundef.cc:524:execute$277
-(declare-fun |dual_port_bram#40| (|dual_port_bram_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2305:Anyseq$278
-; yosys-smt2-memory r_RAM 4 8 7 4 sync
-(declare-fun |dual_port_bram#41#0| (|dual_port_bram_s|) (Array (_ BitVec 4) (_ BitVec 8))) ; r_RAM
-(define-fun |dual_port_bram_m r_RAM| ((state |dual_port_bram_s|)) (Array (_ BitVec 4) (_ BitVec 8)) (|dual_port_bram#41#0| state))
+; yosys-smt2-register $past$dual_port_bram.v:74$12$0 8
+(declare-fun |dual_port_bram#14| (|dual_port_bram_s|) (_ BitVec 8)) ; $past$dual_port_bram.v:74$12$0
+(define-fun |dual_port_bram_n $past$dual_port_bram.v:74$12$0| ((state |dual_port_bram_s|)) (_ BitVec 8) (|dual_port_bram#14| state))
+; yosys-smt2-register $past$dual_port_bram.v:74$11$0 4
+(declare-fun |dual_port_bram#15| (|dual_port_bram_s|) (_ BitVec 4)) ; $past$dual_port_bram.v:74$11$0
+(define-fun |dual_port_bram_n $past$dual_port_bram.v:74$11$0| ((state |dual_port_bram_s|)) (_ BitVec 4) (|dual_port_bram#15| state))
+; yosys-smt2-register $past$dual_port_bram.v:72$9$0 8
+(declare-fun |dual_port_bram#16| (|dual_port_bram_s|) (_ BitVec 8)) ; $past$dual_port_bram.v:72$9$0
+(define-fun |dual_port_bram_n $past$dual_port_bram.v:72$9$0| ((state |dual_port_bram_s|)) (_ BitVec 8) (|dual_port_bram#16| state))
+; yosys-smt2-register $past$dual_port_bram.v:72$8$0 4
+(declare-fun |dual_port_bram#17| (|dual_port_bram_s|) (_ BitVec 4)) ; $past$dual_port_bram.v:72$8$0
+(define-fun |dual_port_bram_n $past$dual_port_bram.v:72$8$0| ((state |dual_port_bram_s|)) (_ BitVec 4) (|dual_port_bram#17| state))
+; yosys-smt2-register $past$dual_port_bram.v:68$6$0 4
+(declare-fun |dual_port_bram#18| (|dual_port_bram_s|) (_ BitVec 4)) ; $past$dual_port_bram.v:68$6$0
+(define-fun |dual_port_bram_n $past$dual_port_bram.v:68$6$0| ((state |dual_port_bram_s|)) (_ BitVec 4) (|dual_port_bram#18| state))
+; yosys-smt2-register $past$dual_port_bram.v:64$4$0 4
+(declare-fun |dual_port_bram#19| (|dual_port_bram_s|) (_ BitVec 4)) ; $past$dual_port_bram.v:64$4$0
+(define-fun |dual_port_bram_n $past$dual_port_bram.v:64$4$0| ((state |dual_port_bram_s|)) (_ BitVec 4) (|dual_port_bram#19| state))
+; yosys-smt2-register $formal$dual_port_bram.v:74$34_EN 1
+(declare-fun |dual_port_bram#20| (|dual_port_bram_s|) (_ BitVec 1)) ; $formal$dual_port_bram.v:74$34_EN
+(define-fun |dual_port_bram_n $formal$dual_port_bram.v:74$34_EN| ((state |dual_port_bram_s|)) Bool (= ((_ extract 0 0) (|dual_port_bram#20| state)) #b1))
+; yosys-smt2-register $formal$dual_port_bram.v:74$34_CHECK 1
+(declare-fun |dual_port_bram#21| (|dual_port_bram_s|) (_ BitVec 1)) ; $formal$dual_port_bram.v:74$34_CHECK
+(define-fun |dual_port_bram_n $formal$dual_port_bram.v:74$34_CHECK| ((state |dual_port_bram_s|)) Bool (= ((_ extract 0 0) (|dual_port_bram#21| state)) #b1))
+; yosys-smt2-register $formal$dual_port_bram.v:72$33_EN 1
+(declare-fun |dual_port_bram#22| (|dual_port_bram_s|) (_ BitVec 1)) ; $formal$dual_port_bram.v:72$33_EN
+(define-fun |dual_port_bram_n $formal$dual_port_bram.v:72$33_EN| ((state |dual_port_bram_s|)) Bool (= ((_ extract 0 0) (|dual_port_bram#22| state)) #b1))
+; yosys-smt2-register $formal$dual_port_bram.v:72$33_CHECK 1
+(declare-fun |dual_port_bram#23| (|dual_port_bram_s|) (_ BitVec 1)) ; $formal$dual_port_bram.v:72$33_CHECK
+(define-fun |dual_port_bram_n $formal$dual_port_bram.v:72$33_CHECK| ((state |dual_port_bram_s|)) Bool (= ((_ extract 0 0) (|dual_port_bram#23| state)) #b1))
+; yosys-smt2-register $formal$dual_port_bram.v:70$32_EN 1
+(declare-fun |dual_port_bram#24| (|dual_port_bram_s|) (_ BitVec 1)) ; $formal$dual_port_bram.v:70$32_EN
+(define-fun |dual_port_bram_n $formal$dual_port_bram.v:70$32_EN| ((state |dual_port_bram_s|)) Bool (= ((_ extract 0 0) (|dual_port_bram#24| state)) #b1))
+; yosys-smt2-register $formal$dual_port_bram.v:70$32_CHECK 1
+(declare-fun |dual_port_bram#25| (|dual_port_bram_s|) (_ BitVec 1)) ; $formal$dual_port_bram.v:70$32_CHECK
+(define-fun |dual_port_bram_n $formal$dual_port_bram.v:70$32_CHECK| ((state |dual_port_bram_s|)) Bool (= ((_ extract 0 0) (|dual_port_bram#25| state)) #b1))
+; yosys-smt2-register $formal$dual_port_bram.v:68$31_EN 1
+(declare-fun |dual_port_bram#26| (|dual_port_bram_s|) (_ BitVec 1)) ; $formal$dual_port_bram.v:68$31_EN
+(define-fun |dual_port_bram_n $formal$dual_port_bram.v:68$31_EN| ((state |dual_port_bram_s|)) Bool (= ((_ extract 0 0) (|dual_port_bram#26| state)) #b1))
+; yosys-smt2-register $formal$dual_port_bram.v:68$31_CHECK 1
+(declare-fun |dual_port_bram#27| (|dual_port_bram_s|) (_ BitVec 1)) ; $formal$dual_port_bram.v:68$31_CHECK
+(define-fun |dual_port_bram_n $formal$dual_port_bram.v:68$31_CHECK| ((state |dual_port_bram_s|)) Bool (= ((_ extract 0 0) (|dual_port_bram#27| state)) #b1))
+; yosys-smt2-register $formal$dual_port_bram.v:66$30_EN 1
+(declare-fun |dual_port_bram#28| (|dual_port_bram_s|) (_ BitVec 1)) ; $formal$dual_port_bram.v:66$30_EN
+(define-fun |dual_port_bram_n $formal$dual_port_bram.v:66$30_EN| ((state |dual_port_bram_s|)) Bool (= ((_ extract 0 0) (|dual_port_bram#28| state)) #b1))
+; yosys-smt2-register $formal$dual_port_bram.v:66$30_CHECK 1
+(declare-fun |dual_port_bram#29| (|dual_port_bram_s|) (_ BitVec 1)) ; $formal$dual_port_bram.v:66$30_CHECK
+(define-fun |dual_port_bram_n $formal$dual_port_bram.v:66$30_CHECK| ((state |dual_port_bram_s|)) Bool (= ((_ extract 0 0) (|dual_port_bram#29| state)) #b1))
+; yosys-smt2-register $formal$dual_port_bram.v:64$29_EN 1
+(declare-fun |dual_port_bram#30| (|dual_port_bram_s|) (_ BitVec 1)) ; $formal$dual_port_bram.v:64$29_EN
+(define-fun |dual_port_bram_n $formal$dual_port_bram.v:64$29_EN| ((state |dual_port_bram_s|)) Bool (= ((_ extract 0 0) (|dual_port_bram#30| state)) #b1))
+; yosys-smt2-register $formal$dual_port_bram.v:64$29_CHECK 1
+(declare-fun |dual_port_bram#31| (|dual_port_bram_s|) (_ BitVec 1)) ; $formal$dual_port_bram.v:64$29_CHECK
+(define-fun |dual_port_bram_n $formal$dual_port_bram.v:64$29_CHECK| ((state |dual_port_bram_s|)) Bool (= ((_ extract 0 0) (|dual_port_bram#31| state)) #b1))
+; yosys-smt2-register $eq$dual_port_bram.v:73$117_Y 1
+(declare-fun |dual_port_bram#32| (|dual_port_bram_s|) (_ BitVec 1)) ; $eq$dual_port_bram.v:73$117_Y
+(define-fun |dual_port_bram_n $eq$dual_port_bram.v:73$117_Y| ((state |dual_port_bram_s|)) Bool (= ((_ extract 0 0) (|dual_port_bram#32| state)) #b1))
+; yosys-smt2-register $eq$dual_port_bram.v:71$114_Y 1
+(declare-fun |dual_port_bram#33| (|dual_port_bram_s|) (_ BitVec 1)) ; $eq$dual_port_bram.v:71$114_Y
+(define-fun |dual_port_bram_n $eq$dual_port_bram.v:71$114_Y| ((state |dual_port_bram_s|)) Bool (= ((_ extract 0 0) (|dual_port_bram#33| state)) #b1))
+; yosys-smt2-register $eq$dual_port_bram.v:67$110_Y 1
+(declare-fun |dual_port_bram#34| (|dual_port_bram_s|) (_ BitVec 1)) ; $eq$dual_port_bram.v:67$110_Y
+(define-fun |dual_port_bram_n $eq$dual_port_bram.v:67$110_Y| ((state |dual_port_bram_s|)) Bool (= ((_ extract 0 0) (|dual_port_bram#34| state)) #b1))
+; yosys-smt2-register $eq$dual_port_bram.v:63$106_Y 1
+(declare-fun |dual_port_bram#35| (|dual_port_bram_s|) (_ BitVec 1)) ; $eq$dual_port_bram.v:63$106_Y
+(define-fun |dual_port_bram_n $eq$dual_port_bram.v:63$106_Y| ((state |dual_port_bram_s|)) Bool (= ((_ extract 0 0) (|dual_port_bram#35| state)) #b1))
+; yosys-smt2-register $and$dual_port_bram.v:61$101_Y 1
+(declare-fun |dual_port_bram#36| (|dual_port_bram_s|) (_ BitVec 1)) ; $and$dual_port_bram.v:61$101_Y
+(define-fun |dual_port_bram_n $and$dual_port_bram.v:61$101_Y| ((state |dual_port_bram_s|)) Bool (= ((_ extract 0 0) (|dual_port_bram#36| state)) #b1))
+(define-fun |dual_port_bram#37| ((state |dual_port_bram_s|)) Bool (distinct (|dual_port_bram#8| state) (|dual_port_bram#7| state))) ; $0$formal$dual_port_bram.v:59$28_CHECK[0:0]$80
+; yosys-smt2-assume 0 dual_port_bram.v:59
+(define-fun |dual_port_bram_u 0| ((state |dual_port_bram_s|)) Bool (or (|dual_port_bram#37| state) (not true))) ; $assume$dual_port_bram.v:59$132
+(define-fun |dual_port_bram#38| ((state |dual_port_bram_s|)) Bool (distinct (|dual_port_bram#7| state) (|dual_port_bram#12| state))) ; $0$formal$dual_port_bram.v:58$27_CHECK[0:0]$78
+; yosys-smt2-assume 1 dual_port_bram.v:58
+(define-fun |dual_port_bram_u 1| ((state |dual_port_bram_s|)) Bool (or (|dual_port_bram#38| state) (not true))) ; $assume$dual_port_bram.v:58$131
+(define-fun |dual_port_bram#39| ((state |dual_port_bram_s|)) Bool (distinct (|dual_port_bram#8| state) (|dual_port_bram#11| state))) ; $0$formal$dual_port_bram.v:57$26_CHECK[0:0]$76
+; yosys-smt2-assume 2 dual_port_bram.v:57
+(define-fun |dual_port_bram_u 2| ((state |dual_port_bram_s|)) Bool (or (|dual_port_bram#39| state) (not true))) ; $assume$dual_port_bram.v:57$130
+(define-fun |dual_port_bram#40| ((state |dual_port_bram_s|)) Bool (distinct (|dual_port_bram#11| state) (|dual_port_bram#7| state))) ; $0$formal$dual_port_bram.v:56$25_CHECK[0:0]$74
+; yosys-smt2-assume 3 dual_port_bram.v:56
+(define-fun |dual_port_bram_u 3| ((state |dual_port_bram_s|)) Bool (or (|dual_port_bram#40| state) (not true))) ; $assume$dual_port_bram.v:56$129
+(define-fun |dual_port_bram#41| ((state |dual_port_bram_s|)) Bool (distinct (|dual_port_bram#12| state) (|dual_port_bram#8| state))) ; $0$formal$dual_port_bram.v:55$24_CHECK[0:0]$72
+; yosys-smt2-assume 4 dual_port_bram.v:55
+(define-fun |dual_port_bram_u 4| ((state |dual_port_bram_s|)) Bool (or (|dual_port_bram#41| state) (not true))) ; $assume$dual_port_bram.v:55$128
+(define-fun |dual_port_bram#42| ((state |dual_port_bram_s|)) Bool (distinct (|dual_port_bram#36| state) (ite (|dual_port_bram#13| state) #b1 #b0))) ; $0$formal$dual_port_bram.v:54$23_CHECK[0:0]$70
+; yosys-smt2-assume 5 dual_port_bram.v:54
+(define-fun |dual_port_bram_u 5| ((state |dual_port_bram_s|)) Bool (or (|dual_port_bram#42| state) (not true))) ; $assume$dual_port_bram.v:54$127
+(define-fun |dual_port_bram#43| ((state |dual_port_bram_s|)) (_ BitVec 1) (bvnot (ite (|dual_port_bram#3| state) #b1 #b0))) ; $0$formal$dual_port_bram.v:48$21_CHECK[0:0]$145
+(define-fun |dual_port_bram#44| ((state |dual_port_bram_s|)) Bool (|dual_port_bram_is| state)) ; $0$formal$dual_port_bram.v:46$17_EN[0:0]$142
+; yosys-smt2-assume 6 dual_port_bram.v:48
+(define-fun |dual_port_bram_u 6| ((state |dual_port_bram_s|)) Bool (or (= ((_ extract 0 0) (|dual_port_bram#43| state)) #b1) (not (|dual_port_bram#44| state)))) ; $assume$dual_port_bram.v:48$126
+(define-fun |dual_port_bram#45| ((state |dual_port_bram_s|)) (_ BitVec 1) (bvnot (ite (|dual_port_bram#4| state) #b1 #b0))) ; $0$formal$dual_port_bram.v:47$19_CHECK[0:0]$143
+; yosys-smt2-assume 7 dual_port_bram.v:47
+(define-fun |dual_port_bram_u 7| ((state |dual_port_bram_s|)) Bool (or (= ((_ extract 0 0) (|dual_port_bram#45| state)) #b1) (not (|dual_port_bram#44| state)))) ; $assume$dual_port_bram.v:47$125
+(define-fun |dual_port_bram#46| ((state |dual_port_bram_s|)) (_ BitVec 1) (bvnot (ite (|dual_port_bram#13| state) #b1 #b0))) ; $0$formal$dual_port_bram.v:46$17_CHECK[0:0]$141
+; yosys-smt2-assume 8 dual_port_bram.v:46
+(define-fun |dual_port_bram_u 8| ((state |dual_port_bram_s|)) Bool (or (= ((_ extract 0 0) (|dual_port_bram#46| state)) #b1) (not (|dual_port_bram#44| state)))) ; $assume$dual_port_bram.v:46$124
+; yosys-smt2-assert 0 dual_port_bram.v:74
+(define-fun |dual_port_bram_a 0| ((state |dual_port_bram_s|)) Bool (or (= ((_ extract 0 0) (|dual_port_bram#21| state)) #b1) (not (= ((_ extract 0 0) (|dual_port_bram#20| state)) #b1)))) ; $assert$dual_port_bram.v:74$138
+; yosys-smt2-assert 1 dual_port_bram.v:72
+(define-fun |dual_port_bram_a 1| ((state |dual_port_bram_s|)) Bool (or (= ((_ extract 0 0) (|dual_port_bram#23| state)) #b1) (not (= ((_ extract 0 0) (|dual_port_bram#22| state)) #b1)))) ; $assert$dual_port_bram.v:72$137
+; yosys-smt2-assert 2 dual_port_bram.v:70
+(define-fun |dual_port_bram_a 2| ((state |dual_port_bram_s|)) Bool (or (= ((_ extract 0 0) (|dual_port_bram#25| state)) #b1) (not (= ((_ extract 0 0) (|dual_port_bram#24| state)) #b1)))) ; $assert$dual_port_bram.v:70$136
+; yosys-smt2-assert 3 dual_port_bram.v:68
+(define-fun |dual_port_bram_a 3| ((state |dual_port_bram_s|)) Bool (or (= ((_ extract 0 0) (|dual_port_bram#27| state)) #b1) (not (= ((_ extract 0 0) (|dual_port_bram#26| state)) #b1)))) ; $assert$dual_port_bram.v:68$135
+; yosys-smt2-assert 4 dual_port_bram.v:66
+(define-fun |dual_port_bram_a 4| ((state |dual_port_bram_s|)) Bool (or (= ((_ extract 0 0) (|dual_port_bram#29| state)) #b1) (not (= ((_ extract 0 0) (|dual_port_bram#28| state)) #b1)))) ; $assert$dual_port_bram.v:66$134
+; yosys-smt2-assert 5 dual_port_bram.v:64
+(define-fun |dual_port_bram_a 5| ((state |dual_port_bram_s|)) Bool (or (= ((_ extract 0 0) (|dual_port_bram#31| state)) #b1) (not (= ((_ extract 0 0) (|dual_port_bram#30| state)) #b1)))) ; $assert$dual_port_bram.v:64$133
+; yosys-smt2-anyseq dual_port_bram#47 1 $auto$setundef.cc:524:execute$328
+(declare-fun |dual_port_bram#47| (|dual_port_bram_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2305:Anyseq$329
+; yosys-smt2-anyseq dual_port_bram#48 1 $auto$setundef.cc:524:execute$326
+(declare-fun |dual_port_bram#48| (|dual_port_bram_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2305:Anyseq$327
+; yosys-smt2-memory r_RAM 4 8 8 4 sync
+(declare-fun |dual_port_bram#49#0| (|dual_port_bram_s|) (Array (_ BitVec 4) (_ BitVec 8))) ; r_RAM
+(define-fun |dual_port_bram_m r_RAM| ((state |dual_port_bram_s|)) (Array (_ BitVec 4) (_ BitVec 8)) (|dual_port_bram#49#0| state))
 (define-fun |dual_port_bram_m:R0A r_RAM| ((state |dual_port_bram_s|)) (_ BitVec 4) (|dual_port_bram#12| state)) ; \i_READ_ADDRESS_A
-(define-fun |dual_port_bram#42| ((state |dual_port_bram_s|)) (_ BitVec 8) (select (|dual_port_bram#41#0| state) (|dual_port_bram_m:R0A r_RAM| state))) ; $memrd$\r_RAM$dual_port_bram.v:21$28_DATA
-(define-fun |dual_port_bram_m:R0D r_RAM| ((state |dual_port_bram_s|)) (_ BitVec 8) (|dual_port_bram#42| state))
+(define-fun |dual_port_bram#50| ((state |dual_port_bram_s|)) (_ BitVec 8) (select (|dual_port_bram#49#0| state) (|dual_port_bram_m:R0A r_RAM| state))) ; $memrd$\r_RAM$dual_port_bram.v:21$37_DATA
+(define-fun |dual_port_bram_m:R0D r_RAM| ((state |dual_port_bram_s|)) (_ BitVec 8) (|dual_port_bram#50| state))
 (define-fun |dual_port_bram_m:R1A r_RAM| ((state |dual_port_bram_s|)) (_ BitVec 4) (|dual_port_bram#11| state)) ; \i_READ_ADDRESS_B
-(define-fun |dual_port_bram#43| ((state |dual_port_bram_s|)) (_ BitVec 8) (select (|dual_port_bram#41#0| state) (|dual_port_bram_m:R1A r_RAM| state))) ; $memrd$\r_RAM$dual_port_bram.v:25$30_DATA
-(define-fun |dual_port_bram_m:R1D r_RAM| ((state |dual_port_bram_s|)) (_ BitVec 8) (|dual_port_bram#43| state))
+(define-fun |dual_port_bram#51| ((state |dual_port_bram_s|)) (_ BitVec 8) (select (|dual_port_bram#49#0| state) (|dual_port_bram_m:R1A r_RAM| state))) ; $memrd$\r_RAM$dual_port_bram.v:25$39_DATA
+(define-fun |dual_port_bram_m:R1D r_RAM| ((state |dual_port_bram_s|)) (_ BitVec 8) (|dual_port_bram#51| state))
 (define-fun |dual_port_bram_m:R2A r_RAM| ((state |dual_port_bram_s|)) (_ BitVec 4) (|dual_port_bram#7| state)) ; \i_WRITE_ADDRESS_B
-(define-fun |dual_port_bram#44| ((state |dual_port_bram_s|)) (_ BitVec 8) (select (|dual_port_bram#41#0| state) (|dual_port_bram_m:R2A r_RAM| state))) ; $memrd$\r_RAM$dual_port_bram.v:39$47_DATA
-(define-fun |dual_port_bram_m:R2D r_RAM| ((state |dual_port_bram_s|)) (_ BitVec 8) (|dual_port_bram#44| state))
+(define-fun |dual_port_bram#52| ((state |dual_port_bram_s|)) (_ BitVec 8) (select (|dual_port_bram#49#0| state) (|dual_port_bram_m:R2A r_RAM| state))) ; $memrd$\r_RAM$dual_port_bram.v:39$56_DATA
+(define-fun |dual_port_bram_m:R2D r_RAM| ((state |dual_port_bram_s|)) (_ BitVec 8) (|dual_port_bram#52| state))
 (define-fun |dual_port_bram_m:R3A r_RAM| ((state |dual_port_bram_s|)) (_ BitVec 4) (|dual_port_bram#8| state)) ; \i_WRITE_ADDRESS_A
-(define-fun |dual_port_bram#45| ((state |dual_port_bram_s|)) (_ BitVec 8) (select (|dual_port_bram#41#0| state) (|dual_port_bram_m:R3A r_RAM| state))) ; $memrd$\r_RAM$dual_port_bram.v:35$45_DATA
-(define-fun |dual_port_bram_m:R3D r_RAM| ((state |dual_port_bram_s|)) (_ BitVec 8) (|dual_port_bram#45| state))
-(define-fun |dual_port_bram_m:R4A r_RAM| ((state |dual_port_bram_s|)) (_ BitVec 4) (|dual_port_bram#17| state)) ; $past$dual_port_bram.v:58$4$0
-(define-fun |dual_port_bram#46| ((state |dual_port_bram_s|)) (_ BitVec 8) (select (|dual_port_bram#41#0| state) (|dual_port_bram_m:R4A r_RAM| state))) ; $memrd$\r_RAM$dual_port_bram.v:58$90_DATA
-(define-fun |dual_port_bram_m:R4D r_RAM| ((state |dual_port_bram_s|)) (_ BitVec 8) (|dual_port_bram#46| state))
-(define-fun |dual_port_bram_m:R5A r_RAM| ((state |dual_port_bram_s|)) (_ BitVec 4) (|dual_port_bram#16| state)) ; $past$dual_port_bram.v:62$6$0
-(define-fun |dual_port_bram#47| ((state |dual_port_bram_s|)) (_ BitVec 8) (select (|dual_port_bram#41#0| state) (|dual_port_bram_m:R5A r_RAM| state))) ; $memrd$\r_RAM$dual_port_bram.v:62$94_DATA
-(define-fun |dual_port_bram_m:R5D r_RAM| ((state |dual_port_bram_s|)) (_ BitVec 8) (|dual_port_bram#47| state))
-(define-fun |dual_port_bram_m:R6A r_RAM| ((state |dual_port_bram_s|)) (_ BitVec 4) (|dual_port_bram#15| state)) ; $past$dual_port_bram.v:66$8$0
-(define-fun |dual_port_bram#48| ((state |dual_port_bram_s|)) (_ BitVec 8) (select (|dual_port_bram#41#0| state) (|dual_port_bram_m:R6A r_RAM| state))) ; $memrd$\r_RAM$dual_port_bram.v:66$98_DATA
-(define-fun |dual_port_bram_m:R6D r_RAM| ((state |dual_port_bram_s|)) (_ BitVec 8) (|dual_port_bram#48| state))
-(define-fun |dual_port_bram#49| ((state |dual_port_bram_s|)) Bool (= (|dual_port_bram#2| state) (|dual_port_bram#46| state))) ; $eq$dual_port_bram.v:58$91_Y
-(define-fun |dual_port_bram#50| ((state |dual_port_bram_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|dual_port_bram#30| state)) #b1) (ite (|dual_port_bram#49| state) #b1 #b0) (|dual_port_bram#40| state))) ; $procmux$146_Y
-(define-fun |dual_port_bram#51| ((state |dual_port_bram_s|)) Bool (not (or  (= ((_ extract 0 0) (|dual_port_bram#31| state)) #b1) false false false false false false false false false false false false false false false false false false false false false false false false false false false false false false false))) ; $logic_not$dual_port_bram.v:55$85_Y
-(define-fun |dual_port_bram#52| ((state |dual_port_bram_s|)) Bool (and (or  (|dual_port_bram#51| state) false) (or  (|dual_port_bram#13| state) false false false false false false false false false false false false false false false false false false false false false false false false false false false false false false false))) ; $logic_and$dual_port_bram.v:55$87_Y
-(define-fun |dual_port_bram#53| ((state |dual_port_bram_s|)) Bool (and (or  (= ((_ extract 0 0) (|dual_port_bram#0| state)) #b1) false) (or  (|dual_port_bram#52| state) false))) ; $logic_and$dual_port_bram.v:55$88_Y
-(define-fun |dual_port_bram#54| ((state |dual_port_bram_s|)) (_ BitVec 1) (ite (|dual_port_bram#53| state) (|dual_port_bram#50| state) (|dual_port_bram#39| state))) ; $0$formal$dual_port_bram.v:58$21_CHECK[0:0]$68
-(define-fun |dual_port_bram#55| ((state |dual_port_bram_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|dual_port_bram#30| state)) #b1) #b1 #b0)) ; $procmux$141_Y
-(define-fun |dual_port_bram#56| ((state |dual_port_bram_s|)) (_ BitVec 1) (ite (|dual_port_bram#53| state) (|dual_port_bram#55| state) #b0)) ; $0$formal$dual_port_bram.v:58$21_EN[0:0]$69
-; yosys-smt2-anyseq dual_port_bram#57 1 $auto$setundef.cc:524:execute$283
-(declare-fun |dual_port_bram#57| (|dual_port_bram_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2305:Anyseq$284
-(define-fun |dual_port_bram#58| ((state |dual_port_bram_s|)) Bool (not (or  (= ((_ extract 0 0) (|dual_port_bram#2| state)) #b1) (= ((_ extract 1 1) (|dual_port_bram#2| state)) #b1) (= ((_ extract 2 2) (|dual_port_bram#2| state)) #b1) (= ((_ extract 3 3) (|dual_port_bram#2| state)) #b1) (= ((_ extract 4 4) (|dual_port_bram#2| state)) #b1) (= ((_ extract 5 5) (|dual_port_bram#2| state)) #b1) (= ((_ extract 6 6) (|dual_port_bram#2| state)) #b1) (= ((_ extract 7 7) (|dual_port_bram#2| state)) #b1)))) ; $eq$dual_port_bram.v:60$92_Y
-; yosys-smt2-anyseq dual_port_bram#59 1 $auto$setundef.cc:524:execute$281
-(declare-fun |dual_port_bram#59| (|dual_port_bram_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2305:Anyseq$282
-(define-fun |dual_port_bram#60| ((state |dual_port_bram_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|dual_port_bram#30| state)) #b1) (|dual_port_bram#59| state) (ite (|dual_port_bram#58| state) #b1 #b0))) ; $procmux$156_Y
-(define-fun |dual_port_bram#61| ((state |dual_port_bram_s|)) (_ BitVec 1) (ite (|dual_port_bram#53| state) (|dual_port_bram#60| state) (|dual_port_bram#57| state))) ; $0$formal$dual_port_bram.v:60$22_CHECK[0:0]$70
-(define-fun |dual_port_bram#62| ((state |dual_port_bram_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|dual_port_bram#30| state)) #b1) #b0 #b1)) ; $procmux$151_Y
-(define-fun |dual_port_bram#63| ((state |dual_port_bram_s|)) (_ BitVec 1) (ite (|dual_port_bram#53| state) (|dual_port_bram#62| state) #b0)) ; $0$formal$dual_port_bram.v:60$22_EN[0:0]$71
-; yosys-smt2-anyseq dual_port_bram#64 1 $auto$setundef.cc:524:execute$287
-(declare-fun |dual_port_bram#64| (|dual_port_bram_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2305:Anyseq$288
-; yosys-smt2-anyseq dual_port_bram#65 1 $auto$setundef.cc:524:execute$285
-(declare-fun |dual_port_bram#65| (|dual_port_bram_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2305:Anyseq$286
-(define-fun |dual_port_bram#66| ((state |dual_port_bram_s|)) Bool (= (|dual_port_bram#1| state) (|dual_port_bram#47| state))) ; $eq$dual_port_bram.v:62$95_Y
-(define-fun |dual_port_bram#67| ((state |dual_port_bram_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|dual_port_bram#29| state)) #b1) (ite (|dual_port_bram#66| state) #b1 #b0) (|dual_port_bram#65| state))) ; $procmux$166_Y
-(define-fun |dual_port_bram#68| ((state |dual_port_bram_s|)) (_ BitVec 1) (ite (|dual_port_bram#53| state) (|dual_port_bram#67| state) (|dual_port_bram#64| state))) ; $0$formal$dual_port_bram.v:62$23_CHECK[0:0]$72
-(define-fun |dual_port_bram#69| ((state |dual_port_bram_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|dual_port_bram#29| state)) #b1) #b1 #b0)) ; $procmux$161_Y
-(define-fun |dual_port_bram#70| ((state |dual_port_bram_s|)) (_ BitVec 1) (ite (|dual_port_bram#53| state) (|dual_port_bram#69| state) #b0)) ; $0$formal$dual_port_bram.v:62$23_EN[0:0]$73
-; yosys-smt2-anyseq dual_port_bram#71 1 $auto$setundef.cc:524:execute$291
-(declare-fun |dual_port_bram#71| (|dual_port_bram_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2305:Anyseq$292
-(define-fun |dual_port_bram#72| ((state |dual_port_bram_s|)) Bool (not (or  (= ((_ extract 0 0) (|dual_port_bram#1| state)) #b1) (= ((_ extract 1 1) (|dual_port_bram#1| state)) #b1) (= ((_ extract 2 2) (|dual_port_bram#1| state)) #b1) (= ((_ extract 3 3) (|dual_port_bram#1| state)) #b1) (= ((_ extract 4 4) (|dual_port_bram#1| state)) #b1) (= ((_ extract 5 5) (|dual_port_bram#1| state)) #b1) (= ((_ extract 6 6) (|dual_port_bram#1| state)) #b1) (= ((_ extract 7 7) (|dual_port_bram#1| state)) #b1)))) ; $eq$dual_port_bram.v:64$96_Y
-; yosys-smt2-anyseq dual_port_bram#73 1 $auto$setundef.cc:524:execute$289
-(declare-fun |dual_port_bram#73| (|dual_port_bram_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2305:Anyseq$290
-(define-fun |dual_port_bram#74| ((state |dual_port_bram_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|dual_port_bram#29| state)) #b1) (|dual_port_bram#73| state) (ite (|dual_port_bram#72| state) #b1 #b0))) ; $procmux$176_Y
-(define-fun |dual_port_bram#75| ((state |dual_port_bram_s|)) (_ BitVec 1) (ite (|dual_port_bram#53| state) (|dual_port_bram#74| state) (|dual_port_bram#71| state))) ; $0$formal$dual_port_bram.v:64$24_CHECK[0:0]$74
-(define-fun |dual_port_bram#76| ((state |dual_port_bram_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|dual_port_bram#29| state)) #b1) #b0 #b1)) ; $procmux$171_Y
-(define-fun |dual_port_bram#77| ((state |dual_port_bram_s|)) (_ BitVec 1) (ite (|dual_port_bram#53| state) (|dual_port_bram#76| state) #b0)) ; $0$formal$dual_port_bram.v:64$24_EN[0:0]$75
-; yosys-smt2-anyseq dual_port_bram#78 1 $auto$setundef.cc:524:execute$295
-(declare-fun |dual_port_bram#78| (|dual_port_bram_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2305:Anyseq$296
-; yosys-smt2-anyseq dual_port_bram#79 1 $auto$setundef.cc:524:execute$293
-(declare-fun |dual_port_bram#79| (|dual_port_bram_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2305:Anyseq$294
-(define-fun |dual_port_bram#80| ((state |dual_port_bram_s|)) Bool (= (|dual_port_bram#48| state) (|dual_port_bram#14| state))) ; $eq$dual_port_bram.v:66$99_Y
-(define-fun |dual_port_bram#81| ((state |dual_port_bram_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|dual_port_bram#28| state)) #b1) (ite (|dual_port_bram#80| state) #b1 #b0) (|dual_port_bram#79| state))) ; $procmux$184_Y
-(define-fun |dual_port_bram#82| ((state |dual_port_bram_s|)) (_ BitVec 1) (ite (|dual_port_bram#53| state) (|dual_port_bram#81| state) (|dual_port_bram#78| state))) ; $0$formal$dual_port_bram.v:66$25_CHECK[0:0]$76
-(define-fun |dual_port_bram#83| ((state |dual_port_bram_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|dual_port_bram#28| state)) #b1) #b1 #b0)) ; $procmux$180_Y
-(define-fun |dual_port_bram#84| ((state |dual_port_bram_s|)) (_ BitVec 1) (ite (|dual_port_bram#53| state) (|dual_port_bram#83| state) #b0)) ; $0$formal$dual_port_bram.v:66$25_EN[0:0]$77
-(define-fun |dual_port_bram#85| ((state |dual_port_bram_s|)) (_ BitVec 8) (ite (|dual_port_bram#10| state) (|dual_port_bram#42| state) #b00000000)) ; $0\o_READ_DATA_A[7:0]
-(define-fun |dual_port_bram#86| ((state |dual_port_bram_s|)) (_ BitVec 8) (ite (|dual_port_bram#9| state) (|dual_port_bram#43| state) #b00000000)) ; $0\o_READ_DATA_B[7:0]
-; yosys-smt2-anyseq dual_port_bram#87 4 $auto$setundef.cc:524:execute$299
-(declare-fun |dual_port_bram#87| (|dual_port_bram_s|) (_ BitVec 4)) ; $auto$rtlil.cc:2305:Anyseq$300
-(define-fun |dual_port_bram#88| ((state |dual_port_bram_s|)) (_ BitVec 4) (ite (|dual_port_bram#4| state) (|dual_port_bram#8| state) (|dual_port_bram#87| state))) ; $0$memwr$\r_RAM$dual_port_bram.v:33$10_ADDR[3:0]$32
-; yosys-smt2-anyseq dual_port_bram#89 8 $auto$setundef.cc:524:execute$297
-(declare-fun |dual_port_bram#89| (|dual_port_bram_s|) (_ BitVec 8)) ; $auto$rtlil.cc:2305:Anyseq$298
-(define-fun |dual_port_bram#90| ((state |dual_port_bram_s|)) (_ BitVec 8) (ite (|dual_port_bram#4| state) (|dual_port_bram#6| state) (|dual_port_bram#89| state))) ; $0$memwr$\r_RAM$dual_port_bram.v:33$10_DATA[7:0]$33
-(define-fun |dual_port_bram#91| ((state |dual_port_bram_s|)) (_ BitVec 1) (ite (|dual_port_bram#4| state) #b1 #b0)) ; $0$memwr$\r_RAM$dual_port_bram.v:33$10_EN[7:0]$34 [7]
-(define-fun |dual_port_bram_m:W0A r_RAM| ((state |dual_port_bram_s|)) (_ BitVec 4) (|dual_port_bram#88| state)) ; $0$memwr$\r_RAM$dual_port_bram.v:33$10_ADDR[3:0]$32
-(define-fun |dual_port_bram_m:W0D r_RAM| ((state |dual_port_bram_s|)) (_ BitVec 8) (|dual_port_bram#90| state)) ; $0$memwr$\r_RAM$dual_port_bram.v:33$10_DATA[7:0]$33
-(define-fun |dual_port_bram_m:W0M r_RAM| ((state |dual_port_bram_s|)) (_ BitVec 8) (concat (|dual_port_bram#91| state) (concat (|dual_port_bram#91| state) (concat (|dual_port_bram#91| state) (concat (|dual_port_bram#91| state) (concat (|dual_port_bram#91| state) (concat (|dual_port_bram#91| state) (concat (|dual_port_bram#91| state) (|dual_port_bram#91| state))))))))) ; { $0$memwr$\r_RAM$dual_port_bram.v:33$10_EN[7:0]$34 [7] $0$memwr$\r_RAM$dual_port_bram.v:33$10_EN[7:0]$34 [7] $0$memwr$\r_RAM$dual_port_bram.v:33$10_EN[7:0]$34 [7] $0$memwr$\r_RAM$dual_port_bram.v:33$10_EN[7:0]$34 [7] $0$memwr$\r_RAM$dual_port_bram.v:33$10_EN[7:0]$34 [7] $0$memwr$\r_RAM$dual_port_bram.v:33$10_EN[7:0]$34 [7] $0$memwr$\r_RAM$dual_port_bram.v:33$10_EN[7:0]$34 [7] $0$memwr$\r_RAM$dual_port_bram.v:33$10_EN[7:0]$34 [7] }
-(define-fun |dual_port_bram#41#1| ((state |dual_port_bram_s|)) (Array (_ BitVec 4) (_ BitVec 8)) (store (|dual_port_bram#41#0| state) (|dual_port_bram_m:W0A r_RAM| state) (bvor (bvand (|dual_port_bram_m:W0D r_RAM| state) (|dual_port_bram_m:W0M r_RAM| state)) (bvand (select (|dual_port_bram#41#0| state) (|dual_port_bram_m:W0A r_RAM| state)) (bvnot (|dual_port_bram_m:W0M r_RAM| state)))))) ; r_RAM
-; yosys-smt2-anyseq dual_port_bram#92 4 $auto$setundef.cc:524:execute$303
-(declare-fun |dual_port_bram#92| (|dual_port_bram_s|) (_ BitVec 4)) ; $auto$rtlil.cc:2305:Anyseq$304
-(define-fun |dual_port_bram#93| ((state |dual_port_bram_s|)) (_ BitVec 4) (ite (|dual_port_bram#4| state) (|dual_port_bram#92| state) (|dual_port_bram#8| state))) ; $0$memwr$\r_RAM$dual_port_bram.v:35$11_ADDR[3:0]$35
-; yosys-smt2-anyseq dual_port_bram#94 8 $auto$setundef.cc:524:execute$301
-(declare-fun |dual_port_bram#94| (|dual_port_bram_s|) (_ BitVec 8)) ; $auto$rtlil.cc:2305:Anyseq$302
-(define-fun |dual_port_bram#95| ((state |dual_port_bram_s|)) (_ BitVec 8) (ite (|dual_port_bram#4| state) (|dual_port_bram#94| state) (|dual_port_bram#45| state))) ; $0$memwr$\r_RAM$dual_port_bram.v:35$11_DATA[7:0]$36
-(define-fun |dual_port_bram#96| ((state |dual_port_bram_s|)) (_ BitVec 1) (ite (|dual_port_bram#4| state) #b0 #b1)) ; $0$memwr$\r_RAM$dual_port_bram.v:35$11_EN[7:0]$37 [7]
-(define-fun |dual_port_bram_m:W1A r_RAM| ((state |dual_port_bram_s|)) (_ BitVec 4) (|dual_port_bram#93| state)) ; $0$memwr$\r_RAM$dual_port_bram.v:35$11_ADDR[3:0]$35
-(define-fun |dual_port_bram_m:W1D r_RAM| ((state |dual_port_bram_s|)) (_ BitVec 8) (|dual_port_bram#95| state)) ; $0$memwr$\r_RAM$dual_port_bram.v:35$11_DATA[7:0]$36
-(define-fun |dual_port_bram_m:W1M r_RAM| ((state |dual_port_bram_s|)) (_ BitVec 8) (concat (|dual_port_bram#96| state) (concat (|dual_port_bram#96| state) (concat (|dual_port_bram#96| state) (concat (|dual_port_bram#96| state) (concat (|dual_port_bram#96| state) (concat (|dual_port_bram#96| state) (concat (|dual_port_bram#96| state) (|dual_port_bram#96| state))))))))) ; { $0$memwr$\r_RAM$dual_port_bram.v:35$11_EN[7:0]$37 [7] $0$memwr$\r_RAM$dual_port_bram.v:35$11_EN[7:0]$37 [7] $0$memwr$\r_RAM$dual_port_bram.v:35$11_EN[7:0]$37 [7] $0$memwr$\r_RAM$dual_port_bram.v:35$11_EN[7:0]$37 [7] $0$memwr$\r_RAM$dual_port_bram.v:35$11_EN[7:0]$37 [7] $0$memwr$\r_RAM$dual_port_bram.v:35$11_EN[7:0]$37 [7] $0$memwr$\r_RAM$dual_port_bram.v:35$11_EN[7:0]$37 [7] $0$memwr$\r_RAM$dual_port_bram.v:35$11_EN[7:0]$37 [7] }
-(define-fun |dual_port_bram#41#2| ((state |dual_port_bram_s|)) (Array (_ BitVec 4) (_ BitVec 8)) (store (|dual_port_bram#41#1| state) (|dual_port_bram_m:W1A r_RAM| state) (bvor (bvand (|dual_port_bram_m:W1D r_RAM| state) (|dual_port_bram_m:W1M r_RAM| state)) (bvand (select (|dual_port_bram#41#1| state) (|dual_port_bram_m:W1A r_RAM| state)) (bvnot (|dual_port_bram_m:W1M r_RAM| state)))))) ; r_RAM
-; yosys-smt2-anyseq dual_port_bram#97 4 $auto$setundef.cc:524:execute$307
-(declare-fun |dual_port_bram#97| (|dual_port_bram_s|) (_ BitVec 4)) ; $auto$rtlil.cc:2305:Anyseq$308
-(define-fun |dual_port_bram#98| ((state |dual_port_bram_s|)) (_ BitVec 4) (ite (|dual_port_bram#3| state) (|dual_port_bram#7| state) (|dual_port_bram#97| state))) ; $0$memwr$\r_RAM$dual_port_bram.v:37$12_ADDR[3:0]$38
-; yosys-smt2-anyseq dual_port_bram#99 8 $auto$setundef.cc:524:execute$305
-(declare-fun |dual_port_bram#99| (|dual_port_bram_s|) (_ BitVec 8)) ; $auto$rtlil.cc:2305:Anyseq$306
-(define-fun |dual_port_bram#100| ((state |dual_port_bram_s|)) (_ BitVec 8) (ite (|dual_port_bram#3| state) (|dual_port_bram#5| state) (|dual_port_bram#99| state))) ; $0$memwr$\r_RAM$dual_port_bram.v:37$12_DATA[7:0]$39
-(define-fun |dual_port_bram#101| ((state |dual_port_bram_s|)) (_ BitVec 1) (ite (|dual_port_bram#3| state) #b1 #b0)) ; $0$memwr$\r_RAM$dual_port_bram.v:37$12_EN[7:0]$40 [7]
-(define-fun |dual_port_bram_m:W2A r_RAM| ((state |dual_port_bram_s|)) (_ BitVec 4) (|dual_port_bram#98| state)) ; $0$memwr$\r_RAM$dual_port_bram.v:37$12_ADDR[3:0]$38
-(define-fun |dual_port_bram_m:W2D r_RAM| ((state |dual_port_bram_s|)) (_ BitVec 8) (|dual_port_bram#100| state)) ; $0$memwr$\r_RAM$dual_port_bram.v:37$12_DATA[7:0]$39
-(define-fun |dual_port_bram_m:W2M r_RAM| ((state |dual_port_bram_s|)) (_ BitVec 8) (concat (|dual_port_bram#101| state) (concat (|dual_port_bram#101| state) (concat (|dual_port_bram#101| state) (concat (|dual_port_bram#101| state) (concat (|dual_port_bram#101| state) (concat (|dual_port_bram#101| state) (concat (|dual_port_bram#101| state) (|dual_port_bram#101| state))))))))) ; { $0$memwr$\r_RAM$dual_port_bram.v:37$12_EN[7:0]$40 [7] $0$memwr$\r_RAM$dual_port_bram.v:37$12_EN[7:0]$40 [7] $0$memwr$\r_RAM$dual_port_bram.v:37$12_EN[7:0]$40 [7] $0$memwr$\r_RAM$dual_port_bram.v:37$12_EN[7:0]$40 [7] $0$memwr$\r_RAM$dual_port_bram.v:37$12_EN[7:0]$40 [7] $0$memwr$\r_RAM$dual_port_bram.v:37$12_EN[7:0]$40 [7] $0$memwr$\r_RAM$dual_port_bram.v:37$12_EN[7:0]$40 [7] $0$memwr$\r_RAM$dual_port_bram.v:37$12_EN[7:0]$40 [7] }
-(define-fun |dual_port_bram#41#3| ((state |dual_port_bram_s|)) (Array (_ BitVec 4) (_ BitVec 8)) (store (|dual_port_bram#41#2| state) (|dual_port_bram_m:W2A r_RAM| state) (bvor (bvand (|dual_port_bram_m:W2D r_RAM| state) (|dual_port_bram_m:W2M r_RAM| state)) (bvand (select (|dual_port_bram#41#2| state) (|dual_port_bram_m:W2A r_RAM| state)) (bvnot (|dual_port_bram_m:W2M r_RAM| state)))))) ; r_RAM
-; yosys-smt2-anyseq dual_port_bram#102 4 $auto$setundef.cc:524:execute$311
-(declare-fun |dual_port_bram#102| (|dual_port_bram_s|) (_ BitVec 4)) ; $auto$rtlil.cc:2305:Anyseq$312
-(define-fun |dual_port_bram#103| ((state |dual_port_bram_s|)) (_ BitVec 4) (ite (|dual_port_bram#3| state) (|dual_port_bram#102| state) (|dual_port_bram#7| state))) ; $0$memwr$\r_RAM$dual_port_bram.v:39$13_ADDR[3:0]$41
-; yosys-smt2-anyseq dual_port_bram#104 8 $auto$setundef.cc:524:execute$309
-(declare-fun |dual_port_bram#104| (|dual_port_bram_s|) (_ BitVec 8)) ; $auto$rtlil.cc:2305:Anyseq$310
-(define-fun |dual_port_bram#105| ((state |dual_port_bram_s|)) (_ BitVec 8) (ite (|dual_port_bram#3| state) (|dual_port_bram#104| state) (|dual_port_bram#44| state))) ; $0$memwr$\r_RAM$dual_port_bram.v:39$13_DATA[7:0]$42
-(define-fun |dual_port_bram#106| ((state |dual_port_bram_s|)) (_ BitVec 1) (ite (|dual_port_bram#3| state) #b0 #b1)) ; $0$memwr$\r_RAM$dual_port_bram.v:39$13_EN[7:0]$43 [7]
-(define-fun |dual_port_bram_m:W3A r_RAM| ((state |dual_port_bram_s|)) (_ BitVec 4) (|dual_port_bram#103| state)) ; $0$memwr$\r_RAM$dual_port_bram.v:39$13_ADDR[3:0]$41
-(define-fun |dual_port_bram_m:W3D r_RAM| ((state |dual_port_bram_s|)) (_ BitVec 8) (|dual_port_bram#105| state)) ; $0$memwr$\r_RAM$dual_port_bram.v:39$13_DATA[7:0]$42
-(define-fun |dual_port_bram_m:W3M r_RAM| ((state |dual_port_bram_s|)) (_ BitVec 8) (concat (|dual_port_bram#106| state) (concat (|dual_port_bram#106| state) (concat (|dual_port_bram#106| state) (concat (|dual_port_bram#106| state) (concat (|dual_port_bram#106| state) (concat (|dual_port_bram#106| state) (concat (|dual_port_bram#106| state) (|dual_port_bram#106| state))))))))) ; { $0$memwr$\r_RAM$dual_port_bram.v:39$13_EN[7:0]$43 [7] $0$memwr$\r_RAM$dual_port_bram.v:39$13_EN[7:0]$43 [7] $0$memwr$\r_RAM$dual_port_bram.v:39$13_EN[7:0]$43 [7] $0$memwr$\r_RAM$dual_port_bram.v:39$13_EN[7:0]$43 [7] $0$memwr$\r_RAM$dual_port_bram.v:39$13_EN[7:0]$43 [7] $0$memwr$\r_RAM$dual_port_bram.v:39$13_EN[7:0]$43 [7] $0$memwr$\r_RAM$dual_port_bram.v:39$13_EN[7:0]$43 [7] $0$memwr$\r_RAM$dual_port_bram.v:39$13_EN[7:0]$43 [7] }
-(define-fun |dual_port_bram#41#4| ((state |dual_port_bram_s|)) (Array (_ BitVec 4) (_ BitVec 8)) (store (|dual_port_bram#41#3| state) (|dual_port_bram_m:W3A r_RAM| state) (bvor (bvand (|dual_port_bram_m:W3D r_RAM| state) (|dual_port_bram_m:W3M r_RAM| state)) (bvand (select (|dual_port_bram#41#3| state) (|dual_port_bram_m:W3A r_RAM| state)) (bvnot (|dual_port_bram_m:W3M r_RAM| state)))))) ; r_RAM
+(define-fun |dual_port_bram#53| ((state |dual_port_bram_s|)) (_ BitVec 8) (select (|dual_port_bram#49#0| state) (|dual_port_bram_m:R3A r_RAM| state))) ; $memrd$\r_RAM$dual_port_bram.v:35$54_DATA
+(define-fun |dual_port_bram_m:R3D r_RAM| ((state |dual_port_bram_s|)) (_ BitVec 8) (|dual_port_bram#53| state))
+(define-fun |dual_port_bram_m:R4A r_RAM| ((state |dual_port_bram_s|)) (_ BitVec 4) (|dual_port_bram#19| state)) ; $past$dual_port_bram.v:64$4$0
+(define-fun |dual_port_bram#54| ((state |dual_port_bram_s|)) (_ BitVec 8) (select (|dual_port_bram#49#0| state) (|dual_port_bram_m:R4A r_RAM| state))) ; $memrd$\r_RAM$dual_port_bram.v:64$107_DATA
+(define-fun |dual_port_bram_m:R4D r_RAM| ((state |dual_port_bram_s|)) (_ BitVec 8) (|dual_port_bram#54| state))
+(define-fun |dual_port_bram_m:R5A r_RAM| ((state |dual_port_bram_s|)) (_ BitVec 4) (|dual_port_bram#18| state)) ; $past$dual_port_bram.v:68$6$0
+(define-fun |dual_port_bram#55| ((state |dual_port_bram_s|)) (_ BitVec 8) (select (|dual_port_bram#49#0| state) (|dual_port_bram_m:R5A r_RAM| state))) ; $memrd$\r_RAM$dual_port_bram.v:68$111_DATA
+(define-fun |dual_port_bram_m:R5D r_RAM| ((state |dual_port_bram_s|)) (_ BitVec 8) (|dual_port_bram#55| state))
+(define-fun |dual_port_bram_m:R6A r_RAM| ((state |dual_port_bram_s|)) (_ BitVec 4) (|dual_port_bram#17| state)) ; $past$dual_port_bram.v:72$8$0
+(define-fun |dual_port_bram#56| ((state |dual_port_bram_s|)) (_ BitVec 8) (select (|dual_port_bram#49#0| state) (|dual_port_bram_m:R6A r_RAM| state))) ; $memrd$\r_RAM$dual_port_bram.v:72$115_DATA
+(define-fun |dual_port_bram_m:R6D r_RAM| ((state |dual_port_bram_s|)) (_ BitVec 8) (|dual_port_bram#56| state))
+(define-fun |dual_port_bram_m:R7A r_RAM| ((state |dual_port_bram_s|)) (_ BitVec 4) (|dual_port_bram#15| state)) ; $past$dual_port_bram.v:74$11$0
+(define-fun |dual_port_bram#57| ((state |dual_port_bram_s|)) (_ BitVec 8) (select (|dual_port_bram#49#0| state) (|dual_port_bram_m:R7A r_RAM| state))) ; $memrd$\r_RAM$dual_port_bram.v:74$118_DATA
+(define-fun |dual_port_bram_m:R7D r_RAM| ((state |dual_port_bram_s|)) (_ BitVec 8) (|dual_port_bram#57| state))
+(define-fun |dual_port_bram#58| ((state |dual_port_bram_s|)) Bool (= (|dual_port_bram#2| state) (|dual_port_bram#54| state))) ; $eq$dual_port_bram.v:64$108_Y
+(define-fun |dual_port_bram#59| ((state |dual_port_bram_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|dual_port_bram#35| state)) #b1) (ite (|dual_port_bram#58| state) #b1 #b0) (|dual_port_bram#48| state))) ; $procmux$180_Y
+(define-fun |dual_port_bram#60| ((state |dual_port_bram_s|)) Bool (not (or  (= ((_ extract 0 0) (|dual_port_bram#36| state)) #b1) false false false false false false false false false false false false false false false false false false false false false false false false false false false false false false false))) ; $logic_not$dual_port_bram.v:61$102_Y
+(define-fun |dual_port_bram#61| ((state |dual_port_bram_s|)) Bool (and (or  (|dual_port_bram#60| state) false) (or  (|dual_port_bram#13| state) false false false false false false false false false false false false false false false false false false false false false false false false false false false false false false false))) ; $logic_and$dual_port_bram.v:61$104_Y
+(define-fun |dual_port_bram#62| ((state |dual_port_bram_s|)) Bool (and (or  (= ((_ extract 0 0) (|dual_port_bram#0| state)) #b1) false) (or  (|dual_port_bram#61| state) false))) ; $logic_and$dual_port_bram.v:61$105_Y
+(define-fun |dual_port_bram#63| ((state |dual_port_bram_s|)) (_ BitVec 1) (ite (|dual_port_bram#62| state) (|dual_port_bram#59| state) (|dual_port_bram#47| state))) ; $0$formal$dual_port_bram.v:64$29_CHECK[0:0]$82
+(define-fun |dual_port_bram#64| ((state |dual_port_bram_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|dual_port_bram#35| state)) #b1) #b1 #b0)) ; $procmux$175_Y
+(define-fun |dual_port_bram#65| ((state |dual_port_bram_s|)) (_ BitVec 1) (ite (|dual_port_bram#62| state) (|dual_port_bram#64| state) #b0)) ; $0$formal$dual_port_bram.v:64$29_EN[0:0]$83
+; yosys-smt2-anyseq dual_port_bram#66 1 $auto$setundef.cc:524:execute$332
+(declare-fun |dual_port_bram#66| (|dual_port_bram_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2305:Anyseq$333
+(define-fun |dual_port_bram#67| ((state |dual_port_bram_s|)) Bool (not (or  (= ((_ extract 0 0) (|dual_port_bram#2| state)) #b1) (= ((_ extract 1 1) (|dual_port_bram#2| state)) #b1) (= ((_ extract 2 2) (|dual_port_bram#2| state)) #b1) (= ((_ extract 3 3) (|dual_port_bram#2| state)) #b1) (= ((_ extract 4 4) (|dual_port_bram#2| state)) #b1) (= ((_ extract 5 5) (|dual_port_bram#2| state)) #b1) (= ((_ extract 6 6) (|dual_port_bram#2| state)) #b1) (= ((_ extract 7 7) (|dual_port_bram#2| state)) #b1)))) ; $eq$dual_port_bram.v:66$109_Y
+; yosys-smt2-anyseq dual_port_bram#68 1 $auto$setundef.cc:524:execute$330
+(declare-fun |dual_port_bram#68| (|dual_port_bram_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2305:Anyseq$331
+(define-fun |dual_port_bram#69| ((state |dual_port_bram_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|dual_port_bram#35| state)) #b1) (|dual_port_bram#68| state) (ite (|dual_port_bram#67| state) #b1 #b0))) ; $procmux$190_Y
+(define-fun |dual_port_bram#70| ((state |dual_port_bram_s|)) (_ BitVec 1) (ite (|dual_port_bram#62| state) (|dual_port_bram#69| state) (|dual_port_bram#66| state))) ; $0$formal$dual_port_bram.v:66$30_CHECK[0:0]$84
+(define-fun |dual_port_bram#71| ((state |dual_port_bram_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|dual_port_bram#35| state)) #b1) #b0 #b1)) ; $procmux$185_Y
+(define-fun |dual_port_bram#72| ((state |dual_port_bram_s|)) (_ BitVec 1) (ite (|dual_port_bram#62| state) (|dual_port_bram#71| state) #b0)) ; $0$formal$dual_port_bram.v:66$30_EN[0:0]$85
+; yosys-smt2-anyseq dual_port_bram#73 1 $auto$setundef.cc:524:execute$336
+(declare-fun |dual_port_bram#73| (|dual_port_bram_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2305:Anyseq$337
+; yosys-smt2-anyseq dual_port_bram#74 1 $auto$setundef.cc:524:execute$334
+(declare-fun |dual_port_bram#74| (|dual_port_bram_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2305:Anyseq$335
+(define-fun |dual_port_bram#75| ((state |dual_port_bram_s|)) Bool (= (|dual_port_bram#1| state) (|dual_port_bram#55| state))) ; $eq$dual_port_bram.v:68$112_Y
+(define-fun |dual_port_bram#76| ((state |dual_port_bram_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|dual_port_bram#34| state)) #b1) (ite (|dual_port_bram#75| state) #b1 #b0) (|dual_port_bram#74| state))) ; $procmux$200_Y
+(define-fun |dual_port_bram#77| ((state |dual_port_bram_s|)) (_ BitVec 1) (ite (|dual_port_bram#62| state) (|dual_port_bram#76| state) (|dual_port_bram#73| state))) ; $0$formal$dual_port_bram.v:68$31_CHECK[0:0]$86
+(define-fun |dual_port_bram#78| ((state |dual_port_bram_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|dual_port_bram#34| state)) #b1) #b1 #b0)) ; $procmux$195_Y
+(define-fun |dual_port_bram#79| ((state |dual_port_bram_s|)) (_ BitVec 1) (ite (|dual_port_bram#62| state) (|dual_port_bram#78| state) #b0)) ; $0$formal$dual_port_bram.v:68$31_EN[0:0]$87
+; yosys-smt2-anyseq dual_port_bram#80 1 $auto$setundef.cc:524:execute$340
+(declare-fun |dual_port_bram#80| (|dual_port_bram_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2305:Anyseq$341
+(define-fun |dual_port_bram#81| ((state |dual_port_bram_s|)) Bool (not (or  (= ((_ extract 0 0) (|dual_port_bram#1| state)) #b1) (= ((_ extract 1 1) (|dual_port_bram#1| state)) #b1) (= ((_ extract 2 2) (|dual_port_bram#1| state)) #b1) (= ((_ extract 3 3) (|dual_port_bram#1| state)) #b1) (= ((_ extract 4 4) (|dual_port_bram#1| state)) #b1) (= ((_ extract 5 5) (|dual_port_bram#1| state)) #b1) (= ((_ extract 6 6) (|dual_port_bram#1| state)) #b1) (= ((_ extract 7 7) (|dual_port_bram#1| state)) #b1)))) ; $eq$dual_port_bram.v:70$113_Y
+; yosys-smt2-anyseq dual_port_bram#82 1 $auto$setundef.cc:524:execute$338
+(declare-fun |dual_port_bram#82| (|dual_port_bram_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2305:Anyseq$339
+(define-fun |dual_port_bram#83| ((state |dual_port_bram_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|dual_port_bram#34| state)) #b1) (|dual_port_bram#82| state) (ite (|dual_port_bram#81| state) #b1 #b0))) ; $procmux$210_Y
+(define-fun |dual_port_bram#84| ((state |dual_port_bram_s|)) (_ BitVec 1) (ite (|dual_port_bram#62| state) (|dual_port_bram#83| state) (|dual_port_bram#80| state))) ; $0$formal$dual_port_bram.v:70$32_CHECK[0:0]$88
+(define-fun |dual_port_bram#85| ((state |dual_port_bram_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|dual_port_bram#34| state)) #b1) #b0 #b1)) ; $procmux$205_Y
+(define-fun |dual_port_bram#86| ((state |dual_port_bram_s|)) (_ BitVec 1) (ite (|dual_port_bram#62| state) (|dual_port_bram#85| state) #b0)) ; $0$formal$dual_port_bram.v:70$32_EN[0:0]$89
+; yosys-smt2-anyseq dual_port_bram#87 1 $auto$setundef.cc:524:execute$344
+(declare-fun |dual_port_bram#87| (|dual_port_bram_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2305:Anyseq$345
+; yosys-smt2-anyseq dual_port_bram#88 1 $auto$setundef.cc:524:execute$342
+(declare-fun |dual_port_bram#88| (|dual_port_bram_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2305:Anyseq$343
+(define-fun |dual_port_bram#89| ((state |dual_port_bram_s|)) Bool (= (|dual_port_bram#56| state) (|dual_port_bram#16| state))) ; $eq$dual_port_bram.v:72$116_Y
+(define-fun |dual_port_bram#90| ((state |dual_port_bram_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|dual_port_bram#33| state)) #b1) (ite (|dual_port_bram#89| state) #b1 #b0) (|dual_port_bram#88| state))) ; $procmux$218_Y
+(define-fun |dual_port_bram#91| ((state |dual_port_bram_s|)) (_ BitVec 1) (ite (|dual_port_bram#62| state) (|dual_port_bram#90| state) (|dual_port_bram#87| state))) ; $0$formal$dual_port_bram.v:72$33_CHECK[0:0]$90
+(define-fun |dual_port_bram#92| ((state |dual_port_bram_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|dual_port_bram#33| state)) #b1) #b1 #b0)) ; $procmux$214_Y
+(define-fun |dual_port_bram#93| ((state |dual_port_bram_s|)) (_ BitVec 1) (ite (|dual_port_bram#62| state) (|dual_port_bram#92| state) #b0)) ; $0$formal$dual_port_bram.v:72$33_EN[0:0]$91
+; yosys-smt2-anyseq dual_port_bram#94 1 $auto$setundef.cc:524:execute$348
+(declare-fun |dual_port_bram#94| (|dual_port_bram_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2305:Anyseq$349
+; yosys-smt2-anyseq dual_port_bram#95 1 $auto$setundef.cc:524:execute$346
+(declare-fun |dual_port_bram#95| (|dual_port_bram_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2305:Anyseq$347
+(define-fun |dual_port_bram#96| ((state |dual_port_bram_s|)) Bool (= (|dual_port_bram#57| state) (|dual_port_bram#14| state))) ; $eq$dual_port_bram.v:74$119_Y
+(define-fun |dual_port_bram#97| ((state |dual_port_bram_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|dual_port_bram#32| state)) #b1) (ite (|dual_port_bram#96| state) #b1 #b0) (|dual_port_bram#95| state))) ; $procmux$226_Y
+(define-fun |dual_port_bram#98| ((state |dual_port_bram_s|)) (_ BitVec 1) (ite (|dual_port_bram#62| state) (|dual_port_bram#97| state) (|dual_port_bram#94| state))) ; $0$formal$dual_port_bram.v:74$34_CHECK[0:0]$92
+(define-fun |dual_port_bram#99| ((state |dual_port_bram_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|dual_port_bram#32| state)) #b1) #b1 #b0)) ; $procmux$222_Y
+(define-fun |dual_port_bram#100| ((state |dual_port_bram_s|)) (_ BitVec 1) (ite (|dual_port_bram#62| state) (|dual_port_bram#99| state) #b0)) ; $0$formal$dual_port_bram.v:74$34_EN[0:0]$93
+(define-fun |dual_port_bram#101| ((state |dual_port_bram_s|)) (_ BitVec 8) (ite (|dual_port_bram#10| state) (|dual_port_bram#50| state) #b00000000)) ; $0\o_READ_DATA_A[7:0]
+(define-fun |dual_port_bram#102| ((state |dual_port_bram_s|)) (_ BitVec 8) (ite (|dual_port_bram#9| state) (|dual_port_bram#51| state) #b00000000)) ; $0\o_READ_DATA_B[7:0]
+; yosys-smt2-anyseq dual_port_bram#103 4 $auto$setundef.cc:524:execute$352
+(declare-fun |dual_port_bram#103| (|dual_port_bram_s|) (_ BitVec 4)) ; $auto$rtlil.cc:2305:Anyseq$353
+(define-fun |dual_port_bram#104| ((state |dual_port_bram_s|)) (_ BitVec 4) (ite (|dual_port_bram#4| state) (|dual_port_bram#8| state) (|dual_port_bram#103| state))) ; $0$memwr$\r_RAM$dual_port_bram.v:33$13_ADDR[3:0]$41
+; yosys-smt2-anyseq dual_port_bram#105 8 $auto$setundef.cc:524:execute$350
+(declare-fun |dual_port_bram#105| (|dual_port_bram_s|) (_ BitVec 8)) ; $auto$rtlil.cc:2305:Anyseq$351
+(define-fun |dual_port_bram#106| ((state |dual_port_bram_s|)) (_ BitVec 8) (ite (|dual_port_bram#4| state) (|dual_port_bram#6| state) (|dual_port_bram#105| state))) ; $0$memwr$\r_RAM$dual_port_bram.v:33$13_DATA[7:0]$42
+(define-fun |dual_port_bram#107| ((state |dual_port_bram_s|)) (_ BitVec 1) (ite (|dual_port_bram#4| state) #b1 #b0)) ; $0$memwr$\r_RAM$dual_port_bram.v:33$13_EN[7:0]$43 [7]
+(define-fun |dual_port_bram_m:W0A r_RAM| ((state |dual_port_bram_s|)) (_ BitVec 4) (|dual_port_bram#104| state)) ; $0$memwr$\r_RAM$dual_port_bram.v:33$13_ADDR[3:0]$41
+(define-fun |dual_port_bram_m:W0D r_RAM| ((state |dual_port_bram_s|)) (_ BitVec 8) (|dual_port_bram#106| state)) ; $0$memwr$\r_RAM$dual_port_bram.v:33$13_DATA[7:0]$42
+(define-fun |dual_port_bram_m:W0M r_RAM| ((state |dual_port_bram_s|)) (_ BitVec 8) (concat (|dual_port_bram#107| state) (concat (|dual_port_bram#107| state) (concat (|dual_port_bram#107| state) (concat (|dual_port_bram#107| state) (concat (|dual_port_bram#107| state) (concat (|dual_port_bram#107| state) (concat (|dual_port_bram#107| state) (|dual_port_bram#107| state))))))))) ; { $0$memwr$\r_RAM$dual_port_bram.v:33$13_EN[7:0]$43 [7] $0$memwr$\r_RAM$dual_port_bram.v:33$13_EN[7:0]$43 [7] $0$memwr$\r_RAM$dual_port_bram.v:33$13_EN[7:0]$43 [7] $0$memwr$\r_RAM$dual_port_bram.v:33$13_EN[7:0]$43 [7] $0$memwr$\r_RAM$dual_port_bram.v:33$13_EN[7:0]$43 [7] $0$memwr$\r_RAM$dual_port_bram.v:33$13_EN[7:0]$43 [7] $0$memwr$\r_RAM$dual_port_bram.v:33$13_EN[7:0]$43 [7] $0$memwr$\r_RAM$dual_port_bram.v:33$13_EN[7:0]$43 [7] }
+(define-fun |dual_port_bram#49#1| ((state |dual_port_bram_s|)) (Array (_ BitVec 4) (_ BitVec 8)) (store (|dual_port_bram#49#0| state) (|dual_port_bram_m:W0A r_RAM| state) (bvor (bvand (|dual_port_bram_m:W0D r_RAM| state) (|dual_port_bram_m:W0M r_RAM| state)) (bvand (select (|dual_port_bram#49#0| state) (|dual_port_bram_m:W0A r_RAM| state)) (bvnot (|dual_port_bram_m:W0M r_RAM| state)))))) ; r_RAM
+; yosys-smt2-anyseq dual_port_bram#108 4 $auto$setundef.cc:524:execute$356
+(declare-fun |dual_port_bram#108| (|dual_port_bram_s|) (_ BitVec 4)) ; $auto$rtlil.cc:2305:Anyseq$357
+(define-fun |dual_port_bram#109| ((state |dual_port_bram_s|)) (_ BitVec 4) (ite (|dual_port_bram#4| state) (|dual_port_bram#108| state) (|dual_port_bram#8| state))) ; $0$memwr$\r_RAM$dual_port_bram.v:35$14_ADDR[3:0]$44
+; yosys-smt2-anyseq dual_port_bram#110 8 $auto$setundef.cc:524:execute$354
+(declare-fun |dual_port_bram#110| (|dual_port_bram_s|) (_ BitVec 8)) ; $auto$rtlil.cc:2305:Anyseq$355
+(define-fun |dual_port_bram#111| ((state |dual_port_bram_s|)) (_ BitVec 8) (ite (|dual_port_bram#4| state) (|dual_port_bram#110| state) (|dual_port_bram#53| state))) ; $0$memwr$\r_RAM$dual_port_bram.v:35$14_DATA[7:0]$45
+(define-fun |dual_port_bram#112| ((state |dual_port_bram_s|)) (_ BitVec 1) (ite (|dual_port_bram#4| state) #b0 #b1)) ; $0$memwr$\r_RAM$dual_port_bram.v:35$14_EN[7:0]$46 [7]
+(define-fun |dual_port_bram_m:W1A r_RAM| ((state |dual_port_bram_s|)) (_ BitVec 4) (|dual_port_bram#109| state)) ; $0$memwr$\r_RAM$dual_port_bram.v:35$14_ADDR[3:0]$44
+(define-fun |dual_port_bram_m:W1D r_RAM| ((state |dual_port_bram_s|)) (_ BitVec 8) (|dual_port_bram#111| state)) ; $0$memwr$\r_RAM$dual_port_bram.v:35$14_DATA[7:0]$45
+(define-fun |dual_port_bram_m:W1M r_RAM| ((state |dual_port_bram_s|)) (_ BitVec 8) (concat (|dual_port_bram#112| state) (concat (|dual_port_bram#112| state) (concat (|dual_port_bram#112| state) (concat (|dual_port_bram#112| state) (concat (|dual_port_bram#112| state) (concat (|dual_port_bram#112| state) (concat (|dual_port_bram#112| state) (|dual_port_bram#112| state))))))))) ; { $0$memwr$\r_RAM$dual_port_bram.v:35$14_EN[7:0]$46 [7] $0$memwr$\r_RAM$dual_port_bram.v:35$14_EN[7:0]$46 [7] $0$memwr$\r_RAM$dual_port_bram.v:35$14_EN[7:0]$46 [7] $0$memwr$\r_RAM$dual_port_bram.v:35$14_EN[7:0]$46 [7] $0$memwr$\r_RAM$dual_port_bram.v:35$14_EN[7:0]$46 [7] $0$memwr$\r_RAM$dual_port_bram.v:35$14_EN[7:0]$46 [7] $0$memwr$\r_RAM$dual_port_bram.v:35$14_EN[7:0]$46 [7] $0$memwr$\r_RAM$dual_port_bram.v:35$14_EN[7:0]$46 [7] }
+(define-fun |dual_port_bram#49#2| ((state |dual_port_bram_s|)) (Array (_ BitVec 4) (_ BitVec 8)) (store (|dual_port_bram#49#1| state) (|dual_port_bram_m:W1A r_RAM| state) (bvor (bvand (|dual_port_bram_m:W1D r_RAM| state) (|dual_port_bram_m:W1M r_RAM| state)) (bvand (select (|dual_port_bram#49#1| state) (|dual_port_bram_m:W1A r_RAM| state)) (bvnot (|dual_port_bram_m:W1M r_RAM| state)))))) ; r_RAM
+; yosys-smt2-anyseq dual_port_bram#113 4 $auto$setundef.cc:524:execute$360
+(declare-fun |dual_port_bram#113| (|dual_port_bram_s|) (_ BitVec 4)) ; $auto$rtlil.cc:2305:Anyseq$361
+(define-fun |dual_port_bram#114| ((state |dual_port_bram_s|)) (_ BitVec 4) (ite (|dual_port_bram#3| state) (|dual_port_bram#7| state) (|dual_port_bram#113| state))) ; $0$memwr$\r_RAM$dual_port_bram.v:37$15_ADDR[3:0]$47
+; yosys-smt2-anyseq dual_port_bram#115 8 $auto$setundef.cc:524:execute$358
+(declare-fun |dual_port_bram#115| (|dual_port_bram_s|) (_ BitVec 8)) ; $auto$rtlil.cc:2305:Anyseq$359
+(define-fun |dual_port_bram#116| ((state |dual_port_bram_s|)) (_ BitVec 8) (ite (|dual_port_bram#3| state) (|dual_port_bram#5| state) (|dual_port_bram#115| state))) ; $0$memwr$\r_RAM$dual_port_bram.v:37$15_DATA[7:0]$48
+(define-fun |dual_port_bram#117| ((state |dual_port_bram_s|)) (_ BitVec 1) (ite (|dual_port_bram#3| state) #b1 #b0)) ; $0$memwr$\r_RAM$dual_port_bram.v:37$15_EN[7:0]$49 [7]
+(define-fun |dual_port_bram_m:W2A r_RAM| ((state |dual_port_bram_s|)) (_ BitVec 4) (|dual_port_bram#114| state)) ; $0$memwr$\r_RAM$dual_port_bram.v:37$15_ADDR[3:0]$47
+(define-fun |dual_port_bram_m:W2D r_RAM| ((state |dual_port_bram_s|)) (_ BitVec 8) (|dual_port_bram#116| state)) ; $0$memwr$\r_RAM$dual_port_bram.v:37$15_DATA[7:0]$48
+(define-fun |dual_port_bram_m:W2M r_RAM| ((state |dual_port_bram_s|)) (_ BitVec 8) (concat (|dual_port_bram#117| state) (concat (|dual_port_bram#117| state) (concat (|dual_port_bram#117| state) (concat (|dual_port_bram#117| state) (concat (|dual_port_bram#117| state) (concat (|dual_port_bram#117| state) (concat (|dual_port_bram#117| state) (|dual_port_bram#117| state))))))))) ; { $0$memwr$\r_RAM$dual_port_bram.v:37$15_EN[7:0]$49 [7] $0$memwr$\r_RAM$dual_port_bram.v:37$15_EN[7:0]$49 [7] $0$memwr$\r_RAM$dual_port_bram.v:37$15_EN[7:0]$49 [7] $0$memwr$\r_RAM$dual_port_bram.v:37$15_EN[7:0]$49 [7] $0$memwr$\r_RAM$dual_port_bram.v:37$15_EN[7:0]$49 [7] $0$memwr$\r_RAM$dual_port_bram.v:37$15_EN[7:0]$49 [7] $0$memwr$\r_RAM$dual_port_bram.v:37$15_EN[7:0]$49 [7] $0$memwr$\r_RAM$dual_port_bram.v:37$15_EN[7:0]$49 [7] }
+(define-fun |dual_port_bram#49#3| ((state |dual_port_bram_s|)) (Array (_ BitVec 4) (_ BitVec 8)) (store (|dual_port_bram#49#2| state) (|dual_port_bram_m:W2A r_RAM| state) (bvor (bvand (|dual_port_bram_m:W2D r_RAM| state) (|dual_port_bram_m:W2M r_RAM| state)) (bvand (select (|dual_port_bram#49#2| state) (|dual_port_bram_m:W2A r_RAM| state)) (bvnot (|dual_port_bram_m:W2M r_RAM| state)))))) ; r_RAM
+; yosys-smt2-anyseq dual_port_bram#118 4 $auto$setundef.cc:524:execute$364
+(declare-fun |dual_port_bram#118| (|dual_port_bram_s|) (_ BitVec 4)) ; $auto$rtlil.cc:2305:Anyseq$365
+(define-fun |dual_port_bram#119| ((state |dual_port_bram_s|)) (_ BitVec 4) (ite (|dual_port_bram#3| state) (|dual_port_bram#118| state) (|dual_port_bram#7| state))) ; $0$memwr$\r_RAM$dual_port_bram.v:39$16_ADDR[3:0]$50
+; yosys-smt2-anyseq dual_port_bram#120 8 $auto$setundef.cc:524:execute$362
+(declare-fun |dual_port_bram#120| (|dual_port_bram_s|) (_ BitVec 8)) ; $auto$rtlil.cc:2305:Anyseq$363
+(define-fun |dual_port_bram#121| ((state |dual_port_bram_s|)) (_ BitVec 8) (ite (|dual_port_bram#3| state) (|dual_port_bram#120| state) (|dual_port_bram#52| state))) ; $0$memwr$\r_RAM$dual_port_bram.v:39$16_DATA[7:0]$51
+(define-fun |dual_port_bram#122| ((state |dual_port_bram_s|)) (_ BitVec 1) (ite (|dual_port_bram#3| state) #b0 #b1)) ; $0$memwr$\r_RAM$dual_port_bram.v:39$16_EN[7:0]$52 [7]
+(define-fun |dual_port_bram_m:W3A r_RAM| ((state |dual_port_bram_s|)) (_ BitVec 4) (|dual_port_bram#119| state)) ; $0$memwr$\r_RAM$dual_port_bram.v:39$16_ADDR[3:0]$50
+(define-fun |dual_port_bram_m:W3D r_RAM| ((state |dual_port_bram_s|)) (_ BitVec 8) (|dual_port_bram#121| state)) ; $0$memwr$\r_RAM$dual_port_bram.v:39$16_DATA[7:0]$51
+(define-fun |dual_port_bram_m:W3M r_RAM| ((state |dual_port_bram_s|)) (_ BitVec 8) (concat (|dual_port_bram#122| state) (concat (|dual_port_bram#122| state) (concat (|dual_port_bram#122| state) (concat (|dual_port_bram#122| state) (concat (|dual_port_bram#122| state) (concat (|dual_port_bram#122| state) (concat (|dual_port_bram#122| state) (|dual_port_bram#122| state))))))))) ; { $0$memwr$\r_RAM$dual_port_bram.v:39$16_EN[7:0]$52 [7] $0$memwr$\r_RAM$dual_port_bram.v:39$16_EN[7:0]$52 [7] $0$memwr$\r_RAM$dual_port_bram.v:39$16_EN[7:0]$52 [7] $0$memwr$\r_RAM$dual_port_bram.v:39$16_EN[7:0]$52 [7] $0$memwr$\r_RAM$dual_port_bram.v:39$16_EN[7:0]$52 [7] $0$memwr$\r_RAM$dual_port_bram.v:39$16_EN[7:0]$52 [7] $0$memwr$\r_RAM$dual_port_bram.v:39$16_EN[7:0]$52 [7] $0$memwr$\r_RAM$dual_port_bram.v:39$16_EN[7:0]$52 [7] }
+(define-fun |dual_port_bram#49#4| ((state |dual_port_bram_s|)) (Array (_ BitVec 4) (_ BitVec 8)) (store (|dual_port_bram#49#3| state) (|dual_port_bram_m:W3A r_RAM| state) (bvor (bvand (|dual_port_bram_m:W3D r_RAM| state) (|dual_port_bram_m:W3M r_RAM| state)) (bvand (select (|dual_port_bram#49#3| state) (|dual_port_bram_m:W3A r_RAM| state)) (bvnot (|dual_port_bram_m:W3M r_RAM| state)))))) ; r_RAM
 (define-fun |dual_port_bram_a| ((state |dual_port_bram_s|)) Bool (and
   (|dual_port_bram_a 0| state)
   (|dual_port_bram_a 1| state)
   (|dual_port_bram_a 2| state)
   (|dual_port_bram_a 3| state)
   (|dual_port_bram_a 4| state)
+  (|dual_port_bram_a 5| state)
 ))
 (define-fun |dual_port_bram_u| ((state |dual_port_bram_s|)) Bool (and
   (|dual_port_bram_u 0| state)
@@ -275,39 +314,48 @@
   (|dual_port_bram_u 3| state)
   (|dual_port_bram_u 4| state)
   (|dual_port_bram_u 5| state)
+  (|dual_port_bram_u 6| state)
+  (|dual_port_bram_u 7| state)
+  (|dual_port_bram_u 8| state)
 ))
 (define-fun |dual_port_bram_i| ((state |dual_port_bram_s|)) Bool (and
   (= (= ((_ extract 0 0) (|dual_port_bram#0| state)) #b1) false) ; r_PAST_VALID
-  (= (= ((_ extract 0 0) (|dual_port_bram#18| state)) #b1) false) ; $formal$dual_port_bram.v:66$25_EN
-  (= (= ((_ extract 0 0) (|dual_port_bram#20| state)) #b1) false) ; $formal$dual_port_bram.v:64$24_EN
-  (= (= ((_ extract 0 0) (|dual_port_bram#22| state)) #b1) false) ; $formal$dual_port_bram.v:62$23_EN
-  (= (= ((_ extract 0 0) (|dual_port_bram#24| state)) #b1) false) ; $formal$dual_port_bram.v:60$22_EN
-  (= (= ((_ extract 0 0) (|dual_port_bram#26| state)) #b1) false) ; $formal$dual_port_bram.v:58$21_EN
+  (= (= ((_ extract 0 0) (|dual_port_bram#20| state)) #b1) false) ; $formal$dual_port_bram.v:74$34_EN
+  (= (= ((_ extract 0 0) (|dual_port_bram#22| state)) #b1) false) ; $formal$dual_port_bram.v:72$33_EN
+  (= (= ((_ extract 0 0) (|dual_port_bram#24| state)) #b1) false) ; $formal$dual_port_bram.v:70$32_EN
+  (= (= ((_ extract 0 0) (|dual_port_bram#26| state)) #b1) false) ; $formal$dual_port_bram.v:68$31_EN
+  (= (= ((_ extract 0 0) (|dual_port_bram#28| state)) #b1) false) ; $formal$dual_port_bram.v:66$30_EN
+  (= (= ((_ extract 0 0) (|dual_port_bram#30| state)) #b1) false) ; $formal$dual_port_bram.v:64$29_EN
 ))
 (define-fun |dual_port_bram_h| ((state |dual_port_bram_s|)) Bool true)
 (define-fun |dual_port_bram_t| ((state |dual_port_bram_s|) (next_state |dual_port_bram_s|)) Bool (and
-  (= (ite (|dual_port_bram#13| state) #b1 #b0) (|dual_port_bram#31| next_state)) ; $procdff$231 $and$dual_port_bram.v:55$84_Y
-  (= (ite (|dual_port_bram#10| state) #b1 #b0) (|dual_port_bram#30| next_state)) ; $procdff$233 $eq$dual_port_bram.v:57$89_Y
-  (= (ite (|dual_port_bram#9| state) #b1 #b0) (|dual_port_bram#29| next_state)) ; $procdff$235 $eq$dual_port_bram.v:61$93_Y
-  (= (ite (|dual_port_bram#4| state) #b1 #b0) (|dual_port_bram#28| next_state)) ; $procdff$237 $eq$dual_port_bram.v:65$97_Y
-  (= (|dual_port_bram#54| state) (|dual_port_bram#27| next_state)) ; $procdff$250 $formal$dual_port_bram.v:58$21_CHECK
-  (= (|dual_port_bram#56| state) (|dual_port_bram#26| next_state)) ; $procdff$251 $formal$dual_port_bram.v:58$21_EN
-  (= (|dual_port_bram#61| state) (|dual_port_bram#25| next_state)) ; $procdff$252 $formal$dual_port_bram.v:60$22_CHECK
-  (= (|dual_port_bram#63| state) (|dual_port_bram#24| next_state)) ; $procdff$253 $formal$dual_port_bram.v:60$22_EN
-  (= (|dual_port_bram#68| state) (|dual_port_bram#23| next_state)) ; $procdff$254 $formal$dual_port_bram.v:62$23_CHECK
-  (= (|dual_port_bram#70| state) (|dual_port_bram#22| next_state)) ; $procdff$255 $formal$dual_port_bram.v:62$23_EN
-  (= (|dual_port_bram#75| state) (|dual_port_bram#21| next_state)) ; $procdff$256 $formal$dual_port_bram.v:64$24_CHECK
-  (= (|dual_port_bram#77| state) (|dual_port_bram#20| next_state)) ; $procdff$257 $formal$dual_port_bram.v:64$24_EN
-  (= (|dual_port_bram#82| state) (|dual_port_bram#19| next_state)) ; $procdff$258 $formal$dual_port_bram.v:66$25_CHECK
-  (= (|dual_port_bram#84| state) (|dual_port_bram#18| next_state)) ; $procdff$259 $formal$dual_port_bram.v:66$25_EN
-  (= (|dual_port_bram#12| state) (|dual_port_bram#17| next_state)) ; $procdff$234 $past$dual_port_bram.v:58$4$0
-  (= (|dual_port_bram#11| state) (|dual_port_bram#16| next_state)) ; $procdff$236 $past$dual_port_bram.v:62$6$0
-  (= (|dual_port_bram#8| state) (|dual_port_bram#15| next_state)) ; $procdff$238 $past$dual_port_bram.v:66$8$0
-  (= (|dual_port_bram#6| state) (|dual_port_bram#14| next_state)) ; $procdff$239 $past$dual_port_bram.v:66$9$0
-  (= (|dual_port_bram#85| state) (|dual_port_bram#2| next_state)) ; $procdff$272 \o_READ_DATA_A
-  (= (|dual_port_bram#86| state) (|dual_port_bram#1| next_state)) ; $procdff$273 \o_READ_DATA_B
-  (= #b1 (|dual_port_bram#0| next_state)) ; $procdff$230 \r_PAST_VALID
-  (= (|dual_port_bram#41#4| state) (|dual_port_bram#41#0| next_state)) ; r_RAM
+  (= (ite (|dual_port_bram#13| state) #b1 #b0) (|dual_port_bram#36| next_state)) ; $procdff$273 $and$dual_port_bram.v:61$101_Y
+  (= (ite (|dual_port_bram#10| state) #b1 #b0) (|dual_port_bram#35| next_state)) ; $procdff$275 $eq$dual_port_bram.v:63$106_Y
+  (= (ite (|dual_port_bram#9| state) #b1 #b0) (|dual_port_bram#34| next_state)) ; $procdff$277 $eq$dual_port_bram.v:67$110_Y
+  (= (ite (|dual_port_bram#4| state) #b1 #b0) (|dual_port_bram#33| next_state)) ; $procdff$279 $eq$dual_port_bram.v:71$114_Y
+  (= (ite (|dual_port_bram#3| state) #b1 #b0) (|dual_port_bram#32| next_state)) ; $procdff$282 $eq$dual_port_bram.v:73$117_Y
+  (= (|dual_port_bram#63| state) (|dual_port_bram#31| next_state)) ; $procdff$297 $formal$dual_port_bram.v:64$29_CHECK
+  (= (|dual_port_bram#65| state) (|dual_port_bram#30| next_state)) ; $procdff$298 $formal$dual_port_bram.v:64$29_EN
+  (= (|dual_port_bram#70| state) (|dual_port_bram#29| next_state)) ; $procdff$299 $formal$dual_port_bram.v:66$30_CHECK
+  (= (|dual_port_bram#72| state) (|dual_port_bram#28| next_state)) ; $procdff$300 $formal$dual_port_bram.v:66$30_EN
+  (= (|dual_port_bram#77| state) (|dual_port_bram#27| next_state)) ; $procdff$301 $formal$dual_port_bram.v:68$31_CHECK
+  (= (|dual_port_bram#79| state) (|dual_port_bram#26| next_state)) ; $procdff$302 $formal$dual_port_bram.v:68$31_EN
+  (= (|dual_port_bram#84| state) (|dual_port_bram#25| next_state)) ; $procdff$303 $formal$dual_port_bram.v:70$32_CHECK
+  (= (|dual_port_bram#86| state) (|dual_port_bram#24| next_state)) ; $procdff$304 $formal$dual_port_bram.v:70$32_EN
+  (= (|dual_port_bram#91| state) (|dual_port_bram#23| next_state)) ; $procdff$305 $formal$dual_port_bram.v:72$33_CHECK
+  (= (|dual_port_bram#93| state) (|dual_port_bram#22| next_state)) ; $procdff$306 $formal$dual_port_bram.v:72$33_EN
+  (= (|dual_port_bram#98| state) (|dual_port_bram#21| next_state)) ; $procdff$307 $formal$dual_port_bram.v:74$34_CHECK
+  (= (|dual_port_bram#100| state) (|dual_port_bram#20| next_state)) ; $procdff$308 $formal$dual_port_bram.v:74$34_EN
+  (= (|dual_port_bram#12| state) (|dual_port_bram#19| next_state)) ; $procdff$276 $past$dual_port_bram.v:64$4$0
+  (= (|dual_port_bram#11| state) (|dual_port_bram#18| next_state)) ; $procdff$278 $past$dual_port_bram.v:68$6$0
+  (= (|dual_port_bram#8| state) (|dual_port_bram#17| next_state)) ; $procdff$280 $past$dual_port_bram.v:72$8$0
+  (= (|dual_port_bram#6| state) (|dual_port_bram#16| next_state)) ; $procdff$281 $past$dual_port_bram.v:72$9$0
+  (= (|dual_port_bram#7| state) (|dual_port_bram#15| next_state)) ; $procdff$283 $past$dual_port_bram.v:74$11$0
+  (= (|dual_port_bram#5| state) (|dual_port_bram#14| next_state)) ; $procdff$284 $past$dual_port_bram.v:74$12$0
+  (= (|dual_port_bram#101| state) (|dual_port_bram#2| next_state)) ; $procdff$321 \o_READ_DATA_A
+  (= (|dual_port_bram#102| state) (|dual_port_bram#1| next_state)) ; $procdff$322 \o_READ_DATA_B
+  (= #b1 (|dual_port_bram#0| next_state)) ; $procdff$272 \r_PAST_VALID
+  (= (|dual_port_bram#49#4| state) (|dual_port_bram#49#0| next_state)) ; r_RAM
 )) ; end of module dual_port_bram
 ; yosys-smt2-topmod dual_port_bram
 ; end of yosys output
