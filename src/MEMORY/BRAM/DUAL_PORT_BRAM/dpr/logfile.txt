@@ -1,0 +1,36 @@
+SBY 20:01:04 [dpr] Removing direcory 'dpr'.
+SBY 20:01:04 [dpr] Copy 'dual_port_bram.v' to 'dpr/src/dual_port_bram.v'.
+SBY 20:01:04 [dpr] engine_0: smtbmc
+SBY 20:01:04 [dpr] base: starting process "cd dpr/src; yosys -ql ../model/design.log ../model/design.ys"
+SBY 20:01:04 [dpr] base: finished (returncode=0)
+SBY 20:01:04 [dpr] smt2: starting process "cd dpr/model; yosys -ql design_smt2.log design_smt2.ys"
+SBY 20:01:04 [dpr] smt2: finished (returncode=0)
+SBY 20:01:04 [dpr] engine_0.basecase: starting process "cd dpr; yosys-smtbmc --presat --unroll --noprogress -t 30 --append 0 --dump-vcd engine_0/trace.vcd --dump-vlogtb engine_0/trace_tb.v --dump-smtc engine_0/trace.smtc model/design_smt2.smt2"
+SBY 20:01:04 [dpr] engine_0.induction: starting process "cd dpr; yosys-smtbmc --presat --unroll -i --noprogress -t 30 --append 0 --dump-vcd engine_0/trace_induct.vcd --dump-vlogtb engine_0/trace_induct_tb.v --dump-smtc engine_0/trace_induct.smtc model/design_smt2.smt2"
+SBY 20:01:04 [dpr] engine_0.basecase: ##   0:00:00  Solver: yices
+SBY 20:01:04 [dpr] engine_0.induction: ##   0:00:00  Solver: yices
+SBY 20:01:04 [dpr] engine_0.basecase: ##   0:00:00  Checking assumptions in step 0..
+SBY 20:01:04 [dpr] engine_0.basecase: ##   0:00:00  Checking assertions in step 0..
+SBY 20:01:04 [dpr] engine_0.induction: ##   0:00:00  Trying induction in step 30..
+SBY 20:01:04 [dpr] engine_0.induction: ##   0:00:00  Trying induction in step 29..
+SBY 20:01:04 [dpr] engine_0.basecase: ##   0:00:00  Checking assumptions in step 1..
+SBY 20:01:04 [dpr] engine_0.basecase: ##   0:00:00  Checking assertions in step 1..
+SBY 20:01:04 [dpr] engine_0.induction: ##   0:00:00  Trying induction in step 28..
+SBY 20:01:04 [dpr] engine_0.basecase: ##   0:00:00  Checking assumptions in step 2..
+SBY 20:01:04 [dpr] engine_0.basecase: ##   0:00:00  Checking assertions in step 2..
+SBY 20:01:04 [dpr] engine_0.basecase: ##   0:00:00  BMC failed!
+SBY 20:01:04 [dpr] engine_0.basecase: ##   0:00:00  Assert failed in dual_port_bram: dual_port_bram.v:66
+SBY 20:01:04 [dpr] engine_0.basecase: ##   0:00:00  Writing trace to VCD file: engine_0/trace.vcd
+SBY 20:01:04 [dpr] engine_0.induction: ##   0:00:00  Trying induction in step 27..
+SBY 20:01:04 [dpr] engine_0.basecase: ##   0:00:00  Writing trace to Verilog testbench: engine_0/trace_tb.v
+SBY 20:01:04 [dpr] engine_0.basecase: ##   0:00:00  Writing trace to constraints file: engine_0/trace.smtc
+SBY 20:01:04 [dpr] engine_0.induction: ##   0:00:00  Trying induction in step 26..
+SBY 20:01:04 [dpr] engine_0.basecase: ##   0:00:00  Status: FAILED (!)
+SBY 20:01:04 [dpr] engine_0.basecase: finished (returncode=1)
+SBY 20:01:04 [dpr] engine_0: Status returned by engine for basecase: FAIL
+SBY 20:01:04 [dpr] engine_0.induction: terminating process
+SBY 20:01:04 [dpr] summary: Elapsed clock time [H:MM:SS (secs)]: 0:00:00 (0)
+SBY 20:01:04 [dpr] summary: Elapsed process time [H:MM:SS (secs)]: 0:00:00 (0)
+SBY 20:01:04 [dpr] summary: engine_0 (smtbmc) returned FAIL for basecase
+SBY 20:01:04 [dpr] summary: counterexample trace: dpr/engine_0/trace.vcd
+SBY 20:01:04 [dpr] DONE (FAIL, rc=2)
