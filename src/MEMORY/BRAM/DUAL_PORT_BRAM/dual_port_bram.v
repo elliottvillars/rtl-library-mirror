@@ -1,5 +1,6 @@
 module dual_port_bram #(parameter p_ADDRESS_WIDTH = 4, parameter p_DATA_WIDTH = 8)(
-	input wire i_CLK,
+	input wire i_CLK_A,
+	input wire i_CLK_B,
 	input wire i_WRITE_ENABLE_A,
 	input wire i_READ_ENABLE_A,
 	input wire i_WRITE_ENABLE_B,
@@ -15,29 +16,38 @@ module dual_port_bram #(parameter p_ADDRESS_WIDTH = 4, parameter p_DATA_WIDTH = 
 );
 
 reg [p_DATA_WIDTH-1:0] r_RAM [0:2**p_ADDRESS_WIDTH-1];
-always@(posedge i_CLK)
+always@(posedge i_CLK_A)
 begin
 	if(i_READ_ENABLE_A == 1'b1)
 		o_READ_DATA_A <= r_RAM[i_READ_ADDRESS_A];
 	else
 		o_READ_DATA_A <= {p_DATA_WIDTH{1'b0}};
+end
+
+always@(posedge i_CLK_B)
+begin
 	if(i_READ_ENABLE_B == 1'b1)
 		o_READ_DATA_B <= r_RAM[i_READ_ADDRESS_B];
 	else
 		o_READ_DATA_B <= {p_DATA_WIDTH{1'b0}};
 end
-
-always@(posedge i_CLK)
+//TODO: Integrate second clock into formal verification.
+always@(posedge i_CLK_A)
 begin
 	if(i_WRITE_ENABLE_A == 1'b1)
 		r_RAM[i_WRITE_ADDRESS_A] <= i_WRITE_DATA_A;
 	else
 		r_RAM[i_WRITE_ADDRESS_A] <= r_RAM[i_WRITE_ADDRESS_A];
+end
+
+always@(posedge i_CLK_B)
+begin
 	if(i_WRITE_ENABLE_B == 1'b1)
 		r_RAM[i_WRITE_ADDRESS_B] <= i_WRITE_DATA_B;
 	else
 		r_RAM[i_WRITE_ADDRESS_B] <= r_RAM[i_WRITE_ADDRESS_B];
 end
+
 
 `ifdef FORMAL
 	reg r_PAST_VALID = 0;
