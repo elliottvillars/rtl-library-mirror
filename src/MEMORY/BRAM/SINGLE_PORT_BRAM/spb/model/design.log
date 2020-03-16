@@ -47,150 +47,136 @@ Module single_port_bram directly or indirectly contains formal properties -> set
 Cleaned up 0 empty switches.
 
 2.2.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
-Marked 2 switch rules as full_case in process $proc$single_port_bram.v:29$29 in module single_port_bram.
-Marked 1 switch rules as full_case in process $proc$single_port_bram.v:20$20 in module single_port_bram.
-Marked 1 switch rules as full_case in process $proc$single_port_bram.v:13$17 in module single_port_bram.
+Marked 1 switch rules as full_case in process $proc$single_port_bram.v:29$27 in module single_port_bram.
+Marked 1 switch rules as full_case in process $proc$single_port_bram.v:20$18 in module single_port_bram.
+Marked 1 switch rules as full_case in process $proc$single_port_bram.v:13$15 in module single_port_bram.
 Removed a total of 0 dead cases.
 
 2.2.3. Executing PROC_INIT pass (extract init attributes).
-Found init rule in `\single_port_bram.$proc$single_port_bram.v:43$87'.
-  Set init value: $formal$single_port_bram.v:43$16_EN = 1'0
-Found init rule in `\single_port_bram.$proc$single_port_bram.v:41$85'.
-  Set init value: $formal$single_port_bram.v:41$15_EN = 1'0
-Found init rule in `\single_port_bram.$proc$single_port_bram.v:39$83'.
-  Set init value: $formal$single_port_bram.v:39$14_EN = 1'0
-Found init rule in `\single_port_bram.$proc$single_port_bram.v:37$81'.
-  Set init value: $formal$single_port_bram.v:37$13_EN = 1'0
-Found init rule in `\single_port_bram.$proc$single_port_bram.v:33$79'.
-  Set init value: $formal$single_port_bram.v:33$12_EN = 1'0
-Found init rule in `\single_port_bram.$proc$single_port_bram.v:32$77'.
-  Set init value: $formal$single_port_bram.v:32$11_EN = 1'0
-Found init rule in `\single_port_bram.$proc$single_port_bram.v:28$76'.
+Found init rule in `\single_port_bram.$proc$single_port_bram.v:41$76'.
+  Set init value: $formal$single_port_bram.v:41$14_EN = 1'0
+Found init rule in `\single_port_bram.$proc$single_port_bram.v:39$74'.
+  Set init value: $formal$single_port_bram.v:39$13_EN = 1'0
+Found init rule in `\single_port_bram.$proc$single_port_bram.v:37$72'.
+  Set init value: $formal$single_port_bram.v:37$12_EN = 1'0
+Found init rule in `\single_port_bram.$proc$single_port_bram.v:33$70'.
+  Set init value: $formal$single_port_bram.v:33$11_EN = 1'0
+Found init rule in `\single_port_bram.$proc$single_port_bram.v:32$68'.
+  Set init value: $formal$single_port_bram.v:32$10_EN = 1'0
+Found init rule in `\single_port_bram.$proc$single_port_bram.v:28$67'.
   Set init value: \r_PAST_VALID = 1'0
 
 2.2.4. Executing PROC_ARST pass (detect async resets in processes).
 
 2.2.5. Executing PROC_MUX pass (convert decision trees to multiplexers).
-Creating decoders for process `\single_port_bram.$proc$single_port_bram.v:43$87'.
-     1/1: $0$formal$single_port_bram.v:43$16_EN[0:0]$88
-Creating decoders for process `\single_port_bram.$proc$single_port_bram.v:41$85'.
-     1/1: $0$formal$single_port_bram.v:41$15_EN[0:0]$86
-Creating decoders for process `\single_port_bram.$proc$single_port_bram.v:39$83'.
-     1/1: $0$formal$single_port_bram.v:39$14_EN[0:0]$84
-Creating decoders for process `\single_port_bram.$proc$single_port_bram.v:37$81'.
-     1/1: $0$formal$single_port_bram.v:37$13_EN[0:0]$82
-Creating decoders for process `\single_port_bram.$proc$single_port_bram.v:33$79'.
-     1/1: $0$formal$single_port_bram.v:33$12_EN[0:0]$80
-Creating decoders for process `\single_port_bram.$proc$single_port_bram.v:32$77'.
-     1/1: $0$formal$single_port_bram.v:32$11_EN[0:0]$78
-Creating decoders for process `\single_port_bram.$proc$single_port_bram.v:28$76'.
+Creating decoders for process `\single_port_bram.$proc$single_port_bram.v:41$76'.
+     1/1: $0$formal$single_port_bram.v:41$14_EN[0:0]$77
+Creating decoders for process `\single_port_bram.$proc$single_port_bram.v:39$74'.
+     1/1: $0$formal$single_port_bram.v:39$13_EN[0:0]$75
+Creating decoders for process `\single_port_bram.$proc$single_port_bram.v:37$72'.
+     1/1: $0$formal$single_port_bram.v:37$12_EN[0:0]$73
+Creating decoders for process `\single_port_bram.$proc$single_port_bram.v:33$70'.
+     1/1: $0$formal$single_port_bram.v:33$11_EN[0:0]$71
+Creating decoders for process `\single_port_bram.$proc$single_port_bram.v:32$68'.
+     1/1: $0$formal$single_port_bram.v:32$10_EN[0:0]$69
+Creating decoders for process `\single_port_bram.$proc$single_port_bram.v:28$67'.
      1/1: $1\r_PAST_VALID[0:0]
-Creating decoders for process `\single_port_bram.$proc$single_port_bram.v:29$29'.
-     1/21: $0$past$single_port_bram.v:41$8$0[3:0]$37
-     2/21: $0$past$single_port_bram.v:40$7$0[0:0]$36
-     3/21: $0$past$single_port_bram.v:39$6$0[7:0]$35
-     4/21: $0$past$single_port_bram.v:37$5$0[7:0]$34
-     5/21: $0$past$single_port_bram.v:37$4$0[3:0]$33
-     6/21: $0$past$single_port_bram.v:36$3$0[0:0]$32
-     7/21: $0$past$single_port_bram.v:34$2$0[0:0]$31
-     8/21: $0$past$single_port_bram.v:32$1$0[0:0]$30
-     9/21: $0$formal$single_port_bram.v:33$12_EN[0:0]$41
-    10/21: $0$formal$single_port_bram.v:33$12_CHECK[0:0]$40
-    11/21: $0$formal$single_port_bram.v:32$11_EN[0:0]$39
-    12/21: $0$formal$single_port_bram.v:32$11_CHECK[0:0]$38
-    13/21: $0\r_PAST_VALID[0:0]
-    14/21: $0$formal$single_port_bram.v:37$13_EN[0:0]$43
-    15/21: $0$formal$single_port_bram.v:37$13_CHECK[0:0]$42
-    16/21: $0$formal$single_port_bram.v:39$14_EN[0:0]$45
-    17/21: $0$formal$single_port_bram.v:39$14_CHECK[0:0]$44
-    18/21: $0$formal$single_port_bram.v:41$15_EN[0:0]$47
-    19/21: $0$formal$single_port_bram.v:41$15_CHECK[0:0]$46
-    20/21: $0$formal$single_port_bram.v:43$16_EN[0:0]$49
-    21/21: $0$formal$single_port_bram.v:43$16_CHECK[0:0]$48
-Creating decoders for process `\single_port_bram.$proc$single_port_bram.v:20$20'.
-     1/6: $0$memwr$\r_RAM$single_port_bram.v:22$9_EN[7:0]$23
-     2/6: $0$memwr$\r_RAM$single_port_bram.v:22$9_DATA[7:0]$22
-     3/6: $0$memwr$\r_RAM$single_port_bram.v:22$9_ADDR[3:0]$21
-     4/6: $0$memwr$\r_RAM$single_port_bram.v:24$10_EN[7:0]$26
-     5/6: $0$memwr$\r_RAM$single_port_bram.v:24$10_DATA[7:0]$25
-     6/6: $0$memwr$\r_RAM$single_port_bram.v:24$10_ADDR[3:0]$24
-Creating decoders for process `\single_port_bram.$proc$single_port_bram.v:13$17'.
+Creating decoders for process `\single_port_bram.$proc$single_port_bram.v:29$27'.
+     1/18: $0$past$single_port_bram.v:39$7$0[3:0]$34
+     2/18: $0$past$single_port_bram.v:38$6$0[0:0]$33
+     3/18: $0$past$single_port_bram.v:37$5$0[7:0]$32
+     4/18: $0$past$single_port_bram.v:37$4$0[3:0]$31
+     5/18: $0$past$single_port_bram.v:36$3$0[0:0]$30
+     6/18: $0$past$single_port_bram.v:34$2$0[0:0]$29
+     7/18: $0$past$single_port_bram.v:32$1$0[0:0]$28
+     8/18: $0$formal$single_port_bram.v:33$11_EN[0:0]$38
+     9/18: $0$formal$single_port_bram.v:33$11_CHECK[0:0]$37
+    10/18: $0$formal$single_port_bram.v:32$10_EN[0:0]$36
+    11/18: $0$formal$single_port_bram.v:32$10_CHECK[0:0]$35
+    12/18: $0\r_PAST_VALID[0:0]
+    13/18: $0$formal$single_port_bram.v:37$12_EN[0:0]$40
+    14/18: $0$formal$single_port_bram.v:37$12_CHECK[0:0]$39
+    15/18: $0$formal$single_port_bram.v:39$13_EN[0:0]$42
+    16/18: $0$formal$single_port_bram.v:39$13_CHECK[0:0]$41
+    17/18: $0$formal$single_port_bram.v:41$14_EN[0:0]$44
+    18/18: $0$formal$single_port_bram.v:41$14_CHECK[0:0]$43
+Creating decoders for process `\single_port_bram.$proc$single_port_bram.v:20$18'.
+     1/6: $0$memwr$\r_RAM$single_port_bram.v:22$8_EN[7:0]$21
+     2/6: $0$memwr$\r_RAM$single_port_bram.v:22$8_DATA[7:0]$20
+     3/6: $0$memwr$\r_RAM$single_port_bram.v:22$8_ADDR[3:0]$19
+     4/6: $0$memwr$\r_RAM$single_port_bram.v:24$9_EN[7:0]$24
+     5/6: $0$memwr$\r_RAM$single_port_bram.v:24$9_DATA[7:0]$23
+     6/6: $0$memwr$\r_RAM$single_port_bram.v:24$9_ADDR[3:0]$22
+Creating decoders for process `\single_port_bram.$proc$single_port_bram.v:13$15'.
      1/1: $0\o_READ_DATA[7:0]
 
 2.2.6. Executing PROC_DLATCH pass (convert process syncs to latches).
 
 2.2.7. Executing PROC_DFF pass (convert process syncs to FFs).
-Creating register for signal `\single_port_bram.\r_PAST_VALID' using process `\single_port_bram.$proc$single_port_bram.v:29$29'.
+Creating register for signal `\single_port_bram.\r_PAST_VALID' using process `\single_port_bram.$proc$single_port_bram.v:29$27'.
+  created $dff cell `$procdff$127' with positive edge clock.
+Creating register for signal `\single_port_bram.$past$single_port_bram.v:32$1$0' using process `\single_port_bram.$proc$single_port_bram.v:29$27'.
+  created $dff cell `$procdff$128' with positive edge clock.
+Creating register for signal `\single_port_bram.$past$single_port_bram.v:34$2$0' using process `\single_port_bram.$proc$single_port_bram.v:29$27'.
+  created $dff cell `$procdff$129' with positive edge clock.
+Creating register for signal `\single_port_bram.$past$single_port_bram.v:36$3$0' using process `\single_port_bram.$proc$single_port_bram.v:29$27'.
+  created $dff cell `$procdff$130' with positive edge clock.
+Creating register for signal `\single_port_bram.$past$single_port_bram.v:37$4$0' using process `\single_port_bram.$proc$single_port_bram.v:29$27'.
+  created $dff cell `$procdff$131' with positive edge clock.
+Creating register for signal `\single_port_bram.$past$single_port_bram.v:37$5$0' using process `\single_port_bram.$proc$single_port_bram.v:29$27'.
+  created $dff cell `$procdff$132' with positive edge clock.
+Creating register for signal `\single_port_bram.$past$single_port_bram.v:38$6$0' using process `\single_port_bram.$proc$single_port_bram.v:29$27'.
+  created $dff cell `$procdff$133' with positive edge clock.
+Creating register for signal `\single_port_bram.$past$single_port_bram.v:39$7$0' using process `\single_port_bram.$proc$single_port_bram.v:29$27'.
+  created $dff cell `$procdff$134' with positive edge clock.
+Creating register for signal `\single_port_bram.$formal$single_port_bram.v:32$10_CHECK' using process `\single_port_bram.$proc$single_port_bram.v:29$27'.
+  created $dff cell `$procdff$135' with positive edge clock.
+Creating register for signal `\single_port_bram.$formal$single_port_bram.v:32$10_EN' using process `\single_port_bram.$proc$single_port_bram.v:29$27'.
+  created $dff cell `$procdff$136' with positive edge clock.
+Creating register for signal `\single_port_bram.$formal$single_port_bram.v:33$11_CHECK' using process `\single_port_bram.$proc$single_port_bram.v:29$27'.
+  created $dff cell `$procdff$137' with positive edge clock.
+Creating register for signal `\single_port_bram.$formal$single_port_bram.v:33$11_EN' using process `\single_port_bram.$proc$single_port_bram.v:29$27'.
+  created $dff cell `$procdff$138' with positive edge clock.
+Creating register for signal `\single_port_bram.$formal$single_port_bram.v:37$12_CHECK' using process `\single_port_bram.$proc$single_port_bram.v:29$27'.
+  created $dff cell `$procdff$139' with positive edge clock.
+Creating register for signal `\single_port_bram.$formal$single_port_bram.v:37$12_EN' using process `\single_port_bram.$proc$single_port_bram.v:29$27'.
+  created $dff cell `$procdff$140' with positive edge clock.
+Creating register for signal `\single_port_bram.$formal$single_port_bram.v:39$13_CHECK' using process `\single_port_bram.$proc$single_port_bram.v:29$27'.
+  created $dff cell `$procdff$141' with positive edge clock.
+Creating register for signal `\single_port_bram.$formal$single_port_bram.v:39$13_EN' using process `\single_port_bram.$proc$single_port_bram.v:29$27'.
+  created $dff cell `$procdff$142' with positive edge clock.
+Creating register for signal `\single_port_bram.$formal$single_port_bram.v:41$14_CHECK' using process `\single_port_bram.$proc$single_port_bram.v:29$27'.
+  created $dff cell `$procdff$143' with positive edge clock.
+Creating register for signal `\single_port_bram.$formal$single_port_bram.v:41$14_EN' using process `\single_port_bram.$proc$single_port_bram.v:29$27'.
+  created $dff cell `$procdff$144' with positive edge clock.
+Creating register for signal `\single_port_bram.$memwr$\r_RAM$single_port_bram.v:22$8_ADDR' using process `\single_port_bram.$proc$single_port_bram.v:20$18'.
+  created $dff cell `$procdff$145' with positive edge clock.
+Creating register for signal `\single_port_bram.$memwr$\r_RAM$single_port_bram.v:22$8_DATA' using process `\single_port_bram.$proc$single_port_bram.v:20$18'.
+  created $dff cell `$procdff$146' with positive edge clock.
+Creating register for signal `\single_port_bram.$memwr$\r_RAM$single_port_bram.v:22$8_EN' using process `\single_port_bram.$proc$single_port_bram.v:20$18'.
+  created $dff cell `$procdff$147' with positive edge clock.
+Creating register for signal `\single_port_bram.$memwr$\r_RAM$single_port_bram.v:24$9_ADDR' using process `\single_port_bram.$proc$single_port_bram.v:20$18'.
+  created $dff cell `$procdff$148' with positive edge clock.
+Creating register for signal `\single_port_bram.$memwr$\r_RAM$single_port_bram.v:24$9_DATA' using process `\single_port_bram.$proc$single_port_bram.v:20$18'.
+  created $dff cell `$procdff$149' with positive edge clock.
+Creating register for signal `\single_port_bram.$memwr$\r_RAM$single_port_bram.v:24$9_EN' using process `\single_port_bram.$proc$single_port_bram.v:20$18'.
   created $dff cell `$procdff$150' with positive edge clock.
-Creating register for signal `\single_port_bram.$past$single_port_bram.v:32$1$0' using process `\single_port_bram.$proc$single_port_bram.v:29$29'.
+Creating register for signal `\single_port_bram.\o_READ_DATA' using process `\single_port_bram.$proc$single_port_bram.v:13$15'.
   created $dff cell `$procdff$151' with positive edge clock.
-Creating register for signal `\single_port_bram.$past$single_port_bram.v:34$2$0' using process `\single_port_bram.$proc$single_port_bram.v:29$29'.
-  created $dff cell `$procdff$152' with positive edge clock.
-Creating register for signal `\single_port_bram.$past$single_port_bram.v:36$3$0' using process `\single_port_bram.$proc$single_port_bram.v:29$29'.
-  created $dff cell `$procdff$153' with positive edge clock.
-Creating register for signal `\single_port_bram.$past$single_port_bram.v:37$4$0' using process `\single_port_bram.$proc$single_port_bram.v:29$29'.
-  created $dff cell `$procdff$154' with positive edge clock.
-Creating register for signal `\single_port_bram.$past$single_port_bram.v:37$5$0' using process `\single_port_bram.$proc$single_port_bram.v:29$29'.
-  created $dff cell `$procdff$155' with positive edge clock.
-Creating register for signal `\single_port_bram.$past$single_port_bram.v:39$6$0' using process `\single_port_bram.$proc$single_port_bram.v:29$29'.
-  created $dff cell `$procdff$156' with positive edge clock.
-Creating register for signal `\single_port_bram.$past$single_port_bram.v:40$7$0' using process `\single_port_bram.$proc$single_port_bram.v:29$29'.
-  created $dff cell `$procdff$157' with positive edge clock.
-Creating register for signal `\single_port_bram.$past$single_port_bram.v:41$8$0' using process `\single_port_bram.$proc$single_port_bram.v:29$29'.
-  created $dff cell `$procdff$158' with positive edge clock.
-Creating register for signal `\single_port_bram.$formal$single_port_bram.v:32$11_CHECK' using process `\single_port_bram.$proc$single_port_bram.v:29$29'.
-  created $dff cell `$procdff$159' with positive edge clock.
-Creating register for signal `\single_port_bram.$formal$single_port_bram.v:32$11_EN' using process `\single_port_bram.$proc$single_port_bram.v:29$29'.
-  created $dff cell `$procdff$160' with positive edge clock.
-Creating register for signal `\single_port_bram.$formal$single_port_bram.v:33$12_CHECK' using process `\single_port_bram.$proc$single_port_bram.v:29$29'.
-  created $dff cell `$procdff$161' with positive edge clock.
-Creating register for signal `\single_port_bram.$formal$single_port_bram.v:33$12_EN' using process `\single_port_bram.$proc$single_port_bram.v:29$29'.
-  created $dff cell `$procdff$162' with positive edge clock.
-Creating register for signal `\single_port_bram.$formal$single_port_bram.v:37$13_CHECK' using process `\single_port_bram.$proc$single_port_bram.v:29$29'.
-  created $dff cell `$procdff$163' with positive edge clock.
-Creating register for signal `\single_port_bram.$formal$single_port_bram.v:37$13_EN' using process `\single_port_bram.$proc$single_port_bram.v:29$29'.
-  created $dff cell `$procdff$164' with positive edge clock.
-Creating register for signal `\single_port_bram.$formal$single_port_bram.v:39$14_CHECK' using process `\single_port_bram.$proc$single_port_bram.v:29$29'.
-  created $dff cell `$procdff$165' with positive edge clock.
-Creating register for signal `\single_port_bram.$formal$single_port_bram.v:39$14_EN' using process `\single_port_bram.$proc$single_port_bram.v:29$29'.
-  created $dff cell `$procdff$166' with positive edge clock.
-Creating register for signal `\single_port_bram.$formal$single_port_bram.v:41$15_CHECK' using process `\single_port_bram.$proc$single_port_bram.v:29$29'.
-  created $dff cell `$procdff$167' with positive edge clock.
-Creating register for signal `\single_port_bram.$formal$single_port_bram.v:41$15_EN' using process `\single_port_bram.$proc$single_port_bram.v:29$29'.
-  created $dff cell `$procdff$168' with positive edge clock.
-Creating register for signal `\single_port_bram.$formal$single_port_bram.v:43$16_CHECK' using process `\single_port_bram.$proc$single_port_bram.v:29$29'.
-  created $dff cell `$procdff$169' with positive edge clock.
-Creating register for signal `\single_port_bram.$formal$single_port_bram.v:43$16_EN' using process `\single_port_bram.$proc$single_port_bram.v:29$29'.
-  created $dff cell `$procdff$170' with positive edge clock.
-Creating register for signal `\single_port_bram.$memwr$\r_RAM$single_port_bram.v:22$9_ADDR' using process `\single_port_bram.$proc$single_port_bram.v:20$20'.
-  created $dff cell `$procdff$171' with positive edge clock.
-Creating register for signal `\single_port_bram.$memwr$\r_RAM$single_port_bram.v:22$9_DATA' using process `\single_port_bram.$proc$single_port_bram.v:20$20'.
-  created $dff cell `$procdff$172' with positive edge clock.
-Creating register for signal `\single_port_bram.$memwr$\r_RAM$single_port_bram.v:22$9_EN' using process `\single_port_bram.$proc$single_port_bram.v:20$20'.
-  created $dff cell `$procdff$173' with positive edge clock.
-Creating register for signal `\single_port_bram.$memwr$\r_RAM$single_port_bram.v:24$10_ADDR' using process `\single_port_bram.$proc$single_port_bram.v:20$20'.
-  created $dff cell `$procdff$174' with positive edge clock.
-Creating register for signal `\single_port_bram.$memwr$\r_RAM$single_port_bram.v:24$10_DATA' using process `\single_port_bram.$proc$single_port_bram.v:20$20'.
-  created $dff cell `$procdff$175' with positive edge clock.
-Creating register for signal `\single_port_bram.$memwr$\r_RAM$single_port_bram.v:24$10_EN' using process `\single_port_bram.$proc$single_port_bram.v:20$20'.
-  created $dff cell `$procdff$176' with positive edge clock.
-Creating register for signal `\single_port_bram.\o_READ_DATA' using process `\single_port_bram.$proc$single_port_bram.v:13$17'.
-  created $dff cell `$procdff$177' with positive edge clock.
 
 2.2.8. Executing PROC_CLEAN pass (remove empty switches from decision trees).
-Removing empty process `single_port_bram.$proc$single_port_bram.v:43$87'.
-Removing empty process `single_port_bram.$proc$single_port_bram.v:41$85'.
-Removing empty process `single_port_bram.$proc$single_port_bram.v:39$83'.
-Removing empty process `single_port_bram.$proc$single_port_bram.v:37$81'.
-Removing empty process `single_port_bram.$proc$single_port_bram.v:33$79'.
-Removing empty process `single_port_bram.$proc$single_port_bram.v:32$77'.
-Removing empty process `single_port_bram.$proc$single_port_bram.v:28$76'.
-Found and cleaned up 3 empty switches in `\single_port_bram.$proc$single_port_bram.v:29$29'.
-Removing empty process `single_port_bram.$proc$single_port_bram.v:29$29'.
-Found and cleaned up 1 empty switch in `\single_port_bram.$proc$single_port_bram.v:20$20'.
-Removing empty process `single_port_bram.$proc$single_port_bram.v:20$20'.
-Found and cleaned up 1 empty switch in `\single_port_bram.$proc$single_port_bram.v:13$17'.
-Removing empty process `single_port_bram.$proc$single_port_bram.v:13$17'.
+Removing empty process `single_port_bram.$proc$single_port_bram.v:41$76'.
+Removing empty process `single_port_bram.$proc$single_port_bram.v:39$74'.
+Removing empty process `single_port_bram.$proc$single_port_bram.v:37$72'.
+Removing empty process `single_port_bram.$proc$single_port_bram.v:33$70'.
+Removing empty process `single_port_bram.$proc$single_port_bram.v:32$68'.
+Removing empty process `single_port_bram.$proc$single_port_bram.v:28$67'.
+Found and cleaned up 3 empty switches in `\single_port_bram.$proc$single_port_bram.v:29$27'.
+Removing empty process `single_port_bram.$proc$single_port_bram.v:29$27'.
+Found and cleaned up 1 empty switch in `\single_port_bram.$proc$single_port_bram.v:20$18'.
+Removing empty process `single_port_bram.$proc$single_port_bram.v:20$18'.
+Found and cleaned up 1 empty switch in `\single_port_bram.$proc$single_port_bram.v:13$15'.
+Removing empty process `single_port_bram.$proc$single_port_bram.v:13$15'.
 Cleaned up 5 empty switches.
 
 2.3. Executing OPT_EXPR pass (perform const folding).
@@ -199,7 +185,7 @@ Optimizing module single_port_bram.
 
 2.4. Executing OPT_CLEAN pass (remove unused cells and wires).
 Finding unused cells or wires in module \single_port_bram..
-Removed 0 unused cells and 63 unused wires.
+Removed 0 unused cells and 55 unused wires.
 <suppressed ~1 debug messages>
 
 2.5. Executing CHECK pass (checking for obvious problems).
@@ -213,8 +199,8 @@ Optimizing module single_port_bram.
 
 2.6.2. Executing OPT_MERGE pass (detect identical cells).
 Finding identical cells in module `\single_port_bram'.
-<suppressed ~15 debug messages>
-Removed a total of 5 cells.
+<suppressed ~9 debug messages>
+Removed a total of 3 cells.
 
 2.6.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
 Running muxtree optimizer on module \single_port_bram..
@@ -222,18 +208,18 @@ Running muxtree optimizer on module \single_port_bram..
   Evaluating internal representation of mux trees.
   Analyzing evaluation results.
 Removed 0 multiplexer ports.
-<suppressed ~15 debug messages>
+<suppressed ~13 debug messages>
 
 2.6.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
   Optimizing cells in module \single_port_bram.
-    Consolidated identical input bits for $mux cell $procmux$130:
-      Old ports: A=8'00000000, B=8'11111111, Y=$0$memwr$\r_RAM$single_port_bram.v:22$9_EN[7:0]$23
-      New ports: A=1'0, B=1'1, Y=$0$memwr$\r_RAM$single_port_bram.v:22$9_EN[7:0]$23 [0]
-      New connections: $0$memwr$\r_RAM$single_port_bram.v:22$9_EN[7:0]$23 [7:1] = { $0$memwr$\r_RAM$single_port_bram.v:22$9_EN[7:0]$23 [0] $0$memwr$\r_RAM$single_port_bram.v:22$9_EN[7:0]$23 [0] $0$memwr$\r_RAM$single_port_bram.v:22$9_EN[7:0]$23 [0] $0$memwr$\r_RAM$single_port_bram.v:22$9_EN[7:0]$23 [0] $0$memwr$\r_RAM$single_port_bram.v:22$9_EN[7:0]$23 [0] $0$memwr$\r_RAM$single_port_bram.v:22$9_EN[7:0]$23 [0] $0$memwr$\r_RAM$single_port_bram.v:22$9_EN[7:0]$23 [0] }
-    Consolidated identical input bits for $mux cell $procmux$139:
-      Old ports: A=8'11111111, B=8'00000000, Y=$0$memwr$\r_RAM$single_port_bram.v:24$10_EN[7:0]$26
-      New ports: A=1'1, B=1'0, Y=$0$memwr$\r_RAM$single_port_bram.v:24$10_EN[7:0]$26 [0]
-      New connections: $0$memwr$\r_RAM$single_port_bram.v:24$10_EN[7:0]$26 [7:1] = { $0$memwr$\r_RAM$single_port_bram.v:24$10_EN[7:0]$26 [0] $0$memwr$\r_RAM$single_port_bram.v:24$10_EN[7:0]$26 [0] $0$memwr$\r_RAM$single_port_bram.v:24$10_EN[7:0]$26 [0] $0$memwr$\r_RAM$single_port_bram.v:24$10_EN[7:0]$26 [0] $0$memwr$\r_RAM$single_port_bram.v:24$10_EN[7:0]$26 [0] $0$memwr$\r_RAM$single_port_bram.v:24$10_EN[7:0]$26 [0] $0$memwr$\r_RAM$single_port_bram.v:24$10_EN[7:0]$26 [0] }
+    Consolidated identical input bits for $mux cell $procmux$107:
+      Old ports: A=8'00000000, B=8'11111111, Y=$0$memwr$\r_RAM$single_port_bram.v:22$8_EN[7:0]$21
+      New ports: A=1'0, B=1'1, Y=$0$memwr$\r_RAM$single_port_bram.v:22$8_EN[7:0]$21 [0]
+      New connections: $0$memwr$\r_RAM$single_port_bram.v:22$8_EN[7:0]$21 [7:1] = { $0$memwr$\r_RAM$single_port_bram.v:22$8_EN[7:0]$21 [0] $0$memwr$\r_RAM$single_port_bram.v:22$8_EN[7:0]$21 [0] $0$memwr$\r_RAM$single_port_bram.v:22$8_EN[7:0]$21 [0] $0$memwr$\r_RAM$single_port_bram.v:22$8_EN[7:0]$21 [0] $0$memwr$\r_RAM$single_port_bram.v:22$8_EN[7:0]$21 [0] $0$memwr$\r_RAM$single_port_bram.v:22$8_EN[7:0]$21 [0] $0$memwr$\r_RAM$single_port_bram.v:22$8_EN[7:0]$21 [0] }
+    Consolidated identical input bits for $mux cell $procmux$116:
+      Old ports: A=8'11111111, B=8'00000000, Y=$0$memwr$\r_RAM$single_port_bram.v:24$9_EN[7:0]$24
+      New ports: A=1'1, B=1'0, Y=$0$memwr$\r_RAM$single_port_bram.v:24$9_EN[7:0]$24 [0]
+      New connections: $0$memwr$\r_RAM$single_port_bram.v:24$9_EN[7:0]$24 [7:1] = { $0$memwr$\r_RAM$single_port_bram.v:24$9_EN[7:0]$24 [0] $0$memwr$\r_RAM$single_port_bram.v:24$9_EN[7:0]$24 [0] $0$memwr$\r_RAM$single_port_bram.v:24$9_EN[7:0]$24 [0] $0$memwr$\r_RAM$single_port_bram.v:24$9_EN[7:0]$24 [0] $0$memwr$\r_RAM$single_port_bram.v:24$9_EN[7:0]$24 [0] $0$memwr$\r_RAM$single_port_bram.v:24$9_EN[7:0]$24 [0] $0$memwr$\r_RAM$single_port_bram.v:24$9_EN[7:0]$24 [0] }
   Optimizing cells in module \single_port_bram.
 Performed a total of 2 changes.
 
@@ -245,7 +231,7 @@ Removed a total of 0 cells.
 
 2.6.7. Executing OPT_CLEAN pass (remove unused cells and wires).
 Finding unused cells or wires in module \single_port_bram..
-Removed 0 unused cells and 5 unused wires.
+Removed 0 unused cells and 3 unused wires.
 <suppressed ~4 debug messages>
 
 2.6.8. Executing OPT_EXPR pass (perform const folding).
@@ -259,7 +245,7 @@ Running muxtree optimizer on module \single_port_bram..
   Evaluating internal representation of mux trees.
   Analyzing evaluation results.
 Removed 0 multiplexer ports.
-<suppressed ~15 debug messages>
+<suppressed ~13 debug messages>
 
 2.6.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
   Optimizing cells in module \single_port_bram.
@@ -280,18 +266,18 @@ Optimizing module single_port_bram.
 2.6.16. Finished OPT passes. (There is nothing left to do.)
 
 2.7. Executing WREDUCE pass (reducing word size of cells).
-Removed top 31 bits (of 32) from port B of cell single_port_bram.$and$single_port_bram.v:34$53 ($and).
-Removed top 31 bits (of 32) from port Y of cell single_port_bram.$and$single_port_bram.v:34$53 ($and).
-Removed top 31 bits (of 32) from port B of cell single_port_bram.$and$single_port_bram.v:34$55 ($and).
-Removed top 31 bits (of 32) from port Y of cell single_port_bram.$and$single_port_bram.v:34$55 ($and).
-Removed top 7 bits (of 8) from FF cell single_port_bram.$procdff$173 ($dff).
-Removed top 7 bits (of 8) from FF cell single_port_bram.$procdff$176 ($dff).
-Removed top 31 bits (of 32) from wire single_port_bram.$and$single_port_bram.v:34$53_Y.
-Removed top 31 bits (of 32) from wire single_port_bram.$and$single_port_bram.v:34$55_Y.
+Removed top 31 bits (of 32) from port B of cell single_port_bram.$and$single_port_bram.v:34$48 ($and).
+Removed top 31 bits (of 32) from port Y of cell single_port_bram.$and$single_port_bram.v:34$48 ($and).
+Removed top 31 bits (of 32) from port B of cell single_port_bram.$and$single_port_bram.v:34$50 ($and).
+Removed top 31 bits (of 32) from port Y of cell single_port_bram.$and$single_port_bram.v:34$50 ($and).
+Removed top 7 bits (of 8) from FF cell single_port_bram.$procdff$147 ($dff).
+Removed top 7 bits (of 8) from FF cell single_port_bram.$procdff$150 ($dff).
+Removed top 31 bits (of 32) from wire single_port_bram.$and$single_port_bram.v:34$48_Y.
+Removed top 31 bits (of 32) from wire single_port_bram.$and$single_port_bram.v:34$50_Y.
 
 2.8. Executing MEMORY_DFF pass (merging $dff cells to $memrd and $memwr).
-Checking cell `$memwr$\r_RAM$single_port_bram.v:22$68' in module `\single_port_bram': merged $dff to cell.
-Checking cell `$memwr$\r_RAM$single_port_bram.v:24$69' in module `\single_port_bram': merged $dff to cell.
+Checking cell `$memwr$\r_RAM$single_port_bram.v:22$60' in module `\single_port_bram': merged $dff to cell.
+Checking cell `$memwr$\r_RAM$single_port_bram.v:24$61' in module `\single_port_bram': merged $dff to cell.
 
 2.9. Executing OPT_CLEAN pass (remove unused cells and wires).
 Finding unused cells or wires in module \single_port_bram..
@@ -300,12 +286,12 @@ Removed 6 unused cells and 8 unused wires.
 
 2.10. Executing MEMORY_COLLECT pass (generating $mem cells).
 Collecting $memrd, $memwr and $meminit for memory `\r_RAM' in module `\single_port_bram':
-  $memwr$\r_RAM$single_port_bram.v:22$68 ($memwr)
-  $memwr$\r_RAM$single_port_bram.v:24$69 ($memwr)
-  $memrd$\r_RAM$single_port_bram.v:15$19 ($memrd)
-  $memrd$\r_RAM$single_port_bram.v:24$28 ($memrd)
-  $memrd$\r_RAM$single_port_bram.v:37$59 ($memrd)
-  $memrd$\r_RAM$single_port_bram.v:41$64 ($memrd)
+  $memwr$\r_RAM$single_port_bram.v:22$60 ($memwr)
+  $memwr$\r_RAM$single_port_bram.v:24$61 ($memwr)
+  $memrd$\r_RAM$single_port_bram.v:15$17 ($memrd)
+  $memrd$\r_RAM$single_port_bram.v:24$26 ($memrd)
+  $memrd$\r_RAM$single_port_bram.v:37$54 ($memrd)
+  $memrd$\r_RAM$single_port_bram.v:39$57 ($memrd)
 
 2.11. Executing OPT pass (performing simple optimizations).
 
@@ -330,22 +316,22 @@ Removed 0 unused cells and 2 unused wires.
 
 === single_port_bram ===
 
-   Number of wires:                 61
-   Number of wire bits:            170
+   Number of wires:                 53
+   Number of wire bits:            155
    Number of public wires:           8
    Number of public wire bits:      28
    Number of memories:               0
    Number of memory bits:            0
    Number of processes:              0
-   Number of cells:                 58
-     $assert                         4
+   Number of cells:                 49
+     $assert                         3
      $assume                         2
-     $dff                           19
-     $eq                             3
+     $dff                           16
+     $eq                             2
      $logic_and                      2
      $logic_not                      2
      $mem                            1
-     $mux                           23
+     $mux                           19
      $ne                             2
 
 2.13. Executing CHECK pass (checking for obvious problems).
@@ -396,7 +382,7 @@ Module single_port_bram directly or indirectly contains formal properties -> set
 10. Executing ILANG backend.
 Output filename: ../model/design.il
 
-End of script. Logfile hash: d3c699d27a
-CPU: user 0.05s system 0.00s, MEM: 18.00 MB total, 9.44 MB resident
+End of script. Logfile hash: c1bf7e736f
+CPU: user 0.04s system 0.00s, MEM: 17.97 MB total, 9.30 MB resident
 Yosys 0.9 (git sha1 UNKNOWN, clang 9.0.0 -march=x86-64 -mtune=generic -O2 -fno-plt -fPIC -Os)
-Time spent: 32% 7x opt_clean (0 sec), 13% 6x opt_expr (0 sec), ...
+Time spent: 32% 7x opt_clean (0 sec), 14% 6x opt_expr (0 sec), ...

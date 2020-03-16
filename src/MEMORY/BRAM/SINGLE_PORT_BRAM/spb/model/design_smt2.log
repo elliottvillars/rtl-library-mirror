@@ -31,29 +31,29 @@ Input filename: design.il
 
 === single_port_bram ===
 
-   Number of wires:                 71
-   Number of wire bits:            200
+   Number of wires:                 61
+   Number of wire bits:            183
    Number of public wires:           8
    Number of public wire bits:      28
    Number of memories:               0
    Number of memory bits:            0
    Number of processes:              0
-   Number of cells:                 68
-     $anyseq                        12
-     $assert                         4
+   Number of cells:                 57
+     $anyseq                        10
+     $assert                         3
      $assume                         2
-     $dff                           17
-     $eq                             3
+     $dff                           14
+     $eq                             2
      $logic_and                      2
      $logic_not                      2
      $mem                            1
-     $mux                           23
+     $mux                           19
      $ne                             2
 
 3. Executing SMT2 backend.
 Creating SMT-LIBv2 representation of module single_port_bram.
 
-End of script. Logfile hash: b543001895
-CPU: user 0.00s system 0.00s, MEM: 17.84 MB total, 8.56 MB resident
+End of script. Logfile hash: 9b4e37c250
+CPU: user 0.00s system 0.00s, MEM: 17.71 MB total, 7.17 MB resident
 Yosys 0.9 (git sha1 UNKNOWN, clang 9.0.0 -march=x86-64 -mtune=generic -O2 -fno-plt -fPIC -Os)
-Time spent: 61% 2x write_smt2 (0 sec), 35% 2x read_ilang (0 sec), ...
+Time spent: 60% 2x write_smt2 (0 sec), 36% 2x read_ilang (0 sec), ...

@@ -35,147 +35,126 @@
 ; yosys-smt2-wire i_CLK 1
 (declare-fun |single_port_bram#7| (|single_port_bram_s|) Bool) ; \i_CLK
 (define-fun |single_port_bram_n i_CLK| ((state |single_port_bram_s|)) Bool (|single_port_bram#7| state))
-; yosys-smt2-register $past$single_port_bram.v:41$8$0 4
-(declare-fun |single_port_bram#8| (|single_port_bram_s|) (_ BitVec 4)) ; $past$single_port_bram.v:41$8$0
-(define-fun |single_port_bram_n $past$single_port_bram.v:41$8$0| ((state |single_port_bram_s|)) (_ BitVec 4) (|single_port_bram#8| state))
-; yosys-smt2-register $past$single_port_bram.v:39$6$0 8
-(declare-fun |single_port_bram#9| (|single_port_bram_s|) (_ BitVec 8)) ; $past$single_port_bram.v:39$6$0
-(define-fun |single_port_bram_n $past$single_port_bram.v:39$6$0| ((state |single_port_bram_s|)) (_ BitVec 8) (|single_port_bram#9| state))
+; yosys-smt2-register $past$single_port_bram.v:39$7$0 4
+(declare-fun |single_port_bram#8| (|single_port_bram_s|) (_ BitVec 4)) ; $past$single_port_bram.v:39$7$0
+(define-fun |single_port_bram_n $past$single_port_bram.v:39$7$0| ((state |single_port_bram_s|)) (_ BitVec 4) (|single_port_bram#8| state))
 ; yosys-smt2-register $past$single_port_bram.v:37$5$0 8
-(declare-fun |single_port_bram#10| (|single_port_bram_s|) (_ BitVec 8)) ; $past$single_port_bram.v:37$5$0
-(define-fun |single_port_bram_n $past$single_port_bram.v:37$5$0| ((state |single_port_bram_s|)) (_ BitVec 8) (|single_port_bram#10| state))
+(declare-fun |single_port_bram#9| (|single_port_bram_s|) (_ BitVec 8)) ; $past$single_port_bram.v:37$5$0
+(define-fun |single_port_bram_n $past$single_port_bram.v:37$5$0| ((state |single_port_bram_s|)) (_ BitVec 8) (|single_port_bram#9| state))
 ; yosys-smt2-register $past$single_port_bram.v:37$4$0 4
-(declare-fun |single_port_bram#11| (|single_port_bram_s|) (_ BitVec 4)) ; $past$single_port_bram.v:37$4$0
-(define-fun |single_port_bram_n $past$single_port_bram.v:37$4$0| ((state |single_port_bram_s|)) (_ BitVec 4) (|single_port_bram#11| state))
-; yosys-smt2-register $formal$single_port_bram.v:43$16_EN 1
-(declare-fun |single_port_bram#12| (|single_port_bram_s|) (_ BitVec 1)) ; $formal$single_port_bram.v:43$16_EN
-(define-fun |single_port_bram_n $formal$single_port_bram.v:43$16_EN| ((state |single_port_bram_s|)) Bool (= ((_ extract 0 0) (|single_port_bram#12| state)) #b1))
-; yosys-smt2-register $formal$single_port_bram.v:43$16_CHECK 1
-(declare-fun |single_port_bram#13| (|single_port_bram_s|) (_ BitVec 1)) ; $formal$single_port_bram.v:43$16_CHECK
-(define-fun |single_port_bram_n $formal$single_port_bram.v:43$16_CHECK| ((state |single_port_bram_s|)) Bool (= ((_ extract 0 0) (|single_port_bram#13| state)) #b1))
-; yosys-smt2-register $formal$single_port_bram.v:41$15_EN 1
-(declare-fun |single_port_bram#14| (|single_port_bram_s|) (_ BitVec 1)) ; $formal$single_port_bram.v:41$15_EN
-(define-fun |single_port_bram_n $formal$single_port_bram.v:41$15_EN| ((state |single_port_bram_s|)) Bool (= ((_ extract 0 0) (|single_port_bram#14| state)) #b1))
-; yosys-smt2-register $formal$single_port_bram.v:41$15_CHECK 1
-(declare-fun |single_port_bram#15| (|single_port_bram_s|) (_ BitVec 1)) ; $formal$single_port_bram.v:41$15_CHECK
-(define-fun |single_port_bram_n $formal$single_port_bram.v:41$15_CHECK| ((state |single_port_bram_s|)) Bool (= ((_ extract 0 0) (|single_port_bram#15| state)) #b1))
-; yosys-smt2-register $formal$single_port_bram.v:39$14_EN 1
-(declare-fun |single_port_bram#16| (|single_port_bram_s|) (_ BitVec 1)) ; $formal$single_port_bram.v:39$14_EN
-(define-fun |single_port_bram_n $formal$single_port_bram.v:39$14_EN| ((state |single_port_bram_s|)) Bool (= ((_ extract 0 0) (|single_port_bram#16| state)) #b1))
-; yosys-smt2-register $formal$single_port_bram.v:39$14_CHECK 1
-(declare-fun |single_port_bram#17| (|single_port_bram_s|) (_ BitVec 1)) ; $formal$single_port_bram.v:39$14_CHECK
-(define-fun |single_port_bram_n $formal$single_port_bram.v:39$14_CHECK| ((state |single_port_bram_s|)) Bool (= ((_ extract 0 0) (|single_port_bram#17| state)) #b1))
-; yosys-smt2-register $formal$single_port_bram.v:37$13_EN 1
-(declare-fun |single_port_bram#18| (|single_port_bram_s|) (_ BitVec 1)) ; $formal$single_port_bram.v:37$13_EN
-(define-fun |single_port_bram_n $formal$single_port_bram.v:37$13_EN| ((state |single_port_bram_s|)) Bool (= ((_ extract 0 0) (|single_port_bram#18| state)) #b1))
-; yosys-smt2-register $formal$single_port_bram.v:37$13_CHECK 1
-(declare-fun |single_port_bram#19| (|single_port_bram_s|) (_ BitVec 1)) ; $formal$single_port_bram.v:37$13_CHECK
-(define-fun |single_port_bram_n $formal$single_port_bram.v:37$13_CHECK| ((state |single_port_bram_s|)) Bool (= ((_ extract 0 0) (|single_port_bram#19| state)) #b1))
-; yosys-smt2-register $eq$single_port_bram.v:40$63_Y 1
-(declare-fun |single_port_bram#20| (|single_port_bram_s|) (_ BitVec 1)) ; $eq$single_port_bram.v:40$63_Y
-(define-fun |single_port_bram_n $eq$single_port_bram.v:40$63_Y| ((state |single_port_bram_s|)) Bool (= ((_ extract 0 0) (|single_port_bram#20| state)) #b1))
-; yosys-smt2-register $eq$single_port_bram.v:36$58_Y 1
-(declare-fun |single_port_bram#21| (|single_port_bram_s|) (_ BitVec 1)) ; $eq$single_port_bram.v:36$58_Y
-(define-fun |single_port_bram_n $eq$single_port_bram.v:36$58_Y| ((state |single_port_bram_s|)) Bool (= ((_ extract 0 0) (|single_port_bram#21| state)) #b1))
-; yosys-smt2-register $and$single_port_bram.v:34$53_Y 1
-(declare-fun |single_port_bram#22| (|single_port_bram_s|) (_ BitVec 1)) ; $and$single_port_bram.v:34$53_Y
-(define-fun |single_port_bram_n $and$single_port_bram.v:34$53_Y| ((state |single_port_bram_s|)) Bool (= ((_ extract 0 0) (|single_port_bram#22| state)) #b1))
-(define-fun |single_port_bram#23| ((state |single_port_bram_s|)) Bool (distinct (|single_port_bram#6| state) (|single_port_bram#4| state))) ; $0$formal$single_port_bram.v:33$12_CHECK[0:0]$40
+(declare-fun |single_port_bram#10| (|single_port_bram_s|) (_ BitVec 4)) ; $past$single_port_bram.v:37$4$0
+(define-fun |single_port_bram_n $past$single_port_bram.v:37$4$0| ((state |single_port_bram_s|)) (_ BitVec 4) (|single_port_bram#10| state))
+; yosys-smt2-register $formal$single_port_bram.v:41$14_EN 1
+(declare-fun |single_port_bram#11| (|single_port_bram_s|) (_ BitVec 1)) ; $formal$single_port_bram.v:41$14_EN
+(define-fun |single_port_bram_n $formal$single_port_bram.v:41$14_EN| ((state |single_port_bram_s|)) Bool (= ((_ extract 0 0) (|single_port_bram#11| state)) #b1))
+; yosys-smt2-register $formal$single_port_bram.v:41$14_CHECK 1
+(declare-fun |single_port_bram#12| (|single_port_bram_s|) (_ BitVec 1)) ; $formal$single_port_bram.v:41$14_CHECK
+(define-fun |single_port_bram_n $formal$single_port_bram.v:41$14_CHECK| ((state |single_port_bram_s|)) Bool (= ((_ extract 0 0) (|single_port_bram#12| state)) #b1))
+; yosys-smt2-register $formal$single_port_bram.v:39$13_EN 1
+(declare-fun |single_port_bram#13| (|single_port_bram_s|) (_ BitVec 1)) ; $formal$single_port_bram.v:39$13_EN
+(define-fun |single_port_bram_n $formal$single_port_bram.v:39$13_EN| ((state |single_port_bram_s|)) Bool (= ((_ extract 0 0) (|single_port_bram#13| state)) #b1))
+; yosys-smt2-register $formal$single_port_bram.v:39$13_CHECK 1
+(declare-fun |single_port_bram#14| (|single_port_bram_s|) (_ BitVec 1)) ; $formal$single_port_bram.v:39$13_CHECK
+(define-fun |single_port_bram_n $formal$single_port_bram.v:39$13_CHECK| ((state |single_port_bram_s|)) Bool (= ((_ extract 0 0) (|single_port_bram#14| state)) #b1))
+; yosys-smt2-register $formal$single_port_bram.v:37$12_EN 1
+(declare-fun |single_port_bram#15| (|single_port_bram_s|) (_ BitVec 1)) ; $formal$single_port_bram.v:37$12_EN
+(define-fun |single_port_bram_n $formal$single_port_bram.v:37$12_EN| ((state |single_port_bram_s|)) Bool (= ((_ extract 0 0) (|single_port_bram#15| state)) #b1))
+; yosys-smt2-register $formal$single_port_bram.v:37$12_CHECK 1
+(declare-fun |single_port_bram#16| (|single_port_bram_s|) (_ BitVec 1)) ; $formal$single_port_bram.v:37$12_CHECK
+(define-fun |single_port_bram_n $formal$single_port_bram.v:37$12_CHECK| ((state |single_port_bram_s|)) Bool (= ((_ extract 0 0) (|single_port_bram#16| state)) #b1))
+; yosys-smt2-register $eq$single_port_bram.v:38$56_Y 1
+(declare-fun |single_port_bram#17| (|single_port_bram_s|) (_ BitVec 1)) ; $eq$single_port_bram.v:38$56_Y
+(define-fun |single_port_bram_n $eq$single_port_bram.v:38$56_Y| ((state |single_port_bram_s|)) Bool (= ((_ extract 0 0) (|single_port_bram#17| state)) #b1))
+; yosys-smt2-register $eq$single_port_bram.v:36$53_Y 1
+(declare-fun |single_port_bram#18| (|single_port_bram_s|) (_ BitVec 1)) ; $eq$single_port_bram.v:36$53_Y
+(define-fun |single_port_bram_n $eq$single_port_bram.v:36$53_Y| ((state |single_port_bram_s|)) Bool (= ((_ extract 0 0) (|single_port_bram#18| state)) #b1))
+; yosys-smt2-register $and$single_port_bram.v:34$48_Y 1
+(declare-fun |single_port_bram#19| (|single_port_bram_s|) (_ BitVec 1)) ; $and$single_port_bram.v:34$48_Y
+(define-fun |single_port_bram_n $and$single_port_bram.v:34$48_Y| ((state |single_port_bram_s|)) Bool (= ((_ extract 0 0) (|single_port_bram#19| state)) #b1))
+(define-fun |single_port_bram#20| ((state |single_port_bram_s|)) Bool (distinct (|single_port_bram#6| state) (|single_port_bram#4| state))) ; $0$formal$single_port_bram.v:33$11_CHECK[0:0]$37
 ; yosys-smt2-assume 0 single_port_bram.v:33
-(define-fun |single_port_bram_u 0| ((state |single_port_bram_s|)) Bool (or (|single_port_bram#23| state) (not true))) ; $assume$single_port_bram.v:33$71
-(define-fun |single_port_bram#24| ((state |single_port_bram_s|)) Bool (distinct (|single_port_bram#22| state) (ite (|single_port_bram#7| state) #b1 #b0))) ; $0$formal$single_port_bram.v:32$11_CHECK[0:0]$38
+(define-fun |single_port_bram_u 0| ((state |single_port_bram_s|)) Bool (or (|single_port_bram#20| state) (not true))) ; $assume$single_port_bram.v:33$63
+(define-fun |single_port_bram#21| ((state |single_port_bram_s|)) Bool (distinct (|single_port_bram#19| state) (ite (|single_port_bram#7| state) #b1 #b0))) ; $0$formal$single_port_bram.v:32$10_CHECK[0:0]$35
 ; yosys-smt2-assume 1 single_port_bram.v:32
-(define-fun |single_port_bram_u 1| ((state |single_port_bram_s|)) Bool (or (|single_port_bram#24| state) (not true))) ; $assume$single_port_bram.v:32$70
-; yosys-smt2-assert 0 single_port_bram.v:43
-(define-fun |single_port_bram_a 0| ((state |single_port_bram_s|)) Bool (or (= ((_ extract 0 0) (|single_port_bram#13| state)) #b1) (not (= ((_ extract 0 0) (|single_port_bram#12| state)) #b1)))) ; $assert$single_port_bram.v:43$75
-; yosys-smt2-assert 1 single_port_bram.v:41
-(define-fun |single_port_bram_a 1| ((state |single_port_bram_s|)) Bool (or (= ((_ extract 0 0) (|single_port_bram#15| state)) #b1) (not (= ((_ extract 0 0) (|single_port_bram#14| state)) #b1)))) ; $assert$single_port_bram.v:41$74
-; yosys-smt2-assert 2 single_port_bram.v:39
-(define-fun |single_port_bram_a 2| ((state |single_port_bram_s|)) Bool (or (= ((_ extract 0 0) (|single_port_bram#17| state)) #b1) (not (= ((_ extract 0 0) (|single_port_bram#16| state)) #b1)))) ; $assert$single_port_bram.v:39$73
-; yosys-smt2-assert 3 single_port_bram.v:37
-(define-fun |single_port_bram_a 3| ((state |single_port_bram_s|)) Bool (or (= ((_ extract 0 0) (|single_port_bram#19| state)) #b1) (not (= ((_ extract 0 0) (|single_port_bram#18| state)) #b1)))) ; $assert$single_port_bram.v:37$72
-; yosys-smt2-anyseq single_port_bram#25 1 $auto$setundef.cc:524:execute$203
-(declare-fun |single_port_bram#25| (|single_port_bram_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2305:Anyseq$204
-; yosys-smt2-anyseq single_port_bram#26 1 $auto$setundef.cc:524:execute$201
-(declare-fun |single_port_bram#26| (|single_port_bram_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2305:Anyseq$202
+(define-fun |single_port_bram_u 1| ((state |single_port_bram_s|)) Bool (or (|single_port_bram#21| state) (not true))) ; $assume$single_port_bram.v:32$62
+; yosys-smt2-assert 0 single_port_bram.v:41
+(define-fun |single_port_bram_a 0| ((state |single_port_bram_s|)) Bool (or (= ((_ extract 0 0) (|single_port_bram#12| state)) #b1) (not (= ((_ extract 0 0) (|single_port_bram#11| state)) #b1)))) ; $assert$single_port_bram.v:41$66
+; yosys-smt2-assert 1 single_port_bram.v:39
+(define-fun |single_port_bram_a 1| ((state |single_port_bram_s|)) Bool (or (= ((_ extract 0 0) (|single_port_bram#14| state)) #b1) (not (= ((_ extract 0 0) (|single_port_bram#13| state)) #b1)))) ; $assert$single_port_bram.v:39$65
+; yosys-smt2-assert 2 single_port_bram.v:37
+(define-fun |single_port_bram_a 2| ((state |single_port_bram_s|)) Bool (or (= ((_ extract 0 0) (|single_port_bram#16| state)) #b1) (not (= ((_ extract 0 0) (|single_port_bram#15| state)) #b1)))) ; $assert$single_port_bram.v:37$64
+; yosys-smt2-anyseq single_port_bram#22 1 $auto$setundef.cc:524:execute$169
+(declare-fun |single_port_bram#22| (|single_port_bram_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2305:Anyseq$170
+; yosys-smt2-anyseq single_port_bram#23 1 $auto$setundef.cc:524:execute$167
+(declare-fun |single_port_bram#23| (|single_port_bram_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2305:Anyseq$168
 ; yosys-smt2-memory r_RAM 4 8 4 2 sync
-(declare-fun |single_port_bram#27#0| (|single_port_bram_s|) (Array (_ BitVec 4) (_ BitVec 8))) ; r_RAM
-(define-fun |single_port_bram_m r_RAM| ((state |single_port_bram_s|)) (Array (_ BitVec 4) (_ BitVec 8)) (|single_port_bram#27#0| state))
+(declare-fun |single_port_bram#24#0| (|single_port_bram_s|) (Array (_ BitVec 4) (_ BitVec 8))) ; r_RAM
+(define-fun |single_port_bram_m r_RAM| ((state |single_port_bram_s|)) (Array (_ BitVec 4) (_ BitVec 8)) (|single_port_bram#24#0| state))
 (define-fun |single_port_bram_m:R0A r_RAM| ((state |single_port_bram_s|)) (_ BitVec 4) (|single_port_bram#6| state)) ; \i_READ_ADDRESS
-(define-fun |single_port_bram#28| ((state |single_port_bram_s|)) (_ BitVec 8) (select (|single_port_bram#27#0| state) (|single_port_bram_m:R0A r_RAM| state))) ; $memrd$\r_RAM$single_port_bram.v:15$19_DATA
-(define-fun |single_port_bram_m:R0D r_RAM| ((state |single_port_bram_s|)) (_ BitVec 8) (|single_port_bram#28| state))
+(define-fun |single_port_bram#25| ((state |single_port_bram_s|)) (_ BitVec 8) (select (|single_port_bram#24#0| state) (|single_port_bram_m:R0A r_RAM| state))) ; $memrd$\r_RAM$single_port_bram.v:15$17_DATA
+(define-fun |single_port_bram_m:R0D r_RAM| ((state |single_port_bram_s|)) (_ BitVec 8) (|single_port_bram#25| state))
 (define-fun |single_port_bram_m:R1A r_RAM| ((state |single_port_bram_s|)) (_ BitVec 4) (|single_port_bram#4| state)) ; \i_WRITE_ADDRESS
-(define-fun |single_port_bram#29| ((state |single_port_bram_s|)) (_ BitVec 8) (select (|single_port_bram#27#0| state) (|single_port_bram_m:R1A r_RAM| state))) ; $0$past$single_port_bram.v:39$6$0[7:0]$35
-(define-fun |single_port_bram_m:R1D r_RAM| ((state |single_port_bram_s|)) (_ BitVec 8) (|single_port_bram#29| state))
-(define-fun |single_port_bram_m:R2A r_RAM| ((state |single_port_bram_s|)) (_ BitVec 4) (|single_port_bram#11| state)) ; $past$single_port_bram.v:37$4$0
-(define-fun |single_port_bram#30| ((state |single_port_bram_s|)) (_ BitVec 8) (select (|single_port_bram#27#0| state) (|single_port_bram_m:R2A r_RAM| state))) ; $memrd$\r_RAM$single_port_bram.v:37$59_DATA
-(define-fun |single_port_bram_m:R2D r_RAM| ((state |single_port_bram_s|)) (_ BitVec 8) (|single_port_bram#30| state))
-(define-fun |single_port_bram_m:R3A r_RAM| ((state |single_port_bram_s|)) (_ BitVec 4) (|single_port_bram#8| state)) ; $past$single_port_bram.v:41$8$0
-(define-fun |single_port_bram#31| ((state |single_port_bram_s|)) (_ BitVec 8) (select (|single_port_bram#27#0| state) (|single_port_bram_m:R3A r_RAM| state))) ; $memrd$\r_RAM$single_port_bram.v:41$64_DATA
-(define-fun |single_port_bram_m:R3D r_RAM| ((state |single_port_bram_s|)) (_ BitVec 8) (|single_port_bram#31| state))
-(define-fun |single_port_bram#32| ((state |single_port_bram_s|)) Bool (= (|single_port_bram#30| state) (|single_port_bram#10| state))) ; $eq$single_port_bram.v:37$60_Y
-(define-fun |single_port_bram#33| ((state |single_port_bram_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|single_port_bram#21| state)) #b1) (ite (|single_port_bram#32| state) #b1 #b0) (|single_port_bram#26| state))) ; $procmux$95_Y
-(define-fun |single_port_bram#34| ((state |single_port_bram_s|)) Bool (not (or  (= ((_ extract 0 0) (|single_port_bram#22| state)) #b1) false false false false false false false false false false false false false false false false false false false false false false false false false false false false false false false))) ; $logic_not$single_port_bram.v:34$54_Y
-(define-fun |single_port_bram#35| ((state |single_port_bram_s|)) Bool (and (or  (|single_port_bram#34| state) false) (or  (|single_port_bram#7| state) false false false false false false false false false false false false false false false false false false false false false false false false false false false false false false false))) ; $logic_and$single_port_bram.v:34$56_Y
-(define-fun |single_port_bram#36| ((state |single_port_bram_s|)) Bool (and (or  (= ((_ extract 0 0) (|single_port_bram#0| state)) #b1) false) (or  (|single_port_bram#35| state) false))) ; $logic_and$single_port_bram.v:34$57_Y
-(define-fun |single_port_bram#37| ((state |single_port_bram_s|)) (_ BitVec 1) (ite (|single_port_bram#36| state) (|single_port_bram#33| state) (|single_port_bram#25| state))) ; $0$formal$single_port_bram.v:37$13_CHECK[0:0]$42
-(define-fun |single_port_bram#38| ((state |single_port_bram_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|single_port_bram#21| state)) #b1) #b1 #b0)) ; $procmux$90_Y
-(define-fun |single_port_bram#39| ((state |single_port_bram_s|)) (_ BitVec 1) (ite (|single_port_bram#36| state) (|single_port_bram#38| state) #b0)) ; $0$formal$single_port_bram.v:37$13_EN[0:0]$43
-; yosys-smt2-anyseq single_port_bram#40 1 $auto$setundef.cc:524:execute$183
-(declare-fun |single_port_bram#40| (|single_port_bram_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2305:Anyseq$184
-(define-fun |single_port_bram#41| ((state |single_port_bram_s|)) Bool (= (|single_port_bram#29| state) (|single_port_bram#9| state))) ; $eq$single_port_bram.v:39$62_Y
-; yosys-smt2-anyseq single_port_bram#42 1 $auto$setundef.cc:524:execute$181
-(declare-fun |single_port_bram#42| (|single_port_bram_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2305:Anyseq$182
-(define-fun |single_port_bram#43| ((state |single_port_bram_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|single_port_bram#21| state)) #b1) (|single_port_bram#42| state) (ite (|single_port_bram#41| state) #b1 #b0))) ; $procmux$105_Y
-(define-fun |single_port_bram#44| ((state |single_port_bram_s|)) (_ BitVec 1) (ite (|single_port_bram#36| state) (|single_port_bram#43| state) (|single_port_bram#40| state))) ; $0$formal$single_port_bram.v:39$14_CHECK[0:0]$44
-(define-fun |single_port_bram#45| ((state |single_port_bram_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|single_port_bram#21| state)) #b1) #b0 #b1)) ; $procmux$100_Y
-(define-fun |single_port_bram#46| ((state |single_port_bram_s|)) (_ BitVec 1) (ite (|single_port_bram#36| state) (|single_port_bram#45| state) #b0)) ; $0$formal$single_port_bram.v:39$14_EN[0:0]$45
-; yosys-smt2-anyseq single_port_bram#47 1 $auto$setundef.cc:524:execute$187
-(declare-fun |single_port_bram#47| (|single_port_bram_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2305:Anyseq$188
-; yosys-smt2-anyseq single_port_bram#48 1 $auto$setundef.cc:524:execute$185
-(declare-fun |single_port_bram#48| (|single_port_bram_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2305:Anyseq$186
-(define-fun |single_port_bram#49| ((state |single_port_bram_s|)) Bool (= (|single_port_bram#1| state) (|single_port_bram#31| state))) ; $eq$single_port_bram.v:41$65_Y
-(define-fun |single_port_bram#50| ((state |single_port_bram_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|single_port_bram#20| state)) #b1) (ite (|single_port_bram#49| state) #b1 #b0) (|single_port_bram#48| state))) ; $procmux$115_Y
-(define-fun |single_port_bram#51| ((state |single_port_bram_s|)) (_ BitVec 1) (ite (|single_port_bram#36| state) (|single_port_bram#50| state) (|single_port_bram#47| state))) ; $0$formal$single_port_bram.v:41$15_CHECK[0:0]$46
-(define-fun |single_port_bram#52| ((state |single_port_bram_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|single_port_bram#20| state)) #b1) #b1 #b0)) ; $procmux$110_Y
-(define-fun |single_port_bram#53| ((state |single_port_bram_s|)) (_ BitVec 1) (ite (|single_port_bram#36| state) (|single_port_bram#52| state) #b0)) ; $0$formal$single_port_bram.v:41$15_EN[0:0]$47
-; yosys-smt2-anyseq single_port_bram#54 1 $auto$setundef.cc:524:execute$191
-(declare-fun |single_port_bram#54| (|single_port_bram_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2305:Anyseq$192
-(define-fun |single_port_bram#55| ((state |single_port_bram_s|)) Bool (not (or  (= ((_ extract 0 0) (|single_port_bram#1| state)) #b1) (= ((_ extract 1 1) (|single_port_bram#1| state)) #b1) (= ((_ extract 2 2) (|single_port_bram#1| state)) #b1) (= ((_ extract 3 3) (|single_port_bram#1| state)) #b1) (= ((_ extract 4 4) (|single_port_bram#1| state)) #b1) (= ((_ extract 5 5) (|single_port_bram#1| state)) #b1) (= ((_ extract 6 6) (|single_port_bram#1| state)) #b1) (= ((_ extract 7 7) (|single_port_bram#1| state)) #b1)))) ; $eq$single_port_bram.v:43$66_Y
-; yosys-smt2-anyseq single_port_bram#56 1 $auto$setundef.cc:524:execute$189
-(declare-fun |single_port_bram#56| (|single_port_bram_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2305:Anyseq$190
-(define-fun |single_port_bram#57| ((state |single_port_bram_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|single_port_bram#20| state)) #b1) (|single_port_bram#56| state) (ite (|single_port_bram#55| state) #b1 #b0))) ; $procmux$125_Y
-(define-fun |single_port_bram#58| ((state |single_port_bram_s|)) (_ BitVec 1) (ite (|single_port_bram#36| state) (|single_port_bram#57| state) (|single_port_bram#54| state))) ; $0$formal$single_port_bram.v:43$16_CHECK[0:0]$48
-(define-fun |single_port_bram#59| ((state |single_port_bram_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|single_port_bram#20| state)) #b1) #b0 #b1)) ; $procmux$120_Y
-(define-fun |single_port_bram#60| ((state |single_port_bram_s|)) (_ BitVec 1) (ite (|single_port_bram#36| state) (|single_port_bram#59| state) #b0)) ; $0$formal$single_port_bram.v:43$16_EN[0:0]$49
-(define-fun |single_port_bram#61| ((state |single_port_bram_s|)) (_ BitVec 8) (ite (|single_port_bram#5| state) (|single_port_bram#28| state) #b00000000)) ; $0\o_READ_DATA[7:0]
-; yosys-smt2-anyseq single_port_bram#62 4 $auto$setundef.cc:524:execute$195
-(declare-fun |single_port_bram#62| (|single_port_bram_s|) (_ BitVec 4)) ; $auto$rtlil.cc:2305:Anyseq$196
-(define-fun |single_port_bram#63| ((state |single_port_bram_s|)) (_ BitVec 4) (ite (|single_port_bram#2| state) (|single_port_bram#4| state) (|single_port_bram#62| state))) ; $0$memwr$\r_RAM$single_port_bram.v:22$9_ADDR[3:0]$21
-; yosys-smt2-anyseq single_port_bram#64 8 $auto$setundef.cc:524:execute$193
-(declare-fun |single_port_bram#64| (|single_port_bram_s|) (_ BitVec 8)) ; $auto$rtlil.cc:2305:Anyseq$194
-(define-fun |single_port_bram#65| ((state |single_port_bram_s|)) (_ BitVec 8) (ite (|single_port_bram#2| state) (|single_port_bram#3| state) (|single_port_bram#64| state))) ; $0$memwr$\r_RAM$single_port_bram.v:22$9_DATA[7:0]$22
-(define-fun |single_port_bram#66| ((state |single_port_bram_s|)) (_ BitVec 1) (ite (|single_port_bram#2| state) #b1 #b0)) ; $0$memwr$\r_RAM$single_port_bram.v:22$9_EN[7:0]$23 [7]
-(define-fun |single_port_bram_m:W0A r_RAM| ((state |single_port_bram_s|)) (_ BitVec 4) (|single_port_bram#63| state)) ; $0$memwr$\r_RAM$single_port_bram.v:22$9_ADDR[3:0]$21
-(define-fun |single_port_bram_m:W0D r_RAM| ((state |single_port_bram_s|)) (_ BitVec 8) (|single_port_bram#65| state)) ; $0$memwr$\r_RAM$single_port_bram.v:22$9_DATA[7:0]$22
-(define-fun |single_port_bram_m:W0M r_RAM| ((state |single_port_bram_s|)) (_ BitVec 8) (concat (|single_port_bram#66| state) (concat (|single_port_bram#66| state) (concat (|single_port_bram#66| state) (concat (|single_port_bram#66| state) (concat (|single_port_bram#66| state) (concat (|single_port_bram#66| state) (concat (|single_port_bram#66| state) (|single_port_bram#66| state))))))))) ; { $0$memwr$\r_RAM$single_port_bram.v:22$9_EN[7:0]$23 [7] $0$memwr$\r_RAM$single_port_bram.v:22$9_EN[7:0]$23 [7] $0$memwr$\r_RAM$single_port_bram.v:22$9_EN[7:0]$23 [7] $0$memwr$\r_RAM$single_port_bram.v:22$9_EN[7:0]$23 [7] $0$memwr$\r_RAM$single_port_bram.v:22$9_EN[7:0]$23 [7] $0$memwr$\r_RAM$single_port_bram.v:22$9_EN[7:0]$23 [7] $0$memwr$\r_RAM$single_port_bram.v:22$9_EN[7:0]$23 [7] $0$memwr$\r_RAM$single_port_bram.v:22$9_EN[7:0]$23 [7] }
-(define-fun |single_port_bram#27#1| ((state |single_port_bram_s|)) (Array (_ BitVec 4) (_ BitVec 8)) (store (|single_port_bram#27#0| state) (|single_port_bram_m:W0A r_RAM| state) (bvor (bvand (|single_port_bram_m:W0D r_RAM| state) (|single_port_bram_m:W0M r_RAM| state)) (bvand (select (|single_port_bram#27#0| state) (|single_port_bram_m:W0A r_RAM| state)) (bvnot (|single_port_bram_m:W0M r_RAM| state)))))) ; r_RAM
-; yosys-smt2-anyseq single_port_bram#67 4 $auto$setundef.cc:524:execute$199
-(declare-fun |single_port_bram#67| (|single_port_bram_s|) (_ BitVec 4)) ; $auto$rtlil.cc:2305:Anyseq$200
-(define-fun |single_port_bram#68| ((state |single_port_bram_s|)) (_ BitVec 4) (ite (|single_port_bram#2| state) (|single_port_bram#67| state) (|single_port_bram#4| state))) ; $0$memwr$\r_RAM$single_port_bram.v:24$10_ADDR[3:0]$24
-; yosys-smt2-anyseq single_port_bram#69 8 $auto$setundef.cc:524:execute$197
-(declare-fun |single_port_bram#69| (|single_port_bram_s|) (_ BitVec 8)) ; $auto$rtlil.cc:2305:Anyseq$198
-(define-fun |single_port_bram#70| ((state |single_port_bram_s|)) (_ BitVec 8) (ite (|single_port_bram#2| state) (|single_port_bram#69| state) (|single_port_bram#29| state))) ; $0$memwr$\r_RAM$single_port_bram.v:24$10_DATA[7:0]$25
-(define-fun |single_port_bram#71| ((state |single_port_bram_s|)) (_ BitVec 1) (ite (|single_port_bram#2| state) #b0 #b1)) ; $0$memwr$\r_RAM$single_port_bram.v:24$10_EN[7:0]$26 [7]
-(define-fun |single_port_bram_m:W1A r_RAM| ((state |single_port_bram_s|)) (_ BitVec 4) (|single_port_bram#68| state)) ; $0$memwr$\r_RAM$single_port_bram.v:24$10_ADDR[3:0]$24
-(define-fun |single_port_bram_m:W1D r_RAM| ((state |single_port_bram_s|)) (_ BitVec 8) (|single_port_bram#70| state)) ; $0$memwr$\r_RAM$single_port_bram.v:24$10_DATA[7:0]$25
-(define-fun |single_port_bram_m:W1M r_RAM| ((state |single_port_bram_s|)) (_ BitVec 8) (concat (|single_port_bram#71| state) (concat (|single_port_bram#71| state) (concat (|single_port_bram#71| state) (concat (|single_port_bram#71| state) (concat (|single_port_bram#71| state) (concat (|single_port_bram#71| state) (concat (|single_port_bram#71| state) (|single_port_bram#71| state))))))))) ; { $0$memwr$\r_RAM$single_port_bram.v:24$10_EN[7:0]$26 [7] $0$memwr$\r_RAM$single_port_bram.v:24$10_EN[7:0]$26 [7] $0$memwr$\r_RAM$single_port_bram.v:24$10_EN[7:0]$26 [7] $0$memwr$\r_RAM$single_port_bram.v:24$10_EN[7:0]$26 [7] $0$memwr$\r_RAM$single_port_bram.v:24$10_EN[7:0]$26 [7] $0$memwr$\r_RAM$single_port_bram.v:24$10_EN[7:0]$26 [7] $0$memwr$\r_RAM$single_port_bram.v:24$10_EN[7:0]$26 [7] $0$memwr$\r_RAM$single_port_bram.v:24$10_EN[7:0]$26 [7] }
-(define-fun |single_port_bram#27#2| ((state |single_port_bram_s|)) (Array (_ BitVec 4) (_ BitVec 8)) (store (|single_port_bram#27#1| state) (|single_port_bram_m:W1A r_RAM| state) (bvor (bvand (|single_port_bram_m:W1D r_RAM| state) (|single_port_bram_m:W1M r_RAM| state)) (bvand (select (|single_port_bram#27#1| state) (|single_port_bram_m:W1A r_RAM| state)) (bvnot (|single_port_bram_m:W1M r_RAM| state)))))) ; r_RAM
+(define-fun |single_port_bram#26| ((state |single_port_bram_s|)) (_ BitVec 8) (select (|single_port_bram#24#0| state) (|single_port_bram_m:R1A r_RAM| state))) ; $memrd$\r_RAM$single_port_bram.v:24$26_DATA
+(define-fun |single_port_bram_m:R1D r_RAM| ((state |single_port_bram_s|)) (_ BitVec 8) (|single_port_bram#26| state))
+(define-fun |single_port_bram_m:R2A r_RAM| ((state |single_port_bram_s|)) (_ BitVec 4) (|single_port_bram#10| state)) ; $past$single_port_bram.v:37$4$0
+(define-fun |single_port_bram#27| ((state |single_port_bram_s|)) (_ BitVec 8) (select (|single_port_bram#24#0| state) (|single_port_bram_m:R2A r_RAM| state))) ; $memrd$\r_RAM$single_port_bram.v:37$54_DATA
+(define-fun |single_port_bram_m:R2D r_RAM| ((state |single_port_bram_s|)) (_ BitVec 8) (|single_port_bram#27| state))
+(define-fun |single_port_bram_m:R3A r_RAM| ((state |single_port_bram_s|)) (_ BitVec 4) (|single_port_bram#8| state)) ; $past$single_port_bram.v:39$7$0
+(define-fun |single_port_bram#28| ((state |single_port_bram_s|)) (_ BitVec 8) (select (|single_port_bram#24#0| state) (|single_port_bram_m:R3A r_RAM| state))) ; $memrd$\r_RAM$single_port_bram.v:39$57_DATA
+(define-fun |single_port_bram_m:R3D r_RAM| ((state |single_port_bram_s|)) (_ BitVec 8) (|single_port_bram#28| state))
+(define-fun |single_port_bram#29| ((state |single_port_bram_s|)) Bool (= (|single_port_bram#27| state) (|single_port_bram#9| state))) ; $eq$single_port_bram.v:37$55_Y
+(define-fun |single_port_bram#30| ((state |single_port_bram_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|single_port_bram#18| state)) #b1) (ite (|single_port_bram#29| state) #b1 #b0) (|single_port_bram#23| state))) ; $procmux$82_Y
+(define-fun |single_port_bram#31| ((state |single_port_bram_s|)) Bool (not (or  (= ((_ extract 0 0) (|single_port_bram#19| state)) #b1) false false false false false false false false false false false false false false false false false false false false false false false false false false false false false false false))) ; $logic_not$single_port_bram.v:34$49_Y
+(define-fun |single_port_bram#32| ((state |single_port_bram_s|)) Bool (and (or  (|single_port_bram#31| state) false) (or  (|single_port_bram#7| state) false false false false false false false false false false false false false false false false false false false false false false false false false false false false false false false))) ; $logic_and$single_port_bram.v:34$51_Y
+(define-fun |single_port_bram#33| ((state |single_port_bram_s|)) Bool (and (or  (= ((_ extract 0 0) (|single_port_bram#0| state)) #b1) false) (or  (|single_port_bram#32| state) false))) ; $logic_and$single_port_bram.v:34$52_Y
+(define-fun |single_port_bram#34| ((state |single_port_bram_s|)) (_ BitVec 1) (ite (|single_port_bram#33| state) (|single_port_bram#30| state) (|single_port_bram#22| state))) ; $0$formal$single_port_bram.v:37$12_CHECK[0:0]$39
+(define-fun |single_port_bram#35| ((state |single_port_bram_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|single_port_bram#18| state)) #b1) #b1 #b0)) ; $procmux$78_Y
+(define-fun |single_port_bram#36| ((state |single_port_bram_s|)) (_ BitVec 1) (ite (|single_port_bram#33| state) (|single_port_bram#35| state) #b0)) ; $0$formal$single_port_bram.v:37$12_EN[0:0]$40
+; yosys-smt2-anyseq single_port_bram#37 1 $auto$setundef.cc:524:execute$173
+(declare-fun |single_port_bram#37| (|single_port_bram_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2305:Anyseq$174
+; yosys-smt2-anyseq single_port_bram#38 1 $auto$setundef.cc:524:execute$171
+(declare-fun |single_port_bram#38| (|single_port_bram_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2305:Anyseq$172
+(define-fun |single_port_bram#39| ((state |single_port_bram_s|)) Bool (= (|single_port_bram#1| state) (|single_port_bram#28| state))) ; $eq$single_port_bram.v:39$58_Y
+(define-fun |single_port_bram#40| ((state |single_port_bram_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|single_port_bram#17| state)) #b1) (ite (|single_port_bram#39| state) #b1 #b0) (|single_port_bram#38| state))) ; $procmux$92_Y
+(define-fun |single_port_bram#41| ((state |single_port_bram_s|)) (_ BitVec 1) (ite (|single_port_bram#33| state) (|single_port_bram#40| state) (|single_port_bram#37| state))) ; $0$formal$single_port_bram.v:39$13_CHECK[0:0]$41
+(define-fun |single_port_bram#42| ((state |single_port_bram_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|single_port_bram#17| state)) #b1) #b1 #b0)) ; $procmux$87_Y
+(define-fun |single_port_bram#43| ((state |single_port_bram_s|)) (_ BitVec 1) (ite (|single_port_bram#33| state) (|single_port_bram#42| state) #b0)) ; $0$formal$single_port_bram.v:39$13_EN[0:0]$42
+; yosys-smt2-anyseq single_port_bram#44 1 $auto$setundef.cc:524:execute$157
+(declare-fun |single_port_bram#44| (|single_port_bram_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2305:Anyseq$158
+(define-fun |single_port_bram#45| ((state |single_port_bram_s|)) Bool (not (or  (= ((_ extract 0 0) (|single_port_bram#1| state)) #b1) (= ((_ extract 1 1) (|single_port_bram#1| state)) #b1) (= ((_ extract 2 2) (|single_port_bram#1| state)) #b1) (= ((_ extract 3 3) (|single_port_bram#1| state)) #b1) (= ((_ extract 4 4) (|single_port_bram#1| state)) #b1) (= ((_ extract 5 5) (|single_port_bram#1| state)) #b1) (= ((_ extract 6 6) (|single_port_bram#1| state)) #b1) (= ((_ extract 7 7) (|single_port_bram#1| state)) #b1)))) ; $eq$single_port_bram.v:41$59_Y
+; yosys-smt2-anyseq single_port_bram#46 1 $auto$setundef.cc:524:execute$155
+(declare-fun |single_port_bram#46| (|single_port_bram_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2305:Anyseq$156
+(define-fun |single_port_bram#47| ((state |single_port_bram_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|single_port_bram#17| state)) #b1) (|single_port_bram#46| state) (ite (|single_port_bram#45| state) #b1 #b0))) ; $procmux$102_Y
+(define-fun |single_port_bram#48| ((state |single_port_bram_s|)) (_ BitVec 1) (ite (|single_port_bram#33| state) (|single_port_bram#47| state) (|single_port_bram#44| state))) ; $0$formal$single_port_bram.v:41$14_CHECK[0:0]$43
+(define-fun |single_port_bram#49| ((state |single_port_bram_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|single_port_bram#17| state)) #b1) #b0 #b1)) ; $procmux$97_Y
+(define-fun |single_port_bram#50| ((state |single_port_bram_s|)) (_ BitVec 1) (ite (|single_port_bram#33| state) (|single_port_bram#49| state) #b0)) ; $0$formal$single_port_bram.v:41$14_EN[0:0]$44
+(define-fun |single_port_bram#51| ((state |single_port_bram_s|)) (_ BitVec 8) (ite (|single_port_bram#5| state) (|single_port_bram#25| state) #b00000000)) ; $0\o_READ_DATA[7:0]
+; yosys-smt2-anyseq single_port_bram#52 4 $auto$setundef.cc:524:execute$161
+(declare-fun |single_port_bram#52| (|single_port_bram_s|) (_ BitVec 4)) ; $auto$rtlil.cc:2305:Anyseq$162
+(define-fun |single_port_bram#53| ((state |single_port_bram_s|)) (_ BitVec 4) (ite (|single_port_bram#2| state) (|single_port_bram#4| state) (|single_port_bram#52| state))) ; $0$memwr$\r_RAM$single_port_bram.v:22$8_ADDR[3:0]$19
+; yosys-smt2-anyseq single_port_bram#54 8 $auto$setundef.cc:524:execute$159
+(declare-fun |single_port_bram#54| (|single_port_bram_s|) (_ BitVec 8)) ; $auto$rtlil.cc:2305:Anyseq$160
+(define-fun |single_port_bram#55| ((state |single_port_bram_s|)) (_ BitVec 8) (ite (|single_port_bram#2| state) (|single_port_bram#3| state) (|single_port_bram#54| state))) ; $0$memwr$\r_RAM$single_port_bram.v:22$8_DATA[7:0]$20
+(define-fun |single_port_bram#56| ((state |single_port_bram_s|)) (_ BitVec 1) (ite (|single_port_bram#2| state) #b1 #b0)) ; $0$memwr$\r_RAM$single_port_bram.v:22$8_EN[7:0]$21 [7]
+(define-fun |single_port_bram_m:W0A r_RAM| ((state |single_port_bram_s|)) (_ BitVec 4) (|single_port_bram#53| state)) ; $0$memwr$\r_RAM$single_port_bram.v:22$8_ADDR[3:0]$19
+(define-fun |single_port_bram_m:W0D r_RAM| ((state |single_port_bram_s|)) (_ BitVec 8) (|single_port_bram#55| state)) ; $0$memwr$\r_RAM$single_port_bram.v:22$8_DATA[7:0]$20
+(define-fun |single_port_bram_m:W0M r_RAM| ((state |single_port_bram_s|)) (_ BitVec 8) (concat (|single_port_bram#56| state) (concat (|single_port_bram#56| state) (concat (|single_port_bram#56| state) (concat (|single_port_bram#56| state) (concat (|single_port_bram#56| state) (concat (|single_port_bram#56| state) (concat (|single_port_bram#56| state) (|single_port_bram#56| state))))))))) ; { $0$memwr$\r_RAM$single_port_bram.v:22$8_EN[7:0]$21 [7] $0$memwr$\r_RAM$single_port_bram.v:22$8_EN[7:0]$21 [7] $0$memwr$\r_RAM$single_port_bram.v:22$8_EN[7:0]$21 [7] $0$memwr$\r_RAM$single_port_bram.v:22$8_EN[7:0]$21 [7] $0$memwr$\r_RAM$single_port_bram.v:22$8_EN[7:0]$21 [7] $0$memwr$\r_RAM$single_port_bram.v:22$8_EN[7:0]$21 [7] $0$memwr$\r_RAM$single_port_bram.v:22$8_EN[7:0]$21 [7] $0$memwr$\r_RAM$single_port_bram.v:22$8_EN[7:0]$21 [7] }
+(define-fun |single_port_bram#24#1| ((state |single_port_bram_s|)) (Array (_ BitVec 4) (_ BitVec 8)) (store (|single_port_bram#24#0| state) (|single_port_bram_m:W0A r_RAM| state) (bvor (bvand (|single_port_bram_m:W0D r_RAM| state) (|single_port_bram_m:W0M r_RAM| state)) (bvand (select (|single_port_bram#24#0| state) (|single_port_bram_m:W0A r_RAM| state)) (bvnot (|single_port_bram_m:W0M r_RAM| state)))))) ; r_RAM
+; yosys-smt2-anyseq single_port_bram#57 4 $auto$setundef.cc:524:execute$165
+(declare-fun |single_port_bram#57| (|single_port_bram_s|) (_ BitVec 4)) ; $auto$rtlil.cc:2305:Anyseq$166
+(define-fun |single_port_bram#58| ((state |single_port_bram_s|)) (_ BitVec 4) (ite (|single_port_bram#2| state) (|single_port_bram#57| state) (|single_port_bram#4| state))) ; $0$memwr$\r_RAM$single_port_bram.v:24$9_ADDR[3:0]$22
+; yosys-smt2-anyseq single_port_bram#59 8 $auto$setundef.cc:524:execute$163
+(declare-fun |single_port_bram#59| (|single_port_bram_s|) (_ BitVec 8)) ; $auto$rtlil.cc:2305:Anyseq$164
+(define-fun |single_port_bram#60| ((state |single_port_bram_s|)) (_ BitVec 8) (ite (|single_port_bram#2| state) (|single_port_bram#59| state) (|single_port_bram#26| state))) ; $0$memwr$\r_RAM$single_port_bram.v:24$9_DATA[7:0]$23
+(define-fun |single_port_bram#61| ((state |single_port_bram_s|)) (_ BitVec 1) (ite (|single_port_bram#2| state) #b0 #b1)) ; $0$memwr$\r_RAM$single_port_bram.v:24$9_EN[7:0]$24 [7]
+(define-fun |single_port_bram_m:W1A r_RAM| ((state |single_port_bram_s|)) (_ BitVec 4) (|single_port_bram#58| state)) ; $0$memwr$\r_RAM$single_port_bram.v:24$9_ADDR[3:0]$22
+(define-fun |single_port_bram_m:W1D r_RAM| ((state |single_port_bram_s|)) (_ BitVec 8) (|single_port_bram#60| state)) ; $0$memwr$\r_RAM$single_port_bram.v:24$9_DATA[7:0]$23
+(define-fun |single_port_bram_m:W1M r_RAM| ((state |single_port_bram_s|)) (_ BitVec 8) (concat (|single_port_bram#61| state) (concat (|single_port_bram#61| state) (concat (|single_port_bram#61| state) (concat (|single_port_bram#61| state) (concat (|single_port_bram#61| state) (concat (|single_port_bram#61| state) (concat (|single_port_bram#61| state) (|single_port_bram#61| state))))))))) ; { $0$memwr$\r_RAM$single_port_bram.v:24$9_EN[7:0]$24 [7] $0$memwr$\r_RAM$single_port_bram.v:24$9_EN[7:0]$24 [7] $0$memwr$\r_RAM$single_port_bram.v:24$9_EN[7:0]$24 [7] $0$memwr$\r_RAM$single_port_bram.v:24$9_EN[7:0]$24 [7] $0$memwr$\r_RAM$single_port_bram.v:24$9_EN[7:0]$24 [7] $0$memwr$\r_RAM$single_port_bram.v:24$9_EN[7:0]$24 [7] $0$memwr$\r_RAM$single_port_bram.v:24$9_EN[7:0]$24 [7] $0$memwr$\r_RAM$single_port_bram.v:24$9_EN[7:0]$24 [7] }
+(define-fun |single_port_bram#24#2| ((state |single_port_bram_s|)) (Array (_ BitVec 4) (_ BitVec 8)) (store (|single_port_bram#24#1| state) (|single_port_bram_m:W1A r_RAM| state) (bvor (bvand (|single_port_bram_m:W1D r_RAM| state) (|single_port_bram_m:W1M r_RAM| state)) (bvand (select (|single_port_bram#24#1| state) (|single_port_bram_m:W1A r_RAM| state)) (bvnot (|single_port_bram_m:W1M r_RAM| state)))))) ; r_RAM
 (define-fun |single_port_bram_a| ((state |single_port_bram_s|)) Bool (and
   (|single_port_bram_a 0| state)
   (|single_port_bram_a 1| state)
   (|single_port_bram_a 2| state)
-  (|single_port_bram_a 3| state)
 ))
 (define-fun |single_port_bram_u| ((state |single_port_bram_s|)) Bool (and
   (|single_port_bram_u 0| state)
@@ -183,31 +162,27 @@
 ))
 (define-fun |single_port_bram_i| ((state |single_port_bram_s|)) Bool (and
   (= (= ((_ extract 0 0) (|single_port_bram#0| state)) #b1) false) ; r_PAST_VALID
-  (= (= ((_ extract 0 0) (|single_port_bram#12| state)) #b1) false) ; $formal$single_port_bram.v:43$16_EN
-  (= (= ((_ extract 0 0) (|single_port_bram#14| state)) #b1) false) ; $formal$single_port_bram.v:41$15_EN
-  (= (= ((_ extract 0 0) (|single_port_bram#16| state)) #b1) false) ; $formal$single_port_bram.v:39$14_EN
-  (= (= ((_ extract 0 0) (|single_port_bram#18| state)) #b1) false) ; $formal$single_port_bram.v:37$13_EN
+  (= (= ((_ extract 0 0) (|single_port_bram#11| state)) #b1) false) ; $formal$single_port_bram.v:41$14_EN
+  (= (= ((_ extract 0 0) (|single_port_bram#13| state)) #b1) false) ; $formal$single_port_bram.v:39$13_EN
+  (= (= ((_ extract 0 0) (|single_port_bram#15| state)) #b1) false) ; $formal$single_port_bram.v:37$12_EN
 ))
 (define-fun |single_port_bram_h| ((state |single_port_bram_s|)) Bool true)
 (define-fun |single_port_bram_t| ((state |single_port_bram_s|) (next_state |single_port_bram_s|)) Bool (and
-  (= (ite (|single_port_bram#7| state) #b1 #b0) (|single_port_bram#22| next_state)) ; $procdff$151 $and$single_port_bram.v:34$53_Y
-  (= (ite (|single_port_bram#2| state) #b1 #b0) (|single_port_bram#21| next_state)) ; $procdff$153 $eq$single_port_bram.v:36$58_Y
-  (= (ite (|single_port_bram#5| state) #b1 #b0) (|single_port_bram#20| next_state)) ; $procdff$157 $eq$single_port_bram.v:40$63_Y
-  (= (|single_port_bram#37| state) (|single_port_bram#19| next_state)) ; $procdff$163 $formal$single_port_bram.v:37$13_CHECK
-  (= (|single_port_bram#39| state) (|single_port_bram#18| next_state)) ; $procdff$164 $formal$single_port_bram.v:37$13_EN
-  (= (|single_port_bram#44| state) (|single_port_bram#17| next_state)) ; $procdff$165 $formal$single_port_bram.v:39$14_CHECK
-  (= (|single_port_bram#46| state) (|single_port_bram#16| next_state)) ; $procdff$166 $formal$single_port_bram.v:39$14_EN
-  (= (|single_port_bram#51| state) (|single_port_bram#15| next_state)) ; $procdff$167 $formal$single_port_bram.v:41$15_CHECK
-  (= (|single_port_bram#53| state) (|single_port_bram#14| next_state)) ; $procdff$168 $formal$single_port_bram.v:41$15_EN
-  (= (|single_port_bram#58| state) (|single_port_bram#13| next_state)) ; $procdff$169 $formal$single_port_bram.v:43$16_CHECK
-  (= (|single_port_bram#60| state) (|single_port_bram#12| next_state)) ; $procdff$170 $formal$single_port_bram.v:43$16_EN
-  (= (|single_port_bram#4| state) (|single_port_bram#11| next_state)) ; $procdff$154 $past$single_port_bram.v:37$4$0
-  (= (|single_port_bram#3| state) (|single_port_bram#10| next_state)) ; $procdff$155 $past$single_port_bram.v:37$5$0
-  (= (|single_port_bram#29| state) (|single_port_bram#9| next_state)) ; $procdff$156 $past$single_port_bram.v:39$6$0
-  (= (|single_port_bram#6| state) (|single_port_bram#8| next_state)) ; $procdff$158 $past$single_port_bram.v:41$8$0
-  (= (|single_port_bram#61| state) (|single_port_bram#1| next_state)) ; $procdff$177 \o_READ_DATA
-  (= #b1 (|single_port_bram#0| next_state)) ; $procdff$150 \r_PAST_VALID
-  (= (|single_port_bram#27#2| state) (|single_port_bram#27#0| next_state)) ; r_RAM
+  (= (ite (|single_port_bram#7| state) #b1 #b0) (|single_port_bram#19| next_state)) ; $procdff$128 $and$single_port_bram.v:34$48_Y
+  (= (ite (|single_port_bram#2| state) #b1 #b0) (|single_port_bram#18| next_state)) ; $procdff$130 $eq$single_port_bram.v:36$53_Y
+  (= (ite (|single_port_bram#5| state) #b1 #b0) (|single_port_bram#17| next_state)) ; $procdff$133 $eq$single_port_bram.v:38$56_Y
+  (= (|single_port_bram#34| state) (|single_port_bram#16| next_state)) ; $procdff$139 $formal$single_port_bram.v:37$12_CHECK
+  (= (|single_port_bram#36| state) (|single_port_bram#15| next_state)) ; $procdff$140 $formal$single_port_bram.v:37$12_EN
+  (= (|single_port_bram#41| state) (|single_port_bram#14| next_state)) ; $procdff$141 $formal$single_port_bram.v:39$13_CHECK
+  (= (|single_port_bram#43| state) (|single_port_bram#13| next_state)) ; $procdff$142 $formal$single_port_bram.v:39$13_EN
+  (= (|single_port_bram#48| state) (|single_port_bram#12| next_state)) ; $procdff$143 $formal$single_port_bram.v:41$14_CHECK
+  (= (|single_port_bram#50| state) (|single_port_bram#11| next_state)) ; $procdff$144 $formal$single_port_bram.v:41$14_EN
+  (= (|single_port_bram#4| state) (|single_port_bram#10| next_state)) ; $procdff$131 $past$single_port_bram.v:37$4$0
+  (= (|single_port_bram#3| state) (|single_port_bram#9| next_state)) ; $procdff$132 $past$single_port_bram.v:37$5$0
+  (= (|single_port_bram#6| state) (|single_port_bram#8| next_state)) ; $procdff$134 $past$single_port_bram.v:39$7$0
+  (= (|single_port_bram#51| state) (|single_port_bram#1| next_state)) ; $procdff$151 \o_READ_DATA
+  (= #b1 (|single_port_bram#0| next_state)) ; $procdff$127 \r_PAST_VALID
+  (= (|single_port_bram#24#2| state) (|single_port_bram#24#0| next_state)) ; r_RAM
 )) ; end of module single_port_bram
 ; yosys-smt2-topmod single_port_bram
 ; end of yosys output
