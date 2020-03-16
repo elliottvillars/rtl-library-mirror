@@ -1,0 +1,13 @@
+[engines]
+smtbmc
+
+[options]
+mode prove
+depth 25
+
+[files]
+accumulator.v
+
+[script]
+read_verilog -formal accumulator.v
+prep -top accumulator
