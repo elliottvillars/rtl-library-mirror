@@ -1,0 +1,13 @@
+[engines]
+smtbmc
+
+[options]
+depth 25
+mode prove
+
+[files]
+video_timing_controller.v
+
+[script]
+read_verilog -formal video_timing_controller.v
+prep -top video_timing_controller

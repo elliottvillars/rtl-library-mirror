@@ -1,0 +1,487 @@
+
+ /----------------------------------------------------------------------------\
+ |                                                                            |
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |                                                                            |
+ |  Copyright (C) 2012 - 2019  Clifford Wolf <clifford@clifford.at>           |
+ |                                                                            |
+ |  Permission to use, copy, modify, and/or distribute this software for any  |
+ |  purpose with or without fee is hereby granted, provided that the above    |
+ |  copyright notice and this permission notice appear in all copies.         |
+ |                                                                            |
+ |  THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES  |
+ |  WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF          |
+ |  MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR   |
+ |  ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES    |
+ |  WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN     |
+ |  ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF   |
+ |  OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.            |
+ |                                                                            |
+ \----------------------------------------------------------------------------/
+
+ Yosys 0.9 (git sha1 UNKNOWN, clang 9.0.0 -march=x86-64 -mtune=generic -O2 -fno-plt -fPIC -Os)
+
+
+-- Executing script file `../model/design.ys' --
+
+1. Executing Verilog-2005 frontend: video_timing_controller.v
+Parsing formal Verilog input from `video_timing_controller.v' to AST representation.
+Generating RTLIL representation for module `\video_timing_controller'.
+Successfully finished Verilog frontend.
+
+2. Executing PREP pass.
+
+2.1. Executing HIERARCHY pass (managing design hierarchy).
+
+2.1.1. Analyzing design hierarchy..
+Top module:  \video_timing_controller
+
+2.1.2. Analyzing design hierarchy..
+Top module:  \video_timing_controller
+Removed 0 unused modules.
+Module video_timing_controller directly or indirectly contains formal properties -> setting "keep" attribute.
+
+2.2. Executing PROC pass (convert processes to netlists).
+
+2.2.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+2.2.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Marked 3 switch rules as full_case in process $proc$video_timing_controller.v:114$53 in module video_timing_controller.
+Marked 1 switch rules as full_case in process $proc$video_timing_controller.v:103$49 in module video_timing_controller.
+Marked 1 switch rules as full_case in process $proc$video_timing_controller.v:96$45 in module video_timing_controller.
+Marked 1 switch rules as full_case in process $proc$video_timing_controller.v:89$41 in module video_timing_controller.
+Marked 2 switch rules as full_case in process $proc$video_timing_controller.v:74$37 in module video_timing_controller.
+Marked 1 switch rules as full_case in process $proc$video_timing_controller.v:67$34 in module video_timing_controller.
+Marked 1 switch rules as full_case in process $proc$video_timing_controller.v:60$32 in module video_timing_controller.
+Marked 1 switch rules as full_case in process $proc$video_timing_controller.v:53$30 in module video_timing_controller.
+Removed a total of 0 dead cases.
+
+2.2.3. Executing PROC_INIT pass (extract init attributes).
+Found init rule in `\video_timing_controller.$proc$video_timing_controller.v:153$162'.
+  Set init value: $formal$video_timing_controller.v:153$29_EN = 1'0
+Found init rule in `\video_timing_controller.$proc$video_timing_controller.v:151$160'.
+  Set init value: $formal$video_timing_controller.v:151$28_EN = 1'0
+Found init rule in `\video_timing_controller.$proc$video_timing_controller.v:149$158'.
+  Set init value: $formal$video_timing_controller.v:149$27_EN = 1'0
+Found init rule in `\video_timing_controller.$proc$video_timing_controller.v:147$156'.
+  Set init value: $formal$video_timing_controller.v:147$26_EN = 1'0
+Found init rule in `\video_timing_controller.$proc$video_timing_controller.v:144$154'.
+  Set init value: $formal$video_timing_controller.v:144$25_EN = 1'0
+Found init rule in `\video_timing_controller.$proc$video_timing_controller.v:140$152'.
+  Set init value: $formal$video_timing_controller.v:140$24_EN = 1'0
+Found init rule in `\video_timing_controller.$proc$video_timing_controller.v:136$150'.
+  Set init value: $formal$video_timing_controller.v:136$23_EN = 1'0
+Found init rule in `\video_timing_controller.$proc$video_timing_controller.v:131$148'.
+  Set init value: $formal$video_timing_controller.v:131$22_EN = 1'0
+Found init rule in `\video_timing_controller.$proc$video_timing_controller.v:127$146'.
+  Set init value: $formal$video_timing_controller.v:127$21_EN = 1'0
+Found init rule in `\video_timing_controller.$proc$video_timing_controller.v:122$144'.
+  Set init value: $formal$video_timing_controller.v:122$20_EN = 1'0
+Found init rule in `\video_timing_controller.$proc$video_timing_controller.v:117$142'.
+  Set init value: $formal$video_timing_controller.v:117$19_EN = 1'0
+Found init rule in `\video_timing_controller.$proc$video_timing_controller.v:112$141'.
+  Set init value: \r_PAST_VALID = 1'0
+
+2.2.4. Executing PROC_ARST pass (detect async resets in processes).
+
+2.2.5. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\video_timing_controller.$proc$video_timing_controller.v:153$162'.
+     1/1: $0$formal$video_timing_controller.v:153$29_EN[0:0]$163
+Creating decoders for process `\video_timing_controller.$proc$video_timing_controller.v:151$160'.
+     1/1: $0$formal$video_timing_controller.v:151$28_EN[0:0]$161
+Creating decoders for process `\video_timing_controller.$proc$video_timing_controller.v:149$158'.
+     1/1: $0$formal$video_timing_controller.v:149$27_EN[0:0]$159
+Creating decoders for process `\video_timing_controller.$proc$video_timing_controller.v:147$156'.
+     1/1: $0$formal$video_timing_controller.v:147$26_EN[0:0]$157
+Creating decoders for process `\video_timing_controller.$proc$video_timing_controller.v:144$154'.
+     1/1: $0$formal$video_timing_controller.v:144$25_EN[0:0]$155
+Creating decoders for process `\video_timing_controller.$proc$video_timing_controller.v:140$152'.
+     1/1: $0$formal$video_timing_controller.v:140$24_EN[0:0]$153
+Creating decoders for process `\video_timing_controller.$proc$video_timing_controller.v:136$150'.
+     1/1: $0$formal$video_timing_controller.v:136$23_EN[0:0]$151
+Creating decoders for process `\video_timing_controller.$proc$video_timing_controller.v:131$148'.
+     1/1: $0$formal$video_timing_controller.v:131$22_EN[0:0]$149
+Creating decoders for process `\video_timing_controller.$proc$video_timing_controller.v:127$146'.
+     1/1: $0$formal$video_timing_controller.v:127$21_EN[0:0]$147
+Creating decoders for process `\video_timing_controller.$proc$video_timing_controller.v:122$144'.
+     1/1: $0$formal$video_timing_controller.v:122$20_EN[0:0]$145
+Creating decoders for process `\video_timing_controller.$proc$video_timing_controller.v:117$142'.
+     1/1: $0$formal$video_timing_controller.v:117$19_EN[0:0]$143
+Creating decoders for process `\video_timing_controller.$proc$video_timing_controller.v:112$141'.
+     1/1: $1\r_PAST_VALID[0:0]
+Creating decoders for process `\video_timing_controller.$proc$video_timing_controller.v:114$53'.
+     1/41: $0$past$video_timing_controller.v:152$18$0[11:0]$71
+     2/41: $0$past$video_timing_controller.v:150$17$0[11:0]$70
+     3/41: $0$past$video_timing_controller.v:149$16$0[11:0]$69
+     4/41: $0$past$video_timing_controller.v:148$15$0[11:0]$68
+     5/41: $0$past$video_timing_controller.v:147$14$0[11:0]$67
+     6/41: $0$past$video_timing_controller.v:146$13$0[11:0]$66
+     7/41: $0$past$video_timing_controller.v:138$12$0[11:0]$65
+     8/41: $0$past$video_timing_controller.v:138$11$0[11:0]$64
+     9/41: $0$past$video_timing_controller.v:135$10$0[11:0]$63
+    10/41: $0$past$video_timing_controller.v:135$9$0[11:0]$62
+    11/41: $0$past$video_timing_controller.v:129$8$0[11:0]$61
+    12/41: $0$past$video_timing_controller.v:129$7$0[11:0]$60
+    13/41: $0$past$video_timing_controller.v:126$6$0[11:0]$59
+    14/41: $0$past$video_timing_controller.v:126$5$0[11:0]$58
+    15/41: $0$past$video_timing_controller.v:120$4$0[11:0]$57
+    16/41: $0$past$video_timing_controller.v:120$3$0[11:0]$56
+    17/41: $0$past$video_timing_controller.v:118$2$0[0:0]$55
+    18/41: $0$past$video_timing_controller.v:117$1$0[0:0]$54
+    19/41: $0$formal$video_timing_controller.v:117$19_EN[0:0]$73
+    20/41: $0$formal$video_timing_controller.v:117$19_CHECK[0:0]$72
+    21/41: $0\r_PAST_VALID[0:0]
+    22/41: $0$formal$video_timing_controller.v:122$20_EN[0:0]$75
+    23/41: $0$formal$video_timing_controller.v:122$20_CHECK[0:0]$74
+    24/41: $0$formal$video_timing_controller.v:127$21_EN[0:0]$77
+    25/41: $0$formal$video_timing_controller.v:127$21_CHECK[0:0]$76
+    26/41: $0$formal$video_timing_controller.v:131$22_EN[0:0]$79
+    27/41: $0$formal$video_timing_controller.v:131$22_CHECK[0:0]$78
+    28/41: $0$formal$video_timing_controller.v:136$23_EN[0:0]$81
+    29/41: $0$formal$video_timing_controller.v:136$23_CHECK[0:0]$80
+    30/41: $0$formal$video_timing_controller.v:140$24_EN[0:0]$83
+    31/41: $0$formal$video_timing_controller.v:140$24_CHECK[0:0]$82
+    32/41: $0$formal$video_timing_controller.v:144$25_EN[0:0]$85
+    33/41: $0$formal$video_timing_controller.v:144$25_CHECK[0:0]$84
+    34/41: $0$formal$video_timing_controller.v:147$26_EN[0:0]$87
+    35/41: $0$formal$video_timing_controller.v:147$26_CHECK[0:0]$86
+    36/41: $0$formal$video_timing_controller.v:149$27_EN[0:0]$89
+    37/41: $0$formal$video_timing_controller.v:149$27_CHECK[0:0]$88
+    38/41: $0$formal$video_timing_controller.v:151$28_EN[0:0]$91
+    39/41: $0$formal$video_timing_controller.v:151$28_CHECK[0:0]$90
+    40/41: $0$formal$video_timing_controller.v:153$29_EN[0:0]$93
+    41/41: $0$formal$video_timing_controller.v:153$29_CHECK[0:0]$92
+Creating decoders for process `\video_timing_controller.$proc$video_timing_controller.v:103$49'.
+     1/1: $0\o_VIDEO_DATA_ENABLE[0:0]
+Creating decoders for process `\video_timing_controller.$proc$video_timing_controller.v:96$45'.
+     1/1: $0\o_VSYNC[0:0]
+Creating decoders for process `\video_timing_controller.$proc$video_timing_controller.v:89$41'.
+     1/1: $0\o_HSYNC[0:0]
+Creating decoders for process `\video_timing_controller.$proc$video_timing_controller.v:74$37'.
+     1/1: $0\r_VERT_COUNT[11:0]
+Creating decoders for process `\video_timing_controller.$proc$video_timing_controller.v:67$34'.
+     1/1: $0\r_HORIZ_COUNT[11:0]
+Creating decoders for process `\video_timing_controller.$proc$video_timing_controller.v:60$32'.
+     1/1: $0\o_Y_COORD[11:0]
+Creating decoders for process `\video_timing_controller.$proc$video_timing_controller.v:53$30'.
+     1/1: $0\o_X_COORD[11:0]
+
+2.2.6. Executing PROC_DLATCH pass (convert process syncs to latches).
+
+2.2.7. Executing PROC_DFF pass (convert process syncs to FFs).
+Creating register for signal `\video_timing_controller.\r_PAST_VALID' using process `\video_timing_controller.$proc$video_timing_controller.v:114$53'.
+  created $dff cell `$procdff$288' with positive edge clock.
+Creating register for signal `\video_timing_controller.$past$video_timing_controller.v:117$1$0' using process `\video_timing_controller.$proc$video_timing_controller.v:114$53'.
+  created $dff cell `$procdff$289' with positive edge clock.
+Creating register for signal `\video_timing_controller.$past$video_timing_controller.v:118$2$0' using process `\video_timing_controller.$proc$video_timing_controller.v:114$53'.
+  created $dff cell `$procdff$290' with positive edge clock.
+Creating register for signal `\video_timing_controller.$past$video_timing_controller.v:120$3$0' using process `\video_timing_controller.$proc$video_timing_controller.v:114$53'.
+  created $dff cell `$procdff$291' with positive edge clock.
+Creating register for signal `\video_timing_controller.$past$video_timing_controller.v:120$4$0' using process `\video_timing_controller.$proc$video_timing_controller.v:114$53'.
+  created $dff cell `$procdff$292' with positive edge clock.
+Creating register for signal `\video_timing_controller.$past$video_timing_controller.v:126$5$0' using process `\video_timing_controller.$proc$video_timing_controller.v:114$53'.
+  created $dff cell `$procdff$293' with positive edge clock.
+Creating register for signal `\video_timing_controller.$past$video_timing_controller.v:126$6$0' using process `\video_timing_controller.$proc$video_timing_controller.v:114$53'.
+  created $dff cell `$procdff$294' with positive edge clock.
+Creating register for signal `\video_timing_controller.$past$video_timing_controller.v:129$7$0' using process `\video_timing_controller.$proc$video_timing_controller.v:114$53'.
+  created $dff cell `$procdff$295' with positive edge clock.
+Creating register for signal `\video_timing_controller.$past$video_timing_controller.v:129$8$0' using process `\video_timing_controller.$proc$video_timing_controller.v:114$53'.
+  created $dff cell `$procdff$296' with positive edge clock.
+Creating register for signal `\video_timing_controller.$past$video_timing_controller.v:135$9$0' using process `\video_timing_controller.$proc$video_timing_controller.v:114$53'.
+  created $dff cell `$procdff$297' with positive edge clock.
+Creating register for signal `\video_timing_controller.$past$video_timing_controller.v:135$10$0' using process `\video_timing_controller.$proc$video_timing_controller.v:114$53'.
+  created $dff cell `$procdff$298' with positive edge clock.
+Creating register for signal `\video_timing_controller.$past$video_timing_controller.v:138$11$0' using process `\video_timing_controller.$proc$video_timing_controller.v:114$53'.
+  created $dff cell `$procdff$299' with positive edge clock.
+Creating register for signal `\video_timing_controller.$past$video_timing_controller.v:138$12$0' using process `\video_timing_controller.$proc$video_timing_controller.v:114$53'.
+  created $dff cell `$procdff$300' with positive edge clock.
+Creating register for signal `\video_timing_controller.$past$video_timing_controller.v:146$13$0' using process `\video_timing_controller.$proc$video_timing_controller.v:114$53'.
+  created $dff cell `$procdff$301' with positive edge clock.
+Creating register for signal `\video_timing_controller.$past$video_timing_controller.v:147$14$0' using process `\video_timing_controller.$proc$video_timing_controller.v:114$53'.
+  created $dff cell `$procdff$302' with positive edge clock.
+Creating register for signal `\video_timing_controller.$past$video_timing_controller.v:148$15$0' using process `\video_timing_controller.$proc$video_timing_controller.v:114$53'.
+  created $dff cell `$procdff$303' with positive edge clock.
+Creating register for signal `\video_timing_controller.$past$video_timing_controller.v:149$16$0' using process `\video_timing_controller.$proc$video_timing_controller.v:114$53'.
+  created $dff cell `$procdff$304' with positive edge clock.
+Creating register for signal `\video_timing_controller.$past$video_timing_controller.v:150$17$0' using process `\video_timing_controller.$proc$video_timing_controller.v:114$53'.
+  created $dff cell `$procdff$305' with positive edge clock.
+Creating register for signal `\video_timing_controller.$past$video_timing_controller.v:152$18$0' using process `\video_timing_controller.$proc$video_timing_controller.v:114$53'.
+  created $dff cell `$procdff$306' with positive edge clock.
+Creating register for signal `\video_timing_controller.$formal$video_timing_controller.v:117$19_CHECK' using process `\video_timing_controller.$proc$video_timing_controller.v:114$53'.
+  created $dff cell `$procdff$307' with positive edge clock.
+Creating register for signal `\video_timing_controller.$formal$video_timing_controller.v:117$19_EN' using process `\video_timing_controller.$proc$video_timing_controller.v:114$53'.
+  created $dff cell `$procdff$308' with positive edge clock.
+Creating register for signal `\video_timing_controller.$formal$video_timing_controller.v:122$20_CHECK' using process `\video_timing_controller.$proc$video_timing_controller.v:114$53'.
+  created $dff cell `$procdff$309' with positive edge clock.
+Creating register for signal `\video_timing_controller.$formal$video_timing_controller.v:122$20_EN' using process `\video_timing_controller.$proc$video_timing_controller.v:114$53'.
+  created $dff cell `$procdff$310' with positive edge clock.
+Creating register for signal `\video_timing_controller.$formal$video_timing_controller.v:127$21_CHECK' using process `\video_timing_controller.$proc$video_timing_controller.v:114$53'.
+  created $dff cell `$procdff$311' with positive edge clock.
+Creating register for signal `\video_timing_controller.$formal$video_timing_controller.v:127$21_EN' using process `\video_timing_controller.$proc$video_timing_controller.v:114$53'.
+  created $dff cell `$procdff$312' with positive edge clock.
+Creating register for signal `\video_timing_controller.$formal$video_timing_controller.v:131$22_CHECK' using process `\video_timing_controller.$proc$video_timing_controller.v:114$53'.
+  created $dff cell `$procdff$313' with positive edge clock.
+Creating register for signal `\video_timing_controller.$formal$video_timing_controller.v:131$22_EN' using process `\video_timing_controller.$proc$video_timing_controller.v:114$53'.
+  created $dff cell `$procdff$314' with positive edge clock.
+Creating register for signal `\video_timing_controller.$formal$video_timing_controller.v:136$23_CHECK' using process `\video_timing_controller.$proc$video_timing_controller.v:114$53'.
+  created $dff cell `$procdff$315' with positive edge clock.
+Creating register for signal `\video_timing_controller.$formal$video_timing_controller.v:136$23_EN' using process `\video_timing_controller.$proc$video_timing_controller.v:114$53'.
+  created $dff cell `$procdff$316' with positive edge clock.
+Creating register for signal `\video_timing_controller.$formal$video_timing_controller.v:140$24_CHECK' using process `\video_timing_controller.$proc$video_timing_controller.v:114$53'.
+  created $dff cell `$procdff$317' with positive edge clock.
+Creating register for signal `\video_timing_controller.$formal$video_timing_controller.v:140$24_EN' using process `\video_timing_controller.$proc$video_timing_controller.v:114$53'.
+  created $dff cell `$procdff$318' with positive edge clock.
+Creating register for signal `\video_timing_controller.$formal$video_timing_controller.v:144$25_CHECK' using process `\video_timing_controller.$proc$video_timing_controller.v:114$53'.
+  created $dff cell `$procdff$319' with positive edge clock.
+Creating register for signal `\video_timing_controller.$formal$video_timing_controller.v:144$25_EN' using process `\video_timing_controller.$proc$video_timing_controller.v:114$53'.
+  created $dff cell `$procdff$320' with positive edge clock.
+Creating register for signal `\video_timing_controller.$formal$video_timing_controller.v:147$26_CHECK' using process `\video_timing_controller.$proc$video_timing_controller.v:114$53'.
+  created $dff cell `$procdff$321' with positive edge clock.
+Creating register for signal `\video_timing_controller.$formal$video_timing_controller.v:147$26_EN' using process `\video_timing_controller.$proc$video_timing_controller.v:114$53'.
+  created $dff cell `$procdff$322' with positive edge clock.
+Creating register for signal `\video_timing_controller.$formal$video_timing_controller.v:149$27_CHECK' using process `\video_timing_controller.$proc$video_timing_controller.v:114$53'.
+  created $dff cell `$procdff$323' with positive edge clock.
+Creating register for signal `\video_timing_controller.$formal$video_timing_controller.v:149$27_EN' using process `\video_timing_controller.$proc$video_timing_controller.v:114$53'.
+  created $dff cell `$procdff$324' with positive edge clock.
+Creating register for signal `\video_timing_controller.$formal$video_timing_controller.v:151$28_CHECK' using process `\video_timing_controller.$proc$video_timing_controller.v:114$53'.
+  created $dff cell `$procdff$325' with positive edge clock.
+Creating register for signal `\video_timing_controller.$formal$video_timing_controller.v:151$28_EN' using process `\video_timing_controller.$proc$video_timing_controller.v:114$53'.
+  created $dff cell `$procdff$326' with positive edge clock.
+Creating register for signal `\video_timing_controller.$formal$video_timing_controller.v:153$29_CHECK' using process `\video_timing_controller.$proc$video_timing_controller.v:114$53'.
+  created $dff cell `$procdff$327' with positive edge clock.
+Creating register for signal `\video_timing_controller.$formal$video_timing_controller.v:153$29_EN' using process `\video_timing_controller.$proc$video_timing_controller.v:114$53'.
+  created $dff cell `$procdff$328' with positive edge clock.
+Creating register for signal `\video_timing_controller.\o_VIDEO_DATA_ENABLE' using process `\video_timing_controller.$proc$video_timing_controller.v:103$49'.
+  created $dff cell `$procdff$329' with positive edge clock.
+Creating register for signal `\video_timing_controller.\o_VSYNC' using process `\video_timing_controller.$proc$video_timing_controller.v:96$45'.
+  created $dff cell `$procdff$330' with positive edge clock.
+Creating register for signal `\video_timing_controller.\o_HSYNC' using process `\video_timing_controller.$proc$video_timing_controller.v:89$41'.
+  created $dff cell `$procdff$331' with positive edge clock.
+Creating register for signal `\video_timing_controller.\r_VERT_COUNT' using process `\video_timing_controller.$proc$video_timing_controller.v:74$37'.
+  created $dff cell `$procdff$332' with positive edge clock.
+Creating register for signal `\video_timing_controller.\r_HORIZ_COUNT' using process `\video_timing_controller.$proc$video_timing_controller.v:67$34'.
+  created $dff cell `$procdff$333' with positive edge clock.
+Creating register for signal `\video_timing_controller.\o_Y_COORD' using process `\video_timing_controller.$proc$video_timing_controller.v:60$32'.
+  created $dff cell `$procdff$334' with positive edge clock.
+Creating register for signal `\video_timing_controller.\o_X_COORD' using process `\video_timing_controller.$proc$video_timing_controller.v:53$30'.
+  created $dff cell `$procdff$335' with positive edge clock.
+
+2.2.8. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Removing empty process `video_timing_controller.$proc$video_timing_controller.v:153$162'.
+Removing empty process `video_timing_controller.$proc$video_timing_controller.v:151$160'.
+Removing empty process `video_timing_controller.$proc$video_timing_controller.v:149$158'.
+Removing empty process `video_timing_controller.$proc$video_timing_controller.v:147$156'.
+Removing empty process `video_timing_controller.$proc$video_timing_controller.v:144$154'.
+Removing empty process `video_timing_controller.$proc$video_timing_controller.v:140$152'.
+Removing empty process `video_timing_controller.$proc$video_timing_controller.v:136$150'.
+Removing empty process `video_timing_controller.$proc$video_timing_controller.v:131$148'.
+Removing empty process `video_timing_controller.$proc$video_timing_controller.v:127$146'.
+Removing empty process `video_timing_controller.$proc$video_timing_controller.v:122$144'.
+Removing empty process `video_timing_controller.$proc$video_timing_controller.v:117$142'.
+Removing empty process `video_timing_controller.$proc$video_timing_controller.v:112$141'.
+Found and cleaned up 10 empty switches in `\video_timing_controller.$proc$video_timing_controller.v:114$53'.
+Removing empty process `video_timing_controller.$proc$video_timing_controller.v:114$53'.
+Found and cleaned up 1 empty switch in `\video_timing_controller.$proc$video_timing_controller.v:103$49'.
+Removing empty process `video_timing_controller.$proc$video_timing_controller.v:103$49'.
+Found and cleaned up 1 empty switch in `\video_timing_controller.$proc$video_timing_controller.v:96$45'.
+Removing empty process `video_timing_controller.$proc$video_timing_controller.v:96$45'.
+Found and cleaned up 1 empty switch in `\video_timing_controller.$proc$video_timing_controller.v:89$41'.
+Removing empty process `video_timing_controller.$proc$video_timing_controller.v:89$41'.
+Found and cleaned up 2 empty switches in `\video_timing_controller.$proc$video_timing_controller.v:74$37'.
+Removing empty process `video_timing_controller.$proc$video_timing_controller.v:74$37'.
+Found and cleaned up 1 empty switch in `\video_timing_controller.$proc$video_timing_controller.v:67$34'.
+Removing empty process `video_timing_controller.$proc$video_timing_controller.v:67$34'.
+Found and cleaned up 1 empty switch in `\video_timing_controller.$proc$video_timing_controller.v:60$32'.
+Removing empty process `video_timing_controller.$proc$video_timing_controller.v:60$32'.
+Found and cleaned up 1 empty switch in `\video_timing_controller.$proc$video_timing_controller.v:53$30'.
+Removing empty process `video_timing_controller.$proc$video_timing_controller.v:53$30'.
+Cleaned up 18 empty switches.
+
+2.3. Executing OPT_EXPR pass (perform const folding).
+Optimizing module video_timing_controller.
+<suppressed ~9 debug messages>
+
+2.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \video_timing_controller..
+Removed 0 unused cells and 116 unused wires.
+<suppressed ~1 debug messages>
+
+2.5. Executing CHECK pass (checking for obvious problems).
+checking module video_timing_controller..
+found and reported 0 problems.
+
+2.6. Executing OPT pass (performing simple optimizations).
+
+2.6.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module video_timing_controller.
+
+2.6.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\video_timing_controller'.
+<suppressed ~63 debug messages>
+Removed a total of 21 cells.
+
+2.6.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \video_timing_controller..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~27 debug messages>
+
+2.6.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \video_timing_controller.
+Performed a total of 0 changes.
+
+2.6.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\video_timing_controller'.
+Removed a total of 0 cells.
+
+2.6.6. Executing OPT_RMDFF pass (remove dff with constant values).
+
+2.6.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \video_timing_controller..
+Removed 0 unused cells and 21 unused wires.
+<suppressed ~3 debug messages>
+
+2.6.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module video_timing_controller.
+
+2.6.9. Finished OPT passes. (There is nothing left to do.)
+
+2.7. Executing WREDUCE pass (reducing word size of cells).
+Removed top 22 bits (of 32) from port B of cell video_timing_controller.$le$video_timing_controller.v:54$31 ($le).
+Removed top 23 bits (of 32) from port B of cell video_timing_controller.$le$video_timing_controller.v:61$33 ($le).
+Removed top 2 bits (of 12) from port B of cell video_timing_controller.$eq$video_timing_controller.v:68$35 ($eq).
+Removed top 22 bits (of 32) from port B of cell video_timing_controller.$lt$video_timing_controller.v:90$43 ($lt).
+Removed top 2 bits (of 12) from port B of cell video_timing_controller.$eq$video_timing_controller.v:75$38 ($eq).
+Removed top 23 bits (of 32) from port B of cell video_timing_controller.$lt$video_timing_controller.v:97$47 ($lt).
+Removed top 22 bits (of 32) from port B of cell video_timing_controller.$ge$video_timing_controller.v:90$42 ($ge).
+Removed top 23 bits (of 32) from port B of cell video_timing_controller.$gt$video_timing_controller.v:104$51 ($gt).
+Removed top 23 bits (of 32) from port B of cell video_timing_controller.$ge$video_timing_controller.v:97$46 ($ge).
+Removed top 22 bits (of 32) from port B of cell video_timing_controller.$gt$video_timing_controller.v:104$50 ($gt).
+Removed top 31 bits (of 32) from port B of cell video_timing_controller.$and$video_timing_controller.v:118$96 ($and).
+Removed top 31 bits (of 32) from port Y of cell video_timing_controller.$and$video_timing_controller.v:118$96 ($and).
+Removed top 31 bits (of 32) from port B of cell video_timing_controller.$and$video_timing_controller.v:118$98 ($and).
+Removed top 31 bits (of 32) from port Y of cell video_timing_controller.$and$video_timing_controller.v:118$98 ($and).
+Removed top 22 bits (of 32) from port B of cell video_timing_controller.$le$video_timing_controller.v:120$101 ($le).
+Removed top 22 bits (of 32) from port B of cell video_timing_controller.$ge$video_timing_controller.v:120$102 ($ge).
+Removed top 22 bits (of 32) from port B of cell video_timing_controller.$ge$video_timing_controller.v:126$105 ($ge).
+Removed top 22 bits (of 32) from port B of cell video_timing_controller.$lt$video_timing_controller.v:126$106 ($lt).
+Removed top 23 bits (of 32) from port B of cell video_timing_controller.$le$video_timing_controller.v:129$109 ($le).
+Removed top 23 bits (of 32) from port B of cell video_timing_controller.$ge$video_timing_controller.v:129$110 ($ge).
+Removed top 23 bits (of 32) from port B of cell video_timing_controller.$ge$video_timing_controller.v:135$113 ($ge).
+Removed top 23 bits (of 32) from port B of cell video_timing_controller.$lt$video_timing_controller.v:135$114 ($lt).
+Removed top 2 bits (of 12) from port B of cell video_timing_controller.$eq$video_timing_controller.v:150$126 ($eq).
+Removed top 2 bits (of 12) from port B of cell video_timing_controller.$eq$video_timing_controller.v:152$128 ($eq).
+Removed top 31 bits (of 32) from wire video_timing_controller.$and$video_timing_controller.v:118$96_Y.
+Removed top 31 bits (of 32) from wire video_timing_controller.$and$video_timing_controller.v:118$98_Y.
+
+2.8. Executing MEMORY_DFF pass (merging $dff cells to $memrd and $memwr).
+
+2.9. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \video_timing_controller..
+Removed 0 unused cells and 2 unused wires.
+<suppressed ~1 debug messages>
+
+2.10. Executing MEMORY_COLLECT pass (generating $mem cells).
+
+2.11. Executing OPT pass (performing simple optimizations).
+
+2.11.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module video_timing_controller.
+<suppressed ~2 debug messages>
+
+2.11.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\video_timing_controller'.
+Removed a total of 0 cells.
+
+2.11.3. Executing OPT_RMDFF pass (remove dff with constant values).
+
+2.11.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \video_timing_controller..
+Removed 0 unused cells and 2 unused wires.
+<suppressed ~1 debug messages>
+
+2.11.5. Finished fast OPT passes.
+
+2.12. Printing statistics.
+
+=== video_timing_controller ===
+
+   Number of wires:                126
+   Number of wire bits:            269
+   Number of public wires:           9
+   Number of public wire bits:      53
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                136
+     $add                            2
+     $assert                        10
+     $assume                         1
+     $dff                           32
+     $eq                             6
+     $ge                             6
+     $gt                             2
+     $le                             4
+     $logic_and                      7
+     $logic_not                      3
+     $logic_or                       3
+     $lt                             4
+     $mux                           52
+     $ne                             1
+     $not                            3
+
+2.13. Executing CHECK pass (checking for obvious problems).
+checking module video_timing_controller..
+found and reported 0 problems.
+
+3. Executing MEMORY_NORDFF pass (extracting $dff cells from $mem).
+
+4. Executing ASYNC2SYNC pass.
+
+5. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \video_timing_controller..
+Removed 1 unused cells and 1 unused wires.
+<suppressed ~2 debug messages>
+
+6. Executing SETUNDEF pass (replace undef values with defined constants).
+
+7. Executing OPT pass (performing simple optimizations).
+
+7.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module video_timing_controller.
+
+7.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\video_timing_controller'.
+Removed a total of 0 cells.
+
+7.3. Executing OPT_RMDFF pass (remove dff with constant values).
+
+7.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \video_timing_controller..
+
+7.5. Finished fast OPT passes.
+
+8. Executing CHECK pass (checking for obvious problems).
+checking module video_timing_controller..
+found and reported 0 problems.
+
+9. Executing HIERARCHY pass (managing design hierarchy).
+
+9.1. Analyzing design hierarchy..
+Top module:  \video_timing_controller
+
+9.2. Analyzing design hierarchy..
+Top module:  \video_timing_controller
+Removed 0 unused modules.
+Module video_timing_controller directly or indirectly contains formal properties -> setting "keep" attribute.
+
+10. Executing ILANG backend.
+Output filename: ../model/design.il
+
+End of script. Logfile hash: 657411f6f8
+CPU: user 0.08s system 0.00s, MEM: 18.45 MB total, 10.36 MB resident
+Yosys 0.9 (git sha1 UNKNOWN, clang 9.0.0 -march=x86-64 -mtune=generic -O2 -fno-plt -fPIC -Os)
+Time spent: 27% 6x opt_clean (0 sec), 12% 5x opt_expr (0 sec), ...
