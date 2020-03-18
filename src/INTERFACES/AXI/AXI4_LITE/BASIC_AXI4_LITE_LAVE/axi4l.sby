@@ -1,0 +1,13 @@
+[engines]
+smtbmc
+
+[options]
+mode prove
+depth 120
+
+[files]
+basic_axi4_lite_slave.v
+
+[script]
+read  -formal basic_axi4_lite_slave.v
+prep -top basic_axi4_lite_slave

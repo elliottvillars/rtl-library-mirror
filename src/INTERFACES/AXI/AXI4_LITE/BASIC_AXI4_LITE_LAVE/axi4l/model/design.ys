@@ -1,0 +1,13 @@
+# running in axi4l/src/
+read  -formal basic_axi4_lite_slave.v
+prep -top basic_axi4_lite_slave
+memory_nordff
+async2sync
+chformal -assume -early
+chformal -live -fair -cover -remove
+opt_clean
+setundef -anyseq
+opt -keepdc -fast
+check
+hierarchy -simcheck
+write_ilang ../model/design.il

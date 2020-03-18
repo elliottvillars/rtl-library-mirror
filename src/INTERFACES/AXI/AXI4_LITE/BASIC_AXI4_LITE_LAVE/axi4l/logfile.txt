@@ -1,0 +1,37 @@
+SBY 23:30:02 [axi4l] Removing direcory 'axi4l'.
+SBY 23:30:02 [axi4l] Copy 'basic_axi4_lite_slave.v' to 'axi4l/src/basic_axi4_lite_slave.v'.
+SBY 23:30:02 [axi4l] engine_0: smtbmc
+SBY 23:30:02 [axi4l] base: starting process "cd axi4l/src; yosys -ql ../model/design.log ../model/design.ys"
+SBY 23:30:02 [axi4l] base: finished (returncode=0)
+SBY 23:30:02 [axi4l] smt2: starting process "cd axi4l/model; yosys -ql design_smt2.log design_smt2.ys"
+SBY 23:30:02 [axi4l] smt2: finished (returncode=0)
+SBY 23:30:02 [axi4l] engine_0.basecase: starting process "cd axi4l; yosys-smtbmc --presat --unroll --noprogress -t 120 --append 0 --dump-vcd engine_0/trace.vcd --dump-vlogtb engine_0/trace_tb.v --dump-smtc engine_0/trace.smtc model/design_smt2.smt2"
+SBY 23:30:02 [axi4l] engine_0.induction: starting process "cd axi4l; yosys-smtbmc --presat --unroll -i --noprogress -t 120 --append 0 --dump-vcd engine_0/trace_induct.vcd --dump-vlogtb engine_0/trace_induct_tb.v --dump-smtc engine_0/trace_induct.smtc model/design_smt2.smt2"
+SBY 23:30:02 [axi4l] engine_0.basecase: ##   0:00:00  Solver: yices
+SBY 23:30:02 [axi4l] engine_0.induction: ##   0:00:00  Solver: yices
+SBY 23:30:02 [axi4l] engine_0.basecase: ##   0:00:00  Checking assumptions in step 0..
+SBY 23:30:02 [axi4l] engine_0.basecase: ##   0:00:00  Checking assertions in step 0..
+SBY 23:30:02 [axi4l] engine_0.induction: ##   0:00:00  Trying induction in step 120..
+SBY 23:30:02 [axi4l] engine_0.induction: ##   0:00:00  Trying induction in step 119..
+SBY 23:30:02 [axi4l] engine_0.basecase: ##   0:00:00  Checking assumptions in step 1..
+SBY 23:30:02 [axi4l] engine_0.basecase: ##   0:00:00  Checking assertions in step 1..
+SBY 23:30:02 [axi4l] engine_0.induction: ##   0:00:00  Trying induction in step 118..
+SBY 23:30:02 [axi4l] engine_0.basecase: ##   0:00:00  Checking assumptions in step 2..
+SBY 23:30:02 [axi4l] engine_0.basecase: ##   0:00:00  Checking assertions in step 2..
+SBY 23:30:02 [axi4l] engine_0.induction: ##   0:00:00  Trying induction in step 117..
+SBY 23:30:02 [axi4l] engine_0.basecase: ##   0:00:00  BMC failed!
+SBY 23:30:02 [axi4l] engine_0.basecase: ##   0:00:00  Assert failed in basic_axi4_lite_slave: basic_axi4_lite_slave.v:113
+SBY 23:30:02 [axi4l] engine_0.basecase: ##   0:00:00  Writing trace to VCD file: engine_0/trace.vcd
+SBY 23:30:02 [axi4l] engine_0.induction: ##   0:00:00  Trying induction in step 116..
+SBY 23:30:02 [axi4l] engine_0.basecase: ##   0:00:00  Writing trace to Verilog testbench: engine_0/trace_tb.v
+SBY 23:30:02 [axi4l] engine_0.basecase: ##   0:00:00  Writing trace to constraints file: engine_0/trace.smtc
+SBY 23:30:02 [axi4l] engine_0.induction: ##   0:00:00  Trying induction in step 115..
+SBY 23:30:02 [axi4l] engine_0.basecase: ##   0:00:00  Status: FAILED (!)
+SBY 23:30:02 [axi4l] engine_0.basecase: finished (returncode=1)
+SBY 23:30:02 [axi4l] engine_0: Status returned by engine for basecase: FAIL
+SBY 23:30:02 [axi4l] engine_0.induction: terminating process
+SBY 23:30:02 [axi4l] summary: Elapsed clock time [H:MM:SS (secs)]: 0:00:00 (0)
+SBY 23:30:02 [axi4l] summary: Elapsed process time [H:MM:SS (secs)]: 0:00:00 (0)
+SBY 23:30:02 [axi4l] summary: engine_0 (smtbmc) returned FAIL for basecase
+SBY 23:30:02 [axi4l] summary: counterexample trace: axi4l/engine_0/trace.vcd
+SBY 23:30:02 [axi4l] DONE (FAIL, rc=2)
