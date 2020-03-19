@@ -1,11 +1,6 @@
-[tasks]
-cv
-pv
 [options]
-pv: mode prove
-pv: depth 60
-cv: mode cover
-cv: depth 60
+mode cover
+depth 60
 
 [engines]
 smtbmc

@@ -1,0 +1,2 @@
+1) Create script to automate verilator testbench creation and recompilation.
+2) Simulate modules that couldn't be completely formally verified.

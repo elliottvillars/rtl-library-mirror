@@ -1,0 +1,12 @@
+# DESCRIPTION: Verilator output: Timestamp data for --skip-identical.  Delete at will.
+C "-Wall --cc accumulator.v --exe main.cpp"
+S   6728320 54801785  1576557674   632504297  1574760018           0 "/usr/bin/verilator_bin"
+S      1460 17039635  1584597394   469295733  1584597182   618632599 "accumulator.v"
+T      5965 17170711  1584597971   441883675  1584597971   441883675 "obj_dir/Vaccumulator.cpp"
+T      2625 17170710  1584597971   441883675  1584597971   441883675 "obj_dir/Vaccumulator.h"
+T      1783 17170713  1584597971   441883675  1584597971   441883675 "obj_dir/Vaccumulator.mk"
+T       569 17170708  1584597971   441883675  1584597971   441883675 "obj_dir/Vaccumulator__Syms.cpp"
+T       796 17170709  1584597971   441883675  1584597971   441883675 "obj_dir/Vaccumulator__Syms.h"
+T       256 17170714  1584597971   441883675  1584597971   441883675 "obj_dir/Vaccumulator__ver.d"
+T         0        0  1584597971   441883675  1584597971   441883675 "obj_dir/Vaccumulator__verFiles.dat"
+T      1260 17170712  1584597971   441883675  1584597971   441883675 "obj_dir/Vaccumulator_classes.mk"
