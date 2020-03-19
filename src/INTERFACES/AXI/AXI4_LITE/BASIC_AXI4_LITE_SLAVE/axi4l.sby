@@ -1,0 +1,18 @@
+[tasks]
+prv prove
+cvr cover
+[engines]
+smtbmc
+
+[options]
+cvr:mode cover
+cvr:depth 120
+prv:mode prove
+prv:depth 120
+
+[files]
+basic_axi4_lite_slave.v
+
+[script]
+read  -formal basic_axi4_lite_slave.v
+prep -top basic_axi4_lite_slave

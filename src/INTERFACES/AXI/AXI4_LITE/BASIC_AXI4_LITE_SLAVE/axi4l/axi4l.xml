@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites disabled="0" errors="0" failures="0" tests="1" time="0">
+<testsuite disabled="0" errors="0" failures="0" name="axi4l" skipped="0" tests="1" time="0">
+<properties>
+<property name="os" value="posix"/>
+</properties>
+<testcase classname="axi4l" name="default" status="PASS" time="0">
+<system-out>SBY 17:42:48 [axi4l] Removing direcory 'axi4l'.
+SBY 17:42:48 [axi4l] Copy 'basic_axi4_lite_slave.v' to 'axi4l/src/basic_axi4_lite_slave.v'.
+SBY 17:42:48 [axi4l] engine_0: smtbmc
+SBY 17:42:48 [axi4l] base: starting process &quot;cd axi4l/src; yosys -ql ../model/design.log ../model/design.ys&quot;
+SBY 17:42:48 [axi4l] base: finished (returncode=0)
+SBY 17:42:48 [axi4l] smt2: starting process &quot;cd axi4l/model; yosys -ql design_smt2.log design_smt2.ys&quot;
+SBY 17:42:48 [axi4l] smt2: finished (returncode=0)
+SBY 17:42:48 [axi4l] engine_0: starting process &quot;cd axi4l; yosys-smtbmc --presat --unroll -c --noprogress -t 120 --append 0 --dump-vcd engine_0/trace%.vcd --dump-vlogtb engine_0/trace%_tb.v --dump-smtc engine_0/trace%.smtc model/design_smt2.smt2&quot;
+SBY 17:42:48 [axi4l] engine_0: ##   0:00:00  Solver: yices
+SBY 17:42:48 [axi4l] engine_0: ##   0:00:00  Checking cover reachability in step 0..
+SBY 17:42:48 [axi4l] engine_0: ##   0:00:00  Checking cover reachability in step 1..
+SBY 17:42:48 [axi4l] engine_0: ##   0:00:00  Checking cover reachability in step 2..
+SBY 17:42:48 [axi4l] engine_0: ##   0:00:00  Reached cover statement at basic_axi4_lite_slave.v:108 in step 2.
+SBY 17:42:48 [axi4l] engine_0: ##   0:00:00  Writing trace to VCD file: engine_0/trace0.vcd
+SBY 17:42:48 [axi4l] engine_0: ##   0:00:00  Writing trace to Verilog testbench: engine_0/trace0_tb.v
+SBY 17:42:48 [axi4l] engine_0: ##   0:00:00  Writing trace to constraints file: engine_0/trace0.smtc
+SBY 17:42:48 [axi4l] engine_0: ##   0:00:00  Status: PASSED
+SBY 17:42:48 [axi4l] engine_0: finished (returncode=0)
+SBY 17:42:48 [axi4l] engine_0: Status returned by engine: PASS
+SBY 17:42:48 [axi4l] summary: Elapsed clock time [H:MM:SS (secs)]: 0:00:00 (0)
+SBY 17:42:48 [axi4l] summary: Elapsed process time [H:MM:SS (secs)]: 0:00:00 (0)
+SBY 17:42:48 [axi4l] summary: engine_0 (smtbmc) returned PASS
+SBY 17:42:48 [axi4l] DONE (PASS, rc=0)
+</system-out></testcase></testsuite></testsuites>
