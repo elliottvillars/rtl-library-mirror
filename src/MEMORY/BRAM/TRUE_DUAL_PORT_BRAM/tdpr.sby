@@ -1,0 +1,13 @@
+[engines]
+smtbmc
+
+[options]
+mode prove
+depth 120
+
+[files]
+true_dual_port_bram.v
+
+[script]
+read_verilog -formal true_dual_port_bram.v
+prep -top true_dual_port_bram
