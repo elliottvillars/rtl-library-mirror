@@ -41,14 +41,14 @@ int main(int argc, char ** argv)
 	if(bool_is_decimator == 1)
 	{
 		//initital file write here
-		fh = fopen("cic_decimator.v", "w+");
+		fh = fopen("../DECIMATOR/cic_decimator.v", "w+");
 		fprintf(fh,"module cic_decimator (\n");
 		fprintf(fh,"\tinput wire i_CLK,\n");
 		fprintf(fh,"\tinput [%d:0] i_DATA_IN,\n",(bit_width-1));
 		fprintf(fh,"\toutput reg [%d:0] o_DATA_OUT\n",(bit_width-1));
 		fprintf(fh,");\n\n");
 		fprintf(fh,"//UP/DOWNSAMPLE COUNTER\n");
-		fprintf(fh,"reg [%d:0] r_COUNTER;", log2(decimation_factor));
+		fprintf(fh,"reg [%d:0] r_COUNTER;", (int)ceil(log2(decimation_factor)));
 		fprintf(fh,"reg r_COMB_ENABLE;");
 		fprintf(fh,"\n");
 		fprintf(fh,"//INTEGRATOR REGISTERS");
