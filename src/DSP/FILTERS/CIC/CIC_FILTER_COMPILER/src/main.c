@@ -49,12 +49,13 @@ int main(int argc, char ** argv)
 	{
 		if(bool_is_decimator == 1)
 		{
-			fh = fopen("../CIC_FILTER_COMPILER/build/cic_decimator.v", "w+");
+			fh = fopen("../../DECIMATOR/cic_decimator.v", "w+");
 		}
 		else
 		{
-			fh = fopen("../CIC_FILTER_COMPILER/build/cic_interpolator.v", "w+");
+			fh = fopen("../build/cic_interpolator.v", "w+");
 		}
+		fprintf(fh,"//THIS IS AN AUTO GENERATED FILE.\n");
 		buildCICBase(fh,bit_width,decimation_factor,bool_is_decimator,integrator_stages,comb_stages);
 		buildIntegrator(fh,integrator_stages);
 		buildDownsampler(fh,decimation_factor);
