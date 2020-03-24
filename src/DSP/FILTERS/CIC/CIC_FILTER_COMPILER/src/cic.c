@@ -97,6 +97,7 @@ void buildDownsampler(FILE * fh, int decimation_factor)
 }
 void buildComb(FILE * fh, int integrator_stages,int comb_stages)
 {
+	fprintf(fh,"//COMB\n");
 	fprintf(fh,"always@(posedge i_CLK)\n");
 	fprintf(fh,"begin\n");
 	fprintf(fh,"\tif(r_COMB_ENABLE == 1)\n");
