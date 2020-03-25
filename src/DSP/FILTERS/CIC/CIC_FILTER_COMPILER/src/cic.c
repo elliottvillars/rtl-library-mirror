@@ -16,7 +16,7 @@
  * =====================================================================================
  */
 #include "cic.h"
-void buildCICBase(FILE * fh, int bit_width,int decimation_factor,int bool_is_decimator,int integrator_stages,int comb_stages)
+void buildCICBase(FILE * fh, int bit_width,int decimation_factor,int bool_is_decimator,int integrator_stages,int comb_stages,int differential_delay)
 {
 	if(bool_is_decimator != 0)
 	{
@@ -27,8 +27,8 @@ void buildCICBase(FILE * fh, int bit_width,int decimation_factor,int bool_is_dec
 		fprintf(fh,"module cic_interpolator (\n");
 	}
 	fprintf(fh,"\tinput wire i_CLK,\n");
-	fprintf(fh,"\tinput [%d:0] i_DATA_IN,\n",(bit_width-1));
-	fprintf(fh,"\toutput reg [%d:0] o_DATA_OUT\n",(bit_width-1));
+	fprintf(fh,"\tinput signed [%d:0] i_DATA_IN,\n",(bit_width-1));
+	fprintf(fh,"\toutput reg signed [%d:0] o_DATA_OUT\n",(bit_width-1));
 	fprintf(fh,");\n\n");
 	fprintf(fh,"//UP/DOWNSAMPLE COUNTER\n");
 	fprintf(fh,"reg [%d:0] r_COUNTER;\n", (int)ceil(Log2(decimation_factor)));
@@ -38,7 +38,7 @@ void buildCICBase(FILE * fh, int bit_width,int decimation_factor,int bool_is_dec
 	fprintf(fh,"\n");
 	for(int i = 0; i <= integrator_stages; i++)
 	{
-		fprintf(fh,"reg [%d:0] r_INT_S%d;\n",(bit_width-1),i);
+		fprintf(fh,"reg signed [%d:0] r_INT_S%d;\n",(bit_width-1),i);
 
 	}
 	fprintf(fh,"\n");
@@ -46,7 +46,7 @@ void buildCICBase(FILE * fh, int bit_width,int decimation_factor,int bool_is_dec
 	fprintf(fh,"\n");
 	for(int i = 0; i <= comb_stages; i++)
 	{
-		fprintf(fh,"reg [%d:0] r_COMB_S%d;\n",(bit_width-1),i);
+		fprintf(fh,"reg signed [%d:0] r_COMB_S%d;\n",(bit_width-1),i);
 
 	}
 	fprintf(fh,"\n");
@@ -54,7 +54,15 @@ void buildCICBase(FILE * fh, int bit_width,int decimation_factor,int bool_is_dec
 	fprintf(fh,"\n");
 	for(int i = 0; i < comb_stages; i++)
 	{
-		fprintf(fh,"reg [%d:0] r_C_DELAY_S%d;\n",(bit_width-1),i);
+		if(differential_delay == 1)
+		{
+			fprintf(fh,"reg signed [%d:0] r_C_DELAY_S%d;\n",(bit_width-1),i);
+		}
+		else
+		{
+			fprintf(fh,"reg signed [%d:0] r_C_DELAY_S%d_1;\n",(bit_width-1),i);
+			fprintf(fh,"reg signed [%d:0] r_C_DELAY_S%d_2;\n",(bit_width-1),i);
+		}
 
 	}
 	fprintf(fh,"\n");
@@ -66,7 +74,6 @@ void buildIntegrator(FILE * fh, int integrator_stages)
 	fprintf(fh,"begin\n");
 	fprintf(fh,"\tr_INT_S0 <= i_DATA_IN;\n");
 	fprintf(fh,"\tr_INT_S1 <= r_INT_S0 + r_INT_S1;\n");
-	//if integrator stages are greater than 1
 	if(integrator_stages > 1) 
 	{
 		for(int i = 1; i < integrator_stages; i++)
@@ -95,7 +102,7 @@ void buildDownsampler(FILE * fh, int decimation_factor)
 	fprintf(fh,"end\n");
 	fprintf(fh,"\n");
 }
-void buildComb(FILE * fh, int integrator_stages,int comb_stages)
+void buildComb(FILE * fh, int integrator_stages,int comb_stages,int differential_delay)
 {
 	fprintf(fh,"//COMB\n");
 	fprintf(fh,"always@(posedge i_CLK)\n");
@@ -103,13 +110,29 @@ void buildComb(FILE * fh, int integrator_stages,int comb_stages)
 	fprintf(fh,"\tif(r_COMB_ENABLE == 1)\n");
 	fprintf(fh,"\tbegin\n");
 	fprintf(fh,"\t\tr_COMB_S0 <= r_INT_S%d;\n",integrator_stages);
-	fprintf(fh,"\t\tr_C_DELAY_S0 <= r_COMB_S0;\n");
-	for(int i = 1; i <= comb_stages; i++)
+	if(differential_delay == 1)
 	{
-		fprintf(fh,"\t\tr_COMB_S%d <= r_COMB_S%d - r_C_DELAY_S%d;\n",i,i-1,i-1);
-		if(i == comb_stages)
-			break;
-		fprintf(fh,"\t\tr_C_DELAY_S%d <= r_COMB_S%d;\n",i,i);
+		fprintf(fh,"\t\tr_C_DELAY_S0 <= r_COMB_S0;\n");
+		for(int i = 1; i <= comb_stages; i++)
+		{
+			fprintf(fh,"\t\tr_COMB_S%d <= r_COMB_S%d - r_C_DELAY_S%d;\n",i,i-1,i-1);
+			if(i == comb_stages)
+				break;
+			fprintf(fh,"\t\tr_C_DELAY_S%d <= r_COMB_S%d;\n",i,i);
+		}
+	}
+	else
+	{
+		fprintf(fh,"\t\tr_C_DELAY_S0_1 <= r_COMB_S0;\n");
+		fprintf(fh,"\t\tr_C_DELAY_S0_2 <= r_C_DELAY_S0_1;\n");
+		for(int i = 1; i <= comb_stages; i++)
+		{
+			fprintf(fh,"\t\tr_COMB_S%d <= r_COMB_S%d - r_C_DELAY_S%d_2;\n",i,i-1,i-1);
+			if(i == comb_stages)
+				break;
+			fprintf(fh,"\t\tr_C_DELAY_S%d_1 <= r_COMB_S%d;\n",i,i);
+			fprintf(fh,"\t\tr_C_DELAY_S%d_2 <= r_C_DELAY_S%d_1;\n",i,i);
+		}
 	}
 	fprintf(fh,"\t\to_DATA_OUT <= r_COMB_S%d;\n",comb_stages);
 	fprintf(fh,"\tend\n");

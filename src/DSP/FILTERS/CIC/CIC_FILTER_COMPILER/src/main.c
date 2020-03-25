@@ -25,25 +25,73 @@
 //
 
 
-//TODO:create an API for this.
 //TODO: enable custom directory
-
-
+//TODO: automatically generate parameters based on desired resolution. (i.e ENOB)
+//
+char * comm_list[] = {"--help","--bit_width","--integrator_stages","--comb_stages","--decimation_factor","--interpolator","--differential_delay"};
+char * help_str = "--help: Prints this menu.\n\n--bit_width: Set the bit width of the CIC filter.\n\n--integrator_stages: Set the number of integrator stages.\n\n--comb_stages: Set the number of comb stages.\n\n--decimation_factor: Set the decimation factor.\n\n--differential_delay: Set the differential delay, either 1 or 2.\n\n--interpolator: Create a CIC interpolator. Default is decimator.\n\n";
 int main(int argc, char ** argv)
 {
+	int bit_width = 32;
 	int integrator_stages = 4;
 	int comb_stages = 4;
 	int decimation_factor = 64;
-	int bit_width = 32;
 	int bool_is_decimator = 1;
+	int differential_delay = 1; //
 	FILE * fh;
 
 
 	//read commandline args here
-	for(int i = 0; i < argc; i++)
+	for(int i = 1; i < argc; i++)
 	{
+		if(!strcmp(argv[i],comm_list[0]))
+		{
+			printf(help_str);
+			exit(0);
+		}
+		else if(!strcmp(argv[i],comm_list[1])) //set bit width
+		{
+			bit_width = atoi(argv[i+1]);
+			i++;
+		}
+		else if(!strcmp(argv[i],comm_list[2])) //set integrator stages
+		{
+			integrator_stages = atoi(argv[i+1]);
+			i++;
+		}
+		else if(!strcmp(argv[i],comm_list[3])) //set comb stages
+		{
+			comb_stages = atoi(argv[i+1]);
+			i++;
+		}
+		else if(!strcmp(argv[i],comm_list[4])) //set decimation factor
+		{
+			decimation_factor = atoi(argv[i+1]);
+			i++;
+		}
+		else if(!strcmp(argv[i],comm_list[5]))//decimator or interpolator
+		{
+			bool_is_decimator = 0;
+		}
+		else if(!strcmp(argv[i],comm_list[6]))
+		{
+			differential_delay = atoi(argv[i+1]);
+			i++;
+		}
+		else
+		{
+			printf("%s is not a recognized argument. Exiting\n",argv[i]); 
+			exit(-1);
+		}
 	}
-	
+	printf("Current settings:\n");
+	(bool_is_decimator == 1) ? printf("DECIMATOR\n") : printf("INTERPOLATOR\n");
+	printf("BIT WIDTH: %d\n",bit_width);
+	printf("INTEGRATOR STAGES: %d\n",integrator_stages);
+	printf("COMB STAGES: %d\n",comb_stages);
+	printf("DECIMATION FACTOR: %d\n",decimation_factor);
+	printf("DIFFERENTIAL DELAY: %d\n",differential_delay);
+
 
 	if(bool_is_decimator == 1)
 	{
@@ -56,10 +104,10 @@ int main(int argc, char ** argv)
 			fh = fopen("../build/cic_interpolator.v", "w+");
 		}
 		fprintf(fh,"//THIS IS AN AUTO GENERATED FILE.\n");
-		buildCICBase(fh,bit_width,decimation_factor,bool_is_decimator,integrator_stages,comb_stages);
+		buildCICBase(fh,bit_width,decimation_factor,bool_is_decimator,integrator_stages,comb_stages,differential_delay);
 		buildIntegrator(fh,integrator_stages);
 		buildDownsampler(fh,decimation_factor);
-		buildComb(fh,integrator_stages,comb_stages);
+		buildComb(fh,integrator_stages,comb_stages,differential_delay);
 
 	}
 	else
