@@ -37,7 +37,7 @@ int main(int argc, char ** argv)
 	int decimation_factor = 64;
 	int bool_is_decimator = 1;
 	int differential_delay = 1; //
-	char target_directory[64];
+	char target_directory[64] = "./";
 	int bool_is_auto = 0;
 	FILE * fh;
 
@@ -94,10 +94,10 @@ int main(int argc, char ** argv)
 			exit(-1);
 		}
 	}
-	if(bool_is_auto & bool_is_decimator == 1)
+	if((bool_is_auto & bool_is_decimator) == 1)
 	{
-		char * input_freq;
-		char * output_freq;
+		/*char * input_freq;*/
+		/*char * output_freq;*/
 	}
 	printf("Current settings:\n");
 	(bool_is_decimator == 1) ? printf("DECIMATOR\n") : printf("INTERPOLATOR\n");
