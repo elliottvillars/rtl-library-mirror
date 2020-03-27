@@ -2,6 +2,9 @@ cmake_minimum_required(VERSION 3.13)
 
 project(CICCompiler VERSION 0.7 DESCRIPTION "A CIC filter compiler" LANGUAGES C)
 
+file(MAKE_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/bin")
+file(MAKE_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/build")
+
 add_executable(CICcompiler src/main.c)
 
 set_target_properties(CICcompiler
