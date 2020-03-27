@@ -1,4 +1,2 @@
-*.cmake
-bin/
-CMakeFiles/
-CMakeCache.*
+bin/**
+build/**
