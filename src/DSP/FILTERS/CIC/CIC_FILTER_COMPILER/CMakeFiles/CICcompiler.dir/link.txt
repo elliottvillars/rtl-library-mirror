@@ -1,1 +1,0 @@
-/usr/bin/cc -O3 -DNDEBUG   CMakeFiles/CICcompiler.dir/src/main.c.o CMakeFiles/CICcompiler.dir/src/cic.c.o CMakeFiles/CICcompiler.dir/src/util.c.o  -o bin/CICcompiler  -lm 
