@@ -20,4 +20,4 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
-double Log2( double n );
+double Log( double target, double base );

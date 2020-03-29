@@ -18,8 +18,8 @@
 
 
 #include "util.h"
-double Log2(double n)
+double Log(double target,double base)
 {  
     // log(n)/log(2) is log2.  
-    return log( n ) / log( 2 );  
+    return log( target ) / log( base );  
 }  

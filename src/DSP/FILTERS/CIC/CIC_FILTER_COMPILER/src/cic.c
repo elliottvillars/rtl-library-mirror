@@ -31,7 +31,7 @@ void buildCICBase(FILE * fh, int bit_width,int decimation_factor,int bool_is_dec
 	fprintf(fh,"\toutput reg signed [%d:0] o_DATA_OUT\n",(bit_width-1));
 	fprintf(fh,");\n\n");
 	fprintf(fh,"//UP/DOWNSAMPLE COUNTER\n");
-	fprintf(fh,"reg [%d:0] r_COUNTER;\n", (int)ceil(Log2(decimation_factor)));
+	fprintf(fh,"reg [%d:0] r_COUNTER;\n", (int)ceil(Log(decimation_factor,2)));
 	fprintf(fh,"reg r_COMB_ENABLE;\n");
 	fprintf(fh,"\n");
 	fprintf(fh,"//INTEGRATOR REGISTERS");
