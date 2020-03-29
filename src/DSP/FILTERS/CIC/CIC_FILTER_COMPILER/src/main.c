@@ -25,125 +25,86 @@
 //
 
 
-//TODO: automatically generate parameters based on desired resolution. (i.e ENOB)
-//TODO: set input
-char * comm_list[] = {"--help","--bit_width","--integrator_stages","--comb_stages","--decimation_factor","--interpolator","--differential_delay","--DIR","--auto", "--input_width"};
 char * help_str = "--help: Prints this menu.\n\n--bit_width: Set the bit width of the CIC filter.\n\n--integrator_stages: Set the number of integrator stages.\n\n--comb_stages: Set the number of comb stages.\n\n--decimation_factor: Set the decimation factor.\n\n--differential_delay: Set the differential delay, either 1 or 2.\n\n--interpolator: Create a CIC interpolator. Default is decimator.\n\n";
 int main(int argc, char ** argv)
 {
 	int bit_width = 32;
-	int integrator_stages = 4;
-	int comb_stages = 4;
-	int decimation_factor = 64;
+	int input_width = 2;
+	int cic_stages = 1;
+	int conversion_factor = 1;
 	int bool_is_decimator = 1;
 	int differential_delay = 1; //
-	char target_directory[64] = "./";
 	FILE * fh;
 
 
 	//read commandline args here
-	for(int i = 1; i < argc; i++)
+	for(int i = 1; i < argc; ++i)
 	{
-		if(!strcmp(argv[i],"--help") || (!strcmp(argv[i],"-h")))
+		if(!strcmp(argv[i],"--help"))
 		{
-			printf(help_str);
+			printf("%s",help_str);//TODO: update help string
 			exit(0);
 		}
-		if(!strcmp(argv[i],"--interpolator"))//decimator or interpolator
+		else if(!strcmp(argv[i],"--stages"))
 		{
-			bool_is_decimator = 0;
+			cic_stages = atoi(argv[i+1]);
+			++i;
 		}
-		if(!strcmp(argv[i],"--auto"))
+		else if(!strcmp(argv[i],"--input_width"))
 		{
-			int Fmaster,Fsample,Fprop,ENOB,resolution;
-			Fprop = Fmaster/Fsample;
-			bit_width = ceil(Log(Fprop,2));
-			ENOB = ceil(Log(Fprop,4));
-			integrator_stages = ceil(resolution/ENOB);
-			comb_stages = ceil(resolution/ENOB);
-
-			//request input freq
-			//request output freq
-			//request resolution
-			break;
+			input_width = atoi(argv[i+1]);
+			++i;
 		}
-		else{
-			//disable if auot is set
-			if(!strcmp(argv[i],"--bit_width")) //set bit width
-			{
-				bit_width = atoi(argv[i+1]);
-				i++;
-			}
-			else if(!strcmp(argv[i],"--integrator_stages")) //set integrator stages
-			{
-				integrator_stages = atoi(argv[i+1]);
-				i++;
-			}
-			else if(!strcmp(argv[i],"--comb_stages")) //set comb stages
-			{
-				comb_stages = atoi(argv[i+1]);
-				i++;
-			}
-			else if(!strcmp(argv[i],"--decimation_factor")) //set decimation factor
-			{
-				decimation_factor = atoi(argv[i+1]);
-				i++;
-			}
-			else if(!strcmp(argv[i],comm_list[6]))//differential_delay
-			{
-				differential_delay = atoi(argv[i+1]);
-				i++;
-			}
-			else if(!strcmp(argv[i],comm_list[7])) //target directory
-			{
-				strcpy(target_directory,argv[i+1]);
-				i++;
-			}
-			else
-			{
-				printf("%s is not a recognized argument. Exiting\n",argv[i]); 
-				exit(-1);
-			}
+		else if(!strcmp(argv[i],"--differential_delay"))
+		{
+			differential_delay = atoi(argv[i+1]);
+			++i;
+		}
+		else if(!strcmp(argv[i],"--conversion_factor"))
+		{
+			conversion_factor = atoi(argv[i+1]);
+			++i;
+		}
+		else
+		{
+			printf("%s is not a recognized argument. Exiting.\n",argv[i]);
+			exit(-1);
 		}
 	}
 	printf("Current settings:\n");
 	(bool_is_decimator == 1) ? printf("DECIMATOR\n") : printf("INTERPOLATOR\n");
 	printf("BIT WIDTH: %d\n",bit_width);
-	printf("INTEGRATOR STAGES: %d\n",integrator_stages);
-	printf("COMB STAGES: %d\n",comb_stages);
-	printf("DECIMATION FACTOR: %d\n",decimation_factor);
+	printf("STAGES: %d\n",cic_stages);
+	printf("CONVERSION FACTOR: %d\n",conversion_factor);
 	printf("DIFFERENTIAL DELAY: %d\n",differential_delay);
-	printf("TARGET DIRECTORY: %s\n",target_directory);
 
 
 	if(bool_is_decimator == 1)
 	{
 		if(bool_is_decimator == 1)
 		{
-			char * fname = "/cic_decimator.v";
-			char * path = strcat(target_directory,fname);
-			fh = fopen(path, "w+");
+			char * fname = "./cic_decimator.v";
+			fh = fopen(fname, "w+");
 		}
 		else
 		{
-			char * fname = "/cic_interpolator.v";
-			char * path = strcat(target_directory,fname);
-			fh = fopen(path, "w+");
+			char * fname = "./cic_interpolator.v";
+			fh = fopen(fname, "w+");
 		}
 		fprintf(fh,"//THIS IS AN AUTO GENERATED FILE.\n");
-		buildCICBase(fh,bit_width,decimation_factor,bool_is_decimator,integrator_stages,comb_stages,differential_delay);
-		buildIntegrator(fh,integrator_stages);
-		buildDownsampler(fh,decimation_factor);
-		buildComb(fh,integrator_stages,comb_stages,differential_delay);
+		buildCICBase(fh,input_width,conversion_factor,bool_is_decimator,cic_stages,differential_delay);
+		buildIntegrator(fh,cic_stages);
+		buildDownsampler(fh,conversion_factor);
+		buildComb(fh,cic_stages,differential_delay);
 
 	}
 	else
 	{
 		printf("UNIMPLEMENTED!\n");
 		exit(-1);
-		buildComb(fh,integrator_stages,comb_stages,differential_delay);
+		buildComb(fh,cic_stages,differential_delay);
 		//write upsampler
-		buildIntegrator(fh,integrator_stages);
+		buildIntegrator(fh,cic_stages);
 	}
 	fprintf(fh,"endmodule\n");
 	fclose(fh);
