@@ -18,6 +18,7 @@
 
 #include "util.h"
 void buildCICBase(FILE * fh, int input_width,int conversion_factor,int bool_is_decimator,int stages, int differential_delay);
-void buildIntegrator(FILE * fh,int integrator_stages);
-void buildDownsampler(FILE * fh,int decimation_factor);
-void buildComb(FILE * fh, int stages, int differential_delay);
+void buildIntegrator(FILE * fh,int stages,int bool_is_decimator);
+void buildDownsampler(FILE * fh,int conversion_factor);
+void buildUpsampler(FILE * fh, int conversion_factor,int stages);
+void buildComb(FILE * fh, int stages, int differential_delay,int bool_is_decimator);

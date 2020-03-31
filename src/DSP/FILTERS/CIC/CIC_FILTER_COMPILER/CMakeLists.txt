@@ -18,4 +18,4 @@ target_sources(CICcompiler
 	)
 target_include_directories(CICcompiler PUBLIC include)
 target_link_libraries(CICcompiler PUBLIC m)
-set(CMAKE_BUILD_TYPE Release)
+set(CMAKE_BUILD_TYPE Debug)
