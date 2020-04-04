@@ -16,7 +16,7 @@
  * =====================================================================================
  */
 #include "cic.h"
-void buildCICBase(FILE * fh, int input_width,int conversion_factor,int bool_is_decimator,int stages, int differential_delay)
+void buildCICBase(FILE * fh, int input_width,int conversion_factor,int bool_is_decimator,int stages, int differential_delay, int bit_width)
 {
 	if(bool_is_decimator != 0)
 	{
@@ -26,7 +26,6 @@ void buildCICBase(FILE * fh, int input_width,int conversion_factor,int bool_is_d
 	{
 		fprintf(fh,"module cic_interpolator (\n");
 	}
-	int bit_width = input_width + (stages * Log(conversion_factor*stages,2)); //TODO: return this value? or pointer?
 	fprintf(fh,"\tinput wire i_CLK,\n");
 	fprintf(fh,"\tinput signed [%d:0] i_DATA_IN,\n",(input_width-1));
 	fprintf(fh,"\toutput reg signed [%d:0] o_DATA_OUT\n",(bit_width-1));
@@ -68,19 +67,18 @@ void buildCICBase(FILE * fh, int input_width,int conversion_factor,int bool_is_d
 	}
 	fprintf(fh,"\n");
 }
-void buildIntegrator(FILE * fh, int stages,int bool_is_decimator)
+void buildIntegrator(FILE * fh, int stages,int bool_is_decimator,int input_width,int bit_width)
 {
 	fprintf(fh,"//INTEGRATOR\n");
 	fprintf(fh,"always@(posedge i_CLK)\n");
 	fprintf(fh,"begin\n");
 	if(bool_is_decimator == 1)
 	{
-		fprintf(fh,"\tr_INT_S0 <= i_DATA_IN;\n");//TODO: sign extend 
+		fprintf(fh,"\tr_INT_S0 <= {{%d{i_DATA_IN[%d]}},i_DATA_IN};\n",bit_width-input_width,input_width-1);//TODO: Test this
 		fprintf(fh,"\tr_INT_S1 <= r_INT_S0 + r_INT_S1;\n");
 	}
 	else
 	{
-		fprintf(fh,"\tr_INT_S0 <= r_COMB_S%d;\n",stages);
 		fprintf(fh,"\tr_INT_S1 <= r_INT_S0 + r_INT_S1;\n");
 
 	}
@@ -91,6 +89,8 @@ void buildIntegrator(FILE * fh, int stages,int bool_is_decimator)
 			fprintf(fh,"\tr_INT_S%d <= r_INT_S%d + r_INT_S%d;\n",i+1,i,i+1);
 		}
 	}
+	if(bool_is_decimator == 0)
+		fprintf(fh,"\to_DATA_OUT <= r_INT_S%d;\n",stages);//TODO: Test this
 	fprintf(fh,"end\n");
 	fprintf(fh,"\n");
 }
@@ -127,13 +127,13 @@ void buildUpsampler(FILE * fh, int conversion_factor,int stages)
 	fprintf(fh,"\tbegin\n");
 	fprintf(fh,"\t\tr_COUNTER <= r_COUNTER + 1'b1;\n");
 	fprintf(fh,"\t\tr_COMB_ENABLE <= 0;\n");
-	fprintf(fh,"\t\tr_INT_S0 <= 0;");//TODO: set bit width, use local param?
+	fprintf(fh,"\t\tr_INT_S0 <= 0;\n");//TODO: set bit width, use local param?
 	fprintf(fh,"\tend\n");
 	fprintf(fh,"end\n");
 	fprintf(fh,"\n");
 }
 
-void buildComb(FILE * fh, int stages, int differential_delay,int bool_is_decimator)
+void buildComb(FILE * fh, int stages, int differential_delay,int bool_is_decimator,int input_width,int bit_width)
 {
 	fprintf(fh,"//COMB\n");
 	fprintf(fh,"always@(posedge i_CLK)\n");
@@ -146,7 +146,7 @@ void buildComb(FILE * fh, int stages, int differential_delay,int bool_is_decimat
 	}
 	else
 	{
-		fprintf(fh,"\t\tr_COMB_S0 <= i_DATA_IN;\n");
+		fprintf(fh,"\t\tr_COMB_S0 <= {{%d{i_DATA_IN[%d]}},i_DATA_IN}; //SIGN EXTENSION\n",bit_width-input_width,input_width-1);//TODO: sign extend
 	}
 	if(differential_delay == 1)
 	{
@@ -172,7 +172,9 @@ void buildComb(FILE * fh, int stages, int differential_delay,int bool_is_decimat
 			fprintf(fh,"\t\tr_C_DELAY_S%d_2 <= r_C_DELAY_S%d_1;\n",i,i);
 		}
 	}
-	fprintf(fh,"\t\to_DATA_OUT <= r_COMB_S%d;\n",stages);//TODO: Fix this
+	if(bool_is_decimator == 1)
+		fprintf(fh,"\t\to_DATA_OUT <= r_COMB_S%d;\n",stages);
 	fprintf(fh,"\tend\n");
 	fprintf(fh,"end\n");
+	fprintf(fh,"\n");
 }
