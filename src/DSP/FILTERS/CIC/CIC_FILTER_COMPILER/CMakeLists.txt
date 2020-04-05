@@ -1,15 +1,14 @@
 cmake_minimum_required(VERSION 3.13)
 
-project(CICCompiler VERSION 0.7 DESCRIPTION "A CIC filter compiler" LANGUAGES C)
+project(CICcompiler VERSION 0.9 DESCRIPTION "A CIC filter compiler" LANGUAGES C)
 
-file(MAKE_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/bin")
-file(MAKE_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/build")
+file(MAKE_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/build/bin")
 
 add_executable(CICcompiler src/main.c)
 
 set_target_properties(CICcompiler
 	PROPERTIES
-	RUNTIME_OUTPUT_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/bin"
+	RUNTIME_OUTPUT_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/build/bin"
 	)
 target_sources(CICcompiler 
 	PRIVATE 
@@ -18,4 +17,5 @@ target_sources(CICcompiler
 	)
 target_include_directories(CICcompiler PUBLIC include)
 target_link_libraries(CICcompiler PUBLIC m)
-set(CMAKE_BUILD_TYPE Debug)
+set(CMAKE_BUILD_TYPE Release)
+install(TARGETS CICcompiler)

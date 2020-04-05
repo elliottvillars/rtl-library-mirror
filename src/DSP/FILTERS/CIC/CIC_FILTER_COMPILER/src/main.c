@@ -19,7 +19,7 @@
 //TODO: Add input sign extension
 //TODO: fix comb sections final stage
 
-char * help_str = "--help: Prints this menu.\n\n \
+char * help_str = "\t\t   --help: Prints this menu.\n\n \
 		   --input_width: Set the input bit width of the CIC filter. Default is 2.\n\n \
 		   --stages: Set the number of Comb/Integrator pairs. Default is 1\n\n \
 		   --conversion_factor: Set the conversion factor.\n\n \
@@ -27,51 +27,58 @@ char * help_str = "--help: Prints this menu.\n\n \
 		   --interpolator: Create a CIC interpolator. Default is decimator.\n\n";
 int main(int argc, char ** argv)
 {
-	int input_width = 2;
-	int bit_width = 0;
-	int cic_stages = 1;
-	int conversion_factor = 1;
-	int bool_is_decimator = 1;
-	int differential_delay = 1; //
+	unsigned int input_width = 2;
+	unsigned int bit_width = 0;
+	unsigned int cic_stages = 1;
+	unsigned int conversion_factor = 1;
+	unsigned int bool_is_decimator = 1;
+	unsigned int differential_delay = 1; //
 	FILE * fh;
 
 
-	//read commandline args here
-	for(int i = 1; i < argc; ++i)
+	if(argc == 1)
 	{
-		if(!strcmp(argv[i],"--help"))
+		printf("%s",help_str);
+		exit(0);
+	}
+	else
+	{
+		for(int i = 1; i < argc; ++i)
 		{
-			printf("%s",help_str);
-			exit(0);
-		}
-		else if(!strcmp(argv[i],"--stages"))
-		{
-			cic_stages = atoi(argv[i+1]);
-			++i;
-		}
-		else if(!strcmp(argv[i],"--input_width"))
-		{
-			input_width = atoi(argv[i+1]);
-			++i;
-		}
-		else if(!strcmp(argv[i],"--differential_delay"))
-		{
-			differential_delay = atoi(argv[i+1]);
-			++i;
-		}
-		else if(!strcmp(argv[i],"--conversion_factor"))
-		{
-			conversion_factor = atoi(argv[i+1]);
-			++i;
-		}
-		else if(!strcmp(argv[i], "--interpolator"))
-		{
-			bool_is_decimator = 0;
-		}
-		else
-		{
-			printf("%s is not a recognized argument. Exiting.\n",argv[i]);
-			exit(-1);
+			if(!strcmp(argv[i],"--help") || !strcmp(argv[i],"-h"))
+			{
+				printf("%s",help_str);
+				exit(0);
+			}
+			else if(!strcmp(argv[i],"--stages"))
+			{
+				cic_stages = atoi(argv[i+1]);
+				++i;
+			}
+			else if(!strcmp(argv[i],"--input_width"))
+			{
+				input_width = atoi(argv[i+1]);
+				++i;
+			}
+			else if(!strcmp(argv[i],"--differential_delay"))
+			{
+				differential_delay = atoi(argv[i+1]);
+				++i;
+			}
+			else if(!strcmp(argv[i],"--conversion_factor"))
+			{
+				conversion_factor = atoi(argv[i+1]);
+				++i;
+			}
+			else if(!strcmp(argv[i], "--interpolator"))
+			{
+				bool_is_decimator = 0;
+			}
+			else
+			{
+				printf("%s is not a recognized argument. Exiting.\n",argv[i]);
+				exit(-1);
+			}
 		}
 	}
 	bit_width = input_width + (cic_stages * Log(conversion_factor*cic_stages,2));

@@ -16,7 +16,7 @@
  * =====================================================================================
  */
 #include "cic.h"
-void buildCICBase(FILE * fh, int input_width,int conversion_factor,int bool_is_decimator,int stages, int differential_delay, int bit_width)
+void buildCICBase(FILE * fh, unsigned int input_width,unsigned int conversion_factor,unsigned int bool_is_decimator,unsigned int stages, unsigned int differential_delay, unsigned int bit_width)
 {
 	if(bool_is_decimator != 0)
 	{
@@ -36,7 +36,7 @@ void buildCICBase(FILE * fh, int input_width,int conversion_factor,int bool_is_d
 	fprintf(fh,"\n");
 	fprintf(fh,"//INTEGRATOR REGISTERS");
 	fprintf(fh,"\n");
-	for(int i = 0; i <= stages; i++)
+	for(unsigned int i = 0; i <= stages; i++)
 	{
 		fprintf(fh,"reg signed [%d:0] r_INT_S%d;\n",(bit_width-1),i);
 
@@ -44,7 +44,7 @@ void buildCICBase(FILE * fh, int input_width,int conversion_factor,int bool_is_d
 	fprintf(fh,"\n");
 	fprintf(fh,"//COMB REGISTERS");
 	fprintf(fh,"\n");
-	for(int i = 0; i <= stages; i++)
+	for(unsigned int i = 0; i <= stages; i++)
 	{
 		fprintf(fh,"reg signed [%d:0] r_COMB_S%d;\n",(bit_width-1),i);
 
@@ -52,7 +52,7 @@ void buildCICBase(FILE * fh, int input_width,int conversion_factor,int bool_is_d
 	fprintf(fh,"\n");
 	fprintf(fh,"//COMB DELAY REGISTERS");
 	fprintf(fh,"\n");
-	for(int i = 0; i < stages; i++)
+	for(unsigned int i = 0; i < stages; i++)
 	{
 		if(differential_delay == 1)
 		{
@@ -67,7 +67,7 @@ void buildCICBase(FILE * fh, int input_width,int conversion_factor,int bool_is_d
 	}
 	fprintf(fh,"\n");
 }
-void buildIntegrator(FILE * fh, int stages,int bool_is_decimator,int input_width,int bit_width)
+void buildIntegrator(FILE * fh, unsigned int stages,unsigned int bool_is_decimator,unsigned int input_width,unsigned int bit_width)
 {
 	fprintf(fh,"//INTEGRATOR\n");
 	fprintf(fh,"always@(posedge i_CLK)\n");
@@ -84,7 +84,7 @@ void buildIntegrator(FILE * fh, int stages,int bool_is_decimator,int input_width
 	}
 	if(stages > 1) 
 	{
-		for(int i = 1; i < stages; i++)
+		for(unsigned int i = 1; i < stages; i++)
 		{
 			fprintf(fh,"\tr_INT_S%d <= r_INT_S%d + r_INT_S%d;\n",i+1,i,i+1);
 		}
@@ -94,7 +94,7 @@ void buildIntegrator(FILE * fh, int stages,int bool_is_decimator,int input_width
 	fprintf(fh,"end\n");
 	fprintf(fh,"\n");
 }
-void buildDownsampler(FILE * fh, int decimation_factor)
+void buildDownsampler(FILE * fh, unsigned int decimation_factor)
 {
 	fprintf(fh,"//DOWNSAMPLER\n");
 	fprintf(fh,"always@(posedge i_CLK)\n");
@@ -112,7 +112,7 @@ void buildDownsampler(FILE * fh, int decimation_factor)
 	fprintf(fh,"end\n");
 	fprintf(fh,"\n");
 }
-void buildUpsampler(FILE * fh, int conversion_factor,int stages)
+void buildUpsampler(FILE * fh, unsigned int conversion_factor,unsigned int stages)
 {
 	fprintf(fh,"//UPSAMPLER\n");
 	fprintf(fh,"always@(posedge i_CLK)\n");
@@ -133,7 +133,7 @@ void buildUpsampler(FILE * fh, int conversion_factor,int stages)
 	fprintf(fh,"\n");
 }
 
-void buildComb(FILE * fh, int stages, int differential_delay,int bool_is_decimator,int input_width,int bit_width)
+void buildComb(FILE * fh,unsigned int stages, unsigned int differential_delay,unsigned int bool_is_decimator,unsigned int input_width,unsigned int bit_width)
 {
 	fprintf(fh,"//COMB\n");
 	fprintf(fh,"always@(posedge i_CLK)\n");
@@ -151,7 +151,7 @@ void buildComb(FILE * fh, int stages, int differential_delay,int bool_is_decimat
 	if(differential_delay == 1)
 	{
 		fprintf(fh,"\t\tr_C_DELAY_S0 <= r_COMB_S0;\n");
-		for(int i = 1; i <= stages; i++)
+		for(unsigned int i = 1; i <= stages; i++)
 		{
 			fprintf(fh,"\t\tr_COMB_S%d <= r_COMB_S%d - r_C_DELAY_S%d;\n",i,i-1,i-1);
 			if(i == stages)
@@ -163,7 +163,7 @@ void buildComb(FILE * fh, int stages, int differential_delay,int bool_is_decimat
 	{
 		fprintf(fh,"\t\tr_C_DELAY_S0_1 <= r_COMB_S0;\n");
 		fprintf(fh,"\t\tr_C_DELAY_S0_2 <= r_C_DELAY_S0_1;\n");
-		for(int i = 1; i <= stages; i++)
+		for(unsigned int i = 1; i <= stages; i++)
 		{
 			fprintf(fh,"\t\tr_COMB_S%d <= r_COMB_S%d - r_C_DELAY_S%d_2;\n",i,i-1,i-1);
 			if(i == stages)
