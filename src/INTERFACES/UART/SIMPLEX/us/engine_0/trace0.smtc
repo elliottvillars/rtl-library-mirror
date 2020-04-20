@@ -1,0 +1,71 @@
+initial
+assume (= [$and$./uart_simplex.v:68$35_Y] false)
+assume (= [$eq$./uart_simplex.v:70$40_Y] false)
+assume (= [$formal$./uart_simplex.v:70$10_CHECK] false)
+assume (= [$formal$./uart_simplex.v:70$10_EN] false)
+assume (= [$formal$./uart_simplex.v:73$11_CHECK] false)
+assume (= [$formal$./uart_simplex.v:73$11_EN] false)
+assume (= [r_BIT_COUNT] #b0000)
+assume (= [r_CURRENT_STATE] false)
+assume (= [r_PAST_VALID] false)
+assume (= [r_TX_REG] #b000000000)
+
+state 0
+assume (= [i_CLK] true)
+assume (= [i_DATA_IN] #b00101010)
+assume (= [i_TX_ENABLE] false)
+
+state 1
+assume (= [i_CLK] false)
+assume (= [i_DATA_IN] #b00101010)
+assume (= [i_TX_ENABLE] true)
+
+state 2
+assume (= [i_CLK] true)
+assume (= [i_DATA_IN] #b00101010)
+assume (= [i_TX_ENABLE] false)
+
+state 3
+assume (= [i_CLK] false)
+assume (= [i_DATA_IN] #b00101010)
+assume (= [i_TX_ENABLE] false)
+
+state 4
+assume (= [i_CLK] true)
+assume (= [i_DATA_IN] #b00101010)
+assume (= [i_TX_ENABLE] false)
+
+state 5
+assume (= [i_CLK] false)
+assume (= [i_DATA_IN] #b00101010)
+assume (= [i_TX_ENABLE] false)
+
+state 6
+assume (= [i_CLK] true)
+assume (= [i_DATA_IN] #b00101010)
+assume (= [i_TX_ENABLE] false)
+
+state 7
+assume (= [i_CLK] false)
+assume (= [i_DATA_IN] #b00101010)
+assume (= [i_TX_ENABLE] false)
+
+state 8
+assume (= [i_CLK] true)
+assume (= [i_DATA_IN] #b00101010)
+assume (= [i_TX_ENABLE] false)
+
+state 9
+assume (= [i_CLK] false)
+assume (= [i_DATA_IN] #b00101010)
+assume (= [i_TX_ENABLE] false)
+
+state 10
+assume (= [i_CLK] true)
+assume (= [i_DATA_IN] #b00101010)
+assume (= [i_TX_ENABLE] false)
+
+state 11
+assume (= [i_CLK] false)
+assume (= [i_DATA_IN] #b00101010)
+assume (= [i_TX_ENABLE] false)

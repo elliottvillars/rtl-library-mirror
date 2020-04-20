@@ -1,0 +1,13 @@
+[engines]
+smtbmc
+
+[options]
+mode cover
+depth 100
+
+[files]
+uart_simplex.v
+
+[script]
+read -formal ./uart_simplex.v
+prep -top uart_simplex
