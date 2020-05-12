@@ -1,0 +1,130 @@
+initial
+assume (= [$and$./uart_transmitter.v:105$92_Y] true)
+assume (= [$formal$./uart_transmitter.v:106$13_CHECK] false)
+assume (= [$formal$./uart_transmitter.v:106$13_EN] false)
+assume (= [$formal$./uart_transmitter.v:109$14_CHECK] false)
+assume (= [$formal$./uart_transmitter.v:109$14_EN] false)
+assume (= [$formal$./uart_transmitter.v:110$15_CHECK] false)
+assume (= [$formal$./uart_transmitter.v:114$16_CHECK] false)
+assume (= [$formal$./uart_transmitter.v:114$16_EN] false)
+assume (= [$formal$./uart_transmitter.v:115$17_CHECK] false)
+assume (= [$formal$./uart_transmitter.v:120$18_CHECK] false)
+assume (= [$formal$./uart_transmitter.v:120$18_EN] false)
+assume (= [$formal$./uart_transmitter.v:122$19_CHECK] false)
+assume (= [$formal$./uart_transmitter.v:122$19_EN] false)
+assume (= [$formal$./uart_transmitter.v:123$20_CHECK] false)
+assume (= [$formal$./uart_transmitter.v:123$20_EN] false)
+assume (= [$formal$./uart_transmitter.v:127$21_CHECK] false)
+assume (= [$formal$./uart_transmitter.v:127$21_EN] false)
+assume (= [$formal$./uart_transmitter.v:128$22_CHECK] false)
+assume (= [$formal$./uart_transmitter.v:133$23_CHECK] false)
+assume (= [$formal$./uart_transmitter.v:133$23_EN] false)
+assume (= [$formal$./uart_transmitter.v:135$24_CHECK] false)
+assume (= [$formal$./uart_transmitter.v:135$24_EN] false)
+assume (= [$formal$./uart_transmitter.v:137$25_CHECK] false)
+assume (= [$formal$./uart_transmitter.v:137$25_EN] false)
+assume (= [$formal$./uart_transmitter.v:139$26_CHECK] false)
+assume (= [$formal$./uart_transmitter.v:139$26_EN] false)
+assume (= [$formal$./uart_transmitter.v:141$27_CHECK] false)
+assume (= [$formal$./uart_transmitter.v:141$27_EN] false)
+assume (= [$formal$./uart_transmitter.v:143$28_CHECK] false)
+assume (= [$formal$./uart_transmitter.v:143$28_EN] false)
+assume (= [$past$./uart_transmitter.v:106$3$0] false)
+assume (= [$past$./uart_transmitter.v:107$4$0] #b10)
+assume (= [$past$./uart_transmitter.v:120$7$0] false)
+assume (= [$past$./uart_transmitter.v:123$8$0] #x0)
+assume (= [o_TX] false)
+assume (= [r_BIT_COUNT] #x0)
+assume (= [r_CURRENT_STATE] #b00)
+assume (= [r_DATA_REG] #x00)
+assume (= [r_PAST_VALID] false)
+
+state 0
+assume (= [i_CLK] false)
+assume (= [i_CLK_ENABLE] true)
+assume (= [i_DATA_IN] #x00)
+assume (= [i_TX_ENABLE] false)
+
+state 1
+assume (= [i_CLK] true)
+assume (= [i_CLK_ENABLE] true)
+assume (= [i_DATA_IN] #x0a)
+assume (= [i_TX_ENABLE] true)
+
+state 2
+assume (= [i_CLK] false)
+assume (= [i_CLK_ENABLE] true)
+assume (= [i_DATA_IN] #x00)
+assume (= [i_TX_ENABLE] false)
+
+state 3
+assume (= [i_CLK] true)
+assume (= [i_CLK_ENABLE] true)
+assume (= [i_DATA_IN] #x05)
+assume (= [i_TX_ENABLE] false)
+
+state 4
+assume (= [i_CLK] false)
+assume (= [i_CLK_ENABLE] true)
+assume (= [i_DATA_IN] #x00)
+assume (= [i_TX_ENABLE] false)
+
+state 5
+assume (= [i_CLK] true)
+assume (= [i_CLK_ENABLE] true)
+assume (= [i_DATA_IN] #x01)
+assume (= [i_TX_ENABLE] false)
+
+state 6
+assume (= [i_CLK] false)
+assume (= [i_CLK_ENABLE] true)
+assume (= [i_DATA_IN] #x00)
+assume (= [i_TX_ENABLE] false)
+
+state 7
+assume (= [i_CLK] true)
+assume (= [i_CLK_ENABLE] true)
+assume (= [i_DATA_IN] #x00)
+assume (= [i_TX_ENABLE] false)
+
+state 8
+assume (= [i_CLK] false)
+assume (= [i_CLK_ENABLE] true)
+assume (= [i_DATA_IN] #x00)
+assume (= [i_TX_ENABLE] false)
+
+state 9
+assume (= [i_CLK] true)
+assume (= [i_CLK_ENABLE] true)
+assume (= [i_DATA_IN] #x00)
+assume (= [i_TX_ENABLE] false)
+
+state 10
+assume (= [i_CLK] false)
+assume (= [i_CLK_ENABLE] true)
+assume (= [i_DATA_IN] #x00)
+assume (= [i_TX_ENABLE] true)
+
+state 11
+assume (= [i_CLK] true)
+assume (= [i_CLK_ENABLE] true)
+assume (= [i_DATA_IN] #x80)
+assume (= [i_TX_ENABLE] false)
+
+state 12
+assume (= [i_CLK] false)
+assume (= [i_CLK_ENABLE] true)
+assume (= [i_DATA_IN] #x10)
+assume (= [i_TX_ENABLE] false)
+
+state 13
+assume (= [i_CLK] true)
+assume (= [i_CLK_ENABLE] true)
+assume (= [i_DATA_IN] #x00)
+assume (= [i_TX_ENABLE] true)
+
+state 14
+assume (= [i_CLK] false)
+assume (= [i_CLK_ENABLE] true)
+assume (= [i_DATA_IN] #x00)
+assume (= [i_TX_ENABLE] false)

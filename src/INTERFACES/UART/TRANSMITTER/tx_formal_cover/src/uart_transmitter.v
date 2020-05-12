@@ -103,10 +103,7 @@ end
 		assume($changed(i_CLK));
 		r_PAST_VALID <= 1;
 		if(r_PAST_VALID && $rose(i_CLK)) begin
-			//cover transiton back to idle
 			cover(r_CURRENT_STATE == s_IDLE && $past(r_CURRENT_STATE == s_STOP_TX));
-
-			//Check state assertions
 			if($past(r_CURRENT_STATE) == s_IDLE)
 			begin
 				assert(o_TX == 1);

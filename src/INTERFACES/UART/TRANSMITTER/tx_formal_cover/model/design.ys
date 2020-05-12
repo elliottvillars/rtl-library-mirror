@@ -1,0 +1,13 @@
+# running in tx_formal_cover/src/
+read -formal ./uart_transmitter.v
+prep -top uart_transmitter
+memory_nordff
+async2sync
+chformal -assume -early
+chformal -live -fair -remove
+opt_clean
+setundef -anyseq
+opt -keepdc -fast
+check
+hierarchy -simcheck
+write_ilang ../model/design.il
