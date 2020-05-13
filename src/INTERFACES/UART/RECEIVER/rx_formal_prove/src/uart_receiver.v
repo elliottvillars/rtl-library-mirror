@@ -66,8 +66,16 @@ begin
 		begin
 			r_BIT_COUNT <= r_BIT_COUNT + 1'b1;
 			o_DATA <= 8'b0;
+			//Bruh. I should not have to do this coercion.
 			r_DATA_REG[0] <= i_RX;
-			r_DATA_REG <= r_DATA_REG << 1'b1; //RX Line is fucked up
+			r_DATA_REG[1] <= r_DATA_REG[0];
+			r_DATA_REG[2] <= r_DATA_REG[1];
+			r_DATA_REG[3] <= r_DATA_REG[2];
+			r_DATA_REG[4] <= r_DATA_REG[3];
+			r_DATA_REG[5] <= r_DATA_REG[4];
+			r_DATA_REG[6] <= r_DATA_REG[5];
+			r_DATA_REG[7] <= r_DATA_REG[6];
+			//r_DATA_REG <= r_DATA_REG << 1'b1; //RX Line is fucked up
 			o_RX_DONE <= 0;
 		end
 		s_RX_STOP:
@@ -89,8 +97,13 @@ begin
 	r_PAST_VALID <= 1;
 	if(r_PAST_VALID && $rose(i_CLK))
 	begin
-	assume($changed(i_RX));
+		
+		assume($changed(i_RX));
+
+		//Cover return to idle
 		cover(r_CURRENT_STATE == s_IDLE && $past(r_CURRENT_STATE) == s_RX_STOP);
+
+		//Check signal outputs.
 		if($past(r_CURRENT_STATE) == s_IDLE)
 		begin
 			assert(o_RX_DONE == 0);
@@ -100,7 +113,7 @@ begin
 		if($past(r_CURRENT_STATE) == s_RX)
 		begin
 			assert(o_RX_DONE == 0);
-		//	assert(r_DATA_REG[0] == $past(i_RX)); //FIXME: 
+			assert(r_DATA_REG[0] == $past(i_RX));
 			assert(o_DATA == 0);
 			assert(r_BIT_COUNT == $past(r_BIT_COUNT) + 1);
 		end

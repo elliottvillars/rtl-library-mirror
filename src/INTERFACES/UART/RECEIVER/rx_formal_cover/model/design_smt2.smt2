@@ -10,19 +10,19 @@
 (declare-fun |uart_receiver#1| (|uart_receiver_s|) (_ BitVec 1)) ; \i_RX
 (define-fun |uart_receiver#2| ((state |uart_receiver_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|uart_receiver#1| state)) #b1) #b0 #b1)) ; $2\r_NEXT_STATE[1:0]
 (declare-fun |uart_receiver#3| (|uart_receiver_s|) (_ BitVec 4)) ; \r_BIT_COUNT
-(define-fun |uart_receiver#4| ((state |uart_receiver_s|)) Bool (= (|uart_receiver#3| state) #b0111)) ; $eq$./uart_receiver.v:37$24_Y
+(define-fun |uart_receiver#4| ((state |uart_receiver_s|)) Bool (= (|uart_receiver#3| state) #b0111)) ; $eq$./uart_receiver.v:134$119_Y
 (define-fun |uart_receiver#5| ((state |uart_receiver_s|)) (_ BitVec 2) (ite (|uart_receiver#4| state) #b10 #b01)) ; $3\r_NEXT_STATE[1:0]
 (declare-fun |uart_receiver#6| (|uart_receiver_s|) (_ BitVec 2)) ; \r_CURRENT_STATE
-(define-fun |uart_receiver#7| ((state |uart_receiver_s|)) Bool (= (|uart_receiver#6| state) #b10)) ; $procmux$205_CMP
-(define-fun |uart_receiver#8| ((state |uart_receiver_s|)) Bool (= (|uart_receiver#6| state) #b01)) ; $procmux$206_CMP
+(define-fun |uart_receiver#7| ((state |uart_receiver_s|)) Bool (= (|uart_receiver#6| state) #b10)) ; $eq$./uart_receiver.v:136$122_Y
+(define-fun |uart_receiver#8| ((state |uart_receiver_s|)) Bool (= (|uart_receiver#6| state) #b01)) ; $eq$./uart_receiver.v:132$114_Y
 (define-fun |uart_receiver#9| ((state |uart_receiver_s|)) (_ BitVec 2) (ite (|uart_receiver#8| state) (|uart_receiver#5| state) (ite (|uart_receiver#7| state) #b00 (concat #b0 (|uart_receiver#2| state))))) ; $0\r_NEXT_STATE[1:0]
-(declare-fun |uart_receiver#10| (|uart_receiver_s|) (_ BitVec 2)) ; $auto$async2sync.cc:192:execute$314
-(define-fun |uart_receiver#11| ((state |uart_receiver_s|)) Bool (not (or  (= ((_ extract 0 0) (|uart_receiver#6| state)) #b1) (= ((_ extract 1 1) (|uart_receiver#6| state)) #b1)))) ; $eq$./uart_receiver.v:92$70_Y
-(define-fun |uart_receiver#12| ((state |uart_receiver_s|)) (_ BitVec 1) (bvnot (ite (|uart_receiver#11| state) #b1 #b0))) ; $auto$rtlil.cc:1863:Not$241
-(define-fun |uart_receiver#13| ((state |uart_receiver_s|)) (_ BitVec 1) (bvnot (ite (|uart_receiver#8| state) #b1 #b0))) ; $auto$rtlil.cc:1863:Not$243
-(define-fun |uart_receiver#14| ((state |uart_receiver_s|)) (_ BitVec 1) (bvnot (ite (|uart_receiver#7| state) #b1 #b0))) ; $auto$rtlil.cc:1863:Not$245
-(define-fun |uart_receiver#15| ((state |uart_receiver_s|)) (_ BitVec 1) (bvand (|uart_receiver#13| state) (|uart_receiver#14| state))) ; $auto$rtlil.cc:1867:ReduceOr$255
-(define-fun |uart_receiver#16| ((state |uart_receiver_s|)) (_ BitVec 1) (bvand (|uart_receiver#12| state) (|uart_receiver#15| state))) ; $auto$rtlil.cc:1867:ReduceOr$259
+(declare-fun |uart_receiver#10| (|uart_receiver_s|) (_ BitVec 2)) ; $auto$async2sync.cc:192:execute$473
+(define-fun |uart_receiver#11| ((state |uart_receiver_s|)) Bool (not (or  (= ((_ extract 0 0) (|uart_receiver#6| state)) #b1) (= ((_ extract 1 1) (|uart_receiver#6| state)) #b1)))) ; $eq$./uart_receiver.v:104$89_Y
+(define-fun |uart_receiver#12| ((state |uart_receiver_s|)) (_ BitVec 1) (bvnot (ite (|uart_receiver#11| state) #b1 #b0))) ; $auto$rtlil.cc:1863:Not$373
+(define-fun |uart_receiver#13| ((state |uart_receiver_s|)) (_ BitVec 1) (bvnot (ite (|uart_receiver#8| state) #b1 #b0))) ; $auto$rtlil.cc:1863:Not$375
+(define-fun |uart_receiver#14| ((state |uart_receiver_s|)) (_ BitVec 1) (bvnot (ite (|uart_receiver#7| state) #b1 #b0))) ; $auto$rtlil.cc:1863:Not$377
+(define-fun |uart_receiver#15| ((state |uart_receiver_s|)) (_ BitVec 1) (bvand (|uart_receiver#13| state) (|uart_receiver#14| state))) ; $auto$rtlil.cc:1867:ReduceOr$387
+(define-fun |uart_receiver#16| ((state |uart_receiver_s|)) (_ BitVec 1) (bvand (|uart_receiver#12| state) (|uart_receiver#15| state))) ; $auto$rtlil.cc:1867:ReduceOr$391
 (define-fun |uart_receiver#17| ((state |uart_receiver_s|)) (_ BitVec 2) (ite (= ((_ extract 0 0) (|uart_receiver#16| state)) #b1) (|uart_receiver#10| state) (|uart_receiver#9| state))) ; \r_NEXT_STATE
 (define-fun |uart_receiver_n r_NEXT_STATE| ((state |uart_receiver_s|)) (_ BitVec 2) (|uart_receiver#17| state))
 ; yosys-smt2-register r_DATA_REG 8
@@ -52,178 +52,286 @@
 ; yosys-smt2-wire i_CLK 1
 (declare-fun |uart_receiver#21| (|uart_receiver_s|) Bool) ; \i_CLK
 (define-fun |uart_receiver_n i_CLK| ((state |uart_receiver_s|)) Bool (|uart_receiver#21| state))
-; yosys-smt2-register $past$./uart_receiver.v:91$3$0 1
-(declare-fun |uart_receiver#22| (|uart_receiver_s|) (_ BitVec 1)) ; $past$./uart_receiver.v:91$3$0
-(define-fun |uart_receiver_n $past$./uart_receiver.v:91$3$0| ((state |uart_receiver_s|)) Bool (= ((_ extract 0 0) (|uart_receiver#22| state)) #b1))
-; yosys-smt2-register $past$./uart_receiver.v:108$9$0 8
-(declare-fun |uart_receiver#23| (|uart_receiver_s|) (_ BitVec 8)) ; $past$./uart_receiver.v:108$9$0
-(define-fun |uart_receiver_n $past$./uart_receiver.v:108$9$0| ((state |uart_receiver_s|)) (_ BitVec 8) (|uart_receiver#23| state))
-; yosys-smt2-register $past$./uart_receiver.v:106$8$0 2
-(declare-fun |uart_receiver#24| (|uart_receiver_s|) (_ BitVec 2)) ; $past$./uart_receiver.v:106$8$0
-(define-fun |uart_receiver_n $past$./uart_receiver.v:106$8$0| ((state |uart_receiver_s|)) (_ BitVec 2) (|uart_receiver#24| state))
-; yosys-smt2-register $past$./uart_receiver.v:104$7$0 4
-(declare-fun |uart_receiver#25| (|uart_receiver_s|) (_ BitVec 4)) ; $past$./uart_receiver.v:104$7$0
-(define-fun |uart_receiver_n $past$./uart_receiver.v:104$7$0| ((state |uart_receiver_s|)) (_ BitVec 4) (|uart_receiver#25| state))
-; yosys-smt2-register $formal$./uart_receiver.v:97$15_CHECK 1
-(declare-fun |uart_receiver#26| (|uart_receiver_s|) (_ BitVec 1)) ; $formal$./uart_receiver.v:97$15_CHECK
-(define-fun |uart_receiver_n $formal$./uart_receiver.v:97$15_CHECK| ((state |uart_receiver_s|)) Bool (= ((_ extract 0 0) (|uart_receiver#26| state)) #b1))
-; yosys-smt2-register $formal$./uart_receiver.v:96$14_CHECK 1
-(declare-fun |uart_receiver#27| (|uart_receiver_s|) (_ BitVec 1)) ; $formal$./uart_receiver.v:96$14_CHECK
-(define-fun |uart_receiver_n $formal$./uart_receiver.v:96$14_CHECK| ((state |uart_receiver_s|)) Bool (= ((_ extract 0 0) (|uart_receiver#27| state)) #b1))
-; yosys-smt2-register $formal$./uart_receiver.v:95$13_EN 1
-(declare-fun |uart_receiver#28| (|uart_receiver_s|) (_ BitVec 1)) ; $formal$./uart_receiver.v:95$13_EN
-(define-fun |uart_receiver_n $formal$./uart_receiver.v:95$13_EN| ((state |uart_receiver_s|)) Bool (= ((_ extract 0 0) (|uart_receiver#28| state)) #b1))
-; yosys-smt2-register $formal$./uart_receiver.v:95$13_CHECK 1
-(declare-fun |uart_receiver#29| (|uart_receiver_s|) (_ BitVec 1)) ; $formal$./uart_receiver.v:95$13_CHECK
-(define-fun |uart_receiver_n $formal$./uart_receiver.v:95$13_CHECK| ((state |uart_receiver_s|)) Bool (= ((_ extract 0 0) (|uart_receiver#29| state)) #b1))
-; yosys-smt2-register $formal$./uart_receiver.v:92$12_CHECK 1
-(declare-fun |uart_receiver#30| (|uart_receiver_s|) (_ BitVec 1)) ; $formal$./uart_receiver.v:92$12_CHECK
-(define-fun |uart_receiver_n $formal$./uart_receiver.v:92$12_CHECK| ((state |uart_receiver_s|)) Bool (= ((_ extract 0 0) (|uart_receiver#30| state)) #b1))
-; yosys-smt2-register $formal$./uart_receiver.v:91$11_EN 1
-(declare-fun |uart_receiver#31| (|uart_receiver_s|) (_ BitVec 1)) ; $formal$./uart_receiver.v:91$11_EN
-(define-fun |uart_receiver_n $formal$./uart_receiver.v:91$11_EN| ((state |uart_receiver_s|)) Bool (= ((_ extract 0 0) (|uart_receiver#31| state)) #b1))
-; yosys-smt2-register $formal$./uart_receiver.v:110$21_CHECK 1
-(declare-fun |uart_receiver#32| (|uart_receiver_s|) (_ BitVec 1)) ; $formal$./uart_receiver.v:110$21_CHECK
-(define-fun |uart_receiver_n $formal$./uart_receiver.v:110$21_CHECK| ((state |uart_receiver_s|)) Bool (= ((_ extract 0 0) (|uart_receiver#32| state)) #b1))
-; yosys-smt2-register $formal$./uart_receiver.v:109$20_CHECK 1
-(declare-fun |uart_receiver#33| (|uart_receiver_s|) (_ BitVec 1)) ; $formal$./uart_receiver.v:109$20_CHECK
-(define-fun |uart_receiver_n $formal$./uart_receiver.v:109$20_CHECK| ((state |uart_receiver_s|)) Bool (= ((_ extract 0 0) (|uart_receiver#33| state)) #b1))
-; yosys-smt2-register $formal$./uart_receiver.v:108$19_EN 1
-(declare-fun |uart_receiver#34| (|uart_receiver_s|) (_ BitVec 1)) ; $formal$./uart_receiver.v:108$19_EN
-(define-fun |uart_receiver_n $formal$./uart_receiver.v:108$19_EN| ((state |uart_receiver_s|)) Bool (= ((_ extract 0 0) (|uart_receiver#34| state)) #b1))
-; yosys-smt2-register $formal$./uart_receiver.v:108$19_CHECK 1
-(declare-fun |uart_receiver#35| (|uart_receiver_s|) (_ BitVec 1)) ; $formal$./uart_receiver.v:108$19_CHECK
-(define-fun |uart_receiver_n $formal$./uart_receiver.v:108$19_CHECK| ((state |uart_receiver_s|)) Bool (= ((_ extract 0 0) (|uart_receiver#35| state)) #b1))
-; yosys-smt2-register $formal$./uart_receiver.v:104$18_CHECK 1
-(declare-fun |uart_receiver#36| (|uart_receiver_s|) (_ BitVec 1)) ; $formal$./uart_receiver.v:104$18_CHECK
-(define-fun |uart_receiver_n $formal$./uart_receiver.v:104$18_CHECK| ((state |uart_receiver_s|)) Bool (= ((_ extract 0 0) (|uart_receiver#36| state)) #b1))
-; yosys-smt2-register $formal$./uart_receiver.v:103$17_CHECK 1
-(declare-fun |uart_receiver#37| (|uart_receiver_s|) (_ BitVec 1)) ; $formal$./uart_receiver.v:103$17_CHECK
-(define-fun |uart_receiver_n $formal$./uart_receiver.v:103$17_CHECK| ((state |uart_receiver_s|)) Bool (= ((_ extract 0 0) (|uart_receiver#37| state)) #b1))
-; yosys-smt2-register $formal$./uart_receiver.v:101$16_EN 1
-(declare-fun |uart_receiver#38| (|uart_receiver_s|) (_ BitVec 1)) ; $formal$./uart_receiver.v:101$16_EN
-(define-fun |uart_receiver_n $formal$./uart_receiver.v:101$16_EN| ((state |uart_receiver_s|)) Bool (= ((_ extract 0 0) (|uart_receiver#38| state)) #b1))
-; yosys-smt2-register $formal$./uart_receiver.v:101$16_CHECK 1
-(declare-fun |uart_receiver#39| (|uart_receiver_s|) (_ BitVec 1)) ; $formal$./uart_receiver.v:101$16_CHECK
-(define-fun |uart_receiver_n $formal$./uart_receiver.v:101$16_CHECK| ((state |uart_receiver_s|)) Bool (= ((_ extract 0 0) (|uart_receiver#39| state)) #b1))
-; yosys-smt2-register $auto$async2sync.cc:192:execute$314 2
-(define-fun |uart_receiver_n $auto$async2sync.cc:192:execute$314| ((state |uart_receiver_s|)) (_ BitVec 2) (|uart_receiver#10| state))
-; yosys-smt2-register $and$./uart_receiver.v:89$64_Y 1
-(declare-fun |uart_receiver#40| (|uart_receiver_s|) (_ BitVec 1)) ; $and$./uart_receiver.v:89$64_Y
-(define-fun |uart_receiver_n $and$./uart_receiver.v:89$64_Y| ((state |uart_receiver_s|)) Bool (= ((_ extract 0 0) (|uart_receiver#40| state)) #b1))
-; yosys-smt2-cover 0 ./uart_receiver.v:92
-(define-fun |uart_receiver_c 0| ((state |uart_receiver_s|)) Bool (and (= ((_ extract 0 0) (|uart_receiver#30| state)) #b1) (= ((_ extract 0 0) (|uart_receiver#31| state)) #b1))) ; $cover$./uart_receiver.v:92$88
-; yosys-smt2-anyseq uart_receiver#41 1 $auto$setundef.cc:524:execute$316
-(declare-fun |uart_receiver#41| (|uart_receiver_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2358:Anyseq$317
-(define-fun |uart_receiver#42| ((state |uart_receiver_s|)) Bool (distinct (|uart_receiver#22| state) (|uart_receiver#1| state))) ; $ne$./uart_receiver.v:91$69_Y
-(define-fun |uart_receiver#43| ((state |uart_receiver_s|)) Bool (not (or  (= ((_ extract 0 0) (|uart_receiver#40| state)) #b1) false false false false false false false false false false false false false false false false false false false false false false false false false false false false false false false))) ; $logic_not$./uart_receiver.v:89$65_Y
-(define-fun |uart_receiver#44| ((state |uart_receiver_s|)) Bool (and (or  (|uart_receiver#43| state) false) (or  (|uart_receiver#21| state) false false false false false false false false false false false false false false false false false false false false false false false false false false false false false false false))) ; $logic_and$./uart_receiver.v:89$67_Y
-(define-fun |uart_receiver#45| ((state |uart_receiver_s|)) Bool (and (or  (= ((_ extract 0 0) (|uart_receiver#0| state)) #b1) false) (or  (|uart_receiver#44| state) false))) ; $logic_and$./uart_receiver.v:89$68_Y
-(define-fun |uart_receiver#46| ((state |uart_receiver_s|)) (_ BitVec 1) (ite (|uart_receiver#45| state) (ite (|uart_receiver#42| state) #b1 #b0) (|uart_receiver#41| state))) ; $0$formal$./uart_receiver.v:91$11_CHECK[0:0]$41
-(define-fun |uart_receiver#47| ((state |uart_receiver_s|)) (_ BitVec 1) (ite (|uart_receiver#45| state) #b1 #b0)) ; $0$formal$./uart_receiver.v:91$11_EN[0:0]$42
-; yosys-smt2-assume 0 ./uart_receiver.v:91
-(define-fun |uart_receiver_u 0| ((state |uart_receiver_s|)) Bool (or (= ((_ extract 0 0) (|uart_receiver#46| state)) #b1) (not (= ((_ extract 0 0) (|uart_receiver#47| state)) #b1)))) ; $assume$./uart_receiver.v:91$87
-(define-fun |uart_receiver#48| ((state |uart_receiver_s|)) Bool (distinct (|uart_receiver#40| state) (ite (|uart_receiver#21| state) #b1 #b0))) ; $0$formal$./uart_receiver.v:87$10_CHECK[0:0]$39
-; yosys-smt2-assume 1 ./uart_receiver.v:87
-(define-fun |uart_receiver_u 1| ((state |uart_receiver_s|)) Bool (or (|uart_receiver#48| state) (not true))) ; $assume$./uart_receiver.v:87$86
-; yosys-smt2-assert 0 ./uart_receiver.v:97
-(define-fun |uart_receiver_a 0| ((state |uart_receiver_s|)) Bool (or (= ((_ extract 0 0) (|uart_receiver#26| state)) #b1) (not (= ((_ extract 0 0) (|uart_receiver#28| state)) #b1)))) ; $assert$./uart_receiver.v:97$91
-; yosys-smt2-assert 1 ./uart_receiver.v:96
-(define-fun |uart_receiver_a 1| ((state |uart_receiver_s|)) Bool (or (= ((_ extract 0 0) (|uart_receiver#27| state)) #b1) (not (= ((_ extract 0 0) (|uart_receiver#28| state)) #b1)))) ; $assert$./uart_receiver.v:96$90
-; yosys-smt2-assert 2 ./uart_receiver.v:95
-(define-fun |uart_receiver_a 2| ((state |uart_receiver_s|)) Bool (or (= ((_ extract 0 0) (|uart_receiver#29| state)) #b1) (not (= ((_ extract 0 0) (|uart_receiver#28| state)) #b1)))) ; $assert$./uart_receiver.v:95$89
-; yosys-smt2-assert 3 ./uart_receiver.v:110
-(define-fun |uart_receiver_a 3| ((state |uart_receiver_s|)) Bool (or (= ((_ extract 0 0) (|uart_receiver#32| state)) #b1) (not (= ((_ extract 0 0) (|uart_receiver#34| state)) #b1)))) ; $assert$./uart_receiver.v:110$97
-; yosys-smt2-assert 4 ./uart_receiver.v:109
-(define-fun |uart_receiver_a 4| ((state |uart_receiver_s|)) Bool (or (= ((_ extract 0 0) (|uart_receiver#33| state)) #b1) (not (= ((_ extract 0 0) (|uart_receiver#34| state)) #b1)))) ; $assert$./uart_receiver.v:109$96
-; yosys-smt2-assert 5 ./uart_receiver.v:108
-(define-fun |uart_receiver_a 5| ((state |uart_receiver_s|)) Bool (or (= ((_ extract 0 0) (|uart_receiver#35| state)) #b1) (not (= ((_ extract 0 0) (|uart_receiver#34| state)) #b1)))) ; $assert$./uart_receiver.v:108$95
-; yosys-smt2-assert 6 ./uart_receiver.v:104
-(define-fun |uart_receiver_a 6| ((state |uart_receiver_s|)) Bool (or (= ((_ extract 0 0) (|uart_receiver#36| state)) #b1) (not (= ((_ extract 0 0) (|uart_receiver#38| state)) #b1)))) ; $assert$./uart_receiver.v:104$94
-; yosys-smt2-assert 7 ./uart_receiver.v:103
-(define-fun |uart_receiver_a 7| ((state |uart_receiver_s|)) Bool (or (= ((_ extract 0 0) (|uart_receiver#37| state)) #b1) (not (= ((_ extract 0 0) (|uart_receiver#38| state)) #b1)))) ; $assert$./uart_receiver.v:103$93
-; yosys-smt2-assert 8 ./uart_receiver.v:101
-(define-fun |uart_receiver_a 8| ((state |uart_receiver_s|)) Bool (or (= ((_ extract 0 0) (|uart_receiver#39| state)) #b1) (not (= ((_ extract 0 0) (|uart_receiver#38| state)) #b1)))) ; $assert$./uart_receiver.v:101$92
-; yosys-smt2-anyseq uart_receiver#49 1 $auto$setundef.cc:524:execute$334
-(declare-fun |uart_receiver#49| (|uart_receiver_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2358:Anyseq$335
-; yosys-smt2-anyseq uart_receiver#50 1 $auto$setundef.cc:524:execute$332
-(declare-fun |uart_receiver#50| (|uart_receiver_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2358:Anyseq$333
-(define-fun |uart_receiver#51| ((state |uart_receiver_s|)) (_ BitVec 1) (bvnot (|uart_receiver#19| state))) ; $eq$./uart_receiver.v:101$78_Y
-(define-fun |uart_receiver#52| ((state |uart_receiver_s|)) Bool (= (|uart_receiver#24| state) #b01)) ; $eq$./uart_receiver.v:99$77_Y
-(define-fun |uart_receiver#53| ((state |uart_receiver_s|)) (_ BitVec 1) (ite (|uart_receiver#52| state) (|uart_receiver#51| state) (|uart_receiver#50| state))) ; $procmux$160_Y
-(define-fun |uart_receiver#54| ((state |uart_receiver_s|)) (_ BitVec 1) (ite (|uart_receiver#45| state) (|uart_receiver#53| state) (|uart_receiver#49| state))) ; $0$formal$./uart_receiver.v:101$16_CHECK[0:0]$51
-(define-fun |uart_receiver#55| ((state |uart_receiver_s|)) (_ BitVec 1) (ite (|uart_receiver#52| state) #b1 #b0)) ; $procmux$156_Y
-(define-fun |uart_receiver#56| ((state |uart_receiver_s|)) (_ BitVec 1) (ite (|uart_receiver#45| state) (|uart_receiver#55| state) #b0)) ; $0$formal$./uart_receiver.v:101$16_EN[0:0]$52
-; yosys-smt2-anyseq uart_receiver#57 1 $auto$setundef.cc:524:execute$338
-(declare-fun |uart_receiver#57| (|uart_receiver_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2358:Anyseq$339
-; yosys-smt2-anyseq uart_receiver#58 1 $auto$setundef.cc:524:execute$336
-(declare-fun |uart_receiver#58| (|uart_receiver_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2358:Anyseq$337
-(define-fun |uart_receiver#59| ((state |uart_receiver_s|)) Bool (not (or  (= ((_ extract 0 0) (|uart_receiver#20| state)) #b1) (= ((_ extract 1 1) (|uart_receiver#20| state)) #b1) (= ((_ extract 2 2) (|uart_receiver#20| state)) #b1) (= ((_ extract 3 3) (|uart_receiver#20| state)) #b1) (= ((_ extract 4 4) (|uart_receiver#20| state)) #b1) (= ((_ extract 5 5) (|uart_receiver#20| state)) #b1) (= ((_ extract 6 6) (|uart_receiver#20| state)) #b1) (= ((_ extract 7 7) (|uart_receiver#20| state)) #b1)))) ; $eq$./uart_receiver.v:103$79_Y
-(define-fun |uart_receiver#60| ((state |uart_receiver_s|)) (_ BitVec 1) (ite (|uart_receiver#52| state) (ite (|uart_receiver#59| state) #b1 #b0) (|uart_receiver#58| state))) ; $procmux$168_Y
-(define-fun |uart_receiver#61| ((state |uart_receiver_s|)) (_ BitVec 1) (ite (|uart_receiver#45| state) (|uart_receiver#60| state) (|uart_receiver#57| state))) ; $0$formal$./uart_receiver.v:103$17_CHECK[0:0]$53
-; yosys-smt2-anyseq uart_receiver#62 1 $auto$setundef.cc:524:execute$342
-(declare-fun |uart_receiver#62| (|uart_receiver_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2358:Anyseq$343
-; yosys-smt2-anyseq uart_receiver#63 1 $auto$setundef.cc:524:execute$340
-(declare-fun |uart_receiver#63| (|uart_receiver_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2358:Anyseq$341
-(define-fun |uart_receiver#64| ((state |uart_receiver_s|)) (_ BitVec 5) (bvadd (concat #b0 (|uart_receiver#25| state)) #b00001)) ; $add$./uart_receiver.v:104$80_Y
-(define-fun |uart_receiver#65| ((state |uart_receiver_s|)) Bool (= (concat #b0 (|uart_receiver#3| state)) (|uart_receiver#64| state))) ; $eq$./uart_receiver.v:104$81_Y
-(define-fun |uart_receiver#66| ((state |uart_receiver_s|)) (_ BitVec 1) (ite (|uart_receiver#52| state) (ite (|uart_receiver#65| state) #b1 #b0) (|uart_receiver#63| state))) ; $procmux$176_Y
-(define-fun |uart_receiver#67| ((state |uart_receiver_s|)) (_ BitVec 1) (ite (|uart_receiver#45| state) (|uart_receiver#66| state) (|uart_receiver#62| state))) ; $0$formal$./uart_receiver.v:104$18_CHECK[0:0]$55
-; yosys-smt2-anyseq uart_receiver#68 1 $auto$setundef.cc:524:execute$346
-(declare-fun |uart_receiver#68| (|uart_receiver_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2358:Anyseq$347
-; yosys-smt2-anyseq uart_receiver#69 1 $auto$setundef.cc:524:execute$344
-(declare-fun |uart_receiver#69| (|uart_receiver_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2358:Anyseq$345
-(define-fun |uart_receiver#70| ((state |uart_receiver_s|)) Bool (= (|uart_receiver#20| state) (|uart_receiver#23| state))) ; $eq$./uart_receiver.v:108$83_Y
-(define-fun |uart_receiver#71| ((state |uart_receiver_s|)) Bool (= (|uart_receiver#24| state) #b10)) ; $eq$./uart_receiver.v:106$82_Y
-(define-fun |uart_receiver#72| ((state |uart_receiver_s|)) (_ BitVec 1) (ite (|uart_receiver#71| state) (ite (|uart_receiver#70| state) #b1 #b0) (|uart_receiver#69| state))) ; $procmux$184_Y
-(define-fun |uart_receiver#73| ((state |uart_receiver_s|)) (_ BitVec 1) (ite (|uart_receiver#45| state) (|uart_receiver#72| state) (|uart_receiver#68| state))) ; $0$formal$./uart_receiver.v:108$19_CHECK[0:0]$57
-(define-fun |uart_receiver#74| ((state |uart_receiver_s|)) (_ BitVec 1) (ite (|uart_receiver#71| state) #b1 #b0)) ; $procmux$180_Y
-(define-fun |uart_receiver#75| ((state |uart_receiver_s|)) (_ BitVec 1) (ite (|uart_receiver#45| state) (|uart_receiver#74| state) #b0)) ; $0$formal$./uart_receiver.v:108$19_EN[0:0]$58
-; yosys-smt2-anyseq uart_receiver#76 1 $auto$setundef.cc:524:execute$350
-(declare-fun |uart_receiver#76| (|uart_receiver_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2358:Anyseq$351
-; yosys-smt2-anyseq uart_receiver#77 1 $auto$setundef.cc:524:execute$348
-(declare-fun |uart_receiver#77| (|uart_receiver_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2358:Anyseq$349
-(define-fun |uart_receiver#78| ((state |uart_receiver_s|)) (_ BitVec 1) (ite (|uart_receiver#71| state) (|uart_receiver#19| state) (|uart_receiver#77| state))) ; $procmux$192_Y
-(define-fun |uart_receiver#79| ((state |uart_receiver_s|)) (_ BitVec 1) (ite (|uart_receiver#45| state) (|uart_receiver#78| state) (|uart_receiver#76| state))) ; $0$formal$./uart_receiver.v:109$20_CHECK[0:0]$59
-; yosys-smt2-anyseq uart_receiver#80 1 $auto$setundef.cc:524:execute$354
-(declare-fun |uart_receiver#80| (|uart_receiver_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2358:Anyseq$355
-; yosys-smt2-anyseq uart_receiver#81 1 $auto$setundef.cc:524:execute$352
-(declare-fun |uart_receiver#81| (|uart_receiver_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2358:Anyseq$353
-(define-fun |uart_receiver#82| ((state |uart_receiver_s|)) Bool (not (or  (= ((_ extract 0 0) (|uart_receiver#3| state)) #b1) (= ((_ extract 1 1) (|uart_receiver#3| state)) #b1) (= ((_ extract 2 2) (|uart_receiver#3| state)) #b1) (= ((_ extract 3 3) (|uart_receiver#3| state)) #b1)))) ; $eq$./uart_receiver.v:110$85_Y
-(define-fun |uart_receiver#83| ((state |uart_receiver_s|)) (_ BitVec 1) (ite (|uart_receiver#71| state) (ite (|uart_receiver#82| state) #b1 #b0) (|uart_receiver#81| state))) ; $procmux$200_Y
-(define-fun |uart_receiver#84| ((state |uart_receiver_s|)) (_ BitVec 1) (ite (|uart_receiver#45| state) (|uart_receiver#83| state) (|uart_receiver#80| state))) ; $0$formal$./uart_receiver.v:110$21_CHECK[0:0]$61
-; yosys-smt2-anyseq uart_receiver#85 1 $auto$setundef.cc:524:execute$318
-(declare-fun |uart_receiver#85| (|uart_receiver_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2358:Anyseq$319
-(define-fun |uart_receiver#86| ((state |uart_receiver_s|)) Bool (and (or  (|uart_receiver#11| state) false) (or  (|uart_receiver#71| state) false))) ; $logic_and$./uart_receiver.v:92$72_Y
-(define-fun |uart_receiver#87| ((state |uart_receiver_s|)) (_ BitVec 1) (ite (|uart_receiver#45| state) (ite (|uart_receiver#86| state) #b1 #b0) (|uart_receiver#85| state))) ; $0$formal$./uart_receiver.v:92$12_CHECK[0:0]$43
-; yosys-smt2-anyseq uart_receiver#88 1 $auto$setundef.cc:524:execute$322
-(declare-fun |uart_receiver#88| (|uart_receiver_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2358:Anyseq$323
-; yosys-smt2-anyseq uart_receiver#89 1 $auto$setundef.cc:524:execute$320
-(declare-fun |uart_receiver#89| (|uart_receiver_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2358:Anyseq$321
-(define-fun |uart_receiver#90| ((state |uart_receiver_s|)) Bool (not (or  (= ((_ extract 0 0) (|uart_receiver#24| state)) #b1) (= ((_ extract 1 1) (|uart_receiver#24| state)) #b1)))) ; $eq$./uart_receiver.v:93$73_Y
-(define-fun |uart_receiver#91| ((state |uart_receiver_s|)) (_ BitVec 1) (ite (|uart_receiver#90| state) (|uart_receiver#51| state) (|uart_receiver#89| state))) ; $procmux$136_Y
-(define-fun |uart_receiver#92| ((state |uart_receiver_s|)) (_ BitVec 1) (ite (|uart_receiver#45| state) (|uart_receiver#91| state) (|uart_receiver#88| state))) ; $0$formal$./uart_receiver.v:95$13_CHECK[0:0]$45
-(define-fun |uart_receiver#93| ((state |uart_receiver_s|)) (_ BitVec 1) (ite (|uart_receiver#90| state) #b1 #b0)) ; $procmux$132_Y
-(define-fun |uart_receiver#94| ((state |uart_receiver_s|)) (_ BitVec 1) (ite (|uart_receiver#45| state) (|uart_receiver#93| state) #b0)) ; $0$formal$./uart_receiver.v:95$13_EN[0:0]$46
-; yosys-smt2-anyseq uart_receiver#95 1 $auto$setundef.cc:524:execute$326
-(declare-fun |uart_receiver#95| (|uart_receiver_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2358:Anyseq$327
-; yosys-smt2-anyseq uart_receiver#96 1 $auto$setundef.cc:524:execute$324
-(declare-fun |uart_receiver#96| (|uart_receiver_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2358:Anyseq$325
-(define-fun |uart_receiver#97| ((state |uart_receiver_s|)) (_ BitVec 1) (ite (|uart_receiver#90| state) (ite (|uart_receiver#59| state) #b1 #b0) (|uart_receiver#96| state))) ; $procmux$144_Y
-(define-fun |uart_receiver#98| ((state |uart_receiver_s|)) (_ BitVec 1) (ite (|uart_receiver#45| state) (|uart_receiver#97| state) (|uart_receiver#95| state))) ; $0$formal$./uart_receiver.v:96$14_CHECK[0:0]$47
-; yosys-smt2-anyseq uart_receiver#99 1 $auto$setundef.cc:524:execute$330
-(declare-fun |uart_receiver#99| (|uart_receiver_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2358:Anyseq$331
-; yosys-smt2-anyseq uart_receiver#100 1 $auto$setundef.cc:524:execute$328
-(declare-fun |uart_receiver#100| (|uart_receiver_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2358:Anyseq$329
-(define-fun |uart_receiver#101| ((state |uart_receiver_s|)) (_ BitVec 1) (ite (|uart_receiver#90| state) (ite (|uart_receiver#82| state) #b1 #b0) (|uart_receiver#100| state))) ; $procmux$152_Y
-(define-fun |uart_receiver#102| ((state |uart_receiver_s|)) (_ BitVec 1) (ite (|uart_receiver#45| state) (|uart_receiver#101| state) (|uart_receiver#99| state))) ; $0$formal$./uart_receiver.v:97$15_CHECK[0:0]$49
-(define-fun |uart_receiver#103| ((state |uart_receiver_s|)) Bool (or  (|uart_receiver#11| state) (|uart_receiver#8| state))) ; $auto$opt_reduce.cc:134:opt_mux$307
-(define-fun |uart_receiver#104| ((state |uart_receiver_s|)) (_ BitVec 8) (ite (|uart_receiver#103| state) #b00000000 (ite (|uart_receiver#7| state) (|uart_receiver#18| state) (|uart_receiver#20| state)))) ; $0\o_DATA[7:0]
-(define-fun |uart_receiver#105| ((state |uart_receiver_s|)) (_ BitVec 1) (ite (|uart_receiver#103| state) #b0 (ite (|uart_receiver#7| state) #b1 (|uart_receiver#19| state)))) ; $0\o_RX_DONE[0:0]
-(define-fun |uart_receiver#106| ((state |uart_receiver_s|)) Bool (or  (|uart_receiver#11| state) (|uart_receiver#7| state))) ; $auto$opt_reduce.cc:134:opt_mux$303
-(define-fun |uart_receiver#107| ((state |uart_receiver_s|)) (_ BitVec 8) (ite (|uart_receiver#8| state) (concat ((_ extract 6 0) (|uart_receiver#18| state)) #b0) (ite (|uart_receiver#106| state) #b00000000 (|uart_receiver#18| state)))) ; $0\r_DATA_REG[7:0]
-(define-fun |uart_receiver#108| ((state |uart_receiver_s|)) (_ BitVec 4) (bvadd (|uart_receiver#3| state) #b0001)) ; $add$./uart_receiver.v:66$27_Y
-(define-fun |uart_receiver#109| ((state |uart_receiver_s|)) (_ BitVec 4) (ite (|uart_receiver#8| state) (|uart_receiver#108| state) (ite (|uart_receiver#106| state) #b0000 (|uart_receiver#3| state)))) ; $0\r_BIT_COUNT[3:0]
+; yosys-smt2-register $past$./uart_receiver.v:122$10$0 8
+(declare-fun |uart_receiver#22| (|uart_receiver_s|) (_ BitVec 8)) ; $past$./uart_receiver.v:122$10$0
+(define-fun |uart_receiver_n $past$./uart_receiver.v:122$10$0| ((state |uart_receiver_s|)) (_ BitVec 8) (|uart_receiver#22| state))
+; yosys-smt2-register $past$./uart_receiver.v:118$8$0 4
+(declare-fun |uart_receiver#23| (|uart_receiver_s|) (_ BitVec 4)) ; $past$./uart_receiver.v:118$8$0
+(define-fun |uart_receiver_n $past$./uart_receiver.v:118$8$0| ((state |uart_receiver_s|)) (_ BitVec 4) (|uart_receiver#23| state))
+; yosys-smt2-register $past$./uart_receiver.v:104$4$0 2
+(declare-fun |uart_receiver#24| (|uart_receiver_s|) (_ BitVec 2)) ; $past$./uart_receiver.v:104$4$0
+(define-fun |uart_receiver_n $past$./uart_receiver.v:104$4$0| ((state |uart_receiver_s|)) (_ BitVec 2) (|uart_receiver#24| state))
+; yosys-smt2-register $past$./uart_receiver.v:101$3$0 1
+(declare-fun |uart_receiver#25| (|uart_receiver_s|) (_ BitVec 1)) ; $past$./uart_receiver.v:101$3$0
+(define-fun |uart_receiver_n $past$./uart_receiver.v:101$3$0| ((state |uart_receiver_s|)) Bool (= ((_ extract 0 0) (|uart_receiver#25| state)) #b1))
+; yosys-smt2-register $formal$./uart_receiver.v:137$28_EN 1
+(declare-fun |uart_receiver#26| (|uart_receiver_s|) (_ BitVec 1)) ; $formal$./uart_receiver.v:137$28_EN
+(define-fun |uart_receiver_n $formal$./uart_receiver.v:137$28_EN| ((state |uart_receiver_s|)) Bool (= ((_ extract 0 0) (|uart_receiver#26| state)) #b1))
+; yosys-smt2-register $formal$./uart_receiver.v:137$28_CHECK 1
+(declare-fun |uart_receiver#27| (|uart_receiver_s|) (_ BitVec 1)) ; $formal$./uart_receiver.v:137$28_CHECK
+(define-fun |uart_receiver_n $formal$./uart_receiver.v:137$28_CHECK| ((state |uart_receiver_s|)) Bool (= ((_ extract 0 0) (|uart_receiver#27| state)) #b1))
+; yosys-smt2-register $formal$./uart_receiver.v:135$27_EN 1
+(declare-fun |uart_receiver#28| (|uart_receiver_s|) (_ BitVec 1)) ; $formal$./uart_receiver.v:135$27_EN
+(define-fun |uart_receiver_n $formal$./uart_receiver.v:135$27_EN| ((state |uart_receiver_s|)) Bool (= ((_ extract 0 0) (|uart_receiver#28| state)) #b1))
+; yosys-smt2-register $formal$./uart_receiver.v:135$27_CHECK 1
+(declare-fun |uart_receiver#29| (|uart_receiver_s|) (_ BitVec 1)) ; $formal$./uart_receiver.v:135$27_CHECK
+(define-fun |uart_receiver_n $formal$./uart_receiver.v:135$27_CHECK| ((state |uart_receiver_s|)) Bool (= ((_ extract 0 0) (|uart_receiver#29| state)) #b1))
+; yosys-smt2-register $formal$./uart_receiver.v:133$26_EN 1
+(declare-fun |uart_receiver#30| (|uart_receiver_s|) (_ BitVec 1)) ; $formal$./uart_receiver.v:133$26_EN
+(define-fun |uart_receiver_n $formal$./uart_receiver.v:133$26_EN| ((state |uart_receiver_s|)) Bool (= ((_ extract 0 0) (|uart_receiver#30| state)) #b1))
+; yosys-smt2-register $formal$./uart_receiver.v:133$26_CHECK 1
+(declare-fun |uart_receiver#31| (|uart_receiver_s|) (_ BitVec 1)) ; $formal$./uart_receiver.v:133$26_CHECK
+(define-fun |uart_receiver_n $formal$./uart_receiver.v:133$26_CHECK| ((state |uart_receiver_s|)) Bool (= ((_ extract 0 0) (|uart_receiver#31| state)) #b1))
+; yosys-smt2-register $formal$./uart_receiver.v:131$25_EN 1
+(declare-fun |uart_receiver#32| (|uart_receiver_s|) (_ BitVec 1)) ; $formal$./uart_receiver.v:131$25_EN
+(define-fun |uart_receiver_n $formal$./uart_receiver.v:131$25_EN| ((state |uart_receiver_s|)) Bool (= ((_ extract 0 0) (|uart_receiver#32| state)) #b1))
+; yosys-smt2-register $formal$./uart_receiver.v:131$25_CHECK 1
+(declare-fun |uart_receiver#33| (|uart_receiver_s|) (_ BitVec 1)) ; $formal$./uart_receiver.v:131$25_CHECK
+(define-fun |uart_receiver_n $formal$./uart_receiver.v:131$25_CHECK| ((state |uart_receiver_s|)) Bool (= ((_ extract 0 0) (|uart_receiver#33| state)) #b1))
+; yosys-smt2-register $formal$./uart_receiver.v:129$24_EN 1
+(declare-fun |uart_receiver#34| (|uart_receiver_s|) (_ BitVec 1)) ; $formal$./uart_receiver.v:129$24_EN
+(define-fun |uart_receiver_n $formal$./uart_receiver.v:129$24_EN| ((state |uart_receiver_s|)) Bool (= ((_ extract 0 0) (|uart_receiver#34| state)) #b1))
+; yosys-smt2-register $formal$./uart_receiver.v:129$24_CHECK 1
+(declare-fun |uart_receiver#35| (|uart_receiver_s|) (_ BitVec 1)) ; $formal$./uart_receiver.v:129$24_CHECK
+(define-fun |uart_receiver_n $formal$./uart_receiver.v:129$24_CHECK| ((state |uart_receiver_s|)) Bool (= ((_ extract 0 0) (|uart_receiver#35| state)) #b1))
+; yosys-smt2-register $formal$./uart_receiver.v:124$23_CHECK 1
+(declare-fun |uart_receiver#36| (|uart_receiver_s|) (_ BitVec 1)) ; $formal$./uart_receiver.v:124$23_CHECK
+(define-fun |uart_receiver_n $formal$./uart_receiver.v:124$23_CHECK| ((state |uart_receiver_s|)) Bool (= ((_ extract 0 0) (|uart_receiver#36| state)) #b1))
+; yosys-smt2-register $formal$./uart_receiver.v:123$22_CHECK 1
+(declare-fun |uart_receiver#37| (|uart_receiver_s|) (_ BitVec 1)) ; $formal$./uart_receiver.v:123$22_CHECK
+(define-fun |uart_receiver_n $formal$./uart_receiver.v:123$22_CHECK| ((state |uart_receiver_s|)) Bool (= ((_ extract 0 0) (|uart_receiver#37| state)) #b1))
+; yosys-smt2-register $formal$./uart_receiver.v:122$21_EN 1
+(declare-fun |uart_receiver#38| (|uart_receiver_s|) (_ BitVec 1)) ; $formal$./uart_receiver.v:122$21_EN
+(define-fun |uart_receiver_n $formal$./uart_receiver.v:122$21_EN| ((state |uart_receiver_s|)) Bool (= ((_ extract 0 0) (|uart_receiver#38| state)) #b1))
+; yosys-smt2-register $formal$./uart_receiver.v:122$21_CHECK 1
+(declare-fun |uart_receiver#39| (|uart_receiver_s|) (_ BitVec 1)) ; $formal$./uart_receiver.v:122$21_CHECK
+(define-fun |uart_receiver_n $formal$./uart_receiver.v:122$21_CHECK| ((state |uart_receiver_s|)) Bool (= ((_ extract 0 0) (|uart_receiver#39| state)) #b1))
+; yosys-smt2-register $formal$./uart_receiver.v:118$20_CHECK 1
+(declare-fun |uart_receiver#40| (|uart_receiver_s|) (_ BitVec 1)) ; $formal$./uart_receiver.v:118$20_CHECK
+(define-fun |uart_receiver_n $formal$./uart_receiver.v:118$20_CHECK| ((state |uart_receiver_s|)) Bool (= ((_ extract 0 0) (|uart_receiver#40| state)) #b1))
+; yosys-smt2-register $formal$./uart_receiver.v:117$19_CHECK 1
+(declare-fun |uart_receiver#41| (|uart_receiver_s|) (_ BitVec 1)) ; $formal$./uart_receiver.v:117$19_CHECK
+(define-fun |uart_receiver_n $formal$./uart_receiver.v:117$19_CHECK| ((state |uart_receiver_s|)) Bool (= ((_ extract 0 0) (|uart_receiver#41| state)) #b1))
+; yosys-smt2-register $formal$./uart_receiver.v:116$18_CHECK 1
+(declare-fun |uart_receiver#42| (|uart_receiver_s|) (_ BitVec 1)) ; $formal$./uart_receiver.v:116$18_CHECK
+(define-fun |uart_receiver_n $formal$./uart_receiver.v:116$18_CHECK| ((state |uart_receiver_s|)) Bool (= ((_ extract 0 0) (|uart_receiver#42| state)) #b1))
+; yosys-smt2-register $formal$./uart_receiver.v:115$17_EN 1
+(declare-fun |uart_receiver#43| (|uart_receiver_s|) (_ BitVec 1)) ; $formal$./uart_receiver.v:115$17_EN
+(define-fun |uart_receiver_n $formal$./uart_receiver.v:115$17_EN| ((state |uart_receiver_s|)) Bool (= ((_ extract 0 0) (|uart_receiver#43| state)) #b1))
+; yosys-smt2-register $formal$./uart_receiver.v:115$17_CHECK 1
+(declare-fun |uart_receiver#44| (|uart_receiver_s|) (_ BitVec 1)) ; $formal$./uart_receiver.v:115$17_CHECK
+(define-fun |uart_receiver_n $formal$./uart_receiver.v:115$17_CHECK| ((state |uart_receiver_s|)) Bool (= ((_ extract 0 0) (|uart_receiver#44| state)) #b1))
+; yosys-smt2-register $formal$./uart_receiver.v:111$16_CHECK 1
+(declare-fun |uart_receiver#45| (|uart_receiver_s|) (_ BitVec 1)) ; $formal$./uart_receiver.v:111$16_CHECK
+(define-fun |uart_receiver_n $formal$./uart_receiver.v:111$16_CHECK| ((state |uart_receiver_s|)) Bool (= ((_ extract 0 0) (|uart_receiver#45| state)) #b1))
+; yosys-smt2-register $formal$./uart_receiver.v:110$15_CHECK 1
+(declare-fun |uart_receiver#46| (|uart_receiver_s|) (_ BitVec 1)) ; $formal$./uart_receiver.v:110$15_CHECK
+(define-fun |uart_receiver_n $formal$./uart_receiver.v:110$15_CHECK| ((state |uart_receiver_s|)) Bool (= ((_ extract 0 0) (|uart_receiver#46| state)) #b1))
+; yosys-smt2-register $formal$./uart_receiver.v:109$14_EN 1
+(declare-fun |uart_receiver#47| (|uart_receiver_s|) (_ BitVec 1)) ; $formal$./uart_receiver.v:109$14_EN
+(define-fun |uart_receiver_n $formal$./uart_receiver.v:109$14_EN| ((state |uart_receiver_s|)) Bool (= ((_ extract 0 0) (|uart_receiver#47| state)) #b1))
+; yosys-smt2-register $formal$./uart_receiver.v:109$14_CHECK 1
+(declare-fun |uart_receiver#48| (|uart_receiver_s|) (_ BitVec 1)) ; $formal$./uart_receiver.v:109$14_CHECK
+(define-fun |uart_receiver_n $formal$./uart_receiver.v:109$14_CHECK| ((state |uart_receiver_s|)) Bool (= ((_ extract 0 0) (|uart_receiver#48| state)) #b1))
+; yosys-smt2-register $formal$./uart_receiver.v:104$13_CHECK 1
+(declare-fun |uart_receiver#49| (|uart_receiver_s|) (_ BitVec 1)) ; $formal$./uart_receiver.v:104$13_CHECK
+(define-fun |uart_receiver_n $formal$./uart_receiver.v:104$13_CHECK| ((state |uart_receiver_s|)) Bool (= ((_ extract 0 0) (|uart_receiver#49| state)) #b1))
+; yosys-smt2-register $formal$./uart_receiver.v:101$12_EN 1
+(declare-fun |uart_receiver#50| (|uart_receiver_s|) (_ BitVec 1)) ; $formal$./uart_receiver.v:101$12_EN
+(define-fun |uart_receiver_n $formal$./uart_receiver.v:101$12_EN| ((state |uart_receiver_s|)) Bool (= ((_ extract 0 0) (|uart_receiver#50| state)) #b1))
+; yosys-smt2-register $auto$async2sync.cc:192:execute$473 2
+(define-fun |uart_receiver_n $auto$async2sync.cc:192:execute$473| ((state |uart_receiver_s|)) (_ BitVec 2) (|uart_receiver#10| state))
+; yosys-smt2-register $and$./uart_receiver.v:98$83_Y 1
+(declare-fun |uart_receiver#51| (|uart_receiver_s|) (_ BitVec 1)) ; $and$./uart_receiver.v:98$83_Y
+(define-fun |uart_receiver_n $and$./uart_receiver.v:98$83_Y| ((state |uart_receiver_s|)) Bool (= ((_ extract 0 0) (|uart_receiver#51| state)) #b1))
+; yosys-smt2-cover 0 ./uart_receiver.v:104
+(define-fun |uart_receiver_c 0| ((state |uart_receiver_s|)) Bool (and (= ((_ extract 0 0) (|uart_receiver#49| state)) #b1) (= ((_ extract 0 0) (|uart_receiver#50| state)) #b1))) ; $cover$./uart_receiver.v:104$126
+(define-fun |uart_receiver#52| ((state |uart_receiver_s|)) Bool (distinct (|uart_receiver#51| state) (ite (|uart_receiver#21| state) #b1 #b0))) ; $0$formal$./uart_receiver.v:96$11_CHECK[0:0]$46
+; yosys-smt2-assume 0 ./uart_receiver.v:96
+(define-fun |uart_receiver_u 0| ((state |uart_receiver_s|)) Bool (or (|uart_receiver#52| state) (not true))) ; $assume$./uart_receiver.v:96$124
+; yosys-smt2-anyseq uart_receiver#53 1 $auto$setundef.cc:524:execute$475
+(declare-fun |uart_receiver#53| (|uart_receiver_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2358:Anyseq$476
+(define-fun |uart_receiver#54| ((state |uart_receiver_s|)) Bool (distinct (|uart_receiver#25| state) (|uart_receiver#1| state))) ; $ne$./uart_receiver.v:101$88_Y
+(define-fun |uart_receiver#55| ((state |uart_receiver_s|)) Bool (not (or  (= ((_ extract 0 0) (|uart_receiver#51| state)) #b1) false false false false false false false false false false false false false false false false false false false false false false false false false false false false false false false))) ; $logic_not$./uart_receiver.v:98$84_Y
+(define-fun |uart_receiver#56| ((state |uart_receiver_s|)) Bool (and (or  (|uart_receiver#55| state) false) (or  (|uart_receiver#21| state) false false false false false false false false false false false false false false false false false false false false false false false false false false false false false false false))) ; $logic_and$./uart_receiver.v:98$86_Y
+(define-fun |uart_receiver#57| ((state |uart_receiver_s|)) Bool (and (or  (= ((_ extract 0 0) (|uart_receiver#0| state)) #b1) false) (or  (|uart_receiver#56| state) false))) ; $logic_and$./uart_receiver.v:98$87_Y
+(define-fun |uart_receiver#58| ((state |uart_receiver_s|)) (_ BitVec 1) (ite (|uart_receiver#57| state) (ite (|uart_receiver#54| state) #b1 #b0) (|uart_receiver#53| state))) ; $0$formal$./uart_receiver.v:101$12_CHECK[0:0]$48
+(define-fun |uart_receiver#59| ((state |uart_receiver_s|)) (_ BitVec 1) (ite (|uart_receiver#57| state) #b1 #b0)) ; $0$formal$./uart_receiver.v:101$12_EN[0:0]$49
+; yosys-smt2-assume 1 ./uart_receiver.v:101
+(define-fun |uart_receiver_u 1| ((state |uart_receiver_s|)) Bool (or (= ((_ extract 0 0) (|uart_receiver#58| state)) #b1) (not (= ((_ extract 0 0) (|uart_receiver#59| state)) #b1)))) ; $assume$./uart_receiver.v:101$125
+; yosys-smt2-assert 0 ./uart_receiver.v:137
+(define-fun |uart_receiver_a 0| ((state |uart_receiver_s|)) Bool (or (= ((_ extract 0 0) (|uart_receiver#27| state)) #b1) (not (= ((_ extract 0 0) (|uart_receiver#26| state)) #b1)))) ; $assert$./uart_receiver.v:137$141
+; yosys-smt2-assert 1 ./uart_receiver.v:135
+(define-fun |uart_receiver_a 1| ((state |uart_receiver_s|)) Bool (or (= ((_ extract 0 0) (|uart_receiver#29| state)) #b1) (not (= ((_ extract 0 0) (|uart_receiver#28| state)) #b1)))) ; $assert$./uart_receiver.v:135$140
+; yosys-smt2-assert 2 ./uart_receiver.v:133
+(define-fun |uart_receiver_a 2| ((state |uart_receiver_s|)) Bool (or (= ((_ extract 0 0) (|uart_receiver#31| state)) #b1) (not (= ((_ extract 0 0) (|uart_receiver#30| state)) #b1)))) ; $assert$./uart_receiver.v:133$139
+; yosys-smt2-assert 3 ./uart_receiver.v:131
+(define-fun |uart_receiver_a 3| ((state |uart_receiver_s|)) Bool (or (= ((_ extract 0 0) (|uart_receiver#33| state)) #b1) (not (= ((_ extract 0 0) (|uart_receiver#32| state)) #b1)))) ; $assert$./uart_receiver.v:131$138
+; yosys-smt2-assert 4 ./uart_receiver.v:129
+(define-fun |uart_receiver_a 4| ((state |uart_receiver_s|)) Bool (or (= ((_ extract 0 0) (|uart_receiver#35| state)) #b1) (not (= ((_ extract 0 0) (|uart_receiver#34| state)) #b1)))) ; $assert$./uart_receiver.v:129$137
+; yosys-smt2-assert 5 ./uart_receiver.v:124
+(define-fun |uart_receiver_a 5| ((state |uart_receiver_s|)) Bool (or (= ((_ extract 0 0) (|uart_receiver#36| state)) #b1) (not (= ((_ extract 0 0) (|uart_receiver#38| state)) #b1)))) ; $assert$./uart_receiver.v:124$136
+; yosys-smt2-assert 6 ./uart_receiver.v:123
+(define-fun |uart_receiver_a 6| ((state |uart_receiver_s|)) Bool (or (= ((_ extract 0 0) (|uart_receiver#37| state)) #b1) (not (= ((_ extract 0 0) (|uart_receiver#38| state)) #b1)))) ; $assert$./uart_receiver.v:123$135
+; yosys-smt2-assert 7 ./uart_receiver.v:122
+(define-fun |uart_receiver_a 7| ((state |uart_receiver_s|)) Bool (or (= ((_ extract 0 0) (|uart_receiver#39| state)) #b1) (not (= ((_ extract 0 0) (|uart_receiver#38| state)) #b1)))) ; $assert$./uart_receiver.v:122$134
+; yosys-smt2-assert 8 ./uart_receiver.v:118
+(define-fun |uart_receiver_a 8| ((state |uart_receiver_s|)) Bool (or (= ((_ extract 0 0) (|uart_receiver#40| state)) #b1) (not (= ((_ extract 0 0) (|uart_receiver#43| state)) #b1)))) ; $assert$./uart_receiver.v:118$133
+; yosys-smt2-assert 9 ./uart_receiver.v:117
+(define-fun |uart_receiver_a 9| ((state |uart_receiver_s|)) Bool (or (= ((_ extract 0 0) (|uart_receiver#41| state)) #b1) (not (= ((_ extract 0 0) (|uart_receiver#43| state)) #b1)))) ; $assert$./uart_receiver.v:117$132
+; yosys-smt2-assert 10 ./uart_receiver.v:116
+(define-fun |uart_receiver_a 10| ((state |uart_receiver_s|)) Bool (or (= ((_ extract 0 0) (|uart_receiver#42| state)) #b1) (not (= ((_ extract 0 0) (|uart_receiver#43| state)) #b1)))) ; $assert$./uart_receiver.v:116$131
+; yosys-smt2-assert 11 ./uart_receiver.v:115
+(define-fun |uart_receiver_a 11| ((state |uart_receiver_s|)) Bool (or (= ((_ extract 0 0) (|uart_receiver#44| state)) #b1) (not (= ((_ extract 0 0) (|uart_receiver#43| state)) #b1)))) ; $assert$./uart_receiver.v:115$130
+; yosys-smt2-assert 12 ./uart_receiver.v:111
+(define-fun |uart_receiver_a 12| ((state |uart_receiver_s|)) Bool (or (= ((_ extract 0 0) (|uart_receiver#45| state)) #b1) (not (= ((_ extract 0 0) (|uart_receiver#47| state)) #b1)))) ; $assert$./uart_receiver.v:111$129
+; yosys-smt2-assert 13 ./uart_receiver.v:110
+(define-fun |uart_receiver_a 13| ((state |uart_receiver_s|)) Bool (or (= ((_ extract 0 0) (|uart_receiver#46| state)) #b1) (not (= ((_ extract 0 0) (|uart_receiver#47| state)) #b1)))) ; $assert$./uart_receiver.v:110$128
+; yosys-smt2-assert 14 ./uart_receiver.v:109
+(define-fun |uart_receiver_a 14| ((state |uart_receiver_s|)) Bool (or (= ((_ extract 0 0) (|uart_receiver#48| state)) #b1) (not (= ((_ extract 0 0) (|uart_receiver#47| state)) #b1)))) ; $assert$./uart_receiver.v:109$127
+; yosys-smt2-anyseq uart_receiver#60 1 $auto$setundef.cc:524:execute$477
+(declare-fun |uart_receiver#60| (|uart_receiver_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2358:Anyseq$478
+(define-fun |uart_receiver#61| ((state |uart_receiver_s|)) Bool (= (|uart_receiver#24| state) #b10)) ; $eq$./uart_receiver.v:104$90_Y
+(define-fun |uart_receiver#62| ((state |uart_receiver_s|)) Bool (and (or  (|uart_receiver#11| state) false) (or  (|uart_receiver#61| state) false))) ; $logic_and$./uart_receiver.v:104$91_Y
+(define-fun |uart_receiver#63| ((state |uart_receiver_s|)) (_ BitVec 1) (ite (|uart_receiver#57| state) (ite (|uart_receiver#62| state) #b1 #b0) (|uart_receiver#60| state))) ; $0$formal$./uart_receiver.v:104$13_CHECK[0:0]$50
+; yosys-smt2-anyseq uart_receiver#64 1 $auto$setundef.cc:524:execute$481
+(declare-fun |uart_receiver#64| (|uart_receiver_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2358:Anyseq$482
+; yosys-smt2-anyseq uart_receiver#65 1 $auto$setundef.cc:524:execute$479
+(declare-fun |uart_receiver#65| (|uart_receiver_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2358:Anyseq$480
+(define-fun |uart_receiver#66| ((state |uart_receiver_s|)) (_ BitVec 1) (bvnot (|uart_receiver#19| state))) ; $eq$./uart_receiver.v:109$93_Y
+(define-fun |uart_receiver#67| ((state |uart_receiver_s|)) Bool (not (or  (= ((_ extract 0 0) (|uart_receiver#24| state)) #b1) (= ((_ extract 1 1) (|uart_receiver#24| state)) #b1)))) ; $eq$./uart_receiver.v:107$92_Y
+(define-fun |uart_receiver#68| ((state |uart_receiver_s|)) (_ BitVec 1) (ite (|uart_receiver#67| state) (|uart_receiver#66| state) (|uart_receiver#65| state))) ; $procmux$192_Y
+(define-fun |uart_receiver#69| ((state |uart_receiver_s|)) (_ BitVec 1) (ite (|uart_receiver#57| state) (|uart_receiver#68| state) (|uart_receiver#64| state))) ; $0$formal$./uart_receiver.v:109$14_CHECK[0:0]$52
+(define-fun |uart_receiver#70| ((state |uart_receiver_s|)) (_ BitVec 1) (ite (|uart_receiver#67| state) #b1 #b0)) ; $procmux$188_Y
+(define-fun |uart_receiver#71| ((state |uart_receiver_s|)) (_ BitVec 1) (ite (|uart_receiver#57| state) (|uart_receiver#70| state) #b0)) ; $0$formal$./uart_receiver.v:109$14_EN[0:0]$53
+; yosys-smt2-anyseq uart_receiver#72 1 $auto$setundef.cc:524:execute$485
+(declare-fun |uart_receiver#72| (|uart_receiver_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2358:Anyseq$486
+; yosys-smt2-anyseq uart_receiver#73 1 $auto$setundef.cc:524:execute$483
+(declare-fun |uart_receiver#73| (|uart_receiver_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2358:Anyseq$484
+(define-fun |uart_receiver#74| ((state |uart_receiver_s|)) Bool (not (or  (= ((_ extract 0 0) (|uart_receiver#20| state)) #b1) (= ((_ extract 1 1) (|uart_receiver#20| state)) #b1) (= ((_ extract 2 2) (|uart_receiver#20| state)) #b1) (= ((_ extract 3 3) (|uart_receiver#20| state)) #b1) (= ((_ extract 4 4) (|uart_receiver#20| state)) #b1) (= ((_ extract 5 5) (|uart_receiver#20| state)) #b1) (= ((_ extract 6 6) (|uart_receiver#20| state)) #b1) (= ((_ extract 7 7) (|uart_receiver#20| state)) #b1)))) ; $eq$./uart_receiver.v:110$94_Y
+(define-fun |uart_receiver#75| ((state |uart_receiver_s|)) (_ BitVec 1) (ite (|uart_receiver#67| state) (ite (|uart_receiver#74| state) #b1 #b0) (|uart_receiver#73| state))) ; $procmux$200_Y
+(define-fun |uart_receiver#76| ((state |uart_receiver_s|)) (_ BitVec 1) (ite (|uart_receiver#57| state) (|uart_receiver#75| state) (|uart_receiver#72| state))) ; $0$formal$./uart_receiver.v:110$15_CHECK[0:0]$54
+; yosys-smt2-anyseq uart_receiver#77 1 $auto$setundef.cc:524:execute$489
+(declare-fun |uart_receiver#77| (|uart_receiver_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2358:Anyseq$490
+; yosys-smt2-anyseq uart_receiver#78 1 $auto$setundef.cc:524:execute$487
+(declare-fun |uart_receiver#78| (|uart_receiver_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2358:Anyseq$488
+(define-fun |uart_receiver#79| ((state |uart_receiver_s|)) Bool (not (or  (= ((_ extract 0 0) (|uart_receiver#3| state)) #b1) (= ((_ extract 1 1) (|uart_receiver#3| state)) #b1) (= ((_ extract 2 2) (|uart_receiver#3| state)) #b1) (= ((_ extract 3 3) (|uart_receiver#3| state)) #b1)))) ; $eq$./uart_receiver.v:111$95_Y
+(define-fun |uart_receiver#80| ((state |uart_receiver_s|)) (_ BitVec 1) (ite (|uart_receiver#67| state) (ite (|uart_receiver#79| state) #b1 #b0) (|uart_receiver#78| state))) ; $procmux$208_Y
+(define-fun |uart_receiver#81| ((state |uart_receiver_s|)) (_ BitVec 1) (ite (|uart_receiver#57| state) (|uart_receiver#80| state) (|uart_receiver#77| state))) ; $0$formal$./uart_receiver.v:111$16_CHECK[0:0]$56
+; yosys-smt2-anyseq uart_receiver#82 1 $auto$setundef.cc:524:execute$493
+(declare-fun |uart_receiver#82| (|uart_receiver_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2358:Anyseq$494
+; yosys-smt2-anyseq uart_receiver#83 1 $auto$setundef.cc:524:execute$491
+(declare-fun |uart_receiver#83| (|uart_receiver_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2358:Anyseq$492
+(define-fun |uart_receiver#84| ((state |uart_receiver_s|)) Bool (= (|uart_receiver#24| state) #b01)) ; $eq$./uart_receiver.v:113$96_Y
+(define-fun |uart_receiver#85| ((state |uart_receiver_s|)) (_ BitVec 1) (ite (|uart_receiver#84| state) (|uart_receiver#66| state) (|uart_receiver#83| state))) ; $procmux$216_Y
+(define-fun |uart_receiver#86| ((state |uart_receiver_s|)) (_ BitVec 1) (ite (|uart_receiver#57| state) (|uart_receiver#85| state) (|uart_receiver#82| state))) ; $0$formal$./uart_receiver.v:115$17_CHECK[0:0]$58
+(define-fun |uart_receiver#87| ((state |uart_receiver_s|)) (_ BitVec 1) (ite (|uart_receiver#84| state) #b1 #b0)) ; $procmux$212_Y
+(define-fun |uart_receiver#88| ((state |uart_receiver_s|)) (_ BitVec 1) (ite (|uart_receiver#57| state) (|uart_receiver#87| state) #b0)) ; $0$formal$./uart_receiver.v:115$17_EN[0:0]$59
+; yosys-smt2-anyseq uart_receiver#89 1 $auto$setundef.cc:524:execute$497
+(declare-fun |uart_receiver#89| (|uart_receiver_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2358:Anyseq$498
+; yosys-smt2-anyseq uart_receiver#90 1 $auto$setundef.cc:524:execute$495
+(declare-fun |uart_receiver#90| (|uart_receiver_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2358:Anyseq$496
+(define-fun |uart_receiver#91| ((state |uart_receiver_s|)) Bool (= ((_ extract 0 0) (|uart_receiver#18| state)) (|uart_receiver#25| state))) ; $eq$./uart_receiver.v:116$98_Y
+(define-fun |uart_receiver#92| ((state |uart_receiver_s|)) (_ BitVec 1) (ite (|uart_receiver#84| state) (ite (|uart_receiver#91| state) #b1 #b0) (|uart_receiver#90| state))) ; $procmux$224_Y
+(define-fun |uart_receiver#93| ((state |uart_receiver_s|)) (_ BitVec 1) (ite (|uart_receiver#57| state) (|uart_receiver#92| state) (|uart_receiver#89| state))) ; $0$formal$./uart_receiver.v:116$18_CHECK[0:0]$60
+; yosys-smt2-anyseq uart_receiver#94 1 $auto$setundef.cc:524:execute$501
+(declare-fun |uart_receiver#94| (|uart_receiver_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2358:Anyseq$502
+; yosys-smt2-anyseq uart_receiver#95 1 $auto$setundef.cc:524:execute$499
+(declare-fun |uart_receiver#95| (|uart_receiver_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2358:Anyseq$500
+(define-fun |uart_receiver#96| ((state |uart_receiver_s|)) (_ BitVec 1) (ite (|uart_receiver#84| state) (ite (|uart_receiver#74| state) #b1 #b0) (|uart_receiver#95| state))) ; $procmux$232_Y
+(define-fun |uart_receiver#97| ((state |uart_receiver_s|)) (_ BitVec 1) (ite (|uart_receiver#57| state) (|uart_receiver#96| state) (|uart_receiver#94| state))) ; $0$formal$./uart_receiver.v:117$19_CHECK[0:0]$62
+; yosys-smt2-anyseq uart_receiver#98 1 $auto$setundef.cc:524:execute$505
+(declare-fun |uart_receiver#98| (|uart_receiver_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2358:Anyseq$506
+; yosys-smt2-anyseq uart_receiver#99 1 $auto$setundef.cc:524:execute$503
+(declare-fun |uart_receiver#99| (|uart_receiver_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2358:Anyseq$504
+(define-fun |uart_receiver#100| ((state |uart_receiver_s|)) (_ BitVec 5) (bvadd (concat #b0 (|uart_receiver#23| state)) #b00001)) ; $add$./uart_receiver.v:118$100_Y
+(define-fun |uart_receiver#101| ((state |uart_receiver_s|)) Bool (= (concat #b0 (|uart_receiver#3| state)) (|uart_receiver#100| state))) ; $eq$./uart_receiver.v:118$101_Y
+(define-fun |uart_receiver#102| ((state |uart_receiver_s|)) (_ BitVec 1) (ite (|uart_receiver#84| state) (ite (|uart_receiver#101| state) #b1 #b0) (|uart_receiver#99| state))) ; $procmux$240_Y
+(define-fun |uart_receiver#103| ((state |uart_receiver_s|)) (_ BitVec 1) (ite (|uart_receiver#57| state) (|uart_receiver#102| state) (|uart_receiver#98| state))) ; $0$formal$./uart_receiver.v:118$20_CHECK[0:0]$64
+; yosys-smt2-anyseq uart_receiver#104 1 $auto$setundef.cc:524:execute$509
+(declare-fun |uart_receiver#104| (|uart_receiver_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2358:Anyseq$510
+; yosys-smt2-anyseq uart_receiver#105 1 $auto$setundef.cc:524:execute$507
+(declare-fun |uart_receiver#105| (|uart_receiver_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2358:Anyseq$508
+(define-fun |uart_receiver#106| ((state |uart_receiver_s|)) Bool (= (|uart_receiver#20| state) (|uart_receiver#22| state))) ; $eq$./uart_receiver.v:122$103_Y
+(define-fun |uart_receiver#107| ((state |uart_receiver_s|)) (_ BitVec 1) (ite (|uart_receiver#61| state) (ite (|uart_receiver#106| state) #b1 #b0) (|uart_receiver#105| state))) ; $procmux$248_Y
+(define-fun |uart_receiver#108| ((state |uart_receiver_s|)) (_ BitVec 1) (ite (|uart_receiver#57| state) (|uart_receiver#107| state) (|uart_receiver#104| state))) ; $0$formal$./uart_receiver.v:122$21_CHECK[0:0]$66
+(define-fun |uart_receiver#109| ((state |uart_receiver_s|)) (_ BitVec 1) (ite (|uart_receiver#61| state) #b1 #b0)) ; $procmux$244_Y
+(define-fun |uart_receiver#110| ((state |uart_receiver_s|)) (_ BitVec 1) (ite (|uart_receiver#57| state) (|uart_receiver#109| state) #b0)) ; $0$formal$./uart_receiver.v:122$21_EN[0:0]$67
+; yosys-smt2-anyseq uart_receiver#111 1 $auto$setundef.cc:524:execute$513
+(declare-fun |uart_receiver#111| (|uart_receiver_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2358:Anyseq$514
+; yosys-smt2-anyseq uart_receiver#112 1 $auto$setundef.cc:524:execute$511
+(declare-fun |uart_receiver#112| (|uart_receiver_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2358:Anyseq$512
+(define-fun |uart_receiver#113| ((state |uart_receiver_s|)) (_ BitVec 1) (ite (|uart_receiver#61| state) (|uart_receiver#19| state) (|uart_receiver#112| state))) ; $procmux$256_Y
+(define-fun |uart_receiver#114| ((state |uart_receiver_s|)) (_ BitVec 1) (ite (|uart_receiver#57| state) (|uart_receiver#113| state) (|uart_receiver#111| state))) ; $0$formal$./uart_receiver.v:123$22_CHECK[0:0]$68
+; yosys-smt2-anyseq uart_receiver#115 1 $auto$setundef.cc:524:execute$517
+(declare-fun |uart_receiver#115| (|uart_receiver_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2358:Anyseq$518
+; yosys-smt2-anyseq uart_receiver#116 1 $auto$setundef.cc:524:execute$515
+(declare-fun |uart_receiver#116| (|uart_receiver_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2358:Anyseq$516
+(define-fun |uart_receiver#117| ((state |uart_receiver_s|)) (_ BitVec 1) (ite (|uart_receiver#61| state) (ite (|uart_receiver#79| state) #b1 #b0) (|uart_receiver#116| state))) ; $procmux$264_Y
+(define-fun |uart_receiver#118| ((state |uart_receiver_s|)) (_ BitVec 1) (ite (|uart_receiver#57| state) (|uart_receiver#117| state) (|uart_receiver#115| state))) ; $0$formal$./uart_receiver.v:124$23_CHECK[0:0]$70
+; yosys-smt2-anyseq uart_receiver#119 1 $auto$setundef.cc:524:execute$521
+(declare-fun |uart_receiver#119| (|uart_receiver_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2358:Anyseq$522
+; yosys-smt2-anyseq uart_receiver#120 1 $auto$setundef.cc:524:execute$519
+(declare-fun |uart_receiver#120| (|uart_receiver_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2358:Anyseq$520
+(define-fun |uart_receiver#121| ((state |uart_receiver_s|)) Bool (= (|uart_receiver#17| state) #b01)) ; $eq$./uart_receiver.v:129$109_Y
+(define-fun |uart_receiver#122| ((state |uart_receiver_s|)) (_ BitVec 1) (bvnot (|uart_receiver#1| state))) ; $eq$./uart_receiver.v:128$107_Y
+(define-fun |uart_receiver#123| ((state |uart_receiver_s|)) Bool (and (or  (|uart_receiver#11| state) false) (or  (= ((_ extract 0 0) (|uart_receiver#122| state)) #b1) false))) ; $logic_and$./uart_receiver.v:128$108_Y
+(define-fun |uart_receiver#124| ((state |uart_receiver_s|)) (_ BitVec 1) (ite (|uart_receiver#123| state) (ite (|uart_receiver#121| state) #b1 #b0) (|uart_receiver#120| state))) ; $procmux$272_Y
+(define-fun |uart_receiver#125| ((state |uart_receiver_s|)) (_ BitVec 1) (ite (|uart_receiver#57| state) (|uart_receiver#124| state) (|uart_receiver#119| state))) ; $0$formal$./uart_receiver.v:129$24_CHECK[0:0]$72
+(define-fun |uart_receiver#126| ((state |uart_receiver_s|)) (_ BitVec 1) (ite (|uart_receiver#123| state) #b1 #b0)) ; $procmux$268_Y
+(define-fun |uart_receiver#127| ((state |uart_receiver_s|)) (_ BitVec 1) (ite (|uart_receiver#57| state) (|uart_receiver#126| state) #b0)) ; $0$formal$./uart_receiver.v:129$24_EN[0:0]$73
+; yosys-smt2-anyseq uart_receiver#128 1 $auto$setundef.cc:524:execute$525
+(declare-fun |uart_receiver#128| (|uart_receiver_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2358:Anyseq$526
+; yosys-smt2-anyseq uart_receiver#129 1 $auto$setundef.cc:524:execute$523
+(declare-fun |uart_receiver#129| (|uart_receiver_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2358:Anyseq$524
+(define-fun |uart_receiver#130| ((state |uart_receiver_s|)) Bool (not (or  (= ((_ extract 0 0) (|uart_receiver#17| state)) #b1) (= ((_ extract 1 1) (|uart_receiver#17| state)) #b1)))) ; $eq$./uart_receiver.v:131$113_Y
+(define-fun |uart_receiver#131| ((state |uart_receiver_s|)) Bool (and (or  (|uart_receiver#11| state) false) (or  (= ((_ extract 0 0) (|uart_receiver#1| state)) #b1) false))) ; $logic_and$./uart_receiver.v:130$112_Y
+(define-fun |uart_receiver#132| ((state |uart_receiver_s|)) (_ BitVec 1) (ite (|uart_receiver#131| state) (ite (|uart_receiver#130| state) #b1 #b0) (|uart_receiver#129| state))) ; $procmux$280_Y
+(define-fun |uart_receiver#133| ((state |uart_receiver_s|)) (_ BitVec 1) (ite (|uart_receiver#57| state) (|uart_receiver#132| state) (|uart_receiver#128| state))) ; $0$formal$./uart_receiver.v:131$25_CHECK[0:0]$74
+(define-fun |uart_receiver#134| ((state |uart_receiver_s|)) (_ BitVec 1) (ite (|uart_receiver#131| state) #b1 #b0)) ; $procmux$276_Y
+(define-fun |uart_receiver#135| ((state |uart_receiver_s|)) (_ BitVec 1) (ite (|uart_receiver#57| state) (|uart_receiver#134| state) #b0)) ; $0$formal$./uart_receiver.v:131$25_EN[0:0]$75
+; yosys-smt2-anyseq uart_receiver#136 1 $auto$setundef.cc:524:execute$529
+(declare-fun |uart_receiver#136| (|uart_receiver_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2358:Anyseq$530
+; yosys-smt2-anyseq uart_receiver#137 1 $auto$setundef.cc:524:execute$527
+(declare-fun |uart_receiver#137| (|uart_receiver_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2358:Anyseq$528
+(define-fun |uart_receiver#138| ((state |uart_receiver_s|)) Bool (distinct (|uart_receiver#3| state) #b0111)) ; $ne$./uart_receiver.v:132$115_Y
+(define-fun |uart_receiver#139| ((state |uart_receiver_s|)) Bool (and (or  (|uart_receiver#8| state) false) (or  (|uart_receiver#138| state) false))) ; $logic_and$./uart_receiver.v:132$116_Y
+(define-fun |uart_receiver#140| ((state |uart_receiver_s|)) (_ BitVec 1) (ite (|uart_receiver#139| state) (ite (|uart_receiver#121| state) #b1 #b0) (|uart_receiver#137| state))) ; $procmux$288_Y
+(define-fun |uart_receiver#141| ((state |uart_receiver_s|)) (_ BitVec 1) (ite (|uart_receiver#57| state) (|uart_receiver#140| state) (|uart_receiver#136| state))) ; $0$formal$./uart_receiver.v:133$26_CHECK[0:0]$76
+(define-fun |uart_receiver#142| ((state |uart_receiver_s|)) (_ BitVec 1) (ite (|uart_receiver#139| state) #b1 #b0)) ; $procmux$284_Y
+(define-fun |uart_receiver#143| ((state |uart_receiver_s|)) (_ BitVec 1) (ite (|uart_receiver#57| state) (|uart_receiver#142| state) #b0)) ; $0$formal$./uart_receiver.v:133$26_EN[0:0]$77
+; yosys-smt2-anyseq uart_receiver#144 1 $auto$setundef.cc:524:execute$533
+(declare-fun |uart_receiver#144| (|uart_receiver_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2358:Anyseq$534
+; yosys-smt2-anyseq uart_receiver#145 1 $auto$setundef.cc:524:execute$531
+(declare-fun |uart_receiver#145| (|uart_receiver_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2358:Anyseq$532
+(define-fun |uart_receiver#146| ((state |uart_receiver_s|)) Bool (= (|uart_receiver#17| state) #b10)) ; $eq$./uart_receiver.v:135$121_Y
+(define-fun |uart_receiver#147| ((state |uart_receiver_s|)) Bool (and (or  (|uart_receiver#8| state) false) (or  (|uart_receiver#4| state) false))) ; $logic_and$./uart_receiver.v:134$120_Y
+(define-fun |uart_receiver#148| ((state |uart_receiver_s|)) (_ BitVec 1) (ite (|uart_receiver#147| state) (ite (|uart_receiver#146| state) #b1 #b0) (|uart_receiver#145| state))) ; $procmux$296_Y
+(define-fun |uart_receiver#149| ((state |uart_receiver_s|)) (_ BitVec 1) (ite (|uart_receiver#57| state) (|uart_receiver#148| state) (|uart_receiver#144| state))) ; $0$formal$./uart_receiver.v:135$27_CHECK[0:0]$78
+(define-fun |uart_receiver#150| ((state |uart_receiver_s|)) (_ BitVec 1) (ite (|uart_receiver#147| state) #b1 #b0)) ; $procmux$292_Y
+(define-fun |uart_receiver#151| ((state |uart_receiver_s|)) (_ BitVec 1) (ite (|uart_receiver#57| state) (|uart_receiver#150| state) #b0)) ; $0$formal$./uart_receiver.v:135$27_EN[0:0]$79
+; yosys-smt2-anyseq uart_receiver#152 1 $auto$setundef.cc:524:execute$537
+(declare-fun |uart_receiver#152| (|uart_receiver_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2358:Anyseq$538
+; yosys-smt2-anyseq uart_receiver#153 1 $auto$setundef.cc:524:execute$535
+(declare-fun |uart_receiver#153| (|uart_receiver_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2358:Anyseq$536
+(define-fun |uart_receiver#154| ((state |uart_receiver_s|)) (_ BitVec 1) (ite (|uart_receiver#7| state) (ite (|uart_receiver#130| state) #b1 #b0) (|uart_receiver#153| state))) ; $procmux$304_Y
+(define-fun |uart_receiver#155| ((state |uart_receiver_s|)) (_ BitVec 1) (ite (|uart_receiver#57| state) (|uart_receiver#154| state) (|uart_receiver#152| state))) ; $0$formal$./uart_receiver.v:137$28_CHECK[0:0]$80
+(define-fun |uart_receiver#156| ((state |uart_receiver_s|)) (_ BitVec 1) (ite (|uart_receiver#7| state) #b1 #b0)) ; $procmux$300_Y
+(define-fun |uart_receiver#157| ((state |uart_receiver_s|)) (_ BitVec 1) (ite (|uart_receiver#57| state) (|uart_receiver#156| state) #b0)) ; $0$formal$./uart_receiver.v:137$28_EN[0:0]$81
+(define-fun |uart_receiver#158| ((state |uart_receiver_s|)) Bool (or  (|uart_receiver#11| state) (|uart_receiver#8| state))) ; $auto$opt_reduce.cc:134:opt_mux$466
+(define-fun |uart_receiver#159| ((state |uart_receiver_s|)) (_ BitVec 8) (ite (|uart_receiver#158| state) #b00000000 (ite (|uart_receiver#7| state) (|uart_receiver#18| state) (|uart_receiver#20| state)))) ; $0\o_DATA[7:0]
+(define-fun |uart_receiver#160| ((state |uart_receiver_s|)) (_ BitVec 1) (ite (|uart_receiver#158| state) #b0 (ite (|uart_receiver#7| state) #b1 (|uart_receiver#19| state)))) ; $0\o_RX_DONE[0:0]
+(define-fun |uart_receiver#161| ((state |uart_receiver_s|)) Bool (or  (|uart_receiver#11| state) (|uart_receiver#7| state))) ; $auto$opt_reduce.cc:134:opt_mux$448
+(define-fun |uart_receiver#162| ((state |uart_receiver_s|)) (_ BitVec 1) (ite (|uart_receiver#8| state) (|uart_receiver#1| state) (ite (|uart_receiver#161| state) #b0 ((_ extract 0 0) (|uart_receiver#18| state))))) ; $0\r_DATA_REG[7:0] [0]
+(define-fun |uart_receiver#163| ((state |uart_receiver_s|)) (_ BitVec 1) (ite (|uart_receiver#8| state) ((_ extract 0 0) (|uart_receiver#18| state)) (ite (|uart_receiver#161| state) #b0 ((_ extract 1 1) (|uart_receiver#18| state))))) ; $0\r_DATA_REG[7:0] [1]
+(define-fun |uart_receiver#164| ((state |uart_receiver_s|)) (_ BitVec 1) (ite (|uart_receiver#8| state) ((_ extract 1 1) (|uart_receiver#18| state)) (ite (|uart_receiver#161| state) #b0 ((_ extract 2 2) (|uart_receiver#18| state))))) ; $0\r_DATA_REG[7:0] [2]
+(define-fun |uart_receiver#165| ((state |uart_receiver_s|)) (_ BitVec 1) (ite (|uart_receiver#8| state) ((_ extract 2 2) (|uart_receiver#18| state)) (ite (|uart_receiver#161| state) #b0 ((_ extract 3 3) (|uart_receiver#18| state))))) ; $0\r_DATA_REG[7:0] [3]
+(define-fun |uart_receiver#166| ((state |uart_receiver_s|)) (_ BitVec 1) (ite (|uart_receiver#8| state) ((_ extract 3 3) (|uart_receiver#18| state)) (ite (|uart_receiver#161| state) #b0 ((_ extract 4 4) (|uart_receiver#18| state))))) ; $0\r_DATA_REG[7:0] [4]
+(define-fun |uart_receiver#167| ((state |uart_receiver_s|)) (_ BitVec 1) (ite (|uart_receiver#8| state) ((_ extract 4 4) (|uart_receiver#18| state)) (ite (|uart_receiver#161| state) #b0 ((_ extract 5 5) (|uart_receiver#18| state))))) ; $0\r_DATA_REG[7:0] [5]
+(define-fun |uart_receiver#168| ((state |uart_receiver_s|)) (_ BitVec 1) (ite (|uart_receiver#8| state) ((_ extract 5 5) (|uart_receiver#18| state)) (ite (|uart_receiver#161| state) #b0 ((_ extract 6 6) (|uart_receiver#18| state))))) ; $0\r_DATA_REG[7:0] [6]
+(define-fun |uart_receiver#169| ((state |uart_receiver_s|)) (_ BitVec 1) (ite (|uart_receiver#8| state) ((_ extract 6 6) (|uart_receiver#18| state)) (ite (|uart_receiver#161| state) #b0 ((_ extract 7 7) (|uart_receiver#18| state))))) ; $0\r_DATA_REG[7:0] [7]
+(define-fun |uart_receiver#170| ((state |uart_receiver_s|)) (_ BitVec 4) (bvadd (|uart_receiver#3| state) #b0001)) ; $add$./uart_receiver.v:67$34_Y
+(define-fun |uart_receiver#171| ((state |uart_receiver_s|)) (_ BitVec 4) (ite (|uart_receiver#8| state) (|uart_receiver#170| state) (ite (|uart_receiver#161| state) #b0000 (|uart_receiver#3| state)))) ; $0\r_BIT_COUNT[3:0]
 (define-fun |uart_receiver_a| ((state |uart_receiver_s|)) Bool (and
   (|uart_receiver_a 0| state)
   (|uart_receiver_a 1| state)
@@ -234,6 +342,12 @@
   (|uart_receiver_a 6| state)
   (|uart_receiver_a 7| state)
   (|uart_receiver_a 8| state)
+  (|uart_receiver_a 9| state)
+  (|uart_receiver_a 10| state)
+  (|uart_receiver_a 11| state)
+  (|uart_receiver_a 12| state)
+  (|uart_receiver_a 13| state)
+  (|uart_receiver_a 14| state)
 ))
 (define-fun |uart_receiver_u| ((state |uart_receiver_s|)) Bool (and
   (|uart_receiver_u 0| state)
@@ -244,40 +358,56 @@
   (= (|uart_receiver#18| state) #b00000000) ; r_DATA_REG
   (= (|uart_receiver#6| state) #b00) ; r_CURRENT_STATE
   (= (|uart_receiver#3| state) #b0000) ; r_BIT_COUNT
-  (= (= ((_ extract 0 0) (|uart_receiver#28| state)) #b1) false) ; $formal$./uart_receiver.v:95$13_EN
-  (= (= ((_ extract 0 0) (|uart_receiver#31| state)) #b1) false) ; $formal$./uart_receiver.v:91$11_EN
-  (= (= ((_ extract 0 0) (|uart_receiver#34| state)) #b1) false) ; $formal$./uart_receiver.v:108$19_EN
-  (= (= ((_ extract 0 0) (|uart_receiver#38| state)) #b1) false) ; $formal$./uart_receiver.v:101$16_EN
-  (= (|uart_receiver#10| state) #b00) ; $auto$async2sync.cc:192:execute$314
+  (= (= ((_ extract 0 0) (|uart_receiver#26| state)) #b1) false) ; $formal$./uart_receiver.v:137$28_EN
+  (= (= ((_ extract 0 0) (|uart_receiver#28| state)) #b1) false) ; $formal$./uart_receiver.v:135$27_EN
+  (= (= ((_ extract 0 0) (|uart_receiver#30| state)) #b1) false) ; $formal$./uart_receiver.v:133$26_EN
+  (= (= ((_ extract 0 0) (|uart_receiver#32| state)) #b1) false) ; $formal$./uart_receiver.v:131$25_EN
+  (= (= ((_ extract 0 0) (|uart_receiver#34| state)) #b1) false) ; $formal$./uart_receiver.v:129$24_EN
+  (= (= ((_ extract 0 0) (|uart_receiver#38| state)) #b1) false) ; $formal$./uart_receiver.v:122$21_EN
+  (= (= ((_ extract 0 0) (|uart_receiver#43| state)) #b1) false) ; $formal$./uart_receiver.v:115$17_EN
+  (= (= ((_ extract 0 0) (|uart_receiver#47| state)) #b1) false) ; $formal$./uart_receiver.v:109$14_EN
+  (= (= ((_ extract 0 0) (|uart_receiver#50| state)) #b1) false) ; $formal$./uart_receiver.v:101$12_EN
+  (= (|uart_receiver#10| state) #b00) ; $auto$async2sync.cc:192:execute$473
 ))
 (define-fun |uart_receiver_h| ((state |uart_receiver_s|)) Bool true)
 (define-fun |uart_receiver_t| ((state |uart_receiver_s|) (next_state |uart_receiver_s|)) Bool (and
-  (= (ite (|uart_receiver#21| state) #b1 #b0) (|uart_receiver#40| next_state)) ; $procdff$264 $and$./uart_receiver.v:89$64_Y
-  (= (|uart_receiver#54| state) (|uart_receiver#39| next_state)) ; $procdff$285 $formal$./uart_receiver.v:101$16_CHECK
-  (= (|uart_receiver#56| state) (|uart_receiver#38| next_state)) ; $procdff$286 $formal$./uart_receiver.v:101$16_EN
-  (= (|uart_receiver#61| state) (|uart_receiver#37| next_state)) ; $procdff$287 $formal$./uart_receiver.v:103$17_CHECK
-  (= (|uart_receiver#67| state) (|uart_receiver#36| next_state)) ; $procdff$289 $formal$./uart_receiver.v:104$18_CHECK
-  (= (|uart_receiver#73| state) (|uart_receiver#35| next_state)) ; $procdff$291 $formal$./uart_receiver.v:108$19_CHECK
-  (= (|uart_receiver#75| state) (|uart_receiver#34| next_state)) ; $procdff$292 $formal$./uart_receiver.v:108$19_EN
-  (= (|uart_receiver#79| state) (|uart_receiver#33| next_state)) ; $procdff$293 $formal$./uart_receiver.v:109$20_CHECK
-  (= (|uart_receiver#84| state) (|uart_receiver#32| next_state)) ; $procdff$295 $formal$./uart_receiver.v:110$21_CHECK
-  (= (|uart_receiver#47| state) (|uart_receiver#31| next_state)) ; $procdff$276 $formal$./uart_receiver.v:91$11_EN
-  (= (|uart_receiver#87| state) (|uart_receiver#30| next_state)) ; $procdff$277 $formal$./uart_receiver.v:92$12_CHECK
-  (= (|uart_receiver#92| state) (|uart_receiver#29| next_state)) ; $procdff$279 $formal$./uart_receiver.v:95$13_CHECK
-  (= (|uart_receiver#94| state) (|uart_receiver#28| next_state)) ; $procdff$280 $formal$./uart_receiver.v:95$13_EN
-  (= (|uart_receiver#98| state) (|uart_receiver#27| next_state)) ; $procdff$281 $formal$./uart_receiver.v:96$14_CHECK
-  (= (|uart_receiver#102| state) (|uart_receiver#26| next_state)) ; $procdff$283 $formal$./uart_receiver.v:97$15_CHECK
-  (= (|uart_receiver#3| state) (|uart_receiver#25| next_state)) ; $procdff$270 $past$./uart_receiver.v:104$7$0
-  (= (|uart_receiver#6| state) (|uart_receiver#24| next_state)) ; $procdff$267 $past$./uart_receiver.v:106$8$0
-  (= (|uart_receiver#18| state) (|uart_receiver#23| next_state)) ; $procdff$272 $past$./uart_receiver.v:108$9$0
-  (= (|uart_receiver#1| state) (|uart_receiver#22| next_state)) ; $procdff$266 $past$./uart_receiver.v:91$3$0
-  (= (|uart_receiver#104| state) (|uart_receiver#20| next_state)) ; $procdff$298 \o_DATA
-  (= (|uart_receiver#105| state) (|uart_receiver#19| next_state)) ; $procdff$297 \o_RX_DONE
-  (= (|uart_receiver#107| state) (|uart_receiver#18| next_state)) ; $procdff$300 \r_DATA_REG
-  (= (|uart_receiver#17| state) (|uart_receiver#10| next_state)) ; $auto$proc_dlatch.cc:417:proc_dlatch$262 $auto$async2sync.cc:192:execute$314
-  (= (|uart_receiver#17| state) (|uart_receiver#6| next_state)) ; $procdff$301 \r_CURRENT_STATE
-  (= (|uart_receiver#109| state) (|uart_receiver#3| next_state)) ; $procdff$299 \r_BIT_COUNT
-  (= #b1 (|uart_receiver#0| next_state)) ; $procdff$263 \r_PAST_VALID
+  (= (ite (|uart_receiver#21| state) #b1 #b0) (|uart_receiver#51| next_state)) ; $procdff$396 $and$./uart_receiver.v:98$83_Y
+  (= (|uart_receiver#59| state) (|uart_receiver#50| next_state)) ; $procdff$409 $formal$./uart_receiver.v:101$12_EN
+  (= (|uart_receiver#63| state) (|uart_receiver#49| next_state)) ; $procdff$410 $formal$./uart_receiver.v:104$13_CHECK
+  (= (|uart_receiver#69| state) (|uart_receiver#48| next_state)) ; $procdff$412 $formal$./uart_receiver.v:109$14_CHECK
+  (= (|uart_receiver#71| state) (|uart_receiver#47| next_state)) ; $procdff$413 $formal$./uart_receiver.v:109$14_EN
+  (= (|uart_receiver#76| state) (|uart_receiver#46| next_state)) ; $procdff$414 $formal$./uart_receiver.v:110$15_CHECK
+  (= (|uart_receiver#81| state) (|uart_receiver#45| next_state)) ; $procdff$416 $formal$./uart_receiver.v:111$16_CHECK
+  (= (|uart_receiver#86| state) (|uart_receiver#44| next_state)) ; $procdff$418 $formal$./uart_receiver.v:115$17_CHECK
+  (= (|uart_receiver#88| state) (|uart_receiver#43| next_state)) ; $procdff$419 $formal$./uart_receiver.v:115$17_EN
+  (= (|uart_receiver#93| state) (|uart_receiver#42| next_state)) ; $procdff$420 $formal$./uart_receiver.v:116$18_CHECK
+  (= (|uart_receiver#97| state) (|uart_receiver#41| next_state)) ; $procdff$422 $formal$./uart_receiver.v:117$19_CHECK
+  (= (|uart_receiver#103| state) (|uart_receiver#40| next_state)) ; $procdff$424 $formal$./uart_receiver.v:118$20_CHECK
+  (= (|uart_receiver#108| state) (|uart_receiver#39| next_state)) ; $procdff$426 $formal$./uart_receiver.v:122$21_CHECK
+  (= (|uart_receiver#110| state) (|uart_receiver#38| next_state)) ; $procdff$427 $formal$./uart_receiver.v:122$21_EN
+  (= (|uart_receiver#114| state) (|uart_receiver#37| next_state)) ; $procdff$428 $formal$./uart_receiver.v:123$22_CHECK
+  (= (|uart_receiver#118| state) (|uart_receiver#36| next_state)) ; $procdff$430 $formal$./uart_receiver.v:124$23_CHECK
+  (= (|uart_receiver#125| state) (|uart_receiver#35| next_state)) ; $procdff$432 $formal$./uart_receiver.v:129$24_CHECK
+  (= (|uart_receiver#127| state) (|uart_receiver#34| next_state)) ; $procdff$433 $formal$./uart_receiver.v:129$24_EN
+  (= (|uart_receiver#133| state) (|uart_receiver#33| next_state)) ; $procdff$434 $formal$./uart_receiver.v:131$25_CHECK
+  (= (|uart_receiver#135| state) (|uart_receiver#32| next_state)) ; $procdff$435 $formal$./uart_receiver.v:131$25_EN
+  (= (|uart_receiver#141| state) (|uart_receiver#31| next_state)) ; $procdff$436 $formal$./uart_receiver.v:133$26_CHECK
+  (= (|uart_receiver#143| state) (|uart_receiver#30| next_state)) ; $procdff$437 $formal$./uart_receiver.v:133$26_EN
+  (= (|uart_receiver#149| state) (|uart_receiver#29| next_state)) ; $procdff$438 $formal$./uart_receiver.v:135$27_CHECK
+  (= (|uart_receiver#151| state) (|uart_receiver#28| next_state)) ; $procdff$439 $formal$./uart_receiver.v:135$27_EN
+  (= (|uart_receiver#155| state) (|uart_receiver#27| next_state)) ; $procdff$440 $formal$./uart_receiver.v:137$28_CHECK
+  (= (|uart_receiver#157| state) (|uart_receiver#26| next_state)) ; $procdff$441 $formal$./uart_receiver.v:137$28_EN
+  (= (|uart_receiver#1| state) (|uart_receiver#25| next_state)) ; $procdff$398 $past$./uart_receiver.v:101$3$0
+  (= (|uart_receiver#6| state) (|uart_receiver#24| next_state)) ; $procdff$399 $past$./uart_receiver.v:104$4$0
+  (= (|uart_receiver#3| state) (|uart_receiver#23| next_state)) ; $procdff$403 $past$./uart_receiver.v:118$8$0
+  (= (|uart_receiver#18| state) (|uart_receiver#22| next_state)) ; $procdff$405 $past$./uart_receiver.v:122$10$0
+  (= (|uart_receiver#159| state) (|uart_receiver#20| next_state)) ; $procdff$443 \o_DATA
+  (= (|uart_receiver#160| state) (|uart_receiver#19| next_state)) ; $procdff$442 \o_RX_DONE
+  (= (concat (|uart_receiver#169| state) (concat (|uart_receiver#168| state) (concat (|uart_receiver#167| state) (concat (|uart_receiver#166| state) (concat (|uart_receiver#165| state) (concat (|uart_receiver#164| state) (concat (|uart_receiver#163| state) (|uart_receiver#162| state)))))))) (|uart_receiver#18| next_state)) ; $procdff$445 \r_DATA_REG
+  (= (|uart_receiver#17| state) (|uart_receiver#10| next_state)) ; $auto$proc_dlatch.cc:417:proc_dlatch$394 $auto$async2sync.cc:192:execute$473
+  (= (|uart_receiver#17| state) (|uart_receiver#6| next_state)) ; $procdff$446 \r_CURRENT_STATE
+  (= (|uart_receiver#171| state) (|uart_receiver#3| next_state)) ; $procdff$444 \r_BIT_COUNT
+  (= #b1 (|uart_receiver#0| next_state)) ; $procdff$395 \r_PAST_VALID
 )) ; end of module uart_receiver
 ; yosys-smt2-topmod uart_receiver
 ; end of yosys output
