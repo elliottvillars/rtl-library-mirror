@@ -1,0 +1,75 @@
+initial
+assume (= [$and$./uart_receiver.v:89$64_Y] false)
+assume (= [$auto$async2sync.cc:192:execute$314] #b00)
+assume (= [$formal$./uart_receiver.v:101$16_CHECK] false)
+assume (= [$formal$./uart_receiver.v:101$16_EN] false)
+assume (= [$formal$./uart_receiver.v:103$17_CHECK] false)
+assume (= [$formal$./uart_receiver.v:104$18_CHECK] false)
+assume (= [$formal$./uart_receiver.v:108$19_CHECK] false)
+assume (= [$formal$./uart_receiver.v:108$19_EN] false)
+assume (= [$formal$./uart_receiver.v:109$20_CHECK] false)
+assume (= [$formal$./uart_receiver.v:110$21_CHECK] false)
+assume (= [$formal$./uart_receiver.v:91$11_EN] false)
+assume (= [$formal$./uart_receiver.v:92$12_CHECK] false)
+assume (= [$formal$./uart_receiver.v:95$13_CHECK] false)
+assume (= [$formal$./uart_receiver.v:95$13_EN] false)
+assume (= [$formal$./uart_receiver.v:96$14_CHECK] false)
+assume (= [$formal$./uart_receiver.v:97$15_CHECK] false)
+assume (= [$past$./uart_receiver.v:104$7$0] #x0)
+assume (= [$past$./uart_receiver.v:106$8$0] #b01)
+assume (= [$past$./uart_receiver.v:108$9$0] #x00)
+assume (= [$past$./uart_receiver.v:91$3$0] false)
+assume (= [o_DATA] #x00)
+assume (= [o_RX_DONE] false)
+assume (= [r_BIT_COUNT] #x0)
+assume (= [r_CURRENT_STATE] #b00)
+assume (= [r_DATA_REG] #x00)
+assume (= [r_PAST_VALID] false)
+
+state 0
+assume (= [i_CLK] true)
+assume (= [i_RX] false)
+
+state 1
+assume (= [i_CLK] false)
+assume (= [i_RX] true)
+
+state 2
+assume (= [i_CLK] true)
+assume (= [i_RX] false)
+
+state 3
+assume (= [i_CLK] false)
+assume (= [i_RX] false)
+
+state 4
+assume (= [i_CLK] true)
+assume (= [i_RX] true)
+
+state 5
+assume (= [i_CLK] false)
+assume (= [i_RX] true)
+
+state 6
+assume (= [i_CLK] true)
+assume (= [i_RX] false)
+
+state 7
+assume (= [i_CLK] false)
+assume (= [i_RX] true)
+
+state 8
+assume (= [i_CLK] true)
+assume (= [i_RX] false)
+
+state 9
+assume (= [i_CLK] false)
+assume (= [i_RX] false)
+
+state 10
+assume (= [i_CLK] true)
+assume (= [i_RX] true)
+
+state 11
+assume (= [i_CLK] false)
+assume (= [i_RX] false)

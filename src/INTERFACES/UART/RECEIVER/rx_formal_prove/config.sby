@@ -1,0 +1,14 @@
+[engines]
+smtbmc z3
+smtbmc yices
+
+[options]
+mode prove
+depth 100
+
+[files]
+./uart_receiver.v
+
+[script]
+read -formal ./uart_receiver.v
+prep -top uart_receiver

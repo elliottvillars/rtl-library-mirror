@@ -1,0 +1,13 @@
+# running in rx_formal_prove/src/
+read -formal ./uart_receiver.v
+prep -top uart_receiver
+memory_nordff
+async2sync
+chformal -assume -early
+chformal -live -fair -cover -remove
+opt_clean
+setundef -anyseq
+opt -keepdc -fast
+check
+hierarchy -simcheck
+write_ilang ../model/design.il

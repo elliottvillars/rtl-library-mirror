@@ -1,0 +1,463 @@
+
+ /----------------------------------------------------------------------------\
+ |                                                                            |
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |                                                                            |
+ |  Copyright (C) 2012 - 2019  Clifford Wolf <clifford@clifford.at>           |
+ |                                                                            |
+ |  Permission to use, copy, modify, and/or distribute this software for any  |
+ |  purpose with or without fee is hereby granted, provided that the above    |
+ |  copyright notice and this permission notice appear in all copies.         |
+ |                                                                            |
+ |  THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES  |
+ |  WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF          |
+ |  MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR   |
+ |  ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES    |
+ |  WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN     |
+ |  ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF   |
+ |  OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.            |
+ |                                                                            |
+ \----------------------------------------------------------------------------/
+
+ Yosys 0.9+1706 (git sha1 2e8d6ec0b0, g++ 9.2.0 -fPIC -Os)
+
+
+-- Executing script file `../model/design.ys' --
+
+1. Executing Verilog-2005 frontend: ./uart_receiver.v
+Parsing formal SystemVerilog input from `./uart_receiver.v' to AST representation.
+Storing AST representation for module `$abstract\uart_receiver'.
+Successfully finished Verilog frontend.
+
+2. Executing PREP pass.
+
+2.1. Executing HIERARCHY pass (managing design hierarchy).
+
+2.2. Executing AST frontend in derive mode using pre-parsed AST for module `\uart_receiver'.
+Generating RTLIL representation for module `\uart_receiver'.
+
+2.2.1. Analyzing design hierarchy..
+Top module:  \uart_receiver
+
+2.2.2. Analyzing design hierarchy..
+Top module:  \uart_receiver
+Removing unused module `$abstract\uart_receiver'.
+Removed 1 unused modules.
+Module uart_receiver directly or indirectly contains formal properties -> setting "keep" attribute.
+
+2.3. Executing PROC pass (convert processes to netlists).
+
+2.3.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+2.3.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Marked 3 switch rules as full_case in process $proc$./uart_receiver.v:25$22 in module uart_receiver.
+Removed a total of 0 dead cases.
+
+2.3.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 0 redundant assignments.
+Promoted 31 assignments to connections.
+
+2.3.4. Executing PROC_INIT pass (extract init attributes).
+Found init rule in `\uart_receiver.$proc$./uart_receiver.v:110$122'.
+  Set init value: $formal$./uart_receiver.v:110$21_EN = 1'0
+Found init rule in `\uart_receiver.$proc$./uart_receiver.v:109$120'.
+  Set init value: $formal$./uart_receiver.v:109$20_EN = 1'0
+Found init rule in `\uart_receiver.$proc$./uart_receiver.v:108$118'.
+  Set init value: $formal$./uart_receiver.v:108$19_EN = 1'0
+Found init rule in `\uart_receiver.$proc$./uart_receiver.v:104$116'.
+  Set init value: $formal$./uart_receiver.v:104$18_EN = 1'0
+Found init rule in `\uart_receiver.$proc$./uart_receiver.v:103$114'.
+  Set init value: $formal$./uart_receiver.v:103$17_EN = 1'0
+Found init rule in `\uart_receiver.$proc$./uart_receiver.v:101$112'.
+  Set init value: $formal$./uart_receiver.v:101$16_EN = 1'0
+Found init rule in `\uart_receiver.$proc$./uart_receiver.v:97$110'.
+  Set init value: $formal$./uart_receiver.v:97$15_EN = 1'0
+Found init rule in `\uart_receiver.$proc$./uart_receiver.v:96$108'.
+  Set init value: $formal$./uart_receiver.v:96$14_EN = 1'0
+Found init rule in `\uart_receiver.$proc$./uart_receiver.v:95$106'.
+  Set init value: $formal$./uart_receiver.v:95$13_EN = 1'0
+Found init rule in `\uart_receiver.$proc$./uart_receiver.v:92$104'.
+  Set init value: $formal$./uart_receiver.v:92$12_EN = 1'0
+Found init rule in `\uart_receiver.$proc$./uart_receiver.v:91$102'.
+  Set init value: $formal$./uart_receiver.v:91$11_EN = 1'0
+Found init rule in `\uart_receiver.$proc$./uart_receiver.v:87$100'.
+  Set init value: $formal$./uart_receiver.v:87$10_EN = 1'0
+Found init rule in `\uart_receiver.$proc$./uart_receiver.v:84$99'.
+  Set init value: \r_PAST_VALID = 1'0
+Found init rule in `\uart_receiver.$proc$./uart_receiver.v:19$98'.
+  Set init value: \r_CURRENT_STATE = 2'00
+  Set init value: \r_NEXT_STATE = 2'00
+  Set init value: \r_BIT_COUNT = 4'0000
+  Set init value: \r_DATA_REG = 8'00000000
+
+2.3.5. Executing PROC_ARST pass (detect async resets in processes).
+
+2.3.6. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\uart_receiver.$proc$./uart_receiver.v:110$122'.
+Creating decoders for process `\uart_receiver.$proc$./uart_receiver.v:109$120'.
+Creating decoders for process `\uart_receiver.$proc$./uart_receiver.v:108$118'.
+Creating decoders for process `\uart_receiver.$proc$./uart_receiver.v:104$116'.
+Creating decoders for process `\uart_receiver.$proc$./uart_receiver.v:103$114'.
+Creating decoders for process `\uart_receiver.$proc$./uart_receiver.v:101$112'.
+Creating decoders for process `\uart_receiver.$proc$./uart_receiver.v:97$110'.
+Creating decoders for process `\uart_receiver.$proc$./uart_receiver.v:96$108'.
+Creating decoders for process `\uart_receiver.$proc$./uart_receiver.v:95$106'.
+Creating decoders for process `\uart_receiver.$proc$./uart_receiver.v:92$104'.
+Creating decoders for process `\uart_receiver.$proc$./uart_receiver.v:91$102'.
+Creating decoders for process `\uart_receiver.$proc$./uart_receiver.v:87$100'.
+Creating decoders for process `\uart_receiver.$proc$./uart_receiver.v:84$99'.
+Creating decoders for process `\uart_receiver.$proc$./uart_receiver.v:19$98'.
+Creating decoders for process `\uart_receiver.$proc$./uart_receiver.v:85$29'.
+     1/22: $0$formal$./uart_receiver.v:91$11_EN[0:0]$42
+     2/22: $0$formal$./uart_receiver.v:91$11_CHECK[0:0]$41
+     3/22: $0$formal$./uart_receiver.v:92$12_EN[0:0]$44
+     4/22: $0$formal$./uart_receiver.v:92$12_CHECK[0:0]$43
+     5/22: $0$formal$./uart_receiver.v:95$13_EN[0:0]$46
+     6/22: $0$formal$./uart_receiver.v:95$13_CHECK[0:0]$45
+     7/22: $0$formal$./uart_receiver.v:96$14_EN[0:0]$48
+     8/22: $0$formal$./uart_receiver.v:96$14_CHECK[0:0]$47
+     9/22: $0$formal$./uart_receiver.v:97$15_EN[0:0]$50
+    10/22: $0$formal$./uart_receiver.v:97$15_CHECK[0:0]$49
+    11/22: $0$formal$./uart_receiver.v:101$16_EN[0:0]$52
+    12/22: $0$formal$./uart_receiver.v:101$16_CHECK[0:0]$51
+    13/22: $0$formal$./uart_receiver.v:103$17_EN[0:0]$54
+    14/22: $0$formal$./uart_receiver.v:103$17_CHECK[0:0]$53
+    15/22: $0$formal$./uart_receiver.v:104$18_EN[0:0]$56
+    16/22: $0$formal$./uart_receiver.v:104$18_CHECK[0:0]$55
+    17/22: $0$formal$./uart_receiver.v:108$19_EN[0:0]$58
+    18/22: $0$formal$./uart_receiver.v:108$19_CHECK[0:0]$57
+    19/22: $0$formal$./uart_receiver.v:109$20_EN[0:0]$60
+    20/22: $0$formal$./uart_receiver.v:109$20_CHECK[0:0]$59
+    21/22: $0$formal$./uart_receiver.v:110$21_EN[0:0]$62
+    22/22: $0$formal$./uart_receiver.v:110$21_CHECK[0:0]$61
+Creating decoders for process `\uart_receiver.$proc$./uart_receiver.v:54$26'.
+     1/4: $0\r_DATA_REG[7:0]
+     2/4: $0\r_BIT_COUNT[3:0]
+     3/4: $0\o_DATA[7:0]
+     4/4: $0\o_RX_DONE[0:0]
+Creating decoders for process `\uart_receiver.$proc$./uart_receiver.v:49$25'.
+Creating decoders for process `\uart_receiver.$proc$./uart_receiver.v:25$22'.
+     1/3: $3\r_NEXT_STATE[1:0]
+     2/3: $2\r_NEXT_STATE[1:0]
+     3/3: $1\r_NEXT_STATE[1:0]
+
+2.3.7. Executing PROC_DLATCH pass (convert process syncs to latches).
+Latch inferred for signal `\uart_receiver.\r_NEXT_STATE' from process `\uart_receiver.$proc$./uart_receiver.v:25$22': $auto$proc_dlatch.cc:417:proc_dlatch$262
+
+2.3.8. Executing PROC_DFF pass (convert process syncs to FFs).
+Creating register for signal `\uart_receiver.\r_PAST_VALID' using process `\uart_receiver.$proc$./uart_receiver.v:85$29'.
+  created $dff cell `$procdff$263' with positive edge clock.
+Creating register for signal `\uart_receiver.$past$./uart_receiver.v:87$1$0' using process `\uart_receiver.$proc$./uart_receiver.v:85$29'.
+  created $dff cell `$procdff$264' with positive edge clock.
+Creating register for signal `\uart_receiver.$past$./uart_receiver.v:89$2$0' using process `\uart_receiver.$proc$./uart_receiver.v:85$29'.
+  created $dff cell `$procdff$265' with positive edge clock.
+Creating register for signal `\uart_receiver.$past$./uart_receiver.v:91$3$0' using process `\uart_receiver.$proc$./uart_receiver.v:85$29'.
+  created $dff cell `$procdff$266' with positive edge clock.
+Creating register for signal `\uart_receiver.$past$./uart_receiver.v:92$4$0' using process `\uart_receiver.$proc$./uart_receiver.v:85$29'.
+  created $dff cell `$procdff$267' with positive edge clock.
+Creating register for signal `\uart_receiver.$past$./uart_receiver.v:93$5$0' using process `\uart_receiver.$proc$./uart_receiver.v:85$29'.
+  created $dff cell `$procdff$268' with positive edge clock.
+Creating register for signal `\uart_receiver.$past$./uart_receiver.v:99$6$0' using process `\uart_receiver.$proc$./uart_receiver.v:85$29'.
+  created $dff cell `$procdff$269' with positive edge clock.
+Creating register for signal `\uart_receiver.$past$./uart_receiver.v:104$7$0' using process `\uart_receiver.$proc$./uart_receiver.v:85$29'.
+  created $dff cell `$procdff$270' with positive edge clock.
+Creating register for signal `\uart_receiver.$past$./uart_receiver.v:106$8$0' using process `\uart_receiver.$proc$./uart_receiver.v:85$29'.
+  created $dff cell `$procdff$271' with positive edge clock.
+Creating register for signal `\uart_receiver.$past$./uart_receiver.v:108$9$0' using process `\uart_receiver.$proc$./uart_receiver.v:85$29'.
+  created $dff cell `$procdff$272' with positive edge clock.
+Creating register for signal `\uart_receiver.$formal$./uart_receiver.v:87$10_CHECK' using process `\uart_receiver.$proc$./uart_receiver.v:85$29'.
+  created $dff cell `$procdff$273' with positive edge clock.
+Creating register for signal `\uart_receiver.$formal$./uart_receiver.v:87$10_EN' using process `\uart_receiver.$proc$./uart_receiver.v:85$29'.
+  created $dff cell `$procdff$274' with positive edge clock.
+Creating register for signal `\uart_receiver.$formal$./uart_receiver.v:91$11_CHECK' using process `\uart_receiver.$proc$./uart_receiver.v:85$29'.
+  created $dff cell `$procdff$275' with positive edge clock.
+Creating register for signal `\uart_receiver.$formal$./uart_receiver.v:91$11_EN' using process `\uart_receiver.$proc$./uart_receiver.v:85$29'.
+  created $dff cell `$procdff$276' with positive edge clock.
+Creating register for signal `\uart_receiver.$formal$./uart_receiver.v:92$12_CHECK' using process `\uart_receiver.$proc$./uart_receiver.v:85$29'.
+  created $dff cell `$procdff$277' with positive edge clock.
+Creating register for signal `\uart_receiver.$formal$./uart_receiver.v:92$12_EN' using process `\uart_receiver.$proc$./uart_receiver.v:85$29'.
+  created $dff cell `$procdff$278' with positive edge clock.
+Creating register for signal `\uart_receiver.$formal$./uart_receiver.v:95$13_CHECK' using process `\uart_receiver.$proc$./uart_receiver.v:85$29'.
+  created $dff cell `$procdff$279' with positive edge clock.
+Creating register for signal `\uart_receiver.$formal$./uart_receiver.v:95$13_EN' using process `\uart_receiver.$proc$./uart_receiver.v:85$29'.
+  created $dff cell `$procdff$280' with positive edge clock.
+Creating register for signal `\uart_receiver.$formal$./uart_receiver.v:96$14_CHECK' using process `\uart_receiver.$proc$./uart_receiver.v:85$29'.
+  created $dff cell `$procdff$281' with positive edge clock.
+Creating register for signal `\uart_receiver.$formal$./uart_receiver.v:96$14_EN' using process `\uart_receiver.$proc$./uart_receiver.v:85$29'.
+  created $dff cell `$procdff$282' with positive edge clock.
+Creating register for signal `\uart_receiver.$formal$./uart_receiver.v:97$15_CHECK' using process `\uart_receiver.$proc$./uart_receiver.v:85$29'.
+  created $dff cell `$procdff$283' with positive edge clock.
+Creating register for signal `\uart_receiver.$formal$./uart_receiver.v:97$15_EN' using process `\uart_receiver.$proc$./uart_receiver.v:85$29'.
+  created $dff cell `$procdff$284' with positive edge clock.
+Creating register for signal `\uart_receiver.$formal$./uart_receiver.v:101$16_CHECK' using process `\uart_receiver.$proc$./uart_receiver.v:85$29'.
+  created $dff cell `$procdff$285' with positive edge clock.
+Creating register for signal `\uart_receiver.$formal$./uart_receiver.v:101$16_EN' using process `\uart_receiver.$proc$./uart_receiver.v:85$29'.
+  created $dff cell `$procdff$286' with positive edge clock.
+Creating register for signal `\uart_receiver.$formal$./uart_receiver.v:103$17_CHECK' using process `\uart_receiver.$proc$./uart_receiver.v:85$29'.
+  created $dff cell `$procdff$287' with positive edge clock.
+Creating register for signal `\uart_receiver.$formal$./uart_receiver.v:103$17_EN' using process `\uart_receiver.$proc$./uart_receiver.v:85$29'.
+  created $dff cell `$procdff$288' with positive edge clock.
+Creating register for signal `\uart_receiver.$formal$./uart_receiver.v:104$18_CHECK' using process `\uart_receiver.$proc$./uart_receiver.v:85$29'.
+  created $dff cell `$procdff$289' with positive edge clock.
+Creating register for signal `\uart_receiver.$formal$./uart_receiver.v:104$18_EN' using process `\uart_receiver.$proc$./uart_receiver.v:85$29'.
+  created $dff cell `$procdff$290' with positive edge clock.
+Creating register for signal `\uart_receiver.$formal$./uart_receiver.v:108$19_CHECK' using process `\uart_receiver.$proc$./uart_receiver.v:85$29'.
+  created $dff cell `$procdff$291' with positive edge clock.
+Creating register for signal `\uart_receiver.$formal$./uart_receiver.v:108$19_EN' using process `\uart_receiver.$proc$./uart_receiver.v:85$29'.
+  created $dff cell `$procdff$292' with positive edge clock.
+Creating register for signal `\uart_receiver.$formal$./uart_receiver.v:109$20_CHECK' using process `\uart_receiver.$proc$./uart_receiver.v:85$29'.
+  created $dff cell `$procdff$293' with positive edge clock.
+Creating register for signal `\uart_receiver.$formal$./uart_receiver.v:109$20_EN' using process `\uart_receiver.$proc$./uart_receiver.v:85$29'.
+  created $dff cell `$procdff$294' with positive edge clock.
+Creating register for signal `\uart_receiver.$formal$./uart_receiver.v:110$21_CHECK' using process `\uart_receiver.$proc$./uart_receiver.v:85$29'.
+  created $dff cell `$procdff$295' with positive edge clock.
+Creating register for signal `\uart_receiver.$formal$./uart_receiver.v:110$21_EN' using process `\uart_receiver.$proc$./uart_receiver.v:85$29'.
+  created $dff cell `$procdff$296' with positive edge clock.
+Creating register for signal `\uart_receiver.\o_RX_DONE' using process `\uart_receiver.$proc$./uart_receiver.v:54$26'.
+  created $dff cell `$procdff$297' with positive edge clock.
+Creating register for signal `\uart_receiver.\o_DATA' using process `\uart_receiver.$proc$./uart_receiver.v:54$26'.
+  created $dff cell `$procdff$298' with positive edge clock.
+Creating register for signal `\uart_receiver.\r_BIT_COUNT' using process `\uart_receiver.$proc$./uart_receiver.v:54$26'.
+  created $dff cell `$procdff$299' with positive edge clock.
+Creating register for signal `\uart_receiver.\r_DATA_REG' using process `\uart_receiver.$proc$./uart_receiver.v:54$26'.
+  created $dff cell `$procdff$300' with positive edge clock.
+Creating register for signal `\uart_receiver.\r_CURRENT_STATE' using process `\uart_receiver.$proc$./uart_receiver.v:49$25'.
+  created $dff cell `$procdff$301' with positive edge clock.
+
+2.3.9. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Removing empty process `uart_receiver.$proc$./uart_receiver.v:110$122'.
+Removing empty process `uart_receiver.$proc$./uart_receiver.v:109$120'.
+Removing empty process `uart_receiver.$proc$./uart_receiver.v:108$118'.
+Removing empty process `uart_receiver.$proc$./uart_receiver.v:104$116'.
+Removing empty process `uart_receiver.$proc$./uart_receiver.v:103$114'.
+Removing empty process `uart_receiver.$proc$./uart_receiver.v:101$112'.
+Removing empty process `uart_receiver.$proc$./uart_receiver.v:97$110'.
+Removing empty process `uart_receiver.$proc$./uart_receiver.v:96$108'.
+Removing empty process `uart_receiver.$proc$./uart_receiver.v:95$106'.
+Removing empty process `uart_receiver.$proc$./uart_receiver.v:92$104'.
+Removing empty process `uart_receiver.$proc$./uart_receiver.v:91$102'.
+Removing empty process `uart_receiver.$proc$./uart_receiver.v:87$100'.
+Removing empty process `uart_receiver.$proc$./uart_receiver.v:84$99'.
+Removing empty process `uart_receiver.$proc$./uart_receiver.v:19$98'.
+Found and cleaned up 4 empty switches in `\uart_receiver.$proc$./uart_receiver.v:85$29'.
+Removing empty process `uart_receiver.$proc$./uart_receiver.v:85$29'.
+Found and cleaned up 1 empty switch in `\uart_receiver.$proc$./uart_receiver.v:54$26'.
+Removing empty process `uart_receiver.$proc$./uart_receiver.v:54$26'.
+Removing empty process `uart_receiver.$proc$./uart_receiver.v:49$25'.
+Found and cleaned up 3 empty switches in `\uart_receiver.$proc$./uart_receiver.v:25$22'.
+Removing empty process `uart_receiver.$proc$./uart_receiver.v:25$22'.
+Cleaned up 8 empty switches.
+
+2.4. Executing OPT_EXPR pass (perform const folding).
+Optimizing module uart_receiver.
+<suppressed ~25 debug messages>
+
+2.5. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \uart_receiver..
+Removed 3 unused cells and 114 unused wires.
+<suppressed ~4 debug messages>
+
+2.6. Executing CHECK pass (checking for obvious problems).
+checking module uart_receiver..
+found and reported 0 problems.
+
+2.7. Executing OPT pass (performing simple optimizations).
+
+2.7.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module uart_receiver.
+
+2.7.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\uart_receiver'.
+<suppressed ~66 debug messages>
+Removed a total of 22 cells.
+
+2.7.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \uart_receiver..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~27 debug messages>
+
+2.7.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \uart_receiver.
+    New ctrl vector for $pmux cell $procmux$204: { $procmux$206_CMP $auto$opt_reduce.cc:134:opt_mux$303 }
+    New ctrl vector for $pmux cell $procmux$208: { $procmux$206_CMP $auto$opt_reduce.cc:134:opt_mux$305 }
+    New ctrl vector for $pmux cell $procmux$212: { $auto$opt_reduce.cc:134:opt_mux$307 $procmux$205_CMP }
+    New ctrl vector for $pmux cell $procmux$216: { $auto$opt_reduce.cc:134:opt_mux$309 $procmux$205_CMP }
+    New ctrl vector for $pmux cell $procmux$236: { $procmux$206_CMP $procmux$205_CMP }
+  Optimizing cells in module \uart_receiver.
+Performed a total of 5 changes.
+
+2.7.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\uart_receiver'.
+<suppressed ~66 debug messages>
+Removed a total of 22 cells.
+
+2.7.6. Executing OPT_RMDFF pass (remove dff with constant values).
+
+2.7.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \uart_receiver..
+Removed 0 unused cells and 44 unused wires.
+<suppressed ~1 debug messages>
+
+2.7.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module uart_receiver.
+
+2.7.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+2.7.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \uart_receiver..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~20 debug messages>
+
+2.7.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \uart_receiver.
+Performed a total of 0 changes.
+
+2.7.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\uart_receiver'.
+Removed a total of 0 cells.
+
+2.7.13. Executing OPT_RMDFF pass (remove dff with constant values).
+
+2.7.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \uart_receiver..
+
+2.7.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module uart_receiver.
+
+2.7.16. Finished OPT passes. (There is nothing left to do.)
+
+2.8. Executing WREDUCE pass (reducing word size of cells).
+Removed top 1 bits (of 4) from port B of cell uart_receiver.$eq$./uart_receiver.v:37$24 ($eq).
+Removed top 31 bits (of 32) from port B of cell uart_receiver.$and$./uart_receiver.v:89$64 ($and).
+Removed top 31 bits (of 32) from port Y of cell uart_receiver.$and$./uart_receiver.v:89$64 ($and).
+Removed top 31 bits (of 32) from port B of cell uart_receiver.$and$./uart_receiver.v:89$66 ($and).
+Removed top 31 bits (of 32) from port Y of cell uart_receiver.$and$./uart_receiver.v:89$66 ($and).
+Removed top 1 bits (of 2) from port B of cell uart_receiver.$eq$./uart_receiver.v:99$77 ($eq).
+Removed top 31 bits (of 32) from port B of cell uart_receiver.$add$./uart_receiver.v:104$80 ($add).
+Removed top 27 bits (of 32) from port Y of cell uart_receiver.$add$./uart_receiver.v:104$80 ($add).
+Removed top 27 bits (of 32) from port B of cell uart_receiver.$eq$./uart_receiver.v:104$81 ($eq).
+Removed top 1 bits (of 2) from port B of cell uart_receiver.$procmux$206_CMP0 ($eq).
+Removed top 1 bits (of 2) from mux cell uart_receiver.$procmux$231 ($mux).
+Removed top 1 bits (of 2) from wire uart_receiver.$2\r_NEXT_STATE[1:0].
+Removed top 27 bits (of 32) from wire uart_receiver.$add$./uart_receiver.v:104$80_Y.
+Removed top 31 bits (of 32) from wire uart_receiver.$and$./uart_receiver.v:89$64_Y.
+Removed top 31 bits (of 32) from wire uart_receiver.$and$./uart_receiver.v:89$66_Y.
+
+2.9. Executing MEMORY_DFF pass (merging $dff cells to $memrd and $memwr).
+
+2.10. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \uart_receiver..
+Removed 0 unused cells and 4 unused wires.
+<suppressed ~1 debug messages>
+
+2.11. Executing MEMORY_COLLECT pass (generating $mem cells).
+
+2.12. Executing OPT pass (performing simple optimizations).
+
+2.12.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module uart_receiver.
+<suppressed ~2 debug messages>
+
+2.12.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\uart_receiver'.
+Removed a total of 0 cells.
+
+2.12.3. Executing OPT_RMDFF pass (remove dff with constant values).
+
+2.12.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \uart_receiver..
+Removed 0 unused cells and 2 unused wires.
+<suppressed ~1 debug messages>
+
+2.12.5. Finished fast OPT passes.
+
+2.13. Printing statistics.
+
+=== uart_receiver ===
+
+   Number of wires:                 92
+   Number of wire bits:            148
+   Number of public wires:           9
+   Number of public wire bits:      28
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                102
+     $add                            2
+     $and                            2
+     $assert                         9
+     $assume                         2
+     $cover                          1
+     $dff                           27
+     $dlatch                         1
+     $eq                             7
+     $logic_and                      3
+     $logic_not                      5
+     $mux                           29
+     $ne                             2
+     $not                            5
+     $pmux                           5
+     $reduce_or                      2
+
+2.14. Executing CHECK pass (checking for obvious problems).
+checking module uart_receiver..
+found and reported 0 problems.
+
+3. Executing MEMORY_NORDFF pass (extracting $dff cells from $mem).
+
+4. Executing ASYNC2SYNC pass.
+Replacing uart_receiver.$auto$proc_dlatch.cc:417:proc_dlatch$262 ($dlatch): EN=$auto$rtlil.cc:1863:Not$261, D=$0\r_NEXT_STATE[1:0], Q=\r_NEXT_STATE
+
+5. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \uart_receiver..
+Removed 2 unused cells and 2 unused wires.
+<suppressed ~3 debug messages>
+
+6. Executing SETUNDEF pass (replace undef values with defined constants).
+
+7. Executing OPT pass (performing simple optimizations).
+
+7.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module uart_receiver.
+<suppressed ~1 debug messages>
+
+7.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\uart_receiver'.
+Removed a total of 0 cells.
+
+7.3. Executing OPT_RMDFF pass (remove dff with constant values).
+
+7.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \uart_receiver..
+Removed 1 unused cells and 1 unused wires.
+<suppressed ~2 debug messages>
+
+7.5. Finished fast OPT passes.
+
+8. Executing CHECK pass (checking for obvious problems).
+checking module uart_receiver..
+found and reported 0 problems.
+
+9. Executing HIERARCHY pass (managing design hierarchy).
+
+9.1. Analyzing design hierarchy..
+Top module:  \uart_receiver
+
+9.2. Analyzing design hierarchy..
+Top module:  \uart_receiver
+Removed 0 unused modules.
+Module uart_receiver directly or indirectly contains formal properties -> setting "keep" attribute.
+
+10. Executing ILANG backend.
+Output filename: ../model/design.il
+
+End of script. Logfile hash: 2c2adcf29b, CPU: user 0.13s system 0.01s, MEM: 13.50 MB peak
+Yosys 0.9+1706 (git sha1 2e8d6ec0b0, g++ 9.2.0 -fPIC -Os)
+Time spent: 26% 7x opt_clean (0 sec), 22% 6x opt_expr (0 sec), ...
