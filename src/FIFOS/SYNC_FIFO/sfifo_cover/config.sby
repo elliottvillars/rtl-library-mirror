@@ -1,0 +1,14 @@
+[engines]
+smtbmc z3
+smtbmc yices
+
+[options]
+mode cover
+depth 100
+
+[files]
+./sync_fifo.v
+
+[script]
+read -formal ./sync_fifo.v
+prep -top sync_fifo

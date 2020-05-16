@@ -16,7 +16,6 @@ reg [3:0] r_BIT_COUNT;
 
 reg [7:0] r_DATA_REG;
 
-//TODO: Fix the tests
 initial begin
 	r_CURRENT_STATE = 0;
 	r_NEXT_STATE = 0;

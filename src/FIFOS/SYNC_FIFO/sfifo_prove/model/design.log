@@ -22,41 +22,17 @@
  Yosys 0.9+1706 (git sha1 2e8d6ec0b0, g++ 9.2.0 -fPIC -Os)
 
 
--- Executing script file `design_smt2.ys' --
+-- Executing script file `../model/design.ys' --
 
-1. Executing ILANG frontend.
-Input filename: design.il
+1. Executing Verilog-2005 frontend: ./sync_fifo.v
+Parsing formal SystemVerilog input from `./sync_fifo.v' to AST representation.
+Storing AST representation for module `$abstract\sync_fifo'.
+Successfully finished Verilog frontend.
 
-2. Printing statistics.
+2. Executing PREP pass.
 
-=== uart_transmitter ===
+2.1. Executing HIERARCHY pass (managing design hierarchy).
 
-   Number of wires:                210
-   Number of wire bits:            267
-   Number of public wires:          11
-   Number of public wire bits:      30
-   Number of memories:               0
-   Number of memory bits:            0
-   Number of processes:              0
-   Number of cells:                228
-     $add                            2
-     $anyseq                        45
-     $assert                        19
-     $assume                         2
-     $cover                          1
-     $dff                           44
-     $eq                            13
-     $logic_and                      8
-     $logic_not                      5
-     $mux                           76
-     $ne                             3
-     $not                            3
-     $pmux                           4
-     $reduce_or                      3
-
-3. Executing SMT2 backend.
-Creating SMT-LIBv2 representation of module uart_transmitter.
-
-End of script. Logfile hash: a2bd05c915, CPU: user 0.01s system 0.00s, MEM: 12.73 MB peak
-Yosys 0.9+1706 (git sha1 2e8d6ec0b0, g++ 9.2.0 -fPIC -Os)
-Time spent: 51% 2x write_smt2 (0 sec), 47% 2x read_ilang (0 sec), ...
+2.2. Executing AST frontend in derive mode using pre-parsed AST for module `\sync_fifo'.
+Generating RTLIL representation for module `\sync_fifo'.
+./sync_fifo.v:28: ERROR: Identifier `\r_MEMORY' does map to an unexpanded memory!

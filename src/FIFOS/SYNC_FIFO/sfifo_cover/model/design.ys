@@ -1,0 +1,13 @@
+# running in sfifo_cover/src/
+read -formal ./sync_fifo.v
+prep -top sync_fifo
+memory_nordff
+async2sync
+chformal -assume -early
+chformal -live -fair -remove
+opt_clean
+setundef -anyseq
+opt -keepdc -fast
+check
+hierarchy -simcheck
+write_ilang ../model/design.il

@@ -8,11 +8,12 @@ $var wire 1 n1 i_CLK_ENABLE $end
 $var wire 8 n2 i_DATA_IN $end
 $var wire 1 n3 i_TX_ENABLE $end
 $var wire 1 n4 o_TX $end
-$var wire 4 n5 r_BIT_COUNT $end
-$var wire 2 n6 r_CURRENT_STATE $end
-$var wire 8 n7 r_DATA_REG $end
-$var wire 2 n8 r_NEXT_STATE $end
-$var wire 1 n9 r_PAST_VALID $end
+$var wire 1 n5 o_TX_BUSY $end
+$var wire 4 n6 r_BIT_COUNT $end
+$var wire 2 n7 r_CURRENT_STATE $end
+$var wire 8 n8 r_DATA_REG $end
+$var wire 2 n9 r_NEXT_STATE $end
+$var wire 1 n10 r_PAST_VALID $end
 $upscope $end
 $enddefinitions $end
 #0
@@ -23,25 +24,27 @@ b1 n1
 b00000000 n2
 b0 n3
 b0 n4
-b0000 n5
-b00 n6
-b00000000 n7
-b00 n8
-b0 n9
+b1 n5
+b0000 n6
+b00 n7
+b00000000 n8
+b00 n9
+b0 n10
 #5
 #10
 1!
 b00000000000000000000000000000001 t
 b1 n0
 b1 n1
-b00001010 n2
+b00001001 n2
 b1 n3
 b1 n4
-b0000 n5
-b00 n6
-b00000000 n7
-b01 n8
-b1 n9
+b0 n5
+b0000 n6
+b00 n7
+b00000000 n8
+b01 n9
+b1 n10
 #15
 #20
 1!
@@ -51,39 +54,42 @@ b1 n1
 b00000000 n2
 b0 n3
 b1 n4
-b0000 n5
-b01 n6
-b00001010 n7
-b10 n8
-b1 n9
+b0 n5
+b0000 n6
+b01 n7
+b00001001 n8
+b10 n9
+b1 n10
 #25
 #30
 1!
 b00000000000000000000000000000011 t
 b1 n0
 b1 n1
-b00000101 n2
+b00000100 n2
 b0 n3
 b0 n4
-b0000 n5
-b10 n6
-b00001010 n7
-b10 n8
-b1 n9
+b1 n5
+b0000 n6
+b10 n7
+b00001001 n8
+b10 n9
+b1 n10
 #35
 #40
 1!
 b00000000000000000000000000000100 t
 b0 n0
 b1 n1
-b00000000 n2
+b00000001 n2
 b0 n3
-b0 n4
-b0001 n5
-b10 n6
-b00000101 n7
-b10 n8
-b1 n9
+b1 n4
+b1 n5
+b0001 n6
+b10 n7
+b00000100 n8
+b10 n9
+b1 n10
 #45
 #50
 1!
@@ -92,12 +98,13 @@ b1 n0
 b1 n1
 b00000001 n2
 b0 n3
-b1 n4
-b0010 n5
-b10 n6
-b00000010 n7
-b10 n8
-b1 n9
+b0 n4
+b1 n5
+b0010 n6
+b10 n7
+b00000010 n8
+b10 n9
+b1 n10
 #55
 #60
 1!
@@ -107,11 +114,12 @@ b1 n1
 b00000000 n2
 b0 n3
 b0 n4
-b0011 n5
-b10 n6
-b00000001 n7
-b10 n8
-b1 n9
+b1 n5
+b0011 n6
+b10 n7
+b00000001 n8
+b10 n9
+b1 n10
 #65
 #70
 1!
@@ -121,11 +129,12 @@ b1 n1
 b00000000 n2
 b0 n3
 b1 n4
-b0100 n5
-b10 n6
-b00000000 n7
-b10 n8
-b1 n9
+b1 n5
+b0100 n6
+b10 n7
+b00000000 n8
+b10 n9
+b1 n10
 #75
 #80
 1!
@@ -135,11 +144,12 @@ b1 n1
 b00000000 n2
 b0 n3
 b0 n4
-b0101 n5
-b10 n6
-b00000000 n7
-b10 n8
-b1 n9
+b1 n5
+b0101 n6
+b10 n7
+b00000000 n8
+b10 n9
+b1 n10
 #85
 #90
 1!
@@ -149,11 +159,12 @@ b1 n1
 b00000000 n2
 b0 n3
 b0 n4
-b0110 n5
-b10 n6
-b00000000 n7
-b10 n8
-b1 n9
+b1 n5
+b0110 n6
+b10 n7
+b00000000 n8
+b10 n9
+b1 n10
 #95
 #100
 1!
@@ -161,41 +172,44 @@ b00000000000000000000000000001010 t
 b0 n0
 b1 n1
 b00000000 n2
-b1 n3
+b0 n3
 b0 n4
-b0111 n5
-b10 n6
-b00000000 n7
-b10 n8
-b1 n9
+b1 n5
+b0111 n6
+b10 n7
+b00000000 n8
+b10 n9
+b1 n10
 #105
 #110
 1!
 b00000000000000000000000000001011 t
 b1 n0
 b1 n1
-b10000000 n2
-b0 n3
+b01000000 n2
+b1 n3
 b0 n4
-b1000 n5
-b10 n6
-b00000000 n7
-b11 n8
-b1 n9
+b1 n5
+b1000 n6
+b10 n7
+b00000000 n8
+b11 n9
+b1 n10
 #115
 #120
 1!
 b00000000000000000000000000001100 t
 b0 n0
 b1 n1
-b00010000 n2
+b01000000 n2
 b0 n3
 b1 n4
-b1001 n5
-b11 n6
-b00000000 n7
-b00 n8
-b1 n9
+b1 n5
+b1001 n6
+b11 n7
+b00000000 n8
+b00 n9
+b1 n10
 #125
 #130
 1!
@@ -205,11 +219,12 @@ b1 n1
 b00000000 n2
 b1 n3
 b1 n4
-b0000 n5
-b00 n6
-b00000000 n7
-b01 n8
-b1 n9
+b1 n5
+b0000 n6
+b00 n7
+b00000000 n8
+b01 n9
+b1 n10
 #135
 #140
 1!
@@ -219,11 +234,12 @@ b1 n1
 b00000000 n2
 b0 n3
 b1 n4
-b0000 n5
-b01 n6
-b00000000 n7
-b10 n8
-b1 n9
+b0 n5
+b0000 n6
+b01 n7
+b00000000 n8
+b10 n9
+b1 n10
 #145
 #150
 1!

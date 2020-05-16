@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites disabled="0" errors="1" failures="0" tests="1" time="0">
+<testsuite disabled="0" errors="1" failures="0" name="sfifo" skipped="0" tests="1" time="0">
+<properties>
+<property name="os" value="posix"/>
+</properties>
+<testcase classname="sfifo" name="prove" status="ERROR" time="0">
+<error message="ERROR" type="ERROR"/>
+<system-out>SBY 23:36:40 [sfifo_prove] Removing directory 'sfifo_prove'.
+SBY 23:36:40 [sfifo_prove] Copy './sync_fifo.v' to 'sfifo_prove/src/sync_fifo.v'.
+SBY 23:36:40 [sfifo_prove] engine_0: smtbmc z3
+SBY 23:36:40 [sfifo_prove] engine_1: smtbmc yices
+SBY 23:36:40 [sfifo_prove] base: starting process &quot;cd sfifo_prove/src; yosys -ql ../model/design.log ../model/design.ys&quot;
+SBY 23:36:40 [sfifo_prove] base: ./sync_fifo.v:28: ERROR: Identifier `\r_MEMORY' does map to an unexpanded memory!
+SBY 23:36:40 [sfifo_prove] base: finished (returncode=1)
+SBY 23:36:40 [sfifo_prove] base: job failed. ERROR.
+SBY 23:36:40 [sfifo_prove] summary: Elapsed clock time [H:MM:SS (secs)]: 0:00:00 (0)
+SBY 23:36:40 [sfifo_prove] summary: Elapsed process time [H:MM:SS (secs)]: 0:00:00 (0)
+SBY 23:36:40 [sfifo_prove] DONE (ERROR, rc=16)
+</system-out></testcase></testsuite></testsuites>

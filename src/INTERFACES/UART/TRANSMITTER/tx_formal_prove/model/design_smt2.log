@@ -31,31 +31,31 @@ Input filename: design.il
 
 === uart_transmitter ===
 
-   Number of wires:                177
-   Number of wire bits:            234
-   Number of public wires:          10
-   Number of public wire bits:      29
+   Number of wires:                203
+   Number of wire bits:            260
+   Number of public wires:          11
+   Number of public wire bits:      30
    Number of memories:               0
    Number of memory bits:            0
    Number of processes:              0
-   Number of cells:                190
+   Number of cells:                220
      $add                            2
-     $anyseq                        35
-     $assert                        15
+     $anyseq                        44
+     $assert                        19
      $assume                         2
-     $dff                           36
+     $dff                           41
      $eq                            13
      $logic_and                      7
      $logic_not                      5
-     $mux                           65
+     $mux                           74
      $ne                             3
-     $not                            2
-     $pmux                           3
-     $reduce_or                      2
+     $not                            3
+     $pmux                           4
+     $reduce_or                      3
 
 3. Executing SMT2 backend.
 Creating SMT-LIBv2 representation of module uart_transmitter.
 
-End of script. Logfile hash: 98290605ec, CPU: user 0.02s system 0.00s, MEM: 12.74 MB peak
+End of script. Logfile hash: 627f043002, CPU: user 0.02s system 0.00s, MEM: 12.86 MB peak
 Yosys 0.9+1706 (git sha1 2e8d6ec0b0, g++ 9.2.0 -fPIC -Os)
-Time spent: 51% 2x write_smt2 (0 sec), 41% 2x read_ilang (0 sec), ...
+Time spent: 52% 2x write_smt2 (0 sec), 46% 2x read_ilang (0 sec), ...

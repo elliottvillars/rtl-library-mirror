@@ -7,18 +7,18 @@
 (declare-fun |uart_transmitter#0| (|uart_transmitter_s|) (_ BitVec 1)) ; \r_PAST_VALID
 (define-fun |uart_transmitter_n r_PAST_VALID| ((state |uart_transmitter_s|)) Bool (= ((_ extract 0 0) (|uart_transmitter#0| state)) #b1))
 ; yosys-smt2-wire r_NEXT_STATE 2
-; yosys-smt2-anyseq uart_transmitter#1 2 $auto$setundef.cc:524:execute$496
-(declare-fun |uart_transmitter#1| (|uart_transmitter_s|) (_ BitVec 2)) ; $auto$rtlil.cc:2358:Anyseq$497
+; yosys-smt2-anyseq uart_transmitter#1 2 $auto$setundef.cc:524:execute$592
+(declare-fun |uart_transmitter#1| (|uart_transmitter_s|) (_ BitVec 2)) ; $auto$rtlil.cc:2358:Anyseq$593
 (declare-fun |uart_transmitter#2| (|uart_transmitter_s|) (_ BitVec 4)) ; \r_BIT_COUNT
-(define-fun |uart_transmitter#3| ((state |uart_transmitter_s|)) Bool (= (|uart_transmitter#2| state) #b1000)) ; $eq$./uart_transmitter.v:140$129_Y
+(define-fun |uart_transmitter#3| ((state |uart_transmitter_s|)) Bool (= (|uart_transmitter#2| state) #b1000)) ; $eq$./uart_transmitter.v:152$145_Y
 (define-fun |uart_transmitter#4| ((state |uart_transmitter_s|)) (_ BitVec 1) (ite (|uart_transmitter#3| state) #b1 #b0)) ; $3\r_NEXT_STATE[1:0] [0]
 (declare-fun |uart_transmitter#5| (|uart_transmitter_s|) (_ BitVec 1)) ; \i_TX_ENABLE
 (define-fun |uart_transmitter#6| ((state |uart_transmitter_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|uart_transmitter#5| state)) #b1) #b1 #b0)) ; $2\r_NEXT_STATE[1:0]
 (declare-fun |uart_transmitter#7| (|uart_transmitter_s|) (_ BitVec 2)) ; \r_CURRENT_STATE
-(define-fun |uart_transmitter#8| ((state |uart_transmitter_s|)) Bool (= (|uart_transmitter#7| state) #b11)) ; $0$past$./uart_transmitter.v:106$3$0[0:0]$46
-(define-fun |uart_transmitter#9| ((state |uart_transmitter_s|)) Bool (= (|uart_transmitter#7| state) #b10)) ; $eq$./uart_transmitter.v:138$124_Y
-(define-fun |uart_transmitter#10| ((state |uart_transmitter_s|)) Bool (= (|uart_transmitter#7| state) #b01)) ; $eq$./uart_transmitter.v:136$122_Y
-(define-fun |uart_transmitter#11| ((state |uart_transmitter_s|)) Bool (not (or  (= ((_ extract 0 0) (|uart_transmitter#7| state)) #b1) (= ((_ extract 1 1) (|uart_transmitter#7| state)) #b1)))) ; $eq$./uart_transmitter.v:106$97_Y
+(define-fun |uart_transmitter#8| ((state |uart_transmitter_s|)) Bool (= (|uart_transmitter#7| state) #b11)) ; $0$past$./uart_transmitter.v:112$3$0[0:0]$50
+(define-fun |uart_transmitter#9| ((state |uart_transmitter_s|)) Bool (= (|uart_transmitter#7| state) #b10)) ; $eq$./uart_transmitter.v:150$140_Y
+(define-fun |uart_transmitter#10| ((state |uart_transmitter_s|)) Bool (= (|uart_transmitter#7| state) #b01)) ; $eq$./uart_transmitter.v:148$138_Y
+(define-fun |uart_transmitter#11| ((state |uart_transmitter_s|)) Bool (not (or  (= ((_ extract 0 0) (|uart_transmitter#7| state)) #b1) (= ((_ extract 1 1) (|uart_transmitter#7| state)) #b1)))) ; $eq$./uart_transmitter.v:112$109_Y
 (define-fun |uart_transmitter#12| ((state |uart_transmitter_s|)) (_ BitVec 2) (ite (|uart_transmitter#11| state) (concat #b0 (|uart_transmitter#6| state)) (ite (|uart_transmitter#10| state) #b10 (ite (|uart_transmitter#9| state) (concat #b1 (|uart_transmitter#4| state)) (ite (|uart_transmitter#8| state) #b00 (|uart_transmitter#1| state)))))) ; \r_NEXT_STATE
 (define-fun |uart_transmitter_n r_NEXT_STATE| ((state |uart_transmitter_s|)) (_ BitVec 2) (|uart_transmitter#12| state))
 ; yosys-smt2-register r_DATA_REG 8
@@ -31,315 +31,370 @@
 ; yosys-smt2-register r_BIT_COUNT 4
 ; yosys-smt2-wire r_BIT_COUNT 4
 (define-fun |uart_transmitter_n r_BIT_COUNT| ((state |uart_transmitter_s|)) (_ BitVec 4) (|uart_transmitter#2| state))
+; yosys-smt2-output o_TX_BUSY 1
+; yosys-smt2-register o_TX_BUSY 1
+; yosys-smt2-wire o_TX_BUSY 1
+(declare-fun |uart_transmitter#14| (|uart_transmitter_s|) (_ BitVec 1)) ; \o_TX_BUSY
+(define-fun |uart_transmitter_n o_TX_BUSY| ((state |uart_transmitter_s|)) Bool (= ((_ extract 0 0) (|uart_transmitter#14| state)) #b1))
 ; yosys-smt2-output o_TX 1
 ; yosys-smt2-register o_TX 1
 ; yosys-smt2-wire o_TX 1
-(declare-fun |uart_transmitter#14| (|uart_transmitter_s|) (_ BitVec 1)) ; \o_TX
-(define-fun |uart_transmitter_n o_TX| ((state |uart_transmitter_s|)) Bool (= ((_ extract 0 0) (|uart_transmitter#14| state)) #b1))
+(declare-fun |uart_transmitter#15| (|uart_transmitter_s|) (_ BitVec 1)) ; \o_TX
+(define-fun |uart_transmitter_n o_TX| ((state |uart_transmitter_s|)) Bool (= ((_ extract 0 0) (|uart_transmitter#15| state)) #b1))
 ; yosys-smt2-input i_TX_ENABLE 1
 ; yosys-smt2-wire i_TX_ENABLE 1
 (define-fun |uart_transmitter_n i_TX_ENABLE| ((state |uart_transmitter_s|)) Bool (= ((_ extract 0 0) (|uart_transmitter#5| state)) #b1))
 ; yosys-smt2-input i_DATA_IN 8
 ; yosys-smt2-wire i_DATA_IN 8
-(declare-fun |uart_transmitter#15| (|uart_transmitter_s|) (_ BitVec 8)) ; \i_DATA_IN
-(define-fun |uart_transmitter_n i_DATA_IN| ((state |uart_transmitter_s|)) (_ BitVec 8) (|uart_transmitter#15| state))
+(declare-fun |uart_transmitter#16| (|uart_transmitter_s|) (_ BitVec 8)) ; \i_DATA_IN
+(define-fun |uart_transmitter_n i_DATA_IN| ((state |uart_transmitter_s|)) (_ BitVec 8) (|uart_transmitter#16| state))
 ; yosys-smt2-input i_CLK_ENABLE 1
 ; yosys-smt2-wire i_CLK_ENABLE 1
-(declare-fun |uart_transmitter#16| (|uart_transmitter_s|) Bool) ; \i_CLK_ENABLE
-(define-fun |uart_transmitter_n i_CLK_ENABLE| ((state |uart_transmitter_s|)) Bool (|uart_transmitter#16| state))
+(declare-fun |uart_transmitter#17| (|uart_transmitter_s|) Bool) ; \i_CLK_ENABLE
+(define-fun |uart_transmitter_n i_CLK_ENABLE| ((state |uart_transmitter_s|)) Bool (|uart_transmitter#17| state))
 ; yosys-smt2-input i_CLK 1
 ; yosys-smt2-wire i_CLK 1
-(declare-fun |uart_transmitter#17| (|uart_transmitter_s|) Bool) ; \i_CLK
-(define-fun |uart_transmitter_n i_CLK| ((state |uart_transmitter_s|)) Bool (|uart_transmitter#17| state))
-; yosys-smt2-register $past$./uart_transmitter.v:123$8$0 4
-(declare-fun |uart_transmitter#18| (|uart_transmitter_s|) (_ BitVec 4)) ; $past$./uart_transmitter.v:123$8$0
-(define-fun |uart_transmitter_n $past$./uart_transmitter.v:123$8$0| ((state |uart_transmitter_s|)) (_ BitVec 4) (|uart_transmitter#18| state))
-; yosys-smt2-register $past$./uart_transmitter.v:120$7$0 1
-(declare-fun |uart_transmitter#19| (|uart_transmitter_s|) (_ BitVec 1)) ; $past$./uart_transmitter.v:120$7$0
-(define-fun |uart_transmitter_n $past$./uart_transmitter.v:120$7$0| ((state |uart_transmitter_s|)) Bool (= ((_ extract 0 0) (|uart_transmitter#19| state)) #b1))
-; yosys-smt2-register $past$./uart_transmitter.v:107$4$0 2
-(declare-fun |uart_transmitter#20| (|uart_transmitter_s|) (_ BitVec 2)) ; $past$./uart_transmitter.v:107$4$0
-(define-fun |uart_transmitter_n $past$./uart_transmitter.v:107$4$0| ((state |uart_transmitter_s|)) (_ BitVec 2) (|uart_transmitter#20| state))
-; yosys-smt2-register $formal$./uart_transmitter.v:143$28_EN 1
-(declare-fun |uart_transmitter#21| (|uart_transmitter_s|) (_ BitVec 1)) ; $formal$./uart_transmitter.v:143$28_EN
-(define-fun |uart_transmitter_n $formal$./uart_transmitter.v:143$28_EN| ((state |uart_transmitter_s|)) Bool (= ((_ extract 0 0) (|uart_transmitter#21| state)) #b1))
-; yosys-smt2-register $formal$./uart_transmitter.v:143$28_CHECK 1
-(declare-fun |uart_transmitter#22| (|uart_transmitter_s|) (_ BitVec 1)) ; $formal$./uart_transmitter.v:143$28_CHECK
-(define-fun |uart_transmitter_n $formal$./uart_transmitter.v:143$28_CHECK| ((state |uart_transmitter_s|)) Bool (= ((_ extract 0 0) (|uart_transmitter#22| state)) #b1))
-; yosys-smt2-register $formal$./uart_transmitter.v:141$27_EN 1
-(declare-fun |uart_transmitter#23| (|uart_transmitter_s|) (_ BitVec 1)) ; $formal$./uart_transmitter.v:141$27_EN
-(define-fun |uart_transmitter_n $formal$./uart_transmitter.v:141$27_EN| ((state |uart_transmitter_s|)) Bool (= ((_ extract 0 0) (|uart_transmitter#23| state)) #b1))
-; yosys-smt2-register $formal$./uart_transmitter.v:141$27_CHECK 1
-(declare-fun |uart_transmitter#24| (|uart_transmitter_s|) (_ BitVec 1)) ; $formal$./uart_transmitter.v:141$27_CHECK
-(define-fun |uart_transmitter_n $formal$./uart_transmitter.v:141$27_CHECK| ((state |uart_transmitter_s|)) Bool (= ((_ extract 0 0) (|uart_transmitter#24| state)) #b1))
-; yosys-smt2-register $formal$./uart_transmitter.v:139$26_EN 1
-(declare-fun |uart_transmitter#25| (|uart_transmitter_s|) (_ BitVec 1)) ; $formal$./uart_transmitter.v:139$26_EN
-(define-fun |uart_transmitter_n $formal$./uart_transmitter.v:139$26_EN| ((state |uart_transmitter_s|)) Bool (= ((_ extract 0 0) (|uart_transmitter#25| state)) #b1))
-; yosys-smt2-register $formal$./uart_transmitter.v:139$26_CHECK 1
-(declare-fun |uart_transmitter#26| (|uart_transmitter_s|) (_ BitVec 1)) ; $formal$./uart_transmitter.v:139$26_CHECK
-(define-fun |uart_transmitter_n $formal$./uart_transmitter.v:139$26_CHECK| ((state |uart_transmitter_s|)) Bool (= ((_ extract 0 0) (|uart_transmitter#26| state)) #b1))
-; yosys-smt2-register $formal$./uart_transmitter.v:137$25_EN 1
-(declare-fun |uart_transmitter#27| (|uart_transmitter_s|) (_ BitVec 1)) ; $formal$./uart_transmitter.v:137$25_EN
-(define-fun |uart_transmitter_n $formal$./uart_transmitter.v:137$25_EN| ((state |uart_transmitter_s|)) Bool (= ((_ extract 0 0) (|uart_transmitter#27| state)) #b1))
-; yosys-smt2-register $formal$./uart_transmitter.v:137$25_CHECK 1
-(declare-fun |uart_transmitter#28| (|uart_transmitter_s|) (_ BitVec 1)) ; $formal$./uart_transmitter.v:137$25_CHECK
-(define-fun |uart_transmitter_n $formal$./uart_transmitter.v:137$25_CHECK| ((state |uart_transmitter_s|)) Bool (= ((_ extract 0 0) (|uart_transmitter#28| state)) #b1))
-; yosys-smt2-register $formal$./uart_transmitter.v:135$24_EN 1
-(declare-fun |uart_transmitter#29| (|uart_transmitter_s|) (_ BitVec 1)) ; $formal$./uart_transmitter.v:135$24_EN
-(define-fun |uart_transmitter_n $formal$./uart_transmitter.v:135$24_EN| ((state |uart_transmitter_s|)) Bool (= ((_ extract 0 0) (|uart_transmitter#29| state)) #b1))
-; yosys-smt2-register $formal$./uart_transmitter.v:135$24_CHECK 1
-(declare-fun |uart_transmitter#30| (|uart_transmitter_s|) (_ BitVec 1)) ; $formal$./uart_transmitter.v:135$24_CHECK
-(define-fun |uart_transmitter_n $formal$./uart_transmitter.v:135$24_CHECK| ((state |uart_transmitter_s|)) Bool (= ((_ extract 0 0) (|uart_transmitter#30| state)) #b1))
-; yosys-smt2-register $formal$./uart_transmitter.v:133$23_EN 1
-(declare-fun |uart_transmitter#31| (|uart_transmitter_s|) (_ BitVec 1)) ; $formal$./uart_transmitter.v:133$23_EN
-(define-fun |uart_transmitter_n $formal$./uart_transmitter.v:133$23_EN| ((state |uart_transmitter_s|)) Bool (= ((_ extract 0 0) (|uart_transmitter#31| state)) #b1))
-; yosys-smt2-register $formal$./uart_transmitter.v:133$23_CHECK 1
-(declare-fun |uart_transmitter#32| (|uart_transmitter_s|) (_ BitVec 1)) ; $formal$./uart_transmitter.v:133$23_CHECK
-(define-fun |uart_transmitter_n $formal$./uart_transmitter.v:133$23_CHECK| ((state |uart_transmitter_s|)) Bool (= ((_ extract 0 0) (|uart_transmitter#32| state)) #b1))
-; yosys-smt2-register $formal$./uart_transmitter.v:128$22_CHECK 1
-(declare-fun |uart_transmitter#33| (|uart_transmitter_s|) (_ BitVec 1)) ; $formal$./uart_transmitter.v:128$22_CHECK
-(define-fun |uart_transmitter_n $formal$./uart_transmitter.v:128$22_CHECK| ((state |uart_transmitter_s|)) Bool (= ((_ extract 0 0) (|uart_transmitter#33| state)) #b1))
-; yosys-smt2-register $formal$./uart_transmitter.v:127$21_EN 1
-(declare-fun |uart_transmitter#34| (|uart_transmitter_s|) (_ BitVec 1)) ; $formal$./uart_transmitter.v:127$21_EN
-(define-fun |uart_transmitter_n $formal$./uart_transmitter.v:127$21_EN| ((state |uart_transmitter_s|)) Bool (= ((_ extract 0 0) (|uart_transmitter#34| state)) #b1))
-; yosys-smt2-register $formal$./uart_transmitter.v:127$21_CHECK 1
-(declare-fun |uart_transmitter#35| (|uart_transmitter_s|) (_ BitVec 1)) ; $formal$./uart_transmitter.v:127$21_CHECK
-(define-fun |uart_transmitter_n $formal$./uart_transmitter.v:127$21_CHECK| ((state |uart_transmitter_s|)) Bool (= ((_ extract 0 0) (|uart_transmitter#35| state)) #b1))
-; yosys-smt2-register $formal$./uart_transmitter.v:123$20_EN 1
-(declare-fun |uart_transmitter#36| (|uart_transmitter_s|) (_ BitVec 1)) ; $formal$./uart_transmitter.v:123$20_EN
-(define-fun |uart_transmitter_n $formal$./uart_transmitter.v:123$20_EN| ((state |uart_transmitter_s|)) Bool (= ((_ extract 0 0) (|uart_transmitter#36| state)) #b1))
-; yosys-smt2-register $formal$./uart_transmitter.v:123$20_CHECK 1
-(declare-fun |uart_transmitter#37| (|uart_transmitter_s|) (_ BitVec 1)) ; $formal$./uart_transmitter.v:123$20_CHECK
-(define-fun |uart_transmitter_n $formal$./uart_transmitter.v:123$20_CHECK| ((state |uart_transmitter_s|)) Bool (= ((_ extract 0 0) (|uart_transmitter#37| state)) #b1))
-; yosys-smt2-register $formal$./uart_transmitter.v:122$19_EN 1
-(declare-fun |uart_transmitter#38| (|uart_transmitter_s|) (_ BitVec 1)) ; $formal$./uart_transmitter.v:122$19_EN
-(define-fun |uart_transmitter_n $formal$./uart_transmitter.v:122$19_EN| ((state |uart_transmitter_s|)) Bool (= ((_ extract 0 0) (|uart_transmitter#38| state)) #b1))
-; yosys-smt2-register $formal$./uart_transmitter.v:122$19_CHECK 1
-(declare-fun |uart_transmitter#39| (|uart_transmitter_s|) (_ BitVec 1)) ; $formal$./uart_transmitter.v:122$19_CHECK
-(define-fun |uart_transmitter_n $formal$./uart_transmitter.v:122$19_CHECK| ((state |uart_transmitter_s|)) Bool (= ((_ extract 0 0) (|uart_transmitter#39| state)) #b1))
-; yosys-smt2-register $formal$./uart_transmitter.v:120$18_EN 1
-(declare-fun |uart_transmitter#40| (|uart_transmitter_s|) (_ BitVec 1)) ; $formal$./uart_transmitter.v:120$18_EN
-(define-fun |uart_transmitter_n $formal$./uart_transmitter.v:120$18_EN| ((state |uart_transmitter_s|)) Bool (= ((_ extract 0 0) (|uart_transmitter#40| state)) #b1))
-; yosys-smt2-register $formal$./uart_transmitter.v:120$18_CHECK 1
-(declare-fun |uart_transmitter#41| (|uart_transmitter_s|) (_ BitVec 1)) ; $formal$./uart_transmitter.v:120$18_CHECK
-(define-fun |uart_transmitter_n $formal$./uart_transmitter.v:120$18_CHECK| ((state |uart_transmitter_s|)) Bool (= ((_ extract 0 0) (|uart_transmitter#41| state)) #b1))
-; yosys-smt2-register $formal$./uart_transmitter.v:115$17_CHECK 1
-(declare-fun |uart_transmitter#42| (|uart_transmitter_s|) (_ BitVec 1)) ; $formal$./uart_transmitter.v:115$17_CHECK
-(define-fun |uart_transmitter_n $formal$./uart_transmitter.v:115$17_CHECK| ((state |uart_transmitter_s|)) Bool (= ((_ extract 0 0) (|uart_transmitter#42| state)) #b1))
-; yosys-smt2-register $formal$./uart_transmitter.v:114$16_EN 1
-(declare-fun |uart_transmitter#43| (|uart_transmitter_s|) (_ BitVec 1)) ; $formal$./uart_transmitter.v:114$16_EN
-(define-fun |uart_transmitter_n $formal$./uart_transmitter.v:114$16_EN| ((state |uart_transmitter_s|)) Bool (= ((_ extract 0 0) (|uart_transmitter#43| state)) #b1))
-; yosys-smt2-register $formal$./uart_transmitter.v:114$16_CHECK 1
-(declare-fun |uart_transmitter#44| (|uart_transmitter_s|) (_ BitVec 1)) ; $formal$./uart_transmitter.v:114$16_CHECK
-(define-fun |uart_transmitter_n $formal$./uart_transmitter.v:114$16_CHECK| ((state |uart_transmitter_s|)) Bool (= ((_ extract 0 0) (|uart_transmitter#44| state)) #b1))
-; yosys-smt2-register $formal$./uart_transmitter.v:110$15_CHECK 1
-(declare-fun |uart_transmitter#45| (|uart_transmitter_s|) (_ BitVec 1)) ; $formal$./uart_transmitter.v:110$15_CHECK
-(define-fun |uart_transmitter_n $formal$./uart_transmitter.v:110$15_CHECK| ((state |uart_transmitter_s|)) Bool (= ((_ extract 0 0) (|uart_transmitter#45| state)) #b1))
-; yosys-smt2-register $formal$./uart_transmitter.v:109$14_EN 1
-(declare-fun |uart_transmitter#46| (|uart_transmitter_s|) (_ BitVec 1)) ; $formal$./uart_transmitter.v:109$14_EN
-(define-fun |uart_transmitter_n $formal$./uart_transmitter.v:109$14_EN| ((state |uart_transmitter_s|)) Bool (= ((_ extract 0 0) (|uart_transmitter#46| state)) #b1))
-; yosys-smt2-register $formal$./uart_transmitter.v:109$14_CHECK 1
-(declare-fun |uart_transmitter#47| (|uart_transmitter_s|) (_ BitVec 1)) ; $formal$./uart_transmitter.v:109$14_CHECK
-(define-fun |uart_transmitter_n $formal$./uart_transmitter.v:109$14_CHECK| ((state |uart_transmitter_s|)) Bool (= ((_ extract 0 0) (|uart_transmitter#47| state)) #b1))
-; yosys-smt2-register $and$./uart_transmitter.v:105$92_Y 1
-(declare-fun |uart_transmitter#48| (|uart_transmitter_s|) (_ BitVec 1)) ; $and$./uart_transmitter.v:105$92_Y
-(define-fun |uart_transmitter_n $and$./uart_transmitter.v:105$92_Y| ((state |uart_transmitter_s|)) Bool (= ((_ extract 0 0) (|uart_transmitter#48| state)) #b1))
-(define-fun |uart_transmitter#49| ((state |uart_transmitter_s|)) Bool (distinct (|uart_transmitter#48| state) (ite (|uart_transmitter#17| state) #b1 #b0))) ; $0$formal$./uart_transmitter.v:103$12_CHECK[0:0]$56
-; yosys-smt2-assume 0 ./uart_transmitter.v:103
-(define-fun |uart_transmitter_u 0| ((state |uart_transmitter_s|)) Bool (or (|uart_transmitter#49| state) (not true))) ; $assume$./uart_transmitter.v:103$136
-; yosys-smt2-assume 1 ./uart_transmitter.v:102
-(define-fun |uart_transmitter_u 1| ((state |uart_transmitter_s|)) Bool (or (|uart_transmitter#16| state) (not true))) ; $assume$./uart_transmitter.v:102$135
-; yosys-smt2-assert 0 ./uart_transmitter.v:143
-(define-fun |uart_transmitter_a 0| ((state |uart_transmitter_s|)) Bool (or (= ((_ extract 0 0) (|uart_transmitter#22| state)) #b1) (not (= ((_ extract 0 0) (|uart_transmitter#21| state)) #b1)))) ; $assert$./uart_transmitter.v:143$152
-; yosys-smt2-assert 1 ./uart_transmitter.v:141
-(define-fun |uart_transmitter_a 1| ((state |uart_transmitter_s|)) Bool (or (= ((_ extract 0 0) (|uart_transmitter#24| state)) #b1) (not (= ((_ extract 0 0) (|uart_transmitter#23| state)) #b1)))) ; $assert$./uart_transmitter.v:141$151
-; yosys-smt2-assert 2 ./uart_transmitter.v:139
-(define-fun |uart_transmitter_a 2| ((state |uart_transmitter_s|)) Bool (or (= ((_ extract 0 0) (|uart_transmitter#26| state)) #b1) (not (= ((_ extract 0 0) (|uart_transmitter#25| state)) #b1)))) ; $assert$./uart_transmitter.v:139$150
-; yosys-smt2-assert 3 ./uart_transmitter.v:137
-(define-fun |uart_transmitter_a 3| ((state |uart_transmitter_s|)) Bool (or (= ((_ extract 0 0) (|uart_transmitter#28| state)) #b1) (not (= ((_ extract 0 0) (|uart_transmitter#27| state)) #b1)))) ; $assert$./uart_transmitter.v:137$149
-; yosys-smt2-assert 4 ./uart_transmitter.v:135
-(define-fun |uart_transmitter_a 4| ((state |uart_transmitter_s|)) Bool (or (= ((_ extract 0 0) (|uart_transmitter#30| state)) #b1) (not (= ((_ extract 0 0) (|uart_transmitter#29| state)) #b1)))) ; $assert$./uart_transmitter.v:135$148
-; yosys-smt2-assert 5 ./uart_transmitter.v:133
-(define-fun |uart_transmitter_a 5| ((state |uart_transmitter_s|)) Bool (or (= ((_ extract 0 0) (|uart_transmitter#32| state)) #b1) (not (= ((_ extract 0 0) (|uart_transmitter#31| state)) #b1)))) ; $assert$./uart_transmitter.v:133$147
-; yosys-smt2-assert 6 ./uart_transmitter.v:128
-(define-fun |uart_transmitter_a 6| ((state |uart_transmitter_s|)) Bool (or (= ((_ extract 0 0) (|uart_transmitter#33| state)) #b1) (not (= ((_ extract 0 0) (|uart_transmitter#34| state)) #b1)))) ; $assert$./uart_transmitter.v:128$146
-; yosys-smt2-assert 7 ./uart_transmitter.v:127
-(define-fun |uart_transmitter_a 7| ((state |uart_transmitter_s|)) Bool (or (= ((_ extract 0 0) (|uart_transmitter#35| state)) #b1) (not (= ((_ extract 0 0) (|uart_transmitter#34| state)) #b1)))) ; $assert$./uart_transmitter.v:127$145
-; yosys-smt2-assert 8 ./uart_transmitter.v:123
-(define-fun |uart_transmitter_a 8| ((state |uart_transmitter_s|)) Bool (or (= ((_ extract 0 0) (|uart_transmitter#37| state)) #b1) (not (= ((_ extract 0 0) (|uart_transmitter#36| state)) #b1)))) ; $assert$./uart_transmitter.v:123$144
-; yosys-smt2-assert 9 ./uart_transmitter.v:122
-(define-fun |uart_transmitter_a 9| ((state |uart_transmitter_s|)) Bool (or (= ((_ extract 0 0) (|uart_transmitter#39| state)) #b1) (not (= ((_ extract 0 0) (|uart_transmitter#38| state)) #b1)))) ; $assert$./uart_transmitter.v:122$143
-; yosys-smt2-assert 10 ./uart_transmitter.v:120
-(define-fun |uart_transmitter_a 10| ((state |uart_transmitter_s|)) Bool (or (= ((_ extract 0 0) (|uart_transmitter#41| state)) #b1) (not (= ((_ extract 0 0) (|uart_transmitter#40| state)) #b1)))) ; $assert$./uart_transmitter.v:120$142
-; yosys-smt2-assert 11 ./uart_transmitter.v:115
-(define-fun |uart_transmitter_a 11| ((state |uart_transmitter_s|)) Bool (or (= ((_ extract 0 0) (|uart_transmitter#42| state)) #b1) (not (= ((_ extract 0 0) (|uart_transmitter#43| state)) #b1)))) ; $assert$./uart_transmitter.v:115$141
-; yosys-smt2-assert 12 ./uart_transmitter.v:114
-(define-fun |uart_transmitter_a 12| ((state |uart_transmitter_s|)) Bool (or (= ((_ extract 0 0) (|uart_transmitter#44| state)) #b1) (not (= ((_ extract 0 0) (|uart_transmitter#43| state)) #b1)))) ; $assert$./uart_transmitter.v:114$140
-; yosys-smt2-assert 13 ./uart_transmitter.v:110
-(define-fun |uart_transmitter_a 13| ((state |uart_transmitter_s|)) Bool (or (= ((_ extract 0 0) (|uart_transmitter#45| state)) #b1) (not (= ((_ extract 0 0) (|uart_transmitter#46| state)) #b1)))) ; $assert$./uart_transmitter.v:110$139
-; yosys-smt2-assert 14 ./uart_transmitter.v:109
-(define-fun |uart_transmitter_a 14| ((state |uart_transmitter_s|)) Bool (or (= ((_ extract 0 0) (|uart_transmitter#47| state)) #b1) (not (= ((_ extract 0 0) (|uart_transmitter#46| state)) #b1)))) ; $assert$./uart_transmitter.v:109$138
-; yosys-smt2-anyseq uart_transmitter#50 1 $auto$setundef.cc:524:execute$430
-(declare-fun |uart_transmitter#50| (|uart_transmitter_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2358:Anyseq$431
-; yosys-smt2-anyseq uart_transmitter#51 1 $auto$setundef.cc:524:execute$428
-(declare-fun |uart_transmitter#51| (|uart_transmitter_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2358:Anyseq$429
-(define-fun |uart_transmitter#52| ((state |uart_transmitter_s|)) Bool (not (or  (= ((_ extract 0 0) (|uart_transmitter#20| state)) #b1) (= ((_ extract 1 1) (|uart_transmitter#20| state)) #b1)))) ; $eq$./uart_transmitter.v:107$99_Y
-(define-fun |uart_transmitter#53| ((state |uart_transmitter_s|)) (_ BitVec 1) (ite (|uart_transmitter#52| state) (|uart_transmitter#14| state) (|uart_transmitter#51| state))) ; $procmux$199_Y
-(define-fun |uart_transmitter#54| ((state |uart_transmitter_s|)) Bool (not (or  (= ((_ extract 0 0) (|uart_transmitter#48| state)) #b1) false false false false false false false false false false false false false false false false false false false false false false false false false false false false false false false))) ; $logic_not$./uart_transmitter.v:105$93_Y
-(define-fun |uart_transmitter#55| ((state |uart_transmitter_s|)) Bool (and (or  (|uart_transmitter#54| state) false) (or  (|uart_transmitter#17| state) false false false false false false false false false false false false false false false false false false false false false false false false false false false false false false false))) ; $logic_and$./uart_transmitter.v:105$95_Y
-(define-fun |uart_transmitter#56| ((state |uart_transmitter_s|)) Bool (and (or  (= ((_ extract 0 0) (|uart_transmitter#0| state)) #b1) false) (or  (|uart_transmitter#55| state) false))) ; $logic_and$./uart_transmitter.v:105$96_Y
-(define-fun |uart_transmitter#57| ((state |uart_transmitter_s|)) (_ BitVec 1) (ite (|uart_transmitter#56| state) (|uart_transmitter#53| state) (|uart_transmitter#50| state))) ; $0$formal$./uart_transmitter.v:109$14_CHECK[0:0]$60
-(define-fun |uart_transmitter#58| ((state |uart_transmitter_s|)) (_ BitVec 1) (ite (|uart_transmitter#52| state) #b1 #b0)) ; $procmux$195_Y
-(define-fun |uart_transmitter#59| ((state |uart_transmitter_s|)) (_ BitVec 1) (ite (|uart_transmitter#56| state) (|uart_transmitter#58| state) #b0)) ; $0$formal$./uart_transmitter.v:109$14_EN[0:0]$61
-; yosys-smt2-anyseq uart_transmitter#60 1 $auto$setundef.cc:524:execute$434
-(declare-fun |uart_transmitter#60| (|uart_transmitter_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2358:Anyseq$435
-; yosys-smt2-anyseq uart_transmitter#61 1 $auto$setundef.cc:524:execute$432
-(declare-fun |uart_transmitter#61| (|uart_transmitter_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2358:Anyseq$433
-(define-fun |uart_transmitter#62| ((state |uart_transmitter_s|)) Bool (not (or  (= ((_ extract 0 0) (|uart_transmitter#2| state)) #b1) (= ((_ extract 1 1) (|uart_transmitter#2| state)) #b1) (= ((_ extract 2 2) (|uart_transmitter#2| state)) #b1) (= ((_ extract 3 3) (|uart_transmitter#2| state)) #b1)))) ; $eq$./uart_transmitter.v:110$101_Y
-(define-fun |uart_transmitter#63| ((state |uart_transmitter_s|)) (_ BitVec 1) (ite (|uart_transmitter#52| state) (ite (|uart_transmitter#62| state) #b1 #b0) (|uart_transmitter#61| state))) ; $procmux$207_Y
-(define-fun |uart_transmitter#64| ((state |uart_transmitter_s|)) (_ BitVec 1) (ite (|uart_transmitter#56| state) (|uart_transmitter#63| state) (|uart_transmitter#60| state))) ; $0$formal$./uart_transmitter.v:110$15_CHECK[0:0]$62
-; yosys-smt2-anyseq uart_transmitter#65 1 $auto$setundef.cc:524:execute$438
-(declare-fun |uart_transmitter#65| (|uart_transmitter_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2358:Anyseq$439
-; yosys-smt2-anyseq uart_transmitter#66 1 $auto$setundef.cc:524:execute$436
-(declare-fun |uart_transmitter#66| (|uart_transmitter_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2358:Anyseq$437
-(define-fun |uart_transmitter#67| ((state |uart_transmitter_s|)) (_ BitVec 1) (bvnot (|uart_transmitter#14| state))) ; $eq$./uart_transmitter.v:114$103_Y
-(define-fun |uart_transmitter#68| ((state |uart_transmitter_s|)) Bool (= (|uart_transmitter#20| state) #b01)) ; $eq$./uart_transmitter.v:112$102_Y
-(define-fun |uart_transmitter#69| ((state |uart_transmitter_s|)) (_ BitVec 1) (ite (|uart_transmitter#68| state) (|uart_transmitter#67| state) (|uart_transmitter#66| state))) ; $procmux$215_Y
-(define-fun |uart_transmitter#70| ((state |uart_transmitter_s|)) (_ BitVec 1) (ite (|uart_transmitter#56| state) (|uart_transmitter#69| state) (|uart_transmitter#65| state))) ; $0$formal$./uart_transmitter.v:114$16_CHECK[0:0]$64
-(define-fun |uart_transmitter#71| ((state |uart_transmitter_s|)) (_ BitVec 1) (ite (|uart_transmitter#68| state) #b1 #b0)) ; $procmux$211_Y
-(define-fun |uart_transmitter#72| ((state |uart_transmitter_s|)) (_ BitVec 1) (ite (|uart_transmitter#56| state) (|uart_transmitter#71| state) #b0)) ; $0$formal$./uart_transmitter.v:114$16_EN[0:0]$65
-; yosys-smt2-anyseq uart_transmitter#73 1 $auto$setundef.cc:524:execute$442
-(declare-fun |uart_transmitter#73| (|uart_transmitter_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2358:Anyseq$443
-; yosys-smt2-anyseq uart_transmitter#74 1 $auto$setundef.cc:524:execute$440
-(declare-fun |uart_transmitter#74| (|uart_transmitter_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2358:Anyseq$441
-(define-fun |uart_transmitter#75| ((state |uart_transmitter_s|)) (_ BitVec 1) (ite (|uart_transmitter#68| state) (ite (|uart_transmitter#62| state) #b1 #b0) (|uart_transmitter#74| state))) ; $procmux$223_Y
-(define-fun |uart_transmitter#76| ((state |uart_transmitter_s|)) (_ BitVec 1) (ite (|uart_transmitter#56| state) (|uart_transmitter#75| state) (|uart_transmitter#73| state))) ; $0$formal$./uart_transmitter.v:115$17_CHECK[0:0]$66
-; yosys-smt2-anyseq uart_transmitter#77 1 $auto$setundef.cc:524:execute$448
-(declare-fun |uart_transmitter#77| (|uart_transmitter_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2358:Anyseq$449
-; yosys-smt2-anyseq uart_transmitter#78 1 $auto$setundef.cc:524:execute$446
-(declare-fun |uart_transmitter#78| (|uart_transmitter_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2358:Anyseq$447
-; yosys-smt2-anyseq uart_transmitter#79 1 $auto$setundef.cc:524:execute$444
-(declare-fun |uart_transmitter#79| (|uart_transmitter_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2358:Anyseq$445
-(define-fun |uart_transmitter#80| ((state |uart_transmitter_s|)) Bool (= (|uart_transmitter#14| state) (|uart_transmitter#19| state))) ; $eq$./uart_transmitter.v:120$107_Y
-(define-fun |uart_transmitter#81| ((state |uart_transmitter_s|)) Bool (distinct (|uart_transmitter#2| state) #b1001)) ; $ne$./uart_transmitter.v:119$106_Y
-(define-fun |uart_transmitter#82| ((state |uart_transmitter_s|)) (_ BitVec 1) (ite (|uart_transmitter#81| state) (ite (|uart_transmitter#80| state) #b1 #b0) (|uart_transmitter#79| state))) ; $procmux$235_Y
-(define-fun |uart_transmitter#83| ((state |uart_transmitter_s|)) Bool (= (|uart_transmitter#20| state) #b10)) ; $eq$./uart_transmitter.v:117$105_Y
-(define-fun |uart_transmitter#84| ((state |uart_transmitter_s|)) (_ BitVec 1) (ite (|uart_transmitter#83| state) (|uart_transmitter#82| state) (|uart_transmitter#78| state))) ; $procmux$237_Y
-(define-fun |uart_transmitter#85| ((state |uart_transmitter_s|)) (_ BitVec 1) (ite (|uart_transmitter#56| state) (|uart_transmitter#84| state) (|uart_transmitter#77| state))) ; $0$formal$./uart_transmitter.v:120$18_CHECK[0:0]$68
-(define-fun |uart_transmitter#86| ((state |uart_transmitter_s|)) (_ BitVec 1) (ite (|uart_transmitter#81| state) #b1 #b0)) ; $procmux$228_Y
-(define-fun |uart_transmitter#87| ((state |uart_transmitter_s|)) (_ BitVec 1) (ite (|uart_transmitter#83| state) (|uart_transmitter#86| state) #b0)) ; $procmux$230_Y
-(define-fun |uart_transmitter#88| ((state |uart_transmitter_s|)) (_ BitVec 1) (ite (|uart_transmitter#56| state) (|uart_transmitter#87| state) #b0)) ; $0$formal$./uart_transmitter.v:120$18_EN[0:0]$69
-; yosys-smt2-anyseq uart_transmitter#89 1 $auto$setundef.cc:524:execute$454
-(declare-fun |uart_transmitter#89| (|uart_transmitter_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2358:Anyseq$455
-; yosys-smt2-anyseq uart_transmitter#90 1 $auto$setundef.cc:524:execute$452
-(declare-fun |uart_transmitter#90| (|uart_transmitter_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2358:Anyseq$453
-; yosys-smt2-anyseq uart_transmitter#91 1 $auto$setundef.cc:524:execute$450
-(declare-fun |uart_transmitter#91| (|uart_transmitter_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2358:Anyseq$451
-(define-fun |uart_transmitter#92| ((state |uart_transmitter_s|)) (_ BitVec 1) (ite (|uart_transmitter#81| state) (|uart_transmitter#91| state) (|uart_transmitter#14| state))) ; $procmux$249_Y
-(define-fun |uart_transmitter#93| ((state |uart_transmitter_s|)) (_ BitVec 1) (ite (|uart_transmitter#83| state) (|uart_transmitter#92| state) (|uart_transmitter#90| state))) ; $procmux$251_Y
-(define-fun |uart_transmitter#94| ((state |uart_transmitter_s|)) (_ BitVec 1) (ite (|uart_transmitter#56| state) (|uart_transmitter#93| state) (|uart_transmitter#89| state))) ; $0$formal$./uart_transmitter.v:122$19_CHECK[0:0]$70
-(define-fun |uart_transmitter#95| ((state |uart_transmitter_s|)) (_ BitVec 1) (ite (|uart_transmitter#81| state) #b0 #b1)) ; $procmux$242_Y
-(define-fun |uart_transmitter#96| ((state |uart_transmitter_s|)) (_ BitVec 1) (ite (|uart_transmitter#83| state) (|uart_transmitter#95| state) #b0)) ; $procmux$244_Y
-(define-fun |uart_transmitter#97| ((state |uart_transmitter_s|)) (_ BitVec 1) (ite (|uart_transmitter#56| state) (|uart_transmitter#96| state) #b0)) ; $0$formal$./uart_transmitter.v:122$19_EN[0:0]$71
-; yosys-smt2-anyseq uart_transmitter#98 1 $auto$setundef.cc:524:execute$458
-(declare-fun |uart_transmitter#98| (|uart_transmitter_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2358:Anyseq$459
-; yosys-smt2-anyseq uart_transmitter#99 1 $auto$setundef.cc:524:execute$456
-(declare-fun |uart_transmitter#99| (|uart_transmitter_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2358:Anyseq$457
-(define-fun |uart_transmitter#100| ((state |uart_transmitter_s|)) (_ BitVec 5) (bvadd (concat #b0 (|uart_transmitter#18| state)) #b00001)) ; $add$./uart_transmitter.v:123$109_Y
-(define-fun |uart_transmitter#101| ((state |uart_transmitter_s|)) Bool (= (concat #b0 (|uart_transmitter#2| state)) (|uart_transmitter#100| state))) ; $eq$./uart_transmitter.v:123$110_Y
-(define-fun |uart_transmitter#102| ((state |uart_transmitter_s|)) (_ BitVec 1) (ite (|uart_transmitter#83| state) (ite (|uart_transmitter#101| state) #b1 #b0) (|uart_transmitter#99| state))) ; $procmux$259_Y
-(define-fun |uart_transmitter#103| ((state |uart_transmitter_s|)) (_ BitVec 1) (ite (|uart_transmitter#56| state) (|uart_transmitter#102| state) (|uart_transmitter#98| state))) ; $0$formal$./uart_transmitter.v:123$20_CHECK[0:0]$72
-(define-fun |uart_transmitter#104| ((state |uart_transmitter_s|)) (_ BitVec 1) (ite (|uart_transmitter#83| state) #b1 #b0)) ; $procmux$255_Y
-(define-fun |uart_transmitter#105| ((state |uart_transmitter_s|)) (_ BitVec 1) (ite (|uart_transmitter#56| state) (|uart_transmitter#104| state) #b0)) ; $0$formal$./uart_transmitter.v:123$20_EN[0:0]$73
-; yosys-smt2-anyseq uart_transmitter#106 1 $auto$setundef.cc:524:execute$462
-(declare-fun |uart_transmitter#106| (|uart_transmitter_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2358:Anyseq$463
-; yosys-smt2-anyseq uart_transmitter#107 1 $auto$setundef.cc:524:execute$460
-(declare-fun |uart_transmitter#107| (|uart_transmitter_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2358:Anyseq$461
-(define-fun |uart_transmitter#108| ((state |uart_transmitter_s|)) Bool (= (|uart_transmitter#20| state) #b11)) ; $eq$./uart_transmitter.v:125$111_Y
-(define-fun |uart_transmitter#109| ((state |uart_transmitter_s|)) (_ BitVec 1) (ite (|uart_transmitter#108| state) (|uart_transmitter#14| state) (|uart_transmitter#107| state))) ; $procmux$267_Y
-(define-fun |uart_transmitter#110| ((state |uart_transmitter_s|)) (_ BitVec 1) (ite (|uart_transmitter#56| state) (|uart_transmitter#109| state) (|uart_transmitter#106| state))) ; $0$formal$./uart_transmitter.v:127$21_CHECK[0:0]$74
-(define-fun |uart_transmitter#111| ((state |uart_transmitter_s|)) (_ BitVec 1) (ite (|uart_transmitter#108| state) #b1 #b0)) ; $procmux$263_Y
-(define-fun |uart_transmitter#112| ((state |uart_transmitter_s|)) (_ BitVec 1) (ite (|uart_transmitter#56| state) (|uart_transmitter#111| state) #b0)) ; $0$formal$./uart_transmitter.v:127$21_EN[0:0]$75
-; yosys-smt2-anyseq uart_transmitter#113 1 $auto$setundef.cc:524:execute$466
-(declare-fun |uart_transmitter#113| (|uart_transmitter_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2358:Anyseq$467
-; yosys-smt2-anyseq uart_transmitter#114 1 $auto$setundef.cc:524:execute$464
-(declare-fun |uart_transmitter#114| (|uart_transmitter_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2358:Anyseq$465
-(define-fun |uart_transmitter#115| ((state |uart_transmitter_s|)) Bool (= (|uart_transmitter#18| state) #b1001)) ; $eq$./uart_transmitter.v:128$113_Y
-(define-fun |uart_transmitter#116| ((state |uart_transmitter_s|)) (_ BitVec 1) (ite (|uart_transmitter#108| state) (ite (|uart_transmitter#115| state) #b1 #b0) (|uart_transmitter#114| state))) ; $procmux$275_Y
-(define-fun |uart_transmitter#117| ((state |uart_transmitter_s|)) (_ BitVec 1) (ite (|uart_transmitter#56| state) (|uart_transmitter#116| state) (|uart_transmitter#113| state))) ; $0$formal$./uart_transmitter.v:128$22_CHECK[0:0]$76
-; yosys-smt2-anyseq uart_transmitter#118 1 $auto$setundef.cc:524:execute$470
-(declare-fun |uart_transmitter#118| (|uart_transmitter_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2358:Anyseq$471
-; yosys-smt2-anyseq uart_transmitter#119 1 $auto$setundef.cc:524:execute$468
-(declare-fun |uart_transmitter#119| (|uart_transmitter_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2358:Anyseq$469
-(define-fun |uart_transmitter#120| ((state |uart_transmitter_s|)) Bool (= (|uart_transmitter#12| state) #b01)) ; $eq$./uart_transmitter.v:133$117_Y
-(define-fun |uart_transmitter#121| ((state |uart_transmitter_s|)) Bool (and (or  (= ((_ extract 0 0) (|uart_transmitter#5| state)) #b1) false) (or  (|uart_transmitter#11| state) false))) ; $logic_and$./uart_transmitter.v:132$116_Y
-(define-fun |uart_transmitter#122| ((state |uart_transmitter_s|)) (_ BitVec 1) (ite (|uart_transmitter#121| state) (ite (|uart_transmitter#120| state) #b1 #b0) (|uart_transmitter#119| state))) ; $procmux$283_Y
-(define-fun |uart_transmitter#123| ((state |uart_transmitter_s|)) (_ BitVec 1) (ite (|uart_transmitter#56| state) (|uart_transmitter#122| state) (|uart_transmitter#118| state))) ; $0$formal$./uart_transmitter.v:133$23_CHECK[0:0]$78
-(define-fun |uart_transmitter#124| ((state |uart_transmitter_s|)) (_ BitVec 1) (ite (|uart_transmitter#121| state) #b1 #b0)) ; $procmux$279_Y
-(define-fun |uart_transmitter#125| ((state |uart_transmitter_s|)) (_ BitVec 1) (ite (|uart_transmitter#56| state) (|uart_transmitter#124| state) #b0)) ; $0$formal$./uart_transmitter.v:133$23_EN[0:0]$79
-; yosys-smt2-anyseq uart_transmitter#126 1 $auto$setundef.cc:524:execute$474
-(declare-fun |uart_transmitter#126| (|uart_transmitter_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2358:Anyseq$475
-; yosys-smt2-anyseq uart_transmitter#127 1 $auto$setundef.cc:524:execute$472
-(declare-fun |uart_transmitter#127| (|uart_transmitter_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2358:Anyseq$473
-(define-fun |uart_transmitter#128| ((state |uart_transmitter_s|)) Bool (not (or  (= ((_ extract 0 0) (|uart_transmitter#12| state)) #b1) (= ((_ extract 1 1) (|uart_transmitter#12| state)) #b1)))) ; $eq$./uart_transmitter.v:135$121_Y
-(define-fun |uart_transmitter#129| ((state |uart_transmitter_s|)) (_ BitVec 1) (bvnot (|uart_transmitter#5| state))) ; $eq$./uart_transmitter.v:134$118_Y
-(define-fun |uart_transmitter#130| ((state |uart_transmitter_s|)) Bool (and (or  (= ((_ extract 0 0) (|uart_transmitter#129| state)) #b1) false) (or  (|uart_transmitter#11| state) false))) ; $logic_and$./uart_transmitter.v:134$120_Y
-(define-fun |uart_transmitter#131| ((state |uart_transmitter_s|)) (_ BitVec 1) (ite (|uart_transmitter#130| state) (ite (|uart_transmitter#128| state) #b1 #b0) (|uart_transmitter#127| state))) ; $procmux$291_Y
-(define-fun |uart_transmitter#132| ((state |uart_transmitter_s|)) (_ BitVec 1) (ite (|uart_transmitter#56| state) (|uart_transmitter#131| state) (|uart_transmitter#126| state))) ; $0$formal$./uart_transmitter.v:135$24_CHECK[0:0]$80
-(define-fun |uart_transmitter#133| ((state |uart_transmitter_s|)) (_ BitVec 1) (ite (|uart_transmitter#130| state) #b1 #b0)) ; $procmux$287_Y
-(define-fun |uart_transmitter#134| ((state |uart_transmitter_s|)) (_ BitVec 1) (ite (|uart_transmitter#56| state) (|uart_transmitter#133| state) #b0)) ; $0$formal$./uart_transmitter.v:135$24_EN[0:0]$81
-; yosys-smt2-anyseq uart_transmitter#135 1 $auto$setundef.cc:524:execute$478
-(declare-fun |uart_transmitter#135| (|uart_transmitter_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2358:Anyseq$479
-; yosys-smt2-anyseq uart_transmitter#136 1 $auto$setundef.cc:524:execute$476
-(declare-fun |uart_transmitter#136| (|uart_transmitter_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2358:Anyseq$477
-(define-fun |uart_transmitter#137| ((state |uart_transmitter_s|)) Bool (= (|uart_transmitter#12| state) #b10)) ; $eq$./uart_transmitter.v:137$123_Y
-(define-fun |uart_transmitter#138| ((state |uart_transmitter_s|)) (_ BitVec 1) (ite (|uart_transmitter#10| state) (ite (|uart_transmitter#137| state) #b1 #b0) (|uart_transmitter#136| state))) ; $procmux$299_Y
-(define-fun |uart_transmitter#139| ((state |uart_transmitter_s|)) (_ BitVec 1) (ite (|uart_transmitter#56| state) (|uart_transmitter#138| state) (|uart_transmitter#135| state))) ; $0$formal$./uart_transmitter.v:137$25_CHECK[0:0]$82
-(define-fun |uart_transmitter#140| ((state |uart_transmitter_s|)) (_ BitVec 1) (ite (|uart_transmitter#10| state) #b1 #b0)) ; $procmux$295_Y
-(define-fun |uart_transmitter#141| ((state |uart_transmitter_s|)) (_ BitVec 1) (ite (|uart_transmitter#56| state) (|uart_transmitter#140| state) #b0)) ; $0$formal$./uart_transmitter.v:137$25_EN[0:0]$83
-; yosys-smt2-anyseq uart_transmitter#142 1 $auto$setundef.cc:524:execute$482
-(declare-fun |uart_transmitter#142| (|uart_transmitter_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2358:Anyseq$483
-; yosys-smt2-anyseq uart_transmitter#143 1 $auto$setundef.cc:524:execute$480
-(declare-fun |uart_transmitter#143| (|uart_transmitter_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2358:Anyseq$481
-(define-fun |uart_transmitter#144| ((state |uart_transmitter_s|)) Bool (distinct (|uart_transmitter#2| state) #b1000)) ; $ne$./uart_transmitter.v:138$125_Y
-(define-fun |uart_transmitter#145| ((state |uart_transmitter_s|)) Bool (and (or  (|uart_transmitter#9| state) false) (or  (|uart_transmitter#144| state) false))) ; $logic_and$./uart_transmitter.v:138$126_Y
-(define-fun |uart_transmitter#146| ((state |uart_transmitter_s|)) (_ BitVec 1) (ite (|uart_transmitter#145| state) (ite (|uart_transmitter#137| state) #b1 #b0) (|uart_transmitter#143| state))) ; $procmux$307_Y
-(define-fun |uart_transmitter#147| ((state |uart_transmitter_s|)) (_ BitVec 1) (ite (|uart_transmitter#56| state) (|uart_transmitter#146| state) (|uart_transmitter#142| state))) ; $0$formal$./uart_transmitter.v:139$26_CHECK[0:0]$84
-(define-fun |uart_transmitter#148| ((state |uart_transmitter_s|)) (_ BitVec 1) (ite (|uart_transmitter#145| state) #b1 #b0)) ; $procmux$303_Y
-(define-fun |uart_transmitter#149| ((state |uart_transmitter_s|)) (_ BitVec 1) (ite (|uart_transmitter#56| state) (|uart_transmitter#148| state) #b0)) ; $0$formal$./uart_transmitter.v:139$26_EN[0:0]$85
-; yosys-smt2-anyseq uart_transmitter#150 1 $auto$setundef.cc:524:execute$486
-(declare-fun |uart_transmitter#150| (|uart_transmitter_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2358:Anyseq$487
-; yosys-smt2-anyseq uart_transmitter#151 1 $auto$setundef.cc:524:execute$484
-(declare-fun |uart_transmitter#151| (|uart_transmitter_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2358:Anyseq$485
-(define-fun |uart_transmitter#152| ((state |uart_transmitter_s|)) Bool (= (|uart_transmitter#12| state) #b11)) ; $eq$./uart_transmitter.v:141$131_Y
-(define-fun |uart_transmitter#153| ((state |uart_transmitter_s|)) Bool (and (or  (|uart_transmitter#9| state) false) (or  (|uart_transmitter#3| state) false))) ; $logic_and$./uart_transmitter.v:140$130_Y
-(define-fun |uart_transmitter#154| ((state |uart_transmitter_s|)) (_ BitVec 1) (ite (|uart_transmitter#153| state) (ite (|uart_transmitter#152| state) #b1 #b0) (|uart_transmitter#151| state))) ; $procmux$315_Y
-(define-fun |uart_transmitter#155| ((state |uart_transmitter_s|)) (_ BitVec 1) (ite (|uart_transmitter#56| state) (|uart_transmitter#154| state) (|uart_transmitter#150| state))) ; $0$formal$./uart_transmitter.v:141$27_CHECK[0:0]$86
-(define-fun |uart_transmitter#156| ((state |uart_transmitter_s|)) (_ BitVec 1) (ite (|uart_transmitter#153| state) #b1 #b0)) ; $procmux$311_Y
-(define-fun |uart_transmitter#157| ((state |uart_transmitter_s|)) (_ BitVec 1) (ite (|uart_transmitter#56| state) (|uart_transmitter#156| state) #b0)) ; $0$formal$./uart_transmitter.v:141$27_EN[0:0]$87
-; yosys-smt2-anyseq uart_transmitter#158 1 $auto$setundef.cc:524:execute$490
-(declare-fun |uart_transmitter#158| (|uart_transmitter_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2358:Anyseq$491
-; yosys-smt2-anyseq uart_transmitter#159 1 $auto$setundef.cc:524:execute$488
-(declare-fun |uart_transmitter#159| (|uart_transmitter_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2358:Anyseq$489
-(define-fun |uart_transmitter#160| ((state |uart_transmitter_s|)) (_ BitVec 1) (ite (|uart_transmitter#8| state) (ite (|uart_transmitter#128| state) #b1 #b0) (|uart_transmitter#159| state))) ; $procmux$323_Y
-(define-fun |uart_transmitter#161| ((state |uart_transmitter_s|)) (_ BitVec 1) (ite (|uart_transmitter#56| state) (|uart_transmitter#160| state) (|uart_transmitter#158| state))) ; $0$formal$./uart_transmitter.v:143$28_CHECK[0:0]$88
-(define-fun |uart_transmitter#162| ((state |uart_transmitter_s|)) (_ BitVec 1) (ite (|uart_transmitter#8| state) #b1 #b0)) ; $procmux$319_Y
-(define-fun |uart_transmitter#163| ((state |uart_transmitter_s|)) (_ BitVec 1) (ite (|uart_transmitter#56| state) (|uart_transmitter#162| state) #b0)) ; $0$formal$./uart_transmitter.v:143$28_EN[0:0]$89
-; yosys-smt2-anyseq uart_transmitter#164 1 $auto$setundef.cc:524:execute$494
-(declare-fun |uart_transmitter#164| (|uart_transmitter_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2358:Anyseq$495
-(define-fun |uart_transmitter#165| ((state |uart_transmitter_s|)) (_ BitVec 1) (ite (|uart_transmitter#144| state) ((_ extract 0 0) (|uart_transmitter#13| state)) #b1)) ; $procmux$337_Y
-(define-fun |uart_transmitter#166| ((state |uart_transmitter_s|)) Bool (or  (|uart_transmitter#8| state) (|uart_transmitter#11| state))) ; $auto$opt_reduce.cc:134:opt_mux$423
-(define-fun |uart_transmitter#167| ((state |uart_transmitter_s|)) (_ BitVec 1) (ite (|uart_transmitter#10| state) #b0 (ite (|uart_transmitter#9| state) (|uart_transmitter#165| state) (ite (|uart_transmitter#166| state) #b1 (|uart_transmitter#164| state))))) ; $procmux$334_Y
-(define-fun |uart_transmitter#168| ((state |uart_transmitter_s|)) (_ BitVec 1) (ite (|uart_transmitter#16| state) (|uart_transmitter#167| state) (|uart_transmitter#14| state))) ; $0\o_TX[0:0]
-; yosys-smt2-anyseq uart_transmitter#169 8 $auto$setundef.cc:524:execute$492
-(declare-fun |uart_transmitter#169| (|uart_transmitter_s|) (_ BitVec 8)) ; $auto$rtlil.cc:2358:Anyseq$493
-(define-fun |uart_transmitter#170| ((state |uart_transmitter_s|)) Bool (or  (|uart_transmitter#8| state) (|uart_transmitter#10| state))) ; $auto$opt_reduce.cc:134:opt_mux$421
-(define-fun |uart_transmitter#171| ((state |uart_transmitter_s|)) (_ BitVec 8) (ite (|uart_transmitter#11| state) (|uart_transmitter#15| state) (ite (|uart_transmitter#9| state) (concat #b0 ((_ extract 7 1) (|uart_transmitter#13| state))) (ite (|uart_transmitter#170| state) (|uart_transmitter#13| state) (|uart_transmitter#169| state))))) ; $procmux$327_Y
-(define-fun |uart_transmitter#172| ((state |uart_transmitter_s|)) (_ BitVec 8) (ite (|uart_transmitter#16| state) (|uart_transmitter#171| state) (|uart_transmitter#13| state))) ; $0\r_DATA_REG[7:0]
-(define-fun |uart_transmitter#173| ((state |uart_transmitter_s|)) (_ BitVec 2) (ite (|uart_transmitter#16| state) (|uart_transmitter#12| state) (|uart_transmitter#7| state))) ; $0\r_CURRENT_STATE[1:0]
-(define-fun |uart_transmitter#174| ((state |uart_transmitter_s|)) (_ BitVec 4) (bvadd (|uart_transmitter#2| state) #b0001)) ; $add$./uart_transmitter.v:61$38_Y
-(define-fun |uart_transmitter#175| ((state |uart_transmitter_s|)) Bool (and (or  (|uart_transmitter#9| state) false) (or  (|uart_transmitter#16| state) false))) ; $logic_and$./uart_transmitter.v:60$37_Y
-(define-fun |uart_transmitter#176| ((state |uart_transmitter_s|)) (_ BitVec 4) (ite (|uart_transmitter#175| state) (|uart_transmitter#174| state) #b0000)) ; $0\r_BIT_COUNT[3:0]
+(declare-fun |uart_transmitter#18| (|uart_transmitter_s|) Bool) ; \i_CLK
+(define-fun |uart_transmitter_n i_CLK| ((state |uart_transmitter_s|)) Bool (|uart_transmitter#18| state))
+; yosys-smt2-register $past$./uart_transmitter.v:134$8$0 4
+(declare-fun |uart_transmitter#19| (|uart_transmitter_s|) (_ BitVec 4)) ; $past$./uart_transmitter.v:134$8$0
+(define-fun |uart_transmitter_n $past$./uart_transmitter.v:134$8$0| ((state |uart_transmitter_s|)) (_ BitVec 4) (|uart_transmitter#19| state))
+; yosys-smt2-register $past$./uart_transmitter.v:130$7$0 1
+(declare-fun |uart_transmitter#20| (|uart_transmitter_s|) (_ BitVec 1)) ; $past$./uart_transmitter.v:130$7$0
+(define-fun |uart_transmitter_n $past$./uart_transmitter.v:130$7$0| ((state |uart_transmitter_s|)) Bool (= ((_ extract 0 0) (|uart_transmitter#20| state)) #b1))
+; yosys-smt2-register $past$./uart_transmitter.v:115$4$0 2
+(declare-fun |uart_transmitter#21| (|uart_transmitter_s|) (_ BitVec 2)) ; $past$./uart_transmitter.v:115$4$0
+(define-fun |uart_transmitter_n $past$./uart_transmitter.v:115$4$0| ((state |uart_transmitter_s|)) (_ BitVec 2) (|uart_transmitter#21| state))
+; yosys-smt2-register $formal$./uart_transmitter.v:155$32_EN 1
+(declare-fun |uart_transmitter#22| (|uart_transmitter_s|) (_ BitVec 1)) ; $formal$./uart_transmitter.v:155$32_EN
+(define-fun |uart_transmitter_n $formal$./uart_transmitter.v:155$32_EN| ((state |uart_transmitter_s|)) Bool (= ((_ extract 0 0) (|uart_transmitter#22| state)) #b1))
+; yosys-smt2-register $formal$./uart_transmitter.v:155$32_CHECK 1
+(declare-fun |uart_transmitter#23| (|uart_transmitter_s|) (_ BitVec 1)) ; $formal$./uart_transmitter.v:155$32_CHECK
+(define-fun |uart_transmitter_n $formal$./uart_transmitter.v:155$32_CHECK| ((state |uart_transmitter_s|)) Bool (= ((_ extract 0 0) (|uart_transmitter#23| state)) #b1))
+; yosys-smt2-register $formal$./uart_transmitter.v:153$31_EN 1
+(declare-fun |uart_transmitter#24| (|uart_transmitter_s|) (_ BitVec 1)) ; $formal$./uart_transmitter.v:153$31_EN
+(define-fun |uart_transmitter_n $formal$./uart_transmitter.v:153$31_EN| ((state |uart_transmitter_s|)) Bool (= ((_ extract 0 0) (|uart_transmitter#24| state)) #b1))
+; yosys-smt2-register $formal$./uart_transmitter.v:153$31_CHECK 1
+(declare-fun |uart_transmitter#25| (|uart_transmitter_s|) (_ BitVec 1)) ; $formal$./uart_transmitter.v:153$31_CHECK
+(define-fun |uart_transmitter_n $formal$./uart_transmitter.v:153$31_CHECK| ((state |uart_transmitter_s|)) Bool (= ((_ extract 0 0) (|uart_transmitter#25| state)) #b1))
+; yosys-smt2-register $formal$./uart_transmitter.v:151$30_EN 1
+(declare-fun |uart_transmitter#26| (|uart_transmitter_s|) (_ BitVec 1)) ; $formal$./uart_transmitter.v:151$30_EN
+(define-fun |uart_transmitter_n $formal$./uart_transmitter.v:151$30_EN| ((state |uart_transmitter_s|)) Bool (= ((_ extract 0 0) (|uart_transmitter#26| state)) #b1))
+; yosys-smt2-register $formal$./uart_transmitter.v:151$30_CHECK 1
+(declare-fun |uart_transmitter#27| (|uart_transmitter_s|) (_ BitVec 1)) ; $formal$./uart_transmitter.v:151$30_CHECK
+(define-fun |uart_transmitter_n $formal$./uart_transmitter.v:151$30_CHECK| ((state |uart_transmitter_s|)) Bool (= ((_ extract 0 0) (|uart_transmitter#27| state)) #b1))
+; yosys-smt2-register $formal$./uart_transmitter.v:149$29_EN 1
+(declare-fun |uart_transmitter#28| (|uart_transmitter_s|) (_ BitVec 1)) ; $formal$./uart_transmitter.v:149$29_EN
+(define-fun |uart_transmitter_n $formal$./uart_transmitter.v:149$29_EN| ((state |uart_transmitter_s|)) Bool (= ((_ extract 0 0) (|uart_transmitter#28| state)) #b1))
+; yosys-smt2-register $formal$./uart_transmitter.v:149$29_CHECK 1
+(declare-fun |uart_transmitter#29| (|uart_transmitter_s|) (_ BitVec 1)) ; $formal$./uart_transmitter.v:149$29_CHECK
+(define-fun |uart_transmitter_n $formal$./uart_transmitter.v:149$29_CHECK| ((state |uart_transmitter_s|)) Bool (= ((_ extract 0 0) (|uart_transmitter#29| state)) #b1))
+; yosys-smt2-register $formal$./uart_transmitter.v:147$28_EN 1
+(declare-fun |uart_transmitter#30| (|uart_transmitter_s|) (_ BitVec 1)) ; $formal$./uart_transmitter.v:147$28_EN
+(define-fun |uart_transmitter_n $formal$./uart_transmitter.v:147$28_EN| ((state |uart_transmitter_s|)) Bool (= ((_ extract 0 0) (|uart_transmitter#30| state)) #b1))
+; yosys-smt2-register $formal$./uart_transmitter.v:147$28_CHECK 1
+(declare-fun |uart_transmitter#31| (|uart_transmitter_s|) (_ BitVec 1)) ; $formal$./uart_transmitter.v:147$28_CHECK
+(define-fun |uart_transmitter_n $formal$./uart_transmitter.v:147$28_CHECK| ((state |uart_transmitter_s|)) Bool (= ((_ extract 0 0) (|uart_transmitter#31| state)) #b1))
+; yosys-smt2-register $formal$./uart_transmitter.v:145$27_EN 1
+(declare-fun |uart_transmitter#32| (|uart_transmitter_s|) (_ BitVec 1)) ; $formal$./uart_transmitter.v:145$27_EN
+(define-fun |uart_transmitter_n $formal$./uart_transmitter.v:145$27_EN| ((state |uart_transmitter_s|)) Bool (= ((_ extract 0 0) (|uart_transmitter#32| state)) #b1))
+; yosys-smt2-register $formal$./uart_transmitter.v:145$27_CHECK 1
+(declare-fun |uart_transmitter#33| (|uart_transmitter_s|) (_ BitVec 1)) ; $formal$./uart_transmitter.v:145$27_CHECK
+(define-fun |uart_transmitter_n $formal$./uart_transmitter.v:145$27_CHECK| ((state |uart_transmitter_s|)) Bool (= ((_ extract 0 0) (|uart_transmitter#33| state)) #b1))
+; yosys-smt2-register $formal$./uart_transmitter.v:140$26_CHECK 1
+(declare-fun |uart_transmitter#34| (|uart_transmitter_s|) (_ BitVec 1)) ; $formal$./uart_transmitter.v:140$26_CHECK
+(define-fun |uart_transmitter_n $formal$./uart_transmitter.v:140$26_CHECK| ((state |uart_transmitter_s|)) Bool (= ((_ extract 0 0) (|uart_transmitter#34| state)) #b1))
+; yosys-smt2-register $formal$./uart_transmitter.v:139$25_CHECK 1
+(declare-fun |uart_transmitter#35| (|uart_transmitter_s|) (_ BitVec 1)) ; $formal$./uart_transmitter.v:139$25_CHECK
+(define-fun |uart_transmitter_n $formal$./uart_transmitter.v:139$25_CHECK| ((state |uart_transmitter_s|)) Bool (= ((_ extract 0 0) (|uart_transmitter#35| state)) #b1))
+; yosys-smt2-register $formal$./uart_transmitter.v:138$24_EN 1
+(declare-fun |uart_transmitter#36| (|uart_transmitter_s|) (_ BitVec 1)) ; $formal$./uart_transmitter.v:138$24_EN
+(define-fun |uart_transmitter_n $formal$./uart_transmitter.v:138$24_EN| ((state |uart_transmitter_s|)) Bool (= ((_ extract 0 0) (|uart_transmitter#36| state)) #b1))
+; yosys-smt2-register $formal$./uart_transmitter.v:138$24_CHECK 1
+(declare-fun |uart_transmitter#37| (|uart_transmitter_s|) (_ BitVec 1)) ; $formal$./uart_transmitter.v:138$24_CHECK
+(define-fun |uart_transmitter_n $formal$./uart_transmitter.v:138$24_CHECK| ((state |uart_transmitter_s|)) Bool (= ((_ extract 0 0) (|uart_transmitter#37| state)) #b1))
+; yosys-smt2-register $formal$./uart_transmitter.v:134$23_CHECK 1
+(declare-fun |uart_transmitter#38| (|uart_transmitter_s|) (_ BitVec 1)) ; $formal$./uart_transmitter.v:134$23_CHECK
+(define-fun |uart_transmitter_n $formal$./uart_transmitter.v:134$23_CHECK| ((state |uart_transmitter_s|)) Bool (= ((_ extract 0 0) (|uart_transmitter#38| state)) #b1))
+; yosys-smt2-register $formal$./uart_transmitter.v:133$22_EN 1
+(declare-fun |uart_transmitter#39| (|uart_transmitter_s|) (_ BitVec 1)) ; $formal$./uart_transmitter.v:133$22_EN
+(define-fun |uart_transmitter_n $formal$./uart_transmitter.v:133$22_EN| ((state |uart_transmitter_s|)) Bool (= ((_ extract 0 0) (|uart_transmitter#39| state)) #b1))
+; yosys-smt2-register $formal$./uart_transmitter.v:133$22_CHECK 1
+(declare-fun |uart_transmitter#40| (|uart_transmitter_s|) (_ BitVec 1)) ; $formal$./uart_transmitter.v:133$22_CHECK
+(define-fun |uart_transmitter_n $formal$./uart_transmitter.v:133$22_CHECK| ((state |uart_transmitter_s|)) Bool (= ((_ extract 0 0) (|uart_transmitter#40| state)) #b1))
+; yosys-smt2-register $formal$./uart_transmitter.v:132$21_EN 1
+(declare-fun |uart_transmitter#41| (|uart_transmitter_s|) (_ BitVec 1)) ; $formal$./uart_transmitter.v:132$21_EN
+(define-fun |uart_transmitter_n $formal$./uart_transmitter.v:132$21_EN| ((state |uart_transmitter_s|)) Bool (= ((_ extract 0 0) (|uart_transmitter#41| state)) #b1))
+; yosys-smt2-register $formal$./uart_transmitter.v:132$21_CHECK 1
+(declare-fun |uart_transmitter#42| (|uart_transmitter_s|) (_ BitVec 1)) ; $formal$./uart_transmitter.v:132$21_CHECK
+(define-fun |uart_transmitter_n $formal$./uart_transmitter.v:132$21_CHECK| ((state |uart_transmitter_s|)) Bool (= ((_ extract 0 0) (|uart_transmitter#42| state)) #b1))
+; yosys-smt2-register $formal$./uart_transmitter.v:130$20_EN 1
+(declare-fun |uart_transmitter#43| (|uart_transmitter_s|) (_ BitVec 1)) ; $formal$./uart_transmitter.v:130$20_EN
+(define-fun |uart_transmitter_n $formal$./uart_transmitter.v:130$20_EN| ((state |uart_transmitter_s|)) Bool (= ((_ extract 0 0) (|uart_transmitter#43| state)) #b1))
+; yosys-smt2-register $formal$./uart_transmitter.v:130$20_CHECK 1
+(declare-fun |uart_transmitter#44| (|uart_transmitter_s|) (_ BitVec 1)) ; $formal$./uart_transmitter.v:130$20_CHECK
+(define-fun |uart_transmitter_n $formal$./uart_transmitter.v:130$20_CHECK| ((state |uart_transmitter_s|)) Bool (= ((_ extract 0 0) (|uart_transmitter#44| state)) #b1))
+; yosys-smt2-register $formal$./uart_transmitter.v:125$19_CHECK 1
+(declare-fun |uart_transmitter#45| (|uart_transmitter_s|) (_ BitVec 1)) ; $formal$./uart_transmitter.v:125$19_CHECK
+(define-fun |uart_transmitter_n $formal$./uart_transmitter.v:125$19_CHECK| ((state |uart_transmitter_s|)) Bool (= ((_ extract 0 0) (|uart_transmitter#45| state)) #b1))
+; yosys-smt2-register $formal$./uart_transmitter.v:124$18_CHECK 1
+(declare-fun |uart_transmitter#46| (|uart_transmitter_s|) (_ BitVec 1)) ; $formal$./uart_transmitter.v:124$18_CHECK
+(define-fun |uart_transmitter_n $formal$./uart_transmitter.v:124$18_CHECK| ((state |uart_transmitter_s|)) Bool (= ((_ extract 0 0) (|uart_transmitter#46| state)) #b1))
+; yosys-smt2-register $formal$./uart_transmitter.v:123$17_EN 1
+(declare-fun |uart_transmitter#47| (|uart_transmitter_s|) (_ BitVec 1)) ; $formal$./uart_transmitter.v:123$17_EN
+(define-fun |uart_transmitter_n $formal$./uart_transmitter.v:123$17_EN| ((state |uart_transmitter_s|)) Bool (= ((_ extract 0 0) (|uart_transmitter#47| state)) #b1))
+; yosys-smt2-register $formal$./uart_transmitter.v:123$17_CHECK 1
+(declare-fun |uart_transmitter#48| (|uart_transmitter_s|) (_ BitVec 1)) ; $formal$./uart_transmitter.v:123$17_CHECK
+(define-fun |uart_transmitter_n $formal$./uart_transmitter.v:123$17_CHECK| ((state |uart_transmitter_s|)) Bool (= ((_ extract 0 0) (|uart_transmitter#48| state)) #b1))
+; yosys-smt2-register $formal$./uart_transmitter.v:119$16_CHECK 1
+(declare-fun |uart_transmitter#49| (|uart_transmitter_s|) (_ BitVec 1)) ; $formal$./uart_transmitter.v:119$16_CHECK
+(define-fun |uart_transmitter_n $formal$./uart_transmitter.v:119$16_CHECK| ((state |uart_transmitter_s|)) Bool (= ((_ extract 0 0) (|uart_transmitter#49| state)) #b1))
+; yosys-smt2-register $formal$./uart_transmitter.v:118$15_CHECK 1
+(declare-fun |uart_transmitter#50| (|uart_transmitter_s|) (_ BitVec 1)) ; $formal$./uart_transmitter.v:118$15_CHECK
+(define-fun |uart_transmitter_n $formal$./uart_transmitter.v:118$15_CHECK| ((state |uart_transmitter_s|)) Bool (= ((_ extract 0 0) (|uart_transmitter#50| state)) #b1))
+; yosys-smt2-register $formal$./uart_transmitter.v:117$14_EN 1
+(declare-fun |uart_transmitter#51| (|uart_transmitter_s|) (_ BitVec 1)) ; $formal$./uart_transmitter.v:117$14_EN
+(define-fun |uart_transmitter_n $formal$./uart_transmitter.v:117$14_EN| ((state |uart_transmitter_s|)) Bool (= ((_ extract 0 0) (|uart_transmitter#51| state)) #b1))
+; yosys-smt2-register $formal$./uart_transmitter.v:117$14_CHECK 1
+(declare-fun |uart_transmitter#52| (|uart_transmitter_s|) (_ BitVec 1)) ; $formal$./uart_transmitter.v:117$14_CHECK
+(define-fun |uart_transmitter_n $formal$./uart_transmitter.v:117$14_CHECK| ((state |uart_transmitter_s|)) Bool (= ((_ extract 0 0) (|uart_transmitter#52| state)) #b1))
+; yosys-smt2-register $and$./uart_transmitter.v:110$104_Y 1
+(declare-fun |uart_transmitter#53| (|uart_transmitter_s|) (_ BitVec 1)) ; $and$./uart_transmitter.v:110$104_Y
+(define-fun |uart_transmitter_n $and$./uart_transmitter.v:110$104_Y| ((state |uart_transmitter_s|)) Bool (= ((_ extract 0 0) (|uart_transmitter#53| state)) #b1))
+(define-fun |uart_transmitter#54| ((state |uart_transmitter_s|)) Bool (distinct (|uart_transmitter#53| state) (ite (|uart_transmitter#18| state) #b1 #b0))) ; $0$formal$./uart_transmitter.v:108$12_CHECK[0:0]$60
+; yosys-smt2-assume 0 ./uart_transmitter.v:108
+(define-fun |uart_transmitter_u 0| ((state |uart_transmitter_s|)) Bool (or (|uart_transmitter#54| state) (not true))) ; $assume$./uart_transmitter.v:108$152
+; yosys-smt2-assume 1 ./uart_transmitter.v:107
+(define-fun |uart_transmitter_u 1| ((state |uart_transmitter_s|)) Bool (or (|uart_transmitter#17| state) (not true))) ; $assume$./uart_transmitter.v:107$151
+; yosys-smt2-assert 0 ./uart_transmitter.v:155
+(define-fun |uart_transmitter_a 0| ((state |uart_transmitter_s|)) Bool (or (= ((_ extract 0 0) (|uart_transmitter#23| state)) #b1) (not (= ((_ extract 0 0) (|uart_transmitter#22| state)) #b1)))) ; $assert$./uart_transmitter.v:155$172
+; yosys-smt2-assert 1 ./uart_transmitter.v:153
+(define-fun |uart_transmitter_a 1| ((state |uart_transmitter_s|)) Bool (or (= ((_ extract 0 0) (|uart_transmitter#25| state)) #b1) (not (= ((_ extract 0 0) (|uart_transmitter#24| state)) #b1)))) ; $assert$./uart_transmitter.v:153$171
+; yosys-smt2-assert 2 ./uart_transmitter.v:151
+(define-fun |uart_transmitter_a 2| ((state |uart_transmitter_s|)) Bool (or (= ((_ extract 0 0) (|uart_transmitter#27| state)) #b1) (not (= ((_ extract 0 0) (|uart_transmitter#26| state)) #b1)))) ; $assert$./uart_transmitter.v:151$170
+; yosys-smt2-assert 3 ./uart_transmitter.v:149
+(define-fun |uart_transmitter_a 3| ((state |uart_transmitter_s|)) Bool (or (= ((_ extract 0 0) (|uart_transmitter#29| state)) #b1) (not (= ((_ extract 0 0) (|uart_transmitter#28| state)) #b1)))) ; $assert$./uart_transmitter.v:149$169
+; yosys-smt2-assert 4 ./uart_transmitter.v:147
+(define-fun |uart_transmitter_a 4| ((state |uart_transmitter_s|)) Bool (or (= ((_ extract 0 0) (|uart_transmitter#31| state)) #b1) (not (= ((_ extract 0 0) (|uart_transmitter#30| state)) #b1)))) ; $assert$./uart_transmitter.v:147$168
+; yosys-smt2-assert 5 ./uart_transmitter.v:145
+(define-fun |uart_transmitter_a 5| ((state |uart_transmitter_s|)) Bool (or (= ((_ extract 0 0) (|uart_transmitter#33| state)) #b1) (not (= ((_ extract 0 0) (|uart_transmitter#32| state)) #b1)))) ; $assert$./uart_transmitter.v:145$167
+; yosys-smt2-assert 6 ./uart_transmitter.v:140
+(define-fun |uart_transmitter_a 6| ((state |uart_transmitter_s|)) Bool (or (= ((_ extract 0 0) (|uart_transmitter#34| state)) #b1) (not (= ((_ extract 0 0) (|uart_transmitter#36| state)) #b1)))) ; $assert$./uart_transmitter.v:140$166
+; yosys-smt2-assert 7 ./uart_transmitter.v:139
+(define-fun |uart_transmitter_a 7| ((state |uart_transmitter_s|)) Bool (or (= ((_ extract 0 0) (|uart_transmitter#35| state)) #b1) (not (= ((_ extract 0 0) (|uart_transmitter#36| state)) #b1)))) ; $assert$./uart_transmitter.v:139$165
+; yosys-smt2-assert 8 ./uart_transmitter.v:138
+(define-fun |uart_transmitter_a 8| ((state |uart_transmitter_s|)) Bool (or (= ((_ extract 0 0) (|uart_transmitter#37| state)) #b1) (not (= ((_ extract 0 0) (|uart_transmitter#36| state)) #b1)))) ; $assert$./uart_transmitter.v:138$164
+; yosys-smt2-assert 9 ./uart_transmitter.v:134
+(define-fun |uart_transmitter_a 9| ((state |uart_transmitter_s|)) Bool (or (= ((_ extract 0 0) (|uart_transmitter#38| state)) #b1) (not (= ((_ extract 0 0) (|uart_transmitter#39| state)) #b1)))) ; $assert$./uart_transmitter.v:134$163
+; yosys-smt2-assert 10 ./uart_transmitter.v:133
+(define-fun |uart_transmitter_a 10| ((state |uart_transmitter_s|)) Bool (or (= ((_ extract 0 0) (|uart_transmitter#40| state)) #b1) (not (= ((_ extract 0 0) (|uart_transmitter#39| state)) #b1)))) ; $assert$./uart_transmitter.v:133$162
+; yosys-smt2-assert 11 ./uart_transmitter.v:132
+(define-fun |uart_transmitter_a 11| ((state |uart_transmitter_s|)) Bool (or (= ((_ extract 0 0) (|uart_transmitter#42| state)) #b1) (not (= ((_ extract 0 0) (|uart_transmitter#41| state)) #b1)))) ; $assert$./uart_transmitter.v:132$161
+; yosys-smt2-assert 12 ./uart_transmitter.v:130
+(define-fun |uart_transmitter_a 12| ((state |uart_transmitter_s|)) Bool (or (= ((_ extract 0 0) (|uart_transmitter#44| state)) #b1) (not (= ((_ extract 0 0) (|uart_transmitter#43| state)) #b1)))) ; $assert$./uart_transmitter.v:130$160
+; yosys-smt2-assert 13 ./uart_transmitter.v:125
+(define-fun |uart_transmitter_a 13| ((state |uart_transmitter_s|)) Bool (or (= ((_ extract 0 0) (|uart_transmitter#45| state)) #b1) (not (= ((_ extract 0 0) (|uart_transmitter#47| state)) #b1)))) ; $assert$./uart_transmitter.v:125$159
+; yosys-smt2-assert 14 ./uart_transmitter.v:124
+(define-fun |uart_transmitter_a 14| ((state |uart_transmitter_s|)) Bool (or (= ((_ extract 0 0) (|uart_transmitter#46| state)) #b1) (not (= ((_ extract 0 0) (|uart_transmitter#47| state)) #b1)))) ; $assert$./uart_transmitter.v:124$158
+; yosys-smt2-assert 15 ./uart_transmitter.v:123
+(define-fun |uart_transmitter_a 15| ((state |uart_transmitter_s|)) Bool (or (= ((_ extract 0 0) (|uart_transmitter#48| state)) #b1) (not (= ((_ extract 0 0) (|uart_transmitter#47| state)) #b1)))) ; $assert$./uart_transmitter.v:123$157
+; yosys-smt2-assert 16 ./uart_transmitter.v:119
+(define-fun |uart_transmitter_a 16| ((state |uart_transmitter_s|)) Bool (or (= ((_ extract 0 0) (|uart_transmitter#49| state)) #b1) (not (= ((_ extract 0 0) (|uart_transmitter#51| state)) #b1)))) ; $assert$./uart_transmitter.v:119$156
+; yosys-smt2-assert 17 ./uart_transmitter.v:118
+(define-fun |uart_transmitter_a 17| ((state |uart_transmitter_s|)) Bool (or (= ((_ extract 0 0) (|uart_transmitter#50| state)) #b1) (not (= ((_ extract 0 0) (|uart_transmitter#51| state)) #b1)))) ; $assert$./uart_transmitter.v:118$155
+; yosys-smt2-assert 18 ./uart_transmitter.v:117
+(define-fun |uart_transmitter_a 18| ((state |uart_transmitter_s|)) Bool (or (= ((_ extract 0 0) (|uart_transmitter#52| state)) #b1) (not (= ((_ extract 0 0) (|uart_transmitter#51| state)) #b1)))) ; $assert$./uart_transmitter.v:117$154
+; yosys-smt2-anyseq uart_transmitter#55 1 $auto$setundef.cc:524:execute$508
+(declare-fun |uart_transmitter#55| (|uart_transmitter_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2358:Anyseq$509
+; yosys-smt2-anyseq uart_transmitter#56 1 $auto$setundef.cc:524:execute$506
+(declare-fun |uart_transmitter#56| (|uart_transmitter_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2358:Anyseq$507
+(define-fun |uart_transmitter#57| ((state |uart_transmitter_s|)) (_ BitVec 1) (bvnot (|uart_transmitter#14| state))) ; $eq$./uart_transmitter.v:117$112_Y
+(define-fun |uart_transmitter#58| ((state |uart_transmitter_s|)) Bool (not (or  (= ((_ extract 0 0) (|uart_transmitter#21| state)) #b1) (= ((_ extract 1 1) (|uart_transmitter#21| state)) #b1)))) ; $eq$./uart_transmitter.v:115$111_Y
+(define-fun |uart_transmitter#59| ((state |uart_transmitter_s|)) (_ BitVec 1) (ite (|uart_transmitter#58| state) (|uart_transmitter#57| state) (|uart_transmitter#56| state))) ; $procmux$227_Y
+(define-fun |uart_transmitter#60| ((state |uart_transmitter_s|)) Bool (not (or  (= ((_ extract 0 0) (|uart_transmitter#53| state)) #b1) false false false false false false false false false false false false false false false false false false false false false false false false false false false false false false false))) ; $logic_not$./uart_transmitter.v:110$105_Y
+(define-fun |uart_transmitter#61| ((state |uart_transmitter_s|)) Bool (and (or  (|uart_transmitter#60| state) false) (or  (|uart_transmitter#18| state) false false false false false false false false false false false false false false false false false false false false false false false false false false false false false false false))) ; $logic_and$./uart_transmitter.v:110$107_Y
+(define-fun |uart_transmitter#62| ((state |uart_transmitter_s|)) Bool (and (or  (= ((_ extract 0 0) (|uart_transmitter#0| state)) #b1) false) (or  (|uart_transmitter#61| state) false))) ; $logic_and$./uart_transmitter.v:110$108_Y
+(define-fun |uart_transmitter#63| ((state |uart_transmitter_s|)) (_ BitVec 1) (ite (|uart_transmitter#62| state) (|uart_transmitter#59| state) (|uart_transmitter#55| state))) ; $0$formal$./uart_transmitter.v:117$14_CHECK[0:0]$64
+(define-fun |uart_transmitter#64| ((state |uart_transmitter_s|)) (_ BitVec 1) (ite (|uart_transmitter#58| state) #b1 #b0)) ; $procmux$223_Y
+(define-fun |uart_transmitter#65| ((state |uart_transmitter_s|)) (_ BitVec 1) (ite (|uart_transmitter#62| state) (|uart_transmitter#64| state) #b0)) ; $0$formal$./uart_transmitter.v:117$14_EN[0:0]$65
+; yosys-smt2-anyseq uart_transmitter#66 1 $auto$setundef.cc:524:execute$512
+(declare-fun |uart_transmitter#66| (|uart_transmitter_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2358:Anyseq$513
+; yosys-smt2-anyseq uart_transmitter#67 1 $auto$setundef.cc:524:execute$510
+(declare-fun |uart_transmitter#67| (|uart_transmitter_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2358:Anyseq$511
+(define-fun |uart_transmitter#68| ((state |uart_transmitter_s|)) (_ BitVec 1) (ite (|uart_transmitter#58| state) (|uart_transmitter#15| state) (|uart_transmitter#67| state))) ; $procmux$235_Y
+(define-fun |uart_transmitter#69| ((state |uart_transmitter_s|)) (_ BitVec 1) (ite (|uart_transmitter#62| state) (|uart_transmitter#68| state) (|uart_transmitter#66| state))) ; $0$formal$./uart_transmitter.v:118$15_CHECK[0:0]$66
+; yosys-smt2-anyseq uart_transmitter#70 1 $auto$setundef.cc:524:execute$516
+(declare-fun |uart_transmitter#70| (|uart_transmitter_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2358:Anyseq$517
+; yosys-smt2-anyseq uart_transmitter#71 1 $auto$setundef.cc:524:execute$514
+(declare-fun |uart_transmitter#71| (|uart_transmitter_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2358:Anyseq$515
+(define-fun |uart_transmitter#72| ((state |uart_transmitter_s|)) Bool (not (or  (= ((_ extract 0 0) (|uart_transmitter#2| state)) #b1) (= ((_ extract 1 1) (|uart_transmitter#2| state)) #b1) (= ((_ extract 2 2) (|uart_transmitter#2| state)) #b1) (= ((_ extract 3 3) (|uart_transmitter#2| state)) #b1)))) ; $eq$./uart_transmitter.v:119$114_Y
+(define-fun |uart_transmitter#73| ((state |uart_transmitter_s|)) (_ BitVec 1) (ite (|uart_transmitter#58| state) (ite (|uart_transmitter#72| state) #b1 #b0) (|uart_transmitter#71| state))) ; $procmux$243_Y
+(define-fun |uart_transmitter#74| ((state |uart_transmitter_s|)) (_ BitVec 1) (ite (|uart_transmitter#62| state) (|uart_transmitter#73| state) (|uart_transmitter#70| state))) ; $0$formal$./uart_transmitter.v:119$16_CHECK[0:0]$68
+; yosys-smt2-anyseq uart_transmitter#75 1 $auto$setundef.cc:524:execute$520
+(declare-fun |uart_transmitter#75| (|uart_transmitter_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2358:Anyseq$521
+; yosys-smt2-anyseq uart_transmitter#76 1 $auto$setundef.cc:524:execute$518
+(declare-fun |uart_transmitter#76| (|uart_transmitter_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2358:Anyseq$519
+(define-fun |uart_transmitter#77| ((state |uart_transmitter_s|)) Bool (= (|uart_transmitter#21| state) #b01)) ; $eq$./uart_transmitter.v:121$115_Y
+(define-fun |uart_transmitter#78| ((state |uart_transmitter_s|)) (_ BitVec 1) (ite (|uart_transmitter#77| state) (|uart_transmitter#14| state) (|uart_transmitter#76| state))) ; $procmux$251_Y
+(define-fun |uart_transmitter#79| ((state |uart_transmitter_s|)) (_ BitVec 1) (ite (|uart_transmitter#62| state) (|uart_transmitter#78| state) (|uart_transmitter#75| state))) ; $0$formal$./uart_transmitter.v:123$17_CHECK[0:0]$70
+(define-fun |uart_transmitter#80| ((state |uart_transmitter_s|)) (_ BitVec 1) (ite (|uart_transmitter#77| state) #b1 #b0)) ; $procmux$247_Y
+(define-fun |uart_transmitter#81| ((state |uart_transmitter_s|)) (_ BitVec 1) (ite (|uart_transmitter#62| state) (|uart_transmitter#80| state) #b0)) ; $0$formal$./uart_transmitter.v:123$17_EN[0:0]$71
+; yosys-smt2-anyseq uart_transmitter#82 1 $auto$setundef.cc:524:execute$524
+(declare-fun |uart_transmitter#82| (|uart_transmitter_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2358:Anyseq$525
+; yosys-smt2-anyseq uart_transmitter#83 1 $auto$setundef.cc:524:execute$522
+(declare-fun |uart_transmitter#83| (|uart_transmitter_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2358:Anyseq$523
+(define-fun |uart_transmitter#84| ((state |uart_transmitter_s|)) (_ BitVec 1) (bvnot (|uart_transmitter#15| state))) ; $eq$./uart_transmitter.v:124$117_Y
+(define-fun |uart_transmitter#85| ((state |uart_transmitter_s|)) (_ BitVec 1) (ite (|uart_transmitter#77| state) (|uart_transmitter#84| state) (|uart_transmitter#83| state))) ; $procmux$259_Y
+(define-fun |uart_transmitter#86| ((state |uart_transmitter_s|)) (_ BitVec 1) (ite (|uart_transmitter#62| state) (|uart_transmitter#85| state) (|uart_transmitter#82| state))) ; $0$formal$./uart_transmitter.v:124$18_CHECK[0:0]$72
+; yosys-smt2-anyseq uart_transmitter#87 1 $auto$setundef.cc:524:execute$528
+(declare-fun |uart_transmitter#87| (|uart_transmitter_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2358:Anyseq$529
+; yosys-smt2-anyseq uart_transmitter#88 1 $auto$setundef.cc:524:execute$526
+(declare-fun |uart_transmitter#88| (|uart_transmitter_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2358:Anyseq$527
+(define-fun |uart_transmitter#89| ((state |uart_transmitter_s|)) (_ BitVec 1) (ite (|uart_transmitter#77| state) (ite (|uart_transmitter#72| state) #b1 #b0) (|uart_transmitter#88| state))) ; $procmux$267_Y
+(define-fun |uart_transmitter#90| ((state |uart_transmitter_s|)) (_ BitVec 1) (ite (|uart_transmitter#62| state) (|uart_transmitter#89| state) (|uart_transmitter#87| state))) ; $0$formal$./uart_transmitter.v:125$19_CHECK[0:0]$74
+; yosys-smt2-anyseq uart_transmitter#91 1 $auto$setundef.cc:524:execute$534
+(declare-fun |uart_transmitter#91| (|uart_transmitter_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2358:Anyseq$535
+; yosys-smt2-anyseq uart_transmitter#92 1 $auto$setundef.cc:524:execute$532
+(declare-fun |uart_transmitter#92| (|uart_transmitter_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2358:Anyseq$533
+; yosys-smt2-anyseq uart_transmitter#93 1 $auto$setundef.cc:524:execute$530
+(declare-fun |uart_transmitter#93| (|uart_transmitter_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2358:Anyseq$531
+(define-fun |uart_transmitter#94| ((state |uart_transmitter_s|)) Bool (= (|uart_transmitter#15| state) (|uart_transmitter#20| state))) ; $eq$./uart_transmitter.v:130$121_Y
+(define-fun |uart_transmitter#95| ((state |uart_transmitter_s|)) Bool (distinct (|uart_transmitter#2| state) #b1001)) ; $ne$./uart_transmitter.v:129$120_Y
+(define-fun |uart_transmitter#96| ((state |uart_transmitter_s|)) (_ BitVec 1) (ite (|uart_transmitter#95| state) (ite (|uart_transmitter#94| state) #b1 #b0) (|uart_transmitter#93| state))) ; $procmux$279_Y
+(define-fun |uart_transmitter#97| ((state |uart_transmitter_s|)) Bool (= (|uart_transmitter#21| state) #b10)) ; $eq$./uart_transmitter.v:127$119_Y
+(define-fun |uart_transmitter#98| ((state |uart_transmitter_s|)) (_ BitVec 1) (ite (|uart_transmitter#97| state) (|uart_transmitter#96| state) (|uart_transmitter#92| state))) ; $procmux$281_Y
+(define-fun |uart_transmitter#99| ((state |uart_transmitter_s|)) (_ BitVec 1) (ite (|uart_transmitter#62| state) (|uart_transmitter#98| state) (|uart_transmitter#91| state))) ; $0$formal$./uart_transmitter.v:130$20_CHECK[0:0]$76
+(define-fun |uart_transmitter#100| ((state |uart_transmitter_s|)) (_ BitVec 1) (ite (|uart_transmitter#95| state) #b1 #b0)) ; $procmux$272_Y
+(define-fun |uart_transmitter#101| ((state |uart_transmitter_s|)) (_ BitVec 1) (ite (|uart_transmitter#97| state) (|uart_transmitter#100| state) #b0)) ; $procmux$274_Y
+(define-fun |uart_transmitter#102| ((state |uart_transmitter_s|)) (_ BitVec 1) (ite (|uart_transmitter#62| state) (|uart_transmitter#101| state) #b0)) ; $0$formal$./uart_transmitter.v:130$20_EN[0:0]$77
+; yosys-smt2-anyseq uart_transmitter#103 1 $auto$setundef.cc:524:execute$540
+(declare-fun |uart_transmitter#103| (|uart_transmitter_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2358:Anyseq$541
+; yosys-smt2-anyseq uart_transmitter#104 1 $auto$setundef.cc:524:execute$538
+(declare-fun |uart_transmitter#104| (|uart_transmitter_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2358:Anyseq$539
+; yosys-smt2-anyseq uart_transmitter#105 1 $auto$setundef.cc:524:execute$536
+(declare-fun |uart_transmitter#105| (|uart_transmitter_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2358:Anyseq$537
+(define-fun |uart_transmitter#106| ((state |uart_transmitter_s|)) (_ BitVec 1) (ite (|uart_transmitter#95| state) (|uart_transmitter#105| state) (|uart_transmitter#15| state))) ; $procmux$293_Y
+(define-fun |uart_transmitter#107| ((state |uart_transmitter_s|)) (_ BitVec 1) (ite (|uart_transmitter#97| state) (|uart_transmitter#106| state) (|uart_transmitter#104| state))) ; $procmux$295_Y
+(define-fun |uart_transmitter#108| ((state |uart_transmitter_s|)) (_ BitVec 1) (ite (|uart_transmitter#62| state) (|uart_transmitter#107| state) (|uart_transmitter#103| state))) ; $0$formal$./uart_transmitter.v:132$21_CHECK[0:0]$78
+(define-fun |uart_transmitter#109| ((state |uart_transmitter_s|)) (_ BitVec 1) (ite (|uart_transmitter#95| state) #b0 #b1)) ; $procmux$286_Y
+(define-fun |uart_transmitter#110| ((state |uart_transmitter_s|)) (_ BitVec 1) (ite (|uart_transmitter#97| state) (|uart_transmitter#109| state) #b0)) ; $procmux$288_Y
+(define-fun |uart_transmitter#111| ((state |uart_transmitter_s|)) (_ BitVec 1) (ite (|uart_transmitter#62| state) (|uart_transmitter#110| state) #b0)) ; $0$formal$./uart_transmitter.v:132$21_EN[0:0]$79
+; yosys-smt2-anyseq uart_transmitter#112 1 $auto$setundef.cc:524:execute$544
+(declare-fun |uart_transmitter#112| (|uart_transmitter_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2358:Anyseq$545
+; yosys-smt2-anyseq uart_transmitter#113 1 $auto$setundef.cc:524:execute$542
+(declare-fun |uart_transmitter#113| (|uart_transmitter_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2358:Anyseq$543
+(define-fun |uart_transmitter#114| ((state |uart_transmitter_s|)) (_ BitVec 1) (ite (|uart_transmitter#97| state) (|uart_transmitter#14| state) (|uart_transmitter#113| state))) ; $procmux$303_Y
+(define-fun |uart_transmitter#115| ((state |uart_transmitter_s|)) (_ BitVec 1) (ite (|uart_transmitter#62| state) (|uart_transmitter#114| state) (|uart_transmitter#112| state))) ; $0$formal$./uart_transmitter.v:133$22_CHECK[0:0]$80
+(define-fun |uart_transmitter#116| ((state |uart_transmitter_s|)) (_ BitVec 1) (ite (|uart_transmitter#97| state) #b1 #b0)) ; $procmux$299_Y
+(define-fun |uart_transmitter#117| ((state |uart_transmitter_s|)) (_ BitVec 1) (ite (|uart_transmitter#62| state) (|uart_transmitter#116| state) #b0)) ; $0$formal$./uart_transmitter.v:133$22_EN[0:0]$81
+; yosys-smt2-anyseq uart_transmitter#118 1 $auto$setundef.cc:524:execute$548
+(declare-fun |uart_transmitter#118| (|uart_transmitter_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2358:Anyseq$549
+; yosys-smt2-anyseq uart_transmitter#119 1 $auto$setundef.cc:524:execute$546
+(declare-fun |uart_transmitter#119| (|uart_transmitter_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2358:Anyseq$547
+(define-fun |uart_transmitter#120| ((state |uart_transmitter_s|)) (_ BitVec 5) (bvadd (concat #b0 (|uart_transmitter#19| state)) #b00001)) ; $add$./uart_transmitter.v:134$124_Y
+(define-fun |uart_transmitter#121| ((state |uart_transmitter_s|)) Bool (= (concat #b0 (|uart_transmitter#2| state)) (|uart_transmitter#120| state))) ; $eq$./uart_transmitter.v:134$125_Y
+(define-fun |uart_transmitter#122| ((state |uart_transmitter_s|)) (_ BitVec 1) (ite (|uart_transmitter#97| state) (ite (|uart_transmitter#121| state) #b1 #b0) (|uart_transmitter#119| state))) ; $procmux$311_Y
+(define-fun |uart_transmitter#123| ((state |uart_transmitter_s|)) (_ BitVec 1) (ite (|uart_transmitter#62| state) (|uart_transmitter#122| state) (|uart_transmitter#118| state))) ; $0$formal$./uart_transmitter.v:134$23_CHECK[0:0]$82
+; yosys-smt2-anyseq uart_transmitter#124 1 $auto$setundef.cc:524:execute$552
+(declare-fun |uart_transmitter#124| (|uart_transmitter_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2358:Anyseq$553
+; yosys-smt2-anyseq uart_transmitter#125 1 $auto$setundef.cc:524:execute$550
+(declare-fun |uart_transmitter#125| (|uart_transmitter_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2358:Anyseq$551
+(define-fun |uart_transmitter#126| ((state |uart_transmitter_s|)) Bool (= (|uart_transmitter#21| state) #b11)) ; $eq$./uart_transmitter.v:136$126_Y
+(define-fun |uart_transmitter#127| ((state |uart_transmitter_s|)) (_ BitVec 1) (ite (|uart_transmitter#126| state) (|uart_transmitter#14| state) (|uart_transmitter#125| state))) ; $procmux$319_Y
+(define-fun |uart_transmitter#128| ((state |uart_transmitter_s|)) (_ BitVec 1) (ite (|uart_transmitter#62| state) (|uart_transmitter#127| state) (|uart_transmitter#124| state))) ; $0$formal$./uart_transmitter.v:138$24_CHECK[0:0]$84
+(define-fun |uart_transmitter#129| ((state |uart_transmitter_s|)) (_ BitVec 1) (ite (|uart_transmitter#126| state) #b1 #b0)) ; $procmux$315_Y
+(define-fun |uart_transmitter#130| ((state |uart_transmitter_s|)) (_ BitVec 1) (ite (|uart_transmitter#62| state) (|uart_transmitter#129| state) #b0)) ; $0$formal$./uart_transmitter.v:138$24_EN[0:0]$85
+; yosys-smt2-anyseq uart_transmitter#131 1 $auto$setundef.cc:524:execute$556
+(declare-fun |uart_transmitter#131| (|uart_transmitter_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2358:Anyseq$557
+; yosys-smt2-anyseq uart_transmitter#132 1 $auto$setundef.cc:524:execute$554
+(declare-fun |uart_transmitter#132| (|uart_transmitter_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2358:Anyseq$555
+(define-fun |uart_transmitter#133| ((state |uart_transmitter_s|)) (_ BitVec 1) (ite (|uart_transmitter#126| state) (|uart_transmitter#15| state) (|uart_transmitter#132| state))) ; $procmux$327_Y
+(define-fun |uart_transmitter#134| ((state |uart_transmitter_s|)) (_ BitVec 1) (ite (|uart_transmitter#62| state) (|uart_transmitter#133| state) (|uart_transmitter#131| state))) ; $0$formal$./uart_transmitter.v:139$25_CHECK[0:0]$86
+; yosys-smt2-anyseq uart_transmitter#135 1 $auto$setundef.cc:524:execute$560
+(declare-fun |uart_transmitter#135| (|uart_transmitter_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2358:Anyseq$561
+; yosys-smt2-anyseq uart_transmitter#136 1 $auto$setundef.cc:524:execute$558
+(declare-fun |uart_transmitter#136| (|uart_transmitter_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2358:Anyseq$559
+(define-fun |uart_transmitter#137| ((state |uart_transmitter_s|)) Bool (= (|uart_transmitter#19| state) #b1001)) ; $eq$./uart_transmitter.v:140$129_Y
+(define-fun |uart_transmitter#138| ((state |uart_transmitter_s|)) (_ BitVec 1) (ite (|uart_transmitter#126| state) (ite (|uart_transmitter#137| state) #b1 #b0) (|uart_transmitter#136| state))) ; $procmux$335_Y
+(define-fun |uart_transmitter#139| ((state |uart_transmitter_s|)) (_ BitVec 1) (ite (|uart_transmitter#62| state) (|uart_transmitter#138| state) (|uart_transmitter#135| state))) ; $0$formal$./uart_transmitter.v:140$26_CHECK[0:0]$88
+; yosys-smt2-anyseq uart_transmitter#140 1 $auto$setundef.cc:524:execute$564
+(declare-fun |uart_transmitter#140| (|uart_transmitter_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2358:Anyseq$565
+; yosys-smt2-anyseq uart_transmitter#141 1 $auto$setundef.cc:524:execute$562
+(declare-fun |uart_transmitter#141| (|uart_transmitter_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2358:Anyseq$563
+(define-fun |uart_transmitter#142| ((state |uart_transmitter_s|)) Bool (= (|uart_transmitter#12| state) #b01)) ; $eq$./uart_transmitter.v:145$133_Y
+(define-fun |uart_transmitter#143| ((state |uart_transmitter_s|)) Bool (and (or  (= ((_ extract 0 0) (|uart_transmitter#5| state)) #b1) false) (or  (|uart_transmitter#11| state) false))) ; $logic_and$./uart_transmitter.v:144$132_Y
+(define-fun |uart_transmitter#144| ((state |uart_transmitter_s|)) (_ BitVec 1) (ite (|uart_transmitter#143| state) (ite (|uart_transmitter#142| state) #b1 #b0) (|uart_transmitter#141| state))) ; $procmux$343_Y
+(define-fun |uart_transmitter#145| ((state |uart_transmitter_s|)) (_ BitVec 1) (ite (|uart_transmitter#62| state) (|uart_transmitter#144| state) (|uart_transmitter#140| state))) ; $0$formal$./uart_transmitter.v:145$27_CHECK[0:0]$90
+(define-fun |uart_transmitter#146| ((state |uart_transmitter_s|)) (_ BitVec 1) (ite (|uart_transmitter#143| state) #b1 #b0)) ; $procmux$339_Y
+(define-fun |uart_transmitter#147| ((state |uart_transmitter_s|)) (_ BitVec 1) (ite (|uart_transmitter#62| state) (|uart_transmitter#146| state) #b0)) ; $0$formal$./uart_transmitter.v:145$27_EN[0:0]$91
+; yosys-smt2-anyseq uart_transmitter#148 1 $auto$setundef.cc:524:execute$568
+(declare-fun |uart_transmitter#148| (|uart_transmitter_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2358:Anyseq$569
+; yosys-smt2-anyseq uart_transmitter#149 1 $auto$setundef.cc:524:execute$566
+(declare-fun |uart_transmitter#149| (|uart_transmitter_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2358:Anyseq$567
+(define-fun |uart_transmitter#150| ((state |uart_transmitter_s|)) Bool (not (or  (= ((_ extract 0 0) (|uart_transmitter#12| state)) #b1) (= ((_ extract 1 1) (|uart_transmitter#12| state)) #b1)))) ; $eq$./uart_transmitter.v:147$137_Y
+(define-fun |uart_transmitter#151| ((state |uart_transmitter_s|)) (_ BitVec 1) (bvnot (|uart_transmitter#5| state))) ; $eq$./uart_transmitter.v:146$134_Y
+(define-fun |uart_transmitter#152| ((state |uart_transmitter_s|)) Bool (and (or  (= ((_ extract 0 0) (|uart_transmitter#151| state)) #b1) false) (or  (|uart_transmitter#11| state) false))) ; $logic_and$./uart_transmitter.v:146$136_Y
+(define-fun |uart_transmitter#153| ((state |uart_transmitter_s|)) (_ BitVec 1) (ite (|uart_transmitter#152| state) (ite (|uart_transmitter#150| state) #b1 #b0) (|uart_transmitter#149| state))) ; $procmux$351_Y
+(define-fun |uart_transmitter#154| ((state |uart_transmitter_s|)) (_ BitVec 1) (ite (|uart_transmitter#62| state) (|uart_transmitter#153| state) (|uart_transmitter#148| state))) ; $0$formal$./uart_transmitter.v:147$28_CHECK[0:0]$92
+(define-fun |uart_transmitter#155| ((state |uart_transmitter_s|)) (_ BitVec 1) (ite (|uart_transmitter#152| state) #b1 #b0)) ; $procmux$347_Y
+(define-fun |uart_transmitter#156| ((state |uart_transmitter_s|)) (_ BitVec 1) (ite (|uart_transmitter#62| state) (|uart_transmitter#155| state) #b0)) ; $0$formal$./uart_transmitter.v:147$28_EN[0:0]$93
+; yosys-smt2-anyseq uart_transmitter#157 1 $auto$setundef.cc:524:execute$572
+(declare-fun |uart_transmitter#157| (|uart_transmitter_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2358:Anyseq$573
+; yosys-smt2-anyseq uart_transmitter#158 1 $auto$setundef.cc:524:execute$570
+(declare-fun |uart_transmitter#158| (|uart_transmitter_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2358:Anyseq$571
+(define-fun |uart_transmitter#159| ((state |uart_transmitter_s|)) Bool (= (|uart_transmitter#12| state) #b10)) ; $eq$./uart_transmitter.v:149$139_Y
+(define-fun |uart_transmitter#160| ((state |uart_transmitter_s|)) (_ BitVec 1) (ite (|uart_transmitter#10| state) (ite (|uart_transmitter#159| state) #b1 #b0) (|uart_transmitter#158| state))) ; $procmux$359_Y
+(define-fun |uart_transmitter#161| ((state |uart_transmitter_s|)) (_ BitVec 1) (ite (|uart_transmitter#62| state) (|uart_transmitter#160| state) (|uart_transmitter#157| state))) ; $0$formal$./uart_transmitter.v:149$29_CHECK[0:0]$94
+(define-fun |uart_transmitter#162| ((state |uart_transmitter_s|)) (_ BitVec 1) (ite (|uart_transmitter#10| state) #b1 #b0)) ; $procmux$355_Y
+(define-fun |uart_transmitter#163| ((state |uart_transmitter_s|)) (_ BitVec 1) (ite (|uart_transmitter#62| state) (|uart_transmitter#162| state) #b0)) ; $0$formal$./uart_transmitter.v:149$29_EN[0:0]$95
+; yosys-smt2-anyseq uart_transmitter#164 1 $auto$setundef.cc:524:execute$576
+(declare-fun |uart_transmitter#164| (|uart_transmitter_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2358:Anyseq$577
+; yosys-smt2-anyseq uart_transmitter#165 1 $auto$setundef.cc:524:execute$574
+(declare-fun |uart_transmitter#165| (|uart_transmitter_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2358:Anyseq$575
+(define-fun |uart_transmitter#166| ((state |uart_transmitter_s|)) Bool (distinct (|uart_transmitter#2| state) #b1000)) ; $ne$./uart_transmitter.v:150$141_Y
+(define-fun |uart_transmitter#167| ((state |uart_transmitter_s|)) Bool (and (or  (|uart_transmitter#9| state) false) (or  (|uart_transmitter#166| state) false))) ; $logic_and$./uart_transmitter.v:150$142_Y
+(define-fun |uart_transmitter#168| ((state |uart_transmitter_s|)) (_ BitVec 1) (ite (|uart_transmitter#167| state) (ite (|uart_transmitter#159| state) #b1 #b0) (|uart_transmitter#165| state))) ; $procmux$367_Y
+(define-fun |uart_transmitter#169| ((state |uart_transmitter_s|)) (_ BitVec 1) (ite (|uart_transmitter#62| state) (|uart_transmitter#168| state) (|uart_transmitter#164| state))) ; $0$formal$./uart_transmitter.v:151$30_CHECK[0:0]$96
+(define-fun |uart_transmitter#170| ((state |uart_transmitter_s|)) (_ BitVec 1) (ite (|uart_transmitter#167| state) #b1 #b0)) ; $procmux$363_Y
+(define-fun |uart_transmitter#171| ((state |uart_transmitter_s|)) (_ BitVec 1) (ite (|uart_transmitter#62| state) (|uart_transmitter#170| state) #b0)) ; $0$formal$./uart_transmitter.v:151$30_EN[0:0]$97
+; yosys-smt2-anyseq uart_transmitter#172 1 $auto$setundef.cc:524:execute$580
+(declare-fun |uart_transmitter#172| (|uart_transmitter_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2358:Anyseq$581
+; yosys-smt2-anyseq uart_transmitter#173 1 $auto$setundef.cc:524:execute$578
+(declare-fun |uart_transmitter#173| (|uart_transmitter_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2358:Anyseq$579
+(define-fun |uart_transmitter#174| ((state |uart_transmitter_s|)) Bool (= (|uart_transmitter#12| state) #b11)) ; $eq$./uart_transmitter.v:153$147_Y
+(define-fun |uart_transmitter#175| ((state |uart_transmitter_s|)) Bool (and (or  (|uart_transmitter#9| state) false) (or  (|uart_transmitter#3| state) false))) ; $logic_and$./uart_transmitter.v:152$146_Y
+(define-fun |uart_transmitter#176| ((state |uart_transmitter_s|)) (_ BitVec 1) (ite (|uart_transmitter#175| state) (ite (|uart_transmitter#174| state) #b1 #b0) (|uart_transmitter#173| state))) ; $procmux$375_Y
+(define-fun |uart_transmitter#177| ((state |uart_transmitter_s|)) (_ BitVec 1) (ite (|uart_transmitter#62| state) (|uart_transmitter#176| state) (|uart_transmitter#172| state))) ; $0$formal$./uart_transmitter.v:153$31_CHECK[0:0]$98
+(define-fun |uart_transmitter#178| ((state |uart_transmitter_s|)) (_ BitVec 1) (ite (|uart_transmitter#175| state) #b1 #b0)) ; $procmux$371_Y
+(define-fun |uart_transmitter#179| ((state |uart_transmitter_s|)) (_ BitVec 1) (ite (|uart_transmitter#62| state) (|uart_transmitter#178| state) #b0)) ; $0$formal$./uart_transmitter.v:153$31_EN[0:0]$99
+; yosys-smt2-anyseq uart_transmitter#180 1 $auto$setundef.cc:524:execute$584
+(declare-fun |uart_transmitter#180| (|uart_transmitter_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2358:Anyseq$585
+; yosys-smt2-anyseq uart_transmitter#181 1 $auto$setundef.cc:524:execute$582
+(declare-fun |uart_transmitter#181| (|uart_transmitter_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2358:Anyseq$583
+(define-fun |uart_transmitter#182| ((state |uart_transmitter_s|)) (_ BitVec 1) (ite (|uart_transmitter#8| state) (ite (|uart_transmitter#150| state) #b1 #b0) (|uart_transmitter#181| state))) ; $procmux$383_Y
+(define-fun |uart_transmitter#183| ((state |uart_transmitter_s|)) (_ BitVec 1) (ite (|uart_transmitter#62| state) (|uart_transmitter#182| state) (|uart_transmitter#180| state))) ; $0$formal$./uart_transmitter.v:155$32_CHECK[0:0]$100
+(define-fun |uart_transmitter#184| ((state |uart_transmitter_s|)) (_ BitVec 1) (ite (|uart_transmitter#8| state) #b1 #b0)) ; $procmux$379_Y
+(define-fun |uart_transmitter#185| ((state |uart_transmitter_s|)) (_ BitVec 1) (ite (|uart_transmitter#62| state) (|uart_transmitter#184| state) #b0)) ; $0$formal$./uart_transmitter.v:155$32_EN[0:0]$101
+; yosys-smt2-anyseq uart_transmitter#186 1 $auto$setundef.cc:524:execute$588
+(declare-fun |uart_transmitter#186| (|uart_transmitter_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2358:Anyseq$589
+(define-fun |uart_transmitter#187| ((state |uart_transmitter_s|)) (_ BitVec 1) (ite (|uart_transmitter#166| state) ((_ extract 0 0) (|uart_transmitter#13| state)) #b1)) ; $procmux$397_Y
+(define-fun |uart_transmitter#188| ((state |uart_transmitter_s|)) Bool (or  (|uart_transmitter#8| state) (|uart_transmitter#11| state))) ; $auto$opt_reduce.cc:134:opt_mux$499
+(define-fun |uart_transmitter#189| ((state |uart_transmitter_s|)) (_ BitVec 1) (ite (|uart_transmitter#10| state) #b0 (ite (|uart_transmitter#9| state) (|uart_transmitter#187| state) (ite (|uart_transmitter#188| state) #b1 (|uart_transmitter#186| state))))) ; $procmux$394_Y
+(define-fun |uart_transmitter#190| ((state |uart_transmitter_s|)) (_ BitVec 1) (ite (|uart_transmitter#17| state) (|uart_transmitter#189| state) (|uart_transmitter#15| state))) ; $0\o_TX[0:0]
+; yosys-smt2-anyseq uart_transmitter#191 1 $auto$setundef.cc:524:execute$590
+(declare-fun |uart_transmitter#191| (|uart_transmitter_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2358:Anyseq$591
+(define-fun |uart_transmitter#192| ((state |uart_transmitter_s|)) Bool (or  (|uart_transmitter#8| state) (|uart_transmitter#10| state) (|uart_transmitter#9| state))) ; $auto$opt_reduce.cc:134:opt_mux$501
+(define-fun |uart_transmitter#193| ((state |uart_transmitter_s|)) (_ BitVec 1) (ite (|uart_transmitter#11| state) #b0 (ite (|uart_transmitter#192| state) #b1 (|uart_transmitter#191| state)))) ; $procmux$404_Y
+(define-fun |uart_transmitter#194| ((state |uart_transmitter_s|)) (_ BitVec 1) (ite (|uart_transmitter#17| state) (|uart_transmitter#193| state) (|uart_transmitter#14| state))) ; $0\o_TX_BUSY[0:0]
+; yosys-smt2-anyseq uart_transmitter#195 8 $auto$setundef.cc:524:execute$586
+(declare-fun |uart_transmitter#195| (|uart_transmitter_s|) (_ BitVec 8)) ; $auto$rtlil.cc:2358:Anyseq$587
+(define-fun |uart_transmitter#196| ((state |uart_transmitter_s|)) Bool (or  (|uart_transmitter#8| state) (|uart_transmitter#10| state))) ; $auto$opt_reduce.cc:134:opt_mux$497
+(define-fun |uart_transmitter#197| ((state |uart_transmitter_s|)) (_ BitVec 8) (ite (|uart_transmitter#11| state) (|uart_transmitter#16| state) (ite (|uart_transmitter#9| state) (concat #b0 ((_ extract 7 1) (|uart_transmitter#13| state))) (ite (|uart_transmitter#196| state) (|uart_transmitter#13| state) (|uart_transmitter#195| state))))) ; $procmux$387_Y
+(define-fun |uart_transmitter#198| ((state |uart_transmitter_s|)) (_ BitVec 8) (ite (|uart_transmitter#17| state) (|uart_transmitter#197| state) (|uart_transmitter#13| state))) ; $0\r_DATA_REG[7:0]
+(define-fun |uart_transmitter#199| ((state |uart_transmitter_s|)) (_ BitVec 2) (ite (|uart_transmitter#17| state) (|uart_transmitter#12| state) (|uart_transmitter#7| state))) ; $0\r_CURRENT_STATE[1:0]
+(define-fun |uart_transmitter#200| ((state |uart_transmitter_s|)) (_ BitVec 4) (bvadd (|uart_transmitter#2| state) #b0001)) ; $add$./uart_transmitter.v:62$42_Y
+(define-fun |uart_transmitter#201| ((state |uart_transmitter_s|)) Bool (and (or  (|uart_transmitter#9| state) false) (or  (|uart_transmitter#17| state) false))) ; $logic_and$./uart_transmitter.v:61$41_Y
+(define-fun |uart_transmitter#202| ((state |uart_transmitter_s|)) (_ BitVec 4) (ite (|uart_transmitter#201| state) (|uart_transmitter#200| state) #b0000)) ; $0\r_BIT_COUNT[3:0]
 (define-fun |uart_transmitter_a| ((state |uart_transmitter_s|)) Bool (and
   (|uart_transmitter_a 0| state)
   (|uart_transmitter_a 1| state)
@@ -356,6 +411,10 @@
   (|uart_transmitter_a 12| state)
   (|uart_transmitter_a 13| state)
   (|uart_transmitter_a 14| state)
+  (|uart_transmitter_a 15| state)
+  (|uart_transmitter_a 16| state)
+  (|uart_transmitter_a 17| state)
+  (|uart_transmitter_a 18| state)
 ))
 (define-fun |uart_transmitter_u| ((state |uart_transmitter_s|)) Bool (and
   (|uart_transmitter_u 0| state)
@@ -367,57 +426,62 @@
   (= (|uart_transmitter#13| state) #b00000000) ; r_DATA_REG
   (= (|uart_transmitter#7| state) #b00) ; r_CURRENT_STATE
   (= (|uart_transmitter#2| state) #b0000) ; r_BIT_COUNT
-  (= (= ((_ extract 0 0) (|uart_transmitter#21| state)) #b1) false) ; $formal$./uart_transmitter.v:143$28_EN
-  (= (= ((_ extract 0 0) (|uart_transmitter#23| state)) #b1) false) ; $formal$./uart_transmitter.v:141$27_EN
-  (= (= ((_ extract 0 0) (|uart_transmitter#25| state)) #b1) false) ; $formal$./uart_transmitter.v:139$26_EN
-  (= (= ((_ extract 0 0) (|uart_transmitter#27| state)) #b1) false) ; $formal$./uart_transmitter.v:137$25_EN
-  (= (= ((_ extract 0 0) (|uart_transmitter#29| state)) #b1) false) ; $formal$./uart_transmitter.v:135$24_EN
-  (= (= ((_ extract 0 0) (|uart_transmitter#31| state)) #b1) false) ; $formal$./uart_transmitter.v:133$23_EN
-  (= (= ((_ extract 0 0) (|uart_transmitter#34| state)) #b1) false) ; $formal$./uart_transmitter.v:127$21_EN
-  (= (= ((_ extract 0 0) (|uart_transmitter#36| state)) #b1) false) ; $formal$./uart_transmitter.v:123$20_EN
-  (= (= ((_ extract 0 0) (|uart_transmitter#38| state)) #b1) false) ; $formal$./uart_transmitter.v:122$19_EN
-  (= (= ((_ extract 0 0) (|uart_transmitter#40| state)) #b1) false) ; $formal$./uart_transmitter.v:120$18_EN
-  (= (= ((_ extract 0 0) (|uart_transmitter#43| state)) #b1) false) ; $formal$./uart_transmitter.v:114$16_EN
-  (= (= ((_ extract 0 0) (|uart_transmitter#46| state)) #b1) false) ; $formal$./uart_transmitter.v:109$14_EN
+  (= (= ((_ extract 0 0) (|uart_transmitter#22| state)) #b1) false) ; $formal$./uart_transmitter.v:155$32_EN
+  (= (= ((_ extract 0 0) (|uart_transmitter#24| state)) #b1) false) ; $formal$./uart_transmitter.v:153$31_EN
+  (= (= ((_ extract 0 0) (|uart_transmitter#26| state)) #b1) false) ; $formal$./uart_transmitter.v:151$30_EN
+  (= (= ((_ extract 0 0) (|uart_transmitter#28| state)) #b1) false) ; $formal$./uart_transmitter.v:149$29_EN
+  (= (= ((_ extract 0 0) (|uart_transmitter#30| state)) #b1) false) ; $formal$./uart_transmitter.v:147$28_EN
+  (= (= ((_ extract 0 0) (|uart_transmitter#32| state)) #b1) false) ; $formal$./uart_transmitter.v:145$27_EN
+  (= (= ((_ extract 0 0) (|uart_transmitter#36| state)) #b1) false) ; $formal$./uart_transmitter.v:138$24_EN
+  (= (= ((_ extract 0 0) (|uart_transmitter#39| state)) #b1) false) ; $formal$./uart_transmitter.v:133$22_EN
+  (= (= ((_ extract 0 0) (|uart_transmitter#41| state)) #b1) false) ; $formal$./uart_transmitter.v:132$21_EN
+  (= (= ((_ extract 0 0) (|uart_transmitter#43| state)) #b1) false) ; $formal$./uart_transmitter.v:130$20_EN
+  (= (= ((_ extract 0 0) (|uart_transmitter#47| state)) #b1) false) ; $formal$./uart_transmitter.v:123$17_EN
+  (= (= ((_ extract 0 0) (|uart_transmitter#51| state)) #b1) false) ; $formal$./uart_transmitter.v:117$14_EN
 ))
 (define-fun |uart_transmitter_h| ((state |uart_transmitter_s|)) Bool true)
 (define-fun |uart_transmitter_t| ((state |uart_transmitter_s|) (next_state |uart_transmitter_s|)) Bool (and
-  (= (ite (|uart_transmitter#17| state) #b1 #b0) (|uart_transmitter#48| next_state)) ; $procdff$370 $and$./uart_transmitter.v:105$92_Y
-  (= (|uart_transmitter#57| state) (|uart_transmitter#47| next_state)) ; $procdff$386 $formal$./uart_transmitter.v:109$14_CHECK
-  (= (|uart_transmitter#59| state) (|uart_transmitter#46| next_state)) ; $procdff$387 $formal$./uart_transmitter.v:109$14_EN
-  (= (|uart_transmitter#64| state) (|uart_transmitter#45| next_state)) ; $procdff$388 $formal$./uart_transmitter.v:110$15_CHECK
-  (= (|uart_transmitter#70| state) (|uart_transmitter#44| next_state)) ; $procdff$390 $formal$./uart_transmitter.v:114$16_CHECK
-  (= (|uart_transmitter#72| state) (|uart_transmitter#43| next_state)) ; $procdff$391 $formal$./uart_transmitter.v:114$16_EN
-  (= (|uart_transmitter#76| state) (|uart_transmitter#42| next_state)) ; $procdff$392 $formal$./uart_transmitter.v:115$17_CHECK
-  (= (|uart_transmitter#85| state) (|uart_transmitter#41| next_state)) ; $procdff$394 $formal$./uart_transmitter.v:120$18_CHECK
-  (= (|uart_transmitter#88| state) (|uart_transmitter#40| next_state)) ; $procdff$395 $formal$./uart_transmitter.v:120$18_EN
-  (= (|uart_transmitter#94| state) (|uart_transmitter#39| next_state)) ; $procdff$396 $formal$./uart_transmitter.v:122$19_CHECK
-  (= (|uart_transmitter#97| state) (|uart_transmitter#38| next_state)) ; $procdff$397 $formal$./uart_transmitter.v:122$19_EN
-  (= (|uart_transmitter#103| state) (|uart_transmitter#37| next_state)) ; $procdff$398 $formal$./uart_transmitter.v:123$20_CHECK
-  (= (|uart_transmitter#105| state) (|uart_transmitter#36| next_state)) ; $procdff$399 $formal$./uart_transmitter.v:123$20_EN
-  (= (|uart_transmitter#110| state) (|uart_transmitter#35| next_state)) ; $procdff$400 $formal$./uart_transmitter.v:127$21_CHECK
-  (= (|uart_transmitter#112| state) (|uart_transmitter#34| next_state)) ; $procdff$401 $formal$./uart_transmitter.v:127$21_EN
-  (= (|uart_transmitter#117| state) (|uart_transmitter#33| next_state)) ; $procdff$402 $formal$./uart_transmitter.v:128$22_CHECK
-  (= (|uart_transmitter#123| state) (|uart_transmitter#32| next_state)) ; $procdff$404 $formal$./uart_transmitter.v:133$23_CHECK
-  (= (|uart_transmitter#125| state) (|uart_transmitter#31| next_state)) ; $procdff$405 $formal$./uart_transmitter.v:133$23_EN
-  (= (|uart_transmitter#132| state) (|uart_transmitter#30| next_state)) ; $procdff$406 $formal$./uart_transmitter.v:135$24_CHECK
-  (= (|uart_transmitter#134| state) (|uart_transmitter#29| next_state)) ; $procdff$407 $formal$./uart_transmitter.v:135$24_EN
-  (= (|uart_transmitter#139| state) (|uart_transmitter#28| next_state)) ; $procdff$408 $formal$./uart_transmitter.v:137$25_CHECK
-  (= (|uart_transmitter#141| state) (|uart_transmitter#27| next_state)) ; $procdff$409 $formal$./uart_transmitter.v:137$25_EN
-  (= (|uart_transmitter#147| state) (|uart_transmitter#26| next_state)) ; $procdff$410 $formal$./uart_transmitter.v:139$26_CHECK
-  (= (|uart_transmitter#149| state) (|uart_transmitter#25| next_state)) ; $procdff$411 $formal$./uart_transmitter.v:139$26_EN
-  (= (|uart_transmitter#155| state) (|uart_transmitter#24| next_state)) ; $procdff$412 $formal$./uart_transmitter.v:141$27_CHECK
-  (= (|uart_transmitter#157| state) (|uart_transmitter#23| next_state)) ; $procdff$413 $formal$./uart_transmitter.v:141$27_EN
-  (= (|uart_transmitter#161| state) (|uart_transmitter#22| next_state)) ; $procdff$414 $formal$./uart_transmitter.v:143$28_CHECK
-  (= (|uart_transmitter#163| state) (|uart_transmitter#21| next_state)) ; $procdff$415 $formal$./uart_transmitter.v:143$28_EN
-  (= (|uart_transmitter#7| state) (|uart_transmitter#20| next_state)) ; $procdff$373 $past$./uart_transmitter.v:107$4$0
-  (= ((_ extract 0 0) (|uart_transmitter#13| state)) (|uart_transmitter#19| next_state)) ; $procdff$376 $past$./uart_transmitter.v:120$7$0
-  (= (|uart_transmitter#2| state) (|uart_transmitter#18| next_state)) ; $procdff$377 $past$./uart_transmitter.v:123$8$0
-  (= (|uart_transmitter#168| state) (|uart_transmitter#14| next_state)) ; $procdff$416 \o_TX
-  (= (|uart_transmitter#172| state) (|uart_transmitter#13| next_state)) ; $procdff$417 \r_DATA_REG
-  (= (|uart_transmitter#173| state) (|uart_transmitter#7| next_state)) ; $procdff$419 \r_CURRENT_STATE
-  (= (|uart_transmitter#176| state) (|uart_transmitter#2| next_state)) ; $procdff$418 \r_BIT_COUNT
-  (= #b1 (|uart_transmitter#0| next_state)) ; $procdff$369 \r_PAST_VALID
+  (= (ite (|uart_transmitter#18| state) #b1 #b0) (|uart_transmitter#53| next_state)) ; $procdff$437 $and$./uart_transmitter.v:110$104_Y
+  (= (|uart_transmitter#63| state) (|uart_transmitter#52| next_state)) ; $procdff$453 $formal$./uart_transmitter.v:117$14_CHECK
+  (= (|uart_transmitter#65| state) (|uart_transmitter#51| next_state)) ; $procdff$454 $formal$./uart_transmitter.v:117$14_EN
+  (= (|uart_transmitter#69| state) (|uart_transmitter#50| next_state)) ; $procdff$455 $formal$./uart_transmitter.v:118$15_CHECK
+  (= (|uart_transmitter#74| state) (|uart_transmitter#49| next_state)) ; $procdff$457 $formal$./uart_transmitter.v:119$16_CHECK
+  (= (|uart_transmitter#79| state) (|uart_transmitter#48| next_state)) ; $procdff$459 $formal$./uart_transmitter.v:123$17_CHECK
+  (= (|uart_transmitter#81| state) (|uart_transmitter#47| next_state)) ; $procdff$460 $formal$./uart_transmitter.v:123$17_EN
+  (= (|uart_transmitter#86| state) (|uart_transmitter#46| next_state)) ; $procdff$461 $formal$./uart_transmitter.v:124$18_CHECK
+  (= (|uart_transmitter#90| state) (|uart_transmitter#45| next_state)) ; $procdff$463 $formal$./uart_transmitter.v:125$19_CHECK
+  (= (|uart_transmitter#99| state) (|uart_transmitter#44| next_state)) ; $procdff$465 $formal$./uart_transmitter.v:130$20_CHECK
+  (= (|uart_transmitter#102| state) (|uart_transmitter#43| next_state)) ; $procdff$466 $formal$./uart_transmitter.v:130$20_EN
+  (= (|uart_transmitter#108| state) (|uart_transmitter#42| next_state)) ; $procdff$467 $formal$./uart_transmitter.v:132$21_CHECK
+  (= (|uart_transmitter#111| state) (|uart_transmitter#41| next_state)) ; $procdff$468 $formal$./uart_transmitter.v:132$21_EN
+  (= (|uart_transmitter#115| state) (|uart_transmitter#40| next_state)) ; $procdff$469 $formal$./uart_transmitter.v:133$22_CHECK
+  (= (|uart_transmitter#117| state) (|uart_transmitter#39| next_state)) ; $procdff$470 $formal$./uart_transmitter.v:133$22_EN
+  (= (|uart_transmitter#123| state) (|uart_transmitter#38| next_state)) ; $procdff$471 $formal$./uart_transmitter.v:134$23_CHECK
+  (= (|uart_transmitter#128| state) (|uart_transmitter#37| next_state)) ; $procdff$473 $formal$./uart_transmitter.v:138$24_CHECK
+  (= (|uart_transmitter#130| state) (|uart_transmitter#36| next_state)) ; $procdff$474 $formal$./uart_transmitter.v:138$24_EN
+  (= (|uart_transmitter#134| state) (|uart_transmitter#35| next_state)) ; $procdff$475 $formal$./uart_transmitter.v:139$25_CHECK
+  (= (|uart_transmitter#139| state) (|uart_transmitter#34| next_state)) ; $procdff$477 $formal$./uart_transmitter.v:140$26_CHECK
+  (= (|uart_transmitter#145| state) (|uart_transmitter#33| next_state)) ; $procdff$479 $formal$./uart_transmitter.v:145$27_CHECK
+  (= (|uart_transmitter#147| state) (|uart_transmitter#32| next_state)) ; $procdff$480 $formal$./uart_transmitter.v:145$27_EN
+  (= (|uart_transmitter#154| state) (|uart_transmitter#31| next_state)) ; $procdff$481 $formal$./uart_transmitter.v:147$28_CHECK
+  (= (|uart_transmitter#156| state) (|uart_transmitter#30| next_state)) ; $procdff$482 $formal$./uart_transmitter.v:147$28_EN
+  (= (|uart_transmitter#161| state) (|uart_transmitter#29| next_state)) ; $procdff$483 $formal$./uart_transmitter.v:149$29_CHECK
+  (= (|uart_transmitter#163| state) (|uart_transmitter#28| next_state)) ; $procdff$484 $formal$./uart_transmitter.v:149$29_EN
+  (= (|uart_transmitter#169| state) (|uart_transmitter#27| next_state)) ; $procdff$485 $formal$./uart_transmitter.v:151$30_CHECK
+  (= (|uart_transmitter#171| state) (|uart_transmitter#26| next_state)) ; $procdff$486 $formal$./uart_transmitter.v:151$30_EN
+  (= (|uart_transmitter#177| state) (|uart_transmitter#25| next_state)) ; $procdff$487 $formal$./uart_transmitter.v:153$31_CHECK
+  (= (|uart_transmitter#179| state) (|uart_transmitter#24| next_state)) ; $procdff$488 $formal$./uart_transmitter.v:153$31_EN
+  (= (|uart_transmitter#183| state) (|uart_transmitter#23| next_state)) ; $procdff$489 $formal$./uart_transmitter.v:155$32_CHECK
+  (= (|uart_transmitter#185| state) (|uart_transmitter#22| next_state)) ; $procdff$490 $formal$./uart_transmitter.v:155$32_EN
+  (= (|uart_transmitter#7| state) (|uart_transmitter#21| next_state)) ; $procdff$440 $past$./uart_transmitter.v:115$4$0
+  (= ((_ extract 0 0) (|uart_transmitter#13| state)) (|uart_transmitter#20| next_state)) ; $procdff$443 $past$./uart_transmitter.v:130$7$0
+  (= (|uart_transmitter#2| state) (|uart_transmitter#19| next_state)) ; $procdff$444 $past$./uart_transmitter.v:134$8$0
+  (= (|uart_transmitter#190| state) (|uart_transmitter#15| next_state)) ; $procdff$492 \o_TX
+  (= (|uart_transmitter#194| state) (|uart_transmitter#14| next_state)) ; $procdff$491 \o_TX_BUSY
+  (= (|uart_transmitter#198| state) (|uart_transmitter#13| next_state)) ; $procdff$493 \r_DATA_REG
+  (= (|uart_transmitter#199| state) (|uart_transmitter#7| next_state)) ; $procdff$495 \r_CURRENT_STATE
+  (= (|uart_transmitter#202| state) (|uart_transmitter#2| next_state)) ; $procdff$494 \r_BIT_COUNT
+  (= #b1 (|uart_transmitter#0| next_state)) ; $procdff$436 \r_PAST_VALID
 )) ; end of module uart_transmitter
 ; yosys-smt2-topmod uart_transmitter
 ; end of yosys output

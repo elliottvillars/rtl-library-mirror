@@ -3,6 +3,7 @@ module uart_transmitter (
 	input wire i_CLK_ENABLE,
 	input wire i_TX_ENABLE,
 	input wire [7:0] i_DATA_IN,
+	output reg  o_TX_BUSY,
 	output reg o_TX
 );
 
@@ -72,15 +73,18 @@ begin
 			begin
 				r_DATA_REG <= i_DATA_IN;
 				o_TX <= 1'b1;
+				o_TX_BUSY <= 1'b0;
 			end
 			s_START_TX:
 			begin
 				r_DATA_REG <= r_DATA_REG;
 				o_TX <= 1'b0;
+				o_TX_BUSY <= 1'b1;
 			end
 			s_TRANSMIT:
 			begin
 				r_DATA_REG <= r_DATA_REG >> 1'b1;
+				o_TX_BUSY <= 1'b1;
 				if(r_BIT_COUNT != 8)
 					o_TX <= r_DATA_REG[0];
 				else
@@ -88,6 +92,7 @@ begin
 			end
 			s_STOP_TX:
 			begin
+				o_TX_BUSY <= 1'b1;
 				r_DATA_REG <= r_DATA_REG;
 				o_TX <= 1'b1;
 			end
@@ -103,14 +108,19 @@ end
 		assume($changed(i_CLK));
 		r_PAST_VALID <= 1;
 		if(r_PAST_VALID && $rose(i_CLK)) begin
+			//cover transiton back to idle
 			cover(r_CURRENT_STATE == s_IDLE && $past(r_CURRENT_STATE == s_STOP_TX));
+
+			//Check state assertions
 			if($past(r_CURRENT_STATE) == s_IDLE)
 			begin
+				assert(o_TX_BUSY == 0);
 				assert(o_TX == 1);
 				assert(r_BIT_COUNT == 3'd0);
 			end
 			if($past(r_CURRENT_STATE) == s_START_TX) 
 			begin
+				assert(o_TX_BUSY == 1);
 				assert(o_TX == 0);
 				assert(r_BIT_COUNT == 0);
 			end
@@ -120,10 +130,12 @@ end
 					assert(o_TX == $past(r_DATA_REG[0]));
 				else
 					assert(o_TX == 1);
+				assert(o_TX_BUSY == 1);
 				assert(r_BIT_COUNT == $past(r_BIT_COUNT) + 1);
 			end
 			if($past(r_CURRENT_STATE) == s_STOP_TX)
 			begin
+				assert(o_TX_BUSY == 1);
 				assert(o_TX == 1);
 				assert($past(r_BIT_COUNT) == 9);
 			end

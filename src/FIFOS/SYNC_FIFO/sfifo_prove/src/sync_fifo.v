@@ -15,15 +15,6 @@ reg [p_DATA_WIDTH-1:0] r_QUANTITY;
 
 localparam lp_ALMOST_FULL_FLAG  =  1;
 localparam lp_ALMOST_EMPTY_FLAG =  1;
-
-//TODO: explicitly create max memory bounds to test.
-initial 
-begin
-	r_READ_POINTER = 0;
-	r_WRITE_POINTER = 0;
-	r_QUANTITY = 0;
-	
-end
 always@(posedge i_CLK)
 begin
 	if(i_WRITE_REQUEST == 1)
@@ -71,10 +62,7 @@ end
 		if(r_PAST_VALID == 1 && $rose(i_CLK))
 		begin
 			//cover read
-			cover(o_OUTPUT == 256 && o_FIFO_EMPTY == 1);
-
 			//cover write
-			cover(o_FIFO_FULL == 1);
 
 			if($past(r_QUANTITY) == 0)
 			begin
@@ -84,13 +72,11 @@ end
 			end
 			else if($past(r_QUANTITY) == 2**p_FIFO_DEPTH - 1) //enumerate this
 			begin
-				assert(r_READ_POINTER == r_WRITE_POINTER);
 				assert(o_FIFO_FULL == 1);
 				assert(o_FIFO_EMPTY == 0);
 			end
 			else
 			begin
-				assert(r_READ_POINTER != r_WRITE_POINTER);
 				assert(o_FIFO_FULL == 0);
 				assert(o_FIFO_EMPTY == 0);
 			end

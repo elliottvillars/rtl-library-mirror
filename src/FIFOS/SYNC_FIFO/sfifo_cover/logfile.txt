@@ -1,0 +1,12 @@
+SBY 23:36:40 [sfifo_prove] Removing directory 'sfifo_prove'.
+SBY 23:36:40 [sfifo_cover] Removing directory 'sfifo_cover'.
+SBY 23:36:40 [sfifo_cover] Copy './sync_fifo.v' to 'sfifo_cover/src/sync_fifo.v'.
+SBY 23:36:40 [sfifo_cover] engine_0: smtbmc z3
+SBY 23:36:40 [sfifo_cover] engine_1: smtbmc yices
+SBY 23:36:40 [sfifo_cover] base: starting process "cd sfifo_cover/src; yosys -ql ../model/design.log ../model/design.ys"
+SBY 23:36:40 [sfifo_cover] base: ./sync_fifo.v:28: ERROR: Identifier `\r_MEMORY' does map to an unexpanded memory!
+SBY 23:36:40 [sfifo_cover] base: finished (returncode=1)
+SBY 23:36:40 [sfifo_cover] base: job failed. ERROR.
+SBY 23:36:40 [sfifo_cover] summary: Elapsed clock time [H:MM:SS (secs)]: 0:00:00 (0)
+SBY 23:36:40 [sfifo_cover] summary: Elapsed process time [H:MM:SS (secs)]: 0:00:00 (0)
+SBY 23:36:40 [sfifo_cover] DONE (ERROR, rc=16)
