@@ -33,319 +33,569 @@
 ; yosys-smt2-wire o_FIFO_EMPTY 1
 (declare-fun |sync_fifo#6| (|sync_fifo_s|) (_ BitVec 1)) ; \o_FIFO_EMPTY
 (define-fun |sync_fifo_n o_FIFO_EMPTY| ((state |sync_fifo_s|)) Bool (= ((_ extract 0 0) (|sync_fifo#6| state)) #b1))
+; yosys-smt2-output o_FIFO_ALMOST_FULL 1
+; yosys-smt2-register o_FIFO_ALMOST_FULL 1
+; yosys-smt2-wire o_FIFO_ALMOST_FULL 1
+(declare-fun |sync_fifo#7| (|sync_fifo_s|) (_ BitVec 1)) ; \o_FIFO_ALMOST_FULL
+(define-fun |sync_fifo_n o_FIFO_ALMOST_FULL| ((state |sync_fifo_s|)) Bool (= ((_ extract 0 0) (|sync_fifo#7| state)) #b1))
+; yosys-smt2-output o_FIFO_ALMOST_EMPTY 1
+; yosys-smt2-register o_FIFO_ALMOST_EMPTY 1
+; yosys-smt2-wire o_FIFO_ALMOST_EMPTY 1
+(declare-fun |sync_fifo#8| (|sync_fifo_s|) (_ BitVec 1)) ; \o_FIFO_ALMOST_EMPTY
+(define-fun |sync_fifo_n o_FIFO_ALMOST_EMPTY| ((state |sync_fifo_s|)) Bool (= ((_ extract 0 0) (|sync_fifo#8| state)) #b1))
 ; yosys-smt2-input i_WRITE_REQUEST 1
 ; yosys-smt2-wire i_WRITE_REQUEST 1
-(declare-fun |sync_fifo#7| (|sync_fifo_s|) Bool) ; \i_WRITE_REQUEST
-(define-fun |sync_fifo_n i_WRITE_REQUEST| ((state |sync_fifo_s|)) Bool (|sync_fifo#7| state))
+(declare-fun |sync_fifo#9| (|sync_fifo_s|) Bool) ; \i_WRITE_REQUEST
+(define-fun |sync_fifo_n i_WRITE_REQUEST| ((state |sync_fifo_s|)) Bool (|sync_fifo#9| state))
+; yosys-smt2-input i_RESET 1
+; yosys-smt2-wire i_RESET 1
+(declare-fun |sync_fifo#10| (|sync_fifo_s|) Bool) ; \i_RESET
+(define-fun |sync_fifo_n i_RESET| ((state |sync_fifo_s|)) Bool (|sync_fifo#10| state))
 ; yosys-smt2-input i_READ_REQUEST 1
 ; yosys-smt2-wire i_READ_REQUEST 1
-(declare-fun |sync_fifo#8| (|sync_fifo_s|) Bool) ; \i_READ_REQUEST
-(define-fun |sync_fifo_n i_READ_REQUEST| ((state |sync_fifo_s|)) Bool (|sync_fifo#8| state))
+(declare-fun |sync_fifo#11| (|sync_fifo_s|) Bool) ; \i_READ_REQUEST
+(define-fun |sync_fifo_n i_READ_REQUEST| ((state |sync_fifo_s|)) Bool (|sync_fifo#11| state))
 ; yosys-smt2-input i_INPUT 8
 ; yosys-smt2-wire i_INPUT 8
-(declare-fun |sync_fifo#9| (|sync_fifo_s|) (_ BitVec 8)) ; \i_INPUT
-(define-fun |sync_fifo_n i_INPUT| ((state |sync_fifo_s|)) (_ BitVec 8) (|sync_fifo#9| state))
+(declare-fun |sync_fifo#12| (|sync_fifo_s|) (_ BitVec 8)) ; \i_INPUT
+(define-fun |sync_fifo_n i_INPUT| ((state |sync_fifo_s|)) (_ BitVec 8) (|sync_fifo#12| state))
 ; yosys-smt2-input i_CLK 1
 ; yosys-smt2-wire i_CLK 1
-(declare-fun |sync_fifo#10| (|sync_fifo_s|) Bool) ; \i_CLK
-(define-fun |sync_fifo_n i_CLK| ((state |sync_fifo_s|)) Bool (|sync_fifo#10| state))
-; yosys-smt2-register $past$./sync_fifo.v:88$15$0 8
-(declare-fun |sync_fifo#11| (|sync_fifo_s|) (_ BitVec 8)) ; $past$./sync_fifo.v:88$15$0
-(define-fun |sync_fifo_n $past$./sync_fifo.v:88$15$0| ((state |sync_fifo_s|)) (_ BitVec 8) (|sync_fifo#11| state))
-; yosys-smt2-register $past$./sync_fifo.v:87$13$0 2
-(declare-fun |sync_fifo#12| (|sync_fifo_s|) (_ BitVec 2)) ; $past$./sync_fifo.v:87$13$0
-(define-fun |sync_fifo_n $past$./sync_fifo.v:87$13$0| ((state |sync_fifo_s|)) (_ BitVec 2) (|sync_fifo#12| state))
-; yosys-smt2-register $past$./sync_fifo.v:81$8$0 2
-(declare-fun |sync_fifo#13| (|sync_fifo_s|) (_ BitVec 2)) ; $past$./sync_fifo.v:81$8$0
-(define-fun |sync_fifo_n $past$./sync_fifo.v:81$8$0| ((state |sync_fifo_s|)) (_ BitVec 2) (|sync_fifo#13| state))
-; yosys-smt2-register $past$./sync_fifo.v:63$3$0 2
-(declare-fun |sync_fifo#14| (|sync_fifo_s|) (_ BitVec 2)) ; $past$./sync_fifo.v:63$3$0
-(define-fun |sync_fifo_n $past$./sync_fifo.v:63$3$0| ((state |sync_fifo_s|)) (_ BitVec 2) (|sync_fifo#14| state))
-; yosys-smt2-register $formal$./sync_fifo.v:88$41_CHECK 1
-(declare-fun |sync_fifo#15| (|sync_fifo_s|) (_ BitVec 1)) ; $formal$./sync_fifo.v:88$41_CHECK
-(define-fun |sync_fifo_n $formal$./sync_fifo.v:88$41_CHECK| ((state |sync_fifo_s|)) Bool (= ((_ extract 0 0) (|sync_fifo#15| state)) #b1))
-; yosys-smt2-register $formal$./sync_fifo.v:87$40_CHECK 1
-(declare-fun |sync_fifo#16| (|sync_fifo_s|) (_ BitVec 1)) ; $formal$./sync_fifo.v:87$40_CHECK
-(define-fun |sync_fifo_n $formal$./sync_fifo.v:87$40_CHECK| ((state |sync_fifo_s|)) Bool (= ((_ extract 0 0) (|sync_fifo#16| state)) #b1))
-; yosys-smt2-register $formal$./sync_fifo.v:86$39_EN 1
-(declare-fun |sync_fifo#17| (|sync_fifo_s|) (_ BitVec 1)) ; $formal$./sync_fifo.v:86$39_EN
-(define-fun |sync_fifo_n $formal$./sync_fifo.v:86$39_EN| ((state |sync_fifo_s|)) Bool (= ((_ extract 0 0) (|sync_fifo#17| state)) #b1))
-; yosys-smt2-register $formal$./sync_fifo.v:86$39_CHECK 1
-(declare-fun |sync_fifo#18| (|sync_fifo_s|) (_ BitVec 1)) ; $formal$./sync_fifo.v:86$39_CHECK
-(define-fun |sync_fifo_n $formal$./sync_fifo.v:86$39_CHECK| ((state |sync_fifo_s|)) Bool (= ((_ extract 0 0) (|sync_fifo#18| state)) #b1))
-; yosys-smt2-register $formal$./sync_fifo.v:82$38_CHECK 1
-(declare-fun |sync_fifo#19| (|sync_fifo_s|) (_ BitVec 1)) ; $formal$./sync_fifo.v:82$38_CHECK
-(define-fun |sync_fifo_n $formal$./sync_fifo.v:82$38_CHECK| ((state |sync_fifo_s|)) Bool (= ((_ extract 0 0) (|sync_fifo#19| state)) #b1))
-; yosys-smt2-register $formal$./sync_fifo.v:81$37_CHECK 1
-(declare-fun |sync_fifo#20| (|sync_fifo_s|) (_ BitVec 1)) ; $formal$./sync_fifo.v:81$37_CHECK
-(define-fun |sync_fifo_n $formal$./sync_fifo.v:81$37_CHECK| ((state |sync_fifo_s|)) Bool (= ((_ extract 0 0) (|sync_fifo#20| state)) #b1))
-; yosys-smt2-register $formal$./sync_fifo.v:80$36_EN 1
-(declare-fun |sync_fifo#21| (|sync_fifo_s|) (_ BitVec 1)) ; $formal$./sync_fifo.v:80$36_EN
-(define-fun |sync_fifo_n $formal$./sync_fifo.v:80$36_EN| ((state |sync_fifo_s|)) Bool (= ((_ extract 0 0) (|sync_fifo#21| state)) #b1))
-; yosys-smt2-register $formal$./sync_fifo.v:80$36_CHECK 1
-(declare-fun |sync_fifo#22| (|sync_fifo_s|) (_ BitVec 1)) ; $formal$./sync_fifo.v:80$36_CHECK
-(define-fun |sync_fifo_n $formal$./sync_fifo.v:80$36_CHECK| ((state |sync_fifo_s|)) Bool (= ((_ extract 0 0) (|sync_fifo#22| state)) #b1))
-; yosys-smt2-register $formal$./sync_fifo.v:76$35_CHECK 1
-(declare-fun |sync_fifo#23| (|sync_fifo_s|) (_ BitVec 1)) ; $formal$./sync_fifo.v:76$35_CHECK
-(define-fun |sync_fifo_n $formal$./sync_fifo.v:76$35_CHECK| ((state |sync_fifo_s|)) Bool (= ((_ extract 0 0) (|sync_fifo#23| state)) #b1))
-; yosys-smt2-register $formal$./sync_fifo.v:75$34_EN 1
-(declare-fun |sync_fifo#24| (|sync_fifo_s|) (_ BitVec 1)) ; $formal$./sync_fifo.v:75$34_EN
-(define-fun |sync_fifo_n $formal$./sync_fifo.v:75$34_EN| ((state |sync_fifo_s|)) Bool (= ((_ extract 0 0) (|sync_fifo#24| state)) #b1))
-; yosys-smt2-register $formal$./sync_fifo.v:75$34_CHECK 1
-(declare-fun |sync_fifo#25| (|sync_fifo_s|) (_ BitVec 1)) ; $formal$./sync_fifo.v:75$34_CHECK
-(define-fun |sync_fifo_n $formal$./sync_fifo.v:75$34_CHECK| ((state |sync_fifo_s|)) Bool (= ((_ extract 0 0) (|sync_fifo#25| state)) #b1))
-; yosys-smt2-register $formal$./sync_fifo.v:71$33_CHECK 1
-(declare-fun |sync_fifo#26| (|sync_fifo_s|) (_ BitVec 1)) ; $formal$./sync_fifo.v:71$33_CHECK
-(define-fun |sync_fifo_n $formal$./sync_fifo.v:71$33_CHECK| ((state |sync_fifo_s|)) Bool (= ((_ extract 0 0) (|sync_fifo#26| state)) #b1))
-; yosys-smt2-register $formal$./sync_fifo.v:70$32_EN 1
-(declare-fun |sync_fifo#27| (|sync_fifo_s|) (_ BitVec 1)) ; $formal$./sync_fifo.v:70$32_EN
-(define-fun |sync_fifo_n $formal$./sync_fifo.v:70$32_EN| ((state |sync_fifo_s|)) Bool (= ((_ extract 0 0) (|sync_fifo#27| state)) #b1))
-; yosys-smt2-register $formal$./sync_fifo.v:70$32_CHECK 1
-(declare-fun |sync_fifo#28| (|sync_fifo_s|) (_ BitVec 1)) ; $formal$./sync_fifo.v:70$32_CHECK
-(define-fun |sync_fifo_n $formal$./sync_fifo.v:70$32_CHECK| ((state |sync_fifo_s|)) Bool (= ((_ extract 0 0) (|sync_fifo#28| state)) #b1))
-; yosys-smt2-register $formal$./sync_fifo.v:66$31_CHECK 1
-(declare-fun |sync_fifo#29| (|sync_fifo_s|) (_ BitVec 1)) ; $formal$./sync_fifo.v:66$31_CHECK
-(define-fun |sync_fifo_n $formal$./sync_fifo.v:66$31_CHECK| ((state |sync_fifo_s|)) Bool (= ((_ extract 0 0) (|sync_fifo#29| state)) #b1))
-; yosys-smt2-register $formal$./sync_fifo.v:65$30_EN 1
-(declare-fun |sync_fifo#30| (|sync_fifo_s|) (_ BitVec 1)) ; $formal$./sync_fifo.v:65$30_EN
-(define-fun |sync_fifo_n $formal$./sync_fifo.v:65$30_EN| ((state |sync_fifo_s|)) Bool (= ((_ extract 0 0) (|sync_fifo#30| state)) #b1))
-; yosys-smt2-register $formal$./sync_fifo.v:65$30_CHECK 1
-(declare-fun |sync_fifo#31| (|sync_fifo_s|) (_ BitVec 1)) ; $formal$./sync_fifo.v:65$30_CHECK
-(define-fun |sync_fifo_n $formal$./sync_fifo.v:65$30_CHECK| ((state |sync_fifo_s|)) Bool (= ((_ extract 0 0) (|sync_fifo#31| state)) #b1))
-; yosys-smt2-register $formal$./sync_fifo.v:62$29_CHECK 1
-(declare-fun |sync_fifo#32| (|sync_fifo_s|) (_ BitVec 1)) ; $formal$./sync_fifo.v:62$29_CHECK
-(define-fun |sync_fifo_n $formal$./sync_fifo.v:62$29_CHECK| ((state |sync_fifo_s|)) Bool (= ((_ extract 0 0) (|sync_fifo#32| state)) #b1))
-; yosys-smt2-register $formal$./sync_fifo.v:60$28_EN 1
-(declare-fun |sync_fifo#33| (|sync_fifo_s|) (_ BitVec 1)) ; $formal$./sync_fifo.v:60$28_EN
-(define-fun |sync_fifo_n $formal$./sync_fifo.v:60$28_EN| ((state |sync_fifo_s|)) Bool (= ((_ extract 0 0) (|sync_fifo#33| state)) #b1))
-; yosys-smt2-register $eq$./sync_fifo.v:84$147_Y 1
-(declare-fun |sync_fifo#34| (|sync_fifo_s|) (_ BitVec 1)) ; $eq$./sync_fifo.v:84$147_Y
-(define-fun |sync_fifo_n $eq$./sync_fifo.v:84$147_Y| ((state |sync_fifo_s|)) Bool (= ((_ extract 0 0) (|sync_fifo#34| state)) #b1))
-; yosys-smt2-register $eq$./sync_fifo.v:78$140_Y 1
-(declare-fun |sync_fifo#35| (|sync_fifo_s|) (_ BitVec 1)) ; $eq$./sync_fifo.v:78$140_Y
-(define-fun |sync_fifo_n $eq$./sync_fifo.v:78$140_Y| ((state |sync_fifo_s|)) Bool (= ((_ extract 0 0) (|sync_fifo#35| state)) #b1))
-; yosys-smt2-register $and$./sync_fifo.v:56$124_Y 1
-(declare-fun |sync_fifo#36| (|sync_fifo_s|) (_ BitVec 1)) ; $and$./sync_fifo.v:56$124_Y
-(define-fun |sync_fifo_n $and$./sync_fifo.v:56$124_Y| ((state |sync_fifo_s|)) Bool (= ((_ extract 0 0) (|sync_fifo#36| state)) #b1))
-(define-fun |sync_fifo#37| ((state |sync_fifo_s|)) Bool (= (|sync_fifo#11| state) (|sync_fifo#9| state))) ; $eq$./sync_fifo.v:95$161_Y
-; yosys-smt2-anyseq sync_fifo#38 1 $auto$setundef.cc:524:execute$558
-(declare-fun |sync_fifo#38| (|sync_fifo_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2358:Anyseq$559
-(define-fun |sync_fifo#39| ((state |sync_fifo_s|)) Bool (not (or  (= ((_ extract 0 0) (|sync_fifo#36| state)) #b1) false false false false false false false false false false false false false false false false false false false false false false false false false false false false false false false))) ; $logic_not$./sync_fifo.v:56$125_Y
-(define-fun |sync_fifo#40| ((state |sync_fifo_s|)) Bool (and (or  (|sync_fifo#39| state) false) (or  (|sync_fifo#10| state) false false false false false false false false false false false false false false false false false false false false false false false false false false false false false false false))) ; $logic_and$./sync_fifo.v:56$127_Y
-(define-fun |sync_fifo#41| ((state |sync_fifo_s|)) (_ BitVec 1) (ite (|sync_fifo#40| state) (|sync_fifo#38| state) (ite (|sync_fifo#37| state) #b1 #b0))) ; $0$formal$./sync_fifo.v:95$44_CHECK[0:0]$116
-(define-fun |sync_fifo#42| ((state |sync_fifo_s|)) (_ BitVec 1) (ite (|sync_fifo#40| state) #b0 #b1)) ; $0$formal$./sync_fifo.v:93$42_EN[0:0]$113
-; yosys-smt2-assume 0 ./sync_fifo.v:95
-(define-fun |sync_fifo_u 0| ((state |sync_fifo_s|)) Bool (or (= ((_ extract 0 0) (|sync_fifo#41| state)) #b1) (not (= ((_ extract 0 0) (|sync_fifo#42| state)) #b1)))) ; $assume$./sync_fifo.v:95$184
-(define-fun |sync_fifo#43| ((state |sync_fifo_s|)) Bool (= (|sync_fifo#35| state) (ite (|sync_fifo#8| state) #b1 #b0))) ; $eq$./sync_fifo.v:94$160_Y
-; yosys-smt2-anyseq sync_fifo#44 1 $auto$setundef.cc:524:execute$556
-(declare-fun |sync_fifo#44| (|sync_fifo_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2358:Anyseq$557
-(define-fun |sync_fifo#45| ((state |sync_fifo_s|)) (_ BitVec 1) (ite (|sync_fifo#40| state) (|sync_fifo#44| state) (ite (|sync_fifo#43| state) #b1 #b0))) ; $0$formal$./sync_fifo.v:94$43_CHECK[0:0]$114
-; yosys-smt2-assume 1 ./sync_fifo.v:94
-(define-fun |sync_fifo_u 1| ((state |sync_fifo_s|)) Bool (or (= ((_ extract 0 0) (|sync_fifo#45| state)) #b1) (not (= ((_ extract 0 0) (|sync_fifo#42| state)) #b1)))) ; $assume$./sync_fifo.v:94$183
-(define-fun |sync_fifo#46| ((state |sync_fifo_s|)) Bool (= (|sync_fifo#34| state) (ite (|sync_fifo#7| state) #b1 #b0))) ; $eq$./sync_fifo.v:93$159_Y
-; yosys-smt2-anyseq sync_fifo#47 1 $auto$setundef.cc:524:execute$554
-(declare-fun |sync_fifo#47| (|sync_fifo_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2358:Anyseq$555
-(define-fun |sync_fifo#48| ((state |sync_fifo_s|)) (_ BitVec 1) (ite (|sync_fifo#40| state) (|sync_fifo#47| state) (ite (|sync_fifo#46| state) #b1 #b0))) ; $0$formal$./sync_fifo.v:93$42_CHECK[0:0]$112
-; yosys-smt2-assume 2 ./sync_fifo.v:93
-(define-fun |sync_fifo_u 2| ((state |sync_fifo_s|)) Bool (or (= ((_ extract 0 0) (|sync_fifo#48| state)) #b1) (not (= ((_ extract 0 0) (|sync_fifo#42| state)) #b1)))) ; $assume$./sync_fifo.v:93$182
-(define-fun |sync_fifo#49| ((state |sync_fifo_s|)) (_ BitVec 1) (bvand (|sync_fifo#6| state) (ite (|sync_fifo#8| state) #b1 #b0))) ; $and$./sync_fifo.v:54$121_Y
-(define-fun |sync_fifo#50| ((state |sync_fifo_s|)) Bool (not (or  (= ((_ extract 0 0) (|sync_fifo#49| state)) #b1) false false false false false false false false false false false false false false false false false false false false false false false false false false false false false false false))) ; $0$formal$./sync_fifo.v:54$27_CHECK[0:0]$82
-; yosys-smt2-assume 3 ./sync_fifo.v:54
-(define-fun |sync_fifo_u 3| ((state |sync_fifo_s|)) Bool (or (|sync_fifo#50| state) (not true))) ; $assume$./sync_fifo.v:54$167
-(define-fun |sync_fifo#51| ((state |sync_fifo_s|)) (_ BitVec 1) (bvand (|sync_fifo#5| state) (ite (|sync_fifo#7| state) #b1 #b0))) ; $and$./sync_fifo.v:53$119_Y
-(define-fun |sync_fifo#52| ((state |sync_fifo_s|)) Bool (not (or  (= ((_ extract 0 0) (|sync_fifo#51| state)) #b1) false false false false false false false false false false false false false false false false false false false false false false false false false false false false false false false))) ; $0$formal$./sync_fifo.v:53$26_CHECK[0:0]$80
-; yosys-smt2-assume 4 ./sync_fifo.v:53
-(define-fun |sync_fifo_u 4| ((state |sync_fifo_s|)) Bool (or (|sync_fifo#52| state) (not true))) ; $assume$./sync_fifo.v:53$166
-(define-fun |sync_fifo#53| ((state |sync_fifo_s|)) Bool (distinct (|sync_fifo#36| state) (ite (|sync_fifo#10| state) #b1 #b0))) ; $0$formal$./sync_fifo.v:52$25_CHECK[0:0]$78
-; yosys-smt2-assume 5 ./sync_fifo.v:52
-(define-fun |sync_fifo_u 5| ((state |sync_fifo_s|)) Bool (or (|sync_fifo#53| state) (not true))) ; $assume$./sync_fifo.v:52$165
-(define-fun |sync_fifo#54| ((state |sync_fifo_s|)) Bool (not (or  (|sync_fifo#8| state) false))) ; $0$formal$./sync_fifo.v:48$23_CHECK[0:0]$192
-(define-fun |sync_fifo#55| ((state |sync_fifo_s|)) Bool (|sync_fifo_is| state)) ; $0$formal$./sync_fifo.v:47$21_EN[0:0]$191
-; yosys-smt2-assume 6 ./sync_fifo.v:48
-(define-fun |sync_fifo_u 6| ((state |sync_fifo_s|)) Bool (or (|sync_fifo#54| state) (not (|sync_fifo#55| state)))) ; $assume$./sync_fifo.v:48$164
-(define-fun |sync_fifo#56| ((state |sync_fifo_s|)) Bool (not (or  (|sync_fifo#7| state) false))) ; $0$formal$./sync_fifo.v:47$21_CHECK[0:0]$190
-; yosys-smt2-assume 7 ./sync_fifo.v:47
-(define-fun |sync_fifo_u 7| ((state |sync_fifo_s|)) Bool (or (|sync_fifo#56| state) (not (|sync_fifo#55| state)))) ; $assume$./sync_fifo.v:47$163
-; yosys-smt2-assert 0 ./sync_fifo.v:88
-(define-fun |sync_fifo_a 0| ((state |sync_fifo_s|)) Bool (or (= ((_ extract 0 0) (|sync_fifo#15| state)) #b1) (not (= ((_ extract 0 0) (|sync_fifo#17| state)) #b1)))) ; $assert$./sync_fifo.v:88$181
-; yosys-smt2-assert 1 ./sync_fifo.v:87
-(define-fun |sync_fifo_a 1| ((state |sync_fifo_s|)) Bool (or (= ((_ extract 0 0) (|sync_fifo#16| state)) #b1) (not (= ((_ extract 0 0) (|sync_fifo#17| state)) #b1)))) ; $assert$./sync_fifo.v:87$180
-; yosys-smt2-assert 2 ./sync_fifo.v:86
-(define-fun |sync_fifo_a 2| ((state |sync_fifo_s|)) Bool (or (= ((_ extract 0 0) (|sync_fifo#18| state)) #b1) (not (= ((_ extract 0 0) (|sync_fifo#17| state)) #b1)))) ; $assert$./sync_fifo.v:86$179
-; yosys-smt2-assert 3 ./sync_fifo.v:82
-(define-fun |sync_fifo_a 3| ((state |sync_fifo_s|)) Bool (or (= ((_ extract 0 0) (|sync_fifo#19| state)) #b1) (not (= ((_ extract 0 0) (|sync_fifo#21| state)) #b1)))) ; $assert$./sync_fifo.v:82$178
-; yosys-smt2-assert 4 ./sync_fifo.v:81
-(define-fun |sync_fifo_a 4| ((state |sync_fifo_s|)) Bool (or (= ((_ extract 0 0) (|sync_fifo#20| state)) #b1) (not (= ((_ extract 0 0) (|sync_fifo#21| state)) #b1)))) ; $assert$./sync_fifo.v:81$177
-; yosys-smt2-assert 5 ./sync_fifo.v:80
-(define-fun |sync_fifo_a 5| ((state |sync_fifo_s|)) Bool (or (= ((_ extract 0 0) (|sync_fifo#22| state)) #b1) (not (= ((_ extract 0 0) (|sync_fifo#21| state)) #b1)))) ; $assert$./sync_fifo.v:80$176
-; yosys-smt2-assert 6 ./sync_fifo.v:76
-(define-fun |sync_fifo_a 6| ((state |sync_fifo_s|)) Bool (or (= ((_ extract 0 0) (|sync_fifo#23| state)) #b1) (not (= ((_ extract 0 0) (|sync_fifo#24| state)) #b1)))) ; $assert$./sync_fifo.v:76$175
-; yosys-smt2-assert 7 ./sync_fifo.v:75
-(define-fun |sync_fifo_a 7| ((state |sync_fifo_s|)) Bool (or (= ((_ extract 0 0) (|sync_fifo#25| state)) #b1) (not (= ((_ extract 0 0) (|sync_fifo#24| state)) #b1)))) ; $assert$./sync_fifo.v:75$174
-; yosys-smt2-assert 8 ./sync_fifo.v:71
-(define-fun |sync_fifo_a 8| ((state |sync_fifo_s|)) Bool (or (= ((_ extract 0 0) (|sync_fifo#26| state)) #b1) (not (= ((_ extract 0 0) (|sync_fifo#27| state)) #b1)))) ; $assert$./sync_fifo.v:71$173
-; yosys-smt2-assert 9 ./sync_fifo.v:70
-(define-fun |sync_fifo_a 9| ((state |sync_fifo_s|)) Bool (or (= ((_ extract 0 0) (|sync_fifo#28| state)) #b1) (not (= ((_ extract 0 0) (|sync_fifo#27| state)) #b1)))) ; $assert$./sync_fifo.v:70$172
-; yosys-smt2-assert 10 ./sync_fifo.v:66
-(define-fun |sync_fifo_a 10| ((state |sync_fifo_s|)) Bool (or (= ((_ extract 0 0) (|sync_fifo#29| state)) #b1) (not (= ((_ extract 0 0) (|sync_fifo#30| state)) #b1)))) ; $assert$./sync_fifo.v:66$171
-; yosys-smt2-assert 11 ./sync_fifo.v:65
-(define-fun |sync_fifo_a 11| ((state |sync_fifo_s|)) Bool (or (= ((_ extract 0 0) (|sync_fifo#31| state)) #b1) (not (= ((_ extract 0 0) (|sync_fifo#30| state)) #b1)))) ; $assert$./sync_fifo.v:65$170
-; yosys-smt2-assert 12 ./sync_fifo.v:62
-(define-fun |sync_fifo_a 12| ((state |sync_fifo_s|)) Bool (or (= ((_ extract 0 0) (|sync_fifo#32| state)) #b1) (not (= ((_ extract 0 0) (|sync_fifo#33| state)) #b1)))) ; $assert$./sync_fifo.v:62$169
-(define-fun |sync_fifo#57| ((state |sync_fifo_s|)) Bool (and (or  (= ((_ extract 0 0) (|sync_fifo#3| state)) #b1) false) (or  (|sync_fifo#40| state) false))) ; $logic_and$./sync_fifo.v:56$128_Y
-(define-fun |sync_fifo#58| ((state |sync_fifo_s|)) (_ BitVec 1) (ite (|sync_fifo#57| state) #b1 #b0)) ; $0$formal$./sync_fifo.v:60$28_EN[0:0]$85
-; yosys-smt2-anyseq sync_fifo#59 1 $auto$setundef.cc:524:execute$496
-(declare-fun |sync_fifo#59| (|sync_fifo_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2358:Anyseq$497
-(define-fun |sync_fifo#60| ((state |sync_fifo_s|)) (_ BitVec 1) (bvand (|sync_fifo#5| state) (|sync_fifo#6| state))) ; $and$./sync_fifo.v:62$130_Y
-(define-fun |sync_fifo#61| ((state |sync_fifo_s|)) (_ BitVec 1) (bvnot (|sync_fifo#60| state))) ; $ne$./sync_fifo.v:62$131_Y
-(define-fun |sync_fifo#62| ((state |sync_fifo_s|)) (_ BitVec 1) (ite (|sync_fifo#57| state) (|sync_fifo#61| state) (|sync_fifo#59| state))) ; $0$formal$./sync_fifo.v:62$29_CHECK[0:0]$86
-; yosys-smt2-anyseq sync_fifo#63 1 $auto$setundef.cc:524:execute$500
-(declare-fun |sync_fifo#63| (|sync_fifo_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2358:Anyseq$501
-; yosys-smt2-anyseq sync_fifo#64 1 $auto$setundef.cc:524:execute$498
-(declare-fun |sync_fifo#64| (|sync_fifo_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2358:Anyseq$499
-(define-fun |sync_fifo#65| ((state |sync_fifo_s|)) (_ BitVec 1) (bvnot (|sync_fifo#5| state))) ; $eq$./sync_fifo.v:65$133_Y
-(define-fun |sync_fifo#66| ((state |sync_fifo_s|)) Bool (not (or  (= ((_ extract 0 0) (|sync_fifo#14| state)) #b1) (= ((_ extract 1 1) (|sync_fifo#14| state)) #b1)))) ; $eq$./sync_fifo.v:63$132_Y
-(define-fun |sync_fifo#67| ((state |sync_fifo_s|)) (_ BitVec 1) (ite (|sync_fifo#66| state) (|sync_fifo#65| state) (|sync_fifo#64| state))) ; $procmux$250_Y
-(define-fun |sync_fifo#68| ((state |sync_fifo_s|)) (_ BitVec 1) (ite (|sync_fifo#57| state) (|sync_fifo#67| state) (|sync_fifo#63| state))) ; $0$formal$./sync_fifo.v:65$30_CHECK[0:0]$88
-(define-fun |sync_fifo#69| ((state |sync_fifo_s|)) (_ BitVec 1) (ite (|sync_fifo#66| state) #b1 #b0)) ; $procmux$245_Y
-(define-fun |sync_fifo#70| ((state |sync_fifo_s|)) (_ BitVec 1) (ite (|sync_fifo#57| state) (|sync_fifo#69| state) #b0)) ; $0$formal$./sync_fifo.v:65$30_EN[0:0]$89
-; yosys-smt2-anyseq sync_fifo#71 1 $auto$setundef.cc:524:execute$504
-(declare-fun |sync_fifo#71| (|sync_fifo_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2358:Anyseq$505
-; yosys-smt2-anyseq sync_fifo#72 1 $auto$setundef.cc:524:execute$502
-(declare-fun |sync_fifo#72| (|sync_fifo_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2358:Anyseq$503
-(define-fun |sync_fifo#73| ((state |sync_fifo_s|)) (_ BitVec 1) (ite (|sync_fifo#66| state) (|sync_fifo#6| state) (|sync_fifo#72| state))) ; $procmux$260_Y
-(define-fun |sync_fifo#74| ((state |sync_fifo_s|)) (_ BitVec 1) (ite (|sync_fifo#57| state) (|sync_fifo#73| state) (|sync_fifo#71| state))) ; $0$formal$./sync_fifo.v:66$31_CHECK[0:0]$90
-; yosys-smt2-anyseq sync_fifo#75 1 $auto$setundef.cc:524:execute$510
-(declare-fun |sync_fifo#75| (|sync_fifo_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2358:Anyseq$511
-; yosys-smt2-anyseq sync_fifo#76 1 $auto$setundef.cc:524:execute$506
-(declare-fun |sync_fifo#76| (|sync_fifo_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2358:Anyseq$507
-(define-fun |sync_fifo#77| ((state |sync_fifo_s|)) Bool (= (|sync_fifo#14| state) #b11)) ; $eq$./sync_fifo.v:68$135_Y
-(define-fun |sync_fifo#78| ((state |sync_fifo_s|)) (_ BitVec 1) (ite (|sync_fifo#77| state) (|sync_fifo#5| state) (|sync_fifo#76| state))) ; $procmux$273_Y
-; yosys-smt2-anyseq sync_fifo#79 1 $auto$setundef.cc:524:execute$508
-(declare-fun |sync_fifo#79| (|sync_fifo_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2358:Anyseq$509
-(define-fun |sync_fifo#80| ((state |sync_fifo_s|)) (_ BitVec 1) (ite (|sync_fifo#66| state) (|sync_fifo#79| state) (|sync_fifo#78| state))) ; $procmux$276_Y
-(define-fun |sync_fifo#81| ((state |sync_fifo_s|)) (_ BitVec 1) (ite (|sync_fifo#57| state) (|sync_fifo#80| state) (|sync_fifo#75| state))) ; $0$formal$./sync_fifo.v:70$32_CHECK[0:0]$92
-(define-fun |sync_fifo#82| ((state |sync_fifo_s|)) (_ BitVec 1) (ite (|sync_fifo#77| state) #b1 #b0)) ; $procmux$265_Y
-(define-fun |sync_fifo#83| ((state |sync_fifo_s|)) (_ BitVec 1) (ite (|sync_fifo#66| state) #b0 (|sync_fifo#82| state))) ; $procmux$268_Y
-(define-fun |sync_fifo#84| ((state |sync_fifo_s|)) (_ BitVec 1) (ite (|sync_fifo#57| state) (|sync_fifo#83| state) #b0)) ; $0$formal$./sync_fifo.v:70$32_EN[0:0]$93
-; yosys-smt2-anyseq sync_fifo#85 1 $auto$setundef.cc:524:execute$516
-(declare-fun |sync_fifo#85| (|sync_fifo_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2358:Anyseq$517
-; yosys-smt2-anyseq sync_fifo#86 1 $auto$setundef.cc:524:execute$512
-(declare-fun |sync_fifo#86| (|sync_fifo_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2358:Anyseq$513
-(define-fun |sync_fifo#87| ((state |sync_fifo_s|)) (_ BitVec 1) (bvnot (|sync_fifo#6| state))) ; $eq$./sync_fifo.v:71$137_Y
-(define-fun |sync_fifo#88| ((state |sync_fifo_s|)) (_ BitVec 1) (ite (|sync_fifo#77| state) (|sync_fifo#87| state) (|sync_fifo#86| state))) ; $procmux$289_Y
-; yosys-smt2-anyseq sync_fifo#89 1 $auto$setundef.cc:524:execute$514
-(declare-fun |sync_fifo#89| (|sync_fifo_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2358:Anyseq$515
-(define-fun |sync_fifo#90| ((state |sync_fifo_s|)) (_ BitVec 1) (ite (|sync_fifo#66| state) (|sync_fifo#89| state) (|sync_fifo#88| state))) ; $procmux$292_Y
-(define-fun |sync_fifo#91| ((state |sync_fifo_s|)) (_ BitVec 1) (ite (|sync_fifo#57| state) (|sync_fifo#90| state) (|sync_fifo#85| state))) ; $0$formal$./sync_fifo.v:71$33_CHECK[0:0]$94
-; yosys-smt2-anyseq sync_fifo#92 1 $auto$setundef.cc:524:execute$522
-(declare-fun |sync_fifo#92| (|sync_fifo_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2358:Anyseq$523
-; yosys-smt2-anyseq sync_fifo#93 1 $auto$setundef.cc:524:execute$518
-(declare-fun |sync_fifo#93| (|sync_fifo_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2358:Anyseq$519
-(define-fun |sync_fifo#94| ((state |sync_fifo_s|)) (_ BitVec 1) (ite (|sync_fifo#77| state) (|sync_fifo#93| state) (|sync_fifo#65| state))) ; $procmux$305_Y
-; yosys-smt2-anyseq sync_fifo#95 1 $auto$setundef.cc:524:execute$520
-(declare-fun |sync_fifo#95| (|sync_fifo_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2358:Anyseq$521
-(define-fun |sync_fifo#96| ((state |sync_fifo_s|)) (_ BitVec 1) (ite (|sync_fifo#66| state) (|sync_fifo#95| state) (|sync_fifo#94| state))) ; $procmux$308_Y
-(define-fun |sync_fifo#97| ((state |sync_fifo_s|)) (_ BitVec 1) (ite (|sync_fifo#57| state) (|sync_fifo#96| state) (|sync_fifo#92| state))) ; $0$formal$./sync_fifo.v:75$34_CHECK[0:0]$96
-(define-fun |sync_fifo#98| ((state |sync_fifo_s|)) (_ BitVec 1) (ite (|sync_fifo#77| state) #b0 #b1)) ; $procmux$297_Y
-(define-fun |sync_fifo#99| ((state |sync_fifo_s|)) (_ BitVec 1) (ite (|sync_fifo#66| state) #b0 (|sync_fifo#98| state))) ; $procmux$300_Y
-(define-fun |sync_fifo#100| ((state |sync_fifo_s|)) (_ BitVec 1) (ite (|sync_fifo#57| state) (|sync_fifo#99| state) #b0)) ; $0$formal$./sync_fifo.v:75$34_EN[0:0]$97
-; yosys-smt2-anyseq sync_fifo#101 1 $auto$setundef.cc:524:execute$528
-(declare-fun |sync_fifo#101| (|sync_fifo_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2358:Anyseq$529
-; yosys-smt2-anyseq sync_fifo#102 1 $auto$setundef.cc:524:execute$524
-(declare-fun |sync_fifo#102| (|sync_fifo_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2358:Anyseq$525
-(define-fun |sync_fifo#103| ((state |sync_fifo_s|)) (_ BitVec 1) (ite (|sync_fifo#77| state) (|sync_fifo#102| state) (|sync_fifo#87| state))) ; $procmux$321_Y
-; yosys-smt2-anyseq sync_fifo#104 1 $auto$setundef.cc:524:execute$526
-(declare-fun |sync_fifo#104| (|sync_fifo_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2358:Anyseq$527
-(define-fun |sync_fifo#105| ((state |sync_fifo_s|)) (_ BitVec 1) (ite (|sync_fifo#66| state) (|sync_fifo#104| state) (|sync_fifo#103| state))) ; $procmux$324_Y
-(define-fun |sync_fifo#106| ((state |sync_fifo_s|)) (_ BitVec 1) (ite (|sync_fifo#57| state) (|sync_fifo#105| state) (|sync_fifo#101| state))) ; $0$formal$./sync_fifo.v:76$35_CHECK[0:0]$98
-; yosys-smt2-anyseq sync_fifo#107 1 $auto$setundef.cc:524:execute$532
-(declare-fun |sync_fifo#107| (|sync_fifo_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2358:Anyseq$533
-; yosys-smt2-anyseq sync_fifo#108 1 $auto$setundef.cc:524:execute$530
-(declare-fun |sync_fifo#108| (|sync_fifo_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2358:Anyseq$531
-(define-fun |sync_fifo#109| ((state |sync_fifo_s|)) Bool (distinct (|sync_fifo#14| state) (|sync_fifo#2| state))) ; $ne$./sync_fifo.v:80$143_Y
-(define-fun |sync_fifo#110| ((state |sync_fifo_s|)) (_ BitVec 1) (bvnot (|sync_fifo#34| state))) ; $eq$./sync_fifo.v:78$141_Y
-(define-fun |sync_fifo#111| ((state |sync_fifo_s|)) Bool (and (or  (= ((_ extract 0 0) (|sync_fifo#35| state)) #b1) false) (or  (= ((_ extract 0 0) (|sync_fifo#110| state)) #b1) false))) ; $logic_and$./sync_fifo.v:78$142_Y
-(define-fun |sync_fifo#112| ((state |sync_fifo_s|)) (_ BitVec 1) (ite (|sync_fifo#111| state) (ite (|sync_fifo#109| state) #b1 #b0) (|sync_fifo#108| state))) ; $procmux$332_Y
-(define-fun |sync_fifo#113| ((state |sync_fifo_s|)) (_ BitVec 1) (ite (|sync_fifo#57| state) (|sync_fifo#112| state) (|sync_fifo#107| state))) ; $0$formal$./sync_fifo.v:80$36_CHECK[0:0]$100
-(define-fun |sync_fifo#114| ((state |sync_fifo_s|)) (_ BitVec 1) (ite (|sync_fifo#111| state) #b1 #b0)) ; $procmux$328_Y
-(define-fun |sync_fifo#115| ((state |sync_fifo_s|)) (_ BitVec 1) (ite (|sync_fifo#57| state) (|sync_fifo#114| state) #b0)) ; $0$formal$./sync_fifo.v:80$36_EN[0:0]$101
-; yosys-smt2-anyseq sync_fifo#116 1 $auto$setundef.cc:524:execute$536
-(declare-fun |sync_fifo#116| (|sync_fifo_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2358:Anyseq$537
-; yosys-smt2-anyseq sync_fifo#117 1 $auto$setundef.cc:524:execute$534
-(declare-fun |sync_fifo#117| (|sync_fifo_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2358:Anyseq$535
-(define-fun |sync_fifo#118| ((state |sync_fifo_s|)) Bool (distinct (|sync_fifo#13| state) (|sync_fifo#1| state))) ; $ne$./sync_fifo.v:81$144_Y
-(define-fun |sync_fifo#119| ((state |sync_fifo_s|)) (_ BitVec 1) (ite (|sync_fifo#111| state) (ite (|sync_fifo#118| state) #b1 #b0) (|sync_fifo#117| state))) ; $procmux$340_Y
-(define-fun |sync_fifo#120| ((state |sync_fifo_s|)) (_ BitVec 1) (ite (|sync_fifo#57| state) (|sync_fifo#119| state) (|sync_fifo#116| state))) ; $0$formal$./sync_fifo.v:81$37_CHECK[0:0]$102
-; yosys-smt2-anyseq sync_fifo#121 1 $auto$setundef.cc:524:execute$540
-(declare-fun |sync_fifo#121| (|sync_fifo_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2358:Anyseq$541
-; yosys-smt2-anyseq sync_fifo#122 1 $auto$setundef.cc:524:execute$538
-(declare-fun |sync_fifo#122| (|sync_fifo_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2358:Anyseq$539
-; yosys-smt2-memory r_MEMORY 2 8 3 1 sync
-(declare-fun |sync_fifo#123#0| (|sync_fifo_s|) (Array (_ BitVec 2) (_ BitVec 8))) ; r_MEMORY
-(define-fun |sync_fifo_m r_MEMORY| ((state |sync_fifo_s|)) (Array (_ BitVec 2) (_ BitVec 8)) (|sync_fifo#123#0| state))
+(declare-fun |sync_fifo#13| (|sync_fifo_s|) Bool) ; \i_CLK
+(define-fun |sync_fifo_n i_CLK| ((state |sync_fifo_s|)) Bool (|sync_fifo#13| state))
+; yosys-smt2-register $past$./sync_fifo.v:172$17$0 8
+(declare-fun |sync_fifo#14| (|sync_fifo_s|) (_ BitVec 8)) ; $past$./sync_fifo.v:172$17$0
+(define-fun |sync_fifo_n $past$./sync_fifo.v:172$17$0| ((state |sync_fifo_s|)) (_ BitVec 8) (|sync_fifo#14| state))
+; yosys-smt2-register $past$./sync_fifo.v:171$15$0 2
+(declare-fun |sync_fifo#15| (|sync_fifo_s|) (_ BitVec 2)) ; $past$./sync_fifo.v:171$15$0
+(define-fun |sync_fifo_n $past$./sync_fifo.v:171$15$0| ((state |sync_fifo_s|)) (_ BitVec 2) (|sync_fifo#15| state))
+; yosys-smt2-register $past$./sync_fifo.v:165$10$0 2
+(declare-fun |sync_fifo#16| (|sync_fifo_s|) (_ BitVec 2)) ; $past$./sync_fifo.v:165$10$0
+(define-fun |sync_fifo_n $past$./sync_fifo.v:165$10$0| ((state |sync_fifo_s|)) (_ BitVec 2) (|sync_fifo#16| state))
+; yosys-smt2-register $past$./sync_fifo.v:127$3$0 2
+(declare-fun |sync_fifo#17| (|sync_fifo_s|) (_ BitVec 2)) ; $past$./sync_fifo.v:127$3$0
+(define-fun |sync_fifo_n $past$./sync_fifo.v:127$3$0| ((state |sync_fifo_s|)) (_ BitVec 2) (|sync_fifo#17| state))
+; yosys-smt2-register $formal$./sync_fifo.v:175$63_EN 1
+(declare-fun |sync_fifo#18| (|sync_fifo_s|) (_ BitVec 1)) ; $formal$./sync_fifo.v:175$63_EN
+(define-fun |sync_fifo_n $formal$./sync_fifo.v:175$63_EN| ((state |sync_fifo_s|)) Bool (= ((_ extract 0 0) (|sync_fifo#18| state)) #b1))
+; yosys-smt2-register $formal$./sync_fifo.v:175$63_CHECK 1
+(declare-fun |sync_fifo#19| (|sync_fifo_s|) (_ BitVec 1)) ; $formal$./sync_fifo.v:175$63_CHECK
+(define-fun |sync_fifo_n $formal$./sync_fifo.v:175$63_CHECK| ((state |sync_fifo_s|)) Bool (= ((_ extract 0 0) (|sync_fifo#19| state)) #b1))
+; yosys-smt2-register $formal$./sync_fifo.v:172$62_CHECK 1
+(declare-fun |sync_fifo#20| (|sync_fifo_s|) (_ BitVec 1)) ; $formal$./sync_fifo.v:172$62_CHECK
+(define-fun |sync_fifo_n $formal$./sync_fifo.v:172$62_CHECK| ((state |sync_fifo_s|)) Bool (= ((_ extract 0 0) (|sync_fifo#20| state)) #b1))
+; yosys-smt2-register $formal$./sync_fifo.v:171$61_CHECK 1
+(declare-fun |sync_fifo#21| (|sync_fifo_s|) (_ BitVec 1)) ; $formal$./sync_fifo.v:171$61_CHECK
+(define-fun |sync_fifo_n $formal$./sync_fifo.v:171$61_CHECK| ((state |sync_fifo_s|)) Bool (= ((_ extract 0 0) (|sync_fifo#21| state)) #b1))
+; yosys-smt2-register $formal$./sync_fifo.v:170$60_EN 1
+(declare-fun |sync_fifo#22| (|sync_fifo_s|) (_ BitVec 1)) ; $formal$./sync_fifo.v:170$60_EN
+(define-fun |sync_fifo_n $formal$./sync_fifo.v:170$60_EN| ((state |sync_fifo_s|)) Bool (= ((_ extract 0 0) (|sync_fifo#22| state)) #b1))
+; yosys-smt2-register $formal$./sync_fifo.v:170$60_CHECK 1
+(declare-fun |sync_fifo#23| (|sync_fifo_s|) (_ BitVec 1)) ; $formal$./sync_fifo.v:170$60_CHECK
+(define-fun |sync_fifo_n $formal$./sync_fifo.v:170$60_CHECK| ((state |sync_fifo_s|)) Bool (= ((_ extract 0 0) (|sync_fifo#23| state)) #b1))
+; yosys-smt2-register $formal$./sync_fifo.v:166$59_CHECK 1
+(declare-fun |sync_fifo#24| (|sync_fifo_s|) (_ BitVec 1)) ; $formal$./sync_fifo.v:166$59_CHECK
+(define-fun |sync_fifo_n $formal$./sync_fifo.v:166$59_CHECK| ((state |sync_fifo_s|)) Bool (= ((_ extract 0 0) (|sync_fifo#24| state)) #b1))
+; yosys-smt2-register $formal$./sync_fifo.v:165$58_CHECK 1
+(declare-fun |sync_fifo#25| (|sync_fifo_s|) (_ BitVec 1)) ; $formal$./sync_fifo.v:165$58_CHECK
+(define-fun |sync_fifo_n $formal$./sync_fifo.v:165$58_CHECK| ((state |sync_fifo_s|)) Bool (= ((_ extract 0 0) (|sync_fifo#25| state)) #b1))
+; yosys-smt2-register $formal$./sync_fifo.v:164$57_EN 1
+(declare-fun |sync_fifo#26| (|sync_fifo_s|) (_ BitVec 1)) ; $formal$./sync_fifo.v:164$57_EN
+(define-fun |sync_fifo_n $formal$./sync_fifo.v:164$57_EN| ((state |sync_fifo_s|)) Bool (= ((_ extract 0 0) (|sync_fifo#26| state)) #b1))
+; yosys-smt2-register $formal$./sync_fifo.v:164$57_CHECK 1
+(declare-fun |sync_fifo#27| (|sync_fifo_s|) (_ BitVec 1)) ; $formal$./sync_fifo.v:164$57_CHECK
+(define-fun |sync_fifo_n $formal$./sync_fifo.v:164$57_CHECK| ((state |sync_fifo_s|)) Bool (= ((_ extract 0 0) (|sync_fifo#27| state)) #b1))
+; yosys-smt2-register $formal$./sync_fifo.v:160$56_CHECK 1
+(declare-fun |sync_fifo#28| (|sync_fifo_s|) (_ BitVec 1)) ; $formal$./sync_fifo.v:160$56_CHECK
+(define-fun |sync_fifo_n $formal$./sync_fifo.v:160$56_CHECK| ((state |sync_fifo_s|)) Bool (= ((_ extract 0 0) (|sync_fifo#28| state)) #b1))
+; yosys-smt2-register $formal$./sync_fifo.v:159$55_CHECK 1
+(declare-fun |sync_fifo#29| (|sync_fifo_s|) (_ BitVec 1)) ; $formal$./sync_fifo.v:159$55_CHECK
+(define-fun |sync_fifo_n $formal$./sync_fifo.v:159$55_CHECK| ((state |sync_fifo_s|)) Bool (= ((_ extract 0 0) (|sync_fifo#29| state)) #b1))
+; yosys-smt2-register $formal$./sync_fifo.v:158$54_CHECK 1
+(declare-fun |sync_fifo#30| (|sync_fifo_s|) (_ BitVec 1)) ; $formal$./sync_fifo.v:158$54_CHECK
+(define-fun |sync_fifo_n $formal$./sync_fifo.v:158$54_CHECK| ((state |sync_fifo_s|)) Bool (= ((_ extract 0 0) (|sync_fifo#30| state)) #b1))
+; yosys-smt2-register $formal$./sync_fifo.v:157$53_EN 1
+(declare-fun |sync_fifo#31| (|sync_fifo_s|) (_ BitVec 1)) ; $formal$./sync_fifo.v:157$53_EN
+(define-fun |sync_fifo_n $formal$./sync_fifo.v:157$53_EN| ((state |sync_fifo_s|)) Bool (= ((_ extract 0 0) (|sync_fifo#31| state)) #b1))
+; yosys-smt2-register $formal$./sync_fifo.v:157$53_CHECK 1
+(declare-fun |sync_fifo#32| (|sync_fifo_s|) (_ BitVec 1)) ; $formal$./sync_fifo.v:157$53_CHECK
+(define-fun |sync_fifo_n $formal$./sync_fifo.v:157$53_CHECK| ((state |sync_fifo_s|)) Bool (= ((_ extract 0 0) (|sync_fifo#32| state)) #b1))
+; yosys-smt2-register $formal$./sync_fifo.v:153$52_CHECK 1
+(declare-fun |sync_fifo#33| (|sync_fifo_s|) (_ BitVec 1)) ; $formal$./sync_fifo.v:153$52_CHECK
+(define-fun |sync_fifo_n $formal$./sync_fifo.v:153$52_CHECK| ((state |sync_fifo_s|)) Bool (= ((_ extract 0 0) (|sync_fifo#33| state)) #b1))
+; yosys-smt2-register $formal$./sync_fifo.v:152$51_CHECK 1
+(declare-fun |sync_fifo#34| (|sync_fifo_s|) (_ BitVec 1)) ; $formal$./sync_fifo.v:152$51_CHECK
+(define-fun |sync_fifo_n $formal$./sync_fifo.v:152$51_CHECK| ((state |sync_fifo_s|)) Bool (= ((_ extract 0 0) (|sync_fifo#34| state)) #b1))
+; yosys-smt2-register $formal$./sync_fifo.v:151$50_CHECK 1
+(declare-fun |sync_fifo#35| (|sync_fifo_s|) (_ BitVec 1)) ; $formal$./sync_fifo.v:151$50_CHECK
+(define-fun |sync_fifo_n $formal$./sync_fifo.v:151$50_CHECK| ((state |sync_fifo_s|)) Bool (= ((_ extract 0 0) (|sync_fifo#35| state)) #b1))
+; yosys-smt2-register $formal$./sync_fifo.v:150$49_EN 1
+(declare-fun |sync_fifo#36| (|sync_fifo_s|) (_ BitVec 1)) ; $formal$./sync_fifo.v:150$49_EN
+(define-fun |sync_fifo_n $formal$./sync_fifo.v:150$49_EN| ((state |sync_fifo_s|)) Bool (= ((_ extract 0 0) (|sync_fifo#36| state)) #b1))
+; yosys-smt2-register $formal$./sync_fifo.v:150$49_CHECK 1
+(declare-fun |sync_fifo#37| (|sync_fifo_s|) (_ BitVec 1)) ; $formal$./sync_fifo.v:150$49_CHECK
+(define-fun |sync_fifo_n $formal$./sync_fifo.v:150$49_CHECK| ((state |sync_fifo_s|)) Bool (= ((_ extract 0 0) (|sync_fifo#37| state)) #b1))
+; yosys-smt2-register $formal$./sync_fifo.v:139$44_CHECK 1
+(declare-fun |sync_fifo#38| (|sync_fifo_s|) (_ BitVec 1)) ; $formal$./sync_fifo.v:139$44_CHECK
+(define-fun |sync_fifo_n $formal$./sync_fifo.v:139$44_CHECK| ((state |sync_fifo_s|)) Bool (= ((_ extract 0 0) (|sync_fifo#38| state)) #b1))
+; yosys-smt2-register $formal$./sync_fifo.v:138$43_CHECK 1
+(declare-fun |sync_fifo#39| (|sync_fifo_s|) (_ BitVec 1)) ; $formal$./sync_fifo.v:138$43_CHECK
+(define-fun |sync_fifo_n $formal$./sync_fifo.v:138$43_CHECK| ((state |sync_fifo_s|)) Bool (= ((_ extract 0 0) (|sync_fifo#39| state)) #b1))
+; yosys-smt2-register $formal$./sync_fifo.v:137$42_CHECK 1
+(declare-fun |sync_fifo#40| (|sync_fifo_s|) (_ BitVec 1)) ; $formal$./sync_fifo.v:137$42_CHECK
+(define-fun |sync_fifo_n $formal$./sync_fifo.v:137$42_CHECK| ((state |sync_fifo_s|)) Bool (= ((_ extract 0 0) (|sync_fifo#40| state)) #b1))
+; yosys-smt2-register $formal$./sync_fifo.v:136$41_EN 1
+(declare-fun |sync_fifo#41| (|sync_fifo_s|) (_ BitVec 1)) ; $formal$./sync_fifo.v:136$41_EN
+(define-fun |sync_fifo_n $formal$./sync_fifo.v:136$41_EN| ((state |sync_fifo_s|)) Bool (= ((_ extract 0 0) (|sync_fifo#41| state)) #b1))
+; yosys-smt2-register $formal$./sync_fifo.v:136$41_CHECK 1
+(declare-fun |sync_fifo#42| (|sync_fifo_s|) (_ BitVec 1)) ; $formal$./sync_fifo.v:136$41_CHECK
+(define-fun |sync_fifo_n $formal$./sync_fifo.v:136$41_CHECK| ((state |sync_fifo_s|)) Bool (= ((_ extract 0 0) (|sync_fifo#42| state)) #b1))
+; yosys-smt2-register $formal$./sync_fifo.v:132$40_CHECK 1
+(declare-fun |sync_fifo#43| (|sync_fifo_s|) (_ BitVec 1)) ; $formal$./sync_fifo.v:132$40_CHECK
+(define-fun |sync_fifo_n $formal$./sync_fifo.v:132$40_CHECK| ((state |sync_fifo_s|)) Bool (= ((_ extract 0 0) (|sync_fifo#43| state)) #b1))
+; yosys-smt2-register $formal$./sync_fifo.v:131$39_CHECK 1
+(declare-fun |sync_fifo#44| (|sync_fifo_s|) (_ BitVec 1)) ; $formal$./sync_fifo.v:131$39_CHECK
+(define-fun |sync_fifo_n $formal$./sync_fifo.v:131$39_CHECK| ((state |sync_fifo_s|)) Bool (= ((_ extract 0 0) (|sync_fifo#44| state)) #b1))
+; yosys-smt2-register $formal$./sync_fifo.v:130$38_CHECK 1
+(declare-fun |sync_fifo#45| (|sync_fifo_s|) (_ BitVec 1)) ; $formal$./sync_fifo.v:130$38_CHECK
+(define-fun |sync_fifo_n $formal$./sync_fifo.v:130$38_CHECK| ((state |sync_fifo_s|)) Bool (= ((_ extract 0 0) (|sync_fifo#45| state)) #b1))
+; yosys-smt2-register $formal$./sync_fifo.v:129$37_EN 1
+(declare-fun |sync_fifo#46| (|sync_fifo_s|) (_ BitVec 1)) ; $formal$./sync_fifo.v:129$37_EN
+(define-fun |sync_fifo_n $formal$./sync_fifo.v:129$37_EN| ((state |sync_fifo_s|)) Bool (= ((_ extract 0 0) (|sync_fifo#46| state)) #b1))
+; yosys-smt2-register $formal$./sync_fifo.v:129$37_CHECK 1
+(declare-fun |sync_fifo#47| (|sync_fifo_s|) (_ BitVec 1)) ; $formal$./sync_fifo.v:129$37_CHECK
+(define-fun |sync_fifo_n $formal$./sync_fifo.v:129$37_CHECK| ((state |sync_fifo_s|)) Bool (= ((_ extract 0 0) (|sync_fifo#47| state)) #b1))
+; yosys-smt2-register $formal$./sync_fifo.v:126$36_CHECK 1
+(declare-fun |sync_fifo#48| (|sync_fifo_s|) (_ BitVec 1)) ; $formal$./sync_fifo.v:126$36_CHECK
+(define-fun |sync_fifo_n $formal$./sync_fifo.v:126$36_CHECK| ((state |sync_fifo_s|)) Bool (= ((_ extract 0 0) (|sync_fifo#48| state)) #b1))
+; yosys-smt2-register $formal$./sync_fifo.v:124$35_EN 1
+(declare-fun |sync_fifo#49| (|sync_fifo_s|) (_ BitVec 1)) ; $formal$./sync_fifo.v:124$35_EN
+(define-fun |sync_fifo_n $formal$./sync_fifo.v:124$35_EN| ((state |sync_fifo_s|)) Bool (= ((_ extract 0 0) (|sync_fifo#49| state)) #b1))
+; yosys-smt2-register $eq$./sync_fifo.v:168$226_Y 1
+(declare-fun |sync_fifo#50| (|sync_fifo_s|) (_ BitVec 1)) ; $eq$./sync_fifo.v:168$226_Y
+(define-fun |sync_fifo_n $eq$./sync_fifo.v:168$226_Y| ((state |sync_fifo_s|)) Bool (= ((_ extract 0 0) (|sync_fifo#50| state)) #b1))
+; yosys-smt2-register $eq$./sync_fifo.v:162$219_Y 1
+(declare-fun |sync_fifo#51| (|sync_fifo_s|) (_ BitVec 1)) ; $eq$./sync_fifo.v:162$219_Y
+(define-fun |sync_fifo_n $eq$./sync_fifo.v:162$219_Y| ((state |sync_fifo_s|)) Bool (= ((_ extract 0 0) (|sync_fifo#51| state)) #b1))
+; yosys-smt2-register $and$./sync_fifo.v:120$187_Y 32
+(declare-fun |sync_fifo#52| (|sync_fifo_s|) (_ BitVec 1)) ; $and$./sync_fifo.v:120$187_Y [0]
+(define-fun |sync_fifo_n $and$./sync_fifo.v:120$187_Y| ((state |sync_fifo_s|)) (_ BitVec 32) (concat #b0000000000000000000000000000000 (|sync_fifo#52| state)))
+(define-fun |sync_fifo#53| ((state |sync_fifo_s|)) Bool (= (|sync_fifo#14| state) (|sync_fifo#12| state))) ; $eq$./sync_fifo.v:181$244_Y
+; yosys-smt2-anyseq sync_fifo#54 1 $auto$setundef.cc:524:execute$1212
+(declare-fun |sync_fifo#54| (|sync_fifo_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2358:Anyseq$1213
+(define-fun |sync_fifo#55| ((state |sync_fifo_s|)) Bool (not (or  (= ((_ extract 0 0) (|sync_fifo#52| state)) #b1) false false false false false false false false false false false false false false false false false false false false false false false false false false false false false false false))) ; $logic_not$./sync_fifo.v:120$188_Y
+(define-fun |sync_fifo#56| ((state |sync_fifo_s|)) Bool (and (or  (|sync_fifo#55| state) false) (or  (|sync_fifo#13| state) false false false false false false false false false false false false false false false false false false false false false false false false false false false false false false false))) ; $logic_and$./sync_fifo.v:120$190_Y
+(define-fun |sync_fifo#57| ((state |sync_fifo_s|)) (_ BitVec 1) (ite (|sync_fifo#56| state) (|sync_fifo#54| state) (ite (|sync_fifo#53| state) #b1 #b0))) ; $0$formal$./sync_fifo.v:181$66_CHECK[0:0]$178
+(define-fun |sync_fifo#58| ((state |sync_fifo_s|)) (_ BitVec 1) (ite (|sync_fifo#56| state) #b0 #b1)) ; $0$formal$./sync_fifo.v:179$64_EN[0:0]$175
+; yosys-smt2-assume 0 ./sync_fifo.v:181
+(define-fun |sync_fifo_u 0| ((state |sync_fifo_s|)) Bool (or (= ((_ extract 0 0) (|sync_fifo#57| state)) #b1) (not (= ((_ extract 0 0) (|sync_fifo#58| state)) #b1)))) ; $assume$./sync_fifo.v:181$284
+(define-fun |sync_fifo#59| ((state |sync_fifo_s|)) Bool (= (|sync_fifo#51| state) (ite (|sync_fifo#11| state) #b1 #b0))) ; $eq$./sync_fifo.v:180$243_Y
+; yosys-smt2-anyseq sync_fifo#60 1 $auto$setundef.cc:524:execute$1210
+(declare-fun |sync_fifo#60| (|sync_fifo_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2358:Anyseq$1211
+(define-fun |sync_fifo#61| ((state |sync_fifo_s|)) (_ BitVec 1) (ite (|sync_fifo#56| state) (|sync_fifo#60| state) (ite (|sync_fifo#59| state) #b1 #b0))) ; $0$formal$./sync_fifo.v:180$65_CHECK[0:0]$176
+; yosys-smt2-assume 1 ./sync_fifo.v:180
+(define-fun |sync_fifo_u 1| ((state |sync_fifo_s|)) Bool (or (= ((_ extract 0 0) (|sync_fifo#61| state)) #b1) (not (= ((_ extract 0 0) (|sync_fifo#58| state)) #b1)))) ; $assume$./sync_fifo.v:180$283
+(define-fun |sync_fifo#62| ((state |sync_fifo_s|)) Bool (= (|sync_fifo#50| state) (ite (|sync_fifo#9| state) #b1 #b0))) ; $eq$./sync_fifo.v:179$242_Y
+; yosys-smt2-anyseq sync_fifo#63 1 $auto$setundef.cc:524:execute$1208
+(declare-fun |sync_fifo#63| (|sync_fifo_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2358:Anyseq$1209
+(define-fun |sync_fifo#64| ((state |sync_fifo_s|)) (_ BitVec 1) (ite (|sync_fifo#56| state) (|sync_fifo#63| state) (ite (|sync_fifo#62| state) #b1 #b0))) ; $0$formal$./sync_fifo.v:179$64_CHECK[0:0]$174
+; yosys-smt2-assume 2 ./sync_fifo.v:179
+(define-fun |sync_fifo_u 2| ((state |sync_fifo_s|)) Bool (or (= ((_ extract 0 0) (|sync_fifo#64| state)) #b1) (not (= ((_ extract 0 0) (|sync_fifo#58| state)) #b1)))) ; $assume$./sync_fifo.v:179$282
+(define-fun |sync_fifo#65| ((state |sync_fifo_s|)) (_ BitVec 1) (bvand (|sync_fifo#6| state) (ite (|sync_fifo#11| state) #b1 #b0))) ; $and$./sync_fifo.v:118$184_Y [0]
+(define-fun |sync_fifo#66| ((state |sync_fifo_s|)) Bool (not (or  (= ((_ extract 0 0) (|sync_fifo#65| state)) #b1) false false false false false false false false false false false false false false false false false false false false false false false false false false false false false false false))) ; $0$formal$./sync_fifo.v:118$34_CHECK[0:0]$114
+; yosys-smt2-assume 3 ./sync_fifo.v:118
+(define-fun |sync_fifo_u 3| ((state |sync_fifo_s|)) Bool (or (|sync_fifo#66| state) (not true))) ; $assume$./sync_fifo.v:118$252
+(define-fun |sync_fifo#67| ((state |sync_fifo_s|)) (_ BitVec 1) (bvand (|sync_fifo#5| state) (ite (|sync_fifo#9| state) #b1 #b0))) ; $and$./sync_fifo.v:117$182_Y
+(define-fun |sync_fifo#68| ((state |sync_fifo_s|)) Bool (not (or  (= ((_ extract 0 0) (|sync_fifo#67| state)) #b1) false false false false false false false false false false false false false false false false false false false false false false false false false false false false false false false))) ; $0$formal$./sync_fifo.v:117$33_CHECK[0:0]$112
+; yosys-smt2-assume 4 ./sync_fifo.v:117
+(define-fun |sync_fifo_u 4| ((state |sync_fifo_s|)) Bool (or (|sync_fifo#68| state) (not true))) ; $assume$./sync_fifo.v:117$251
+(define-fun |sync_fifo#69| ((state |sync_fifo_s|)) Bool (not (or  (|sync_fifo#10| state) false))) ; $0$formal$./sync_fifo.v:116$32_CHECK[0:0]$110
+; yosys-smt2-assume 5 ./sync_fifo.v:116
+(define-fun |sync_fifo_u 5| ((state |sync_fifo_s|)) Bool (or (|sync_fifo#69| state) (not true))) ; $assume$./sync_fifo.v:116$250
+(define-fun |sync_fifo#70| ((state |sync_fifo_s|)) Bool (distinct (|sync_fifo#52| state) (ite (|sync_fifo#13| state) #b1 #b0))) ; $0$formal$./sync_fifo.v:115$31_CHECK[0:0]$108
+; yosys-smt2-assume 6 ./sync_fifo.v:115
+(define-fun |sync_fifo_u 6| ((state |sync_fifo_s|)) Bool (or (|sync_fifo#70| state) (not true))) ; $assume$./sync_fifo.v:115$249
+(define-fun |sync_fifo#71| ((state |sync_fifo_s|)) Bool (not (or  (|sync_fifo#11| state) false))) ; $0$formal$./sync_fifo.v:111$29_CHECK[0:0]$292
+(define-fun |sync_fifo#72| ((state |sync_fifo_s|)) Bool (|sync_fifo_is| state)) ; $0$formal$./sync_fifo.v:110$27_EN[0:0]$291
+; yosys-smt2-assume 7 ./sync_fifo.v:111
+(define-fun |sync_fifo_u 7| ((state |sync_fifo_s|)) Bool (or (|sync_fifo#71| state) (not (|sync_fifo#72| state)))) ; $assume$./sync_fifo.v:111$248
+(define-fun |sync_fifo#73| ((state |sync_fifo_s|)) Bool (not (or  (|sync_fifo#9| state) false))) ; $0$formal$./sync_fifo.v:110$27_CHECK[0:0]$290
+; yosys-smt2-assume 8 ./sync_fifo.v:110
+(define-fun |sync_fifo_u 8| ((state |sync_fifo_s|)) Bool (or (|sync_fifo#73| state) (not (|sync_fifo#72| state)))) ; $assume$./sync_fifo.v:110$247
+; yosys-smt2-assert 0 ./sync_fifo.v:175
+(define-fun |sync_fifo_a 0| ((state |sync_fifo_s|)) Bool (or (= ((_ extract 0 0) (|sync_fifo#19| state)) #b1) (not (= ((_ extract 0 0) (|sync_fifo#18| state)) #b1)))) ; $assert$./sync_fifo.v:175$281
+; yosys-smt2-assert 1 ./sync_fifo.v:172
+(define-fun |sync_fifo_a 1| ((state |sync_fifo_s|)) Bool (or (= ((_ extract 0 0) (|sync_fifo#20| state)) #b1) (not (= ((_ extract 0 0) (|sync_fifo#22| state)) #b1)))) ; $assert$./sync_fifo.v:172$280
+; yosys-smt2-assert 2 ./sync_fifo.v:171
+(define-fun |sync_fifo_a 2| ((state |sync_fifo_s|)) Bool (or (= ((_ extract 0 0) (|sync_fifo#21| state)) #b1) (not (= ((_ extract 0 0) (|sync_fifo#22| state)) #b1)))) ; $assert$./sync_fifo.v:171$279
+; yosys-smt2-assert 3 ./sync_fifo.v:170
+(define-fun |sync_fifo_a 3| ((state |sync_fifo_s|)) Bool (or (= ((_ extract 0 0) (|sync_fifo#23| state)) #b1) (not (= ((_ extract 0 0) (|sync_fifo#22| state)) #b1)))) ; $assert$./sync_fifo.v:170$278
+; yosys-smt2-assert 4 ./sync_fifo.v:166
+(define-fun |sync_fifo_a 4| ((state |sync_fifo_s|)) Bool (or (= ((_ extract 0 0) (|sync_fifo#24| state)) #b1) (not (= ((_ extract 0 0) (|sync_fifo#26| state)) #b1)))) ; $assert$./sync_fifo.v:166$277
+; yosys-smt2-assert 5 ./sync_fifo.v:165
+(define-fun |sync_fifo_a 5| ((state |sync_fifo_s|)) Bool (or (= ((_ extract 0 0) (|sync_fifo#25| state)) #b1) (not (= ((_ extract 0 0) (|sync_fifo#26| state)) #b1)))) ; $assert$./sync_fifo.v:165$276
+; yosys-smt2-assert 6 ./sync_fifo.v:164
+(define-fun |sync_fifo_a 6| ((state |sync_fifo_s|)) Bool (or (= ((_ extract 0 0) (|sync_fifo#27| state)) #b1) (not (= ((_ extract 0 0) (|sync_fifo#26| state)) #b1)))) ; $assert$./sync_fifo.v:164$275
+; yosys-smt2-assert 7 ./sync_fifo.v:160
+(define-fun |sync_fifo_a 7| ((state |sync_fifo_s|)) Bool (or (= ((_ extract 0 0) (|sync_fifo#28| state)) #b1) (not (= ((_ extract 0 0) (|sync_fifo#31| state)) #b1)))) ; $assert$./sync_fifo.v:160$274
+; yosys-smt2-assert 8 ./sync_fifo.v:159
+(define-fun |sync_fifo_a 8| ((state |sync_fifo_s|)) Bool (or (= ((_ extract 0 0) (|sync_fifo#29| state)) #b1) (not (= ((_ extract 0 0) (|sync_fifo#31| state)) #b1)))) ; $assert$./sync_fifo.v:159$273
+; yosys-smt2-assert 9 ./sync_fifo.v:158
+(define-fun |sync_fifo_a 9| ((state |sync_fifo_s|)) Bool (or (= ((_ extract 0 0) (|sync_fifo#30| state)) #b1) (not (= ((_ extract 0 0) (|sync_fifo#31| state)) #b1)))) ; $assert$./sync_fifo.v:158$272
+; yosys-smt2-assert 10 ./sync_fifo.v:157
+(define-fun |sync_fifo_a 10| ((state |sync_fifo_s|)) Bool (or (= ((_ extract 0 0) (|sync_fifo#32| state)) #b1) (not (= ((_ extract 0 0) (|sync_fifo#31| state)) #b1)))) ; $assert$./sync_fifo.v:157$271
+; yosys-smt2-assert 11 ./sync_fifo.v:153
+(define-fun |sync_fifo_a 11| ((state |sync_fifo_s|)) Bool (or (= ((_ extract 0 0) (|sync_fifo#33| state)) #b1) (not (= ((_ extract 0 0) (|sync_fifo#36| state)) #b1)))) ; $assert$./sync_fifo.v:153$270
+; yosys-smt2-assert 12 ./sync_fifo.v:152
+(define-fun |sync_fifo_a 12| ((state |sync_fifo_s|)) Bool (or (= ((_ extract 0 0) (|sync_fifo#34| state)) #b1) (not (= ((_ extract 0 0) (|sync_fifo#36| state)) #b1)))) ; $assert$./sync_fifo.v:152$269
+; yosys-smt2-assert 13 ./sync_fifo.v:151
+(define-fun |sync_fifo_a 13| ((state |sync_fifo_s|)) Bool (or (= ((_ extract 0 0) (|sync_fifo#35| state)) #b1) (not (= ((_ extract 0 0) (|sync_fifo#36| state)) #b1)))) ; $assert$./sync_fifo.v:151$268
+; yosys-smt2-assert 14 ./sync_fifo.v:150
+(define-fun |sync_fifo_a 14| ((state |sync_fifo_s|)) Bool (or (= ((_ extract 0 0) (|sync_fifo#37| state)) #b1) (not (= ((_ extract 0 0) (|sync_fifo#36| state)) #b1)))) ; $assert$./sync_fifo.v:150$267
+; yosys-smt2-anyseq sync_fifo#74 1 $auto$setundef.cc:524:execute$1072
+(declare-fun |sync_fifo#74| (|sync_fifo_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2358:Anyseq$1073
+; yosys-smt2-assert 15 ./sync_fifo.v:143
+(define-fun |sync_fifo_a 15| ((state |sync_fifo_s|)) Bool (or (= ((_ extract 0 0) (|sync_fifo#74| state)) #b1) (not false))) ; $assert$./sync_fifo.v:143$263
+; yosys-smt2-assert 16 ./sync_fifo.v:139
+(define-fun |sync_fifo_a 16| ((state |sync_fifo_s|)) Bool (or (= ((_ extract 0 0) (|sync_fifo#38| state)) #b1) (not (= ((_ extract 0 0) (|sync_fifo#41| state)) #b1)))) ; $assert$./sync_fifo.v:139$262
+; yosys-smt2-assert 17 ./sync_fifo.v:138
+(define-fun |sync_fifo_a 17| ((state |sync_fifo_s|)) Bool (or (= ((_ extract 0 0) (|sync_fifo#39| state)) #b1) (not (= ((_ extract 0 0) (|sync_fifo#41| state)) #b1)))) ; $assert$./sync_fifo.v:138$261
+; yosys-smt2-assert 18 ./sync_fifo.v:137
+(define-fun |sync_fifo_a 18| ((state |sync_fifo_s|)) Bool (or (= ((_ extract 0 0) (|sync_fifo#40| state)) #b1) (not (= ((_ extract 0 0) (|sync_fifo#41| state)) #b1)))) ; $assert$./sync_fifo.v:137$260
+; yosys-smt2-assert 19 ./sync_fifo.v:136
+(define-fun |sync_fifo_a 19| ((state |sync_fifo_s|)) Bool (or (= ((_ extract 0 0) (|sync_fifo#42| state)) #b1) (not (= ((_ extract 0 0) (|sync_fifo#41| state)) #b1)))) ; $assert$./sync_fifo.v:136$259
+; yosys-smt2-assert 20 ./sync_fifo.v:132
+(define-fun |sync_fifo_a 20| ((state |sync_fifo_s|)) Bool (or (= ((_ extract 0 0) (|sync_fifo#43| state)) #b1) (not (= ((_ extract 0 0) (|sync_fifo#46| state)) #b1)))) ; $assert$./sync_fifo.v:132$258
+; yosys-smt2-assert 21 ./sync_fifo.v:131
+(define-fun |sync_fifo_a 21| ((state |sync_fifo_s|)) Bool (or (= ((_ extract 0 0) (|sync_fifo#44| state)) #b1) (not (= ((_ extract 0 0) (|sync_fifo#46| state)) #b1)))) ; $assert$./sync_fifo.v:131$257
+; yosys-smt2-assert 22 ./sync_fifo.v:130
+(define-fun |sync_fifo_a 22| ((state |sync_fifo_s|)) Bool (or (= ((_ extract 0 0) (|sync_fifo#45| state)) #b1) (not (= ((_ extract 0 0) (|sync_fifo#46| state)) #b1)))) ; $assert$./sync_fifo.v:130$256
+; yosys-smt2-assert 23 ./sync_fifo.v:129
+(define-fun |sync_fifo_a 23| ((state |sync_fifo_s|)) Bool (or (= ((_ extract 0 0) (|sync_fifo#47| state)) #b1) (not (= ((_ extract 0 0) (|sync_fifo#46| state)) #b1)))) ; $assert$./sync_fifo.v:129$255
+; yosys-smt2-assert 24 ./sync_fifo.v:126
+(define-fun |sync_fifo_a 24| ((state |sync_fifo_s|)) Bool (or (= ((_ extract 0 0) (|sync_fifo#48| state)) #b1) (not (= ((_ extract 0 0) (|sync_fifo#49| state)) #b1)))) ; $assert$./sync_fifo.v:126$254
+(define-fun |sync_fifo#75| ((state |sync_fifo_s|)) Bool (and (or  (= ((_ extract 0 0) (|sync_fifo#3| state)) #b1) false) (or  (|sync_fifo#56| state) false))) ; $logic_and$./sync_fifo.v:120$191_Y
+(define-fun |sync_fifo#76| ((state |sync_fifo_s|)) (_ BitVec 1) (ite (|sync_fifo#75| state) #b1 #b0)) ; $0$formal$./sync_fifo.v:124$35_EN[0:0]$117
+; yosys-smt2-anyseq sync_fifo#77 1 $auto$setundef.cc:524:execute$1074
+(declare-fun |sync_fifo#77| (|sync_fifo_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2358:Anyseq$1075
+(define-fun |sync_fifo#78| ((state |sync_fifo_s|)) (_ BitVec 1) (bvand (|sync_fifo#5| state) (|sync_fifo#6| state))) ; $and$./sync_fifo.v:126$193_Y
+(define-fun |sync_fifo#79| ((state |sync_fifo_s|)) (_ BitVec 1) (bvnot (|sync_fifo#78| state))) ; $ne$./sync_fifo.v:126$194_Y
+(define-fun |sync_fifo#80| ((state |sync_fifo_s|)) (_ BitVec 1) (ite (|sync_fifo#75| state) (|sync_fifo#79| state) (|sync_fifo#77| state))) ; $0$formal$./sync_fifo.v:126$36_CHECK[0:0]$118
+; yosys-smt2-anyseq sync_fifo#81 1 $auto$setundef.cc:524:execute$1078
+(declare-fun |sync_fifo#81| (|sync_fifo_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2358:Anyseq$1079
+; yosys-smt2-anyseq sync_fifo#82 1 $auto$setundef.cc:524:execute$1076
+(declare-fun |sync_fifo#82| (|sync_fifo_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2358:Anyseq$1077
+(define-fun |sync_fifo#83| ((state |sync_fifo_s|)) (_ BitVec 1) (bvnot (|sync_fifo#5| state))) ; $eq$./sync_fifo.v:129$196_Y
+(define-fun |sync_fifo#84| ((state |sync_fifo_s|)) Bool (not (or  (= ((_ extract 0 0) (|sync_fifo#17| state)) #b1) (= ((_ extract 1 1) (|sync_fifo#17| state)) #b1)))) ; $eq$./sync_fifo.v:127$195_Y
+(define-fun |sync_fifo#85| ((state |sync_fifo_s|)) (_ BitVec 1) (ite (|sync_fifo#84| state) (|sync_fifo#83| state) (|sync_fifo#82| state))) ; $procmux$382_Y
+(define-fun |sync_fifo#86| ((state |sync_fifo_s|)) (_ BitVec 1) (ite (|sync_fifo#75| state) (|sync_fifo#85| state) (|sync_fifo#81| state))) ; $0$formal$./sync_fifo.v:129$37_CHECK[0:0]$120
+(define-fun |sync_fifo#87| ((state |sync_fifo_s|)) (_ BitVec 1) (ite (|sync_fifo#84| state) #b1 #b0)) ; $procmux$377_Y
+(define-fun |sync_fifo#88| ((state |sync_fifo_s|)) (_ BitVec 1) (ite (|sync_fifo#75| state) (|sync_fifo#87| state) #b0)) ; $0$formal$./sync_fifo.v:129$37_EN[0:0]$121
+; yosys-smt2-anyseq sync_fifo#89 1 $auto$setundef.cc:524:execute$1082
+(declare-fun |sync_fifo#89| (|sync_fifo_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2358:Anyseq$1083
+; yosys-smt2-anyseq sync_fifo#90 1 $auto$setundef.cc:524:execute$1080
+(declare-fun |sync_fifo#90| (|sync_fifo_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2358:Anyseq$1081
+(define-fun |sync_fifo#91| ((state |sync_fifo_s|)) (_ BitVec 1) (ite (|sync_fifo#84| state) (|sync_fifo#6| state) (|sync_fifo#90| state))) ; $procmux$392_Y
+(define-fun |sync_fifo#92| ((state |sync_fifo_s|)) (_ BitVec 1) (ite (|sync_fifo#75| state) (|sync_fifo#91| state) (|sync_fifo#89| state))) ; $0$formal$./sync_fifo.v:130$38_CHECK[0:0]$122
+; yosys-smt2-anyseq sync_fifo#93 1 $auto$setundef.cc:524:execute$1086
+(declare-fun |sync_fifo#93| (|sync_fifo_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2358:Anyseq$1087
+; yosys-smt2-anyseq sync_fifo#94 1 $auto$setundef.cc:524:execute$1084
+(declare-fun |sync_fifo#94| (|sync_fifo_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2358:Anyseq$1085
+(define-fun |sync_fifo#95| ((state |sync_fifo_s|)) (_ BitVec 1) (ite (|sync_fifo#84| state) (|sync_fifo#8| state) (|sync_fifo#94| state))) ; $procmux$402_Y
+(define-fun |sync_fifo#96| ((state |sync_fifo_s|)) (_ BitVec 1) (ite (|sync_fifo#75| state) (|sync_fifo#95| state) (|sync_fifo#93| state))) ; $0$formal$./sync_fifo.v:131$39_CHECK[0:0]$124
+; yosys-smt2-anyseq sync_fifo#97 1 $auto$setundef.cc:524:execute$1090
+(declare-fun |sync_fifo#97| (|sync_fifo_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2358:Anyseq$1091
+; yosys-smt2-anyseq sync_fifo#98 1 $auto$setundef.cc:524:execute$1088
+(declare-fun |sync_fifo#98| (|sync_fifo_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2358:Anyseq$1089
+(define-fun |sync_fifo#99| ((state |sync_fifo_s|)) (_ BitVec 1) (bvnot (|sync_fifo#7| state))) ; $eq$./sync_fifo.v:132$199_Y
+(define-fun |sync_fifo#100| ((state |sync_fifo_s|)) (_ BitVec 1) (ite (|sync_fifo#84| state) (|sync_fifo#99| state) (|sync_fifo#98| state))) ; $procmux$412_Y
+(define-fun |sync_fifo#101| ((state |sync_fifo_s|)) (_ BitVec 1) (ite (|sync_fifo#75| state) (|sync_fifo#100| state) (|sync_fifo#97| state))) ; $0$formal$./sync_fifo.v:132$40_CHECK[0:0]$126
+; yosys-smt2-anyseq sync_fifo#102 1 $auto$setundef.cc:524:execute$1096
+(declare-fun |sync_fifo#102| (|sync_fifo_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2358:Anyseq$1097
+; yosys-smt2-anyseq sync_fifo#103 1 $auto$setundef.cc:524:execute$1092
+(declare-fun |sync_fifo#103| (|sync_fifo_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2358:Anyseq$1093
+(define-fun |sync_fifo#104| ((state |sync_fifo_s|)) Bool (= (|sync_fifo#17| state) #b01)) ; $eq$./sync_fifo.v:134$200_Y
+(define-fun |sync_fifo#105| ((state |sync_fifo_s|)) (_ BitVec 1) (ite (|sync_fifo#104| state) (|sync_fifo#83| state) (|sync_fifo#103| state))) ; $procmux$425_Y
+; yosys-smt2-anyseq sync_fifo#106 1 $auto$setundef.cc:524:execute$1094
+(declare-fun |sync_fifo#106| (|sync_fifo_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2358:Anyseq$1095
+(define-fun |sync_fifo#107| ((state |sync_fifo_s|)) (_ BitVec 1) (ite (|sync_fifo#84| state) (|sync_fifo#106| state) (|sync_fifo#105| state))) ; $procmux$428_Y
+(define-fun |sync_fifo#108| ((state |sync_fifo_s|)) (_ BitVec 1) (ite (|sync_fifo#75| state) (|sync_fifo#107| state) (|sync_fifo#102| state))) ; $0$formal$./sync_fifo.v:136$41_CHECK[0:0]$128
+(define-fun |sync_fifo#109| ((state |sync_fifo_s|)) (_ BitVec 1) (ite (|sync_fifo#104| state) #b1 #b0)) ; $procmux$417_Y
+(define-fun |sync_fifo#110| ((state |sync_fifo_s|)) (_ BitVec 1) (ite (|sync_fifo#84| state) #b0 (|sync_fifo#109| state))) ; $procmux$420_Y
+(define-fun |sync_fifo#111| ((state |sync_fifo_s|)) (_ BitVec 1) (ite (|sync_fifo#75| state) (|sync_fifo#110| state) #b0)) ; $0$formal$./sync_fifo.v:136$41_EN[0:0]$129
+; yosys-smt2-anyseq sync_fifo#112 1 $auto$setundef.cc:524:execute$1102
+(declare-fun |sync_fifo#112| (|sync_fifo_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2358:Anyseq$1103
+; yosys-smt2-anyseq sync_fifo#113 1 $auto$setundef.cc:524:execute$1098
+(declare-fun |sync_fifo#113| (|sync_fifo_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2358:Anyseq$1099
+(define-fun |sync_fifo#114| ((state |sync_fifo_s|)) (_ BitVec 1) (bvnot (|sync_fifo#6| state))) ; $eq$./sync_fifo.v:137$202_Y
+(define-fun |sync_fifo#115| ((state |sync_fifo_s|)) (_ BitVec 1) (ite (|sync_fifo#104| state) (|sync_fifo#114| state) (|sync_fifo#113| state))) ; $procmux$441_Y
+; yosys-smt2-anyseq sync_fifo#116 1 $auto$setundef.cc:524:execute$1100
+(declare-fun |sync_fifo#116| (|sync_fifo_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2358:Anyseq$1101
+(define-fun |sync_fifo#117| ((state |sync_fifo_s|)) (_ BitVec 1) (ite (|sync_fifo#84| state) (|sync_fifo#116| state) (|sync_fifo#115| state))) ; $procmux$444_Y
+(define-fun |sync_fifo#118| ((state |sync_fifo_s|)) (_ BitVec 1) (ite (|sync_fifo#75| state) (|sync_fifo#117| state) (|sync_fifo#112| state))) ; $0$formal$./sync_fifo.v:137$42_CHECK[0:0]$130
+; yosys-smt2-anyseq sync_fifo#119 1 $auto$setundef.cc:524:execute$1108
+(declare-fun |sync_fifo#119| (|sync_fifo_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2358:Anyseq$1109
+; yosys-smt2-anyseq sync_fifo#120 1 $auto$setundef.cc:524:execute$1104
+(declare-fun |sync_fifo#120| (|sync_fifo_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2358:Anyseq$1105
+(define-fun |sync_fifo#121| ((state |sync_fifo_s|)) (_ BitVec 1) (ite (|sync_fifo#104| state) (|sync_fifo#8| state) (|sync_fifo#120| state))) ; $procmux$457_Y
+; yosys-smt2-anyseq sync_fifo#122 1 $auto$setundef.cc:524:execute$1106
+(declare-fun |sync_fifo#122| (|sync_fifo_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2358:Anyseq$1107
+(define-fun |sync_fifo#123| ((state |sync_fifo_s|)) (_ BitVec 1) (ite (|sync_fifo#84| state) (|sync_fifo#122| state) (|sync_fifo#121| state))) ; $procmux$460_Y
+(define-fun |sync_fifo#124| ((state |sync_fifo_s|)) (_ BitVec 1) (ite (|sync_fifo#75| state) (|sync_fifo#123| state) (|sync_fifo#119| state))) ; $0$formal$./sync_fifo.v:138$43_CHECK[0:0]$132
+; yosys-smt2-anyseq sync_fifo#125 1 $auto$setundef.cc:524:execute$1114
+(declare-fun |sync_fifo#125| (|sync_fifo_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2358:Anyseq$1115
+; yosys-smt2-anyseq sync_fifo#126 1 $auto$setundef.cc:524:execute$1110
+(declare-fun |sync_fifo#126| (|sync_fifo_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2358:Anyseq$1111
+(define-fun |sync_fifo#127| ((state |sync_fifo_s|)) (_ BitVec 1) (ite (|sync_fifo#104| state) (|sync_fifo#99| state) (|sync_fifo#126| state))) ; $procmux$473_Y
+; yosys-smt2-anyseq sync_fifo#128 1 $auto$setundef.cc:524:execute$1112
+(declare-fun |sync_fifo#128| (|sync_fifo_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2358:Anyseq$1113
+(define-fun |sync_fifo#129| ((state |sync_fifo_s|)) (_ BitVec 1) (ite (|sync_fifo#84| state) (|sync_fifo#128| state) (|sync_fifo#127| state))) ; $procmux$476_Y
+(define-fun |sync_fifo#130| ((state |sync_fifo_s|)) (_ BitVec 1) (ite (|sync_fifo#75| state) (|sync_fifo#129| state) (|sync_fifo#125| state))) ; $0$formal$./sync_fifo.v:139$44_CHECK[0:0]$134
+; yosys-smt2-anyseq sync_fifo#131 1 $auto$setundef.cc:524:execute$1122
+(declare-fun |sync_fifo#131| (|sync_fifo_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2358:Anyseq$1123
+; yosys-smt2-anyseq sync_fifo#132 1 $auto$setundef.cc:524:execute$1116
+(declare-fun |sync_fifo#132| (|sync_fifo_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2358:Anyseq$1117
+(define-fun |sync_fifo#133| ((state |sync_fifo_s|)) Bool (= (|sync_fifo#17| state) #b11)) ; $eq$./sync_fifo.v:148$210_Y
+(define-fun |sync_fifo#134| ((state |sync_fifo_s|)) (_ BitVec 1) (ite (|sync_fifo#133| state) (|sync_fifo#5| state) (|sync_fifo#132| state))) ; $procmux$583_Y
+; yosys-smt2-anyseq sync_fifo#135 1 $auto$setundef.cc:524:execute$1118
+(declare-fun |sync_fifo#135| (|sync_fifo_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2358:Anyseq$1119
+(define-fun |sync_fifo#136| ((state |sync_fifo_s|)) (_ BitVec 1) (ite (|sync_fifo#104| state) (|sync_fifo#135| state) (|sync_fifo#134| state))) ; $procmux$589_Y
+; yosys-smt2-anyseq sync_fifo#137 1 $auto$setundef.cc:524:execute$1120
+(declare-fun |sync_fifo#137| (|sync_fifo_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2358:Anyseq$1121
+(define-fun |sync_fifo#138| ((state |sync_fifo_s|)) (_ BitVec 1) (ite (|sync_fifo#84| state) (|sync_fifo#137| state) (|sync_fifo#136| state))) ; $procmux$592_Y
+(define-fun |sync_fifo#139| ((state |sync_fifo_s|)) (_ BitVec 1) (ite (|sync_fifo#75| state) (|sync_fifo#138| state) (|sync_fifo#131| state))) ; $0$formal$./sync_fifo.v:150$49_CHECK[0:0]$144
+(define-fun |sync_fifo#140| ((state |sync_fifo_s|)) (_ BitVec 1) (ite (|sync_fifo#133| state) #b1 #b0)) ; $procmux$569_Y
+(define-fun |sync_fifo#141| ((state |sync_fifo_s|)) (_ BitVec 1) (ite (|sync_fifo#104| state) #b0 (|sync_fifo#140| state))) ; $procmux$575_Y
+(define-fun |sync_fifo#142| ((state |sync_fifo_s|)) (_ BitVec 1) (ite (|sync_fifo#84| state) #b0 (|sync_fifo#141| state))) ; $procmux$578_Y
+(define-fun |sync_fifo#143| ((state |sync_fifo_s|)) (_ BitVec 1) (ite (|sync_fifo#75| state) (|sync_fifo#142| state) #b0)) ; $0$formal$./sync_fifo.v:150$49_EN[0:0]$145
+; yosys-smt2-anyseq sync_fifo#144 1 $auto$setundef.cc:524:execute$1130
+(declare-fun |sync_fifo#144| (|sync_fifo_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2358:Anyseq$1131
+; yosys-smt2-anyseq sync_fifo#145 1 $auto$setundef.cc:524:execute$1124
+(declare-fun |sync_fifo#145| (|sync_fifo_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2358:Anyseq$1125
+(define-fun |sync_fifo#146| ((state |sync_fifo_s|)) (_ BitVec 1) (ite (|sync_fifo#133| state) (|sync_fifo#114| state) (|sync_fifo#145| state))) ; $procmux$611_Y
+; yosys-smt2-anyseq sync_fifo#147 1 $auto$setundef.cc:524:execute$1126
+(declare-fun |sync_fifo#147| (|sync_fifo_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2358:Anyseq$1127
+(define-fun |sync_fifo#148| ((state |sync_fifo_s|)) (_ BitVec 1) (ite (|sync_fifo#104| state) (|sync_fifo#147| state) (|sync_fifo#146| state))) ; $procmux$617_Y
+; yosys-smt2-anyseq sync_fifo#149 1 $auto$setundef.cc:524:execute$1128
+(declare-fun |sync_fifo#149| (|sync_fifo_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2358:Anyseq$1129
+(define-fun |sync_fifo#150| ((state |sync_fifo_s|)) (_ BitVec 1) (ite (|sync_fifo#84| state) (|sync_fifo#149| state) (|sync_fifo#148| state))) ; $procmux$620_Y
+(define-fun |sync_fifo#151| ((state |sync_fifo_s|)) (_ BitVec 1) (ite (|sync_fifo#75| state) (|sync_fifo#150| state) (|sync_fifo#144| state))) ; $0$formal$./sync_fifo.v:151$50_CHECK[0:0]$146
+; yosys-smt2-anyseq sync_fifo#152 1 $auto$setundef.cc:524:execute$1138
+(declare-fun |sync_fifo#152| (|sync_fifo_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2358:Anyseq$1139
+; yosys-smt2-anyseq sync_fifo#153 1 $auto$setundef.cc:524:execute$1132
+(declare-fun |sync_fifo#153| (|sync_fifo_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2358:Anyseq$1133
+(define-fun |sync_fifo#154| ((state |sync_fifo_s|)) (_ BitVec 1) (bvnot (|sync_fifo#8| state))) ; $eq$./sync_fifo.v:145$208_Y
+(define-fun |sync_fifo#155| ((state |sync_fifo_s|)) (_ BitVec 1) (ite (|sync_fifo#133| state) (|sync_fifo#154| state) (|sync_fifo#153| state))) ; $procmux$639_Y
+; yosys-smt2-anyseq sync_fifo#156 1 $auto$setundef.cc:524:execute$1134
+(declare-fun |sync_fifo#156| (|sync_fifo_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2358:Anyseq$1135
+(define-fun |sync_fifo#157| ((state |sync_fifo_s|)) (_ BitVec 1) (ite (|sync_fifo#104| state) (|sync_fifo#156| state) (|sync_fifo#155| state))) ; $procmux$645_Y
+; yosys-smt2-anyseq sync_fifo#158 1 $auto$setundef.cc:524:execute$1136
+(declare-fun |sync_fifo#158| (|sync_fifo_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2358:Anyseq$1137
+(define-fun |sync_fifo#159| ((state |sync_fifo_s|)) (_ BitVec 1) (ite (|sync_fifo#84| state) (|sync_fifo#158| state) (|sync_fifo#157| state))) ; $procmux$648_Y
+(define-fun |sync_fifo#160| ((state |sync_fifo_s|)) (_ BitVec 1) (ite (|sync_fifo#75| state) (|sync_fifo#159| state) (|sync_fifo#152| state))) ; $0$formal$./sync_fifo.v:152$51_CHECK[0:0]$148
+; yosys-smt2-anyseq sync_fifo#161 1 $auto$setundef.cc:524:execute$1146
+(declare-fun |sync_fifo#161| (|sync_fifo_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2358:Anyseq$1147
+; yosys-smt2-anyseq sync_fifo#162 1 $auto$setundef.cc:524:execute$1140
+(declare-fun |sync_fifo#162| (|sync_fifo_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2358:Anyseq$1141
+(define-fun |sync_fifo#163| ((state |sync_fifo_s|)) (_ BitVec 1) (ite (|sync_fifo#133| state) (|sync_fifo#7| state) (|sync_fifo#162| state))) ; $procmux$667_Y
+; yosys-smt2-anyseq sync_fifo#164 1 $auto$setundef.cc:524:execute$1142
+(declare-fun |sync_fifo#164| (|sync_fifo_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2358:Anyseq$1143
+(define-fun |sync_fifo#165| ((state |sync_fifo_s|)) (_ BitVec 1) (ite (|sync_fifo#104| state) (|sync_fifo#164| state) (|sync_fifo#163| state))) ; $procmux$673_Y
+; yosys-smt2-anyseq sync_fifo#166 1 $auto$setundef.cc:524:execute$1144
+(declare-fun |sync_fifo#166| (|sync_fifo_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2358:Anyseq$1145
+(define-fun |sync_fifo#167| ((state |sync_fifo_s|)) (_ BitVec 1) (ite (|sync_fifo#84| state) (|sync_fifo#166| state) (|sync_fifo#165| state))) ; $procmux$676_Y
+(define-fun |sync_fifo#168| ((state |sync_fifo_s|)) (_ BitVec 1) (ite (|sync_fifo#75| state) (|sync_fifo#167| state) (|sync_fifo#161| state))) ; $0$formal$./sync_fifo.v:153$52_CHECK[0:0]$150
+; yosys-smt2-anyseq sync_fifo#169 1 $auto$setundef.cc:524:execute$1154
+(declare-fun |sync_fifo#169| (|sync_fifo_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2358:Anyseq$1155
+; yosys-smt2-anyseq sync_fifo#170 1 $auto$setundef.cc:524:execute$1148
+(declare-fun |sync_fifo#170| (|sync_fifo_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2358:Anyseq$1149
+(define-fun |sync_fifo#171| ((state |sync_fifo_s|)) (_ BitVec 1) (ite (|sync_fifo#133| state) (|sync_fifo#170| state) (|sync_fifo#83| state))) ; $procmux$695_Y
+; yosys-smt2-anyseq sync_fifo#172 1 $auto$setundef.cc:524:execute$1150
+(declare-fun |sync_fifo#172| (|sync_fifo_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2358:Anyseq$1151
+(define-fun |sync_fifo#173| ((state |sync_fifo_s|)) (_ BitVec 1) (ite (|sync_fifo#104| state) (|sync_fifo#172| state) (|sync_fifo#171| state))) ; $procmux$701_Y
+; yosys-smt2-anyseq sync_fifo#174 1 $auto$setundef.cc:524:execute$1152
+(declare-fun |sync_fifo#174| (|sync_fifo_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2358:Anyseq$1153
+(define-fun |sync_fifo#175| ((state |sync_fifo_s|)) (_ BitVec 1) (ite (|sync_fifo#84| state) (|sync_fifo#174| state) (|sync_fifo#173| state))) ; $procmux$704_Y
+(define-fun |sync_fifo#176| ((state |sync_fifo_s|)) (_ BitVec 1) (ite (|sync_fifo#75| state) (|sync_fifo#175| state) (|sync_fifo#169| state))) ; $0$formal$./sync_fifo.v:157$53_CHECK[0:0]$152
+(define-fun |sync_fifo#177| ((state |sync_fifo_s|)) (_ BitVec 1) (ite (|sync_fifo#133| state) #b0 #b1)) ; $procmux$681_Y
+(define-fun |sync_fifo#178| ((state |sync_fifo_s|)) (_ BitVec 1) (ite (|sync_fifo#104| state) #b0 (|sync_fifo#177| state))) ; $procmux$687_Y
+(define-fun |sync_fifo#179| ((state |sync_fifo_s|)) (_ BitVec 1) (ite (|sync_fifo#84| state) #b0 (|sync_fifo#178| state))) ; $procmux$690_Y
+(define-fun |sync_fifo#180| ((state |sync_fifo_s|)) (_ BitVec 1) (ite (|sync_fifo#75| state) (|sync_fifo#179| state) #b0)) ; $0$formal$./sync_fifo.v:157$53_EN[0:0]$153
+; yosys-smt2-anyseq sync_fifo#181 1 $auto$setundef.cc:524:execute$1162
+(declare-fun |sync_fifo#181| (|sync_fifo_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2358:Anyseq$1163
+; yosys-smt2-anyseq sync_fifo#182 1 $auto$setundef.cc:524:execute$1156
+(declare-fun |sync_fifo#182| (|sync_fifo_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2358:Anyseq$1157
+(define-fun |sync_fifo#183| ((state |sync_fifo_s|)) (_ BitVec 1) (ite (|sync_fifo#133| state) (|sync_fifo#182| state) (|sync_fifo#114| state))) ; $procmux$723_Y
+; yosys-smt2-anyseq sync_fifo#184 1 $auto$setundef.cc:524:execute$1158
+(declare-fun |sync_fifo#184| (|sync_fifo_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2358:Anyseq$1159
+(define-fun |sync_fifo#185| ((state |sync_fifo_s|)) (_ BitVec 1) (ite (|sync_fifo#104| state) (|sync_fifo#184| state) (|sync_fifo#183| state))) ; $procmux$729_Y
+; yosys-smt2-anyseq sync_fifo#186 1 $auto$setundef.cc:524:execute$1160
+(declare-fun |sync_fifo#186| (|sync_fifo_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2358:Anyseq$1161
+(define-fun |sync_fifo#187| ((state |sync_fifo_s|)) (_ BitVec 1) (ite (|sync_fifo#84| state) (|sync_fifo#186| state) (|sync_fifo#185| state))) ; $procmux$732_Y
+(define-fun |sync_fifo#188| ((state |sync_fifo_s|)) (_ BitVec 1) (ite (|sync_fifo#75| state) (|sync_fifo#187| state) (|sync_fifo#181| state))) ; $0$formal$./sync_fifo.v:158$54_CHECK[0:0]$154
+; yosys-smt2-anyseq sync_fifo#189 1 $auto$setundef.cc:524:execute$1170
+(declare-fun |sync_fifo#189| (|sync_fifo_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2358:Anyseq$1171
+; yosys-smt2-anyseq sync_fifo#190 1 $auto$setundef.cc:524:execute$1164
+(declare-fun |sync_fifo#190| (|sync_fifo_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2358:Anyseq$1165
+(define-fun |sync_fifo#191| ((state |sync_fifo_s|)) (_ BitVec 1) (ite (|sync_fifo#133| state) (|sync_fifo#190| state) (|sync_fifo#154| state))) ; $procmux$751_Y
+; yosys-smt2-anyseq sync_fifo#192 1 $auto$setundef.cc:524:execute$1166
+(declare-fun |sync_fifo#192| (|sync_fifo_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2358:Anyseq$1167
+(define-fun |sync_fifo#193| ((state |sync_fifo_s|)) (_ BitVec 1) (ite (|sync_fifo#104| state) (|sync_fifo#192| state) (|sync_fifo#191| state))) ; $procmux$757_Y
+; yosys-smt2-anyseq sync_fifo#194 1 $auto$setundef.cc:524:execute$1168
+(declare-fun |sync_fifo#194| (|sync_fifo_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2358:Anyseq$1169
+(define-fun |sync_fifo#195| ((state |sync_fifo_s|)) (_ BitVec 1) (ite (|sync_fifo#84| state) (|sync_fifo#194| state) (|sync_fifo#193| state))) ; $procmux$760_Y
+(define-fun |sync_fifo#196| ((state |sync_fifo_s|)) (_ BitVec 1) (ite (|sync_fifo#75| state) (|sync_fifo#195| state) (|sync_fifo#189| state))) ; $0$formal$./sync_fifo.v:159$55_CHECK[0:0]$156
+; yosys-smt2-anyseq sync_fifo#197 1 $auto$setundef.cc:524:execute$1178
+(declare-fun |sync_fifo#197| (|sync_fifo_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2358:Anyseq$1179
+; yosys-smt2-anyseq sync_fifo#198 1 $auto$setundef.cc:524:execute$1172
+(declare-fun |sync_fifo#198| (|sync_fifo_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2358:Anyseq$1173
+(define-fun |sync_fifo#199| ((state |sync_fifo_s|)) (_ BitVec 1) (ite (|sync_fifo#133| state) (|sync_fifo#198| state) (|sync_fifo#99| state))) ; $procmux$779_Y
+; yosys-smt2-anyseq sync_fifo#200 1 $auto$setundef.cc:524:execute$1174
+(declare-fun |sync_fifo#200| (|sync_fifo_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2358:Anyseq$1175
+(define-fun |sync_fifo#201| ((state |sync_fifo_s|)) (_ BitVec 1) (ite (|sync_fifo#104| state) (|sync_fifo#200| state) (|sync_fifo#199| state))) ; $procmux$785_Y
+; yosys-smt2-anyseq sync_fifo#202 1 $auto$setundef.cc:524:execute$1176
+(declare-fun |sync_fifo#202| (|sync_fifo_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2358:Anyseq$1177
+(define-fun |sync_fifo#203| ((state |sync_fifo_s|)) (_ BitVec 1) (ite (|sync_fifo#84| state) (|sync_fifo#202| state) (|sync_fifo#201| state))) ; $procmux$788_Y
+(define-fun |sync_fifo#204| ((state |sync_fifo_s|)) (_ BitVec 1) (ite (|sync_fifo#75| state) (|sync_fifo#203| state) (|sync_fifo#197| state))) ; $0$formal$./sync_fifo.v:160$56_CHECK[0:0]$158
+; yosys-smt2-anyseq sync_fifo#205 1 $auto$setundef.cc:524:execute$1182
+(declare-fun |sync_fifo#205| (|sync_fifo_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2358:Anyseq$1183
+; yosys-smt2-anyseq sync_fifo#206 1 $auto$setundef.cc:524:execute$1180
+(declare-fun |sync_fifo#206| (|sync_fifo_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2358:Anyseq$1181
+(define-fun |sync_fifo#207| ((state |sync_fifo_s|)) Bool (distinct (|sync_fifo#17| state) (|sync_fifo#2| state))) ; $ne$./sync_fifo.v:164$222_Y
+(define-fun |sync_fifo#208| ((state |sync_fifo_s|)) (_ BitVec 1) (bvnot (|sync_fifo#50| state))) ; $eq$./sync_fifo.v:162$220_Y
+(define-fun |sync_fifo#209| ((state |sync_fifo_s|)) Bool (and (or  (= ((_ extract 0 0) (|sync_fifo#51| state)) #b1) false) (or  (= ((_ extract 0 0) (|sync_fifo#208| state)) #b1) false))) ; $logic_and$./sync_fifo.v:162$221_Y
+(define-fun |sync_fifo#210| ((state |sync_fifo_s|)) (_ BitVec 1) (ite (|sync_fifo#209| state) (ite (|sync_fifo#207| state) #b1 #b0) (|sync_fifo#206| state))) ; $procmux$796_Y
+(define-fun |sync_fifo#211| ((state |sync_fifo_s|)) (_ BitVec 1) (ite (|sync_fifo#75| state) (|sync_fifo#210| state) (|sync_fifo#205| state))) ; $0$formal$./sync_fifo.v:164$57_CHECK[0:0]$160
+(define-fun |sync_fifo#212| ((state |sync_fifo_s|)) (_ BitVec 1) (ite (|sync_fifo#209| state) #b1 #b0)) ; $procmux$792_Y
+(define-fun |sync_fifo#213| ((state |sync_fifo_s|)) (_ BitVec 1) (ite (|sync_fifo#75| state) (|sync_fifo#212| state) #b0)) ; $0$formal$./sync_fifo.v:164$57_EN[0:0]$161
+; yosys-smt2-anyseq sync_fifo#214 1 $auto$setundef.cc:524:execute$1186
+(declare-fun |sync_fifo#214| (|sync_fifo_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2358:Anyseq$1187
+; yosys-smt2-anyseq sync_fifo#215 1 $auto$setundef.cc:524:execute$1184
+(declare-fun |sync_fifo#215| (|sync_fifo_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2358:Anyseq$1185
+(define-fun |sync_fifo#216| ((state |sync_fifo_s|)) Bool (distinct (|sync_fifo#16| state) (|sync_fifo#1| state))) ; $ne$./sync_fifo.v:165$223_Y
+(define-fun |sync_fifo#217| ((state |sync_fifo_s|)) (_ BitVec 1) (ite (|sync_fifo#209| state) (ite (|sync_fifo#216| state) #b1 #b0) (|sync_fifo#215| state))) ; $procmux$804_Y
+(define-fun |sync_fifo#218| ((state |sync_fifo_s|)) (_ BitVec 1) (ite (|sync_fifo#75| state) (|sync_fifo#217| state) (|sync_fifo#214| state))) ; $0$formal$./sync_fifo.v:165$58_CHECK[0:0]$162
+; yosys-smt2-anyseq sync_fifo#219 1 $auto$setundef.cc:524:execute$1190
+(declare-fun |sync_fifo#219| (|sync_fifo_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2358:Anyseq$1191
+; yosys-smt2-anyseq sync_fifo#220 1 $auto$setundef.cc:524:execute$1188
+(declare-fun |sync_fifo#220| (|sync_fifo_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2358:Anyseq$1189
+; yosys-smt2-memory r_MEMORY 2 8 3 2 sync
+(declare-fun |sync_fifo#221#0| (|sync_fifo_s|) (Array (_ BitVec 2) (_ BitVec 8))) ; r_MEMORY
+(define-fun |sync_fifo_m r_MEMORY| ((state |sync_fifo_s|)) (Array (_ BitVec 2) (_ BitVec 8)) (|sync_fifo#221#0| state))
 (define-fun |sync_fifo_m:R0A r_MEMORY| ((state |sync_fifo_s|)) (_ BitVec 2) (|sync_fifo#1| state)) ; \r_READ_POINTER
-(define-fun |sync_fifo#124| ((state |sync_fifo_s|)) (_ BitVec 8) (select (|sync_fifo#123#0| state) (|sync_fifo_m:R0A r_MEMORY| state))) ; $memrd$\r_MEMORY$./sync_fifo.v:30$53_DATA
-(define-fun |sync_fifo_m:R0D r_MEMORY| ((state |sync_fifo_s|)) (_ BitVec 8) (|sync_fifo#124| state))
-(define-fun |sync_fifo_m:R1A r_MEMORY| ((state |sync_fifo_s|)) (_ BitVec 2) (|sync_fifo#13| state)) ; $past$./sync_fifo.v:81$8$0
-(define-fun |sync_fifo#125| ((state |sync_fifo_s|)) (_ BitVec 8) (select (|sync_fifo#123#0| state) (|sync_fifo_m:R1A r_MEMORY| state))) ; $memrd$\r_MEMORY$./sync_fifo.v:82$145_DATA
-(define-fun |sync_fifo_m:R1D r_MEMORY| ((state |sync_fifo_s|)) (_ BitVec 8) (|sync_fifo#125| state))
-(define-fun |sync_fifo_m:R2A r_MEMORY| ((state |sync_fifo_s|)) (_ BitVec 2) (|sync_fifo#12| state)) ; $past$./sync_fifo.v:87$13$0
-(define-fun |sync_fifo#126| ((state |sync_fifo_s|)) (_ BitVec 8) (select (|sync_fifo#123#0| state) (|sync_fifo_m:R2A r_MEMORY| state))) ; $memrd$\r_MEMORY$./sync_fifo.v:88$152_DATA
-(define-fun |sync_fifo_m:R2D r_MEMORY| ((state |sync_fifo_s|)) (_ BitVec 8) (|sync_fifo#126| state))
-(define-fun |sync_fifo#127| ((state |sync_fifo_s|)) Bool (= (|sync_fifo#4| state) (|sync_fifo#125| state))) ; $eq$./sync_fifo.v:82$146_Y
-(define-fun |sync_fifo#128| ((state |sync_fifo_s|)) (_ BitVec 1) (ite (|sync_fifo#111| state) (ite (|sync_fifo#127| state) #b1 #b0) (|sync_fifo#122| state))) ; $procmux$348_Y
-(define-fun |sync_fifo#129| ((state |sync_fifo_s|)) (_ BitVec 1) (ite (|sync_fifo#57| state) (|sync_fifo#128| state) (|sync_fifo#121| state))) ; $0$formal$./sync_fifo.v:82$38_CHECK[0:0]$104
-; yosys-smt2-anyseq sync_fifo#130 1 $auto$setundef.cc:524:execute$544
-(declare-fun |sync_fifo#130| (|sync_fifo_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2358:Anyseq$545
-; yosys-smt2-anyseq sync_fifo#131 1 $auto$setundef.cc:524:execute$542
-(declare-fun |sync_fifo#131| (|sync_fifo_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2358:Anyseq$543
-(define-fun |sync_fifo#132| ((state |sync_fifo_s|)) (_ BitVec 1) (bvnot (|sync_fifo#35| state))) ; $eq$./sync_fifo.v:84$148_Y
-(define-fun |sync_fifo#133| ((state |sync_fifo_s|)) Bool (and (or  (= ((_ extract 0 0) (|sync_fifo#34| state)) #b1) false) (or  (= ((_ extract 0 0) (|sync_fifo#132| state)) #b1) false))) ; $logic_and$./sync_fifo.v:84$149_Y
-(define-fun |sync_fifo#134| ((state |sync_fifo_s|)) (_ BitVec 1) (ite (|sync_fifo#133| state) (ite (|sync_fifo#109| state) #b1 #b0) (|sync_fifo#131| state))) ; $procmux$356_Y
-(define-fun |sync_fifo#135| ((state |sync_fifo_s|)) (_ BitVec 1) (ite (|sync_fifo#57| state) (|sync_fifo#134| state) (|sync_fifo#130| state))) ; $0$formal$./sync_fifo.v:86$39_CHECK[0:0]$106
-(define-fun |sync_fifo#136| ((state |sync_fifo_s|)) (_ BitVec 1) (ite (|sync_fifo#133| state) #b1 #b0)) ; $procmux$352_Y
-(define-fun |sync_fifo#137| ((state |sync_fifo_s|)) (_ BitVec 1) (ite (|sync_fifo#57| state) (|sync_fifo#136| state) #b0)) ; $0$formal$./sync_fifo.v:86$39_EN[0:0]$107
-; yosys-smt2-anyseq sync_fifo#138 1 $auto$setundef.cc:524:execute$548
-(declare-fun |sync_fifo#138| (|sync_fifo_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2358:Anyseq$549
-; yosys-smt2-anyseq sync_fifo#139 1 $auto$setundef.cc:524:execute$546
-(declare-fun |sync_fifo#139| (|sync_fifo_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2358:Anyseq$547
-(define-fun |sync_fifo#140| ((state |sync_fifo_s|)) Bool (distinct (|sync_fifo#12| state) (|sync_fifo#0| state))) ; $ne$./sync_fifo.v:87$151_Y
-(define-fun |sync_fifo#141| ((state |sync_fifo_s|)) (_ BitVec 1) (ite (|sync_fifo#133| state) (ite (|sync_fifo#140| state) #b1 #b0) (|sync_fifo#139| state))) ; $procmux$364_Y
-(define-fun |sync_fifo#142| ((state |sync_fifo_s|)) (_ BitVec 1) (ite (|sync_fifo#57| state) (|sync_fifo#141| state) (|sync_fifo#138| state))) ; $0$formal$./sync_fifo.v:87$40_CHECK[0:0]$108
-; yosys-smt2-anyseq sync_fifo#143 1 $auto$setundef.cc:524:execute$552
-(declare-fun |sync_fifo#143| (|sync_fifo_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2358:Anyseq$553
-; yosys-smt2-anyseq sync_fifo#144 1 $auto$setundef.cc:524:execute$550
-(declare-fun |sync_fifo#144| (|sync_fifo_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2358:Anyseq$551
-(define-fun |sync_fifo#145| ((state |sync_fifo_s|)) Bool (= (|sync_fifo#126| state) (|sync_fifo#11| state))) ; $eq$./sync_fifo.v:88$153_Y
-(define-fun |sync_fifo#146| ((state |sync_fifo_s|)) (_ BitVec 1) (ite (|sync_fifo#133| state) (ite (|sync_fifo#145| state) #b1 #b0) (|sync_fifo#144| state))) ; $procmux$372_Y
-(define-fun |sync_fifo#147| ((state |sync_fifo_s|)) (_ BitVec 1) (ite (|sync_fifo#57| state) (|sync_fifo#146| state) (|sync_fifo#143| state))) ; $0$formal$./sync_fifo.v:88$41_CHECK[0:0]$110
-(define-fun |sync_fifo#148| ((state |sync_fifo_s|)) Bool (not (or  (= ((_ extract 0 0) (|sync_fifo#2| state)) #b1) (= ((_ extract 1 1) (|sync_fifo#2| state)) #b1)))) ; $eq$./sync_fifo.v:34$56_Y
-(define-fun |sync_fifo#149| ((state |sync_fifo_s|)) (_ BitVec 1) (ite (|sync_fifo#148| state) #b1 #b0)) ; $0\o_FIFO_EMPTY[0:0]
-(define-fun |sync_fifo#150| ((state |sync_fifo_s|)) Bool (= (|sync_fifo#2| state) #b11)) ; $eq$./sync_fifo.v:38$57_Y
-(define-fun |sync_fifo#151| ((state |sync_fifo_s|)) (_ BitVec 1) (ite (|sync_fifo#150| state) #b1 #b0)) ; $0\o_FIFO_FULL[0:0]
-(define-fun |sync_fifo#152| ((state |sync_fifo_s|)) (_ BitVec 8) (ite (|sync_fifo#8| state) (|sync_fifo#124| state) (|sync_fifo#4| state))) ; $procmux$416_Y
-(define-fun |sync_fifo#153| ((state |sync_fifo_s|)) (_ BitVec 8) (ite (|sync_fifo#7| state) (|sync_fifo#4| state) (|sync_fifo#152| state))) ; $0\o_OUTPUT[7:0]
-(define-fun |sync_fifo#154| ((state |sync_fifo_s|)) (_ BitVec 2) (bvsub (|sync_fifo#2| state) #b01)) ; $sub$./sync_fifo.v:32$55_Y
-(define-fun |sync_fifo#155| ((state |sync_fifo_s|)) (_ BitVec 2) (ite (|sync_fifo#8| state) (|sync_fifo#154| state) (|sync_fifo#2| state))) ; $procmux$403_Y
-(define-fun |sync_fifo#156| ((state |sync_fifo_s|)) (_ BitVec 2) (bvadd (|sync_fifo#2| state) #b01)) ; $add$./sync_fifo.v:26$51_Y
-(define-fun |sync_fifo#157| ((state |sync_fifo_s|)) (_ BitVec 2) (ite (|sync_fifo#7| state) (|sync_fifo#156| state) (|sync_fifo#155| state))) ; $0\r_QUANTITY[1:0]
-(define-fun |sync_fifo#158| ((state |sync_fifo_s|)) (_ BitVec 2) (bvadd (|sync_fifo#1| state) #b01)) ; $add$./sync_fifo.v:31$54_Y
-(define-fun |sync_fifo#159| ((state |sync_fifo_s|)) (_ BitVec 2) (ite (|sync_fifo#8| state) (|sync_fifo#158| state) (|sync_fifo#1| state))) ; $procmux$408_Y
-(define-fun |sync_fifo#160| ((state |sync_fifo_s|)) (_ BitVec 2) (ite (|sync_fifo#7| state) (|sync_fifo#1| state) (|sync_fifo#159| state))) ; $0\r_READ_POINTER[1:0]
-(define-fun |sync_fifo#161| ((state |sync_fifo_s|)) (_ BitVec 2) (bvadd (|sync_fifo#0| state) #b01)) ; $add$./sync_fifo.v:25$50_Y
-(define-fun |sync_fifo#162| ((state |sync_fifo_s|)) (_ BitVec 2) (ite (|sync_fifo#7| state) (|sync_fifo#161| state) (|sync_fifo#0| state))) ; $0\r_WRITE_POINTER[1:0]
-; yosys-smt2-anyseq sync_fifo#163 2 $auto$setundef.cc:524:execute$562
-(declare-fun |sync_fifo#163| (|sync_fifo_s|) (_ BitVec 2)) ; $auto$rtlil.cc:2358:Anyseq$563
-(define-fun |sync_fifo#164| ((state |sync_fifo_s|)) (_ BitVec 2) (ite (|sync_fifo#7| state) (|sync_fifo#0| state) (|sync_fifo#163| state))) ; $0$memwr$\r_MEMORY$./sync_fifo.v:24$20_ADDR[1:0]$46
-; yosys-smt2-anyseq sync_fifo#165 8 $auto$setundef.cc:524:execute$560
-(declare-fun |sync_fifo#165| (|sync_fifo_s|) (_ BitVec 8)) ; $auto$rtlil.cc:2358:Anyseq$561
-(define-fun |sync_fifo#166| ((state |sync_fifo_s|)) (_ BitVec 8) (ite (|sync_fifo#7| state) (|sync_fifo#9| state) (|sync_fifo#165| state))) ; $0$memwr$\r_MEMORY$./sync_fifo.v:24$20_DATA[7:0]$47
-(define-fun |sync_fifo#167| ((state |sync_fifo_s|)) (_ BitVec 1) (ite (|sync_fifo#7| state) #b1 #b0)) ; $0$memwr$\r_MEMORY$./sync_fifo.v:24$20_EN[7:0]$48 [7]
-(define-fun |sync_fifo_m:W0A r_MEMORY| ((state |sync_fifo_s|)) (_ BitVec 2) (|sync_fifo#164| state)) ; $0$memwr$\r_MEMORY$./sync_fifo.v:24$20_ADDR[1:0]$46
-(define-fun |sync_fifo_m:W0D r_MEMORY| ((state |sync_fifo_s|)) (_ BitVec 8) (|sync_fifo#166| state)) ; $0$memwr$\r_MEMORY$./sync_fifo.v:24$20_DATA[7:0]$47
-(define-fun |sync_fifo_m:W0M r_MEMORY| ((state |sync_fifo_s|)) (_ BitVec 8) (concat (|sync_fifo#167| state) (concat (|sync_fifo#167| state) (concat (|sync_fifo#167| state) (concat (|sync_fifo#167| state) (concat (|sync_fifo#167| state) (concat (|sync_fifo#167| state) (concat (|sync_fifo#167| state) (|sync_fifo#167| state))))))))) ; { $0$memwr$\r_MEMORY$./sync_fifo.v:24$20_EN[7:0]$48 [7] $0$memwr$\r_MEMORY$./sync_fifo.v:24$20_EN[7:0]$48 [7] $0$memwr$\r_MEMORY$./sync_fifo.v:24$20_EN[7:0]$48 [7] $0$memwr$\r_MEMORY$./sync_fifo.v:24$20_EN[7:0]$48 [7] $0$memwr$\r_MEMORY$./sync_fifo.v:24$20_EN[7:0]$48 [7] $0$memwr$\r_MEMORY$./sync_fifo.v:24$20_EN[7:0]$48 [7] $0$memwr$\r_MEMORY$./sync_fifo.v:24$20_EN[7:0]$48 [7] $0$memwr$\r_MEMORY$./sync_fifo.v:24$20_EN[7:0]$48 [7] }
-(define-fun |sync_fifo#123#1| ((state |sync_fifo_s|)) (Array (_ BitVec 2) (_ BitVec 8)) (store (|sync_fifo#123#0| state) (|sync_fifo_m:W0A r_MEMORY| state) (bvor (bvand (|sync_fifo_m:W0D r_MEMORY| state) (|sync_fifo_m:W0M r_MEMORY| state)) (bvand (select (|sync_fifo#123#0| state) (|sync_fifo_m:W0A r_MEMORY| state)) (bvnot (|sync_fifo_m:W0M r_MEMORY| state)))))) ; r_MEMORY
+(define-fun |sync_fifo#222| ((state |sync_fifo_s|)) (_ BitVec 8) (select (|sync_fifo#221#0| state) (|sync_fifo_m:R0A r_MEMORY| state))) ; $memrd$\r_MEMORY$./sync_fifo.v:46$75_DATA
+(define-fun |sync_fifo_m:R0D r_MEMORY| ((state |sync_fifo_s|)) (_ BitVec 8) (|sync_fifo#222| state))
+(define-fun |sync_fifo_m:R1A r_MEMORY| ((state |sync_fifo_s|)) (_ BitVec 2) (|sync_fifo#16| state)) ; $past$./sync_fifo.v:165$10$0
+(define-fun |sync_fifo#223| ((state |sync_fifo_s|)) (_ BitVec 8) (select (|sync_fifo#221#0| state) (|sync_fifo_m:R1A r_MEMORY| state))) ; $memrd$\r_MEMORY$./sync_fifo.v:166$224_DATA
+(define-fun |sync_fifo_m:R1D r_MEMORY| ((state |sync_fifo_s|)) (_ BitVec 8) (|sync_fifo#223| state))
+(define-fun |sync_fifo_m:R2A r_MEMORY| ((state |sync_fifo_s|)) (_ BitVec 2) (|sync_fifo#15| state)) ; $past$./sync_fifo.v:171$15$0
+(define-fun |sync_fifo#224| ((state |sync_fifo_s|)) (_ BitVec 8) (select (|sync_fifo#221#0| state) (|sync_fifo_m:R2A r_MEMORY| state))) ; $memrd$\r_MEMORY$./sync_fifo.v:172$231_DATA
+(define-fun |sync_fifo_m:R2D r_MEMORY| ((state |sync_fifo_s|)) (_ BitVec 8) (|sync_fifo#224| state))
+(define-fun |sync_fifo#225| ((state |sync_fifo_s|)) Bool (= (|sync_fifo#4| state) (|sync_fifo#223| state))) ; $eq$./sync_fifo.v:166$225_Y
+(define-fun |sync_fifo#226| ((state |sync_fifo_s|)) (_ BitVec 1) (ite (|sync_fifo#209| state) (ite (|sync_fifo#225| state) #b1 #b0) (|sync_fifo#220| state))) ; $procmux$812_Y
+(define-fun |sync_fifo#227| ((state |sync_fifo_s|)) (_ BitVec 1) (ite (|sync_fifo#75| state) (|sync_fifo#226| state) (|sync_fifo#219| state))) ; $0$formal$./sync_fifo.v:166$59_CHECK[0:0]$164
+; yosys-smt2-anyseq sync_fifo#228 1 $auto$setundef.cc:524:execute$1194
+(declare-fun |sync_fifo#228| (|sync_fifo_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2358:Anyseq$1195
+; yosys-smt2-anyseq sync_fifo#229 1 $auto$setundef.cc:524:execute$1192
+(declare-fun |sync_fifo#229| (|sync_fifo_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2358:Anyseq$1193
+(define-fun |sync_fifo#230| ((state |sync_fifo_s|)) (_ BitVec 1) (bvnot (|sync_fifo#51| state))) ; $eq$./sync_fifo.v:168$227_Y
+(define-fun |sync_fifo#231| ((state |sync_fifo_s|)) Bool (and (or  (= ((_ extract 0 0) (|sync_fifo#50| state)) #b1) false) (or  (= ((_ extract 0 0) (|sync_fifo#230| state)) #b1) false))) ; $logic_and$./sync_fifo.v:168$228_Y
+(define-fun |sync_fifo#232| ((state |sync_fifo_s|)) (_ BitVec 1) (ite (|sync_fifo#231| state) (ite (|sync_fifo#207| state) #b1 #b0) (|sync_fifo#229| state))) ; $procmux$820_Y
+(define-fun |sync_fifo#233| ((state |sync_fifo_s|)) (_ BitVec 1) (ite (|sync_fifo#75| state) (|sync_fifo#232| state) (|sync_fifo#228| state))) ; $0$formal$./sync_fifo.v:170$60_CHECK[0:0]$166
+(define-fun |sync_fifo#234| ((state |sync_fifo_s|)) (_ BitVec 1) (ite (|sync_fifo#231| state) #b1 #b0)) ; $procmux$816_Y
+(define-fun |sync_fifo#235| ((state |sync_fifo_s|)) (_ BitVec 1) (ite (|sync_fifo#75| state) (|sync_fifo#234| state) #b0)) ; $0$formal$./sync_fifo.v:170$60_EN[0:0]$167
+; yosys-smt2-anyseq sync_fifo#236 1 $auto$setundef.cc:524:execute$1198
+(declare-fun |sync_fifo#236| (|sync_fifo_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2358:Anyseq$1199
+; yosys-smt2-anyseq sync_fifo#237 1 $auto$setundef.cc:524:execute$1196
+(declare-fun |sync_fifo#237| (|sync_fifo_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2358:Anyseq$1197
+(define-fun |sync_fifo#238| ((state |sync_fifo_s|)) Bool (distinct (|sync_fifo#15| state) (|sync_fifo#0| state))) ; $ne$./sync_fifo.v:171$230_Y
+(define-fun |sync_fifo#239| ((state |sync_fifo_s|)) (_ BitVec 1) (ite (|sync_fifo#231| state) (ite (|sync_fifo#238| state) #b1 #b0) (|sync_fifo#237| state))) ; $procmux$828_Y
+(define-fun |sync_fifo#240| ((state |sync_fifo_s|)) (_ BitVec 1) (ite (|sync_fifo#75| state) (|sync_fifo#239| state) (|sync_fifo#236| state))) ; $0$formal$./sync_fifo.v:171$61_CHECK[0:0]$168
+; yosys-smt2-anyseq sync_fifo#241 1 $auto$setundef.cc:524:execute$1202
+(declare-fun |sync_fifo#241| (|sync_fifo_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2358:Anyseq$1203
+; yosys-smt2-anyseq sync_fifo#242 1 $auto$setundef.cc:524:execute$1200
+(declare-fun |sync_fifo#242| (|sync_fifo_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2358:Anyseq$1201
+(define-fun |sync_fifo#243| ((state |sync_fifo_s|)) Bool (= (|sync_fifo#224| state) (|sync_fifo#14| state))) ; $eq$./sync_fifo.v:172$232_Y
+(define-fun |sync_fifo#244| ((state |sync_fifo_s|)) (_ BitVec 1) (ite (|sync_fifo#231| state) (ite (|sync_fifo#243| state) #b1 #b0) (|sync_fifo#242| state))) ; $procmux$836_Y
+(define-fun |sync_fifo#245| ((state |sync_fifo_s|)) (_ BitVec 1) (ite (|sync_fifo#75| state) (|sync_fifo#244| state) (|sync_fifo#241| state))) ; $0$formal$./sync_fifo.v:172$62_CHECK[0:0]$170
+; yosys-smt2-anyseq sync_fifo#246 1 $auto$setundef.cc:524:execute$1206
+(declare-fun |sync_fifo#246| (|sync_fifo_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2358:Anyseq$1207
+; yosys-smt2-anyseq sync_fifo#247 1 $auto$setundef.cc:524:execute$1204
+(declare-fun |sync_fifo#247| (|sync_fifo_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2358:Anyseq$1205
+(define-fun |sync_fifo#248| ((state |sync_fifo_s|)) Bool (= (|sync_fifo#2| state) (|sync_fifo#17| state))) ; $eq$./sync_fifo.v:175$236_Y
+(define-fun |sync_fifo#249| ((state |sync_fifo_s|)) Bool (and (or  (= ((_ extract 0 0) (|sync_fifo#50| state)) #b1) false) (or  (= ((_ extract 0 0) (|sync_fifo#51| state)) #b1) false))) ; $logic_and$./sync_fifo.v:174$235_Y
+(define-fun |sync_fifo#250| ((state |sync_fifo_s|)) (_ BitVec 1) (ite (|sync_fifo#249| state) (ite (|sync_fifo#248| state) #b1 #b0) (|sync_fifo#247| state))) ; $procmux$844_Y
+(define-fun |sync_fifo#251| ((state |sync_fifo_s|)) (_ BitVec 1) (ite (|sync_fifo#75| state) (|sync_fifo#250| state) (|sync_fifo#246| state))) ; $0$formal$./sync_fifo.v:175$63_CHECK[0:0]$172
+(define-fun |sync_fifo#252| ((state |sync_fifo_s|)) (_ BitVec 1) (ite (|sync_fifo#249| state) #b1 #b0)) ; $procmux$840_Y
+(define-fun |sync_fifo#253| ((state |sync_fifo_s|)) (_ BitVec 1) (ite (|sync_fifo#75| state) (|sync_fifo#252| state) #b0)) ; $0$formal$./sync_fifo.v:175$63_EN[0:0]$173
+(define-fun |sync_fifo#254| ((state |sync_fifo_s|)) Bool (not (or  (= ((_ extract 0 0) (|sync_fifo#2| state)) #b1) (= ((_ extract 1 1) (|sync_fifo#2| state)) #b1)))) ; $procmux$870_CMP
+(define-fun |sync_fifo#255| ((state |sync_fifo_s|)) Bool (= (|sync_fifo#2| state) #b01)) ; $procmux$942_CMP
+(define-fun |sync_fifo#256| ((state |sync_fifo_s|)) Bool (or  (|sync_fifo#254| state) (|sync_fifo#255| state))) ; $auto$opt_reduce.cc:134:opt_mux$1067
+(define-fun |sync_fifo#257| ((state |sync_fifo_s|)) (_ BitVec 1) (ite (|sync_fifo#256| state) #b1 #b0)) ; $procmux$941_Y
+(define-fun |sync_fifo#258| ((state |sync_fifo_s|)) (_ BitVec 1) (ite (|sync_fifo#10| state) (|sync_fifo#8| state) (|sync_fifo#257| state))) ; $0\o_FIFO_ALMOST_EMPTY[0:0]
+(define-fun |sync_fifo#259| ((state |sync_fifo_s|)) Bool (= (|sync_fifo#2| state) #b11)) ; $procmux$862_CMP
+(define-fun |sync_fifo#260| ((state |sync_fifo_s|)) (_ BitVec 1) (ite (|sync_fifo#259| state) #b1 #b0)) ; $procmux$861_Y
+(define-fun |sync_fifo#261| ((state |sync_fifo_s|)) (_ BitVec 1) (ite (|sync_fifo#10| state) (|sync_fifo#7| state) (|sync_fifo#260| state))) ; $0\o_FIFO_ALMOST_FULL[0:0]
+(define-fun |sync_fifo#262| ((state |sync_fifo_s|)) (_ BitVec 1) (ite (|sync_fifo#254| state) #b1 #b0)) ; $procmux$869_Y
+(define-fun |sync_fifo#263| ((state |sync_fifo_s|)) (_ BitVec 1) (ite (|sync_fifo#10| state) #b1 (|sync_fifo#262| state))) ; $0\o_FIFO_EMPTY[0:0]
+(define-fun |sync_fifo#264| ((state |sync_fifo_s|)) (_ BitVec 1) (ite (|sync_fifo#10| state) #b0 (|sync_fifo#260| state))) ; $0\o_FIFO_FULL[0:0]
+(define-fun |sync_fifo#265| ((state |sync_fifo_s|)) Bool (= (concat (ite (|sync_fifo#9| state) #b1 #b0) (ite (|sync_fifo#11| state) #b1 #b0)) #b11)) ; $procmux$875_CMP
+(define-fun |sync_fifo#266| ((state |sync_fifo_s|)) Bool (= (concat (ite (|sync_fifo#9| state) #b1 #b0) (ite (|sync_fifo#11| state) #b1 #b0)) #b01)) ; $procmux$877_CMP
+(define-fun |sync_fifo#267| ((state |sync_fifo_s|)) Bool (or  (|sync_fifo#265| state) (|sync_fifo#266| state))) ; $auto$opt_reduce.cc:134:opt_mux$1061
+(define-fun |sync_fifo#268| ((state |sync_fifo_s|)) (_ BitVec 8) (ite (|sync_fifo#267| state) (|sync_fifo#222| state) (|sync_fifo#4| state))) ; $procmux$927_Y
+(define-fun |sync_fifo#269| ((state |sync_fifo_s|)) (_ BitVec 8) (ite (|sync_fifo#10| state) (|sync_fifo#4| state) (|sync_fifo#268| state))) ; $0\o_OUTPUT[7:0]
+; yosys-smt2-anyseq sync_fifo#270 2 $auto$setundef.cc:524:execute$1214
+(declare-fun |sync_fifo#270| (|sync_fifo_s|) (_ BitVec 2)) ; $auto$rtlil.cc:2358:Anyseq$1215
+(define-fun |sync_fifo#271| ((state |sync_fifo_s|)) (_ BitVec 2) (bvadd (|sync_fifo#2| state) #b01)) ; $add$./sync_fifo.v:54$79_Y
+(define-fun |sync_fifo#272| ((state |sync_fifo_s|)) (_ BitVec 2) (bvsub (|sync_fifo#2| state) #b01)) ; $sub$./sync_fifo.v:48$77_Y
+(define-fun |sync_fifo#273| ((state |sync_fifo_s|)) Bool (not (or  (|sync_fifo#11| state) (|sync_fifo#9| state)))) ; $procmux$878_CMP
+(define-fun |sync_fifo#274| ((state |sync_fifo_s|)) Bool (or  (|sync_fifo#265| state) (|sync_fifo#273| state))) ; $auto$opt_reduce.cc:134:opt_mux$1059
+(define-fun |sync_fifo#275| ((state |sync_fifo_s|)) Bool (= (concat (ite (|sync_fifo#9| state) #b1 #b0) (ite (|sync_fifo#11| state) #b1 #b0)) #b10)) ; $procmux$876_CMP
+(define-fun |sync_fifo#276| ((state |sync_fifo_s|)) (_ BitVec 2) (ite (|sync_fifo#266| state) (|sync_fifo#272| state) (ite (|sync_fifo#275| state) (|sync_fifo#271| state) (ite (|sync_fifo#274| state) (|sync_fifo#2| state) (|sync_fifo#270| state))))) ; $procmux$874_Y
+(define-fun |sync_fifo#277| ((state |sync_fifo_s|)) (_ BitVec 2) (ite (|sync_fifo#10| state) #b00 (|sync_fifo#276| state))) ; $0\r_QUANTITY[1:0]
+(define-fun |sync_fifo#278| ((state |sync_fifo_s|)) (_ BitVec 2) (bvadd (|sync_fifo#1| state) #b01)) ; $add$./sync_fifo.v:47$76_Y
+(define-fun |sync_fifo#279| ((state |sync_fifo_s|)) (_ BitVec 2) (ite (|sync_fifo#267| state) (|sync_fifo#278| state) (|sync_fifo#1| state))) ; $procmux$915_Y
+(define-fun |sync_fifo#280| ((state |sync_fifo_s|)) (_ BitVec 2) (ite (|sync_fifo#10| state) #b00 (|sync_fifo#279| state))) ; $0\r_READ_POINTER[1:0]
+(define-fun |sync_fifo#281| ((state |sync_fifo_s|)) (_ BitVec 2) (bvadd (|sync_fifo#0| state) #b01)) ; $add$./sync_fifo.v:53$78_Y
+(define-fun |sync_fifo#282| ((state |sync_fifo_s|)) Bool (or  (|sync_fifo#265| state) (|sync_fifo#275| state))) ; $auto$opt_reduce.cc:134:opt_mux$1063
+(define-fun |sync_fifo#283| ((state |sync_fifo_s|)) (_ BitVec 2) (ite (|sync_fifo#282| state) (|sync_fifo#281| state) (|sync_fifo#0| state))) ; $procmux$921_Y
+(define-fun |sync_fifo#284| ((state |sync_fifo_s|)) (_ BitVec 2) (ite (|sync_fifo#10| state) #b00 (|sync_fifo#283| state))) ; $0\r_WRITE_POINTER[1:0]
+; yosys-smt2-anyseq sync_fifo#285 2 $auto$setundef.cc:524:execute$1220
+(declare-fun |sync_fifo#285| (|sync_fifo_s|) (_ BitVec 2)) ; $auto$rtlil.cc:2358:Anyseq$1221
+(define-fun |sync_fifo#286| ((state |sync_fifo_s|)) (_ BitVec 2) (ite (|sync_fifo#275| state) (|sync_fifo#0| state) (|sync_fifo#285| state))) ; $procmux$895_Y
+; yosys-smt2-anyseq sync_fifo#287 2 $auto$setundef.cc:524:execute$1222
+(declare-fun |sync_fifo#287| (|sync_fifo_s|) (_ BitVec 2)) ; $auto$rtlil.cc:2358:Anyseq$1223
+(define-fun |sync_fifo#288| ((state |sync_fifo_s|)) (_ BitVec 2) (ite (|sync_fifo#10| state) (|sync_fifo#287| state) (|sync_fifo#286| state))) ; $0$memwr$\r_MEMORY$./sync_fifo.v:52$25_ADDR[1:0]$68
+; yosys-smt2-anyseq sync_fifo#289 8 $auto$setundef.cc:524:execute$1216
+(declare-fun |sync_fifo#289| (|sync_fifo_s|) (_ BitVec 8)) ; $auto$rtlil.cc:2358:Anyseq$1217
+(define-fun |sync_fifo#290| ((state |sync_fifo_s|)) (_ BitVec 8) (ite (|sync_fifo#275| state) (|sync_fifo#12| state) (|sync_fifo#289| state))) ; $procmux$889_Y
+; yosys-smt2-anyseq sync_fifo#291 8 $auto$setundef.cc:524:execute$1218
+(declare-fun |sync_fifo#291| (|sync_fifo_s|) (_ BitVec 8)) ; $auto$rtlil.cc:2358:Anyseq$1219
+(define-fun |sync_fifo#292| ((state |sync_fifo_s|)) (_ BitVec 8) (ite (|sync_fifo#10| state) (|sync_fifo#291| state) (|sync_fifo#290| state))) ; $0$memwr$\r_MEMORY$./sync_fifo.v:52$25_DATA[7:0]$69
+(define-fun |sync_fifo#293| ((state |sync_fifo_s|)) (_ BitVec 1) (ite (|sync_fifo#275| state) #b1 #b0)) ; $procmux$883_Y [7]
+(define-fun |sync_fifo#294| ((state |sync_fifo_s|)) (_ BitVec 1) (ite (|sync_fifo#10| state) #b0 (|sync_fifo#293| state))) ; $0$memwr$\r_MEMORY$./sync_fifo.v:52$25_EN[7:0]$70 [7]
+(define-fun |sync_fifo_m:W0A r_MEMORY| ((state |sync_fifo_s|)) (_ BitVec 2) (|sync_fifo#288| state)) ; $0$memwr$\r_MEMORY$./sync_fifo.v:52$25_ADDR[1:0]$68
+(define-fun |sync_fifo_m:W0D r_MEMORY| ((state |sync_fifo_s|)) (_ BitVec 8) (|sync_fifo#292| state)) ; $0$memwr$\r_MEMORY$./sync_fifo.v:52$25_DATA[7:0]$69
+(define-fun |sync_fifo_m:W0M r_MEMORY| ((state |sync_fifo_s|)) (_ BitVec 8) (concat (|sync_fifo#294| state) (concat (|sync_fifo#294| state) (concat (|sync_fifo#294| state) (concat (|sync_fifo#294| state) (concat (|sync_fifo#294| state) (concat (|sync_fifo#294| state) (concat (|sync_fifo#294| state) (|sync_fifo#294| state))))))))) ; { $0$memwr$\r_MEMORY$./sync_fifo.v:52$25_EN[7:0]$70 [7] $0$memwr$\r_MEMORY$./sync_fifo.v:52$25_EN[7:0]$70 [7] $0$memwr$\r_MEMORY$./sync_fifo.v:52$25_EN[7:0]$70 [7] $0$memwr$\r_MEMORY$./sync_fifo.v:52$25_EN[7:0]$70 [7] $0$memwr$\r_MEMORY$./sync_fifo.v:52$25_EN[7:0]$70 [7] $0$memwr$\r_MEMORY$./sync_fifo.v:52$25_EN[7:0]$70 [7] $0$memwr$\r_MEMORY$./sync_fifo.v:52$25_EN[7:0]$70 [7] $0$memwr$\r_MEMORY$./sync_fifo.v:52$25_EN[7:0]$70 [7] }
+(define-fun |sync_fifo#221#1| ((state |sync_fifo_s|)) (Array (_ BitVec 2) (_ BitVec 8)) (store (|sync_fifo#221#0| state) (|sync_fifo_m:W0A r_MEMORY| state) (bvor (bvand (|sync_fifo_m:W0D r_MEMORY| state) (|sync_fifo_m:W0M r_MEMORY| state)) (bvand (select (|sync_fifo#221#0| state) (|sync_fifo_m:W0A r_MEMORY| state)) (bvnot (|sync_fifo_m:W0M r_MEMORY| state)))))) ; r_MEMORY
+; yosys-smt2-anyseq sync_fifo#295 2 $auto$setundef.cc:524:execute$1228
+(declare-fun |sync_fifo#295| (|sync_fifo_s|) (_ BitVec 2)) ; $auto$rtlil.cc:2358:Anyseq$1229
+(define-fun |sync_fifo#296| ((state |sync_fifo_s|)) (_ BitVec 2) (ite (|sync_fifo#265| state) (|sync_fifo#0| state) (|sync_fifo#295| state))) ; $procmux$910_Y
+; yosys-smt2-anyseq sync_fifo#297 2 $auto$setundef.cc:524:execute$1230
+(declare-fun |sync_fifo#297| (|sync_fifo_s|) (_ BitVec 2)) ; $auto$rtlil.cc:2358:Anyseq$1231
+(define-fun |sync_fifo#298| ((state |sync_fifo_s|)) (_ BitVec 2) (ite (|sync_fifo#10| state) (|sync_fifo#297| state) (|sync_fifo#296| state))) ; $0$memwr$\r_MEMORY$./sync_fifo.v:59$26_ADDR[1:0]$71
+; yosys-smt2-anyseq sync_fifo#299 8 $auto$setundef.cc:524:execute$1224
+(declare-fun |sync_fifo#299| (|sync_fifo_s|) (_ BitVec 8)) ; $auto$rtlil.cc:2358:Anyseq$1225
+(define-fun |sync_fifo#300| ((state |sync_fifo_s|)) (_ BitVec 8) (ite (|sync_fifo#265| state) (|sync_fifo#12| state) (|sync_fifo#299| state))) ; $procmux$905_Y
+; yosys-smt2-anyseq sync_fifo#301 8 $auto$setundef.cc:524:execute$1226
+(declare-fun |sync_fifo#301| (|sync_fifo_s|) (_ BitVec 8)) ; $auto$rtlil.cc:2358:Anyseq$1227
+(define-fun |sync_fifo#302| ((state |sync_fifo_s|)) (_ BitVec 8) (ite (|sync_fifo#10| state) (|sync_fifo#301| state) (|sync_fifo#300| state))) ; $0$memwr$\r_MEMORY$./sync_fifo.v:59$26_DATA[7:0]$72
+(define-fun |sync_fifo#303| ((state |sync_fifo_s|)) (_ BitVec 1) (ite (|sync_fifo#265| state) #b1 #b0)) ; $procmux$900_Y [7]
+(define-fun |sync_fifo#304| ((state |sync_fifo_s|)) (_ BitVec 1) (ite (|sync_fifo#10| state) #b0 (|sync_fifo#303| state))) ; $0$memwr$\r_MEMORY$./sync_fifo.v:59$26_EN[7:0]$73 [7]
+(define-fun |sync_fifo_m:W1A r_MEMORY| ((state |sync_fifo_s|)) (_ BitVec 2) (|sync_fifo#298| state)) ; $0$memwr$\r_MEMORY$./sync_fifo.v:59$26_ADDR[1:0]$71
+(define-fun |sync_fifo_m:W1D r_MEMORY| ((state |sync_fifo_s|)) (_ BitVec 8) (|sync_fifo#302| state)) ; $0$memwr$\r_MEMORY$./sync_fifo.v:59$26_DATA[7:0]$72
+(define-fun |sync_fifo_m:W1M r_MEMORY| ((state |sync_fifo_s|)) (_ BitVec 8) (concat (|sync_fifo#304| state) (concat (|sync_fifo#304| state) (concat (|sync_fifo#304| state) (concat (|sync_fifo#304| state) (concat (|sync_fifo#304| state) (concat (|sync_fifo#304| state) (concat (|sync_fifo#304| state) (|sync_fifo#304| state))))))))) ; { $0$memwr$\r_MEMORY$./sync_fifo.v:59$26_EN[7:0]$73 [7] $0$memwr$\r_MEMORY$./sync_fifo.v:59$26_EN[7:0]$73 [7] $0$memwr$\r_MEMORY$./sync_fifo.v:59$26_EN[7:0]$73 [7] $0$memwr$\r_MEMORY$./sync_fifo.v:59$26_EN[7:0]$73 [7] $0$memwr$\r_MEMORY$./sync_fifo.v:59$26_EN[7:0]$73 [7] $0$memwr$\r_MEMORY$./sync_fifo.v:59$26_EN[7:0]$73 [7] $0$memwr$\r_MEMORY$./sync_fifo.v:59$26_EN[7:0]$73 [7] $0$memwr$\r_MEMORY$./sync_fifo.v:59$26_EN[7:0]$73 [7] }
+(define-fun |sync_fifo#221#2| ((state |sync_fifo_s|)) (Array (_ BitVec 2) (_ BitVec 8)) (store (|sync_fifo#221#1| state) (|sync_fifo_m:W1A r_MEMORY| state) (bvor (bvand (|sync_fifo_m:W1D r_MEMORY| state) (|sync_fifo_m:W1M r_MEMORY| state)) (bvand (select (|sync_fifo#221#1| state) (|sync_fifo_m:W1A r_MEMORY| state)) (bvnot (|sync_fifo_m:W1M r_MEMORY| state)))))) ; r_MEMORY
 (define-fun |sync_fifo_a| ((state |sync_fifo_s|)) Bool (and
   (|sync_fifo_a 0| state)
   (|sync_fifo_a 1| state)
@@ -360,6 +610,18 @@
   (|sync_fifo_a 10| state)
   (|sync_fifo_a 11| state)
   (|sync_fifo_a 12| state)
+  (|sync_fifo_a 13| state)
+  (|sync_fifo_a 14| state)
+  (|sync_fifo_a 15| state)
+  (|sync_fifo_a 16| state)
+  (|sync_fifo_a 17| state)
+  (|sync_fifo_a 18| state)
+  (|sync_fifo_a 19| state)
+  (|sync_fifo_a 20| state)
+  (|sync_fifo_a 21| state)
+  (|sync_fifo_a 22| state)
+  (|sync_fifo_a 23| state)
+  (|sync_fifo_a 24| state)
 ))
 (define-fun |sync_fifo_u| ((state |sync_fifo_s|)) Bool (and
   (|sync_fifo_u 0| state)
@@ -370,55 +632,73 @@
   (|sync_fifo_u 5| state)
   (|sync_fifo_u 6| state)
   (|sync_fifo_u 7| state)
+  (|sync_fifo_u 8| state)
 ))
 (define-fun |sync_fifo_i| ((state |sync_fifo_s|)) Bool (and
   (= (|sync_fifo#0| state) #b00) ; r_WRITE_POINTER
   (= (|sync_fifo#1| state) #b00) ; r_READ_POINTER
   (= (|sync_fifo#2| state) #b00) ; r_QUANTITY
   (= (= ((_ extract 0 0) (|sync_fifo#3| state)) #b1) false) ; r_PAST_VALID
-  (= (= ((_ extract 0 0) (|sync_fifo#17| state)) #b1) false) ; $formal$./sync_fifo.v:86$39_EN
-  (= (= ((_ extract 0 0) (|sync_fifo#21| state)) #b1) false) ; $formal$./sync_fifo.v:80$36_EN
-  (= (= ((_ extract 0 0) (|sync_fifo#24| state)) #b1) false) ; $formal$./sync_fifo.v:75$34_EN
-  (= (= ((_ extract 0 0) (|sync_fifo#27| state)) #b1) false) ; $formal$./sync_fifo.v:70$32_EN
-  (= (= ((_ extract 0 0) (|sync_fifo#30| state)) #b1) false) ; $formal$./sync_fifo.v:65$30_EN
-  (= (= ((_ extract 0 0) (|sync_fifo#33| state)) #b1) false) ; $formal$./sync_fifo.v:60$28_EN
+  (= (= ((_ extract 0 0) (|sync_fifo#18| state)) #b1) false) ; $formal$./sync_fifo.v:175$63_EN
+  (= (= ((_ extract 0 0) (|sync_fifo#22| state)) #b1) false) ; $formal$./sync_fifo.v:170$60_EN
+  (= (= ((_ extract 0 0) (|sync_fifo#26| state)) #b1) false) ; $formal$./sync_fifo.v:164$57_EN
+  (= (= ((_ extract 0 0) (|sync_fifo#31| state)) #b1) false) ; $formal$./sync_fifo.v:157$53_EN
+  (= (= ((_ extract 0 0) (|sync_fifo#36| state)) #b1) false) ; $formal$./sync_fifo.v:150$49_EN
+  (= (= ((_ extract 0 0) (|sync_fifo#41| state)) #b1) false) ; $formal$./sync_fifo.v:136$41_EN
+  (= (= ((_ extract 0 0) (|sync_fifo#46| state)) #b1) false) ; $formal$./sync_fifo.v:129$37_EN
+  (= (= ((_ extract 0 0) (|sync_fifo#49| state)) #b1) false) ; $formal$./sync_fifo.v:124$35_EN
 ))
 (define-fun |sync_fifo_h| ((state |sync_fifo_s|)) Bool true)
 (define-fun |sync_fifo_t| ((state |sync_fifo_s|) (next_state |sync_fifo_s|)) Bool (and
-  (= (ite (|sync_fifo#10| state) #b1 #b0) (|sync_fifo#36| next_state)) ; $procdff$422 $and$./sync_fifo.v:56$124_Y
-  (= (ite (|sync_fifo#8| state) #b1 #b0) (|sync_fifo#35| next_state)) ; $procdff$426 $eq$./sync_fifo.v:78$140_Y
-  (= (ite (|sync_fifo#7| state) #b1 #b0) (|sync_fifo#34| next_state)) ; $procdff$427 $eq$./sync_fifo.v:84$147_Y
-  (= (|sync_fifo#58| state) (|sync_fifo#33| next_state)) ; $procdff$448 $formal$./sync_fifo.v:60$28_EN
-  (= (|sync_fifo#62| state) (|sync_fifo#32| next_state)) ; $procdff$449 $formal$./sync_fifo.v:62$29_CHECK
-  (= (|sync_fifo#68| state) (|sync_fifo#31| next_state)) ; $procdff$451 $formal$./sync_fifo.v:65$30_CHECK
-  (= (|sync_fifo#70| state) (|sync_fifo#30| next_state)) ; $procdff$452 $formal$./sync_fifo.v:65$30_EN
-  (= (|sync_fifo#74| state) (|sync_fifo#29| next_state)) ; $procdff$453 $formal$./sync_fifo.v:66$31_CHECK
-  (= (|sync_fifo#81| state) (|sync_fifo#28| next_state)) ; $procdff$455 $formal$./sync_fifo.v:70$32_CHECK
-  (= (|sync_fifo#84| state) (|sync_fifo#27| next_state)) ; $procdff$456 $formal$./sync_fifo.v:70$32_EN
-  (= (|sync_fifo#91| state) (|sync_fifo#26| next_state)) ; $procdff$457 $formal$./sync_fifo.v:71$33_CHECK
-  (= (|sync_fifo#97| state) (|sync_fifo#25| next_state)) ; $procdff$459 $formal$./sync_fifo.v:75$34_CHECK
-  (= (|sync_fifo#100| state) (|sync_fifo#24| next_state)) ; $procdff$460 $formal$./sync_fifo.v:75$34_EN
-  (= (|sync_fifo#106| state) (|sync_fifo#23| next_state)) ; $procdff$461 $formal$./sync_fifo.v:76$35_CHECK
-  (= (|sync_fifo#113| state) (|sync_fifo#22| next_state)) ; $procdff$463 $formal$./sync_fifo.v:80$36_CHECK
-  (= (|sync_fifo#115| state) (|sync_fifo#21| next_state)) ; $procdff$464 $formal$./sync_fifo.v:80$36_EN
-  (= (|sync_fifo#120| state) (|sync_fifo#20| next_state)) ; $procdff$465 $formal$./sync_fifo.v:81$37_CHECK
-  (= (|sync_fifo#129| state) (|sync_fifo#19| next_state)) ; $procdff$467 $formal$./sync_fifo.v:82$38_CHECK
-  (= (|sync_fifo#135| state) (|sync_fifo#18| next_state)) ; $procdff$469 $formal$./sync_fifo.v:86$39_CHECK
-  (= (|sync_fifo#137| state) (|sync_fifo#17| next_state)) ; $procdff$470 $formal$./sync_fifo.v:86$39_EN
-  (= (|sync_fifo#142| state) (|sync_fifo#16| next_state)) ; $procdff$471 $formal$./sync_fifo.v:87$40_CHECK
-  (= (|sync_fifo#147| state) (|sync_fifo#15| next_state)) ; $procdff$473 $formal$./sync_fifo.v:88$41_CHECK
-  (= (|sync_fifo#2| state) (|sync_fifo#14| next_state)) ; $procdff$424 $past$./sync_fifo.v:63$3$0
-  (= (|sync_fifo#1| state) (|sync_fifo#13| next_state)) ; $procdff$429 $past$./sync_fifo.v:81$8$0
-  (= (|sync_fifo#0| state) (|sync_fifo#12| next_state)) ; $procdff$434 $past$./sync_fifo.v:87$13$0
-  (= (|sync_fifo#9| state) (|sync_fifo#11| next_state)) ; $procdff$436 $past$./sync_fifo.v:88$15$0
-  (= (|sync_fifo#149| state) (|sync_fifo#6| next_state)) ; $procdff$481 \o_FIFO_EMPTY
-  (= (|sync_fifo#151| state) (|sync_fifo#5| next_state)) ; $procdff$482 \o_FIFO_FULL
-  (= (|sync_fifo#153| state) (|sync_fifo#4| next_state)) ; $procdff$483 \o_OUTPUT
-  (= #b1 (|sync_fifo#3| next_state)) ; $procdff$421 \r_PAST_VALID
-  (= (|sync_fifo#157| state) (|sync_fifo#2| next_state)) ; $procdff$486 \r_QUANTITY
-  (= (|sync_fifo#160| state) (|sync_fifo#1| next_state)) ; $procdff$485 \r_READ_POINTER
-  (= (|sync_fifo#162| state) (|sync_fifo#0| next_state)) ; $procdff$484 \r_WRITE_POINTER
-  (= (|sync_fifo#123#1| state) (|sync_fifo#123#0| next_state)) ; r_MEMORY
+  (= (ite (|sync_fifo#13| state) #b1 #b0) (|sync_fifo#52| next_state)) ; $procdff$948 $and$./sync_fifo.v:120$187_Y [0]
+  (= (ite (|sync_fifo#11| state) #b1 #b0) (|sync_fifo#51| next_state)) ; $procdff$954 $eq$./sync_fifo.v:162$219_Y
+  (= (ite (|sync_fifo#9| state) #b1 #b0) (|sync_fifo#50| next_state)) ; $procdff$955 $eq$./sync_fifo.v:168$226_Y
+  (= (|sync_fifo#76| state) (|sync_fifo#49| next_state)) ; $procdff$981 $formal$./sync_fifo.v:124$35_EN
+  (= (|sync_fifo#80| state) (|sync_fifo#48| next_state)) ; $procdff$982 $formal$./sync_fifo.v:126$36_CHECK
+  (= (|sync_fifo#86| state) (|sync_fifo#47| next_state)) ; $procdff$984 $formal$./sync_fifo.v:129$37_CHECK
+  (= (|sync_fifo#88| state) (|sync_fifo#46| next_state)) ; $procdff$985 $formal$./sync_fifo.v:129$37_EN
+  (= (|sync_fifo#92| state) (|sync_fifo#45| next_state)) ; $procdff$986 $formal$./sync_fifo.v:130$38_CHECK
+  (= (|sync_fifo#96| state) (|sync_fifo#44| next_state)) ; $procdff$988 $formal$./sync_fifo.v:131$39_CHECK
+  (= (|sync_fifo#101| state) (|sync_fifo#43| next_state)) ; $procdff$990 $formal$./sync_fifo.v:132$40_CHECK
+  (= (|sync_fifo#108| state) (|sync_fifo#42| next_state)) ; $procdff$992 $formal$./sync_fifo.v:136$41_CHECK
+  (= (|sync_fifo#111| state) (|sync_fifo#41| next_state)) ; $procdff$993 $formal$./sync_fifo.v:136$41_EN
+  (= (|sync_fifo#118| state) (|sync_fifo#40| next_state)) ; $procdff$994 $formal$./sync_fifo.v:137$42_CHECK
+  (= (|sync_fifo#124| state) (|sync_fifo#39| next_state)) ; $procdff$996 $formal$./sync_fifo.v:138$43_CHECK
+  (= (|sync_fifo#130| state) (|sync_fifo#38| next_state)) ; $procdff$998 $formal$./sync_fifo.v:139$44_CHECK
+  (= (|sync_fifo#139| state) (|sync_fifo#37| next_state)) ; $procdff$1008 $formal$./sync_fifo.v:150$49_CHECK
+  (= (|sync_fifo#143| state) (|sync_fifo#36| next_state)) ; $procdff$1009 $formal$./sync_fifo.v:150$49_EN
+  (= (|sync_fifo#151| state) (|sync_fifo#35| next_state)) ; $procdff$1010 $formal$./sync_fifo.v:151$50_CHECK
+  (= (|sync_fifo#160| state) (|sync_fifo#34| next_state)) ; $procdff$1012 $formal$./sync_fifo.v:152$51_CHECK
+  (= (|sync_fifo#168| state) (|sync_fifo#33| next_state)) ; $procdff$1014 $formal$./sync_fifo.v:153$52_CHECK
+  (= (|sync_fifo#176| state) (|sync_fifo#32| next_state)) ; $procdff$1016 $formal$./sync_fifo.v:157$53_CHECK
+  (= (|sync_fifo#180| state) (|sync_fifo#31| next_state)) ; $procdff$1017 $formal$./sync_fifo.v:157$53_EN
+  (= (|sync_fifo#188| state) (|sync_fifo#30| next_state)) ; $procdff$1018 $formal$./sync_fifo.v:158$54_CHECK
+  (= (|sync_fifo#196| state) (|sync_fifo#29| next_state)) ; $procdff$1020 $formal$./sync_fifo.v:159$55_CHECK
+  (= (|sync_fifo#204| state) (|sync_fifo#28| next_state)) ; $procdff$1022 $formal$./sync_fifo.v:160$56_CHECK
+  (= (|sync_fifo#211| state) (|sync_fifo#27| next_state)) ; $procdff$1024 $formal$./sync_fifo.v:164$57_CHECK
+  (= (|sync_fifo#213| state) (|sync_fifo#26| next_state)) ; $procdff$1025 $formal$./sync_fifo.v:164$57_EN
+  (= (|sync_fifo#218| state) (|sync_fifo#25| next_state)) ; $procdff$1026 $formal$./sync_fifo.v:165$58_CHECK
+  (= (|sync_fifo#227| state) (|sync_fifo#24| next_state)) ; $procdff$1028 $formal$./sync_fifo.v:166$59_CHECK
+  (= (|sync_fifo#233| state) (|sync_fifo#23| next_state)) ; $procdff$1030 $formal$./sync_fifo.v:170$60_CHECK
+  (= (|sync_fifo#235| state) (|sync_fifo#22| next_state)) ; $procdff$1031 $formal$./sync_fifo.v:170$60_EN
+  (= (|sync_fifo#240| state) (|sync_fifo#21| next_state)) ; $procdff$1032 $formal$./sync_fifo.v:171$61_CHECK
+  (= (|sync_fifo#245| state) (|sync_fifo#20| next_state)) ; $procdff$1034 $formal$./sync_fifo.v:172$62_CHECK
+  (= (|sync_fifo#251| state) (|sync_fifo#19| next_state)) ; $procdff$1036 $formal$./sync_fifo.v:175$63_CHECK
+  (= (|sync_fifo#253| state) (|sync_fifo#18| next_state)) ; $procdff$1037 $formal$./sync_fifo.v:175$63_EN
+  (= (|sync_fifo#2| state) (|sync_fifo#17| next_state)) ; $procdff$950 $past$./sync_fifo.v:127$3$0
+  (= (|sync_fifo#1| state) (|sync_fifo#16| next_state)) ; $procdff$957 $past$./sync_fifo.v:165$10$0
+  (= (|sync_fifo#0| state) (|sync_fifo#15| next_state)) ; $procdff$962 $past$./sync_fifo.v:171$15$0
+  (= (|sync_fifo#12| state) (|sync_fifo#14| next_state)) ; $procdff$964 $past$./sync_fifo.v:172$17$0
+  (= (|sync_fifo#258| state) (|sync_fifo#8| next_state)) ; $procdff$1046 \o_FIFO_ALMOST_EMPTY
+  (= (|sync_fifo#261| state) (|sync_fifo#7| next_state)) ; $procdff$1047 \o_FIFO_ALMOST_FULL
+  (= (|sync_fifo#263| state) (|sync_fifo#6| next_state)) ; $procdff$1044 \o_FIFO_EMPTY
+  (= (|sync_fifo#264| state) (|sync_fifo#5| next_state)) ; $procdff$1045 \o_FIFO_FULL
+  (= (|sync_fifo#269| state) (|sync_fifo#4| next_state)) ; $procdff$1048 \o_OUTPUT
+  (= #b1 (|sync_fifo#3| next_state)) ; $procdff$947 \r_PAST_VALID
+  (= (|sync_fifo#277| state) (|sync_fifo#2| next_state)) ; $procdff$1051 \r_QUANTITY
+  (= (|sync_fifo#280| state) (|sync_fifo#1| next_state)) ; $procdff$1050 \r_READ_POINTER
+  (= (|sync_fifo#284| state) (|sync_fifo#0| next_state)) ; $procdff$1049 \r_WRITE_POINTER
+  (= (|sync_fifo#221#2| state) (|sync_fifo#221#0| next_state)) ; r_MEMORY
 )) ; end of module sync_fifo
 ; yosys-smt2-topmod sync_fifo
 ; end of yosys output

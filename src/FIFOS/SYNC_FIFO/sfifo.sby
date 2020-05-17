@@ -8,9 +8,9 @@ smtbmc yices
 
 [options]
 prove: mode prove
-prove: depth 100
+prove: depth 30
 cover: mode cover
-cover: depth 100
+cover: depth 30
 
 [files]
 ./sync_fifo.v

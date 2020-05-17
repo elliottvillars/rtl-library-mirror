@@ -4,7 +4,7 @@ smtbmc yices
 
 [options]
 mode prove
-depth 100
+depth 30
 
 [files]
 ./sync_fifo.v
