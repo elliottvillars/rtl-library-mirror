@@ -1,0 +1,81 @@
+initial
+assume (= [$and$./sync_fifo.v:56$124_Y] true)
+assume (= [$eq$./sync_fifo.v:80$140_Y] false)
+assume (= [$eq$./sync_fifo.v:86$147_Y] false)
+assume (= [$formal$./sync_fifo.v:62$28_CHECK] false)
+assume (= [$formal$./sync_fifo.v:62$28_EN] false)
+assume (= [$formal$./sync_fifo.v:64$29_CHECK] false)
+assume (= [$formal$./sync_fifo.v:67$30_CHECK] false)
+assume (= [$formal$./sync_fifo.v:67$30_EN] false)
+assume (= [$formal$./sync_fifo.v:68$31_CHECK] false)
+assume (= [$formal$./sync_fifo.v:72$32_CHECK] false)
+assume (= [$formal$./sync_fifo.v:72$32_EN] false)
+assume (= [$formal$./sync_fifo.v:73$33_CHECK] false)
+assume (= [$formal$./sync_fifo.v:77$34_CHECK] false)
+assume (= [$formal$./sync_fifo.v:77$34_EN] false)
+assume (= [$formal$./sync_fifo.v:78$35_CHECK] false)
+assume (= [$formal$./sync_fifo.v:82$36_CHECK] false)
+assume (= [$formal$./sync_fifo.v:82$36_EN] false)
+assume (= [$formal$./sync_fifo.v:83$37_CHECK] false)
+assume (= [$formal$./sync_fifo.v:84$38_CHECK] false)
+assume (= [$formal$./sync_fifo.v:88$39_CHECK] false)
+assume (= [$formal$./sync_fifo.v:88$39_EN] false)
+assume (= [$formal$./sync_fifo.v:89$40_CHECK] false)
+assume (= [$formal$./sync_fifo.v:90$41_CHECK] false)
+assume (= [$past$./sync_fifo.v:65$3$0] #b00)
+assume (= [$past$./sync_fifo.v:83$8$0] #b00)
+assume (= [$past$./sync_fifo.v:89$13$0] #b00)
+assume (= [$past$./sync_fifo.v:90$15$0] #x00)
+assume (= [o_FIFO_EMPTY] true)
+assume (= [o_FIFO_FULL] true)
+assume (= [o_OUTPUT] #x00)
+assume (= [r_PAST_VALID] false)
+assume (= [r_QUANTITY] #b00)
+assume (= [r_READ_POINTER] #b00)
+assume (= [r_WRITE_POINTER] #b00)
+assume (= (select [r_MEMORY] #b00) #x01)
+assume (= (select [r_MEMORY] #b01) #x00)
+assume (= (select [r_MEMORY] #b10) #x01)
+assume (= (select [r_MEMORY] #b11) #x01)
+
+state 0
+assume (= [i_CLK] false)
+assume (= [i_INPUT] #x00)
+assume (= [i_READ_REQUEST] false)
+assume (= [i_WRITE_REQUEST] false)
+
+state 1
+assume (= [i_CLK] true)
+assume (= [i_INPUT] #x00)
+assume (= [i_READ_REQUEST] false)
+assume (= [i_WRITE_REQUEST] true)
+
+state 2
+assume (= [i_CLK] false)
+assume (= [i_INPUT] #x00)
+assume (= [i_READ_REQUEST] false)
+assume (= [i_WRITE_REQUEST] true)
+
+state 3
+assume (= [i_CLK] true)
+assume (= [i_INPUT] #x01)
+assume (= [i_READ_REQUEST] true)
+assume (= [i_WRITE_REQUEST] true)
+
+state 4
+assume (= [i_CLK] false)
+assume (= [i_INPUT] #x01)
+assume (= [i_READ_REQUEST] true)
+assume (= [i_WRITE_REQUEST] true)
+
+state 5
+assume (= [i_CLK] true)
+assume (= [i_INPUT] #x00)
+assume (= [i_READ_REQUEST] false)
+assume (= [i_WRITE_REQUEST] false)
+
+state 6
+assume (= [i_CLK] false)
+assume (= [i_INPUT] #x00)
+assume (= [i_READ_REQUEST] false)
+assume (= [i_WRITE_REQUEST] false)

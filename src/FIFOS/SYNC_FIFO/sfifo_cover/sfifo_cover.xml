@@ -1,21 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuites disabled="0" errors="1" failures="0" tests="1" time="0">
-<testsuite disabled="0" errors="1" failures="0" name="sfifo" skipped="0" tests="1" time="0">
+<testsuites disabled="0" errors="0" failures="0" tests="1" time="0">
+<testsuite disabled="0" errors="0" failures="0" name="sfifo" skipped="0" tests="1" time="0">
 <properties>
 <property name="os" value="posix"/>
 </properties>
-<testcase classname="sfifo" name="cover" status="ERROR" time="0">
-<error message="ERROR" type="ERROR"/>
-<system-out>SBY 23:36:40 [sfifo_prove] Removing directory 'sfifo_prove'.
-SBY 23:36:40 [sfifo_cover] Removing directory 'sfifo_cover'.
-SBY 23:36:40 [sfifo_cover] Copy './sync_fifo.v' to 'sfifo_cover/src/sync_fifo.v'.
-SBY 23:36:40 [sfifo_cover] engine_0: smtbmc z3
-SBY 23:36:40 [sfifo_cover] engine_1: smtbmc yices
-SBY 23:36:40 [sfifo_cover] base: starting process &quot;cd sfifo_cover/src; yosys -ql ../model/design.log ../model/design.ys&quot;
-SBY 23:36:40 [sfifo_cover] base: ./sync_fifo.v:28: ERROR: Identifier `\r_MEMORY' does map to an unexpanded memory!
-SBY 23:36:40 [sfifo_cover] base: finished (returncode=1)
-SBY 23:36:40 [sfifo_cover] base: job failed. ERROR.
-SBY 23:36:40 [sfifo_cover] summary: Elapsed clock time [H:MM:SS (secs)]: 0:00:00 (0)
-SBY 23:36:40 [sfifo_cover] summary: Elapsed process time [H:MM:SS (secs)]: 0:00:00 (0)
-SBY 23:36:40 [sfifo_cover] DONE (ERROR, rc=16)
+<testcase classname="sfifo" name="cover" status="PASS" time="0">
+<system-out>SBY 22:05:54 [sfifo_cover] Removing directory 'sfifo_cover'.
+SBY 22:05:54 [sfifo_cover] Copy './sync_fifo.v' to 'sfifo_cover/src/sync_fifo.v'.
+SBY 22:05:54 [sfifo_cover] engine_0: smtbmc z3
+SBY 22:05:54 [sfifo_cover] engine_1: smtbmc yices
+SBY 22:05:54 [sfifo_cover] base: starting process &quot;cd sfifo_cover/src; yosys -ql ../model/design.log ../model/design.ys&quot;
+SBY 22:05:54 [sfifo_cover] base: finished (returncode=0)
+SBY 22:05:54 [sfifo_cover] smt2: starting process &quot;cd sfifo_cover/model; yosys -ql design_smt2.log design_smt2.ys&quot;
+SBY 22:05:54 [sfifo_cover] smt2: finished (returncode=0)
+SBY 22:05:54 [sfifo_cover] engine_0: starting process &quot;cd sfifo_cover; yosys-smtbmc -s z3 --presat -c --noprogress -t 100 --append 0 --dump-vcd engine_0/trace%.vcd --dump-vlogtb engine_0/trace%_tb.v --dump-smtc engine_0/trace%.smtc model/design_smt2.smt2&quot;
+SBY 22:05:54 [sfifo_cover] engine_1: starting process &quot;cd sfifo_cover; yosys-smtbmc -s yices --presat --unroll -c --noprogress -t 100 --append 0 --dump-vcd engine_1/trace%.vcd --dump-vlogtb engine_1/trace%_tb.v --dump-smtc engine_1/trace%.smtc model/design_smt2.smt2&quot;
+SBY 22:05:54 [sfifo_cover] engine_0: ##   0:00:00  Solver: z3
+SBY 22:05:54 [sfifo_cover] engine_1: ##   0:00:00  Solver: yices
+SBY 22:05:54 [sfifo_cover] engine_0: ##   0:00:00  Checking cover reachability in step 0..
+SBY 22:05:54 [sfifo_cover] engine_0: ##   0:00:00  Checking cover reachability in step 1..
+SBY 22:05:54 [sfifo_cover] engine_0: ##   0:00:00  Checking cover reachability in step 2..
+SBY 22:05:54 [sfifo_cover] engine_0: ##   0:00:00  Checking cover reachability in step 3..
+SBY 22:05:54 [sfifo_cover] engine_0: ##   0:00:00  Checking cover reachability in step 4..
+SBY 22:05:54 [sfifo_cover] engine_0: ##   0:00:00  Checking cover reachability in step 5..
+SBY 22:05:54 [sfifo_cover] engine_0: ##   0:00:00  Checking cover reachability in step 6..
+SBY 22:05:54 [sfifo_cover] engine_0: ##   0:00:00  Reached cover statement at ./sync_fifo.v:62 in step 6.
+SBY 22:05:54 [sfifo_cover] engine_0: ##   0:00:00  Writing trace to VCD file: engine_0/trace0.vcd
+SBY 22:05:54 [sfifo_cover] engine_1: ##   0:00:00  Checking cover reachability in step 0..
+SBY 22:05:54 [sfifo_cover] engine_0: ##   0:00:00  Writing trace to Verilog testbench: engine_0/trace0_tb.v
+SBY 22:05:54 [sfifo_cover] engine_0: ##   0:00:00  Writing trace to constraints file: engine_0/trace0.smtc
+SBY 22:05:54 [sfifo_cover] engine_1: ##   0:00:00  Checking cover reachability in step 1..
+SBY 22:05:54 [sfifo_cover] engine_0: ##   0:00:00  Status: passed
+SBY 22:05:54 [sfifo_cover] engine_0: finished (returncode=0)
+SBY 22:05:54 [sfifo_cover] engine_0: Status returned by engine: pass
+SBY 22:05:54 [sfifo_cover] engine_1: terminating process
+SBY 22:05:54 [sfifo_cover] summary: Elapsed clock time [H:MM:SS (secs)]: 0:00:00 (0)
+SBY 22:05:54 [sfifo_cover] summary: Elapsed process time [H:MM:SS (secs)]: 0:00:00 (0)
+SBY 22:05:54 [sfifo_cover] summary: engine_0 (smtbmc z3) returned pass
+SBY 22:05:54 [sfifo_cover] DONE (PASS, rc=0)
 </system-out></testcase></testsuite></testsuites>
