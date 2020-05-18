@@ -1,0 +1,14 @@
+[options]
+mode cover
+depth 40
+
+[engines]
+smtbmc z3
+smtbmc yices
+
+[files]
+./accumulator.v
+
+[script]
+read -formal ./accumulator.v
+prep -top accumulator
