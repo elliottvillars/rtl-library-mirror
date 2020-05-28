@@ -22,17 +22,17 @@
 
 module dynamic_clock_divider(
 	input wire i_CLK,
-	input wire i_RST,
+	input wire i_RESET,
 	input wire i_ENABLE,
 	input wire [31:0] i_DIV_VALUE,
 	output reg o_ENABLE_OUT
 );
 
 
-reg [31:0] r_Count;
+reg [31:0] r_Count = 0;
 always @ (posedge(i_CLK)) //Counter
 begin
-	if (i_RST == 1'b1)
+	if (i_RESET == 1'b1)
 	begin
 		r_Count <= 32'b0;
 	end
@@ -40,7 +40,7 @@ begin
 	begin
 		if(i_ENABLE == 1'b1) 
 		begin
-			if (r_Count >= i_DIV_VALUE)
+			if (r_Count == i_DIV_VALUE)
 				r_Count <= 32'b0;
 			else
 				r_Count <= r_Count + 1;
@@ -54,7 +54,7 @@ end
 
 always @ (posedge(i_CLK)) //FF with comparator
 begin
-	if (i_RST == 1'b1)
+	if (i_RESET == 1'b1)
 	begin
 		o_ENABLE_OUT <= 1'b0;
 	end
@@ -73,40 +73,32 @@ end
 
 `ifdef FORMAL
 	reg r_PAST_VALID;
-	initial begin
-		assume(r_Count == 0);
-		assume(i_CLK == 0);
-		assume(i_RST == 1);
-	end
-
 	always@(posedge i_CLK)
 	begin
-		r_PAST_VALID = 1;
-		assume(i_CLK != $past(i_CLK));
+		assume($changed(i_CLK));
 		assume($stable(i_DIV_VALUE));
+		r_PAST_VALID <= 1;
 		if(r_PAST_VALID == 1 && $rose(i_CLK))
 		begin
-			if($past(i_RST) == 1)
+			if($past(i_RESET) == 1 && $past(i_ENABLE) == 1)
 			begin
-				assert(r_Count == 0);
-				assert(o_ENABLE_OUT == 0);
+				//assert(r_Count == 0);
+				//assert(o_ENABLE_OUT == 0);
 			end
 			else
 			begin
-				if($stable(i_RST) && $past(i_RST) == 0)
-				begin
-					if($stable(i_ENABLE) && $past(i_ENABLE) == 1)
-					begin
-						if($past(r_Count) != i_DIV_VALUE)
-							assert(o_ENABLE_OUT == 0);
-						else
-						begin
-							assert(o_ENABLE_OUT == 1);
-							assert(r_Count == 0);
-						end
-					end
-				end
+				if($past(i_ENABLE) == 0)
+					//assert(r_Count == 0);
+				if($past(r_Count) == $past(i_DIV_VALUE) && $past(i_ENABLE) == 1)
+					assert(o_ENABLE_OUT == 1'b1);
+				else
+					assert(o_ENABLE_OUT == 1'b1);
 			end
+		end
+		if(!$rose(i_CLK))
+		begin
+			assume($stable(i_ENABLE));
+			assume($stable(i_RESET));
 		end
 	end
 `endif

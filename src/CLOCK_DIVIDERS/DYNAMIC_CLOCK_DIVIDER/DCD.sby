@@ -1,9 +1,9 @@
 [engines]
-smtbmc
+smtbmc yices
 
 [options]
 mode prove
-depth 16
+depth 64
 
 [files]
 dynamic_clock_divider.v

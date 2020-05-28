@@ -1,34 +1,29 @@
 module uart_transmitter (
 	input wire i_CLK,
+	input wire i_RESET,
 	input wire i_CLK_ENABLE,
 	input wire i_TX_ENABLE,
 	input wire [7:0] i_DATA_IN,
-	output reg  o_TX_BUSY,
+	output reg o_TX_BUSY,
 	output reg o_TX
 );
 
-localparam s_IDLE = 0;
-localparam s_START_TX = 1;
-localparam s_TRANSMIT = 2;
-localparam s_STOP_TX = 3;
+localparam s_IDLE 	= 2'd0;
+localparam s_START_TX 	= 2'd1;
+localparam s_TRANSMIT 	= 2'd2;
+localparam s_STOP_TX 	= 2'd3;
 
-reg [1:0] r_CURRENT_STATE;
-reg [1:0] r_NEXT_STATE;
+reg [1:0] r_CURRENT_STATE = 0;
+reg [1:0] r_NEXT_STATE = 0;
 reg [3:0] r_BIT_COUNT;
 reg [7:0] r_DATA_REG;
 
-initial begin
-	r_CURRENT_STATE = 0;
-	r_NEXT_STATE = 0;
-	r_BIT_COUNT = 0;
-	r_DATA_REG = 0;
-end
 always@(*)
 begin
 	case(r_CURRENT_STATE)
 		s_IDLE:
 		begin
-			if(i_TX_ENABLE == 1)
+			if(i_TX_ENABLE == 1'b1)
 				r_NEXT_STATE = s_START_TX;
 			else
 				r_NEXT_STATE = s_IDLE;
@@ -37,7 +32,7 @@ begin
 			r_NEXT_STATE = s_TRANSMIT;
 		s_TRANSMIT:
 		begin
-			if(r_BIT_COUNT == 8)
+			if(r_BIT_COUNT == 4'd8)
 				r_NEXT_STATE = s_STOP_TX;
 			else
 				r_NEXT_STATE = s_TRANSMIT;
@@ -50,10 +45,16 @@ end
 
 always@(posedge i_CLK)
 begin
-	if(i_CLK_ENABLE == 1)
-		r_CURRENT_STATE <= r_NEXT_STATE;
+	if(i_RESET == 1'b1)
+		r_CURRENT_STATE <= s_IDLE;
 	else
-		r_CURRENT_STATE <= r_CURRENT_STATE;
+	begin
+
+		if(i_CLK_ENABLE == 1'b1)
+			r_CURRENT_STATE <= r_NEXT_STATE;
+		else
+			r_CURRENT_STATE <= r_CURRENT_STATE;
+	end
 end
 
 always@(posedge i_CLK)
@@ -66,7 +67,7 @@ end
 
 always@(posedge i_CLK)
 begin
-	if(i_CLK_ENABLE == 1) //BAUD rate will be external
+	if(i_CLK_ENABLE == 1'b1) //BAUD rate will be external
 	begin
 		case(r_CURRENT_STATE)
 			s_IDLE:
@@ -104,55 +105,79 @@ end
 	reg r_PAST_VALID = 0;
 	always@(posedge i_CLK)
 	begin
-		assume(i_CLK_ENABLE == 1);
 		assume($changed(i_CLK));
+		assume(i_CLK_ENABLE == 1);//Need to prove stability.
 		r_PAST_VALID <= 1;
 		if(r_PAST_VALID && $rose(i_CLK)) begin
-			//cover transiton back to idle
-			cover(r_CURRENT_STATE == s_IDLE && $past(r_CURRENT_STATE == s_STOP_TX));
+			//Check reset condition
+			if($past(i_RESET) == 1'b1)
+			begin
+				assert(r_CURRENT_STATE == s_IDLE);
+				if($past(i_CLK_ENABLE == 1'b1))
+				begin
+					assert(o_TX == 1'b1);
+					assert(o_TX_BUSY == 1'b0);
+					assert(r_BIT_COUNT == 4'd0);
+				end
+			end
+			else
+			begin
+				if($past(i_CLK_ENABLE == 1'b1))
+				begin
+					//cover transiton back to idle
+					cover(r_CURRENT_STATE == s_IDLE && $past(r_CURRENT_STATE == s_STOP_TX));
 
-			//Check state assertions
-			if($past(r_CURRENT_STATE) == s_IDLE)
-			begin
-				assert(o_TX_BUSY == 0);
-				assert(o_TX == 1);
-				assert(r_BIT_COUNT == 3'd0);
-			end
-			if($past(r_CURRENT_STATE) == s_START_TX) 
-			begin
-				assert(o_TX_BUSY == 1);
-				assert(o_TX == 0);
-				assert(r_BIT_COUNT == 0);
-			end
-			if($past(r_CURRENT_STATE) == s_TRANSMIT)
-			begin
-				if(r_BIT_COUNT != 9)
-					assert(o_TX == $past(r_DATA_REG[0]));
-				else
-					assert(o_TX == 1);
-				assert(o_TX_BUSY == 1);
-				assert(r_BIT_COUNT == $past(r_BIT_COUNT) + 1);
-			end
-			if($past(r_CURRENT_STATE) == s_STOP_TX)
-			begin
-				assert(o_TX_BUSY == 1);
-				assert(o_TX == 1);
-				assert($past(r_BIT_COUNT) == 9);
-			end
+					//Check state assertions
+					if($past(r_CURRENT_STATE) == s_IDLE)
+					begin
+						assert(o_TX_BUSY == 1'b0);
+						assert(o_TX == 1'b1);
+						assert(r_BIT_COUNT == 4'd0);
+					end
+					if($past(r_CURRENT_STATE) == s_START_TX) 
+					begin
+						assert(o_TX_BUSY == 3'b1);
+						assert(o_TX == 3'b0);
+						assert(r_BIT_COUNT == 3'd0);
+					end
+					if($past(r_CURRENT_STATE) == s_TRANSMIT)
+					begin
+						if(r_BIT_COUNT != 4'd9)
+							assert(o_TX == $past(r_DATA_REG[0]));
+						else
+							assert(o_TX == 1'b1);
+						assert(o_TX_BUSY == 1'b1);
+						assert(r_BIT_COUNT == $past(r_BIT_COUNT) + 1);
+					end
+					if($past(r_CURRENT_STATE) == s_STOP_TX)
+					begin
+						assert(o_TX_BUSY == 1'b1);
+						assert(o_TX == 1'b1);
+						assert($past(r_BIT_COUNT) == 4'd9);
+					end
 
-			//Check transitions
-			if(i_TX_ENABLE == 1 && r_CURRENT_STATE == s_IDLE)
-				assert(r_NEXT_STATE == s_START_TX);
-			if(i_TX_ENABLE == 0 && r_CURRENT_STATE == s_IDLE)
-				assert(r_NEXT_STATE == s_IDLE);
-			if(r_CURRENT_STATE == s_START_TX)
-				assert(r_NEXT_STATE == s_TRANSMIT);
-			if(r_CURRENT_STATE == s_TRANSMIT && r_BIT_COUNT != 8)
-				assert(r_NEXT_STATE == s_TRANSMIT);
-			if(r_CURRENT_STATE == s_TRANSMIT && r_BIT_COUNT == 8)
-				assert(r_NEXT_STATE == s_STOP_TX);
-			if(r_CURRENT_STATE == s_STOP_TX)
-				assert(r_NEXT_STATE == s_IDLE);
+					//Check transitions
+					if(i_TX_ENABLE == 1 && r_CURRENT_STATE == s_IDLE)
+						assert(r_NEXT_STATE == s_START_TX);
+					if(i_TX_ENABLE == 0 && r_CURRENT_STATE == s_IDLE)
+						assert(r_NEXT_STATE == s_IDLE);
+					if(r_CURRENT_STATE == s_START_TX)
+						assert(r_NEXT_STATE == s_TRANSMIT);
+					if(r_CURRENT_STATE == s_TRANSMIT && r_BIT_COUNT != 8)
+						assert(r_NEXT_STATE == s_TRANSMIT);
+					if(r_CURRENT_STATE == s_TRANSMIT && r_BIT_COUNT == 8)
+						assert(r_NEXT_STATE == s_STOP_TX);
+					if(r_CURRENT_STATE == s_STOP_TX)
+						assert(r_NEXT_STATE == s_IDLE);
+				end
+			end
+		end
+		//Prevent signals from changing in between rising edges
+		if(!$rose(i_CLK))
+		begin
+			assume($stable(i_RESET));
+			assume($stable(i_TX_ENABLE));
+			assume($stable(i_DATA_IN));
 		end
 	end
 `endif

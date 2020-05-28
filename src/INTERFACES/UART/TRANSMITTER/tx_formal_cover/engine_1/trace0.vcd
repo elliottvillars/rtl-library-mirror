@@ -6,14 +6,15 @@ $scope module uart_transmitter $end
 $var wire 1 n0 i_CLK $end
 $var wire 1 n1 i_CLK_ENABLE $end
 $var wire 8 n2 i_DATA_IN $end
-$var wire 1 n3 i_TX_ENABLE $end
-$var wire 1 n4 o_TX $end
-$var wire 1 n5 o_TX_BUSY $end
-$var wire 4 n6 r_BIT_COUNT $end
-$var wire 2 n7 r_CURRENT_STATE $end
-$var wire 8 n8 r_DATA_REG $end
-$var wire 2 n9 r_NEXT_STATE $end
-$var wire 1 n10 r_PAST_VALID $end
+$var wire 1 n3 i_RESET $end
+$var wire 1 n4 i_TX_ENABLE $end
+$var wire 1 n5 o_TX $end
+$var wire 1 n6 o_TX_BUSY $end
+$var wire 4 n7 r_BIT_COUNT $end
+$var wire 2 n8 r_CURRENT_STATE $end
+$var wire 8 n9 r_DATA_REG $end
+$var wire 2 n10 r_NEXT_STATE $end
+$var wire 1 n11 r_PAST_VALID $end
 $upscope $end
 $enddefinitions $end
 #0
@@ -24,57 +25,61 @@ b1 n1
 b00000000 n2
 b0 n3
 b0 n4
-b1 n5
-b0000 n6
-b00 n7
-b00000000 n8
-b00 n9
-b0 n10
+b0 n5
+b1 n6
+b0000 n7
+b00 n8
+b00000000 n9
+b00 n10
+b0 n11
 #5
 #10
 1!
 b00000000000000000000000000000001 t
 b1 n0
 b1 n1
-b00001001 n2
-b1 n3
+b00000010 n2
+b0 n3
 b1 n4
-b0 n5
-b0000 n6
-b00 n7
-b00000000 n8
-b01 n9
-b1 n10
+b1 n5
+b0 n6
+b0000 n7
+b00 n8
+b00000000 n9
+b01 n10
+b1 n11
 #15
 #20
 1!
 b00000000000000000000000000000010 t
 b0 n0
 b1 n1
-b00000000 n2
+b00000010 n2
 b0 n3
 b1 n4
-b0 n5
-b0000 n6
-b01 n7
-b00001001 n8
-b10 n9
-b1 n10
+b1 n5
+b0 n6
+b0000 n7
+b01 n8
+b00000010 n9
+b10 n10
+b1 n11
 #25
 #30
 1!
 b00000000000000000000000000000011 t
 b1 n0
 b1 n1
-b00000100 n2
+b00000001 n2
 b0 n3
-b0 n4
-b1 n5
-b0000 n6
-b10 n7
-b00001001 n8
-b10 n9
-b1 n10
+b1 n4
+b0 n5
+b1 n6
+b0000 n7
+b10 n8
+b00000010 n9
+b10 n10
+b1 n11
 #35
 #40
 1!
@@ -84,27 +89,29 @@ b1 n1
 b00000001 n2
 b0 n3
 b1 n4
-b1 n5
-b0001 n6
-b10 n7
-b00000100 n8
-b10 n9
-b1 n10
+b0 n5
+b1 n6
+b0001 n7
+b10 n8
+b00000001 n9
+b10 n10
+b1 n11
 #45
 #50
 1!
 b00000000000000000000000000000101 t
 b1 n0
 b1 n1
-b00000001 n2
+b00000000 n2
 b0 n3
 b0 n4
 b1 n5
-b0010 n6
-b10 n7
-b00000010 n8
-b10 n9
-b1 n10
+b1 n6
+b0010 n7
+b10 n8
+b00000000 n9
+b10 n10
+b1 n11
 #55
 #60
 1!
@@ -114,12 +121,13 @@ b1 n1
 b00000000 n2
 b0 n3
 b0 n4
-b1 n5
-b0011 n6
-b10 n7
-b00000001 n8
-b10 n9
-b1 n10
+b0 n5
+b1 n6
+b0011 n7
+b10 n8
+b00000000 n9
+b10 n10
+b1 n11
 #65
 #70
 1!
@@ -128,13 +136,14 @@ b1 n0
 b1 n1
 b00000000 n2
 b0 n3
-b1 n4
-b1 n5
-b0100 n6
-b10 n7
-b00000000 n8
-b10 n9
-b1 n10
+b0 n4
+b0 n5
+b1 n6
+b0100 n7
+b10 n8
+b00000000 n9
+b10 n10
+b1 n11
 #75
 #80
 1!
@@ -144,12 +153,13 @@ b1 n1
 b00000000 n2
 b0 n3
 b0 n4
-b1 n5
-b0101 n6
-b10 n7
-b00000000 n8
-b10 n9
-b1 n10
+b0 n5
+b1 n6
+b0101 n7
+b10 n8
+b00000000 n9
+b10 n10
+b1 n11
 #85
 #90
 1!
@@ -159,12 +169,13 @@ b1 n1
 b00000000 n2
 b0 n3
 b0 n4
-b1 n5
-b0110 n6
-b10 n7
-b00000000 n8
-b10 n9
-b1 n10
+b0 n5
+b1 n6
+b0110 n7
+b10 n8
+b00000000 n9
+b10 n10
+b1 n11
 #95
 #100
 1!
@@ -174,42 +185,45 @@ b1 n1
 b00000000 n2
 b0 n3
 b0 n4
-b1 n5
-b0111 n6
-b10 n7
-b00000000 n8
-b10 n9
-b1 n10
+b0 n5
+b1 n6
+b0111 n7
+b10 n8
+b00000000 n9
+b10 n10
+b1 n11
 #105
 #110
 1!
 b00000000000000000000000000001011 t
 b1 n0
 b1 n1
-b01000000 n2
-b1 n3
-b0 n4
-b1 n5
-b1000 n6
-b10 n7
-b00000000 n8
-b11 n9
-b1 n10
+b00000001 n2
+b0 n3
+b1 n4
+b0 n5
+b1 n6
+b1000 n7
+b10 n8
+b00000000 n9
+b11 n10
+b1 n11
 #115
 #120
 1!
 b00000000000000000000000000001100 t
 b0 n0
 b1 n1
-b01000000 n2
+b00000001 n2
 b0 n3
 b1 n4
 b1 n5
-b1001 n6
-b11 n7
-b00000000 n8
-b00 n9
-b1 n10
+b1 n6
+b1001 n7
+b11 n8
+b00000000 n9
+b00 n10
+b1 n11
 #125
 #130
 1!
@@ -218,13 +232,14 @@ b1 n0
 b1 n1
 b00000000 n2
 b1 n3
-b1 n4
+b0 n4
 b1 n5
-b0000 n6
-b00 n7
-b00000000 n8
-b01 n9
-b1 n10
+b1 n6
+b0000 n7
+b00 n8
+b00000000 n9
+b00 n10
+b1 n11
 #135
 #140
 1!
@@ -232,14 +247,15 @@ b00000000000000000000000000001110 t
 b0 n0
 b1 n1
 b00000000 n2
-b0 n3
-b1 n4
-b0 n5
-b0000 n6
-b01 n7
-b00000000 n8
-b10 n9
-b1 n10
+b1 n3
+b0 n4
+b1 n5
+b0 n6
+b0000 n7
+b00 n8
+b00000000 n9
+b00 n10
+b1 n11
 #145
 #150
 1!
