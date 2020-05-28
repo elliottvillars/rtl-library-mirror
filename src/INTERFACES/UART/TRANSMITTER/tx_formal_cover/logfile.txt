@@ -1,43 +1,44 @@
-SBY 20:07:42 [tx_formal_cover] Removing directory 'tx_formal_cover'.
-SBY 20:07:42 [tx_formal_cover] Copy './uart_transmitter.v' to 'tx_formal_cover/src/uart_transmitter.v'.
-SBY 20:07:42 [tx_formal_cover] engine_0: smtbmc yices
-SBY 20:07:42 [tx_formal_cover] engine_1: smtbmc z3
-SBY 20:07:42 [tx_formal_cover] base: starting process "cd tx_formal_cover/src; /nix/store/1c68z76k64ah0gf1nlfsgyyg643971a9-yosys-2020.03.24/bin/yosys -ql ../model/design.log ../model/design.ys"
-SBY 20:07:42 [tx_formal_cover] base: finished (returncode=0)
-SBY 20:07:42 [tx_formal_cover] smt2: starting process "cd tx_formal_cover/model; /nix/store/1c68z76k64ah0gf1nlfsgyyg643971a9-yosys-2020.03.24/bin/yosys -ql design_smt2.log design_smt2.ys"
-SBY 20:07:42 [tx_formal_cover] smt2: finished (returncode=0)
-SBY 20:07:42 [tx_formal_cover] engine_0: starting process "cd tx_formal_cover; /nix/store/1c68z76k64ah0gf1nlfsgyyg643971a9-yosys-2020.03.24/bin/yosys-smtbmc -s yices --presat --unroll -c --noprogress -t 100 --append 0 --dump-vcd engine_0/trace%.vcd --dump-vlogtb engine_0/trace%_tb.v --dump-smtc engine_0/trace%.smtc model/design_smt2.smt2"
-SBY 20:07:42 [tx_formal_cover] engine_1: starting process "cd tx_formal_cover; /nix/store/1c68z76k64ah0gf1nlfsgyyg643971a9-yosys-2020.03.24/bin/yosys-smtbmc -s z3 --presat -c --noprogress -t 100 --append 0 --dump-vcd engine_1/trace%.vcd --dump-vlogtb engine_1/trace%_tb.v --dump-smtc engine_1/trace%.smtc model/design_smt2.smt2"
-SBY 20:07:42 [tx_formal_cover] engine_0: ##   0:00:00  Solver: yices
-SBY 20:07:42 [tx_formal_cover] engine_1: ##   0:00:00  Solver: z3
-SBY 20:07:42 [tx_formal_cover] engine_1: ##   0:00:00  Checking cover reachability in step 0..
-SBY 20:07:42 [tx_formal_cover] engine_1: ##   0:00:00  Checking cover reachability in step 1..
-SBY 20:07:42 [tx_formal_cover] engine_1: ##   0:00:00  Checking cover reachability in step 2..
-SBY 20:07:42 [tx_formal_cover] engine_1: ##   0:00:00  Checking cover reachability in step 3..
-SBY 20:07:42 [tx_formal_cover] engine_1: ##   0:00:00  Checking cover reachability in step 4..
-SBY 20:07:42 [tx_formal_cover] engine_1: ##   0:00:00  Checking cover reachability in step 5..
-SBY 20:07:42 [tx_formal_cover] engine_1: ##   0:00:00  Checking cover reachability in step 6..
-SBY 20:07:42 [tx_formal_cover] engine_1: ##   0:00:00  Checking cover reachability in step 7..
-SBY 20:07:42 [tx_formal_cover] engine_0: ##   0:00:00  Checking cover reachability in step 0..
-SBY 20:07:42 [tx_formal_cover] engine_1: ##   0:00:00  Checking cover reachability in step 8..
-SBY 20:07:42 [tx_formal_cover] engine_1: ##   0:00:00  Checking cover reachability in step 9..
-SBY 20:07:42 [tx_formal_cover] engine_1: ##   0:00:00  Checking cover reachability in step 10..
-SBY 20:07:42 [tx_formal_cover] engine_1: ##   0:00:00  Checking cover reachability in step 11..
-SBY 20:07:42 [tx_formal_cover] engine_0: ##   0:00:00  Checking cover reachability in step 1..
-SBY 20:07:42 [tx_formal_cover] engine_1: ##   0:00:00  Checking cover reachability in step 12..
-SBY 20:07:42 [tx_formal_cover] engine_1: ##   0:00:00  Checking cover reachability in step 13..
-SBY 20:07:42 [tx_formal_cover] engine_1: ##   0:00:00  Checking cover reachability in step 14..
-SBY 20:07:42 [tx_formal_cover] engine_0: ##   0:00:00  Checking cover reachability in step 2..
-SBY 20:07:42 [tx_formal_cover] engine_1: ##   0:00:00  Reached cover statement at ./uart_transmitter.v:126.10-128.77 in step 14.
-SBY 20:07:42 [tx_formal_cover] engine_1: ##   0:00:00  Writing trace to VCD file: engine_1/trace0.vcd
-SBY 20:07:42 [tx_formal_cover] engine_0: ##   0:00:00  Checking cover reachability in step 3..
-SBY 20:07:42 [tx_formal_cover] engine_1: ##   0:00:00  Writing trace to Verilog testbench: engine_1/trace0_tb.v
-SBY 20:07:42 [tx_formal_cover] engine_1: ##   0:00:00  Writing trace to constraints file: engine_1/trace0.smtc
-SBY 20:07:42 [tx_formal_cover] engine_1: ##   0:00:00  Status: passed
-SBY 20:07:42 [tx_formal_cover] engine_1: finished (returncode=0)
-SBY 20:07:42 [tx_formal_cover] engine_1: Status returned by engine: pass
-SBY 20:07:42 [tx_formal_cover] engine_0: terminating process
-SBY 20:07:42 [tx_formal_cover] summary: Elapsed clock time [H:MM:SS (secs)]: 0:00:00 (0)
-SBY 20:07:42 [tx_formal_cover] summary: Elapsed process time [H:MM:SS (secs)]: 0:00:00 (0)
-SBY 20:07:42 [tx_formal_cover] summary: engine_1 (smtbmc z3) returned pass
-SBY 20:07:42 [tx_formal_cover] DONE (PASS, rc=0)
+SBY 13:34:53 [tx_formal_cover] Removing directory 'tx_formal_cover'.
+SBY 13:34:53 [tx_formal_cover] Copy './uart_transmitter.v' to 'tx_formal_cover/src/uart_transmitter.v'.
+SBY 13:34:53 [tx_formal_cover] engine_0: smtbmc yices
+SBY 13:34:53 [tx_formal_cover] engine_1: smtbmc z3
+SBY 13:34:53 [tx_formal_cover] base: starting process "cd tx_formal_cover/src; /nix/store/1c68z76k64ah0gf1nlfsgyyg643971a9-yosys-2020.03.24/bin/yosys -ql ../model/design.log ../model/design.ys"
+SBY 13:34:54 [tx_formal_cover] base: finished (returncode=0)
+SBY 13:34:54 [tx_formal_cover] smt2: starting process "cd tx_formal_cover/model; /nix/store/1c68z76k64ah0gf1nlfsgyyg643971a9-yosys-2020.03.24/bin/yosys -ql design_smt2.log design_smt2.ys"
+SBY 13:34:54 [tx_formal_cover] smt2: finished (returncode=0)
+SBY 13:34:54 [tx_formal_cover] engine_0: starting process "cd tx_formal_cover; /nix/store/1c68z76k64ah0gf1nlfsgyyg643971a9-yosys-2020.03.24/bin/yosys-smtbmc -s yices --presat --unroll -c --noprogress -t 100 --append 0 --dump-vcd engine_0/trace%.vcd --dump-vlogtb engine_0/trace%_tb.v --dump-smtc engine_0/trace%.smtc model/design_smt2.smt2"
+SBY 13:34:54 [tx_formal_cover] engine_1: starting process "cd tx_formal_cover; /nix/store/1c68z76k64ah0gf1nlfsgyyg643971a9-yosys-2020.03.24/bin/yosys-smtbmc -s z3 --presat -c --noprogress -t 100 --append 0 --dump-vcd engine_1/trace%.vcd --dump-vlogtb engine_1/trace%_tb.v --dump-smtc engine_1/trace%.smtc model/design_smt2.smt2"
+SBY 13:34:54 [tx_formal_cover] engine_0: ##   0:00:00  Solver: yices
+SBY 13:34:54 [tx_formal_cover] engine_1: ##   0:00:00  Solver: z3
+SBY 13:34:54 [tx_formal_cover] engine_1: ##   0:00:00  Checking cover reachability in step 0..
+SBY 13:34:54 [tx_formal_cover] engine_1: ##   0:00:00  Checking cover reachability in step 1..
+SBY 13:34:54 [tx_formal_cover] engine_1: ##   0:00:00  Checking cover reachability in step 2..
+SBY 13:34:54 [tx_formal_cover] engine_1: ##   0:00:00  Checking cover reachability in step 3..
+SBY 13:34:54 [tx_formal_cover] engine_1: ##   0:00:00  Checking cover reachability in step 4..
+SBY 13:34:54 [tx_formal_cover] engine_1: ##   0:00:00  Checking cover reachability in step 5..
+SBY 13:34:54 [tx_formal_cover] engine_1: ##   0:00:00  Checking cover reachability in step 6..
+SBY 13:34:54 [tx_formal_cover] engine_1: ##   0:00:00  Checking cover reachability in step 7..
+SBY 13:34:54 [tx_formal_cover] engine_0: ##   0:00:00  Checking cover reachability in step 0..
+SBY 13:34:54 [tx_formal_cover] engine_1: ##   0:00:00  Checking cover reachability in step 8..
+SBY 13:34:54 [tx_formal_cover] engine_1: ##   0:00:00  Checking cover reachability in step 9..
+SBY 13:34:54 [tx_formal_cover] engine_1: ##   0:00:00  Checking cover reachability in step 10..
+SBY 13:34:54 [tx_formal_cover] engine_0: ##   0:00:00  Checking cover reachability in step 1..
+SBY 13:34:54 [tx_formal_cover] engine_1: ##   0:00:00  Checking cover reachability in step 11..
+SBY 13:34:54 [tx_formal_cover] engine_1: ##   0:00:00  Checking cover reachability in step 12..
+SBY 13:34:54 [tx_formal_cover] engine_0: ##   0:00:00  Checking cover reachability in step 2..
+SBY 13:34:54 [tx_formal_cover] engine_1: ##   0:00:00  Checking cover reachability in step 13..
+SBY 13:34:54 [tx_formal_cover] engine_1: ##   0:00:00  Checking cover reachability in step 14..
+SBY 13:34:54 [tx_formal_cover] engine_0: ##   0:00:00  Checking cover reachability in step 3..
+SBY 13:34:54 [tx_formal_cover] engine_1: ##   0:00:00  Reached cover statement at ./uart_transmitter.v:133.10-135.77 in step 14.
+SBY 13:34:54 [tx_formal_cover] engine_1: ##   0:00:00  Writing trace to VCD file: engine_1/trace0.vcd
+SBY 13:34:54 [tx_formal_cover] engine_0: ##   0:00:00  Checking cover reachability in step 4..
+SBY 13:34:54 [tx_formal_cover] engine_1: ##   0:00:00  Writing trace to Verilog testbench: engine_1/trace0_tb.v
+SBY 13:34:54 [tx_formal_cover] engine_1: ##   0:00:00  Writing trace to constraints file: engine_1/trace0.smtc
+SBY 13:34:54 [tx_formal_cover] engine_1: ##   0:00:00  Status: passed
+SBY 13:34:54 [tx_formal_cover] engine_1: finished (returncode=0)
+SBY 13:34:54 [tx_formal_cover] engine_1: Status returned by engine: pass
+SBY 13:34:54 [tx_formal_cover] engine_0: terminating process
+SBY 13:34:54 [tx_formal_cover] summary: Elapsed clock time [H:MM:SS (secs)]: 0:00:00 (0)
+SBY 13:34:54 [tx_formal_cover] summary: Elapsed process time [H:MM:SS (secs)]: 0:00:00 (0)
+SBY 13:34:54 [tx_formal_cover] summary: engine_1 (smtbmc z3) returned pass
+SBY 13:34:54 [tx_formal_cover] DONE (PASS, rc=0)

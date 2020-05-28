@@ -51,406 +51,407 @@ Module uart_transmitter directly or indirectly contains formal properties -> set
 Cleaned up 0 empty switches.
 
 2.3.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
-Marked 2 switch rules as full_case in process $proc$./uart_transmitter.v:106$62 in module uart_transmitter.
-Marked 2 switch rules as full_case in process $proc$./uart_transmitter.v:68$58 in module uart_transmitter.
-Marked 1 switch rules as full_case in process $proc$./uart_transmitter.v:60$53 in module uart_transmitter.
-Marked 2 switch rules as full_case in process $proc$./uart_transmitter.v:46$50 in module uart_transmitter.
-Removed 1 dead cases from process $proc$./uart_transmitter.v:21$47 in module uart_transmitter.
-Marked 3 switch rules as full_case in process $proc$./uart_transmitter.v:21$47 in module uart_transmitter.
+Marked 2 switch rules as full_case in process $proc$./uart_transmitter.v:111$63 in module uart_transmitter.
+Marked 2 switch rules as full_case in process $proc$./uart_transmitter.v:73$59 in module uart_transmitter.
+Marked 1 switch rules as full_case in process $proc$./uart_transmitter.v:65$54 in module uart_transmitter.
+Marked 2 switch rules as full_case in process $proc$./uart_transmitter.v:51$51 in module uart_transmitter.
+Removed 1 dead cases from process $proc$./uart_transmitter.v:26$48 in module uart_transmitter.
+Marked 3 switch rules as full_case in process $proc$./uart_transmitter.v:26$48 in module uart_transmitter.
 Removed a total of 1 dead cases.
 
 2.3.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
 Removed 2 redundant assignments.
-Promoted 55 assignments to connections.
+Promoted 54 assignments to connections.
 
 2.3.4. Executing PROC_INIT pass (extract init attributes).
-Found init rule in `\uart_transmitter.$proc$./uart_transmitter.v:0$290'.
-  Set init value: $formal$./uart_transmitter.v:179$46_EN = 1'0
-Found init rule in `\uart_transmitter.$proc$./uart_transmitter.v:0$288'.
-  Set init value: $formal$./uart_transmitter.v:178$45_EN = 1'0
-Found init rule in `\uart_transmitter.$proc$./uart_transmitter.v:0$286'.
-  Set init value: $formal$./uart_transmitter.v:177$44_EN = 1'0
-Found init rule in `\uart_transmitter.$proc$./uart_transmitter.v:0$284'.
-  Set init value: $formal$./uart_transmitter.v:170$43_EN = 1'0
-Found init rule in `\uart_transmitter.$proc$./uart_transmitter.v:0$282'.
-  Set init value: $formal$./uart_transmitter.v:168$42_EN = 1'0
-Found init rule in `\uart_transmitter.$proc$./uart_transmitter.v:0$280'.
-  Set init value: $formal$./uart_transmitter.v:166$41_EN = 1'0
-Found init rule in `\uart_transmitter.$proc$./uart_transmitter.v:0$278'.
-  Set init value: $formal$./uart_transmitter.v:164$40_EN = 1'0
-Found init rule in `\uart_transmitter.$proc$./uart_transmitter.v:0$276'.
-  Set init value: $formal$./uart_transmitter.v:162$39_EN = 1'0
-Found init rule in `\uart_transmitter.$proc$./uart_transmitter.v:0$274'.
-  Set init value: $formal$./uart_transmitter.v:160$38_EN = 1'0
-Found init rule in `\uart_transmitter.$proc$./uart_transmitter.v:0$272'.
-  Set init value: $formal$./uart_transmitter.v:155$37_EN = 1'0
-Found init rule in `\uart_transmitter.$proc$./uart_transmitter.v:0$270'.
-  Set init value: $formal$./uart_transmitter.v:154$36_EN = 1'0
-Found init rule in `\uart_transmitter.$proc$./uart_transmitter.v:0$268'.
-  Set init value: $formal$./uart_transmitter.v:153$35_EN = 1'0
-Found init rule in `\uart_transmitter.$proc$./uart_transmitter.v:0$266'.
-  Set init value: $formal$./uart_transmitter.v:149$34_EN = 1'0
-Found init rule in `\uart_transmitter.$proc$./uart_transmitter.v:0$264'.
-  Set init value: $formal$./uart_transmitter.v:148$33_EN = 1'0
-Found init rule in `\uart_transmitter.$proc$./uart_transmitter.v:0$262'.
-  Set init value: $formal$./uart_transmitter.v:147$32_EN = 1'0
-Found init rule in `\uart_transmitter.$proc$./uart_transmitter.v:0$260'.
-  Set init value: $formal$./uart_transmitter.v:145$31_EN = 1'0
-Found init rule in `\uart_transmitter.$proc$./uart_transmitter.v:0$258'.
-  Set init value: $formal$./uart_transmitter.v:140$30_EN = 1'0
-Found init rule in `\uart_transmitter.$proc$./uart_transmitter.v:0$256'.
-  Set init value: $formal$./uart_transmitter.v:139$29_EN = 1'0
-Found init rule in `\uart_transmitter.$proc$./uart_transmitter.v:0$254'.
-  Set init value: $formal$./uart_transmitter.v:138$28_EN = 1'0
-Found init rule in `\uart_transmitter.$proc$./uart_transmitter.v:0$252'.
-  Set init value: $formal$./uart_transmitter.v:134$27_EN = 1'0
-Found init rule in `\uart_transmitter.$proc$./uart_transmitter.v:0$250'.
-  Set init value: $formal$./uart_transmitter.v:133$26_EN = 1'0
-Found init rule in `\uart_transmitter.$proc$./uart_transmitter.v:0$248'.
-  Set init value: $formal$./uart_transmitter.v:132$25_EN = 1'0
-Found init rule in `\uart_transmitter.$proc$./uart_transmitter.v:0$246'.
-  Set init value: $formal$./uart_transmitter.v:126$24_EN = 1'0
-Found init rule in `\uart_transmitter.$proc$./uart_transmitter.v:0$244'.
-  Set init value: $formal$./uart_transmitter.v:119$23_EN = 1'0
-Found init rule in `\uart_transmitter.$proc$./uart_transmitter.v:0$242'.
-  Set init value: $formal$./uart_transmitter.v:118$22_EN = 1'0
-Found init rule in `\uart_transmitter.$proc$./uart_transmitter.v:0$240'.
-  Set init value: $formal$./uart_transmitter.v:117$21_EN = 1'0
-Found init rule in `\uart_transmitter.$proc$./uart_transmitter.v:0$238'.
-  Set init value: $formal$./uart_transmitter.v:114$20_EN = 1'0
-Found init rule in `\uart_transmitter.$proc$./uart_transmitter.v:0$236'.
-  Set init value: $formal$./uart_transmitter.v:108$19_EN = 1'0
-Found init rule in `\uart_transmitter.$proc$./uart_transmitter.v:0$234'.
-  Set init value: $formal$./uart_transmitter.v:107$18_EN = 1'0
-Found init rule in `\uart_transmitter.$proc$./uart_transmitter.v:105$233'.
+Found init rule in `\uart_transmitter.$proc$./uart_transmitter.v:0$291'.
+  Set init value: $formal$./uart_transmitter.v:187$47_EN = 1'0
+Found init rule in `\uart_transmitter.$proc$./uart_transmitter.v:0$289'.
+  Set init value: $formal$./uart_transmitter.v:186$46_EN = 1'0
+Found init rule in `\uart_transmitter.$proc$./uart_transmitter.v:0$287'.
+  Set init value: $formal$./uart_transmitter.v:185$45_EN = 1'0
+Found init rule in `\uart_transmitter.$proc$./uart_transmitter.v:0$285'.
+  Set init value: $formal$./uart_transmitter.v:184$44_EN = 1'0
+Found init rule in `\uart_transmitter.$proc$./uart_transmitter.v:0$283'.
+  Set init value: $formal$./uart_transmitter.v:177$43_EN = 1'0
+Found init rule in `\uart_transmitter.$proc$./uart_transmitter.v:0$281'.
+  Set init value: $formal$./uart_transmitter.v:175$42_EN = 1'0
+Found init rule in `\uart_transmitter.$proc$./uart_transmitter.v:0$279'.
+  Set init value: $formal$./uart_transmitter.v:173$41_EN = 1'0
+Found init rule in `\uart_transmitter.$proc$./uart_transmitter.v:0$277'.
+  Set init value: $formal$./uart_transmitter.v:171$40_EN = 1'0
+Found init rule in `\uart_transmitter.$proc$./uart_transmitter.v:0$275'.
+  Set init value: $formal$./uart_transmitter.v:169$39_EN = 1'0
+Found init rule in `\uart_transmitter.$proc$./uart_transmitter.v:0$273'.
+  Set init value: $formal$./uart_transmitter.v:167$38_EN = 1'0
+Found init rule in `\uart_transmitter.$proc$./uart_transmitter.v:0$271'.
+  Set init value: $formal$./uart_transmitter.v:162$37_EN = 1'0
+Found init rule in `\uart_transmitter.$proc$./uart_transmitter.v:0$269'.
+  Set init value: $formal$./uart_transmitter.v:161$36_EN = 1'0
+Found init rule in `\uart_transmitter.$proc$./uart_transmitter.v:0$267'.
+  Set init value: $formal$./uart_transmitter.v:160$35_EN = 1'0
+Found init rule in `\uart_transmitter.$proc$./uart_transmitter.v:0$265'.
+  Set init value: $formal$./uart_transmitter.v:156$34_EN = 1'0
+Found init rule in `\uart_transmitter.$proc$./uart_transmitter.v:0$263'.
+  Set init value: $formal$./uart_transmitter.v:155$33_EN = 1'0
+Found init rule in `\uart_transmitter.$proc$./uart_transmitter.v:0$261'.
+  Set init value: $formal$./uart_transmitter.v:154$32_EN = 1'0
+Found init rule in `\uart_transmitter.$proc$./uart_transmitter.v:0$259'.
+  Set init value: $formal$./uart_transmitter.v:152$31_EN = 1'0
+Found init rule in `\uart_transmitter.$proc$./uart_transmitter.v:0$257'.
+  Set init value: $formal$./uart_transmitter.v:147$30_EN = 1'0
+Found init rule in `\uart_transmitter.$proc$./uart_transmitter.v:0$255'.
+  Set init value: $formal$./uart_transmitter.v:146$29_EN = 1'0
+Found init rule in `\uart_transmitter.$proc$./uart_transmitter.v:0$253'.
+  Set init value: $formal$./uart_transmitter.v:145$28_EN = 1'0
+Found init rule in `\uart_transmitter.$proc$./uart_transmitter.v:0$251'.
+  Set init value: $formal$./uart_transmitter.v:141$27_EN = 1'0
+Found init rule in `\uart_transmitter.$proc$./uart_transmitter.v:0$249'.
+  Set init value: $formal$./uart_transmitter.v:140$26_EN = 1'0
+Found init rule in `\uart_transmitter.$proc$./uart_transmitter.v:0$247'.
+  Set init value: $formal$./uart_transmitter.v:139$25_EN = 1'0
+Found init rule in `\uart_transmitter.$proc$./uart_transmitter.v:0$245'.
+  Set init value: $formal$./uart_transmitter.v:133$24_EN = 1'0
+Found init rule in `\uart_transmitter.$proc$./uart_transmitter.v:0$243'.
+  Set init value: $formal$./uart_transmitter.v:126$23_EN = 1'0
+Found init rule in `\uart_transmitter.$proc$./uart_transmitter.v:0$241'.
+  Set init value: $formal$./uart_transmitter.v:125$22_EN = 1'0
+Found init rule in `\uart_transmitter.$proc$./uart_transmitter.v:0$239'.
+  Set init value: $formal$./uart_transmitter.v:124$21_EN = 1'0
+Found init rule in `\uart_transmitter.$proc$./uart_transmitter.v:0$237'.
+  Set init value: $formal$./uart_transmitter.v:118$20_EN = 1'0
+Found init rule in `\uart_transmitter.$proc$./uart_transmitter.v:0$235'.
+  Set init value: $formal$./uart_transmitter.v:112$19_EN = 1'0
+Found init rule in `\uart_transmitter.$proc$./uart_transmitter.v:110$234'.
   Set init value: \r_PAST_VALID = 1'0
-Found init rule in `\uart_transmitter.$proc$./uart_transmitter.v:17$232'.
-  Set init value: \r_NEXT_STATE = 2'00
-Found init rule in `\uart_transmitter.$proc$./uart_transmitter.v:16$231'.
+Found init rule in `\uart_transmitter.$proc$./uart_transmitter.v:0$233'.
   Set init value: \r_CURRENT_STATE = 2'00
+  Set init value: \r_NEXT_STATE = 2'00
 
 2.3.5. Executing PROC_ARST pass (detect async resets in processes).
 
 2.3.6. Executing PROC_MUX pass (convert decision trees to multiplexers).
-Creating decoders for process `\uart_transmitter.$proc$./uart_transmitter.v:0$290'.
-Creating decoders for process `\uart_transmitter.$proc$./uart_transmitter.v:0$288'.
-Creating decoders for process `\uart_transmitter.$proc$./uart_transmitter.v:0$286'.
-Creating decoders for process `\uart_transmitter.$proc$./uart_transmitter.v:0$284'.
-Creating decoders for process `\uart_transmitter.$proc$./uart_transmitter.v:0$282'.
-Creating decoders for process `\uart_transmitter.$proc$./uart_transmitter.v:0$280'.
-Creating decoders for process `\uart_transmitter.$proc$./uart_transmitter.v:0$278'.
-Creating decoders for process `\uart_transmitter.$proc$./uart_transmitter.v:0$276'.
-Creating decoders for process `\uart_transmitter.$proc$./uart_transmitter.v:0$274'.
-Creating decoders for process `\uart_transmitter.$proc$./uart_transmitter.v:0$272'.
-Creating decoders for process `\uart_transmitter.$proc$./uart_transmitter.v:0$270'.
-Creating decoders for process `\uart_transmitter.$proc$./uart_transmitter.v:0$268'.
-Creating decoders for process `\uart_transmitter.$proc$./uart_transmitter.v:0$266'.
-Creating decoders for process `\uart_transmitter.$proc$./uart_transmitter.v:0$264'.
-Creating decoders for process `\uart_transmitter.$proc$./uart_transmitter.v:0$262'.
-Creating decoders for process `\uart_transmitter.$proc$./uart_transmitter.v:0$260'.
-Creating decoders for process `\uart_transmitter.$proc$./uart_transmitter.v:0$258'.
-Creating decoders for process `\uart_transmitter.$proc$./uart_transmitter.v:0$256'.
-Creating decoders for process `\uart_transmitter.$proc$./uart_transmitter.v:0$254'.
-Creating decoders for process `\uart_transmitter.$proc$./uart_transmitter.v:0$252'.
-Creating decoders for process `\uart_transmitter.$proc$./uart_transmitter.v:0$250'.
-Creating decoders for process `\uart_transmitter.$proc$./uart_transmitter.v:0$248'.
-Creating decoders for process `\uart_transmitter.$proc$./uart_transmitter.v:0$246'.
-Creating decoders for process `\uart_transmitter.$proc$./uart_transmitter.v:0$244'.
-Creating decoders for process `\uart_transmitter.$proc$./uart_transmitter.v:0$242'.
-Creating decoders for process `\uart_transmitter.$proc$./uart_transmitter.v:0$240'.
-Creating decoders for process `\uart_transmitter.$proc$./uart_transmitter.v:0$238'.
-Creating decoders for process `\uart_transmitter.$proc$./uart_transmitter.v:0$236'.
-Creating decoders for process `\uart_transmitter.$proc$./uart_transmitter.v:0$234'.
-Creating decoders for process `\uart_transmitter.$proc$./uart_transmitter.v:105$233'.
-Creating decoders for process `\uart_transmitter.$proc$./uart_transmitter.v:17$232'.
-Creating decoders for process `\uart_transmitter.$proc$./uart_transmitter.v:16$231'.
-Creating decoders for process `\uart_transmitter.$proc$./uart_transmitter.v:106$62'.
-     1/54: $0$formal$./uart_transmitter.v:114$20_EN[0:0]$85
-     2/54: $0$formal$./uart_transmitter.v:114$20_CHECK[0:0]$84
-     3/54: $0$formal$./uart_transmitter.v:117$21_EN[0:0]$87
-     4/54: $0$formal$./uart_transmitter.v:117$21_CHECK[0:0]$86
-     5/54: $0$formal$./uart_transmitter.v:118$22_EN[0:0]$89
-     6/54: $0$formal$./uart_transmitter.v:118$22_CHECK[0:0]$88
-     7/54: $0$formal$./uart_transmitter.v:119$23_EN[0:0]$91
-     8/54: $0$formal$./uart_transmitter.v:119$23_CHECK[0:0]$90
-     9/54: $0$formal$./uart_transmitter.v:126$24_EN[0:0]$93
-    10/54: $0$formal$./uart_transmitter.v:126$24_CHECK[0:0]$92
-    11/54: $0$formal$./uart_transmitter.v:132$25_EN[0:0]$95
-    12/54: $0$formal$./uart_transmitter.v:132$25_CHECK[0:0]$94
-    13/54: $0$formal$./uart_transmitter.v:133$26_EN[0:0]$97
-    14/54: $0$formal$./uart_transmitter.v:133$26_CHECK[0:0]$96
-    15/54: $0$formal$./uart_transmitter.v:134$27_EN[0:0]$99
-    16/54: $0$formal$./uart_transmitter.v:134$27_CHECK[0:0]$98
-    17/54: $0$formal$./uart_transmitter.v:138$28_EN[0:0]$101
-    18/54: $0$formal$./uart_transmitter.v:138$28_CHECK[0:0]$100
-    19/54: $0$formal$./uart_transmitter.v:139$29_EN[0:0]$103
-    20/54: $0$formal$./uart_transmitter.v:139$29_CHECK[0:0]$102
-    21/54: $0$formal$./uart_transmitter.v:140$30_EN[0:0]$105
-    22/54: $0$formal$./uart_transmitter.v:140$30_CHECK[0:0]$104
-    23/54: $0$formal$./uart_transmitter.v:145$31_EN[0:0]$107
-    24/54: $0$formal$./uart_transmitter.v:145$31_CHECK[0:0]$106
-    25/54: $0$formal$./uart_transmitter.v:147$32_EN[0:0]$109
-    26/54: $0$formal$./uart_transmitter.v:147$32_CHECK[0:0]$108
-    27/54: $0$formal$./uart_transmitter.v:148$33_EN[0:0]$111
-    28/54: $0$formal$./uart_transmitter.v:148$33_CHECK[0:0]$110
-    29/54: $0$formal$./uart_transmitter.v:149$34_EN[0:0]$113
-    30/54: $0$formal$./uart_transmitter.v:149$34_CHECK[0:0]$112
-    31/54: $0$formal$./uart_transmitter.v:153$35_EN[0:0]$115
-    32/54: $0$formal$./uart_transmitter.v:153$35_CHECK[0:0]$114
-    33/54: $0$formal$./uart_transmitter.v:154$36_EN[0:0]$117
-    34/54: $0$formal$./uart_transmitter.v:154$36_CHECK[0:0]$116
-    35/54: $0$formal$./uart_transmitter.v:155$37_EN[0:0]$119
-    36/54: $0$formal$./uart_transmitter.v:155$37_CHECK[0:0]$118
-    37/54: $0$formal$./uart_transmitter.v:160$38_EN[0:0]$121
-    38/54: $0$formal$./uart_transmitter.v:160$38_CHECK[0:0]$120
-    39/54: $0$formal$./uart_transmitter.v:162$39_EN[0:0]$123
-    40/54: $0$formal$./uart_transmitter.v:162$39_CHECK[0:0]$122
-    41/54: $0$formal$./uart_transmitter.v:164$40_EN[0:0]$125
-    42/54: $0$formal$./uart_transmitter.v:164$40_CHECK[0:0]$124
-    43/54: $0$formal$./uart_transmitter.v:166$41_EN[0:0]$127
-    44/54: $0$formal$./uart_transmitter.v:166$41_CHECK[0:0]$126
-    45/54: $0$formal$./uart_transmitter.v:168$42_EN[0:0]$129
-    46/54: $0$formal$./uart_transmitter.v:168$42_CHECK[0:0]$128
-    47/54: $0$formal$./uart_transmitter.v:170$43_EN[0:0]$131
-    48/54: $0$formal$./uart_transmitter.v:170$43_CHECK[0:0]$130
-    49/54: $0$formal$./uart_transmitter.v:177$44_EN[0:0]$133
-    50/54: $0$formal$./uart_transmitter.v:177$44_CHECK[0:0]$132
-    51/54: $0$formal$./uart_transmitter.v:178$45_EN[0:0]$135
-    52/54: $0$formal$./uart_transmitter.v:178$45_CHECK[0:0]$134
-    53/54: $0$formal$./uart_transmitter.v:179$46_EN[0:0]$137
-    54/54: $0$formal$./uart_transmitter.v:179$46_CHECK[0:0]$136
-Creating decoders for process `\uart_transmitter.$proc$./uart_transmitter.v:68$58'.
+Creating decoders for process `\uart_transmitter.$proc$./uart_transmitter.v:0$291'.
+Creating decoders for process `\uart_transmitter.$proc$./uart_transmitter.v:0$289'.
+Creating decoders for process `\uart_transmitter.$proc$./uart_transmitter.v:0$287'.
+Creating decoders for process `\uart_transmitter.$proc$./uart_transmitter.v:0$285'.
+Creating decoders for process `\uart_transmitter.$proc$./uart_transmitter.v:0$283'.
+Creating decoders for process `\uart_transmitter.$proc$./uart_transmitter.v:0$281'.
+Creating decoders for process `\uart_transmitter.$proc$./uart_transmitter.v:0$279'.
+Creating decoders for process `\uart_transmitter.$proc$./uart_transmitter.v:0$277'.
+Creating decoders for process `\uart_transmitter.$proc$./uart_transmitter.v:0$275'.
+Creating decoders for process `\uart_transmitter.$proc$./uart_transmitter.v:0$273'.
+Creating decoders for process `\uart_transmitter.$proc$./uart_transmitter.v:0$271'.
+Creating decoders for process `\uart_transmitter.$proc$./uart_transmitter.v:0$269'.
+Creating decoders for process `\uart_transmitter.$proc$./uart_transmitter.v:0$267'.
+Creating decoders for process `\uart_transmitter.$proc$./uart_transmitter.v:0$265'.
+Creating decoders for process `\uart_transmitter.$proc$./uart_transmitter.v:0$263'.
+Creating decoders for process `\uart_transmitter.$proc$./uart_transmitter.v:0$261'.
+Creating decoders for process `\uart_transmitter.$proc$./uart_transmitter.v:0$259'.
+Creating decoders for process `\uart_transmitter.$proc$./uart_transmitter.v:0$257'.
+Creating decoders for process `\uart_transmitter.$proc$./uart_transmitter.v:0$255'.
+Creating decoders for process `\uart_transmitter.$proc$./uart_transmitter.v:0$253'.
+Creating decoders for process `\uart_transmitter.$proc$./uart_transmitter.v:0$251'.
+Creating decoders for process `\uart_transmitter.$proc$./uart_transmitter.v:0$249'.
+Creating decoders for process `\uart_transmitter.$proc$./uart_transmitter.v:0$247'.
+Creating decoders for process `\uart_transmitter.$proc$./uart_transmitter.v:0$245'.
+Creating decoders for process `\uart_transmitter.$proc$./uart_transmitter.v:0$243'.
+Creating decoders for process `\uart_transmitter.$proc$./uart_transmitter.v:0$241'.
+Creating decoders for process `\uart_transmitter.$proc$./uart_transmitter.v:0$239'.
+Creating decoders for process `\uart_transmitter.$proc$./uart_transmitter.v:0$237'.
+Creating decoders for process `\uart_transmitter.$proc$./uart_transmitter.v:0$235'.
+Creating decoders for process `\uart_transmitter.$proc$./uart_transmitter.v:110$234'.
+Creating decoders for process `\uart_transmitter.$proc$./uart_transmitter.v:0$233'.
+Creating decoders for process `\uart_transmitter.$proc$./uart_transmitter.v:111$63'.
+     1/56: $0$formal$./uart_transmitter.v:118$20_EN[0:0]$85
+     2/56: $0$formal$./uart_transmitter.v:118$20_CHECK[0:0]$84
+     3/56: $0$formal$./uart_transmitter.v:124$21_EN[0:0]$87
+     4/56: $0$formal$./uart_transmitter.v:124$21_CHECK[0:0]$86
+     5/56: $0$formal$./uart_transmitter.v:125$22_EN[0:0]$89
+     6/56: $0$formal$./uart_transmitter.v:125$22_CHECK[0:0]$88
+     7/56: $0$formal$./uart_transmitter.v:126$23_EN[0:0]$91
+     8/56: $0$formal$./uart_transmitter.v:126$23_CHECK[0:0]$90
+     9/56: $0$formal$./uart_transmitter.v:133$24_EN[0:0]$93
+    10/56: $0$formal$./uart_transmitter.v:133$24_CHECK[0:0]$92
+    11/56: $0$formal$./uart_transmitter.v:139$25_EN[0:0]$95
+    12/56: $0$formal$./uart_transmitter.v:139$25_CHECK[0:0]$94
+    13/56: $0$formal$./uart_transmitter.v:140$26_EN[0:0]$97
+    14/56: $0$formal$./uart_transmitter.v:140$26_CHECK[0:0]$96
+    15/56: $0$formal$./uart_transmitter.v:141$27_EN[0:0]$99
+    16/56: $0$formal$./uart_transmitter.v:141$27_CHECK[0:0]$98
+    17/56: $0$formal$./uart_transmitter.v:145$28_EN[0:0]$101
+    18/56: $0$formal$./uart_transmitter.v:145$28_CHECK[0:0]$100
+    19/56: $0$formal$./uart_transmitter.v:146$29_EN[0:0]$103
+    20/56: $0$formal$./uart_transmitter.v:146$29_CHECK[0:0]$102
+    21/56: $0$formal$./uart_transmitter.v:147$30_EN[0:0]$105
+    22/56: $0$formal$./uart_transmitter.v:147$30_CHECK[0:0]$104
+    23/56: $0$formal$./uart_transmitter.v:152$31_EN[0:0]$107
+    24/56: $0$formal$./uart_transmitter.v:152$31_CHECK[0:0]$106
+    25/56: $0$formal$./uart_transmitter.v:154$32_EN[0:0]$109
+    26/56: $0$formal$./uart_transmitter.v:154$32_CHECK[0:0]$108
+    27/56: $0$formal$./uart_transmitter.v:155$33_EN[0:0]$111
+    28/56: $0$formal$./uart_transmitter.v:155$33_CHECK[0:0]$110
+    29/56: $0$formal$./uart_transmitter.v:156$34_EN[0:0]$113
+    30/56: $0$formal$./uart_transmitter.v:156$34_CHECK[0:0]$112
+    31/56: $0$formal$./uart_transmitter.v:160$35_EN[0:0]$115
+    32/56: $0$formal$./uart_transmitter.v:160$35_CHECK[0:0]$114
+    33/56: $0$formal$./uart_transmitter.v:161$36_EN[0:0]$117
+    34/56: $0$formal$./uart_transmitter.v:161$36_CHECK[0:0]$116
+    35/56: $0$formal$./uart_transmitter.v:162$37_EN[0:0]$119
+    36/56: $0$formal$./uart_transmitter.v:162$37_CHECK[0:0]$118
+    37/56: $0$formal$./uart_transmitter.v:167$38_EN[0:0]$121
+    38/56: $0$formal$./uart_transmitter.v:167$38_CHECK[0:0]$120
+    39/56: $0$formal$./uart_transmitter.v:169$39_EN[0:0]$123
+    40/56: $0$formal$./uart_transmitter.v:169$39_CHECK[0:0]$122
+    41/56: $0$formal$./uart_transmitter.v:171$40_EN[0:0]$125
+    42/56: $0$formal$./uart_transmitter.v:171$40_CHECK[0:0]$124
+    43/56: $0$formal$./uart_transmitter.v:173$41_EN[0:0]$127
+    44/56: $0$formal$./uart_transmitter.v:173$41_CHECK[0:0]$126
+    45/56: $0$formal$./uart_transmitter.v:175$42_EN[0:0]$129
+    46/56: $0$formal$./uart_transmitter.v:175$42_CHECK[0:0]$128
+    47/56: $0$formal$./uart_transmitter.v:177$43_EN[0:0]$131
+    48/56: $0$formal$./uart_transmitter.v:177$43_CHECK[0:0]$130
+    49/56: $0$formal$./uart_transmitter.v:184$44_EN[0:0]$133
+    50/56: $0$formal$./uart_transmitter.v:184$44_CHECK[0:0]$132
+    51/56: $0$formal$./uart_transmitter.v:185$45_EN[0:0]$135
+    52/56: $0$formal$./uart_transmitter.v:185$45_CHECK[0:0]$134
+    53/56: $0$formal$./uart_transmitter.v:186$46_EN[0:0]$137
+    54/56: $0$formal$./uart_transmitter.v:186$46_CHECK[0:0]$136
+    55/56: $0$formal$./uart_transmitter.v:187$47_EN[0:0]$139
+    56/56: $0$formal$./uart_transmitter.v:187$47_CHECK[0:0]$138
+Creating decoders for process `\uart_transmitter.$proc$./uart_transmitter.v:73$59'.
      1/3: $0\r_DATA_REG[7:0]
      2/3: $0\o_TX[0:0]
      3/3: $0\o_TX_BUSY[0:0]
-Creating decoders for process `\uart_transmitter.$proc$./uart_transmitter.v:60$53'.
+Creating decoders for process `\uart_transmitter.$proc$./uart_transmitter.v:65$54'.
      1/1: $0\r_BIT_COUNT[3:0]
-Creating decoders for process `\uart_transmitter.$proc$./uart_transmitter.v:46$50'.
+Creating decoders for process `\uart_transmitter.$proc$./uart_transmitter.v:51$51'.
      1/1: $0\r_CURRENT_STATE[1:0]
-Creating decoders for process `\uart_transmitter.$proc$./uart_transmitter.v:21$47'.
+Creating decoders for process `\uart_transmitter.$proc$./uart_transmitter.v:26$48'.
      1/3: $3\r_NEXT_STATE[1:0]
      2/3: $2\r_NEXT_STATE[1:0]
      3/3: $1\r_NEXT_STATE[1:0]
 
 2.3.7. Executing PROC_DLATCH pass (convert process syncs to latches).
-No latch inferred for signal `\uart_transmitter.\r_NEXT_STATE' from process `\uart_transmitter.$proc$./uart_transmitter.v:21$47'.
+No latch inferred for signal `\uart_transmitter.\r_NEXT_STATE' from process `\uart_transmitter.$proc$./uart_transmitter.v:26$48'.
 
 2.3.8. Executing PROC_DFF pass (convert process syncs to FFs).
-Creating register for signal `\uart_transmitter.\r_PAST_VALID' using process `\uart_transmitter.$proc$./uart_transmitter.v:106$62'.
-  created $dff cell `$procdff$776' with positive edge clock.
-Creating register for signal `\uart_transmitter.$past$./uart_transmitter.v:108$1$0' using process `\uart_transmitter.$proc$./uart_transmitter.v:106$62'.
-  created $dff cell `$procdff$777' with positive edge clock.
-Creating register for signal `\uart_transmitter.$past$./uart_transmitter.v:111$2$0' using process `\uart_transmitter.$proc$./uart_transmitter.v:106$62'.
-  created $dff cell `$procdff$778' with positive edge clock.
-Creating register for signal `\uart_transmitter.$past$./uart_transmitter.v:113$3$0' using process `\uart_transmitter.$proc$./uart_transmitter.v:106$62'.
-  created $dff cell `$procdff$779' with positive edge clock.
-Creating register for signal `\uart_transmitter.$past$./uart_transmitter.v:116$4$0' using process `\uart_transmitter.$proc$./uart_transmitter.v:106$62'.
-  created $dff cell `$procdff$780' with positive edge clock.
-Creating register for signal `\uart_transmitter.$past$./uart_transmitter.v:125$5$0' using process `\uart_transmitter.$proc$./uart_transmitter.v:106$62'.
+Creating register for signal `\uart_transmitter.\r_PAST_VALID' using process `\uart_transmitter.$proc$./uart_transmitter.v:111$63'.
   created $dff cell `$procdff$781' with positive edge clock.
-Creating register for signal `\uart_transmitter.$past$./uart_transmitter.v:128$6$0' using process `\uart_transmitter.$proc$./uart_transmitter.v:106$62'.
+Creating register for signal `\uart_transmitter.$past$./uart_transmitter.v:113$1$0' using process `\uart_transmitter.$proc$./uart_transmitter.v:111$63'.
   created $dff cell `$procdff$782' with positive edge clock.
-Creating register for signal `\uart_transmitter.$past$./uart_transmitter.v:131$7$0' using process `\uart_transmitter.$proc$./uart_transmitter.v:106$62'.
+Creating register for signal `\uart_transmitter.$past$./uart_transmitter.v:115$2$0' using process `\uart_transmitter.$proc$./uart_transmitter.v:111$63'.
   created $dff cell `$procdff$783' with positive edge clock.
-Creating register for signal `\uart_transmitter.$past$./uart_transmitter.v:137$8$0' using process `\uart_transmitter.$proc$./uart_transmitter.v:106$62'.
+Creating register for signal `\uart_transmitter.$past$./uart_transmitter.v:117$3$0' using process `\uart_transmitter.$proc$./uart_transmitter.v:111$63'.
   created $dff cell `$procdff$784' with positive edge clock.
-Creating register for signal `\uart_transmitter.$past$./uart_transmitter.v:143$9$0' using process `\uart_transmitter.$proc$./uart_transmitter.v:106$62'.
+Creating register for signal `\uart_transmitter.$past$./uart_transmitter.v:123$4$0' using process `\uart_transmitter.$proc$./uart_transmitter.v:111$63'.
   created $dff cell `$procdff$785' with positive edge clock.
-Creating register for signal `\uart_transmitter.$past$./uart_transmitter.v:146$10$0' using process `\uart_transmitter.$proc$./uart_transmitter.v:106$62'.
+Creating register for signal `\uart_transmitter.$past$./uart_transmitter.v:132$5$0' using process `\uart_transmitter.$proc$./uart_transmitter.v:111$63'.
   created $dff cell `$procdff$786' with positive edge clock.
-Creating register for signal `\uart_transmitter.$past$./uart_transmitter.v:150$11$0' using process `\uart_transmitter.$proc$./uart_transmitter.v:106$62'.
+Creating register for signal `\uart_transmitter.$past$./uart_transmitter.v:135$6$0' using process `\uart_transmitter.$proc$./uart_transmitter.v:111$63'.
   created $dff cell `$procdff$787' with positive edge clock.
-Creating register for signal `\uart_transmitter.$past$./uart_transmitter.v:152$12$0' using process `\uart_transmitter.$proc$./uart_transmitter.v:106$62'.
+Creating register for signal `\uart_transmitter.$past$./uart_transmitter.v:138$7$0' using process `\uart_transmitter.$proc$./uart_transmitter.v:111$63'.
   created $dff cell `$procdff$788' with positive edge clock.
-Creating register for signal `\uart_transmitter.$past$./uart_transmitter.v:156$13$0' using process `\uart_transmitter.$proc$./uart_transmitter.v:106$62'.
+Creating register for signal `\uart_transmitter.$past$./uart_transmitter.v:144$8$0' using process `\uart_transmitter.$proc$./uart_transmitter.v:111$63'.
   created $dff cell `$procdff$789' with positive edge clock.
-Creating register for signal `\uart_transmitter.$past$./uart_transmitter.v:176$14$0' using process `\uart_transmitter.$proc$./uart_transmitter.v:106$62'.
+Creating register for signal `\uart_transmitter.$past$./uart_transmitter.v:150$9$0' using process `\uart_transmitter.$proc$./uart_transmitter.v:111$63'.
   created $dff cell `$procdff$790' with positive edge clock.
-Creating register for signal `\uart_transmitter.$past$./uart_transmitter.v:178$15$0' using process `\uart_transmitter.$proc$./uart_transmitter.v:106$62'.
+Creating register for signal `\uart_transmitter.$past$./uart_transmitter.v:153$10$0' using process `\uart_transmitter.$proc$./uart_transmitter.v:111$63'.
   created $dff cell `$procdff$791' with positive edge clock.
-Creating register for signal `\uart_transmitter.$past$./uart_transmitter.v:179$16$0' using process `\uart_transmitter.$proc$./uart_transmitter.v:106$62'.
+Creating register for signal `\uart_transmitter.$past$./uart_transmitter.v:157$11$0' using process `\uart_transmitter.$proc$./uart_transmitter.v:111$63'.
   created $dff cell `$procdff$792' with positive edge clock.
-Creating register for signal `\uart_transmitter.$past$./uart_transmitter.v:180$17$0' using process `\uart_transmitter.$proc$./uart_transmitter.v:106$62'.
+Creating register for signal `\uart_transmitter.$past$./uart_transmitter.v:159$12$0' using process `\uart_transmitter.$proc$./uart_transmitter.v:111$63'.
   created $dff cell `$procdff$793' with positive edge clock.
-Creating register for signal `\uart_transmitter.$formal$./uart_transmitter.v:107$18_CHECK' using process `\uart_transmitter.$proc$./uart_transmitter.v:106$62'.
+Creating register for signal `\uart_transmitter.$past$./uart_transmitter.v:163$13$0' using process `\uart_transmitter.$proc$./uart_transmitter.v:111$63'.
   created $dff cell `$procdff$794' with positive edge clock.
-Creating register for signal `\uart_transmitter.$formal$./uart_transmitter.v:107$18_EN' using process `\uart_transmitter.$proc$./uart_transmitter.v:106$62'.
+Creating register for signal `\uart_transmitter.$past$./uart_transmitter.v:183$14$0' using process `\uart_transmitter.$proc$./uart_transmitter.v:111$63'.
   created $dff cell `$procdff$795' with positive edge clock.
-Creating register for signal `\uart_transmitter.$formal$./uart_transmitter.v:108$19_CHECK' using process `\uart_transmitter.$proc$./uart_transmitter.v:106$62'.
+Creating register for signal `\uart_transmitter.$past$./uart_transmitter.v:185$15$0' using process `\uart_transmitter.$proc$./uart_transmitter.v:111$63'.
   created $dff cell `$procdff$796' with positive edge clock.
-Creating register for signal `\uart_transmitter.$formal$./uart_transmitter.v:108$19_EN' using process `\uart_transmitter.$proc$./uart_transmitter.v:106$62'.
+Creating register for signal `\uart_transmitter.$past$./uart_transmitter.v:186$16$0' using process `\uart_transmitter.$proc$./uart_transmitter.v:111$63'.
   created $dff cell `$procdff$797' with positive edge clock.
-Creating register for signal `\uart_transmitter.$formal$./uart_transmitter.v:114$20_CHECK' using process `\uart_transmitter.$proc$./uart_transmitter.v:106$62'.
+Creating register for signal `\uart_transmitter.$past$./uart_transmitter.v:187$17$0' using process `\uart_transmitter.$proc$./uart_transmitter.v:111$63'.
   created $dff cell `$procdff$798' with positive edge clock.
-Creating register for signal `\uart_transmitter.$formal$./uart_transmitter.v:114$20_EN' using process `\uart_transmitter.$proc$./uart_transmitter.v:106$62'.
+Creating register for signal `\uart_transmitter.$past$./uart_transmitter.v:188$18$0' using process `\uart_transmitter.$proc$./uart_transmitter.v:111$63'.
   created $dff cell `$procdff$799' with positive edge clock.
-Creating register for signal `\uart_transmitter.$formal$./uart_transmitter.v:117$21_CHECK' using process `\uart_transmitter.$proc$./uart_transmitter.v:106$62'.
+Creating register for signal `\uart_transmitter.$formal$./uart_transmitter.v:112$19_CHECK' using process `\uart_transmitter.$proc$./uart_transmitter.v:111$63'.
   created $dff cell `$procdff$800' with positive edge clock.
-Creating register for signal `\uart_transmitter.$formal$./uart_transmitter.v:117$21_EN' using process `\uart_transmitter.$proc$./uart_transmitter.v:106$62'.
+Creating register for signal `\uart_transmitter.$formal$./uart_transmitter.v:112$19_EN' using process `\uart_transmitter.$proc$./uart_transmitter.v:111$63'.
   created $dff cell `$procdff$801' with positive edge clock.
-Creating register for signal `\uart_transmitter.$formal$./uart_transmitter.v:118$22_CHECK' using process `\uart_transmitter.$proc$./uart_transmitter.v:106$62'.
+Creating register for signal `\uart_transmitter.$formal$./uart_transmitter.v:118$20_CHECK' using process `\uart_transmitter.$proc$./uart_transmitter.v:111$63'.
   created $dff cell `$procdff$802' with positive edge clock.
-Creating register for signal `\uart_transmitter.$formal$./uart_transmitter.v:118$22_EN' using process `\uart_transmitter.$proc$./uart_transmitter.v:106$62'.
+Creating register for signal `\uart_transmitter.$formal$./uart_transmitter.v:118$20_EN' using process `\uart_transmitter.$proc$./uart_transmitter.v:111$63'.
   created $dff cell `$procdff$803' with positive edge clock.
-Creating register for signal `\uart_transmitter.$formal$./uart_transmitter.v:119$23_CHECK' using process `\uart_transmitter.$proc$./uart_transmitter.v:106$62'.
+Creating register for signal `\uart_transmitter.$formal$./uart_transmitter.v:124$21_CHECK' using process `\uart_transmitter.$proc$./uart_transmitter.v:111$63'.
   created $dff cell `$procdff$804' with positive edge clock.
-Creating register for signal `\uart_transmitter.$formal$./uart_transmitter.v:119$23_EN' using process `\uart_transmitter.$proc$./uart_transmitter.v:106$62'.
+Creating register for signal `\uart_transmitter.$formal$./uart_transmitter.v:124$21_EN' using process `\uart_transmitter.$proc$./uart_transmitter.v:111$63'.
   created $dff cell `$procdff$805' with positive edge clock.
-Creating register for signal `\uart_transmitter.$formal$./uart_transmitter.v:126$24_CHECK' using process `\uart_transmitter.$proc$./uart_transmitter.v:106$62'.
+Creating register for signal `\uart_transmitter.$formal$./uart_transmitter.v:125$22_CHECK' using process `\uart_transmitter.$proc$./uart_transmitter.v:111$63'.
   created $dff cell `$procdff$806' with positive edge clock.
-Creating register for signal `\uart_transmitter.$formal$./uart_transmitter.v:126$24_EN' using process `\uart_transmitter.$proc$./uart_transmitter.v:106$62'.
+Creating register for signal `\uart_transmitter.$formal$./uart_transmitter.v:125$22_EN' using process `\uart_transmitter.$proc$./uart_transmitter.v:111$63'.
   created $dff cell `$procdff$807' with positive edge clock.
-Creating register for signal `\uart_transmitter.$formal$./uart_transmitter.v:132$25_CHECK' using process `\uart_transmitter.$proc$./uart_transmitter.v:106$62'.
+Creating register for signal `\uart_transmitter.$formal$./uart_transmitter.v:126$23_CHECK' using process `\uart_transmitter.$proc$./uart_transmitter.v:111$63'.
   created $dff cell `$procdff$808' with positive edge clock.
-Creating register for signal `\uart_transmitter.$formal$./uart_transmitter.v:132$25_EN' using process `\uart_transmitter.$proc$./uart_transmitter.v:106$62'.
+Creating register for signal `\uart_transmitter.$formal$./uart_transmitter.v:126$23_EN' using process `\uart_transmitter.$proc$./uart_transmitter.v:111$63'.
   created $dff cell `$procdff$809' with positive edge clock.
-Creating register for signal `\uart_transmitter.$formal$./uart_transmitter.v:133$26_CHECK' using process `\uart_transmitter.$proc$./uart_transmitter.v:106$62'.
+Creating register for signal `\uart_transmitter.$formal$./uart_transmitter.v:133$24_CHECK' using process `\uart_transmitter.$proc$./uart_transmitter.v:111$63'.
   created $dff cell `$procdff$810' with positive edge clock.
-Creating register for signal `\uart_transmitter.$formal$./uart_transmitter.v:133$26_EN' using process `\uart_transmitter.$proc$./uart_transmitter.v:106$62'.
+Creating register for signal `\uart_transmitter.$formal$./uart_transmitter.v:133$24_EN' using process `\uart_transmitter.$proc$./uart_transmitter.v:111$63'.
   created $dff cell `$procdff$811' with positive edge clock.
-Creating register for signal `\uart_transmitter.$formal$./uart_transmitter.v:134$27_CHECK' using process `\uart_transmitter.$proc$./uart_transmitter.v:106$62'.
+Creating register for signal `\uart_transmitter.$formal$./uart_transmitter.v:139$25_CHECK' using process `\uart_transmitter.$proc$./uart_transmitter.v:111$63'.
   created $dff cell `$procdff$812' with positive edge clock.
-Creating register for signal `\uart_transmitter.$formal$./uart_transmitter.v:134$27_EN' using process `\uart_transmitter.$proc$./uart_transmitter.v:106$62'.
+Creating register for signal `\uart_transmitter.$formal$./uart_transmitter.v:139$25_EN' using process `\uart_transmitter.$proc$./uart_transmitter.v:111$63'.
   created $dff cell `$procdff$813' with positive edge clock.
-Creating register for signal `\uart_transmitter.$formal$./uart_transmitter.v:138$28_CHECK' using process `\uart_transmitter.$proc$./uart_transmitter.v:106$62'.
+Creating register for signal `\uart_transmitter.$formal$./uart_transmitter.v:140$26_CHECK' using process `\uart_transmitter.$proc$./uart_transmitter.v:111$63'.
   created $dff cell `$procdff$814' with positive edge clock.
-Creating register for signal `\uart_transmitter.$formal$./uart_transmitter.v:138$28_EN' using process `\uart_transmitter.$proc$./uart_transmitter.v:106$62'.
+Creating register for signal `\uart_transmitter.$formal$./uart_transmitter.v:140$26_EN' using process `\uart_transmitter.$proc$./uart_transmitter.v:111$63'.
   created $dff cell `$procdff$815' with positive edge clock.
-Creating register for signal `\uart_transmitter.$formal$./uart_transmitter.v:139$29_CHECK' using process `\uart_transmitter.$proc$./uart_transmitter.v:106$62'.
+Creating register for signal `\uart_transmitter.$formal$./uart_transmitter.v:141$27_CHECK' using process `\uart_transmitter.$proc$./uart_transmitter.v:111$63'.
   created $dff cell `$procdff$816' with positive edge clock.
-Creating register for signal `\uart_transmitter.$formal$./uart_transmitter.v:139$29_EN' using process `\uart_transmitter.$proc$./uart_transmitter.v:106$62'.
+Creating register for signal `\uart_transmitter.$formal$./uart_transmitter.v:141$27_EN' using process `\uart_transmitter.$proc$./uart_transmitter.v:111$63'.
   created $dff cell `$procdff$817' with positive edge clock.
-Creating register for signal `\uart_transmitter.$formal$./uart_transmitter.v:140$30_CHECK' using process `\uart_transmitter.$proc$./uart_transmitter.v:106$62'.
+Creating register for signal `\uart_transmitter.$formal$./uart_transmitter.v:145$28_CHECK' using process `\uart_transmitter.$proc$./uart_transmitter.v:111$63'.
   created $dff cell `$procdff$818' with positive edge clock.
-Creating register for signal `\uart_transmitter.$formal$./uart_transmitter.v:140$30_EN' using process `\uart_transmitter.$proc$./uart_transmitter.v:106$62'.
+Creating register for signal `\uart_transmitter.$formal$./uart_transmitter.v:145$28_EN' using process `\uart_transmitter.$proc$./uart_transmitter.v:111$63'.
   created $dff cell `$procdff$819' with positive edge clock.
-Creating register for signal `\uart_transmitter.$formal$./uart_transmitter.v:145$31_CHECK' using process `\uart_transmitter.$proc$./uart_transmitter.v:106$62'.
+Creating register for signal `\uart_transmitter.$formal$./uart_transmitter.v:146$29_CHECK' using process `\uart_transmitter.$proc$./uart_transmitter.v:111$63'.
   created $dff cell `$procdff$820' with positive edge clock.
-Creating register for signal `\uart_transmitter.$formal$./uart_transmitter.v:145$31_EN' using process `\uart_transmitter.$proc$./uart_transmitter.v:106$62'.
+Creating register for signal `\uart_transmitter.$formal$./uart_transmitter.v:146$29_EN' using process `\uart_transmitter.$proc$./uart_transmitter.v:111$63'.
   created $dff cell `$procdff$821' with positive edge clock.
-Creating register for signal `\uart_transmitter.$formal$./uart_transmitter.v:147$32_CHECK' using process `\uart_transmitter.$proc$./uart_transmitter.v:106$62'.
+Creating register for signal `\uart_transmitter.$formal$./uart_transmitter.v:147$30_CHECK' using process `\uart_transmitter.$proc$./uart_transmitter.v:111$63'.
   created $dff cell `$procdff$822' with positive edge clock.
-Creating register for signal `\uart_transmitter.$formal$./uart_transmitter.v:147$32_EN' using process `\uart_transmitter.$proc$./uart_transmitter.v:106$62'.
+Creating register for signal `\uart_transmitter.$formal$./uart_transmitter.v:147$30_EN' using process `\uart_transmitter.$proc$./uart_transmitter.v:111$63'.
   created $dff cell `$procdff$823' with positive edge clock.
-Creating register for signal `\uart_transmitter.$formal$./uart_transmitter.v:148$33_CHECK' using process `\uart_transmitter.$proc$./uart_transmitter.v:106$62'.
+Creating register for signal `\uart_transmitter.$formal$./uart_transmitter.v:152$31_CHECK' using process `\uart_transmitter.$proc$./uart_transmitter.v:111$63'.
   created $dff cell `$procdff$824' with positive edge clock.
-Creating register for signal `\uart_transmitter.$formal$./uart_transmitter.v:148$33_EN' using process `\uart_transmitter.$proc$./uart_transmitter.v:106$62'.
+Creating register for signal `\uart_transmitter.$formal$./uart_transmitter.v:152$31_EN' using process `\uart_transmitter.$proc$./uart_transmitter.v:111$63'.
   created $dff cell `$procdff$825' with positive edge clock.
-Creating register for signal `\uart_transmitter.$formal$./uart_transmitter.v:149$34_CHECK' using process `\uart_transmitter.$proc$./uart_transmitter.v:106$62'.
+Creating register for signal `\uart_transmitter.$formal$./uart_transmitter.v:154$32_CHECK' using process `\uart_transmitter.$proc$./uart_transmitter.v:111$63'.
   created $dff cell `$procdff$826' with positive edge clock.
-Creating register for signal `\uart_transmitter.$formal$./uart_transmitter.v:149$34_EN' using process `\uart_transmitter.$proc$./uart_transmitter.v:106$62'.
+Creating register for signal `\uart_transmitter.$formal$./uart_transmitter.v:154$32_EN' using process `\uart_transmitter.$proc$./uart_transmitter.v:111$63'.
   created $dff cell `$procdff$827' with positive edge clock.
-Creating register for signal `\uart_transmitter.$formal$./uart_transmitter.v:153$35_CHECK' using process `\uart_transmitter.$proc$./uart_transmitter.v:106$62'.
+Creating register for signal `\uart_transmitter.$formal$./uart_transmitter.v:155$33_CHECK' using process `\uart_transmitter.$proc$./uart_transmitter.v:111$63'.
   created $dff cell `$procdff$828' with positive edge clock.
-Creating register for signal `\uart_transmitter.$formal$./uart_transmitter.v:153$35_EN' using process `\uart_transmitter.$proc$./uart_transmitter.v:106$62'.
+Creating register for signal `\uart_transmitter.$formal$./uart_transmitter.v:155$33_EN' using process `\uart_transmitter.$proc$./uart_transmitter.v:111$63'.
   created $dff cell `$procdff$829' with positive edge clock.
-Creating register for signal `\uart_transmitter.$formal$./uart_transmitter.v:154$36_CHECK' using process `\uart_transmitter.$proc$./uart_transmitter.v:106$62'.
+Creating register for signal `\uart_transmitter.$formal$./uart_transmitter.v:156$34_CHECK' using process `\uart_transmitter.$proc$./uart_transmitter.v:111$63'.
   created $dff cell `$procdff$830' with positive edge clock.
-Creating register for signal `\uart_transmitter.$formal$./uart_transmitter.v:154$36_EN' using process `\uart_transmitter.$proc$./uart_transmitter.v:106$62'.
+Creating register for signal `\uart_transmitter.$formal$./uart_transmitter.v:156$34_EN' using process `\uart_transmitter.$proc$./uart_transmitter.v:111$63'.
   created $dff cell `$procdff$831' with positive edge clock.
-Creating register for signal `\uart_transmitter.$formal$./uart_transmitter.v:155$37_CHECK' using process `\uart_transmitter.$proc$./uart_transmitter.v:106$62'.
+Creating register for signal `\uart_transmitter.$formal$./uart_transmitter.v:160$35_CHECK' using process `\uart_transmitter.$proc$./uart_transmitter.v:111$63'.
   created $dff cell `$procdff$832' with positive edge clock.
-Creating register for signal `\uart_transmitter.$formal$./uart_transmitter.v:155$37_EN' using process `\uart_transmitter.$proc$./uart_transmitter.v:106$62'.
+Creating register for signal `\uart_transmitter.$formal$./uart_transmitter.v:160$35_EN' using process `\uart_transmitter.$proc$./uart_transmitter.v:111$63'.
   created $dff cell `$procdff$833' with positive edge clock.
-Creating register for signal `\uart_transmitter.$formal$./uart_transmitter.v:160$38_CHECK' using process `\uart_transmitter.$proc$./uart_transmitter.v:106$62'.
+Creating register for signal `\uart_transmitter.$formal$./uart_transmitter.v:161$36_CHECK' using process `\uart_transmitter.$proc$./uart_transmitter.v:111$63'.
   created $dff cell `$procdff$834' with positive edge clock.
-Creating register for signal `\uart_transmitter.$formal$./uart_transmitter.v:160$38_EN' using process `\uart_transmitter.$proc$./uart_transmitter.v:106$62'.
+Creating register for signal `\uart_transmitter.$formal$./uart_transmitter.v:161$36_EN' using process `\uart_transmitter.$proc$./uart_transmitter.v:111$63'.
   created $dff cell `$procdff$835' with positive edge clock.
-Creating register for signal `\uart_transmitter.$formal$./uart_transmitter.v:162$39_CHECK' using process `\uart_transmitter.$proc$./uart_transmitter.v:106$62'.
+Creating register for signal `\uart_transmitter.$formal$./uart_transmitter.v:162$37_CHECK' using process `\uart_transmitter.$proc$./uart_transmitter.v:111$63'.
   created $dff cell `$procdff$836' with positive edge clock.
-Creating register for signal `\uart_transmitter.$formal$./uart_transmitter.v:162$39_EN' using process `\uart_transmitter.$proc$./uart_transmitter.v:106$62'.
+Creating register for signal `\uart_transmitter.$formal$./uart_transmitter.v:162$37_EN' using process `\uart_transmitter.$proc$./uart_transmitter.v:111$63'.
   created $dff cell `$procdff$837' with positive edge clock.
-Creating register for signal `\uart_transmitter.$formal$./uart_transmitter.v:164$40_CHECK' using process `\uart_transmitter.$proc$./uart_transmitter.v:106$62'.
+Creating register for signal `\uart_transmitter.$formal$./uart_transmitter.v:167$38_CHECK' using process `\uart_transmitter.$proc$./uart_transmitter.v:111$63'.
   created $dff cell `$procdff$838' with positive edge clock.
-Creating register for signal `\uart_transmitter.$formal$./uart_transmitter.v:164$40_EN' using process `\uart_transmitter.$proc$./uart_transmitter.v:106$62'.
+Creating register for signal `\uart_transmitter.$formal$./uart_transmitter.v:167$38_EN' using process `\uart_transmitter.$proc$./uart_transmitter.v:111$63'.
   created $dff cell `$procdff$839' with positive edge clock.
-Creating register for signal `\uart_transmitter.$formal$./uart_transmitter.v:166$41_CHECK' using process `\uart_transmitter.$proc$./uart_transmitter.v:106$62'.
+Creating register for signal `\uart_transmitter.$formal$./uart_transmitter.v:169$39_CHECK' using process `\uart_transmitter.$proc$./uart_transmitter.v:111$63'.
   created $dff cell `$procdff$840' with positive edge clock.
-Creating register for signal `\uart_transmitter.$formal$./uart_transmitter.v:166$41_EN' using process `\uart_transmitter.$proc$./uart_transmitter.v:106$62'.
+Creating register for signal `\uart_transmitter.$formal$./uart_transmitter.v:169$39_EN' using process `\uart_transmitter.$proc$./uart_transmitter.v:111$63'.
   created $dff cell `$procdff$841' with positive edge clock.
-Creating register for signal `\uart_transmitter.$formal$./uart_transmitter.v:168$42_CHECK' using process `\uart_transmitter.$proc$./uart_transmitter.v:106$62'.
+Creating register for signal `\uart_transmitter.$formal$./uart_transmitter.v:171$40_CHECK' using process `\uart_transmitter.$proc$./uart_transmitter.v:111$63'.
   created $dff cell `$procdff$842' with positive edge clock.
-Creating register for signal `\uart_transmitter.$formal$./uart_transmitter.v:168$42_EN' using process `\uart_transmitter.$proc$./uart_transmitter.v:106$62'.
+Creating register for signal `\uart_transmitter.$formal$./uart_transmitter.v:171$40_EN' using process `\uart_transmitter.$proc$./uart_transmitter.v:111$63'.
   created $dff cell `$procdff$843' with positive edge clock.
-Creating register for signal `\uart_transmitter.$formal$./uart_transmitter.v:170$43_CHECK' using process `\uart_transmitter.$proc$./uart_transmitter.v:106$62'.
+Creating register for signal `\uart_transmitter.$formal$./uart_transmitter.v:173$41_CHECK' using process `\uart_transmitter.$proc$./uart_transmitter.v:111$63'.
   created $dff cell `$procdff$844' with positive edge clock.
-Creating register for signal `\uart_transmitter.$formal$./uart_transmitter.v:170$43_EN' using process `\uart_transmitter.$proc$./uart_transmitter.v:106$62'.
+Creating register for signal `\uart_transmitter.$formal$./uart_transmitter.v:173$41_EN' using process `\uart_transmitter.$proc$./uart_transmitter.v:111$63'.
   created $dff cell `$procdff$845' with positive edge clock.
-Creating register for signal `\uart_transmitter.$formal$./uart_transmitter.v:177$44_CHECK' using process `\uart_transmitter.$proc$./uart_transmitter.v:106$62'.
+Creating register for signal `\uart_transmitter.$formal$./uart_transmitter.v:175$42_CHECK' using process `\uart_transmitter.$proc$./uart_transmitter.v:111$63'.
   created $dff cell `$procdff$846' with positive edge clock.
-Creating register for signal `\uart_transmitter.$formal$./uart_transmitter.v:177$44_EN' using process `\uart_transmitter.$proc$./uart_transmitter.v:106$62'.
+Creating register for signal `\uart_transmitter.$formal$./uart_transmitter.v:175$42_EN' using process `\uart_transmitter.$proc$./uart_transmitter.v:111$63'.
   created $dff cell `$procdff$847' with positive edge clock.
-Creating register for signal `\uart_transmitter.$formal$./uart_transmitter.v:178$45_CHECK' using process `\uart_transmitter.$proc$./uart_transmitter.v:106$62'.
+Creating register for signal `\uart_transmitter.$formal$./uart_transmitter.v:177$43_CHECK' using process `\uart_transmitter.$proc$./uart_transmitter.v:111$63'.
   created $dff cell `$procdff$848' with positive edge clock.
-Creating register for signal `\uart_transmitter.$formal$./uart_transmitter.v:178$45_EN' using process `\uart_transmitter.$proc$./uart_transmitter.v:106$62'.
+Creating register for signal `\uart_transmitter.$formal$./uart_transmitter.v:177$43_EN' using process `\uart_transmitter.$proc$./uart_transmitter.v:111$63'.
   created $dff cell `$procdff$849' with positive edge clock.
-Creating register for signal `\uart_transmitter.$formal$./uart_transmitter.v:179$46_CHECK' using process `\uart_transmitter.$proc$./uart_transmitter.v:106$62'.
+Creating register for signal `\uart_transmitter.$formal$./uart_transmitter.v:184$44_CHECK' using process `\uart_transmitter.$proc$./uart_transmitter.v:111$63'.
   created $dff cell `$procdff$850' with positive edge clock.
-Creating register for signal `\uart_transmitter.$formal$./uart_transmitter.v:179$46_EN' using process `\uart_transmitter.$proc$./uart_transmitter.v:106$62'.
+Creating register for signal `\uart_transmitter.$formal$./uart_transmitter.v:184$44_EN' using process `\uart_transmitter.$proc$./uart_transmitter.v:111$63'.
   created $dff cell `$procdff$851' with positive edge clock.
-Creating register for signal `\uart_transmitter.\o_TX_BUSY' using process `\uart_transmitter.$proc$./uart_transmitter.v:68$58'.
+Creating register for signal `\uart_transmitter.$formal$./uart_transmitter.v:185$45_CHECK' using process `\uart_transmitter.$proc$./uart_transmitter.v:111$63'.
   created $dff cell `$procdff$852' with positive edge clock.
-Creating register for signal `\uart_transmitter.\o_TX' using process `\uart_transmitter.$proc$./uart_transmitter.v:68$58'.
+Creating register for signal `\uart_transmitter.$formal$./uart_transmitter.v:185$45_EN' using process `\uart_transmitter.$proc$./uart_transmitter.v:111$63'.
   created $dff cell `$procdff$853' with positive edge clock.
-Creating register for signal `\uart_transmitter.\r_DATA_REG' using process `\uart_transmitter.$proc$./uart_transmitter.v:68$58'.
+Creating register for signal `\uart_transmitter.$formal$./uart_transmitter.v:186$46_CHECK' using process `\uart_transmitter.$proc$./uart_transmitter.v:111$63'.
   created $dff cell `$procdff$854' with positive edge clock.
-Creating register for signal `\uart_transmitter.\r_BIT_COUNT' using process `\uart_transmitter.$proc$./uart_transmitter.v:60$53'.
+Creating register for signal `\uart_transmitter.$formal$./uart_transmitter.v:186$46_EN' using process `\uart_transmitter.$proc$./uart_transmitter.v:111$63'.
   created $dff cell `$procdff$855' with positive edge clock.
-Creating register for signal `\uart_transmitter.\r_CURRENT_STATE' using process `\uart_transmitter.$proc$./uart_transmitter.v:46$50'.
+Creating register for signal `\uart_transmitter.$formal$./uart_transmitter.v:187$47_CHECK' using process `\uart_transmitter.$proc$./uart_transmitter.v:111$63'.
   created $dff cell `$procdff$856' with positive edge clock.
+Creating register for signal `\uart_transmitter.$formal$./uart_transmitter.v:187$47_EN' using process `\uart_transmitter.$proc$./uart_transmitter.v:111$63'.
+  created $dff cell `$procdff$857' with positive edge clock.
+Creating register for signal `\uart_transmitter.\o_TX_BUSY' using process `\uart_transmitter.$proc$./uart_transmitter.v:73$59'.
+  created $dff cell `$procdff$858' with positive edge clock.
+Creating register for signal `\uart_transmitter.\o_TX' using process `\uart_transmitter.$proc$./uart_transmitter.v:73$59'.
+  created $dff cell `$procdff$859' with positive edge clock.
+Creating register for signal `\uart_transmitter.\r_DATA_REG' using process `\uart_transmitter.$proc$./uart_transmitter.v:73$59'.
+  created $dff cell `$procdff$860' with positive edge clock.
+Creating register for signal `\uart_transmitter.\r_BIT_COUNT' using process `\uart_transmitter.$proc$./uart_transmitter.v:65$54'.
+  created $dff cell `$procdff$861' with positive edge clock.
+Creating register for signal `\uart_transmitter.\r_CURRENT_STATE' using process `\uart_transmitter.$proc$./uart_transmitter.v:51$51'.
+  created $dff cell `$procdff$862' with positive edge clock.
 
 2.3.9. Executing PROC_CLEAN pass (remove empty switches from decision trees).
-Removing empty process `uart_transmitter.$proc$./uart_transmitter.v:0$290'.
-Removing empty process `uart_transmitter.$proc$./uart_transmitter.v:0$288'.
-Removing empty process `uart_transmitter.$proc$./uart_transmitter.v:0$286'.
-Removing empty process `uart_transmitter.$proc$./uart_transmitter.v:0$284'.
-Removing empty process `uart_transmitter.$proc$./uart_transmitter.v:0$282'.
-Removing empty process `uart_transmitter.$proc$./uart_transmitter.v:0$280'.
-Removing empty process `uart_transmitter.$proc$./uart_transmitter.v:0$278'.
-Removing empty process `uart_transmitter.$proc$./uart_transmitter.v:0$276'.
-Removing empty process `uart_transmitter.$proc$./uart_transmitter.v:0$274'.
-Removing empty process `uart_transmitter.$proc$./uart_transmitter.v:0$272'.
-Removing empty process `uart_transmitter.$proc$./uart_transmitter.v:0$270'.
-Removing empty process `uart_transmitter.$proc$./uart_transmitter.v:0$268'.
-Removing empty process `uart_transmitter.$proc$./uart_transmitter.v:0$266'.
-Removing empty process `uart_transmitter.$proc$./uart_transmitter.v:0$264'.
-Removing empty process `uart_transmitter.$proc$./uart_transmitter.v:0$262'.
-Removing empty process `uart_transmitter.$proc$./uart_transmitter.v:0$260'.
-Removing empty process `uart_transmitter.$proc$./uart_transmitter.v:0$258'.
-Removing empty process `uart_transmitter.$proc$./uart_transmitter.v:0$256'.
-Removing empty process `uart_transmitter.$proc$./uart_transmitter.v:0$254'.
-Removing empty process `uart_transmitter.$proc$./uart_transmitter.v:0$252'.
-Removing empty process `uart_transmitter.$proc$./uart_transmitter.v:0$250'.
-Removing empty process `uart_transmitter.$proc$./uart_transmitter.v:0$248'.
-Removing empty process `uart_transmitter.$proc$./uart_transmitter.v:0$246'.
-Removing empty process `uart_transmitter.$proc$./uart_transmitter.v:0$244'.
-Removing empty process `uart_transmitter.$proc$./uart_transmitter.v:0$242'.
-Removing empty process `uart_transmitter.$proc$./uart_transmitter.v:0$240'.
-Removing empty process `uart_transmitter.$proc$./uart_transmitter.v:0$238'.
-Removing empty process `uart_transmitter.$proc$./uart_transmitter.v:0$236'.
-Removing empty process `uart_transmitter.$proc$./uart_transmitter.v:0$234'.
-Removing empty process `uart_transmitter.$proc$./uart_transmitter.v:105$233'.
-Removing empty process `uart_transmitter.$proc$./uart_transmitter.v:17$232'.
-Removing empty process `uart_transmitter.$proc$./uart_transmitter.v:16$231'.
-Found and cleaned up 16 empty switches in `\uart_transmitter.$proc$./uart_transmitter.v:106$62'.
-Removing empty process `uart_transmitter.$proc$./uart_transmitter.v:106$62'.
-Found and cleaned up 3 empty switches in `\uart_transmitter.$proc$./uart_transmitter.v:68$58'.
-Removing empty process `uart_transmitter.$proc$./uart_transmitter.v:68$58'.
-Found and cleaned up 1 empty switch in `\uart_transmitter.$proc$./uart_transmitter.v:60$53'.
-Removing empty process `uart_transmitter.$proc$./uart_transmitter.v:60$53'.
-Found and cleaned up 2 empty switches in `\uart_transmitter.$proc$./uart_transmitter.v:46$50'.
-Removing empty process `uart_transmitter.$proc$./uart_transmitter.v:46$50'.
-Found and cleaned up 3 empty switches in `\uart_transmitter.$proc$./uart_transmitter.v:21$47'.
-Removing empty process `uart_transmitter.$proc$./uart_transmitter.v:21$47'.
+Removing empty process `uart_transmitter.$proc$./uart_transmitter.v:0$291'.
+Removing empty process `uart_transmitter.$proc$./uart_transmitter.v:0$289'.
+Removing empty process `uart_transmitter.$proc$./uart_transmitter.v:0$287'.
+Removing empty process `uart_transmitter.$proc$./uart_transmitter.v:0$285'.
+Removing empty process `uart_transmitter.$proc$./uart_transmitter.v:0$283'.
+Removing empty process `uart_transmitter.$proc$./uart_transmitter.v:0$281'.
+Removing empty process `uart_transmitter.$proc$./uart_transmitter.v:0$279'.
+Removing empty process `uart_transmitter.$proc$./uart_transmitter.v:0$277'.
+Removing empty process `uart_transmitter.$proc$./uart_transmitter.v:0$275'.
+Removing empty process `uart_transmitter.$proc$./uart_transmitter.v:0$273'.
+Removing empty process `uart_transmitter.$proc$./uart_transmitter.v:0$271'.
+Removing empty process `uart_transmitter.$proc$./uart_transmitter.v:0$269'.
+Removing empty process `uart_transmitter.$proc$./uart_transmitter.v:0$267'.
+Removing empty process `uart_transmitter.$proc$./uart_transmitter.v:0$265'.
+Removing empty process `uart_transmitter.$proc$./uart_transmitter.v:0$263'.
+Removing empty process `uart_transmitter.$proc$./uart_transmitter.v:0$261'.
+Removing empty process `uart_transmitter.$proc$./uart_transmitter.v:0$259'.
+Removing empty process `uart_transmitter.$proc$./uart_transmitter.v:0$257'.
+Removing empty process `uart_transmitter.$proc$./uart_transmitter.v:0$255'.
+Removing empty process `uart_transmitter.$proc$./uart_transmitter.v:0$253'.
+Removing empty process `uart_transmitter.$proc$./uart_transmitter.v:0$251'.
+Removing empty process `uart_transmitter.$proc$./uart_transmitter.v:0$249'.
+Removing empty process `uart_transmitter.$proc$./uart_transmitter.v:0$247'.
+Removing empty process `uart_transmitter.$proc$./uart_transmitter.v:0$245'.
+Removing empty process `uart_transmitter.$proc$./uart_transmitter.v:0$243'.
+Removing empty process `uart_transmitter.$proc$./uart_transmitter.v:0$241'.
+Removing empty process `uart_transmitter.$proc$./uart_transmitter.v:0$239'.
+Removing empty process `uart_transmitter.$proc$./uart_transmitter.v:0$237'.
+Removing empty process `uart_transmitter.$proc$./uart_transmitter.v:0$235'.
+Removing empty process `uart_transmitter.$proc$./uart_transmitter.v:110$234'.
+Removing empty process `uart_transmitter.$proc$./uart_transmitter.v:0$233'.
+Found and cleaned up 16 empty switches in `\uart_transmitter.$proc$./uart_transmitter.v:111$63'.
+Removing empty process `uart_transmitter.$proc$./uart_transmitter.v:111$63'.
+Found and cleaned up 3 empty switches in `\uart_transmitter.$proc$./uart_transmitter.v:73$59'.
+Removing empty process `uart_transmitter.$proc$./uart_transmitter.v:73$59'.
+Found and cleaned up 1 empty switch in `\uart_transmitter.$proc$./uart_transmitter.v:65$54'.
+Removing empty process `uart_transmitter.$proc$./uart_transmitter.v:65$54'.
+Found and cleaned up 2 empty switches in `\uart_transmitter.$proc$./uart_transmitter.v:51$51'.
+Removing empty process `uart_transmitter.$proc$./uart_transmitter.v:51$51'.
+Found and cleaned up 3 empty switches in `\uart_transmitter.$proc$./uart_transmitter.v:26$48'.
+Removing empty process `uart_transmitter.$proc$./uart_transmitter.v:26$48'.
 Cleaned up 25 empty switches.
 
 2.4. Executing OPT_EXPR pass (perform const folding).
 Optimizing module uart_transmitter.
-<suppressed ~43 debug messages>
+<suppressed ~44 debug messages>
 
 2.5. Executing OPT_CLEAN pass (remove unused cells and wires).
 Finding unused cells or wires in module \uart_transmitter..
-Removed 1 unused cells and 336 unused wires.
+Removed 1 unused cells and 338 unused wires.
 <suppressed ~2 debug messages>
 
 2.6. Executing CHECK pass (checking for obvious problems).
@@ -464,37 +465,37 @@ Optimizing module uart_transmitter.
 
 2.7.2. Executing OPT_MERGE pass (detect identical cells).
 Finding identical cells in module `\uart_transmitter'.
-<suppressed ~138 debug messages>
-Removed a total of 46 cells.
+<suppressed ~135 debug messages>
+Removed a total of 45 cells.
 
 2.7.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
 Running muxtree optimizer on module \uart_transmitter..
   Creating internal representation of mux trees.
   Evaluating internal representation of mux trees.
   Analyzing evaluation results.
-    dead port 2/2 on $mux $procmux$761.
-    dead port 2/2 on $mux $procmux$769.
+    dead port 2/2 on $mux $procmux$766.
+    dead port 2/2 on $mux $procmux$774.
 Removed 2 multiplexer ports.
-<suppressed ~60 debug messages>
+<suppressed ~62 debug messages>
 
 2.7.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
   Optimizing cells in module \uart_transmitter.
-    New ctrl vector for $pmux cell $procmux$724: { $eq$./uart_transmitter.v:115$146_Y $eq$./uart_transmitter.v:166$181_Y $auto$opt_reduce.cc:134:opt_mux$858 }
-    New ctrl vector for $pmux cell $procmux$731: { $eq$./uart_transmitter.v:164$179_Y $eq$./uart_transmitter.v:166$181_Y $auto$opt_reduce.cc:134:opt_mux$860 }
-    New ctrl vector for $pmux cell $procmux$741: { $eq$./uart_transmitter.v:115$146_Y $auto$opt_reduce.cc:134:opt_mux$862 }
+    New ctrl vector for $pmux cell $procmux$729: { $eq$./uart_transmitter.v:120$147_Y $eq$./uart_transmitter.v:173$183_Y $auto$opt_reduce.cc:134:opt_mux$864 }
+    New ctrl vector for $pmux cell $procmux$736: { $eq$./uart_transmitter.v:171$181_Y $eq$./uart_transmitter.v:173$183_Y $auto$opt_reduce.cc:134:opt_mux$866 }
+    New ctrl vector for $pmux cell $procmux$746: { $eq$./uart_transmitter.v:120$147_Y $auto$opt_reduce.cc:134:opt_mux$868 }
   Optimizing cells in module \uart_transmitter.
 Performed a total of 3 changes.
 
 2.7.5. Executing OPT_MERGE pass (detect identical cells).
 Finding identical cells in module `\uart_transmitter'.
-<suppressed ~144 debug messages>
-Removed a total of 48 cells.
+<suppressed ~150 debug messages>
+Removed a total of 50 cells.
 
 2.7.6. Executing OPT_RMDFF pass (remove dff with constant values).
 
 2.7.7. Executing OPT_CLEAN pass (remove unused cells and wires).
 Finding unused cells or wires in module \uart_transmitter..
-Removed 0 unused cells and 96 unused wires.
+Removed 0 unused cells and 97 unused wires.
 <suppressed ~1 debug messages>
 
 2.7.8. Executing OPT_EXPR pass (perform const folding).
@@ -508,7 +509,7 @@ Running muxtree optimizer on module \uart_transmitter..
   Evaluating internal representation of mux trees.
   Analyzing evaluation results.
 Removed 0 multiplexer ports.
-<suppressed ~50 debug messages>
+<suppressed ~51 debug messages>
 
 2.7.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
   Optimizing cells in module \uart_transmitter.
@@ -529,22 +530,22 @@ Optimizing module uart_transmitter.
 2.7.16. Finished OPT passes. (There is nothing left to do.)
 
 2.8. Executing WREDUCE pass (reducing word size of cells).
-Removed top 31 bits (of 32) from port B of cell uart_transmitter.$and$./uart_transmitter.v:0$142 ($and).
-Removed top 31 bits (of 32) from port Y of cell uart_transmitter.$and$./uart_transmitter.v:0$142 ($and).
-Removed top 1 bits (of 2) from port B of cell uart_transmitter.$eq$./uart_transmitter.v:137$156 ($eq).
-Removed top 31 bits (of 32) from port B of cell uart_transmitter.$add$./uart_transmitter.v:150$165 ($add).
-Removed top 27 bits (of 32) from port Y of cell uart_transmitter.$add$./uart_transmitter.v:150$165 ($add).
-Removed top 27 bits (of 32) from port B of cell uart_transmitter.$eq$./uart_transmitter.v:150$166 ($eq).
-Removed top 1 bits (of 2) from port B of cell uart_transmitter.$eq$./uart_transmitter.v:161$174 ($eq).
-Removed top 1 bits (of 2) from port B of cell uart_transmitter.$eq$./uart_transmitter.v:164$179 ($eq).
-Removed top 31 bits (of 32) from port B of cell uart_transmitter.$and$./uart_transmitter.v:0$191 ($and).
-Removed top 31 bits (of 32) from port Y of cell uart_transmitter.$and$./uart_transmitter.v:0$191 ($and).
-Removed top 1 bits (of 2) from mux cell uart_transmitter.$procmux$759 ($mux).
-Removed top 1 bits (of 2) from mux cell uart_transmitter.$procmux$767 ($mux).
+Removed top 31 bits (of 32) from port B of cell uart_transmitter.$and$./uart_transmitter.v:0$143 ($and).
+Removed top 31 bits (of 32) from port Y of cell uart_transmitter.$and$./uart_transmitter.v:0$143 ($and).
+Removed top 1 bits (of 2) from port B of cell uart_transmitter.$eq$./uart_transmitter.v:144$158 ($eq).
+Removed top 31 bits (of 32) from port B of cell uart_transmitter.$add$./uart_transmitter.v:157$167 ($add).
+Removed top 27 bits (of 32) from port Y of cell uart_transmitter.$add$./uart_transmitter.v:157$167 ($add).
+Removed top 27 bits (of 32) from port B of cell uart_transmitter.$eq$./uart_transmitter.v:157$168 ($eq).
+Removed top 1 bits (of 2) from port B of cell uart_transmitter.$eq$./uart_transmitter.v:168$176 ($eq).
+Removed top 1 bits (of 2) from port B of cell uart_transmitter.$eq$./uart_transmitter.v:171$181 ($eq).
+Removed top 31 bits (of 32) from port B of cell uart_transmitter.$and$./uart_transmitter.v:0$193 ($and).
+Removed top 31 bits (of 32) from port Y of cell uart_transmitter.$and$./uart_transmitter.v:0$193 ($and).
+Removed top 1 bits (of 2) from mux cell uart_transmitter.$procmux$764 ($mux).
+Removed top 1 bits (of 2) from mux cell uart_transmitter.$procmux$772 ($mux).
 Removed top 1 bits (of 2) from wire uart_transmitter.$2\r_NEXT_STATE[1:0].
-Removed top 27 bits (of 32) from wire uart_transmitter.$add$./uart_transmitter.v:150$165_Y.
-Removed top 31 bits (of 32) from wire uart_transmitter.$and$./uart_transmitter.v:0$140_Y.
-Removed top 31 bits (of 32) from wire uart_transmitter.$and$./uart_transmitter.v:0$142_Y.
+Removed top 27 bits (of 32) from wire uart_transmitter.$add$./uart_transmitter.v:157$167_Y.
+Removed top 31 bits (of 32) from wire uart_transmitter.$and$./uart_transmitter.v:0$141_Y.
+Removed top 31 bits (of 32) from wire uart_transmitter.$and$./uart_transmitter.v:0$143_Y.
 
 2.9. Executing MEMORY_DFF pass (merging $dff cells to $memrd and $memwr).
 
@@ -578,23 +579,23 @@ Removed 0 unused cells and 2 unused wires.
 
 === uart_transmitter ===
 
-   Number of wires:                270
-   Number of wire bits:            327
+   Number of wires:                273
+   Number of wire bits:            330
    Number of public wires:          12
    Number of public wire bits:      31
    Number of memories:               0
    Number of memory bits:            0
    Number of processes:              0
-   Number of cells:                294
+   Number of cells:                297
      $add                            2
      $assert                        23
      $assume                         5
      $cover                          1
-     $dff                           59
-     $eq                            16
+     $dff                           60
+     $eq                            17
      $logic_and                      8
      $logic_not                      5
-     $mux                          162
+     $mux                          163
      $ne                             3
      $not                            3
      $pmux                           4
@@ -610,8 +611,8 @@ found and reported 0 problems.
 
 5. Executing OPT_CLEAN pass (remove unused cells and wires).
 Finding unused cells or wires in module \uart_transmitter..
-Removed 5 unused cells and 4 unused wires.
-<suppressed ~6 debug messages>
+Removed 6 unused cells and 5 unused wires.
+<suppressed ~7 debug messages>
 
 6. Executing SETUNDEF pass (replace undef values with defined constants).
 
@@ -625,7 +626,7 @@ Finding identical cells in module `\uart_transmitter'.
 Removed a total of 0 cells.
 
 7.3. Executing OPT_RMDFF pass (remove dff with constant values).
-Promoting init spec $formal$./uart_transmitter.v:177$44_EN = 1'0 to constant driver in module uart_transmitter.
+Promoting init spec $formal$./uart_transmitter.v:184$44_EN = 1'0 to constant driver in module uart_transmitter.
 Promoted 1 init specs to constant drivers.
 
 7.4. Executing OPT_CLEAN pass (remove unused cells and wires).
@@ -666,6 +667,6 @@ Module uart_transmitter directly or indirectly contains formal properties -> set
 10. Executing ILANG backend.
 Output filename: ../model/design.il
 
-End of script. Logfile hash: ca53d5293b, CPU: user 0.20s system 0.00s, MEM: 14.77 MB peak
+End of script. Logfile hash: 827a6998c9, CPU: user 0.27s system 0.01s, MEM: 14.75 MB peak
 Yosys 0.9+1706 (git sha1 c9555c9ade, g++ 9.3.0 -fPIC -Os)
 Time spent: 25% 8x opt_clean (0 sec), 19% 7x opt_expr (0 sec), ...

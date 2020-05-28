@@ -13,11 +13,16 @@ localparam s_START_TX 	= 2'd1;
 localparam s_TRANSMIT 	= 2'd2;
 localparam s_STOP_TX 	= 2'd3;
 
-reg [1:0] r_CURRENT_STATE = 0;
-reg [1:0] r_NEXT_STATE = 0;
+reg [1:0] r_CURRENT_STATE;
+reg [1:0] r_NEXT_STATE;
 reg [3:0] r_BIT_COUNT;
 reg [7:0] r_DATA_REG;
 
+initial 
+begin
+	r_CURRENT_STATE = 2'd0;
+	r_NEXT_STATE 	= 2'd0;
+end
 always@(*)
 begin
 	case(r_CURRENT_STATE)
@@ -86,7 +91,7 @@ begin
 			begin
 				r_DATA_REG <= r_DATA_REG >> 1'b1;
 				o_TX_BUSY <= 1'b1;
-				if(r_BIT_COUNT != 8)
+				if(r_BIT_COUNT != 4'd8)
 					o_TX <= r_DATA_REG[0];
 				else
 					o_TX <= 1'b1;
@@ -106,13 +111,15 @@ end
 	always@(posedge i_CLK)
 	begin
 		assume($changed(i_CLK));
-		assume(i_CLK_ENABLE == 1);
 		r_PAST_VALID <= 1;
 		if(r_PAST_VALID && $rose(i_CLK)) begin
 			//Check reset condition
 			if($past(i_RESET) == 1'b1)
 			begin
+				//Check independent reset effects
 				assert(r_CURRENT_STATE == s_IDLE);
+
+				//Check baud rate dependent reset conditions.
 				if($past(i_CLK_ENABLE == 1'b1))
 				begin
 					assert(o_TX == 1'b1);
@@ -122,7 +129,7 @@ end
 			end
 			else
 			begin
-				if($past(i_CLK_ENABLE == 1'b1))
+				if($past(i_CLK_ENABLE) == 1'b1)
 				begin
 					//cover transiton back to idle
 					cover(r_CURRENT_STATE == s_IDLE && $past(r_CURRENT_STATE == s_STOP_TX));
@@ -157,15 +164,15 @@ end
 					end
 
 					//Check transitions
-					if(i_TX_ENABLE == 1 && r_CURRENT_STATE == s_IDLE)
+					if(i_TX_ENABLE == 1'b1 && r_CURRENT_STATE == s_IDLE)
 						assert(r_NEXT_STATE == s_START_TX);
-					if(i_TX_ENABLE == 0 && r_CURRENT_STATE == s_IDLE)
+					if(i_TX_ENABLE == 1'b0 && r_CURRENT_STATE == s_IDLE)
 						assert(r_NEXT_STATE == s_IDLE);
 					if(r_CURRENT_STATE == s_START_TX)
 						assert(r_NEXT_STATE == s_TRANSMIT);
-					if(r_CURRENT_STATE == s_TRANSMIT && r_BIT_COUNT != 8)
+					if(r_CURRENT_STATE == s_TRANSMIT && r_BIT_COUNT != 4'd8)
 						assert(r_NEXT_STATE == s_TRANSMIT);
-					if(r_CURRENT_STATE == s_TRANSMIT && r_BIT_COUNT == 8)
+					if(r_CURRENT_STATE == s_TRANSMIT && r_BIT_COUNT == 4'd8)
 						assert(r_NEXT_STATE == s_STOP_TX);
 					if(r_CURRENT_STATE == s_STOP_TX)
 						assert(r_NEXT_STATE == s_IDLE);
@@ -175,6 +182,7 @@ end
 		//Prevent signals from changing in between rising edges
 		if(!$rose(i_CLK))
 		begin
+			assume($stable(i_CLK_ENABLE));
 			assume($stable(i_RESET));
 			assume($stable(i_TX_ENABLE));
 			assume($stable(i_DATA_IN));
