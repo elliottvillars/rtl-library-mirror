@@ -43,7 +43,7 @@ begin
 			if (r_Count == i_DIV_VALUE)
 				r_Count <= 32'b0;
 			else
-				r_Count <= r_Count + 1;
+				r_Count <= r_Count + 1'b1;
 		end
 		else
 		begin
@@ -72,7 +72,8 @@ begin
 end
 
 `ifdef FORMAL
-	reg r_PAST_VALID;
+	//FIXME:Not passing BMC
+	reg r_PAST_VALID = 0;
 	always@(posedge i_CLK)
 	begin
 		assume($changed(i_CLK));
@@ -82,17 +83,17 @@ end
 		begin
 			if($past(i_RESET) == 1 && $past(i_ENABLE) == 1)
 			begin
-				//assert(r_Count == 0);
-				//assert(o_ENABLE_OUT == 0);
+				assert(r_Count == 0);
+				assert(o_ENABLE_OUT == 0);
 			end
 			else
 			begin
 				if($past(i_ENABLE) == 0)
-					//assert(r_Count == 0);
+					assert(r_Count == 0);
 				if($past(r_Count) == $past(i_DIV_VALUE) && $past(i_ENABLE) == 1)
 					assert(o_ENABLE_OUT == 1'b1);
 				else
-					assert(o_ENABLE_OUT == 1'b1);
+					assert(o_ENABLE_OUT == 1'b0);
 			end
 		end
 		if(!$rose(i_CLK))

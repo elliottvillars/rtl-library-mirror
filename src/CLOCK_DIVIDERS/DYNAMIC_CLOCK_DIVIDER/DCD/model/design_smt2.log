@@ -31,28 +31,29 @@ Input filename: design.il
 
 === dynamic_clock_divider ===
 
-   Number of wires:                 63
-   Number of wire bits:            311
+   Number of wires:                 83
+   Number of wire bits:            331
    Number of public wires:           7
    Number of public wire bits:      69
    Number of memories:               0
    Number of memory bits:            0
    Number of processes:              0
-   Number of cells:                 65
+   Number of cells:                 88
      $add                            1
-     $anyseq                        10
-     $assert                         2
+     $anyseq                        15
+     $assert                         5
      $assume                         4
-     $dff                           12
+     $dff                           17
      $eq                             5
      $logic_and                      5
-     $logic_not                      1
-     $mux                           24
+     $logic_not                      2
+     $mux                           32
      $ne                             1
+     $not                            1
 
 3. Executing SMT2 backend.
 Creating SMT-LIBv2 representation of module dynamic_clock_divider.
 
-End of script. Logfile hash: 5c006edb83, CPU: user 0.01s system 0.00s, MEM: 12.65 MB peak
+End of script. Logfile hash: 4d0934f60b, CPU: user 0.01s system 0.00s, MEM: 12.66 MB peak
 Yosys 0.9+1706 (git sha1 c9555c9ade, g++ 9.3.0 -fPIC -Os)
-Time spent: 52% 2x write_smt2 (0 sec), 45% 2x read_ilang (0 sec), ...
+Time spent: 55% 2x write_smt2 (0 sec), 42% 2x read_ilang (0 sec), ...

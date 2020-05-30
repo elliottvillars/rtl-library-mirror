@@ -1,43 +1,163 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuites disabled="0" errors="0" failures="1" tests="1" time="0">
-<testsuite disabled="0" errors="0" failures="1" name="DCD" skipped="0" tests="1" time="0">
+<testsuites disabled="0" errors="0" failures="0" tests="1" time="2">
+<testsuite disabled="0" errors="0" failures="0" name="DCD" skipped="0" tests="1" time="2">
 <properties>
 <property name="os" value="posix"/>
 </properties>
-<testcase classname="DCD" name="default" status="FAIL" time="0">
-<failure message="FAIL" type="FAIL"/>
-<system-out>SBY 20:26:59 [DCD] Removing directory 'DCD'.
-SBY 20:26:59 [DCD] Copy 'dynamic_clock_divider.v' to 'DCD/src/dynamic_clock_divider.v'.
-SBY 20:26:59 [DCD] engine_0: smtbmc yices
-SBY 20:26:59 [DCD] base: starting process &quot;cd DCD/src; /nix/store/1c68z76k64ah0gf1nlfsgyyg643971a9-yosys-2020.03.24/bin/yosys -ql ../model/design.log ../model/design.ys&quot;
-SBY 20:26:59 [DCD] base: finished (returncode=0)
-SBY 20:26:59 [DCD] smt2: starting process &quot;cd DCD/model; /nix/store/1c68z76k64ah0gf1nlfsgyyg643971a9-yosys-2020.03.24/bin/yosys -ql design_smt2.log design_smt2.ys&quot;
-SBY 20:26:59 [DCD] smt2: finished (returncode=0)
-SBY 20:26:59 [DCD] engine_0.basecase: starting process &quot;cd DCD; /nix/store/1c68z76k64ah0gf1nlfsgyyg643971a9-yosys-2020.03.24/bin/yosys-smtbmc -s yices --presat --unroll --noprogress -t 64 --append 0 --dump-vcd engine_0/trace.vcd --dump-vlogtb engine_0/trace_tb.v --dump-smtc engine_0/trace.smtc model/design_smt2.smt2&quot;
-SBY 20:26:59 [DCD] engine_0.induction: starting process &quot;cd DCD; /nix/store/1c68z76k64ah0gf1nlfsgyyg643971a9-yosys-2020.03.24/bin/yosys-smtbmc -s yices --presat --unroll -i --noprogress -t 64 --append 0 --dump-vcd engine_0/trace_induct.vcd --dump-vlogtb engine_0/trace_induct_tb.v --dump-smtc engine_0/trace_induct.smtc model/design_smt2.smt2&quot;
-SBY 20:26:59 [DCD] engine_0.basecase: ##   0:00:00  Solver: yices
-SBY 20:26:59 [DCD] engine_0.induction: ##   0:00:00  Solver: yices
-SBY 20:26:59 [DCD] engine_0.basecase: ##   0:00:00  Checking assumptions in step 0..
-SBY 20:26:59 [DCD] engine_0.basecase: ##   0:00:00  Checking assertions in step 0..
-SBY 20:26:59 [DCD] engine_0.induction: ##   0:00:00  Trying induction in step 64..
-SBY 20:26:59 [DCD] engine_0.basecase: ##   0:00:00  Checking assumptions in step 1..
-SBY 20:26:59 [DCD] engine_0.basecase: ##   0:00:00  Checking assertions in step 1..
-SBY 20:26:59 [DCD] engine_0.induction: ##   0:00:00  Trying induction in step 63..
-SBY 20:26:59 [DCD] engine_0.basecase: ##   0:00:00  BMC failed!
-SBY 20:26:59 [DCD] engine_0.basecase: ##   0:00:00  Assert failed in dynamic_clock_divider: dynamic_clock_divider.v:94.9-95.34
-SBY 20:26:59 [DCD] engine_0.basecase: ##   0:00:00  Writing trace to VCD file: engine_0/trace.vcd
-SBY 20:26:59 [DCD] engine_0.basecase: ##   0:00:00  Writing trace to Verilog testbench: engine_0/trace_tb.v
-SBY 20:26:59 [DCD] engine_0.induction: ##   0:00:00  Trying induction in step 62..
-SBY 20:26:59 [DCD] engine_0.basecase: ##   0:00:00  Writing trace to constraints file: engine_0/trace.smtc
-SBY 20:26:59 [DCD] engine_0.basecase: ##   0:00:00  Status: failed
-SBY 20:26:59 [DCD] engine_0.induction: ##   0:00:00  Trying induction in step 61..
-SBY 20:26:59 [DCD] engine_0.induction: ##   0:00:00  Trying induction in step 60..
-SBY 20:26:59 [DCD] engine_0.basecase: finished (returncode=1)
-SBY 20:26:59 [DCD] engine_0: Status returned by engine for basecase: FAIL
-SBY 20:26:59 [DCD] engine_0.induction: terminating process
-SBY 20:26:59 [DCD] summary: Elapsed clock time [H:MM:SS (secs)]: 0:00:00 (0)
-SBY 20:26:59 [DCD] summary: Elapsed process time [H:MM:SS (secs)]: 0:00:00 (0)
-SBY 20:26:59 [DCD] summary: engine_0 (smtbmc yices) returned FAIL for basecase
-SBY 20:26:59 [DCD] summary: counterexample trace: DCD/engine_0/trace.vcd
-SBY 20:26:59 [DCD] DONE (FAIL, rc=2)
+<testcase classname="DCD" name="default" status="PASS" time="2">
+<system-out>SBY 15:18:31 [DCD] Removing directory 'DCD'.
+SBY 15:18:31 [DCD] Copy 'dynamic_clock_divider.v' to 'DCD/src/dynamic_clock_divider.v'.
+SBY 15:18:31 [DCD] engine_0: smtbmc yices
+SBY 15:18:31 [DCD] base: starting process &quot;cd DCD/src; /nix/store/1c68z76k64ah0gf1nlfsgyyg643971a9-yosys-2020.03.24/bin/yosys -ql ../model/design.log ../model/design.ys&quot;
+SBY 15:18:31 [DCD] base: finished (returncode=0)
+SBY 15:18:31 [DCD] smt2: starting process &quot;cd DCD/model; /nix/store/1c68z76k64ah0gf1nlfsgyyg643971a9-yosys-2020.03.24/bin/yosys -ql design_smt2.log design_smt2.ys&quot;
+SBY 15:18:31 [DCD] smt2: finished (returncode=0)
+SBY 15:18:31 [DCD] engine_0.basecase: starting process &quot;cd DCD; /nix/store/1c68z76k64ah0gf1nlfsgyyg643971a9-yosys-2020.03.24/bin/yosys-smtbmc -s yices --presat --unroll --noprogress -t 64 --append 0 --dump-vcd engine_0/trace.vcd --dump-vlogtb engine_0/trace_tb.v --dump-smtc engine_0/trace.smtc model/design_smt2.smt2&quot;
+SBY 15:18:31 [DCD] engine_0.induction: starting process &quot;cd DCD; /nix/store/1c68z76k64ah0gf1nlfsgyyg643971a9-yosys-2020.03.24/bin/yosys-smtbmc -s yices --presat --unroll -i --noprogress -t 64 --append 0 --dump-vcd engine_0/trace_induct.vcd --dump-vlogtb engine_0/trace_induct_tb.v --dump-smtc engine_0/trace_induct.smtc model/design_smt2.smt2&quot;
+SBY 15:18:31 [DCD] engine_0.induction: ##   0:00:00  Solver: yices
+SBY 15:18:31 [DCD] engine_0.basecase: ##   0:00:00  Solver: yices
+SBY 15:18:31 [DCD] engine_0.induction: ##   0:00:00  Trying induction in step 64..
+SBY 15:18:31 [DCD] engine_0.basecase: ##   0:00:00  Checking assumptions in step 0..
+SBY 15:18:31 [DCD] engine_0.basecase: ##   0:00:00  Checking assertions in step 0..
+SBY 15:18:31 [DCD] engine_0.induction: ##   0:00:00  Trying induction in step 63..
+SBY 15:18:31 [DCD] engine_0.basecase: ##   0:00:00  Checking assumptions in step 1..
+SBY 15:18:31 [DCD] engine_0.basecase: ##   0:00:00  Checking assertions in step 1..
+SBY 15:18:31 [DCD] engine_0.induction: ##   0:00:00  Trying induction in step 62..
+SBY 15:18:31 [DCD] engine_0.induction: ##   0:00:00  Temporal induction successful.
+SBY 15:18:31 [DCD] engine_0.induction: ##   0:00:00  Status: passed
+SBY 15:18:31 [DCD] engine_0.induction: finished (returncode=0)
+SBY 15:18:31 [DCD] engine_0: Status returned by engine for induction: pass
+SBY 15:18:31 [DCD] engine_0.basecase: ##   0:00:00  Checking assumptions in step 2..
+SBY 15:18:31 [DCD] engine_0.basecase: ##   0:00:00  Checking assertions in step 2..
+SBY 15:18:31 [DCD] engine_0.basecase: ##   0:00:00  Checking assumptions in step 3..
+SBY 15:18:31 [DCD] engine_0.basecase: ##   0:00:00  Checking assertions in step 3..
+SBY 15:18:31 [DCD] engine_0.basecase: ##   0:00:00  Checking assumptions in step 4..
+SBY 15:18:31 [DCD] engine_0.basecase: ##   0:00:00  Checking assertions in step 4..
+SBY 15:18:31 [DCD] engine_0.basecase: ##   0:00:00  Checking assumptions in step 5..
+SBY 15:18:31 [DCD] engine_0.basecase: ##   0:00:00  Checking assertions in step 5..
+SBY 15:18:31 [DCD] engine_0.basecase: ##   0:00:00  Checking assumptions in step 6..
+SBY 15:18:31 [DCD] engine_0.basecase: ##   0:00:00  Checking assertions in step 6..
+SBY 15:18:31 [DCD] engine_0.basecase: ##   0:00:00  Checking assumptions in step 7..
+SBY 15:18:31 [DCD] engine_0.basecase: ##   0:00:00  Checking assertions in step 7..
+SBY 15:18:31 [DCD] engine_0.basecase: ##   0:00:00  Checking assumptions in step 8..
+SBY 15:18:31 [DCD] engine_0.basecase: ##   0:00:00  Checking assertions in step 8..
+SBY 15:18:31 [DCD] engine_0.basecase: ##   0:00:00  Checking assumptions in step 9..
+SBY 15:18:31 [DCD] engine_0.basecase: ##   0:00:00  Checking assertions in step 9..
+SBY 15:18:31 [DCD] engine_0.basecase: ##   0:00:00  Checking assumptions in step 10..
+SBY 15:18:31 [DCD] engine_0.basecase: ##   0:00:00  Checking assertions in step 10..
+SBY 15:18:31 [DCD] engine_0.basecase: ##   0:00:00  Checking assumptions in step 11..
+SBY 15:18:31 [DCD] engine_0.basecase: ##   0:00:00  Checking assertions in step 11..
+SBY 15:18:31 [DCD] engine_0.basecase: ##   0:00:00  Checking assumptions in step 12..
+SBY 15:18:31 [DCD] engine_0.basecase: ##   0:00:00  Checking assertions in step 12..
+SBY 15:18:31 [DCD] engine_0.basecase: ##   0:00:00  Checking assumptions in step 13..
+SBY 15:18:31 [DCD] engine_0.basecase: ##   0:00:00  Checking assertions in step 13..
+SBY 15:18:31 [DCD] engine_0.basecase: ##   0:00:00  Checking assumptions in step 14..
+SBY 15:18:31 [DCD] engine_0.basecase: ##   0:00:00  Checking assertions in step 14..
+SBY 15:18:31 [DCD] engine_0.basecase: ##   0:00:00  Checking assumptions in step 15..
+SBY 15:18:31 [DCD] engine_0.basecase: ##   0:00:00  Checking assertions in step 15..
+SBY 15:18:32 [DCD] engine_0.basecase: ##   0:00:00  Checking assumptions in step 16..
+SBY 15:18:32 [DCD] engine_0.basecase: ##   0:00:00  Checking assertions in step 16..
+SBY 15:18:32 [DCD] engine_0.basecase: ##   0:00:00  Checking assumptions in step 17..
+SBY 15:18:32 [DCD] engine_0.basecase: ##   0:00:00  Checking assertions in step 17..
+SBY 15:18:32 [DCD] engine_0.basecase: ##   0:00:00  Checking assumptions in step 18..
+SBY 15:18:32 [DCD] engine_0.basecase: ##   0:00:00  Checking assertions in step 18..
+SBY 15:18:32 [DCD] engine_0.basecase: ##   0:00:00  Checking assumptions in step 19..
+SBY 15:18:32 [DCD] engine_0.basecase: ##   0:00:00  Checking assertions in step 19..
+SBY 15:18:32 [DCD] engine_0.basecase: ##   0:00:00  Checking assumptions in step 20..
+SBY 15:18:32 [DCD] engine_0.basecase: ##   0:00:00  Checking assertions in step 20..
+SBY 15:18:32 [DCD] engine_0.basecase: ##   0:00:00  Checking assumptions in step 21..
+SBY 15:18:32 [DCD] engine_0.basecase: ##   0:00:00  Checking assertions in step 21..
+SBY 15:18:32 [DCD] engine_0.basecase: ##   0:00:00  Checking assumptions in step 22..
+SBY 15:18:32 [DCD] engine_0.basecase: ##   0:00:00  Checking assertions in step 22..
+SBY 15:18:32 [DCD] engine_0.basecase: ##   0:00:00  Checking assumptions in step 23..
+SBY 15:18:32 [DCD] engine_0.basecase: ##   0:00:00  Checking assertions in step 23..
+SBY 15:18:32 [DCD] engine_0.basecase: ##   0:00:00  Checking assumptions in step 24..
+SBY 15:18:32 [DCD] engine_0.basecase: ##   0:00:00  Checking assertions in step 24..
+SBY 15:18:32 [DCD] engine_0.basecase: ##   0:00:00  Checking assumptions in step 25..
+SBY 15:18:32 [DCD] engine_0.basecase: ##   0:00:00  Checking assertions in step 25..
+SBY 15:18:32 [DCD] engine_0.basecase: ##   0:00:00  Checking assumptions in step 26..
+SBY 15:18:32 [DCD] engine_0.basecase: ##   0:00:00  Checking assertions in step 26..
+SBY 15:18:32 [DCD] engine_0.basecase: ##   0:00:00  Checking assumptions in step 27..
+SBY 15:18:32 [DCD] engine_0.basecase: ##   0:00:00  Checking assertions in step 27..
+SBY 15:18:32 [DCD] engine_0.basecase: ##   0:00:00  Checking assumptions in step 28..
+SBY 15:18:32 [DCD] engine_0.basecase: ##   0:00:00  Checking assertions in step 28..
+SBY 15:18:32 [DCD] engine_0.basecase: ##   0:00:00  Checking assumptions in step 29..
+SBY 15:18:32 [DCD] engine_0.basecase: ##   0:00:00  Checking assertions in step 29..
+SBY 15:18:32 [DCD] engine_0.basecase: ##   0:00:00  Checking assumptions in step 30..
+SBY 15:18:32 [DCD] engine_0.basecase: ##   0:00:00  Checking assertions in step 30..
+SBY 15:18:32 [DCD] engine_0.basecase: ##   0:00:01  Checking assumptions in step 31..
+SBY 15:18:32 [DCD] engine_0.basecase: ##   0:00:01  Checking assertions in step 31..
+SBY 15:18:32 [DCD] engine_0.basecase: ##   0:00:01  Checking assumptions in step 32..
+SBY 15:18:32 [DCD] engine_0.basecase: ##   0:00:01  Checking assertions in step 32..
+SBY 15:18:32 [DCD] engine_0.basecase: ##   0:00:01  Checking assumptions in step 33..
+SBY 15:18:32 [DCD] engine_0.basecase: ##   0:00:01  Checking assertions in step 33..
+SBY 15:18:32 [DCD] engine_0.basecase: ##   0:00:01  Checking assumptions in step 34..
+SBY 15:18:32 [DCD] engine_0.basecase: ##   0:00:01  Checking assertions in step 34..
+SBY 15:18:32 [DCD] engine_0.basecase: ##   0:00:01  Checking assumptions in step 35..
+SBY 15:18:32 [DCD] engine_0.basecase: ##   0:00:01  Checking assertions in step 35..
+SBY 15:18:32 [DCD] engine_0.basecase: ##   0:00:01  Checking assumptions in step 36..
+SBY 15:18:32 [DCD] engine_0.basecase: ##   0:00:01  Checking assertions in step 36..
+SBY 15:18:32 [DCD] engine_0.basecase: ##   0:00:01  Checking assumptions in step 37..
+SBY 15:18:32 [DCD] engine_0.basecase: ##   0:00:01  Checking assertions in step 37..
+SBY 15:18:32 [DCD] engine_0.basecase: ##   0:00:01  Checking assumptions in step 38..
+SBY 15:18:32 [DCD] engine_0.basecase: ##   0:00:01  Checking assertions in step 38..
+SBY 15:18:32 [DCD] engine_0.basecase: ##   0:00:01  Checking assumptions in step 39..
+SBY 15:18:32 [DCD] engine_0.basecase: ##   0:00:01  Checking assertions in step 39..
+SBY 15:18:32 [DCD] engine_0.basecase: ##   0:00:01  Checking assumptions in step 40..
+SBY 15:18:32 [DCD] engine_0.basecase: ##   0:00:01  Checking assertions in step 40..
+SBY 15:18:32 [DCD] engine_0.basecase: ##   0:00:01  Checking assumptions in step 41..
+SBY 15:18:32 [DCD] engine_0.basecase: ##   0:00:01  Checking assertions in step 41..
+SBY 15:18:32 [DCD] engine_0.basecase: ##   0:00:01  Checking assumptions in step 42..
+SBY 15:18:32 [DCD] engine_0.basecase: ##   0:00:01  Checking assertions in step 42..
+SBY 15:18:32 [DCD] engine_0.basecase: ##   0:00:01  Checking assumptions in step 43..
+SBY 15:18:32 [DCD] engine_0.basecase: ##   0:00:01  Checking assertions in step 43..
+SBY 15:18:33 [DCD] engine_0.basecase: ##   0:00:01  Checking assumptions in step 44..
+SBY 15:18:33 [DCD] engine_0.basecase: ##   0:00:01  Checking assertions in step 44..
+SBY 15:18:33 [DCD] engine_0.basecase: ##   0:00:01  Checking assumptions in step 45..
+SBY 15:18:33 [DCD] engine_0.basecase: ##   0:00:01  Checking assertions in step 45..
+SBY 15:18:33 [DCD] engine_0.basecase: ##   0:00:01  Checking assumptions in step 46..
+SBY 15:18:33 [DCD] engine_0.basecase: ##   0:00:01  Checking assertions in step 46..
+SBY 15:18:33 [DCD] engine_0.basecase: ##   0:00:01  Checking assumptions in step 47..
+SBY 15:18:33 [DCD] engine_0.basecase: ##   0:00:01  Checking assertions in step 47..
+SBY 15:18:33 [DCD] engine_0.basecase: ##   0:00:01  Checking assumptions in step 48..
+SBY 15:18:33 [DCD] engine_0.basecase: ##   0:00:01  Checking assertions in step 48..
+SBY 15:18:33 [DCD] engine_0.basecase: ##   0:00:01  Checking assumptions in step 49..
+SBY 15:18:33 [DCD] engine_0.basecase: ##   0:00:01  Checking assertions in step 49..
+SBY 15:18:33 [DCD] engine_0.basecase: ##   0:00:01  Checking assumptions in step 50..
+SBY 15:18:33 [DCD] engine_0.basecase: ##   0:00:01  Checking assertions in step 50..
+SBY 15:18:33 [DCD] engine_0.basecase: ##   0:00:01  Checking assumptions in step 51..
+SBY 15:18:33 [DCD] engine_0.basecase: ##   0:00:01  Checking assertions in step 51..
+SBY 15:18:33 [DCD] engine_0.basecase: ##   0:00:01  Checking assumptions in step 52..
+SBY 15:18:33 [DCD] engine_0.basecase: ##   0:00:01  Checking assertions in step 52..
+SBY 15:18:33 [DCD] engine_0.basecase: ##   0:00:01  Checking assumptions in step 53..
+SBY 15:18:33 [DCD] engine_0.basecase: ##   0:00:01  Checking assertions in step 53..
+SBY 15:18:33 [DCD] engine_0.basecase: ##   0:00:01  Checking assumptions in step 54..
+SBY 15:18:33 [DCD] engine_0.basecase: ##   0:00:01  Checking assertions in step 54..
+SBY 15:18:33 [DCD] engine_0.basecase: ##   0:00:01  Checking assumptions in step 55..
+SBY 15:18:33 [DCD] engine_0.basecase: ##   0:00:01  Checking assertions in step 55..
+SBY 15:18:33 [DCD] engine_0.basecase: ##   0:00:02  Checking assumptions in step 56..
+SBY 15:18:33 [DCD] engine_0.basecase: ##   0:00:02  Checking assertions in step 56..
+SBY 15:18:33 [DCD] engine_0.basecase: ##   0:00:02  Checking assumptions in step 57..
+SBY 15:18:33 [DCD] engine_0.basecase: ##   0:00:02  Checking assertions in step 57..
+SBY 15:18:33 [DCD] engine_0.basecase: ##   0:00:02  Checking assumptions in step 58..
+SBY 15:18:33 [DCD] engine_0.basecase: ##   0:00:02  Checking assertions in step 58..
+SBY 15:18:33 [DCD] engine_0.basecase: ##   0:00:02  Checking assumptions in step 59..
+SBY 15:18:33 [DCD] engine_0.basecase: ##   0:00:02  Checking assertions in step 59..
+SBY 15:18:33 [DCD] engine_0.basecase: ##   0:00:02  Checking assumptions in step 60..
+SBY 15:18:33 [DCD] engine_0.basecase: ##   0:00:02  Checking assertions in step 60..
+SBY 15:18:33 [DCD] engine_0.basecase: ##   0:00:02  Checking assumptions in step 61..
+SBY 15:18:33 [DCD] engine_0.basecase: ##   0:00:02  Checking assertions in step 61..
+SBY 15:18:33 [DCD] engine_0.basecase: ##   0:00:02  Checking assumptions in step 62..
+SBY 15:18:33 [DCD] engine_0.basecase: ##   0:00:02  Checking assertions in step 62..
+SBY 15:18:33 [DCD] engine_0.basecase: ##   0:00:02  Checking assumptions in step 63..
+SBY 15:18:33 [DCD] engine_0.basecase: ##   0:00:02  Checking assertions in step 63..
+SBY 15:18:33 [DCD] engine_0.basecase: ##   0:00:02  Status: passed
+SBY 15:18:33 [DCD] engine_0.basecase: finished (returncode=0)
+SBY 15:18:33 [DCD] engine_0: Status returned by engine for basecase: pass
+SBY 15:18:33 [DCD] summary: Elapsed clock time [H:MM:SS (secs)]: 0:00:02 (2)
+SBY 15:18:33 [DCD] summary: Elapsed process time [H:MM:SS (secs)]: 0:00:02 (2)
+SBY 15:18:33 [DCD] summary: engine_0 (smtbmc yices) returned pass for induction
+SBY 15:18:33 [DCD] summary: engine_0 (smtbmc yices) returned pass for basecase
+SBY 15:18:33 [DCD] summary: successful proof by k-induction.
+SBY 15:18:33 [DCD] DONE (PASS, rc=0)
 </system-out></testcase></testsuite></testsuites>

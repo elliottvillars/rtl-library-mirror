@@ -3,13 +3,5 @@
 ##   0:00:00  Trying induction in step 99..
 ##   0:00:00  Trying induction in step 98..
 ##   0:00:00  Trying induction in step 97..
-##   0:00:00  Trying induction in step 96..
-##   0:00:00  Trying induction in step 95..
-##   0:00:00  Trying induction in step 94..
-##   0:00:00  Trying induction in step 93..
-##   0:00:00  Trying induction in step 92..
-##   0:00:00  Trying induction in step 91..
-##   0:00:00  Trying induction in step 90..
-##   0:00:00  Trying induction in step 89..
 ##   0:00:00  Temporal induction successful.
 ##   0:00:00  Status: passed

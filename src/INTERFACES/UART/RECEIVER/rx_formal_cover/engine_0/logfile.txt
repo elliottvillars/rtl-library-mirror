@@ -11,7 +11,7 @@
 ##   0:00:00  Checking cover reachability in step 9..
 ##   0:00:00  Checking cover reachability in step 10..
 ##   0:00:00  Checking cover reachability in step 11..
-##   0:00:00  Reached cover statement at ./uart_receiver.v:104 in step 11.
+##   0:00:00  Reached cover statement at ./uart_receiver.v:139.28-142.76 in step 11.
 ##   0:00:00  Writing trace to VCD file: engine_0/trace0.vcd
 ##   0:00:00  Writing trace to Verilog testbench: engine_0/trace0_tb.v
 ##   0:00:00  Writing trace to constraints file: engine_0/trace0.smtc

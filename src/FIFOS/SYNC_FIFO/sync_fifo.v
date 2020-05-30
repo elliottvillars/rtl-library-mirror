@@ -12,13 +12,20 @@ module sync_fifo #(parameter p_ADDRESS_WIDTH = 2, parameter p_DATA_WIDTH = 8)(
 );
 
 //TODO: Implement almost flags
-reg [p_ADDRESS_WIDTH-1:0] r_WRITE_POINTER = 0;
-reg [p_ADDRESS_WIDTH-1:0] r_READ_POINTER = 0;
+reg [p_ADDRESS_WIDTH-1:0] r_WRITE_POINTER;
+reg [p_ADDRESS_WIDTH-1:0] r_READ_POINTER;
 reg [p_DATA_WIDTH-1:0] r_MEMORY [0:2**p_ADDRESS_WIDTH-1];
-reg [p_ADDRESS_WIDTH-1:0] r_QUANTITY = 0;
+reg [p_ADDRESS_WIDTH-1:0] r_QUANTITY;
 
-parameter p_ALMOST_FULL_FLAG  =  1;
-parameter p_ALMOST_EMPTY_FLAG =  1;
+parameter p_ALMOST_FULL_FLAG  = 1;
+parameter p_ALMOST_EMPTY_FLAG = 1;
+
+initial 
+begin
+	r_WRITE_POINTER = 0;
+	r_READ_POINTER 	= 0;
+	r_QUANTITY 	= 0;
+end
 
 always@(posedge i_CLK)
 begin

@@ -22,6 +22,8 @@ initial
 begin
 	r_CURRENT_STATE = 2'd0;
 	r_NEXT_STATE 	= 2'd0;
+	r_BIT_COUNT 	= 4'd0;
+	r_DATA_REG 	= 8'd0;
 end
 always@(*)
 begin
@@ -54,11 +56,7 @@ begin
 		r_CURRENT_STATE <= s_IDLE;
 	else
 	begin
-
-		if(i_CLK_ENABLE == 1'b1)
-			r_CURRENT_STATE <= r_NEXT_STATE;
-		else
-			r_CURRENT_STATE <= r_CURRENT_STATE;
+		r_CURRENT_STATE <= r_NEXT_STATE;
 	end
 end
 
