@@ -1,0 +1,543 @@
+
+ /----------------------------------------------------------------------------\
+ |                                                                            |
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |                                                                            |
+ |  Copyright (C) 2012 - 2020  Claire Wolf <claire@symbioticeda.com>          |
+ |                                                                            |
+ |  Permission to use, copy, modify, and/or distribute this software for any  |
+ |  purpose with or without fee is hereby granted, provided that the above    |
+ |  copyright notice and this permission notice appear in all copies.         |
+ |                                                                            |
+ |  THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES  |
+ |  WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF          |
+ |  MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR   |
+ |  ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES    |
+ |  WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN     |
+ |  ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF   |
+ |  OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.            |
+ |                                                                            |
+ \----------------------------------------------------------------------------/
+
+ Yosys 0.9+2406 (git sha1 a1785e988b, g++ 9.3.0 -fPIC -Os)
+
+
+-- Executing script file `../model/design.ys' --
+
+1. Executing Verilog-2005 frontend: ./popcount_4.v
+Parsing formal SystemVerilog input from `./popcount_4.v' to AST representation.
+Storing AST representation for module `$abstract\popcount_4'.
+Successfully finished Verilog frontend.
+
+2. Executing PREP pass.
+
+2.1. Executing HIERARCHY pass (managing design hierarchy).
+
+2.2. Executing AST frontend in derive mode using pre-parsed AST for module `\popcount_4'.
+Generating RTLIL representation for module `\popcount_4'.
+
+2.2.1. Analyzing design hierarchy..
+Top module:  \popcount_4
+
+2.2.2. Analyzing design hierarchy..
+Top module:  \popcount_4
+Removing unused module `$abstract\popcount_4'.
+Removed 1 unused modules.
+Module popcount_4 directly or indirectly contains formal properties -> setting "keep" attribute.
+
+2.3. Executing PROC pass (convert processes to netlists).
+
+2.3.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+2.3.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Marked 3 switch rules as full_case in process $proc$./popcount_4.v:51$33 in module popcount_4.
+Marked 1 switch rules as full_case in process $proc$./popcount_4.v:41$31 in module popcount_4.
+Marked 1 switch rules as full_case in process $proc$./popcount_4.v:10$30 in module popcount_4.
+Removed a total of 0 dead cases.
+
+2.3.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 3 redundant assignments.
+Promoted 33 assignments to connections.
+
+2.3.4. Executing PROC_INIT pass (extract init attributes).
+Found init rule in `\popcount_4.$proc$./popcount_4.v:0$205'.
+  Set init value: $formal$./popcount_4.v:132$29_EN = 1'0
+Found init rule in `\popcount_4.$proc$./popcount_4.v:0$203'.
+  Set init value: $formal$./popcount_4.v:131$28_EN = 1'0
+Found init rule in `\popcount_4.$proc$./popcount_4.v:0$201'.
+  Set init value: $formal$./popcount_4.v:124$27_EN = 1'0
+Found init rule in `\popcount_4.$proc$./popcount_4.v:0$199'.
+  Set init value: $formal$./popcount_4.v:120$26_EN = 1'0
+Found init rule in `\popcount_4.$proc$./popcount_4.v:0$197'.
+  Set init value: $formal$./popcount_4.v:116$25_EN = 1'0
+Found init rule in `\popcount_4.$proc$./popcount_4.v:0$195'.
+  Set init value: $formal$./popcount_4.v:112$24_EN = 1'0
+Found init rule in `\popcount_4.$proc$./popcount_4.v:0$193'.
+  Set init value: $formal$./popcount_4.v:108$23_EN = 1'0
+Found init rule in `\popcount_4.$proc$./popcount_4.v:0$191'.
+  Set init value: $formal$./popcount_4.v:104$22_EN = 1'0
+Found init rule in `\popcount_4.$proc$./popcount_4.v:0$189'.
+  Set init value: $formal$./popcount_4.v:100$21_EN = 1'0
+Found init rule in `\popcount_4.$proc$./popcount_4.v:0$187'.
+  Set init value: $formal$./popcount_4.v:96$20_EN = 1'0
+Found init rule in `\popcount_4.$proc$./popcount_4.v:0$185'.
+  Set init value: $formal$./popcount_4.v:92$19_EN = 1'0
+Found init rule in `\popcount_4.$proc$./popcount_4.v:0$183'.
+  Set init value: $formal$./popcount_4.v:88$18_EN = 1'0
+Found init rule in `\popcount_4.$proc$./popcount_4.v:0$181'.
+  Set init value: $formal$./popcount_4.v:84$17_EN = 1'0
+Found init rule in `\popcount_4.$proc$./popcount_4.v:0$179'.
+  Set init value: $formal$./popcount_4.v:80$16_EN = 1'0
+Found init rule in `\popcount_4.$proc$./popcount_4.v:0$177'.
+  Set init value: $formal$./popcount_4.v:76$15_EN = 1'0
+Found init rule in `\popcount_4.$proc$./popcount_4.v:0$175'.
+  Set init value: $formal$./popcount_4.v:72$14_EN = 1'0
+Found init rule in `\popcount_4.$proc$./popcount_4.v:0$173'.
+  Set init value: $formal$./popcount_4.v:68$13_EN = 1'0
+Found init rule in `\popcount_4.$proc$./popcount_4.v:0$171'.
+  Set init value: $formal$./popcount_4.v:64$12_EN = 1'0
+Found init rule in `\popcount_4.$proc$./popcount_4.v:0$169'.
+  Set init value: $formal$./popcount_4.v:59$11_EN = 1'0
+Found init rule in `\popcount_4.$proc$./popcount_4.v:0$167'.
+  Set init value: $formal$./popcount_4.v:57$10_EN = 1'0
+Found init rule in `\popcount_4.$proc$./popcount_4.v:0$165'.
+  Set init value: $formal$./popcount_4.v:52$9_EN = 1'0
+Found init rule in `\popcount_4.$proc$./popcount_4.v:50$164'.
+  Set init value: \r_PAST_VALID = 1'0
+
+2.3.5. Executing PROC_ARST pass (detect async resets in processes).
+
+2.3.6. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\popcount_4.$proc$./popcount_4.v:0$205'.
+Creating decoders for process `\popcount_4.$proc$./popcount_4.v:0$203'.
+Creating decoders for process `\popcount_4.$proc$./popcount_4.v:0$201'.
+Creating decoders for process `\popcount_4.$proc$./popcount_4.v:0$199'.
+Creating decoders for process `\popcount_4.$proc$./popcount_4.v:0$197'.
+Creating decoders for process `\popcount_4.$proc$./popcount_4.v:0$195'.
+Creating decoders for process `\popcount_4.$proc$./popcount_4.v:0$193'.
+Creating decoders for process `\popcount_4.$proc$./popcount_4.v:0$191'.
+Creating decoders for process `\popcount_4.$proc$./popcount_4.v:0$189'.
+Creating decoders for process `\popcount_4.$proc$./popcount_4.v:0$187'.
+Creating decoders for process `\popcount_4.$proc$./popcount_4.v:0$185'.
+Creating decoders for process `\popcount_4.$proc$./popcount_4.v:0$183'.
+Creating decoders for process `\popcount_4.$proc$./popcount_4.v:0$181'.
+Creating decoders for process `\popcount_4.$proc$./popcount_4.v:0$179'.
+Creating decoders for process `\popcount_4.$proc$./popcount_4.v:0$177'.
+Creating decoders for process `\popcount_4.$proc$./popcount_4.v:0$175'.
+Creating decoders for process `\popcount_4.$proc$./popcount_4.v:0$173'.
+Creating decoders for process `\popcount_4.$proc$./popcount_4.v:0$171'.
+Creating decoders for process `\popcount_4.$proc$./popcount_4.v:0$169'.
+Creating decoders for process `\popcount_4.$proc$./popcount_4.v:0$167'.
+Creating decoders for process `\popcount_4.$proc$./popcount_4.v:0$165'.
+Creating decoders for process `\popcount_4.$proc$./popcount_4.v:50$164'.
+Creating decoders for process `\popcount_4.$proc$./popcount_4.v:51$33'.
+     1/40: $0$formal$./popcount_4.v:57$10_EN[0:0]$45
+     2/40: $0$formal$./popcount_4.v:57$10_CHECK[0:0]$44
+     3/40: $0$formal$./popcount_4.v:59$11_EN[0:0]$47
+     4/40: $0$formal$./popcount_4.v:59$11_CHECK[0:0]$46
+     5/40: $0$formal$./popcount_4.v:64$12_EN[0:0]$49
+     6/40: $0$formal$./popcount_4.v:64$12_CHECK[0:0]$48
+     7/40: $0$formal$./popcount_4.v:68$13_EN[0:0]$51
+     8/40: $0$formal$./popcount_4.v:68$13_CHECK[0:0]$50
+     9/40: $0$formal$./popcount_4.v:72$14_EN[0:0]$53
+    10/40: $0$formal$./popcount_4.v:72$14_CHECK[0:0]$52
+    11/40: $0$formal$./popcount_4.v:76$15_EN[0:0]$55
+    12/40: $0$formal$./popcount_4.v:76$15_CHECK[0:0]$54
+    13/40: $0$formal$./popcount_4.v:80$16_EN[0:0]$57
+    14/40: $0$formal$./popcount_4.v:80$16_CHECK[0:0]$56
+    15/40: $0$formal$./popcount_4.v:84$17_EN[0:0]$59
+    16/40: $0$formal$./popcount_4.v:84$17_CHECK[0:0]$58
+    17/40: $0$formal$./popcount_4.v:88$18_EN[0:0]$61
+    18/40: $0$formal$./popcount_4.v:88$18_CHECK[0:0]$60
+    19/40: $0$formal$./popcount_4.v:92$19_EN[0:0]$63
+    20/40: $0$formal$./popcount_4.v:92$19_CHECK[0:0]$62
+    21/40: $0$formal$./popcount_4.v:96$20_EN[0:0]$65
+    22/40: $0$formal$./popcount_4.v:96$20_CHECK[0:0]$64
+    23/40: $0$formal$./popcount_4.v:100$21_EN[0:0]$67
+    24/40: $0$formal$./popcount_4.v:100$21_CHECK[0:0]$66
+    25/40: $0$formal$./popcount_4.v:104$22_EN[0:0]$69
+    26/40: $0$formal$./popcount_4.v:104$22_CHECK[0:0]$68
+    27/40: $0$formal$./popcount_4.v:108$23_EN[0:0]$71
+    28/40: $0$formal$./popcount_4.v:108$23_CHECK[0:0]$70
+    29/40: $0$formal$./popcount_4.v:112$24_EN[0:0]$73
+    30/40: $0$formal$./popcount_4.v:112$24_CHECK[0:0]$72
+    31/40: $0$formal$./popcount_4.v:116$25_EN[0:0]$75
+    32/40: $0$formal$./popcount_4.v:116$25_CHECK[0:0]$74
+    33/40: $0$formal$./popcount_4.v:120$26_EN[0:0]$77
+    34/40: $0$formal$./popcount_4.v:120$26_CHECK[0:0]$76
+    35/40: $0$formal$./popcount_4.v:124$27_EN[0:0]$79
+    36/40: $0$formal$./popcount_4.v:124$27_CHECK[0:0]$78
+    37/40: $0$formal$./popcount_4.v:131$28_EN[0:0]$81
+    38/40: $0$formal$./popcount_4.v:131$28_CHECK[0:0]$80
+    39/40: $0$formal$./popcount_4.v:132$29_EN[0:0]$83
+    40/40: $0$formal$./popcount_4.v:132$29_CHECK[0:0]$82
+Creating decoders for process `\popcount_4.$proc$./popcount_4.v:41$31'.
+     1/1: $0\o_BITCOUNT[2:0]
+Creating decoders for process `\popcount_4.$proc$./popcount_4.v:10$30'.
+     1/2: $0\r_INVERSE_POPCOUNT[2:0]
+     2/2: $0\r_POPCOUNT[2:0]
+
+2.3.7. Executing PROC_DLATCH pass (convert process syncs to latches).
+
+2.3.8. Executing PROC_DFF pass (convert process syncs to FFs).
+Creating register for signal `\popcount_4.\r_PAST_VALID' using process `\popcount_4.$proc$./popcount_4.v:51$33'.
+  created $dff cell `$procdff$658' with positive edge clock.
+Creating register for signal `\popcount_4.$past$./popcount_4.v:53$1$0' using process `\popcount_4.$proc$./popcount_4.v:51$33'.
+  created $dff cell `$procdff$659' with positive edge clock.
+Creating register for signal `\popcount_4.$past$./popcount_4.v:55$2$0' using process `\popcount_4.$proc$./popcount_4.v:51$33'.
+  created $dff cell `$procdff$660' with positive edge clock.
+Creating register for signal `\popcount_4.$past$./popcount_4.v:57$3$0' using process `\popcount_4.$proc$./popcount_4.v:51$33'.
+  created $dff cell `$procdff$661' with positive edge clock.
+Creating register for signal `\popcount_4.$past$./popcount_4.v:58$4$0' using process `\popcount_4.$proc$./popcount_4.v:51$33'.
+  created $dff cell `$procdff$662' with positive edge clock.
+Creating register for signal `\popcount_4.$past$./popcount_4.v:60$5$0' using process `\popcount_4.$proc$./popcount_4.v:51$33'.
+  created $dff cell `$procdff$663' with positive edge clock.
+Creating register for signal `\popcount_4.$past$./popcount_4.v:62$6$0' using process `\popcount_4.$proc$./popcount_4.v:51$33'.
+  created $dff cell `$procdff$664' with positive edge clock.
+Creating register for signal `\popcount_4.$past$./popcount_4.v:132$7$0' using process `\popcount_4.$proc$./popcount_4.v:51$33'.
+  created $dff cell `$procdff$665' with positive edge clock.
+Creating register for signal `\popcount_4.$past$./popcount_4.v:133$8$0' using process `\popcount_4.$proc$./popcount_4.v:51$33'.
+  created $dff cell `$procdff$666' with positive edge clock.
+Creating register for signal `\popcount_4.$formal$./popcount_4.v:52$9_CHECK' using process `\popcount_4.$proc$./popcount_4.v:51$33'.
+  created $dff cell `$procdff$667' with positive edge clock.
+Creating register for signal `\popcount_4.$formal$./popcount_4.v:52$9_EN' using process `\popcount_4.$proc$./popcount_4.v:51$33'.
+  created $dff cell `$procdff$668' with positive edge clock.
+Creating register for signal `\popcount_4.$formal$./popcount_4.v:57$10_CHECK' using process `\popcount_4.$proc$./popcount_4.v:51$33'.
+  created $dff cell `$procdff$669' with positive edge clock.
+Creating register for signal `\popcount_4.$formal$./popcount_4.v:57$10_EN' using process `\popcount_4.$proc$./popcount_4.v:51$33'.
+  created $dff cell `$procdff$670' with positive edge clock.
+Creating register for signal `\popcount_4.$formal$./popcount_4.v:59$11_CHECK' using process `\popcount_4.$proc$./popcount_4.v:51$33'.
+  created $dff cell `$procdff$671' with positive edge clock.
+Creating register for signal `\popcount_4.$formal$./popcount_4.v:59$11_EN' using process `\popcount_4.$proc$./popcount_4.v:51$33'.
+  created $dff cell `$procdff$672' with positive edge clock.
+Creating register for signal `\popcount_4.$formal$./popcount_4.v:64$12_CHECK' using process `\popcount_4.$proc$./popcount_4.v:51$33'.
+  created $dff cell `$procdff$673' with positive edge clock.
+Creating register for signal `\popcount_4.$formal$./popcount_4.v:64$12_EN' using process `\popcount_4.$proc$./popcount_4.v:51$33'.
+  created $dff cell `$procdff$674' with positive edge clock.
+Creating register for signal `\popcount_4.$formal$./popcount_4.v:68$13_CHECK' using process `\popcount_4.$proc$./popcount_4.v:51$33'.
+  created $dff cell `$procdff$675' with positive edge clock.
+Creating register for signal `\popcount_4.$formal$./popcount_4.v:68$13_EN' using process `\popcount_4.$proc$./popcount_4.v:51$33'.
+  created $dff cell `$procdff$676' with positive edge clock.
+Creating register for signal `\popcount_4.$formal$./popcount_4.v:72$14_CHECK' using process `\popcount_4.$proc$./popcount_4.v:51$33'.
+  created $dff cell `$procdff$677' with positive edge clock.
+Creating register for signal `\popcount_4.$formal$./popcount_4.v:72$14_EN' using process `\popcount_4.$proc$./popcount_4.v:51$33'.
+  created $dff cell `$procdff$678' with positive edge clock.
+Creating register for signal `\popcount_4.$formal$./popcount_4.v:76$15_CHECK' using process `\popcount_4.$proc$./popcount_4.v:51$33'.
+  created $dff cell `$procdff$679' with positive edge clock.
+Creating register for signal `\popcount_4.$formal$./popcount_4.v:76$15_EN' using process `\popcount_4.$proc$./popcount_4.v:51$33'.
+  created $dff cell `$procdff$680' with positive edge clock.
+Creating register for signal `\popcount_4.$formal$./popcount_4.v:80$16_CHECK' using process `\popcount_4.$proc$./popcount_4.v:51$33'.
+  created $dff cell `$procdff$681' with positive edge clock.
+Creating register for signal `\popcount_4.$formal$./popcount_4.v:80$16_EN' using process `\popcount_4.$proc$./popcount_4.v:51$33'.
+  created $dff cell `$procdff$682' with positive edge clock.
+Creating register for signal `\popcount_4.$formal$./popcount_4.v:84$17_CHECK' using process `\popcount_4.$proc$./popcount_4.v:51$33'.
+  created $dff cell `$procdff$683' with positive edge clock.
+Creating register for signal `\popcount_4.$formal$./popcount_4.v:84$17_EN' using process `\popcount_4.$proc$./popcount_4.v:51$33'.
+  created $dff cell `$procdff$684' with positive edge clock.
+Creating register for signal `\popcount_4.$formal$./popcount_4.v:88$18_CHECK' using process `\popcount_4.$proc$./popcount_4.v:51$33'.
+  created $dff cell `$procdff$685' with positive edge clock.
+Creating register for signal `\popcount_4.$formal$./popcount_4.v:88$18_EN' using process `\popcount_4.$proc$./popcount_4.v:51$33'.
+  created $dff cell `$procdff$686' with positive edge clock.
+Creating register for signal `\popcount_4.$formal$./popcount_4.v:92$19_CHECK' using process `\popcount_4.$proc$./popcount_4.v:51$33'.
+  created $dff cell `$procdff$687' with positive edge clock.
+Creating register for signal `\popcount_4.$formal$./popcount_4.v:92$19_EN' using process `\popcount_4.$proc$./popcount_4.v:51$33'.
+  created $dff cell `$procdff$688' with positive edge clock.
+Creating register for signal `\popcount_4.$formal$./popcount_4.v:96$20_CHECK' using process `\popcount_4.$proc$./popcount_4.v:51$33'.
+  created $dff cell `$procdff$689' with positive edge clock.
+Creating register for signal `\popcount_4.$formal$./popcount_4.v:96$20_EN' using process `\popcount_4.$proc$./popcount_4.v:51$33'.
+  created $dff cell `$procdff$690' with positive edge clock.
+Creating register for signal `\popcount_4.$formal$./popcount_4.v:100$21_CHECK' using process `\popcount_4.$proc$./popcount_4.v:51$33'.
+  created $dff cell `$procdff$691' with positive edge clock.
+Creating register for signal `\popcount_4.$formal$./popcount_4.v:100$21_EN' using process `\popcount_4.$proc$./popcount_4.v:51$33'.
+  created $dff cell `$procdff$692' with positive edge clock.
+Creating register for signal `\popcount_4.$formal$./popcount_4.v:104$22_CHECK' using process `\popcount_4.$proc$./popcount_4.v:51$33'.
+  created $dff cell `$procdff$693' with positive edge clock.
+Creating register for signal `\popcount_4.$formal$./popcount_4.v:104$22_EN' using process `\popcount_4.$proc$./popcount_4.v:51$33'.
+  created $dff cell `$procdff$694' with positive edge clock.
+Creating register for signal `\popcount_4.$formal$./popcount_4.v:108$23_CHECK' using process `\popcount_4.$proc$./popcount_4.v:51$33'.
+  created $dff cell `$procdff$695' with positive edge clock.
+Creating register for signal `\popcount_4.$formal$./popcount_4.v:108$23_EN' using process `\popcount_4.$proc$./popcount_4.v:51$33'.
+  created $dff cell `$procdff$696' with positive edge clock.
+Creating register for signal `\popcount_4.$formal$./popcount_4.v:112$24_CHECK' using process `\popcount_4.$proc$./popcount_4.v:51$33'.
+  created $dff cell `$procdff$697' with positive edge clock.
+Creating register for signal `\popcount_4.$formal$./popcount_4.v:112$24_EN' using process `\popcount_4.$proc$./popcount_4.v:51$33'.
+  created $dff cell `$procdff$698' with positive edge clock.
+Creating register for signal `\popcount_4.$formal$./popcount_4.v:116$25_CHECK' using process `\popcount_4.$proc$./popcount_4.v:51$33'.
+  created $dff cell `$procdff$699' with positive edge clock.
+Creating register for signal `\popcount_4.$formal$./popcount_4.v:116$25_EN' using process `\popcount_4.$proc$./popcount_4.v:51$33'.
+  created $dff cell `$procdff$700' with positive edge clock.
+Creating register for signal `\popcount_4.$formal$./popcount_4.v:120$26_CHECK' using process `\popcount_4.$proc$./popcount_4.v:51$33'.
+  created $dff cell `$procdff$701' with positive edge clock.
+Creating register for signal `\popcount_4.$formal$./popcount_4.v:120$26_EN' using process `\popcount_4.$proc$./popcount_4.v:51$33'.
+  created $dff cell `$procdff$702' with positive edge clock.
+Creating register for signal `\popcount_4.$formal$./popcount_4.v:124$27_CHECK' using process `\popcount_4.$proc$./popcount_4.v:51$33'.
+  created $dff cell `$procdff$703' with positive edge clock.
+Creating register for signal `\popcount_4.$formal$./popcount_4.v:124$27_EN' using process `\popcount_4.$proc$./popcount_4.v:51$33'.
+  created $dff cell `$procdff$704' with positive edge clock.
+Creating register for signal `\popcount_4.$formal$./popcount_4.v:131$28_CHECK' using process `\popcount_4.$proc$./popcount_4.v:51$33'.
+  created $dff cell `$procdff$705' with positive edge clock.
+Creating register for signal `\popcount_4.$formal$./popcount_4.v:131$28_EN' using process `\popcount_4.$proc$./popcount_4.v:51$33'.
+  created $dff cell `$procdff$706' with positive edge clock.
+Creating register for signal `\popcount_4.$formal$./popcount_4.v:132$29_CHECK' using process `\popcount_4.$proc$./popcount_4.v:51$33'.
+  created $dff cell `$procdff$707' with positive edge clock.
+Creating register for signal `\popcount_4.$formal$./popcount_4.v:132$29_EN' using process `\popcount_4.$proc$./popcount_4.v:51$33'.
+  created $dff cell `$procdff$708' with positive edge clock.
+Creating register for signal `\popcount_4.\o_BITCOUNT' using process `\popcount_4.$proc$./popcount_4.v:41$31'.
+  created $dff cell `$procdff$709' with positive edge clock.
+Creating register for signal `\popcount_4.\r_POPCOUNT' using process `\popcount_4.$proc$./popcount_4.v:10$30'.
+  created $dff cell `$procdff$710' with positive edge clock.
+Creating register for signal `\popcount_4.\r_INVERSE_POPCOUNT' using process `\popcount_4.$proc$./popcount_4.v:10$30'.
+  created $dff cell `$procdff$711' with positive edge clock.
+
+2.3.9. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Removing empty process `popcount_4.$proc$./popcount_4.v:0$205'.
+Removing empty process `popcount_4.$proc$./popcount_4.v:0$203'.
+Removing empty process `popcount_4.$proc$./popcount_4.v:0$201'.
+Removing empty process `popcount_4.$proc$./popcount_4.v:0$199'.
+Removing empty process `popcount_4.$proc$./popcount_4.v:0$197'.
+Removing empty process `popcount_4.$proc$./popcount_4.v:0$195'.
+Removing empty process `popcount_4.$proc$./popcount_4.v:0$193'.
+Removing empty process `popcount_4.$proc$./popcount_4.v:0$191'.
+Removing empty process `popcount_4.$proc$./popcount_4.v:0$189'.
+Removing empty process `popcount_4.$proc$./popcount_4.v:0$187'.
+Removing empty process `popcount_4.$proc$./popcount_4.v:0$185'.
+Removing empty process `popcount_4.$proc$./popcount_4.v:0$183'.
+Removing empty process `popcount_4.$proc$./popcount_4.v:0$181'.
+Removing empty process `popcount_4.$proc$./popcount_4.v:0$179'.
+Removing empty process `popcount_4.$proc$./popcount_4.v:0$177'.
+Removing empty process `popcount_4.$proc$./popcount_4.v:0$175'.
+Removing empty process `popcount_4.$proc$./popcount_4.v:0$173'.
+Removing empty process `popcount_4.$proc$./popcount_4.v:0$171'.
+Removing empty process `popcount_4.$proc$./popcount_4.v:0$169'.
+Removing empty process `popcount_4.$proc$./popcount_4.v:0$167'.
+Removing empty process `popcount_4.$proc$./popcount_4.v:0$165'.
+Removing empty process `popcount_4.$proc$./popcount_4.v:50$164'.
+Found and cleaned up 3 empty switches in `\popcount_4.$proc$./popcount_4.v:51$33'.
+Removing empty process `popcount_4.$proc$./popcount_4.v:51$33'.
+Found and cleaned up 1 empty switch in `\popcount_4.$proc$./popcount_4.v:41$31'.
+Removing empty process `popcount_4.$proc$./popcount_4.v:41$31'.
+Found and cleaned up 1 empty switch in `\popcount_4.$proc$./popcount_4.v:10$30'.
+Removing empty process `popcount_4.$proc$./popcount_4.v:10$30'.
+Cleaned up 5 empty switches.
+
+2.4. Executing OPT_EXPR pass (perform const folding).
+Optimizing module popcount_4.
+<suppressed ~8 debug messages>
+
+2.5. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \popcount_4..
+Removed 0 unused cells and 123 unused wires.
+<suppressed ~1 debug messages>
+
+2.6. Executing CHECK pass (checking for obvious problems).
+checking module popcount_4..
+found and reported 0 problems.
+
+2.7. Executing OPT pass (performing simple optimizations).
+
+2.7.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module popcount_4.
+
+2.7.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\popcount_4'.
+<suppressed ~216 debug messages>
+Removed a total of 72 cells.
+
+2.7.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \popcount_4..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~43 debug messages>
+
+2.7.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \popcount_4.
+Performed a total of 0 changes.
+
+2.7.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\popcount_4'.
+<suppressed ~6 debug messages>
+Removed a total of 2 cells.
+
+2.7.6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \popcount_4..
+Removed 0 unused cells and 63 unused wires.
+<suppressed ~1 debug messages>
+
+2.7.7. Executing OPT_EXPR pass (perform const folding).
+Optimizing module popcount_4.
+
+2.7.8. Rerunning OPT passes. (Maybe there is more to do..)
+
+2.7.9. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \popcount_4..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~42 debug messages>
+
+2.7.10. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \popcount_4.
+Performed a total of 0 changes.
+
+2.7.11. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\popcount_4'.
+Removed a total of 0 cells.
+
+2.7.12. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \popcount_4..
+
+2.7.13. Executing OPT_EXPR pass (perform const folding).
+Optimizing module popcount_4.
+
+2.7.14. Finished OPT passes. (There is nothing left to do.)
+
+2.8. Executing WREDUCE pass (reducing word size of cells).
+Removed top 31 bits (of 32) from port B of cell popcount_4.$and$./popcount_4.v:0$85 ($and).
+Removed top 31 bits (of 32) from port Y of cell popcount_4.$and$./popcount_4.v:0$85 ($and).
+Removed top 31 bits (of 32) from port B of cell popcount_4.$and$./popcount_4.v:0$87 ($and).
+Removed top 31 bits (of 32) from port Y of cell popcount_4.$and$./popcount_4.v:0$87 ($and).
+Removed top 2 bits (of 3) from port B of cell popcount_4.$eq$./popcount_4.v:69$96 ($eq).
+Removed top 1 bits (of 3) from port B of cell popcount_4.$eq$./popcount_4.v:69$97 ($eq).
+Removed top 1 bits (of 3) from port B of cell popcount_4.$eq$./popcount_4.v:101$120 ($eq).
+Removed top 1 bits (of 3) from port B of cell popcount_4.$eq$./popcount_4.v:101$121 ($eq).
+Removed top 1 bits (of 3) from port B of cell popcount_4.$eq$./popcount_4.v:109$126 ($eq).
+Removed top 2 bits (of 3) from port B of cell popcount_4.$eq$./popcount_4.v:109$127 ($eq).
+Removed top 3 bits (of 4) from port B of cell popcount_4.$procmux$287_CMP0 ($eq).
+Removed top 2 bits (of 4) from port B of cell popcount_4.$procmux$324_CMP0 ($eq).
+Removed top 2 bits (of 4) from port B of cell popcount_4.$procmux$359_CMP0 ($eq).
+Removed top 1 bits (of 4) from port B of cell popcount_4.$procmux$392_CMP0 ($eq).
+Removed top 1 bits (of 4) from port B of cell popcount_4.$procmux$423_CMP0 ($eq).
+Removed top 1 bits (of 4) from port B of cell popcount_4.$procmux$452_CMP0 ($eq).
+Removed top 1 bits (of 4) from port B of cell popcount_4.$procmux$479_CMP0 ($eq).
+Removed top 1 bits (of 4) from port B of cell popcount_4.$procmux$648_CMP0 ($eq).
+Removed top 2 bits (of 4) from port B of cell popcount_4.$procmux$649_CMP0 ($eq).
+Removed top 1 bits (of 4) from port B of cell popcount_4.$procmux$649_CMP1 ($eq).
+Removed top 1 bits (of 4) from port B of cell popcount_4.$procmux$649_CMP2 ($eq).
+Removed top 3 bits (of 4) from port B of cell popcount_4.$procmux$650_CMP0 ($eq).
+Removed top 2 bits (of 4) from port B of cell popcount_4.$procmux$650_CMP1 ($eq).
+Removed top 1 bits (of 4) from port B of cell popcount_4.$procmux$650_CMP2 ($eq).
+Removed top 31 bits (of 32) from wire popcount_4.$and$./popcount_4.v:0$85_Y.
+Removed top 31 bits (of 32) from wire popcount_4.$and$./popcount_4.v:0$87_Y.
+
+2.9. Executing MEMORY_DFF pass (merging $dff cells to $memrd and $memwr).
+
+2.10. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \popcount_4..
+Removed 0 unused cells and 2 unused wires.
+<suppressed ~1 debug messages>
+
+2.11. Executing MEMORY_COLLECT pass (generating $mem cells).
+
+2.12. Executing OPT pass (performing simple optimizations).
+
+2.12.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module popcount_4.
+<suppressed ~2 debug messages>
+
+2.12.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\popcount_4'.
+Removed a total of 0 cells.
+
+2.12.3. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \popcount_4..
+Removed 0 unused cells and 2 unused wires.
+<suppressed ~1 debug messages>
+
+2.12.4. Finished fast OPT passes.
+
+2.13. Printing statistics.
+
+=== popcount_4 ===
+
+   Number of wires:                177
+   Number of wire bits:            210
+   Number of public wires:           7
+   Number of public wire bits:      16
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                206
+     $assert                        18
+     $assume                         3
+     $dff                           49
+     $eq                            42
+     $logic_and                      7
+     $logic_not                      5
+     $mux                           76
+     $ne                             1
+     $pmux                           2
+     $reduce_or                      3
+
+2.14. Executing CHECK pass (checking for obvious problems).
+checking module popcount_4..
+found and reported 0 problems.
+
+3. Executing MEMORY_NORDFF pass (extracting $dff cells from $mem).
+
+4. Executing ASYNC2SYNC pass.
+
+5. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \popcount_4..
+Removed 4 unused cells and 3 unused wires.
+<suppressed ~5 debug messages>
+
+6. Executing SETUNDEF pass (replace undef values with defined constants).
+
+7. Executing OPT pass (performing simple optimizations).
+
+7.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module popcount_4.
+
+7.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\popcount_4'.
+Removed a total of 0 cells.
+
+7.3. Executing OPT_RMDFF pass (remove dff with constant values).
+Promoting init spec $formal$./popcount_4.v:131$28_EN = 1'0 to constant driver in module popcount_4.
+Promoted 1 init specs to constant drivers.
+
+7.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \popcount_4..
+Removed 0 unused cells and 1 unused wires.
+<suppressed ~1 debug messages>
+
+7.5. Rerunning OPT passes. (Removed registers in this run.)
+
+7.6. Executing OPT_EXPR pass (perform const folding).
+Optimizing module popcount_4.
+
+7.7. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\popcount_4'.
+Removed a total of 0 cells.
+
+7.8. Executing OPT_RMDFF pass (remove dff with constant values).
+
+7.9. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \popcount_4..
+
+7.10. Finished fast OPT passes.
+
+8. Executing CHECK pass (checking for obvious problems).
+checking module popcount_4..
+found and reported 0 problems.
+
+9. Executing HIERARCHY pass (managing design hierarchy).
+
+9.1. Analyzing design hierarchy..
+Top module:  \popcount_4
+
+9.2. Analyzing design hierarchy..
+Top module:  \popcount_4
+Removed 0 unused modules.
+Module popcount_4 directly or indirectly contains formal properties -> setting "keep" attribute.
+
+10. Executing ILANG backend.
+Output filename: ../model/design.il
+
+End of script. Logfile hash: 8c71299d19, CPU: user 0.13s system 0.01s, MEM: 14.19 MB peak
+Yosys 0.9+2406 (git sha1 a1785e988b, g++ 9.3.0 -fPIC -Os)
+Time spent: 26% 8x opt_clean (0 sec), 15% 6x opt_merge (0 sec), ...

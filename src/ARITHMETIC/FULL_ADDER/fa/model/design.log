@@ -1,0 +1,264 @@
+
+ /----------------------------------------------------------------------------\
+ |                                                                            |
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |                                                                            |
+ |  Copyright (C) 2012 - 2020  Claire Wolf <claire@symbioticeda.com>          |
+ |                                                                            |
+ |  Permission to use, copy, modify, and/or distribute this software for any  |
+ |  purpose with or without fee is hereby granted, provided that the above    |
+ |  copyright notice and this permission notice appear in all copies.         |
+ |                                                                            |
+ |  THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES  |
+ |  WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF          |
+ |  MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR   |
+ |  ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES    |
+ |  WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN     |
+ |  ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF   |
+ |  OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.            |
+ |                                                                            |
+ \----------------------------------------------------------------------------/
+
+ Yosys 0.9+2406 (git sha1 a1785e988b, g++ 9.3.0 -fPIC -Os)
+
+
+-- Executing script file `../model/design.ys' --
+
+1. Executing Verilog-2005 frontend: ./full_adder.v
+Parsing formal SystemVerilog input from `./full_adder.v' to AST representation.
+Storing AST representation for module `$abstract\full_adder'.
+Successfully finished Verilog frontend.
+
+2. Executing PREP pass.
+
+2.1. Executing HIERARCHY pass (managing design hierarchy).
+
+2.2. Executing AST frontend in derive mode using pre-parsed AST for module `\full_adder'.
+Generating RTLIL representation for module `\full_adder'.
+
+2.2.1. Analyzing design hierarchy..
+Top module:  \full_adder
+
+2.2.2. Analyzing design hierarchy..
+Top module:  \full_adder
+Removing unused module `$abstract\full_adder'.
+Removed 1 unused modules.
+Module full_adder directly or indirectly contains formal properties -> setting "keep" attribute.
+
+2.3. Executing PROC pass (convert processes to netlists).
+
+2.3.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+2.3.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Marked 2 switch rules as full_case in process $proc$./full_adder.v:19$12 in module full_adder.
+Removed a total of 0 dead cases.
+
+2.3.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 0 redundant assignments.
+Promoted 2 assignments to connections.
+
+2.3.4. Executing PROC_INIT pass (extract init attributes).
+
+2.3.5. Executing PROC_ARST pass (detect async resets in processes).
+
+2.3.6. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\full_adder.$proc$./full_adder.v:19$12'.
+     1/8: $0$formal$./full_adder.v:21$1_EN[0:0]$14
+     2/8: $0$formal$./full_adder.v:21$1_CHECK[0:0]$13
+     3/8: $0$formal$./full_adder.v:23$2_EN[0:0]$16
+     4/8: $0$formal$./full_adder.v:23$2_CHECK[0:0]$15
+     5/8: $0$formal$./full_adder.v:25$3_EN[0:0]$18
+     6/8: $0$formal$./full_adder.v:25$3_CHECK[0:0]$17
+     7/8: $0$formal$./full_adder.v:27$4_EN[0:0]$20
+     8/8: $0$formal$./full_adder.v:27$4_CHECK[0:0]$19
+Creating decoders for process `\full_adder.$proc$./full_adder.v:9$5'.
+
+2.3.7. Executing PROC_DLATCH pass (convert process syncs to latches).
+No latch inferred for signal `\full_adder.$formal$./full_adder.v:21$1_CHECK' from process `\full_adder.$proc$./full_adder.v:19$12'.
+No latch inferred for signal `\full_adder.$formal$./full_adder.v:21$1_EN' from process `\full_adder.$proc$./full_adder.v:19$12'.
+No latch inferred for signal `\full_adder.$formal$./full_adder.v:23$2_CHECK' from process `\full_adder.$proc$./full_adder.v:19$12'.
+No latch inferred for signal `\full_adder.$formal$./full_adder.v:23$2_EN' from process `\full_adder.$proc$./full_adder.v:19$12'.
+No latch inferred for signal `\full_adder.$formal$./full_adder.v:25$3_CHECK' from process `\full_adder.$proc$./full_adder.v:19$12'.
+No latch inferred for signal `\full_adder.$formal$./full_adder.v:25$3_EN' from process `\full_adder.$proc$./full_adder.v:19$12'.
+No latch inferred for signal `\full_adder.$formal$./full_adder.v:27$4_CHECK' from process `\full_adder.$proc$./full_adder.v:19$12'.
+No latch inferred for signal `\full_adder.$formal$./full_adder.v:27$4_EN' from process `\full_adder.$proc$./full_adder.v:19$12'.
+No latch inferred for signal `\full_adder.\o_S' from process `\full_adder.$proc$./full_adder.v:9$5'.
+No latch inferred for signal `\full_adder.\o_Cout' from process `\full_adder.$proc$./full_adder.v:9$5'.
+
+2.3.8. Executing PROC_DFF pass (convert process syncs to FFs).
+
+2.3.9. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Found and cleaned up 2 empty switches in `\full_adder.$proc$./full_adder.v:19$12'.
+Removing empty process `full_adder.$proc$./full_adder.v:19$12'.
+Removing empty process `full_adder.$proc$./full_adder.v:9$5'.
+Cleaned up 2 empty switches.
+
+2.4. Executing OPT_EXPR pass (perform const folding).
+Optimizing module full_adder.
+
+2.5. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \full_adder..
+Removed 0 unused cells and 28 unused wires.
+<suppressed ~1 debug messages>
+
+2.6. Executing CHECK pass (checking for obvious problems).
+checking module full_adder..
+found and reported 0 problems.
+
+2.7. Executing OPT pass (performing simple optimizations).
+
+2.7.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module full_adder.
+
+2.7.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\full_adder'.
+<suppressed ~6 debug messages>
+Removed a total of 2 cells.
+
+2.7.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \full_adder..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~8 debug messages>
+
+2.7.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \full_adder.
+Performed a total of 0 changes.
+
+2.7.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\full_adder'.
+Removed a total of 0 cells.
+
+2.7.6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \full_adder..
+Removed 0 unused cells and 2 unused wires.
+<suppressed ~1 debug messages>
+
+2.7.7. Executing OPT_EXPR pass (perform const folding).
+Optimizing module full_adder.
+
+2.7.8. Rerunning OPT passes. (Maybe there is more to do..)
+
+2.7.9. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \full_adder..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~8 debug messages>
+
+2.7.10. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \full_adder.
+Performed a total of 0 changes.
+
+2.7.11. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\full_adder'.
+Removed a total of 0 cells.
+
+2.7.12. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \full_adder..
+
+2.7.13. Executing OPT_EXPR pass (perform const folding).
+Optimizing module full_adder.
+
+2.7.14. Finished OPT passes. (There is nothing left to do.)
+
+2.8. Executing WREDUCE pass (reducing word size of cells).
+Removed top 2 bits (of 3) from port B of cell full_adder.$eq$./full_adder.v:21$21 ($eq).
+Removed top 1 bits (of 3) from port B of cell full_adder.$eq$./full_adder.v:21$22 ($eq).
+Removed top 1 bits (of 3) from port B of cell full_adder.$eq$./full_adder.v:25$32 ($eq).
+
+2.9. Executing MEMORY_DFF pass (merging $dff cells to $memrd and $memwr).
+
+2.10. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \full_adder..
+
+2.11. Executing MEMORY_COLLECT pass (generating $mem cells).
+
+2.12. Executing OPT pass (performing simple optimizations).
+
+2.12.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module full_adder.
+
+2.12.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\full_adder'.
+Removed a total of 0 cells.
+
+2.12.3. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \full_adder..
+
+2.12.4. Finished fast OPT passes.
+
+2.13. Printing statistics.
+
+=== full_adder ===
+
+   Number of wires:                 32
+   Number of wire bits:             34
+   Number of public wires:           6
+   Number of public wire bits:       8
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 32
+     $and                            2
+     $assert                         4
+     $eq                             7
+     $logic_or                       6
+     $mux                            8
+     $not                            2
+     $or                             1
+     $xor                            2
+
+2.14. Executing CHECK pass (checking for obvious problems).
+checking module full_adder..
+found and reported 0 problems.
+
+3. Executing MEMORY_NORDFF pass (extracting $dff cells from $mem).
+
+4. Executing ASYNC2SYNC pass.
+
+5. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \full_adder..
+
+6. Executing SETUNDEF pass (replace undef values with defined constants).
+
+7. Executing OPT pass (performing simple optimizations).
+
+7.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module full_adder.
+
+7.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\full_adder'.
+Removed a total of 0 cells.
+
+7.3. Executing OPT_RMDFF pass (remove dff with constant values).
+
+7.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \full_adder..
+
+7.5. Finished fast OPT passes.
+
+8. Executing CHECK pass (checking for obvious problems).
+checking module full_adder..
+found and reported 0 problems.
+
+9. Executing HIERARCHY pass (managing design hierarchy).
+
+9.1. Analyzing design hierarchy..
+Top module:  \full_adder
+
+9.2. Analyzing design hierarchy..
+Top module:  \full_adder
+Removed 0 unused modules.
+Module full_adder directly or indirectly contains formal properties -> setting "keep" attribute.
+
+10. Executing ILANG backend.
+Output filename: ../model/design.il
+
+End of script. Logfile hash: 1947f9788e, CPU: user 0.03s system 0.01s, MEM: 13.05 MB peak
+Yosys 0.9+2406 (git sha1 a1785e988b, g++ 9.3.0 -fPIC -Os)
+Time spent: 25% 7x opt_clean (0 sec), 20% 6x opt_expr (0 sec), ...

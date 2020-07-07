@@ -1,0 +1,103 @@
+SBY 20:27:14 [fa] Removing directory 'fa'.
+SBY 20:27:14 [fa] Copy './full_adder.v' to 'fa/src/full_adder.v'.
+SBY 20:27:14 [fa] engine_0: smtbmc yices
+SBY 20:27:14 [fa] engine_1: smtbmc z3
+SBY 20:27:14 [fa] base: starting process "cd fa/src; /nix/store/2f796byhvz4rjzawa7g7xsvqb8g0il1s-yosys-2020.06.11/bin/yosys -ql ../model/design.log ../model/design.ys"
+SBY 20:27:14 [fa] base: finished (returncode=0)
+SBY 20:27:14 [fa] smt2: starting process "cd fa/model; /nix/store/2f796byhvz4rjzawa7g7xsvqb8g0il1s-yosys-2020.06.11/bin/yosys -ql design_smt2.log design_smt2.ys"
+SBY 20:27:14 [fa] smt2: finished (returncode=0)
+SBY 20:27:14 [fa] engine_0.basecase: starting process "cd fa; /nix/store/2f796byhvz4rjzawa7g7xsvqb8g0il1s-yosys-2020.06.11/bin/yosys-smtbmc -s yices --presat --unroll --noprogress -t 25 --append 0 --dump-vcd engine_0/trace.vcd --dump-vlogtb engine_0/trace_tb.v --dump-smtc engine_0/trace.smtc model/design_smt2.smt2"
+SBY 20:27:14 [fa] engine_0.induction: starting process "cd fa; /nix/store/2f796byhvz4rjzawa7g7xsvqb8g0il1s-yosys-2020.06.11/bin/yosys-smtbmc -s yices --presat --unroll -i --noprogress -t 25 --append 0 --dump-vcd engine_0/trace_induct.vcd --dump-vlogtb engine_0/trace_induct_tb.v --dump-smtc engine_0/trace_induct.smtc model/design_smt2.smt2"
+SBY 20:27:14 [fa] engine_1.basecase: starting process "cd fa; /nix/store/2f796byhvz4rjzawa7g7xsvqb8g0il1s-yosys-2020.06.11/bin/yosys-smtbmc -s z3 --presat --noprogress -t 25 --append 0 --dump-vcd engine_1/trace.vcd --dump-vlogtb engine_1/trace_tb.v --dump-smtc engine_1/trace.smtc model/design_smt2.smt2"
+SBY 20:27:14 [fa] engine_1.induction: starting process "cd fa; /nix/store/2f796byhvz4rjzawa7g7xsvqb8g0il1s-yosys-2020.06.11/bin/yosys-smtbmc -s z3 --presat -i --noprogress -t 25 --append 0 --dump-vcd engine_1/trace_induct.vcd --dump-vlogtb engine_1/trace_induct_tb.v --dump-smtc engine_1/trace_induct.smtc model/design_smt2.smt2"
+SBY 20:27:15 [fa] engine_0.basecase: ##   0:00:00  Solver: yices
+SBY 20:27:15 [fa] engine_0.induction: ##   0:00:00  Solver: yices
+SBY 20:27:15 [fa] engine_1.basecase: ##   0:00:00  Solver: z3
+SBY 20:27:15 [fa] engine_1.induction: ##   0:00:00  Solver: z3
+SBY 20:27:15 [fa] engine_1.basecase: ##   0:00:00  Checking assumptions in step 0..
+SBY 20:27:15 [fa] engine_1.induction: ##   0:00:00  Trying induction in step 25..
+SBY 20:27:15 [fa] engine_1.basecase: ##   0:00:00  Checking assertions in step 0..
+SBY 20:27:15 [fa] engine_0.basecase: ##   0:00:00  Checking assumptions in step 0..
+SBY 20:27:15 [fa] engine_0.basecase: ##   0:00:00  Checking assertions in step 0..
+SBY 20:27:15 [fa] engine_1.basecase: ##   0:00:00  Checking assumptions in step 1..
+SBY 20:27:15 [fa] engine_1.basecase: ##   0:00:00  Checking assertions in step 1..
+SBY 20:27:15 [fa] engine_1.basecase: ##   0:00:00  Checking assumptions in step 2..
+SBY 20:27:15 [fa] engine_1.basecase: ##   0:00:00  Checking assertions in step 2..
+SBY 20:27:15 [fa] engine_1.induction: ##   0:00:00  Temporal induction successful.
+SBY 20:27:15 [fa] engine_0.induction: ##   0:00:00  Trying induction in step 25..
+SBY 20:27:15 [fa] engine_0.induction: ##   0:00:00  Temporal induction successful.
+SBY 20:27:15 [fa] engine_1.induction: ##   0:00:00  Status: passed
+SBY 20:27:15 [fa] engine_1.basecase: ##   0:00:00  Checking assumptions in step 3..
+SBY 20:27:15 [fa] engine_0.induction: ##   0:00:00  Status: passed
+SBY 20:27:15 [fa] engine_1.basecase: ##   0:00:00  Checking assertions in step 3..
+SBY 20:27:15 [fa] engine_1.basecase: ##   0:00:00  Checking assumptions in step 4..
+SBY 20:27:15 [fa] engine_0.basecase: ##   0:00:00  Checking assumptions in step 1..
+SBY 20:27:15 [fa] engine_0.basecase: ##   0:00:00  Checking assertions in step 1..
+SBY 20:27:15 [fa] engine_1.basecase: ##   0:00:00  Checking assertions in step 4..
+SBY 20:27:15 [fa] engine_1.basecase: ##   0:00:00  Checking assumptions in step 5..
+SBY 20:27:15 [fa] engine_1.basecase: ##   0:00:00  Checking assertions in step 5..
+SBY 20:27:15 [fa] engine_1.basecase: ##   0:00:00  Checking assumptions in step 6..
+SBY 20:27:15 [fa] engine_1.basecase: ##   0:00:00  Checking assertions in step 6..
+SBY 20:27:15 [fa] engine_0.induction: finished (returncode=0)
+SBY 20:27:15 [fa] engine_0: Status returned by engine for induction: pass
+SBY 20:27:15 [fa] engine_1.induction: terminating process
+SBY 20:27:15 [fa] engine_1.basecase: ##   0:00:00  Checking assumptions in step 7..
+SBY 20:27:15 [fa] engine_1.basecase: ##   0:00:00  Checking assertions in step 7..
+SBY 20:27:15 [fa] engine_1.basecase: ##   0:00:00  Checking assumptions in step 8..
+SBY 20:27:15 [fa] engine_1.basecase: ##   0:00:00  Checking assertions in step 8..
+SBY 20:27:15 [fa] engine_0.basecase: ##   0:00:00  Checking assumptions in step 2..
+SBY 20:27:15 [fa] engine_0.basecase: ##   0:00:00  Checking assertions in step 2..
+SBY 20:27:15 [fa] engine_1.basecase: ##   0:00:00  Checking assumptions in step 9..
+SBY 20:27:15 [fa] engine_1.basecase: ##   0:00:00  Checking assertions in step 9..
+SBY 20:27:15 [fa] engine_1.basecase: ##   0:00:00  Checking assumptions in step 10..
+SBY 20:27:15 [fa] engine_1.basecase: ##   0:00:00  Checking assertions in step 10..
+SBY 20:27:15 [fa] engine_1.basecase: ##   0:00:00  Checking assumptions in step 11..
+SBY 20:27:15 [fa] engine_1.basecase: ##   0:00:00  Checking assertions in step 11..
+SBY 20:27:15 [fa] engine_1.basecase: ##   0:00:00  Checking assumptions in step 12..
+SBY 20:27:15 [fa] engine_1.basecase: ##   0:00:00  Checking assertions in step 12..
+SBY 20:27:15 [fa] engine_0.basecase: ##   0:00:00  Checking assumptions in step 3..
+SBY 20:27:15 [fa] engine_0.basecase: ##   0:00:00  Checking assertions in step 3..
+SBY 20:27:15 [fa] engine_1.basecase: ##   0:00:00  Checking assumptions in step 13..
+SBY 20:27:15 [fa] engine_1.basecase: ##   0:00:00  Checking assertions in step 13..
+SBY 20:27:15 [fa] engine_1.basecase: ##   0:00:00  Checking assumptions in step 14..
+SBY 20:27:15 [fa] engine_1.basecase: ##   0:00:00  Checking assertions in step 14..
+SBY 20:27:15 [fa] engine_1.basecase: ##   0:00:00  Checking assumptions in step 15..
+SBY 20:27:15 [fa] engine_1.basecase: ##   0:00:00  Checking assertions in step 15..
+SBY 20:27:15 [fa] engine_0.basecase: ##   0:00:00  Checking assumptions in step 4..
+SBY 20:27:15 [fa] engine_0.basecase: ##   0:00:00  Checking assertions in step 4..
+SBY 20:27:15 [fa] engine_1.basecase: ##   0:00:00  Checking assumptions in step 16..
+SBY 20:27:15 [fa] engine_1.basecase: ##   0:00:00  Checking assertions in step 16..
+SBY 20:27:15 [fa] engine_1.basecase: ##   0:00:00  Checking assumptions in step 17..
+SBY 20:27:15 [fa] engine_1.basecase: ##   0:00:00  Checking assertions in step 17..
+SBY 20:27:15 [fa] engine_1.basecase: ##   0:00:00  Checking assumptions in step 18..
+SBY 20:27:15 [fa] engine_1.basecase: ##   0:00:00  Checking assertions in step 18..
+SBY 20:27:15 [fa] engine_1.basecase: ##   0:00:00  Checking assumptions in step 19..
+SBY 20:27:15 [fa] engine_0.basecase: ##   0:00:00  Checking assumptions in step 5..
+SBY 20:27:15 [fa] engine_0.basecase: ##   0:00:00  Checking assertions in step 5..
+SBY 20:27:15 [fa] engine_1.basecase: ##   0:00:00  Checking assertions in step 19..
+SBY 20:27:15 [fa] engine_1.basecase: ##   0:00:00  Checking assumptions in step 20..
+SBY 20:27:15 [fa] engine_1.basecase: ##   0:00:00  Checking assertions in step 20..
+SBY 20:27:15 [fa] engine_1.basecase: ##   0:00:00  Checking assumptions in step 21..
+SBY 20:27:15 [fa] engine_0.basecase: ##   0:00:00  Checking assumptions in step 6..
+SBY 20:27:15 [fa] engine_0.basecase: ##   0:00:00  Checking assertions in step 6..
+SBY 20:27:15 [fa] engine_1.basecase: ##   0:00:00  Checking assertions in step 21..
+SBY 20:27:15 [fa] engine_1.basecase: ##   0:00:00  Checking assumptions in step 22..
+SBY 20:27:15 [fa] engine_1.basecase: ##   0:00:00  Checking assertions in step 22..
+SBY 20:27:15 [fa] engine_1.basecase: ##   0:00:00  Checking assumptions in step 23..
+SBY 20:27:15 [fa] engine_1.basecase: ##   0:00:00  Checking assertions in step 23..
+SBY 20:27:15 [fa] engine_0.basecase: ##   0:00:00  Checking assumptions in step 7..
+SBY 20:27:15 [fa] engine_0.basecase: ##   0:00:00  Checking assertions in step 7..
+SBY 20:27:15 [fa] engine_1.basecase: ##   0:00:00  Checking assumptions in step 24..
+SBY 20:27:15 [fa] engine_1.basecase: ##   0:00:00  Checking assertions in step 24..
+SBY 20:27:15 [fa] engine_1.basecase: ##   0:00:00  Status: passed
+SBY 20:27:15 [fa] engine_0.basecase: ##   0:00:00  Checking assumptions in step 8..
+SBY 20:27:15 [fa] engine_0.basecase: ##   0:00:00  Checking assertions in step 8..
+SBY 20:27:15 [fa] engine_1.basecase: finished (returncode=0)
+SBY 20:27:15 [fa] engine_1: Status returned by engine for basecase: pass
+SBY 20:27:15 [fa] engine_0.basecase: terminating process
+SBY 20:27:15 [fa] summary: Elapsed clock time [H:MM:SS (secs)]: 0:00:00 (0)
+SBY 20:27:15 [fa] summary: Elapsed process time [H:MM:SS (secs)]: 0:00:00 (0)
+SBY 20:27:15 [fa] summary: engine_0 (smtbmc yices) returned pass for induction
+SBY 20:27:15 [fa] summary: engine_1 (smtbmc z3) returned pass for basecase
+SBY 20:27:15 [fa] summary: successful proof by k-induction.
+SBY 20:27:15 [fa] DONE (PASS, rc=0)

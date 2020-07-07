@@ -1,0 +1,14 @@
+[options]
+mode prove
+depth 64
+
+[engines]
+smtbmc yices
+smtbmc z3
+
+[files]
+./popcount_4.v
+
+[script]
+read -formal ./popcount_4.v
+prep -top popcount_4

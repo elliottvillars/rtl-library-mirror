@@ -1,0 +1,13 @@
+# running in pc4/src/
+read -formal ./popcount_4.v
+prep -top popcount_4
+memory_nordff
+async2sync
+chformal -assume -early
+chformal -live -fair -cover -remove
+opt_clean
+setundef -anyseq
+opt -keepdc -fast
+check
+hierarchy -simcheck
+write_ilang ../model/design.il

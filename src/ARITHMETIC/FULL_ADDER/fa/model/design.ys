@@ -1,0 +1,13 @@
+# running in fa/src/
+read -formal ./full_adder.v
+prep -top full_adder
+memory_nordff
+async2sync
+chformal -assume -early
+chformal -live -fair -cover -remove
+opt_clean
+setundef -anyseq
+opt -keepdc -fast
+check
+hierarchy -simcheck
+write_ilang ../model/design.il

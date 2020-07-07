@@ -70,6 +70,7 @@ begin
 	end
 end
 
+//TODO:Add reset(?)
 `ifdef FORMAL
 	reg r_PAST_VALID;
 	initial begin
