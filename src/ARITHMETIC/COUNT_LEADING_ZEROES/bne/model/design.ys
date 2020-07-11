@@ -1,0 +1,13 @@
+# running in bne/src/
+read -formal ./boundary_nibble_encoder.v
+prep -top boundary_nibble_encoder
+memory_nordff
+async2sync
+chformal -assume -early
+chformal -live -fair -cover -remove
+opt_clean
+setundef -anyseq
+opt -keepdc -fast
+check
+hierarchy -simcheck
+write_ilang ../model/design.il

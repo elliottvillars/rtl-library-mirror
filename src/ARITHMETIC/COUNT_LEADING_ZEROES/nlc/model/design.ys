@@ -1,0 +1,13 @@
+# running in nlc/src/
+read -formal ./nibble_local_count.v
+prep -top nibble_local_count
+memory_nordff
+async2sync
+chformal -assume -early
+chformal -live -fair -cover -remove
+opt_clean
+setundef -anyseq
+opt -keepdc -fast
+check
+hierarchy -simcheck
+write_ilang ../model/design.il

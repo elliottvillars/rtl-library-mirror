@@ -1,0 +1,14 @@
+[options]
+mode prove
+depth 64
+
+[engines]
+smtbmc yices
+smtbmc z3
+
+[files]
+./boundary_nibble_encoder.v
+
+[script]
+read -formal ./boundary_nibble_encoder.v
+prep -top boundary_nibble_encoder

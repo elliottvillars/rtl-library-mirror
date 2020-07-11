@@ -1,0 +1,23 @@
+[tasks]
+cov
+pro
+[options]
+pro:mode prove
+pro:depth 64
+cov:mode cover
+cov:depth 64
+
+[engines]
+smtbmc z3
+smtbmc yices
+
+[files]
+./nibble_local_count.v
+./boundary_nibble_encoder.v
+./count_leading_zeros.v
+
+[script]
+read -formal ./nibble_local_count.v
+read -formal ./boundary_nibble_encoder.v
+read -formal ./count_leading_zeros.v
+prep -top count_leading_zeros
