@@ -16,7 +16,7 @@ reg [7:0] r_EXPONENT_STAGE_0;
 reg [7:0] r_EXPONENT_STAGE_1;
 reg r_SIGN_STAGE_0;
 reg r_SIGN_STAGE_1;
-parameter p_INTEGER_BIT_COUNT = 32;
+parameter p_INTEGER_BIT_COUNT = 31; //This excludes the sign bit
 localparam lp_BIAS = 127 + p_INTEGER_BIT_COUNT;
 
 
