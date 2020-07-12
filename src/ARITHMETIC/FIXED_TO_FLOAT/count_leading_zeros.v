@@ -6,6 +6,7 @@ module count_leading_zeros (
 	output wire [4:0] o_ZERO_COUNT
 );
 
+//TODO:TEST THIS MODULE
 wire [15:0] w_NIBBLE_LEAD_ZEROES;
 wire [7:0] w_ZEROED_NIBBLE;
 wire [2:0] w_UPPER_COUNT_BITS;
@@ -65,4 +66,21 @@ begin
 	endcase
 end
 assign o_ZERO_COUNT = {w_UPPER_COUNT_BITS,r_LOWER_COUNT_BITS};
+`ifdef FORMAL
+	wire [31:0] fw_SHIFTED_WORD;
+	assign fw_SHIFTED_WORD = i_WORD << o_ZERO_COUNT;
+	always@(*)
+	begin
+		cover(o_ZERO_COUNT == 31 && o_ALL_ZEROS == 0);
+		cover(o_ZERO_COUNT == 0  && o_ALL_ZEROS == 0);
+		cover(o_ZERO_COUNT == 16 && o_ALL_ZEROS == 0);
+		if(i_WORD == 32'd0)
+			assert(o_ALL_ZEROS == 1'b1);
+		else
+		begin
+			assert(o_ALL_ZEROS == 1'b0);
+			assert(fw_SHIFTED_WORD[31] == 1'b1);
+		end
+	end
+`endif
 endmodule
