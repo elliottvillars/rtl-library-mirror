@@ -50,6 +50,6 @@ Input filename: design.il
 3. Executing SMT2 backend.
 Creating SMT-LIBv2 representation of module boundary_nibble_encoder.
 
-End of script. Logfile hash: 5b516d130c, CPU: user 0.01s system 0.01s, MEM: 12.71 MB peak
+End of script. Logfile hash: 5b516d130c, CPU: user 0.01s system 0.00s, MEM: 12.82 MB peak
 Yosys 0.9+2406 (git sha1 a1785e988b, g++ 9.3.0 -fPIC -Os)
-Time spent: 58% 2x read_ilang (0 sec), 39% 2x write_smt2 (0 sec), ...
+Time spent: 55% 2x read_ilang (0 sec), 42% 2x write_smt2 (0 sec), ...

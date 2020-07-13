@@ -5,29 +5,29 @@ module boundary_nibble_encoder (
 	output wire [2:0] o_Y
 );
 
-wire w_N0,w_N1,w_N3,w_N4,w_N5,w_N6,w_N7,w_N8,w_N9,w_N10,w_N11,w_N12;
+wire w_N0,w_N1,w_N2,w_N3,w_N4,w_N5,w_N6,w_N7,w_N8,w_N9,w_N10,w_N11;
 
 assign w_N0 = ~(i_ZEROED_NIBBLES[0] & i_ZEROED_NIBBLES[1]); 
 assign w_N1 = ~(i_ZEROED_NIBBLES[2] & i_ZEROED_NIBBLES[3]); 
-assign w_N3 = ~(w_N0 | w_N1); 
+assign w_N2 = ~(w_N0 | w_N1); 
 
-assign w_N4 = ~(i_ZEROED_NIBBLES[4] & i_ZEROED_NIBBLES[5]); 
-assign w_N5 = ~(i_ZEROED_NIBBLES[6] & i_ZEROED_NIBBLES[7]); 
-assign w_N6 = ~(w_N4 | w_N5); 
+assign w_N3 = ~(i_ZEROED_NIBBLES[4] & i_ZEROED_NIBBLES[5]); 
+assign w_N4 = ~(i_ZEROED_NIBBLES[6] & i_ZEROED_NIBBLES[7]); 
+assign w_N5 = ~(w_N3 | w_N4); 
 
-assign o_INVALID = (w_N3 & w_N6); 
+assign o_INVALID = (w_N2 & w_N5);
 
-assign w_N7 = ~(~i_ZEROED_NIBBLES[6] & i_ZEROED_NIBBLES[5]);
-assign w_N8 = (i_ZEROED_NIBBLES[0] & i_ZEROED_NIBBLES[2] & i_ZEROED_NIBBLES[4]); 
-assign w_N9 = ~(w_N8 & w_N7); 
+assign w_N6 = ~(~i_ZEROED_NIBBLES[6] & i_ZEROED_NIBBLES[5]);
+assign w_N7 = (i_ZEROED_NIBBLES[0] & i_ZEROED_NIBBLES[2] & i_ZEROED_NIBBLES[4]); 
+assign w_N8 = ~(w_N6 & w_N7); 
 
-assign w_N10 = ~(~i_ZEROED_NIBBLES[2] & i_ZEROED_NIBBLES[1]); 
-assign w_N11 = ~(i_ZEROED_NIBBLES[3] & i_ZEROED_NIBBLES[1]); 
-assign w_N12 = ~(i_ZEROED_NIBBLES[0] & w_N10 & w_N11); 
+assign w_N9 = ~(~i_ZEROED_NIBBLES[2] & i_ZEROED_NIBBLES[1]); 
+assign w_N10 = ~(i_ZEROED_NIBBLES[3] & i_ZEROED_NIBBLES[1]); 
+assign w_N11 = ~(i_ZEROED_NIBBLES[0] & w_N9 & w_N10); 
 
-assign o_Y[2] = w_N3; 
-assign o_Y[1] = ~((~w_N1 & w_N4) | w_N0); 
-assign o_Y[0] = ~(w_N12 & w_N9); 
+assign o_Y[2] = w_N2; 
+assign o_Y[1] = ~((~w_N1 & w_N3) | w_N0); 
+assign o_Y[0] = ~(w_N8 & w_N11); 
 
 `ifdef FORMAL
 	always@(*)

@@ -121,10 +121,10 @@
 ##   0:00:00  Checking assertions in step 59..
 ##   0:00:00  Checking assumptions in step 60..
 ##   0:00:00  Checking assertions in step 60..
-##   0:00:01  Checking assumptions in step 61..
-##   0:00:01  Checking assertions in step 61..
-##   0:00:01  Checking assumptions in step 62..
-##   0:00:01  Checking assertions in step 62..
-##   0:00:01  Checking assumptions in step 63..
-##   0:00:01  Checking assertions in step 63..
-##   0:00:01  Status: passed
+##   0:00:00  Checking assumptions in step 61..
+##   0:00:00  Checking assertions in step 61..
+##   0:00:00  Checking assumptions in step 62..
+##   0:00:00  Checking assertions in step 62..
+##   0:00:00  Checking assumptions in step 63..
+##   0:00:00  Checking assertions in step 63..
+##   0:00:00  Status: passed

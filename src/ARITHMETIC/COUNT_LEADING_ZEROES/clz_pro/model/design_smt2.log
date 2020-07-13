@@ -49,7 +49,7 @@ Input filename: design.il
      $or                             4
      $reduce_or                      1
 
-=== count_leading_zeros ===
+=== count_leading_zeros_32 ===
 
    Number of wires:                 27
    Number of wire bits:            119
@@ -90,7 +90,7 @@ Input filename: design.il
 
 === design hierarchy ===
 
-   count_leading_zeros               1
+   count_leading_zeros_32            1
      boundary_nibble_encoder         1
      nibble_local_count              8
 
@@ -117,8 +117,8 @@ Input filename: design.il
 3. Executing SMT2 backend.
 Creating SMT-LIBv2 representation of module boundary_nibble_encoder.
 Creating SMT-LIBv2 representation of module nibble_local_count.
-Creating SMT-LIBv2 representation of module count_leading_zeros.
+Creating SMT-LIBv2 representation of module count_leading_zeros_32.
 
-End of script. Logfile hash: 49403972e9, CPU: user 0.01s system 0.00s, MEM: 13.07 MB peak
+End of script. Logfile hash: 7a6ecbda9c, CPU: user 0.01s system 0.00s, MEM: 13.14 MB peak
 Yosys 0.9+2406 (git sha1 a1785e988b, g++ 9.3.0 -fPIC -Os)
-Time spent: 55% 2x read_ilang (0 sec), 42% 2x write_smt2 (0 sec), ...
+Time spent: 50% 2x write_smt2 (0 sec), 46% 2x read_ilang (0 sec), ...

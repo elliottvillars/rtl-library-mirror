@@ -52,13 +52,13 @@ module \boundary_nibble_encoder
   wire $and$./boundary_nibble_encoder.v:21$175_Y
   attribute \src "./boundary_nibble_encoder.v:22.17-22.28"
   wire $and$./boundary_nibble_encoder.v:22$177_Y
-  attribute \src "./boundary_nibble_encoder.v:24.18-24.60"
+  attribute \src "./boundary_nibble_encoder.v:24.17-24.59"
   wire $and$./boundary_nibble_encoder.v:24$180_Y
   attribute \src "./boundary_nibble_encoder.v:25.18-25.59"
   wire $and$./boundary_nibble_encoder.v:25$182_Y
-  attribute \src "./boundary_nibble_encoder.v:26.18-26.45"
+  attribute \src "./boundary_nibble_encoder.v:26.18-26.44"
   wire $and$./boundary_nibble_encoder.v:26$184_Y
-  attribute \src "./boundary_nibble_encoder.v:26.18-26.53"
+  attribute \src "./boundary_nibble_encoder.v:26.18-26.52"
   wire $and$./boundary_nibble_encoder.v:26$185_Y
   attribute \src "./boundary_nibble_encoder.v:29.20-29.32"
   wire $and$./boundary_nibble_encoder.v:29$188_Y
@@ -103,7 +103,7 @@ module \boundary_nibble_encoder
   wire $eq$./boundary_nibble_encoder.v:54$228_Y
   attribute \src "./boundary_nibble_encoder.v:20.17-20.37"
   wire $not$./boundary_nibble_encoder.v:20$172_Y
-  attribute \src "./boundary_nibble_encoder.v:24.18-24.38"
+  attribute \src "./boundary_nibble_encoder.v:24.17-24.37"
   wire $not$./boundary_nibble_encoder.v:24$179_Y
   attribute \src "./boundary_nibble_encoder.v:50.29-50.49"
   wire $not$./boundary_nibble_encoder.v:50$221_Y
@@ -143,25 +143,25 @@ module \boundary_nibble_encoder
   wire \w_N0
   attribute \src "./boundary_nibble_encoder.v:8.11-8.15"
   wire \w_N1
-  attribute \src "./boundary_nibble_encoder.v:8.51-8.56"
+  attribute \src "./boundary_nibble_encoder.v:8.56-8.61"
   wire \w_N10
-  attribute \src "./boundary_nibble_encoder.v:8.57-8.62"
+  attribute \src "./boundary_nibble_encoder.v:8.62-8.67"
   wire \w_N11
-  attribute \src "./boundary_nibble_encoder.v:8.63-8.68"
-  wire \w_N12
   attribute \src "./boundary_nibble_encoder.v:8.16-8.20"
-  wire \w_N3
+  wire \w_N2
   attribute \src "./boundary_nibble_encoder.v:8.21-8.25"
-  wire \w_N4
+  wire \w_N3
   attribute \src "./boundary_nibble_encoder.v:8.26-8.30"
-  wire \w_N5
+  wire \w_N4
   attribute \src "./boundary_nibble_encoder.v:8.31-8.35"
-  wire \w_N6
+  wire \w_N5
   attribute \src "./boundary_nibble_encoder.v:8.36-8.40"
-  wire \w_N7
+  wire \w_N6
   attribute \src "./boundary_nibble_encoder.v:8.41-8.45"
-  wire \w_N8
+  wire \w_N7
   attribute \src "./boundary_nibble_encoder.v:8.46-8.50"
+  wire \w_N8
+  attribute \src "./boundary_nibble_encoder.v:8.51-8.55"
   wire \w_N9
   attribute \src "./boundary_nibble_encoder.v:10.17-10.58"
   cell $and $and$./boundary_nibble_encoder.v:10$159
@@ -214,8 +214,8 @@ module \boundary_nibble_encoder
     parameter \B_SIGNED 0
     parameter \B_WIDTH 1
     parameter \Y_WIDTH 1
-    connect \A \w_N3
-    connect \B \w_N6
+    connect \A \w_N2
+    connect \B \w_N5
     connect \Y \o_INVALID
   end
   attribute \src "./boundary_nibble_encoder.v:20.17-20.59"
@@ -249,7 +249,7 @@ module \boundary_nibble_encoder
     parameter \Y_WIDTH 1
     connect \A $and$./boundary_nibble_encoder.v:21$175_Y
     connect \B \i_ZEROED_NIBBLES [4]
-    connect \Y \w_N8
+    connect \Y \w_N7
   end
   attribute \src "./boundary_nibble_encoder.v:22.17-22.28"
   cell $and $and$./boundary_nibble_encoder.v:22$177
@@ -258,11 +258,11 @@ module \boundary_nibble_encoder
     parameter \B_SIGNED 0
     parameter \B_WIDTH 1
     parameter \Y_WIDTH 1
-    connect \A \w_N8
+    connect \A \w_N6
     connect \B \w_N7
     connect \Y $and$./boundary_nibble_encoder.v:22$177_Y
   end
-  attribute \src "./boundary_nibble_encoder.v:24.18-24.60"
+  attribute \src "./boundary_nibble_encoder.v:24.17-24.59"
   cell $and $and$./boundary_nibble_encoder.v:24$180
     parameter \A_SIGNED 0
     parameter \A_WIDTH 1
@@ -284,7 +284,7 @@ module \boundary_nibble_encoder
     connect \B \i_ZEROED_NIBBLES [1]
     connect \Y $and$./boundary_nibble_encoder.v:25$182_Y
   end
-  attribute \src "./boundary_nibble_encoder.v:26.18-26.45"
+  attribute \src "./boundary_nibble_encoder.v:26.18-26.44"
   cell $and $and$./boundary_nibble_encoder.v:26$184
     parameter \A_SIGNED 0
     parameter \A_WIDTH 1
@@ -292,10 +292,10 @@ module \boundary_nibble_encoder
     parameter \B_WIDTH 1
     parameter \Y_WIDTH 1
     connect \A \i_ZEROED_NIBBLES [0]
-    connect \B \w_N10
+    connect \B \w_N9
     connect \Y $and$./boundary_nibble_encoder.v:26$184_Y
   end
-  attribute \src "./boundary_nibble_encoder.v:26.18-26.53"
+  attribute \src "./boundary_nibble_encoder.v:26.18-26.52"
   cell $and $and$./boundary_nibble_encoder.v:26$185
     parameter \A_SIGNED 0
     parameter \A_WIDTH 1
@@ -303,7 +303,7 @@ module \boundary_nibble_encoder
     parameter \B_WIDTH 1
     parameter \Y_WIDTH 1
     connect \A $and$./boundary_nibble_encoder.v:26$184_Y
-    connect \B \w_N11
+    connect \B \w_N10
     connect \Y $and$./boundary_nibble_encoder.v:26$185_Y
   end
   attribute \src "./boundary_nibble_encoder.v:29.20-29.32"
@@ -314,7 +314,7 @@ module \boundary_nibble_encoder
     parameter \B_WIDTH 1
     parameter \Y_WIDTH 1
     connect \A $and$./boundary_nibble_encoder.v:11$161_Y
-    connect \B \w_N4
+    connect \B \w_N3
     connect \Y $and$./boundary_nibble_encoder.v:29$188_Y
   end
   attribute \src "./boundary_nibble_encoder.v:30.19-30.31"
@@ -324,8 +324,8 @@ module \boundary_nibble_encoder
     parameter \B_SIGNED 0
     parameter \B_WIDTH 1
     parameter \Y_WIDTH 1
-    connect \A \w_N12
-    connect \B \w_N9
+    connect \A \w_N8
+    connect \B \w_N11
     connect \Y $and$./boundary_nibble_encoder.v:30$191_Y
   end
   attribute \src "./boundary_nibble_encoder.v:49.7-51.57"
@@ -368,7 +368,7 @@ module \boundary_nibble_encoder
     parameter \B_SIGNED 0
     parameter \B_WIDTH 1
     parameter \Y_WIDTH 1
-    connect \A \w_N8
+    connect \A \w_N7
     connect \B $or$./boundary_nibble_encoder.v:58$237_Y
     connect \Y $and$./boundary_nibble_encoder.v:57$238_Y
   end
@@ -495,7 +495,7 @@ module \boundary_nibble_encoder
     parameter \B_SIGNED 0
     parameter \B_WIDTH 3
     parameter \Y_WIDTH 1
-    connect \A { \w_N3 \o_Y [1:0] }
+    connect \A { \w_N2 \o_Y [1:0] }
     connect \B 3'111
     connect \Y $eq$./boundary_nibble_encoder.v:38$214_Y
   end
@@ -540,7 +540,7 @@ module \boundary_nibble_encoder
     parameter \A_WIDTH 1
     parameter \Y_WIDTH 1
     connect \A $eq$./boundary_nibble_encoder.v:48$218_Y
-    connect \Y \w_N3
+    connect \Y \w_N2
   end
   attribute \src "./boundary_nibble_encoder.v:14.15-14.59"
   cell $not $not$./boundary_nibble_encoder.v:14$166
@@ -548,7 +548,7 @@ module \boundary_nibble_encoder
     parameter \A_WIDTH 1
     parameter \Y_WIDTH 1
     connect \A $and$./boundary_nibble_encoder.v:14$165_Y
-    connect \Y \w_N4
+    connect \Y \w_N3
   end
   attribute \src "./boundary_nibble_encoder.v:15.15-15.59"
   cell $not $not$./boundary_nibble_encoder.v:15$168
@@ -556,7 +556,7 @@ module \boundary_nibble_encoder
     parameter \A_WIDTH 1
     parameter \Y_WIDTH 1
     connect \A $and$./boundary_nibble_encoder.v:15$167_Y
-    connect \Y \w_N5
+    connect \Y \w_N4
   end
   attribute \src "./boundary_nibble_encoder.v:16.15-16.29"
   cell $not $not$./boundary_nibble_encoder.v:16$170
@@ -564,7 +564,7 @@ module \boundary_nibble_encoder
     parameter \A_WIDTH 1
     parameter \Y_WIDTH 1
     connect \A $or$./boundary_nibble_encoder.v:16$169_Y
-    connect \Y \w_N6
+    connect \Y \w_N5
   end
   attribute \src "./boundary_nibble_encoder.v:20.17-20.37"
   cell $not $not$./boundary_nibble_encoder.v:20$172
@@ -580,7 +580,7 @@ module \boundary_nibble_encoder
     parameter \A_WIDTH 1
     parameter \Y_WIDTH 1
     connect \A $and$./boundary_nibble_encoder.v:20$173_Y
-    connect \Y \w_N7
+    connect \Y \w_N6
   end
   attribute \src "./boundary_nibble_encoder.v:22.15-22.29"
   cell $not $not$./boundary_nibble_encoder.v:22$178
@@ -588,9 +588,9 @@ module \boundary_nibble_encoder
     parameter \A_WIDTH 1
     parameter \Y_WIDTH 1
     connect \A $and$./boundary_nibble_encoder.v:22$177_Y
-    connect \Y \w_N9
+    connect \Y \w_N8
   end
-  attribute \src "./boundary_nibble_encoder.v:24.18-24.38"
+  attribute \src "./boundary_nibble_encoder.v:24.17-24.37"
   cell $not $not$./boundary_nibble_encoder.v:24$179
     parameter \A_SIGNED 0
     parameter \A_WIDTH 1
@@ -598,13 +598,13 @@ module \boundary_nibble_encoder
     connect \A \i_ZEROED_NIBBLES [2]
     connect \Y $not$./boundary_nibble_encoder.v:24$179_Y
   end
-  attribute \src "./boundary_nibble_encoder.v:24.16-24.61"
+  attribute \src "./boundary_nibble_encoder.v:24.15-24.60"
   cell $not $not$./boundary_nibble_encoder.v:24$181
     parameter \A_SIGNED 0
     parameter \A_WIDTH 1
     parameter \Y_WIDTH 1
     connect \A $and$./boundary_nibble_encoder.v:24$180_Y
-    connect \Y \w_N10
+    connect \Y \w_N9
   end
   attribute \src "./boundary_nibble_encoder.v:25.16-25.60"
   cell $not $not$./boundary_nibble_encoder.v:25$183
@@ -612,15 +612,15 @@ module \boundary_nibble_encoder
     parameter \A_WIDTH 1
     parameter \Y_WIDTH 1
     connect \A $and$./boundary_nibble_encoder.v:25$182_Y
-    connect \Y \w_N11
+    connect \Y \w_N10
   end
-  attribute \src "./boundary_nibble_encoder.v:26.16-26.54"
+  attribute \src "./boundary_nibble_encoder.v:26.16-26.53"
   cell $not $not$./boundary_nibble_encoder.v:26$186
     parameter \A_SIGNED 0
     parameter \A_WIDTH 1
     parameter \Y_WIDTH 1
     connect \A $and$./boundary_nibble_encoder.v:26$185_Y
-    connect \Y \w_N12
+    connect \Y \w_N11
   end
   attribute \src "./boundary_nibble_encoder.v:29.17-29.41"
   cell $not $not$./boundary_nibble_encoder.v:29$190
@@ -680,8 +680,8 @@ module \boundary_nibble_encoder
     parameter \B_SIGNED 0
     parameter \B_WIDTH 1
     parameter \Y_WIDTH 1
-    connect \A \w_N4
-    connect \B \w_N5
+    connect \A \w_N3
+    connect \B \w_N4
     connect \Y $or$./boundary_nibble_encoder.v:16$169_Y
   end
   attribute \src "./boundary_nibble_encoder.v:29.19-29.40"
@@ -818,7 +818,7 @@ module \boundary_nibble_encoder
   cell $mux $procmux$276
     parameter \WIDTH 1
     connect \A $auto$rtlil.cc:2437:Anyseq$631
-    connect \B \w_N3
+    connect \B \w_N2
     connect \S $eq$./boundary_nibble_encoder.v:45$216_Y
     connect \Y $procmux$276_Y
   end
@@ -1011,31 +1011,31 @@ module \boundary_nibble_encoder
     connect \S $eq$./boundary_nibble_encoder.v:35$212_Y
     connect \Y $0$formal$./boundary_nibble_encoder.v:60$158_CHECK[0:0]$210
   end
-  connect \o_Y [2] \w_N3
+  connect \o_Y [2] \w_N2
 end
 attribute \keep 1
-attribute \hdlname "\\count_leading_zeros"
+attribute \hdlname "\\count_leading_zeros_32"
 attribute \top 1
-attribute \src "./count_leading_zeros.v:3.1-86.10"
-module \count_leading_zeros
-  attribute \src "./count_leading_zeros.v:72.2-84.5"
-  wire $0$formal$./count_leading_zeros.v:77$12_CHECK[0:0]$24
-  attribute \src "./count_leading_zeros.v:72.2-84.5"
-  wire $0$formal$./count_leading_zeros.v:77$12_EN[0:0]$25
-  attribute \src "./count_leading_zeros.v:72.2-84.5"
-  wire $0$formal$./count_leading_zeros.v:80$13_CHECK[0:0]$26
-  attribute \src "./count_leading_zeros.v:72.2-84.5"
-  wire $0$formal$./count_leading_zeros.v:80$13_EN[0:0]$27
-  attribute \src "./count_leading_zeros.v:72.2-84.5"
-  wire $0$formal$./count_leading_zeros.v:81$14_CHECK[0:0]$28
+attribute \src "./count_leading_zeros_32.v:3.1-86.10"
+module \count_leading_zeros_32
+  attribute \src "./count_leading_zeros_32.v:72.2-84.5"
+  wire $0$formal$./count_leading_zeros_32.v:77$12_CHECK[0:0]$24
+  attribute \src "./count_leading_zeros_32.v:72.2-84.5"
+  wire $0$formal$./count_leading_zeros_32.v:77$12_EN[0:0]$25
+  attribute \src "./count_leading_zeros_32.v:72.2-84.5"
+  wire $0$formal$./count_leading_zeros_32.v:80$13_CHECK[0:0]$26
+  attribute \src "./count_leading_zeros_32.v:72.2-84.5"
+  wire $0$formal$./count_leading_zeros_32.v:80$13_EN[0:0]$27
+  attribute \src "./count_leading_zeros_32.v:72.2-84.5"
+  wire $0$formal$./count_leading_zeros_32.v:81$14_CHECK[0:0]$28
   wire $auto$rtlil.cc:2437:Anyseq$655
   wire $auto$rtlil.cc:2437:Anyseq$657
   wire $auto$rtlil.cc:2437:Anyseq$659
   wire width 2 $auto$rtlil.cc:2437:Anyseq$661
-  attribute \src "./count_leading_zeros.v:74.31-74.47"
-  wire $eq$./count_leading_zeros.v:74$31_Y
-  attribute \src "./count_leading_zeros.v:77.6-77.21"
-  wire $eq$./count_leading_zeros.v:77$39_Y
+  attribute \src "./count_leading_zeros_32.v:74.31-74.47"
+  wire $eq$./count_leading_zeros_32.v:74$31_Y
+  attribute \src "./count_leading_zeros_32.v:77.6-77.21"
+  wire $eq$./count_leading_zeros_32.v:77$39_Y
   wire $procmux$608_CMP
   wire $procmux$609_CMP
   wire $procmux$610_CMP
@@ -1044,37 +1044,37 @@ module \count_leading_zeros
   wire $procmux$613_CMP
   wire $procmux$614_CMP
   wire $procmux$615_CMP
-  attribute \src "./count_leading_zeros.v:70.14-70.29"
+  attribute \src "./count_leading_zeros_32.v:70.14-70.29"
   attribute \unused_bits "0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30"
   wire width 32 \fw_SHIFTED_WORD
-  attribute \src "./count_leading_zeros.v:4.20-4.26"
+  attribute \src "./count_leading_zeros_32.v:4.20-4.26"
   wire width 32 input 1 \i_WORD
-  attribute \src "./count_leading_zeros.v:5.14-5.25"
+  attribute \src "./count_leading_zeros_32.v:5.14-5.25"
   wire output 2 \o_ALL_ZEROS
-  attribute \src "./count_leading_zeros.v:6.20-6.32"
+  attribute \src "./count_leading_zeros_32.v:6.20-6.32"
   wire width 5 output 3 \o_ZERO_COUNT
-  attribute \src "./count_leading_zeros.v:13.11-13.29"
+  attribute \src "./count_leading_zeros_32.v:13.11-13.29"
   wire width 2 \r_LOWER_COUNT_BITS
-  attribute \src "./count_leading_zeros.v:10.13-10.33"
+  attribute \src "./count_leading_zeros_32.v:10.13-10.33"
   wire width 16 \w_NIBBLE_LEAD_ZEROES
-  attribute \src "./count_leading_zeros.v:12.12-12.30"
+  attribute \src "./count_leading_zeros_32.v:12.12-12.30"
   wire width 3 \w_UPPER_COUNT_BITS
-  attribute \src "./count_leading_zeros.v:11.12-11.27"
+  attribute \src "./count_leading_zeros_32.v:11.12-11.27"
   wire width 8 \w_ZEROED_NIBBLE
-  attribute \src "./count_leading_zeros.v:77.22-78.31"
-  cell $assert $assert$./count_leading_zeros.v:77$46
-    connect \A $0$formal$./count_leading_zeros.v:77$12_CHECK[0:0]$24
-    connect \EN $0$formal$./count_leading_zeros.v:77$12_EN[0:0]$25
+  attribute \src "./count_leading_zeros_32.v:77.22-78.31"
+  cell $assert $assert$./count_leading_zeros_32.v:77$46
+    connect \A $0$formal$./count_leading_zeros_32.v:77$12_CHECK[0:0]$24
+    connect \EN $0$formal$./count_leading_zeros_32.v:77$12_EN[0:0]$25
   end
-  attribute \src "./count_leading_zeros.v:80.8-81.31"
-  cell $assert $assert$./count_leading_zeros.v:80$47
-    connect \A $0$formal$./count_leading_zeros.v:80$13_CHECK[0:0]$26
-    connect \EN $0$formal$./count_leading_zeros.v:80$13_EN[0:0]$27
+  attribute \src "./count_leading_zeros_32.v:80.8-81.31"
+  cell $assert $assert$./count_leading_zeros_32.v:80$47
+    connect \A $0$formal$./count_leading_zeros_32.v:80$13_CHECK[0:0]$26
+    connect \EN $0$formal$./count_leading_zeros_32.v:80$13_EN[0:0]$27
   end
-  attribute \src "./count_leading_zeros.v:81.32-82.39"
-  cell $assert $assert$./count_leading_zeros.v:81$48
-    connect \A $0$formal$./count_leading_zeros.v:81$14_CHECK[0:0]$28
-    connect \EN $0$formal$./count_leading_zeros.v:80$13_EN[0:0]$27
+  attribute \src "./count_leading_zeros_32.v:81.32-82.39"
+  cell $assert $assert$./count_leading_zeros_32.v:81$48
+    connect \A $0$formal$./count_leading_zeros_32.v:81$14_CHECK[0:0]$28
+    connect \EN $0$formal$./count_leading_zeros_32.v:80$13_EN[0:0]$27
   end
   cell $anyseq $auto$setundef.cc:501:execute$654
     parameter \WIDTH 1
@@ -1092,125 +1092,125 @@ module \count_leading_zeros
     parameter \WIDTH 2
     connect \Y $auto$rtlil.cc:2437:Anyseq$661
   end
-  attribute \src "./count_leading_zeros.v:74.31-74.47"
-  cell $not $eq$./count_leading_zeros.v:74$31
+  attribute \src "./count_leading_zeros_32.v:74.31-74.47"
+  cell $not $eq$./count_leading_zeros_32.v:74$31
     parameter \A_SIGNED 0
     parameter \A_WIDTH 1
     parameter \Y_WIDTH 1
     connect \A \o_ALL_ZEROS
-    connect \Y $eq$./count_leading_zeros.v:74$31_Y
+    connect \Y $eq$./count_leading_zeros_32.v:74$31_Y
   end
-  attribute \src "./count_leading_zeros.v:77.6-77.21"
-  cell $logic_not $eq$./count_leading_zeros.v:77$39
+  attribute \src "./count_leading_zeros_32.v:77.6-77.21"
+  cell $logic_not $eq$./count_leading_zeros_32.v:77$39
     parameter \A_SIGNED 0
     parameter \A_WIDTH 32
     parameter \Y_WIDTH 1
     connect \A \i_WORD
-    connect \Y $eq$./count_leading_zeros.v:77$39_Y
+    connect \Y $eq$./count_leading_zeros_32.v:77$39_Y
   end
   attribute \module_not_derived 1
-  attribute \src "./count_leading_zeros.v:17.20-21.2"
-  cell \nibble_local_count $genblock$./count_leading_zeros.v:16$1[0].\nlc_xx
+  attribute \src "./count_leading_zeros_32.v:17.20-21.2"
+  cell \nibble_local_count $genblock$./count_leading_zeros_32.v:16$1[0].\nlc_xx
     connect \i_INPUT_NIBBLE \i_WORD [31:28]
     connect \o_ALL_ZEROS \w_ZEROED_NIBBLE [0]
     connect \o_ZERO_COUNT \w_NIBBLE_LEAD_ZEROES [1:0]
   end
   attribute \module_not_derived 1
-  attribute \src "./count_leading_zeros.v:17.20-21.2"
-  cell \nibble_local_count $genblock$./count_leading_zeros.v:16$2[1].\nlc_xx
+  attribute \src "./count_leading_zeros_32.v:17.20-21.2"
+  cell \nibble_local_count $genblock$./count_leading_zeros_32.v:16$2[1].\nlc_xx
     connect \i_INPUT_NIBBLE \i_WORD [27:24]
     connect \o_ALL_ZEROS \w_ZEROED_NIBBLE [1]
     connect \o_ZERO_COUNT \w_NIBBLE_LEAD_ZEROES [3:2]
   end
   attribute \module_not_derived 1
-  attribute \src "./count_leading_zeros.v:17.20-21.2"
-  cell \nibble_local_count $genblock$./count_leading_zeros.v:16$3[2].\nlc_xx
+  attribute \src "./count_leading_zeros_32.v:17.20-21.2"
+  cell \nibble_local_count $genblock$./count_leading_zeros_32.v:16$3[2].\nlc_xx
     connect \i_INPUT_NIBBLE \i_WORD [23:20]
     connect \o_ALL_ZEROS \w_ZEROED_NIBBLE [2]
     connect \o_ZERO_COUNT \w_NIBBLE_LEAD_ZEROES [5:4]
   end
   attribute \module_not_derived 1
-  attribute \src "./count_leading_zeros.v:17.20-21.2"
-  cell \nibble_local_count $genblock$./count_leading_zeros.v:16$4[3].\nlc_xx
+  attribute \src "./count_leading_zeros_32.v:17.20-21.2"
+  cell \nibble_local_count $genblock$./count_leading_zeros_32.v:16$4[3].\nlc_xx
     connect \i_INPUT_NIBBLE \i_WORD [19:16]
     connect \o_ALL_ZEROS \w_ZEROED_NIBBLE [3]
     connect \o_ZERO_COUNT \w_NIBBLE_LEAD_ZEROES [7:6]
   end
   attribute \module_not_derived 1
-  attribute \src "./count_leading_zeros.v:17.20-21.2"
-  cell \nibble_local_count $genblock$./count_leading_zeros.v:16$5[4].\nlc_xx
+  attribute \src "./count_leading_zeros_32.v:17.20-21.2"
+  cell \nibble_local_count $genblock$./count_leading_zeros_32.v:16$5[4].\nlc_xx
     connect \i_INPUT_NIBBLE \i_WORD [15:12]
     connect \o_ALL_ZEROS \w_ZEROED_NIBBLE [4]
     connect \o_ZERO_COUNT \w_NIBBLE_LEAD_ZEROES [9:8]
   end
   attribute \module_not_derived 1
-  attribute \src "./count_leading_zeros.v:17.20-21.2"
-  cell \nibble_local_count $genblock$./count_leading_zeros.v:16$6[5].\nlc_xx
+  attribute \src "./count_leading_zeros_32.v:17.20-21.2"
+  cell \nibble_local_count $genblock$./count_leading_zeros_32.v:16$6[5].\nlc_xx
     connect \i_INPUT_NIBBLE \i_WORD [11:8]
     connect \o_ALL_ZEROS \w_ZEROED_NIBBLE [5]
     connect \o_ZERO_COUNT \w_NIBBLE_LEAD_ZEROES [11:10]
   end
   attribute \module_not_derived 1
-  attribute \src "./count_leading_zeros.v:17.20-21.2"
-  cell \nibble_local_count $genblock$./count_leading_zeros.v:16$7[6].\nlc_xx
+  attribute \src "./count_leading_zeros_32.v:17.20-21.2"
+  cell \nibble_local_count $genblock$./count_leading_zeros_32.v:16$7[6].\nlc_xx
     connect \i_INPUT_NIBBLE \i_WORD [7:4]
     connect \o_ALL_ZEROS \w_ZEROED_NIBBLE [6]
     connect \o_ZERO_COUNT \w_NIBBLE_LEAD_ZEROES [13:12]
   end
   attribute \module_not_derived 1
-  attribute \src "./count_leading_zeros.v:17.20-21.2"
-  cell \nibble_local_count $genblock$./count_leading_zeros.v:16$8[7].\nlc_xx
+  attribute \src "./count_leading_zeros_32.v:17.20-21.2"
+  cell \nibble_local_count $genblock$./count_leading_zeros_32.v:16$8[7].\nlc_xx
     connect \i_INPUT_NIBBLE \i_WORD [3:0]
     connect \o_ALL_ZEROS \w_ZEROED_NIBBLE [7]
     connect \o_ZERO_COUNT \w_NIBBLE_LEAD_ZEROES [15:14]
   end
   attribute \full_case 1
-  attribute \src "./count_leading_zeros.v:77.6-77.21|./count_leading_zeros.v:77.3-83.6"
+  attribute \src "./count_leading_zeros_32.v:77.6-77.21|./count_leading_zeros_32.v:77.3-83.6"
   cell $mux $procmux$590
     parameter \WIDTH 1
     connect \A 1'0
     connect \B 1'1
-    connect \S $eq$./count_leading_zeros.v:77$39_Y
-    connect \Y $0$formal$./count_leading_zeros.v:77$12_EN[0:0]$25
+    connect \S $eq$./count_leading_zeros_32.v:77$39_Y
+    connect \Y $0$formal$./count_leading_zeros_32.v:77$12_EN[0:0]$25
   end
   attribute \full_case 1
-  attribute \src "./count_leading_zeros.v:77.6-77.21|./count_leading_zeros.v:77.3-83.6"
+  attribute \src "./count_leading_zeros_32.v:77.6-77.21|./count_leading_zeros_32.v:77.3-83.6"
   cell $mux $procmux$593
     parameter \WIDTH 1
     connect \A $auto$rtlil.cc:2437:Anyseq$655
     connect \B \o_ALL_ZEROS
-    connect \S $eq$./count_leading_zeros.v:77$39_Y
-    connect \Y $0$formal$./count_leading_zeros.v:77$12_CHECK[0:0]$24
+    connect \S $eq$./count_leading_zeros_32.v:77$39_Y
+    connect \Y $0$formal$./count_leading_zeros_32.v:77$12_CHECK[0:0]$24
   end
   attribute \full_case 1
-  attribute \src "./count_leading_zeros.v:77.6-77.21|./count_leading_zeros.v:77.3-83.6"
+  attribute \src "./count_leading_zeros_32.v:77.6-77.21|./count_leading_zeros_32.v:77.3-83.6"
   cell $mux $procmux$596
     parameter \WIDTH 1
     connect \A 1'1
     connect \B 1'0
-    connect \S $eq$./count_leading_zeros.v:77$39_Y
-    connect \Y $0$formal$./count_leading_zeros.v:80$13_EN[0:0]$27
+    connect \S $eq$./count_leading_zeros_32.v:77$39_Y
+    connect \Y $0$formal$./count_leading_zeros_32.v:80$13_EN[0:0]$27
   end
   attribute \full_case 1
-  attribute \src "./count_leading_zeros.v:77.6-77.21|./count_leading_zeros.v:77.3-83.6"
+  attribute \src "./count_leading_zeros_32.v:77.6-77.21|./count_leading_zeros_32.v:77.3-83.6"
   cell $mux $procmux$599
     parameter \WIDTH 1
-    connect \A $eq$./count_leading_zeros.v:74$31_Y
+    connect \A $eq$./count_leading_zeros_32.v:74$31_Y
     connect \B $auto$rtlil.cc:2437:Anyseq$657
-    connect \S $eq$./count_leading_zeros.v:77$39_Y
-    connect \Y $0$formal$./count_leading_zeros.v:80$13_CHECK[0:0]$26
+    connect \S $eq$./count_leading_zeros_32.v:77$39_Y
+    connect \Y $0$formal$./count_leading_zeros_32.v:80$13_CHECK[0:0]$26
   end
   attribute \full_case 1
-  attribute \src "./count_leading_zeros.v:77.6-77.21|./count_leading_zeros.v:77.3-83.6"
+  attribute \src "./count_leading_zeros_32.v:77.6-77.21|./count_leading_zeros_32.v:77.3-83.6"
   cell $mux $procmux$605
     parameter \WIDTH 1
     connect \A \fw_SHIFTED_WORD [31]
     connect \B $auto$rtlil.cc:2437:Anyseq$659
-    connect \S $eq$./count_leading_zeros.v:77$39_Y
-    connect \Y $0$formal$./count_leading_zeros.v:81$14_CHECK[0:0]$28
+    connect \S $eq$./count_leading_zeros_32.v:77$39_Y
+    connect \Y $0$formal$./count_leading_zeros_32.v:81$14_CHECK[0:0]$28
   end
   attribute \full_case 1
-  attribute \src "./count_leading_zeros.v:0.0-0.0|./count_leading_zeros.v:33.2-66.9"
+  attribute \src "./count_leading_zeros_32.v:0.0-0.0|./count_leading_zeros_32.v:33.2-66.9"
   cell $pmux $procmux$607
     parameter \S_WIDTH 8
     parameter \WIDTH 2
@@ -1220,7 +1220,7 @@ module \count_leading_zeros
     connect \Y \r_LOWER_COUNT_BITS
   end
   attribute \full_case 1
-  attribute \src "./count_leading_zeros.v:0.0-0.0|./count_leading_zeros.v:33.2-66.9"
+  attribute \src "./count_leading_zeros_32.v:0.0-0.0|./count_leading_zeros_32.v:33.2-66.9"
   cell $eq $procmux$608_CMP0
     parameter \A_SIGNED 0
     parameter \A_WIDTH 3
@@ -1232,7 +1232,7 @@ module \count_leading_zeros
     connect \Y $procmux$608_CMP
   end
   attribute \full_case 1
-  attribute \src "./count_leading_zeros.v:0.0-0.0|./count_leading_zeros.v:33.2-66.9"
+  attribute \src "./count_leading_zeros_32.v:0.0-0.0|./count_leading_zeros_32.v:33.2-66.9"
   cell $eq $procmux$609_CMP0
     parameter \A_SIGNED 0
     parameter \A_WIDTH 3
@@ -1244,7 +1244,7 @@ module \count_leading_zeros
     connect \Y $procmux$609_CMP
   end
   attribute \full_case 1
-  attribute \src "./count_leading_zeros.v:0.0-0.0|./count_leading_zeros.v:33.2-66.9"
+  attribute \src "./count_leading_zeros_32.v:0.0-0.0|./count_leading_zeros_32.v:33.2-66.9"
   cell $eq $procmux$610_CMP0
     parameter \A_SIGNED 0
     parameter \A_WIDTH 3
@@ -1256,7 +1256,7 @@ module \count_leading_zeros
     connect \Y $procmux$610_CMP
   end
   attribute \full_case 1
-  attribute \src "./count_leading_zeros.v:0.0-0.0|./count_leading_zeros.v:33.2-66.9"
+  attribute \src "./count_leading_zeros_32.v:0.0-0.0|./count_leading_zeros_32.v:33.2-66.9"
   cell $eq $procmux$611_CMP0
     parameter \A_SIGNED 0
     parameter \A_WIDTH 3
@@ -1268,7 +1268,7 @@ module \count_leading_zeros
     connect \Y $procmux$611_CMP
   end
   attribute \full_case 1
-  attribute \src "./count_leading_zeros.v:0.0-0.0|./count_leading_zeros.v:33.2-66.9"
+  attribute \src "./count_leading_zeros_32.v:0.0-0.0|./count_leading_zeros_32.v:33.2-66.9"
   cell $eq $procmux$612_CMP0
     parameter \A_SIGNED 0
     parameter \A_WIDTH 3
@@ -1280,7 +1280,7 @@ module \count_leading_zeros
     connect \Y $procmux$612_CMP
   end
   attribute \full_case 1
-  attribute \src "./count_leading_zeros.v:0.0-0.0|./count_leading_zeros.v:33.2-66.9"
+  attribute \src "./count_leading_zeros_32.v:0.0-0.0|./count_leading_zeros_32.v:33.2-66.9"
   cell $eq $procmux$613_CMP0
     parameter \A_SIGNED 0
     parameter \A_WIDTH 3
@@ -1292,7 +1292,7 @@ module \count_leading_zeros
     connect \Y $procmux$613_CMP
   end
   attribute \full_case 1
-  attribute \src "./count_leading_zeros.v:0.0-0.0|./count_leading_zeros.v:33.2-66.9"
+  attribute \src "./count_leading_zeros_32.v:0.0-0.0|./count_leading_zeros_32.v:33.2-66.9"
   cell $eq $procmux$614_CMP0
     parameter \A_SIGNED 0
     parameter \A_WIDTH 3
@@ -1304,7 +1304,7 @@ module \count_leading_zeros
     connect \Y $procmux$614_CMP
   end
   attribute \full_case 1
-  attribute \src "./count_leading_zeros.v:0.0-0.0|./count_leading_zeros.v:33.2-66.9"
+  attribute \src "./count_leading_zeros_32.v:0.0-0.0|./count_leading_zeros_32.v:33.2-66.9"
   cell $logic_not $procmux$615_CMP0
     parameter \A_SIGNED 0
     parameter \A_WIDTH 3
@@ -1312,8 +1312,8 @@ module \count_leading_zeros
     connect \A \w_UPPER_COUNT_BITS
     connect \Y $procmux$615_CMP
   end
-  attribute \src "./count_leading_zeros.v:71.27-71.49"
-  cell $shl $shl$./count_leading_zeros.v:71$16
+  attribute \src "./count_leading_zeros_32.v:71.27-71.49"
+  cell $shl $shl$./count_leading_zeros_32.v:71$16
     parameter \A_SIGNED 0
     parameter \A_WIDTH 32
     parameter \B_SIGNED 0
@@ -1324,7 +1324,7 @@ module \count_leading_zeros
     connect \Y \fw_SHIFTED_WORD
   end
   attribute \module_not_derived 1
-  attribute \src "./count_leading_zeros.v:25.25-29.2"
+  attribute \src "./count_leading_zeros_32.v:25.25-29.2"
   cell \boundary_nibble_encoder \bne
     connect \i_ZEROED_NIBBLES \w_ZEROED_NIBBLE
     connect \o_INVALID \o_ALL_ZEROS

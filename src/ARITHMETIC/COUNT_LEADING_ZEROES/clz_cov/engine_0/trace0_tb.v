@@ -9,7 +9,7 @@ module testbench(input clock, output reg genclock);
   reg genclock = 1;
   reg [31:0] cycle = 0;
   reg [31:0] PI_i_WORD;
-  count_leading_zeros UUT (
+  count_leading_zeros_32 UUT (
     .i_WORD(PI_i_WORD)
   );
 `ifndef VERILATOR
@@ -31,7 +31,7 @@ module testbench(input clock, output reg genclock);
 `endif
 
     // state 0
-    PI_i_WORD = 32'b00000000000000001000001000101000;
+    PI_i_WORD = 32'b00000000000000001010001000001000;
   end
   always @(posedge clock) begin
     genclock <= cycle < 0;

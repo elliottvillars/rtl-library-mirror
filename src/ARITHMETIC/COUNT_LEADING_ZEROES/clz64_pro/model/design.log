@@ -1,0 +1,656 @@
+
+ /----------------------------------------------------------------------------\
+ |                                                                            |
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |                                                                            |
+ |  Copyright (C) 2012 - 2020  Claire Wolf <claire@symbioticeda.com>          |
+ |                                                                            |
+ |  Permission to use, copy, modify, and/or distribute this software for any  |
+ |  purpose with or without fee is hereby granted, provided that the above    |
+ |  copyright notice and this permission notice appear in all copies.         |
+ |                                                                            |
+ |  THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES  |
+ |  WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF          |
+ |  MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR   |
+ |  ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES    |
+ |  WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN     |
+ |  ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF   |
+ |  OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.            |
+ |                                                                            |
+ \----------------------------------------------------------------------------/
+
+ Yosys 0.9+2406 (git sha1 a1785e988b, g++ 9.3.0 -fPIC -Os)
+
+
+-- Executing script file `../model/design.ys' --
+
+1. Executing Verilog-2005 frontend: ./nibble_local_count.v
+Parsing formal SystemVerilog input from `./nibble_local_count.v' to AST representation.
+Storing AST representation for module `$abstract\nibble_local_count'.
+Successfully finished Verilog frontend.
+
+2. Executing Verilog-2005 frontend: ./boundary_nibble_encoder.v
+Parsing formal SystemVerilog input from `./boundary_nibble_encoder.v' to AST representation.
+Storing AST representation for module `$abstract\boundary_nibble_encoder'.
+Successfully finished Verilog frontend.
+
+3. Executing Verilog-2005 frontend: ./count_leading_zeros_32.v
+Parsing formal SystemVerilog input from `./count_leading_zeros_32.v' to AST representation.
+Storing AST representation for module `$abstract\count_leading_zeros_32'.
+Successfully finished Verilog frontend.
+
+4. Executing Verilog-2005 frontend: ./count_leading_zeros_64.v
+Parsing formal SystemVerilog input from `./count_leading_zeros_64.v' to AST representation.
+Storing AST representation for module `$abstract\count_leading_zeros_64'.
+Successfully finished Verilog frontend.
+
+5. Executing PREP pass.
+
+5.1. Executing HIERARCHY pass (managing design hierarchy).
+
+5.2. Executing AST frontend in derive mode using pre-parsed AST for module `\count_leading_zeros_64'.
+Generating RTLIL representation for module `\count_leading_zeros_64'.
+
+5.2.1. Analyzing design hierarchy..
+Top module:  \count_leading_zeros_64
+
+5.2.2. Executing AST frontend in derive mode using pre-parsed AST for module `\count_leading_zeros_32'.
+Generating RTLIL representation for module `\count_leading_zeros_32'.
+
+5.2.3. Analyzing design hierarchy..
+Top module:  \count_leading_zeros_64
+Used module:     \count_leading_zeros_32
+
+5.2.4. Executing AST frontend in derive mode using pre-parsed AST for module `\nibble_local_count'.
+Generating RTLIL representation for module `\nibble_local_count'.
+
+5.2.5. Executing AST frontend in derive mode using pre-parsed AST for module `\boundary_nibble_encoder'.
+Generating RTLIL representation for module `\boundary_nibble_encoder'.
+
+5.2.6. Analyzing design hierarchy..
+Top module:  \count_leading_zeros_64
+Used module:     \count_leading_zeros_32
+Used module:         \nibble_local_count
+Used module:         \boundary_nibble_encoder
+
+5.2.7. Analyzing design hierarchy..
+Top module:  \count_leading_zeros_64
+Used module:     \count_leading_zeros_32
+Used module:         \nibble_local_count
+Used module:         \boundary_nibble_encoder
+Removing unused module `$abstract\count_leading_zeros_64'.
+Removing unused module `$abstract\count_leading_zeros_32'.
+Removing unused module `$abstract\boundary_nibble_encoder'.
+Removing unused module `$abstract\nibble_local_count'.
+Removed 4 unused modules.
+Module boundary_nibble_encoder directly or indirectly contains formal properties -> setting "keep" attribute.
+Module nibble_local_count directly or indirectly contains formal properties -> setting "keep" attribute.
+Module count_leading_zeros_32 directly or indirectly contains formal properties -> setting "keep" attribute.
+Module count_leading_zeros_64 directly or indirectly contains formal properties -> setting "keep" attribute.
+
+5.3. Executing PROC pass (convert processes to netlists).
+
+5.3.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+5.3.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Marked 4 switch rules as full_case in process $proc$./boundary_nibble_encoder.v:33$214 in module boundary_nibble_encoder.
+Marked 1 switch rules as full_case in process $proc$./nibble_local_count.v:15$98 in module nibble_local_count.
+Marked 1 switch rules as full_case in process $proc$./count_leading_zeros_32.v:71$38 in module count_leading_zeros_32.
+Removed 1 dead cases from process $proc$./count_leading_zeros_32.v:30$36 in module count_leading_zeros_32.
+Marked 1 switch rules as full_case in process $proc$./count_leading_zeros_32.v:30$36 in module count_leading_zeros_32.
+Marked 1 switch rules as full_case in process $proc$./count_leading_zeros_64.v:33$8 in module count_leading_zeros_64.
+Removed a total of 1 dead cases.
+
+5.3.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 0 redundant assignments.
+Promoted 7 assignments to connections.
+
+5.3.4. Executing PROC_INIT pass (extract init attributes).
+
+5.3.5. Executing PROC_ARST pass (detect async resets in processes).
+
+5.3.6. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\boundary_nibble_encoder.$proc$./boundary_nibble_encoder.v:33$214'.
+     1/18: $0$formal$./boundary_nibble_encoder.v:36$171_EN[0:0]$216
+     2/18: $0$formal$./boundary_nibble_encoder.v:36$171_CHECK[0:0]$215
+     3/18: $0$formal$./boundary_nibble_encoder.v:37$172_EN[0:0]$218
+     4/18: $0$formal$./boundary_nibble_encoder.v:37$172_CHECK[0:0]$217
+     5/18: $0$formal$./boundary_nibble_encoder.v:41$173_EN[0:0]$220
+     6/18: $0$formal$./boundary_nibble_encoder.v:41$173_CHECK[0:0]$219
+     7/18: $0$formal$./boundary_nibble_encoder.v:45$174_EN[0:0]$222
+     8/18: $0$formal$./boundary_nibble_encoder.v:45$174_CHECK[0:0]$221
+     9/18: $0$formal$./boundary_nibble_encoder.v:47$175_EN[0:0]$224
+    10/18: $0$formal$./boundary_nibble_encoder.v:47$175_CHECK[0:0]$223
+    11/18: $0$formal$./boundary_nibble_encoder.v:51$176_EN[0:0]$226
+    12/18: $0$formal$./boundary_nibble_encoder.v:51$176_CHECK[0:0]$225
+    13/18: $0$formal$./boundary_nibble_encoder.v:53$177_EN[0:0]$228
+    14/18: $0$formal$./boundary_nibble_encoder.v:53$177_CHECK[0:0]$227
+    15/18: $0$formal$./boundary_nibble_encoder.v:58$178_EN[0:0]$230
+    16/18: $0$formal$./boundary_nibble_encoder.v:58$178_CHECK[0:0]$229
+    17/18: $0$formal$./boundary_nibble_encoder.v:60$179_EN[0:0]$232
+    18/18: $0$formal$./boundary_nibble_encoder.v:60$179_CHECK[0:0]$231
+Creating decoders for process `\nibble_local_count.$proc$./nibble_local_count.v:15$98'.
+     1/36: $0$formal$./nibble_local_count.v:19$70_EN[0:0]$100
+     2/36: $0$formal$./nibble_local_count.v:19$70_CHECK[0:0]$99
+     3/36: $0$formal$./nibble_local_count.v:20$71_EN[0:0]$102
+     4/36: $0$formal$./nibble_local_count.v:20$71_CHECK[0:0]$101
+     5/36: $0$formal$./nibble_local_count.v:24$72_EN[0:0]$104
+     6/36: $0$formal$./nibble_local_count.v:24$72_CHECK[0:0]$103
+     7/36: $0$formal$./nibble_local_count.v:25$73_EN[0:0]$106
+     8/36: $0$formal$./nibble_local_count.v:25$73_CHECK[0:0]$105
+     9/36: $0$formal$./nibble_local_count.v:29$74_EN[0:0]$108
+    10/36: $0$formal$./nibble_local_count.v:29$74_CHECK[0:0]$107
+    11/36: $0$formal$./nibble_local_count.v:30$75_EN[0:0]$110
+    12/36: $0$formal$./nibble_local_count.v:30$75_CHECK[0:0]$109
+    13/36: $0$formal$./nibble_local_count.v:34$76_EN[0:0]$112
+    14/36: $0$formal$./nibble_local_count.v:34$76_CHECK[0:0]$111
+    15/36: $0$formal$./nibble_local_count.v:35$77_EN[0:0]$114
+    16/36: $0$formal$./nibble_local_count.v:35$77_CHECK[0:0]$113
+    17/36: $0$formal$./nibble_local_count.v:39$78_EN[0:0]$116
+    18/36: $0$formal$./nibble_local_count.v:39$78_CHECK[0:0]$115
+    19/36: $0$formal$./nibble_local_count.v:40$79_EN[0:0]$118
+    20/36: $0$formal$./nibble_local_count.v:40$79_CHECK[0:0]$117
+    21/36: $0$formal$./nibble_local_count.v:44$80_EN[0:0]$120
+    22/36: $0$formal$./nibble_local_count.v:44$80_CHECK[0:0]$119
+    23/36: $0$formal$./nibble_local_count.v:45$81_EN[0:0]$122
+    24/36: $0$formal$./nibble_local_count.v:45$81_CHECK[0:0]$121
+    25/36: $0$formal$./nibble_local_count.v:49$82_EN[0:0]$124
+    26/36: $0$formal$./nibble_local_count.v:49$82_CHECK[0:0]$123
+    27/36: $0$formal$./nibble_local_count.v:50$83_EN[0:0]$126
+    28/36: $0$formal$./nibble_local_count.v:50$83_CHECK[0:0]$125
+    29/36: $0$formal$./nibble_local_count.v:54$84_EN[0:0]$128
+    30/36: $0$formal$./nibble_local_count.v:54$84_CHECK[0:0]$127
+    31/36: $0$formal$./nibble_local_count.v:55$85_EN[0:0]$130
+    32/36: $0$formal$./nibble_local_count.v:55$85_CHECK[0:0]$129
+    33/36: $0$formal$./nibble_local_count.v:59$86_EN[0:0]$132
+    34/36: $0$formal$./nibble_local_count.v:59$86_CHECK[0:0]$131
+    35/36: $0$formal$./nibble_local_count.v:60$87_EN[0:0]$134
+    36/36: $0$formal$./nibble_local_count.v:60$87_CHECK[0:0]$133
+Creating decoders for process `\count_leading_zeros_32.$proc$./count_leading_zeros_32.v:71$38'.
+     1/6: $0$formal$./count_leading_zeros_32.v:76$33_EN[0:0]$46
+     2/6: $0$formal$./count_leading_zeros_32.v:76$33_CHECK[0:0]$45
+     3/6: $0$formal$./count_leading_zeros_32.v:79$34_EN[0:0]$48
+     4/6: $0$formal$./count_leading_zeros_32.v:79$34_CHECK[0:0]$47
+     5/6: $0$formal$./count_leading_zeros_32.v:80$35_EN[0:0]$50
+     6/6: $0$formal$./count_leading_zeros_32.v:80$35_CHECK[0:0]$49
+Creating decoders for process `\count_leading_zeros_32.$proc$./count_leading_zeros_32.v:30$36'.
+     1/1: $1\r_LOWER_COUNT_BITS[1:0]
+Creating decoders for process `\count_leading_zeros_64.$proc$./count_leading_zeros_64.v:33$8'.
+     1/6: $0$formal$./count_leading_zeros_64.v:35$1_EN[0:0]$10
+     2/6: $0$formal$./count_leading_zeros_64.v:35$1_CHECK[0:0]$9
+     3/6: $0$formal$./count_leading_zeros_64.v:38$2_EN[0:0]$12
+     4/6: $0$formal$./count_leading_zeros_64.v:38$2_CHECK[0:0]$11
+     5/6: $0$formal$./count_leading_zeros_64.v:39$3_EN[0:0]$14
+     6/6: $0$formal$./count_leading_zeros_64.v:39$3_CHECK[0:0]$13
+
+5.3.7. Executing PROC_DLATCH pass (convert process syncs to latches).
+No latch inferred for signal `\boundary_nibble_encoder.$formal$./boundary_nibble_encoder.v:36$171_CHECK' from process `\boundary_nibble_encoder.$proc$./boundary_nibble_encoder.v:33$214'.
+No latch inferred for signal `\boundary_nibble_encoder.$formal$./boundary_nibble_encoder.v:36$171_EN' from process `\boundary_nibble_encoder.$proc$./boundary_nibble_encoder.v:33$214'.
+No latch inferred for signal `\boundary_nibble_encoder.$formal$./boundary_nibble_encoder.v:37$172_CHECK' from process `\boundary_nibble_encoder.$proc$./boundary_nibble_encoder.v:33$214'.
+No latch inferred for signal `\boundary_nibble_encoder.$formal$./boundary_nibble_encoder.v:37$172_EN' from process `\boundary_nibble_encoder.$proc$./boundary_nibble_encoder.v:33$214'.
+No latch inferred for signal `\boundary_nibble_encoder.$formal$./boundary_nibble_encoder.v:41$173_CHECK' from process `\boundary_nibble_encoder.$proc$./boundary_nibble_encoder.v:33$214'.
+No latch inferred for signal `\boundary_nibble_encoder.$formal$./boundary_nibble_encoder.v:41$173_EN' from process `\boundary_nibble_encoder.$proc$./boundary_nibble_encoder.v:33$214'.
+No latch inferred for signal `\boundary_nibble_encoder.$formal$./boundary_nibble_encoder.v:45$174_CHECK' from process `\boundary_nibble_encoder.$proc$./boundary_nibble_encoder.v:33$214'.
+No latch inferred for signal `\boundary_nibble_encoder.$formal$./boundary_nibble_encoder.v:45$174_EN' from process `\boundary_nibble_encoder.$proc$./boundary_nibble_encoder.v:33$214'.
+No latch inferred for signal `\boundary_nibble_encoder.$formal$./boundary_nibble_encoder.v:47$175_CHECK' from process `\boundary_nibble_encoder.$proc$./boundary_nibble_encoder.v:33$214'.
+No latch inferred for signal `\boundary_nibble_encoder.$formal$./boundary_nibble_encoder.v:47$175_EN' from process `\boundary_nibble_encoder.$proc$./boundary_nibble_encoder.v:33$214'.
+No latch inferred for signal `\boundary_nibble_encoder.$formal$./boundary_nibble_encoder.v:51$176_CHECK' from process `\boundary_nibble_encoder.$proc$./boundary_nibble_encoder.v:33$214'.
+No latch inferred for signal `\boundary_nibble_encoder.$formal$./boundary_nibble_encoder.v:51$176_EN' from process `\boundary_nibble_encoder.$proc$./boundary_nibble_encoder.v:33$214'.
+No latch inferred for signal `\boundary_nibble_encoder.$formal$./boundary_nibble_encoder.v:53$177_CHECK' from process `\boundary_nibble_encoder.$proc$./boundary_nibble_encoder.v:33$214'.
+No latch inferred for signal `\boundary_nibble_encoder.$formal$./boundary_nibble_encoder.v:53$177_EN' from process `\boundary_nibble_encoder.$proc$./boundary_nibble_encoder.v:33$214'.
+No latch inferred for signal `\boundary_nibble_encoder.$formal$./boundary_nibble_encoder.v:58$178_CHECK' from process `\boundary_nibble_encoder.$proc$./boundary_nibble_encoder.v:33$214'.
+No latch inferred for signal `\boundary_nibble_encoder.$formal$./boundary_nibble_encoder.v:58$178_EN' from process `\boundary_nibble_encoder.$proc$./boundary_nibble_encoder.v:33$214'.
+No latch inferred for signal `\boundary_nibble_encoder.$formal$./boundary_nibble_encoder.v:60$179_CHECK' from process `\boundary_nibble_encoder.$proc$./boundary_nibble_encoder.v:33$214'.
+No latch inferred for signal `\boundary_nibble_encoder.$formal$./boundary_nibble_encoder.v:60$179_EN' from process `\boundary_nibble_encoder.$proc$./boundary_nibble_encoder.v:33$214'.
+No latch inferred for signal `\nibble_local_count.$formal$./nibble_local_count.v:19$70_CHECK' from process `\nibble_local_count.$proc$./nibble_local_count.v:15$98'.
+No latch inferred for signal `\nibble_local_count.$formal$./nibble_local_count.v:19$70_EN' from process `\nibble_local_count.$proc$./nibble_local_count.v:15$98'.
+No latch inferred for signal `\nibble_local_count.$formal$./nibble_local_count.v:20$71_CHECK' from process `\nibble_local_count.$proc$./nibble_local_count.v:15$98'.
+No latch inferred for signal `\nibble_local_count.$formal$./nibble_local_count.v:20$71_EN' from process `\nibble_local_count.$proc$./nibble_local_count.v:15$98'.
+No latch inferred for signal `\nibble_local_count.$formal$./nibble_local_count.v:24$72_CHECK' from process `\nibble_local_count.$proc$./nibble_local_count.v:15$98'.
+No latch inferred for signal `\nibble_local_count.$formal$./nibble_local_count.v:24$72_EN' from process `\nibble_local_count.$proc$./nibble_local_count.v:15$98'.
+No latch inferred for signal `\nibble_local_count.$formal$./nibble_local_count.v:25$73_CHECK' from process `\nibble_local_count.$proc$./nibble_local_count.v:15$98'.
+No latch inferred for signal `\nibble_local_count.$formal$./nibble_local_count.v:25$73_EN' from process `\nibble_local_count.$proc$./nibble_local_count.v:15$98'.
+No latch inferred for signal `\nibble_local_count.$formal$./nibble_local_count.v:29$74_CHECK' from process `\nibble_local_count.$proc$./nibble_local_count.v:15$98'.
+No latch inferred for signal `\nibble_local_count.$formal$./nibble_local_count.v:29$74_EN' from process `\nibble_local_count.$proc$./nibble_local_count.v:15$98'.
+No latch inferred for signal `\nibble_local_count.$formal$./nibble_local_count.v:30$75_CHECK' from process `\nibble_local_count.$proc$./nibble_local_count.v:15$98'.
+No latch inferred for signal `\nibble_local_count.$formal$./nibble_local_count.v:30$75_EN' from process `\nibble_local_count.$proc$./nibble_local_count.v:15$98'.
+No latch inferred for signal `\nibble_local_count.$formal$./nibble_local_count.v:34$76_CHECK' from process `\nibble_local_count.$proc$./nibble_local_count.v:15$98'.
+No latch inferred for signal `\nibble_local_count.$formal$./nibble_local_count.v:34$76_EN' from process `\nibble_local_count.$proc$./nibble_local_count.v:15$98'.
+No latch inferred for signal `\nibble_local_count.$formal$./nibble_local_count.v:35$77_CHECK' from process `\nibble_local_count.$proc$./nibble_local_count.v:15$98'.
+No latch inferred for signal `\nibble_local_count.$formal$./nibble_local_count.v:35$77_EN' from process `\nibble_local_count.$proc$./nibble_local_count.v:15$98'.
+No latch inferred for signal `\nibble_local_count.$formal$./nibble_local_count.v:39$78_CHECK' from process `\nibble_local_count.$proc$./nibble_local_count.v:15$98'.
+No latch inferred for signal `\nibble_local_count.$formal$./nibble_local_count.v:39$78_EN' from process `\nibble_local_count.$proc$./nibble_local_count.v:15$98'.
+No latch inferred for signal `\nibble_local_count.$formal$./nibble_local_count.v:40$79_CHECK' from process `\nibble_local_count.$proc$./nibble_local_count.v:15$98'.
+No latch inferred for signal `\nibble_local_count.$formal$./nibble_local_count.v:40$79_EN' from process `\nibble_local_count.$proc$./nibble_local_count.v:15$98'.
+No latch inferred for signal `\nibble_local_count.$formal$./nibble_local_count.v:44$80_CHECK' from process `\nibble_local_count.$proc$./nibble_local_count.v:15$98'.
+No latch inferred for signal `\nibble_local_count.$formal$./nibble_local_count.v:44$80_EN' from process `\nibble_local_count.$proc$./nibble_local_count.v:15$98'.
+No latch inferred for signal `\nibble_local_count.$formal$./nibble_local_count.v:45$81_CHECK' from process `\nibble_local_count.$proc$./nibble_local_count.v:15$98'.
+No latch inferred for signal `\nibble_local_count.$formal$./nibble_local_count.v:45$81_EN' from process `\nibble_local_count.$proc$./nibble_local_count.v:15$98'.
+No latch inferred for signal `\nibble_local_count.$formal$./nibble_local_count.v:49$82_CHECK' from process `\nibble_local_count.$proc$./nibble_local_count.v:15$98'.
+No latch inferred for signal `\nibble_local_count.$formal$./nibble_local_count.v:49$82_EN' from process `\nibble_local_count.$proc$./nibble_local_count.v:15$98'.
+No latch inferred for signal `\nibble_local_count.$formal$./nibble_local_count.v:50$83_CHECK' from process `\nibble_local_count.$proc$./nibble_local_count.v:15$98'.
+No latch inferred for signal `\nibble_local_count.$formal$./nibble_local_count.v:50$83_EN' from process `\nibble_local_count.$proc$./nibble_local_count.v:15$98'.
+No latch inferred for signal `\nibble_local_count.$formal$./nibble_local_count.v:54$84_CHECK' from process `\nibble_local_count.$proc$./nibble_local_count.v:15$98'.
+No latch inferred for signal `\nibble_local_count.$formal$./nibble_local_count.v:54$84_EN' from process `\nibble_local_count.$proc$./nibble_local_count.v:15$98'.
+No latch inferred for signal `\nibble_local_count.$formal$./nibble_local_count.v:55$85_CHECK' from process `\nibble_local_count.$proc$./nibble_local_count.v:15$98'.
+No latch inferred for signal `\nibble_local_count.$formal$./nibble_local_count.v:55$85_EN' from process `\nibble_local_count.$proc$./nibble_local_count.v:15$98'.
+No latch inferred for signal `\nibble_local_count.$formal$./nibble_local_count.v:59$86_CHECK' from process `\nibble_local_count.$proc$./nibble_local_count.v:15$98'.
+No latch inferred for signal `\nibble_local_count.$formal$./nibble_local_count.v:59$86_EN' from process `\nibble_local_count.$proc$./nibble_local_count.v:15$98'.
+No latch inferred for signal `\nibble_local_count.$formal$./nibble_local_count.v:60$87_CHECK' from process `\nibble_local_count.$proc$./nibble_local_count.v:15$98'.
+No latch inferred for signal `\nibble_local_count.$formal$./nibble_local_count.v:60$87_EN' from process `\nibble_local_count.$proc$./nibble_local_count.v:15$98'.
+No latch inferred for signal `\count_leading_zeros_32.$formal$./count_leading_zeros_32.v:72$30_CHECK' from process `\count_leading_zeros_32.$proc$./count_leading_zeros_32.v:71$38'.
+No latch inferred for signal `\count_leading_zeros_32.$formal$./count_leading_zeros_32.v:72$30_EN' from process `\count_leading_zeros_32.$proc$./count_leading_zeros_32.v:71$38'.
+No latch inferred for signal `\count_leading_zeros_32.$formal$./count_leading_zeros_32.v:73$31_CHECK' from process `\count_leading_zeros_32.$proc$./count_leading_zeros_32.v:71$38'.
+No latch inferred for signal `\count_leading_zeros_32.$formal$./count_leading_zeros_32.v:73$31_EN' from process `\count_leading_zeros_32.$proc$./count_leading_zeros_32.v:71$38'.
+No latch inferred for signal `\count_leading_zeros_32.$formal$./count_leading_zeros_32.v:74$32_CHECK' from process `\count_leading_zeros_32.$proc$./count_leading_zeros_32.v:71$38'.
+No latch inferred for signal `\count_leading_zeros_32.$formal$./count_leading_zeros_32.v:74$32_EN' from process `\count_leading_zeros_32.$proc$./count_leading_zeros_32.v:71$38'.
+No latch inferred for signal `\count_leading_zeros_32.$formal$./count_leading_zeros_32.v:76$33_CHECK' from process `\count_leading_zeros_32.$proc$./count_leading_zeros_32.v:71$38'.
+No latch inferred for signal `\count_leading_zeros_32.$formal$./count_leading_zeros_32.v:76$33_EN' from process `\count_leading_zeros_32.$proc$./count_leading_zeros_32.v:71$38'.
+No latch inferred for signal `\count_leading_zeros_32.$formal$./count_leading_zeros_32.v:79$34_CHECK' from process `\count_leading_zeros_32.$proc$./count_leading_zeros_32.v:71$38'.
+No latch inferred for signal `\count_leading_zeros_32.$formal$./count_leading_zeros_32.v:79$34_EN' from process `\count_leading_zeros_32.$proc$./count_leading_zeros_32.v:71$38'.
+No latch inferred for signal `\count_leading_zeros_32.$formal$./count_leading_zeros_32.v:80$35_CHECK' from process `\count_leading_zeros_32.$proc$./count_leading_zeros_32.v:71$38'.
+No latch inferred for signal `\count_leading_zeros_32.$formal$./count_leading_zeros_32.v:80$35_EN' from process `\count_leading_zeros_32.$proc$./count_leading_zeros_32.v:71$38'.
+No latch inferred for signal `\count_leading_zeros_32.\r_LOWER_COUNT_BITS' from process `\count_leading_zeros_32.$proc$./count_leading_zeros_32.v:30$36'.
+No latch inferred for signal `\count_leading_zeros_64.$formal$./count_leading_zeros_64.v:35$1_CHECK' from process `\count_leading_zeros_64.$proc$./count_leading_zeros_64.v:33$8'.
+No latch inferred for signal `\count_leading_zeros_64.$formal$./count_leading_zeros_64.v:35$1_EN' from process `\count_leading_zeros_64.$proc$./count_leading_zeros_64.v:33$8'.
+No latch inferred for signal `\count_leading_zeros_64.$formal$./count_leading_zeros_64.v:38$2_CHECK' from process `\count_leading_zeros_64.$proc$./count_leading_zeros_64.v:33$8'.
+No latch inferred for signal `\count_leading_zeros_64.$formal$./count_leading_zeros_64.v:38$2_EN' from process `\count_leading_zeros_64.$proc$./count_leading_zeros_64.v:33$8'.
+No latch inferred for signal `\count_leading_zeros_64.$formal$./count_leading_zeros_64.v:39$3_CHECK' from process `\count_leading_zeros_64.$proc$./count_leading_zeros_64.v:33$8'.
+No latch inferred for signal `\count_leading_zeros_64.$formal$./count_leading_zeros_64.v:39$3_EN' from process `\count_leading_zeros_64.$proc$./count_leading_zeros_64.v:33$8'.
+
+5.3.8. Executing PROC_DFF pass (convert process syncs to FFs).
+
+5.3.9. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Found and cleaned up 4 empty switches in `\boundary_nibble_encoder.$proc$./boundary_nibble_encoder.v:33$214'.
+Removing empty process `boundary_nibble_encoder.$proc$./boundary_nibble_encoder.v:33$214'.
+Found and cleaned up 1 empty switch in `\nibble_local_count.$proc$./nibble_local_count.v:15$98'.
+Removing empty process `nibble_local_count.$proc$./nibble_local_count.v:15$98'.
+Found and cleaned up 1 empty switch in `\count_leading_zeros_32.$proc$./count_leading_zeros_32.v:71$38'.
+Removing empty process `count_leading_zeros_32.$proc$./count_leading_zeros_32.v:71$38'.
+Found and cleaned up 1 empty switch in `\count_leading_zeros_32.$proc$./count_leading_zeros_32.v:30$36'.
+Removing empty process `count_leading_zeros_32.$proc$./count_leading_zeros_32.v:30$36'.
+Found and cleaned up 1 empty switch in `\count_leading_zeros_64.$proc$./count_leading_zeros_64.v:33$8'.
+Removing empty process `count_leading_zeros_64.$proc$./count_leading_zeros_64.v:33$8'.
+Cleaned up 8 empty switches.
+
+5.4. Executing OPT_EXPR pass (perform const folding).
+Optimizing module boundary_nibble_encoder.
+<suppressed ~13 debug messages>
+Optimizing module nibble_local_count.
+<suppressed ~26 debug messages>
+Optimizing module count_leading_zeros_32.
+<suppressed ~9 debug messages>
+Optimizing module count_leading_zeros_64.
+<suppressed ~5 debug messages>
+
+5.5. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \boundary_nibble_encoder..
+Finding unused cells or wires in module \nibble_local_count..
+Finding unused cells or wires in module \count_leading_zeros_32..
+Finding unused cells or wires in module \count_leading_zeros_64..
+Removed 0 unused cells and 234 unused wires.
+<suppressed ~4 debug messages>
+
+5.6. Executing CHECK pass (checking for obvious problems).
+checking module boundary_nibble_encoder..
+checking module count_leading_zeros_32..
+checking module count_leading_zeros_64..
+checking module nibble_local_count..
+found and reported 0 problems.
+
+5.7. Executing OPT pass (performing simple optimizations).
+
+5.7.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module boundary_nibble_encoder.
+Optimizing module count_leading_zeros_32.
+Optimizing module count_leading_zeros_64.
+Optimizing module nibble_local_count.
+
+5.7.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\boundary_nibble_encoder'.
+<suppressed ~18 debug messages>
+Finding identical cells in module `\count_leading_zeros_32'.
+<suppressed ~9 debug messages>
+Finding identical cells in module `\count_leading_zeros_64'.
+Finding identical cells in module `\nibble_local_count'.
+<suppressed ~186 debug messages>
+Removed a total of 71 cells.
+
+5.7.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \boundary_nibble_encoder..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \count_leading_zeros_32..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \count_leading_zeros_64..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \nibble_local_count..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~68 debug messages>
+
+5.7.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \boundary_nibble_encoder.
+  Optimizing cells in module \count_leading_zeros_32.
+  Optimizing cells in module \count_leading_zeros_64.
+  Optimizing cells in module \nibble_local_count.
+    New ctrl vector for $pmux cell $procmux$571: $auto$opt_reduce.cc:134:opt_mux$656
+    New ctrl vector for $pmux cell $procmux$581: $auto$opt_reduce.cc:134:opt_mux$658
+    New ctrl vector for $pmux cell $procmux$591: $auto$opt_reduce.cc:134:opt_mux$660
+    New ctrl vector for $pmux cell $procmux$601: $auto$opt_reduce.cc:134:opt_mux$662
+  Optimizing cells in module \nibble_local_count.
+Performed a total of 4 changes.
+
+5.7.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\boundary_nibble_encoder'.
+<suppressed ~3 debug messages>
+Finding identical cells in module `\count_leading_zeros_32'.
+<suppressed ~3 debug messages>
+Finding identical cells in module `\count_leading_zeros_64'.
+<suppressed ~3 debug messages>
+Finding identical cells in module `\nibble_local_count'.
+<suppressed ~36 debug messages>
+Removed a total of 15 cells.
+
+5.7.6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \boundary_nibble_encoder..
+Finding unused cells or wires in module \count_leading_zeros_32..
+Finding unused cells or wires in module \count_leading_zeros_64..
+Finding unused cells or wires in module \nibble_local_count..
+Removed 0 unused cells and 86 unused wires.
+<suppressed ~4 debug messages>
+
+5.7.7. Executing OPT_EXPR pass (perform const folding).
+Optimizing module boundary_nibble_encoder.
+Optimizing module count_leading_zeros_32.
+Optimizing module count_leading_zeros_64.
+Optimizing module nibble_local_count.
+
+5.7.8. Rerunning OPT passes. (Maybe there is more to do..)
+
+5.7.9. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \boundary_nibble_encoder..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \count_leading_zeros_32..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \count_leading_zeros_64..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \nibble_local_count..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~56 debug messages>
+
+5.7.10. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \boundary_nibble_encoder.
+  Optimizing cells in module \count_leading_zeros_32.
+  Optimizing cells in module \count_leading_zeros_64.
+  Optimizing cells in module \nibble_local_count.
+Performed a total of 0 changes.
+
+5.7.11. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\boundary_nibble_encoder'.
+Finding identical cells in module `\count_leading_zeros_32'.
+Finding identical cells in module `\count_leading_zeros_64'.
+Finding identical cells in module `\nibble_local_count'.
+Removed a total of 0 cells.
+
+5.7.12. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \boundary_nibble_encoder..
+Finding unused cells or wires in module \count_leading_zeros_32..
+Finding unused cells or wires in module \count_leading_zeros_64..
+Finding unused cells or wires in module \nibble_local_count..
+
+5.7.13. Executing OPT_EXPR pass (perform const folding).
+Optimizing module boundary_nibble_encoder.
+Optimizing module count_leading_zeros_32.
+Optimizing module count_leading_zeros_64.
+Optimizing module nibble_local_count.
+
+5.7.14. Finished OPT passes. (There is nothing left to do.)
+
+5.8. Executing WREDUCE pass (reducing word size of cells).
+Removed top 1 bits (of 3) from port B of cell count_leading_zeros_32.$procmux$633_CMP0 ($eq).
+Removed top 1 bits (of 3) from port B of cell count_leading_zeros_32.$procmux$634_CMP0 ($eq).
+Removed top 2 bits (of 3) from port B of cell count_leading_zeros_32.$procmux$635_CMP0 ($eq).
+Removed top 1 bits (of 2) from port B of cell nibble_local_count.$eq$./nibble_local_count.v:41$144 ($eq).
+Removed top 3 bits (of 4) from port B of cell nibble_local_count.$procmux$410_CMP0 ($eq).
+Removed top 2 bits (of 4) from port B of cell nibble_local_count.$procmux$445_CMP0 ($eq).
+Removed top 2 bits (of 4) from port B of cell nibble_local_count.$procmux$476_CMP0 ($eq).
+Removed top 1 bits (of 4) from port B of cell nibble_local_count.$procmux$503_CMP0 ($eq).
+Removed top 1 bits (of 4) from port B of cell nibble_local_count.$procmux$526_CMP0 ($eq).
+Removed top 1 bits (of 4) from port B of cell nibble_local_count.$procmux$545_CMP0 ($eq).
+Removed top 1 bits (of 4) from port B of cell nibble_local_count.$procmux$560_CMP0 ($eq).
+
+5.9. Executing MEMORY_DFF pass (merging $dff cells to $memrd and $memwr).
+
+5.10. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \boundary_nibble_encoder..
+Finding unused cells or wires in module \count_leading_zeros_32..
+Finding unused cells or wires in module \count_leading_zeros_64..
+Finding unused cells or wires in module \nibble_local_count..
+
+5.11. Executing MEMORY_COLLECT pass (generating $mem cells).
+
+5.12. Executing OPT pass (performing simple optimizations).
+
+5.12.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module boundary_nibble_encoder.
+Optimizing module count_leading_zeros_32.
+Optimizing module count_leading_zeros_64.
+Optimizing module nibble_local_count.
+
+5.12.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\boundary_nibble_encoder'.
+Finding identical cells in module `\count_leading_zeros_32'.
+Finding identical cells in module `\count_leading_zeros_64'.
+Finding identical cells in module `\nibble_local_count'.
+Removed a total of 0 cells.
+
+5.12.3. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \boundary_nibble_encoder..
+Finding unused cells or wires in module \count_leading_zeros_32..
+Finding unused cells or wires in module \count_leading_zeros_64..
+Finding unused cells or wires in module \nibble_local_count..
+
+5.12.4. Finished fast OPT passes.
+
+5.13. Printing statistics.
+
+=== boundary_nibble_encoder ===
+
+   Number of wires:                 78
+   Number of wire bits:             87
+   Number of public wires:          15
+   Number of public wire bits:      24
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 87
+     $and                           19
+     $assert                         9
+     $eq                             3
+     $mux                           29
+     $not                           19
+     $or                             8
+
+=== count_leading_zeros_32 ===
+
+   Number of wires:                 29
+   Number of wire bits:            120
+   Number of public wires:           8
+   Number of public wire bits:      99
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 38
+     $assert                         3
+     $cover                          3
+     $eq                             9
+     $logic_and                      3
+     $logic_not                      3
+     $mux                            5
+     $not                            1
+     $pmux                           1
+     $shl                            1
+     boundary_nibble_encoder         1
+     nibble_local_count              8
+
+=== count_leading_zeros_64 ===
+
+   Number of wires:                 16
+   Number of wire bits:            159
+   Number of public wires:           9
+   Number of public wire bits:     152
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 15
+     $and                            1
+     $assert                         3
+     $logic_not                      1
+     $mux                            6
+     $not                            1
+     $shl                            1
+     count_leading_zeros_32          2
+
+=== nibble_local_count ===
+
+   Number of wires:                 51
+   Number of wire bits:             55
+   Number of public wires:           5
+   Number of public wire bits:       9
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 67
+     $and                            1
+     $assert                        18
+     $eq                            10
+     $logic_not                      2
+     $mux                           27
+     $not                            4
+     $or                             4
+     $reduce_or                      1
+
+=== design hierarchy ===
+
+   count_leading_zeros_64            1
+     count_leading_zeros_32          2
+       boundary_nibble_encoder       1
+       nibble_local_count            8
+
+   Number of wires:               1046
+   Number of wire bits:           1453
+   Number of public wires:         135
+   Number of public wire bits:     542
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:               1317
+     $and                           55
+     $assert                       315
+     $cover                          6
+     $eq                           184
+     $logic_and                      6
+     $logic_not                     39
+     $mux                          506
+     $not                          105
+     $or                            80
+     $pmux                           2
+     $reduce_or                     16
+     $shl                            3
+
+5.14. Executing CHECK pass (checking for obvious problems).
+checking module boundary_nibble_encoder..
+checking module count_leading_zeros_32..
+checking module count_leading_zeros_64..
+checking module nibble_local_count..
+found and reported 0 problems.
+
+6. Executing MEMORY_NORDFF pass (extracting $dff cells from $mem).
+
+7. Executing ASYNC2SYNC pass.
+
+8. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \boundary_nibble_encoder..
+Finding unused cells or wires in module \count_leading_zeros_32..
+Finding unused cells or wires in module \count_leading_zeros_64..
+Finding unused cells or wires in module \nibble_local_count..
+Removed 6 unused cells and 6 unused wires.
+<suppressed ~7 debug messages>
+
+9. Executing SETUNDEF pass (replace undef values with defined constants).
+
+10. Executing OPT pass (performing simple optimizations).
+
+10.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module boundary_nibble_encoder.
+Optimizing module count_leading_zeros_32.
+Optimizing module count_leading_zeros_64.
+Optimizing module nibble_local_count.
+
+10.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\boundary_nibble_encoder'.
+Finding identical cells in module `\count_leading_zeros_32'.
+Finding identical cells in module `\count_leading_zeros_64'.
+Finding identical cells in module `\nibble_local_count'.
+Removed a total of 0 cells.
+
+10.3. Executing OPT_RMDFF pass (remove dff with constant values).
+
+10.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \boundary_nibble_encoder..
+Finding unused cells or wires in module \count_leading_zeros_32..
+Finding unused cells or wires in module \count_leading_zeros_64..
+Finding unused cells or wires in module \nibble_local_count..
+
+10.5. Finished fast OPT passes.
+
+11. Executing CHECK pass (checking for obvious problems).
+checking module boundary_nibble_encoder..
+checking module count_leading_zeros_32..
+checking module count_leading_zeros_64..
+checking module nibble_local_count..
+found and reported 0 problems.
+
+12. Executing HIERARCHY pass (managing design hierarchy).
+
+12.1. Analyzing design hierarchy..
+Top module:  \count_leading_zeros_64
+Used module:     \count_leading_zeros_32
+Used module:         \nibble_local_count
+Used module:         \boundary_nibble_encoder
+
+12.2. Analyzing design hierarchy..
+Top module:  \count_leading_zeros_64
+Used module:     \count_leading_zeros_32
+Used module:         \nibble_local_count
+Used module:         \boundary_nibble_encoder
+Removed 0 unused modules.
+Module boundary_nibble_encoder directly or indirectly contains formal properties -> setting "keep" attribute.
+Module count_leading_zeros_32 directly or indirectly contains formal properties -> setting "keep" attribute.
+Module count_leading_zeros_64 directly or indirectly contains formal properties -> setting "keep" attribute.
+Module nibble_local_count directly or indirectly contains formal properties -> setting "keep" attribute.
+
+13. Executing ILANG backend.
+Output filename: ../model/design.il
+
+End of script. Logfile hash: 49731ce318, CPU: user 0.13s system 0.01s, MEM: 14.59 MB peak
+Yosys 0.9+2406 (git sha1 a1785e988b, g++ 9.3.0 -fPIC -Os)
+Time spent: 18% 7x opt_clean (0 sec), 17% 6x opt_expr (0 sec), ...

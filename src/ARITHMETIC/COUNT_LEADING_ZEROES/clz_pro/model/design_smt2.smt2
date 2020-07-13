@@ -3,94 +3,94 @@
 (declare-sort |boundary_nibble_encoder_s| 0)
 (declare-fun |boundary_nibble_encoder_is| (|boundary_nibble_encoder_s|) Bool)
 ; yosys-smt2-wire w_N9 1
-(declare-fun |boundary_nibble_encoder#0| (|boundary_nibble_encoder_s|) (_ BitVec 1)) ; \i_ZEROED_NIBBLES [0]
-(declare-fun |boundary_nibble_encoder#1| (|boundary_nibble_encoder_s|) (_ BitVec 1)) ; \i_ZEROED_NIBBLES [2]
-(define-fun |boundary_nibble_encoder#2| ((state |boundary_nibble_encoder_s|)) (_ BitVec 1) (bvand (|boundary_nibble_encoder#0| state) (|boundary_nibble_encoder#1| state))) ; $and$./boundary_nibble_encoder.v:21$175_Y
-(declare-fun |boundary_nibble_encoder#3| (|boundary_nibble_encoder_s|) (_ BitVec 1)) ; \i_ZEROED_NIBBLES [4]
-(define-fun |boundary_nibble_encoder#4| ((state |boundary_nibble_encoder_s|)) (_ BitVec 1) (bvand (|boundary_nibble_encoder#2| state) (|boundary_nibble_encoder#3| state))) ; \w_N8
+(declare-fun |boundary_nibble_encoder#0| (|boundary_nibble_encoder_s|) (_ BitVec 1)) ; \i_ZEROED_NIBBLES [2]
+(define-fun |boundary_nibble_encoder#1| ((state |boundary_nibble_encoder_s|)) (_ BitVec 1) (bvnot (|boundary_nibble_encoder#0| state))) ; $not$./boundary_nibble_encoder.v:24$179_Y
+(declare-fun |boundary_nibble_encoder#2| (|boundary_nibble_encoder_s|) (_ BitVec 1)) ; \i_ZEROED_NIBBLES [1]
+(define-fun |boundary_nibble_encoder#3| ((state |boundary_nibble_encoder_s|)) (_ BitVec 1) (bvand (|boundary_nibble_encoder#1| state) (|boundary_nibble_encoder#2| state))) ; $and$./boundary_nibble_encoder.v:24$180_Y
+(define-fun |boundary_nibble_encoder#4| ((state |boundary_nibble_encoder_s|)) (_ BitVec 1) (bvnot (|boundary_nibble_encoder#3| state))) ; \w_N9
+(define-fun |boundary_nibble_encoder_n w_N9| ((state |boundary_nibble_encoder_s|)) Bool (= ((_ extract 0 0) (|boundary_nibble_encoder#4| state)) #b1))
+; yosys-smt2-wire w_N8 1
 (declare-fun |boundary_nibble_encoder#5| (|boundary_nibble_encoder_s|) (_ BitVec 1)) ; \i_ZEROED_NIBBLES [6]
 (define-fun |boundary_nibble_encoder#6| ((state |boundary_nibble_encoder_s|)) (_ BitVec 1) (bvnot (|boundary_nibble_encoder#5| state))) ; $not$./boundary_nibble_encoder.v:20$172_Y
 (declare-fun |boundary_nibble_encoder#7| (|boundary_nibble_encoder_s|) (_ BitVec 1)) ; \i_ZEROED_NIBBLES [5]
 (define-fun |boundary_nibble_encoder#8| ((state |boundary_nibble_encoder_s|)) (_ BitVec 1) (bvand (|boundary_nibble_encoder#6| state) (|boundary_nibble_encoder#7| state))) ; $and$./boundary_nibble_encoder.v:20$173_Y
-(define-fun |boundary_nibble_encoder#9| ((state |boundary_nibble_encoder_s|)) (_ BitVec 1) (bvnot (|boundary_nibble_encoder#8| state))) ; \w_N7
-(define-fun |boundary_nibble_encoder#10| ((state |boundary_nibble_encoder_s|)) (_ BitVec 1) (bvand (|boundary_nibble_encoder#4| state) (|boundary_nibble_encoder#9| state))) ; $and$./boundary_nibble_encoder.v:22$177_Y
-(define-fun |boundary_nibble_encoder#11| ((state |boundary_nibble_encoder_s|)) (_ BitVec 1) (bvnot (|boundary_nibble_encoder#10| state))) ; \w_N9
-(define-fun |boundary_nibble_encoder_n w_N9| ((state |boundary_nibble_encoder_s|)) Bool (= ((_ extract 0 0) (|boundary_nibble_encoder#11| state)) #b1))
-; yosys-smt2-wire w_N8 1
-(define-fun |boundary_nibble_encoder_n w_N8| ((state |boundary_nibble_encoder_s|)) Bool (= ((_ extract 0 0) (|boundary_nibble_encoder#4| state)) #b1))
+(define-fun |boundary_nibble_encoder#9| ((state |boundary_nibble_encoder_s|)) (_ BitVec 1) (bvnot (|boundary_nibble_encoder#8| state))) ; \w_N6
+(declare-fun |boundary_nibble_encoder#10| (|boundary_nibble_encoder_s|) (_ BitVec 1)) ; \i_ZEROED_NIBBLES [0]
+(define-fun |boundary_nibble_encoder#11| ((state |boundary_nibble_encoder_s|)) (_ BitVec 1) (bvand (|boundary_nibble_encoder#10| state) (|boundary_nibble_encoder#0| state))) ; $and$./boundary_nibble_encoder.v:21$175_Y
+(declare-fun |boundary_nibble_encoder#12| (|boundary_nibble_encoder_s|) (_ BitVec 1)) ; \i_ZEROED_NIBBLES [4]
+(define-fun |boundary_nibble_encoder#13| ((state |boundary_nibble_encoder_s|)) (_ BitVec 1) (bvand (|boundary_nibble_encoder#11| state) (|boundary_nibble_encoder#12| state))) ; \w_N7
+(define-fun |boundary_nibble_encoder#14| ((state |boundary_nibble_encoder_s|)) (_ BitVec 1) (bvand (|boundary_nibble_encoder#9| state) (|boundary_nibble_encoder#13| state))) ; $and$./boundary_nibble_encoder.v:22$177_Y
+(define-fun |boundary_nibble_encoder#15| ((state |boundary_nibble_encoder_s|)) (_ BitVec 1) (bvnot (|boundary_nibble_encoder#14| state))) ; \w_N8
+(define-fun |boundary_nibble_encoder_n w_N8| ((state |boundary_nibble_encoder_s|)) Bool (= ((_ extract 0 0) (|boundary_nibble_encoder#15| state)) #b1))
 ; yosys-smt2-wire w_N7 1
-(define-fun |boundary_nibble_encoder_n w_N7| ((state |boundary_nibble_encoder_s|)) Bool (= ((_ extract 0 0) (|boundary_nibble_encoder#9| state)) #b1))
+(define-fun |boundary_nibble_encoder_n w_N7| ((state |boundary_nibble_encoder_s|)) Bool (= ((_ extract 0 0) (|boundary_nibble_encoder#13| state)) #b1))
 ; yosys-smt2-wire w_N6 1
-(define-fun |boundary_nibble_encoder#12| ((state |boundary_nibble_encoder_s|)) (_ BitVec 1) (bvand (|boundary_nibble_encoder#3| state) (|boundary_nibble_encoder#7| state))) ; $and$./boundary_nibble_encoder.v:14$165_Y
-(define-fun |boundary_nibble_encoder#13| ((state |boundary_nibble_encoder_s|)) (_ BitVec 1) (bvnot (|boundary_nibble_encoder#12| state))) ; \w_N4
-(declare-fun |boundary_nibble_encoder#14| (|boundary_nibble_encoder_s|) (_ BitVec 1)) ; \i_ZEROED_NIBBLES [7]
-(define-fun |boundary_nibble_encoder#15| ((state |boundary_nibble_encoder_s|)) (_ BitVec 1) (bvand (|boundary_nibble_encoder#5| state) (|boundary_nibble_encoder#14| state))) ; $and$./boundary_nibble_encoder.v:15$167_Y
-(define-fun |boundary_nibble_encoder#16| ((state |boundary_nibble_encoder_s|)) (_ BitVec 1) (bvnot (|boundary_nibble_encoder#15| state))) ; \w_N5
-(define-fun |boundary_nibble_encoder#17| ((state |boundary_nibble_encoder_s|)) (_ BitVec 1) (bvor (|boundary_nibble_encoder#13| state) (|boundary_nibble_encoder#16| state))) ; $or$./boundary_nibble_encoder.v:16$169_Y
-(define-fun |boundary_nibble_encoder#18| ((state |boundary_nibble_encoder_s|)) (_ BitVec 1) (bvnot (|boundary_nibble_encoder#17| state))) ; \w_N6
-(define-fun |boundary_nibble_encoder_n w_N6| ((state |boundary_nibble_encoder_s|)) Bool (= ((_ extract 0 0) (|boundary_nibble_encoder#18| state)) #b1))
+(define-fun |boundary_nibble_encoder_n w_N6| ((state |boundary_nibble_encoder_s|)) Bool (= ((_ extract 0 0) (|boundary_nibble_encoder#9| state)) #b1))
 ; yosys-smt2-wire w_N5 1
-(define-fun |boundary_nibble_encoder_n w_N5| ((state |boundary_nibble_encoder_s|)) Bool (= ((_ extract 0 0) (|boundary_nibble_encoder#16| state)) #b1))
+(define-fun |boundary_nibble_encoder#16| ((state |boundary_nibble_encoder_s|)) (_ BitVec 1) (bvand (|boundary_nibble_encoder#12| state) (|boundary_nibble_encoder#7| state))) ; $and$./boundary_nibble_encoder.v:14$165_Y
+(define-fun |boundary_nibble_encoder#17| ((state |boundary_nibble_encoder_s|)) (_ BitVec 1) (bvnot (|boundary_nibble_encoder#16| state))) ; \w_N3
+(declare-fun |boundary_nibble_encoder#18| (|boundary_nibble_encoder_s|) (_ BitVec 1)) ; \i_ZEROED_NIBBLES [7]
+(define-fun |boundary_nibble_encoder#19| ((state |boundary_nibble_encoder_s|)) (_ BitVec 1) (bvand (|boundary_nibble_encoder#5| state) (|boundary_nibble_encoder#18| state))) ; $and$./boundary_nibble_encoder.v:15$167_Y
+(define-fun |boundary_nibble_encoder#20| ((state |boundary_nibble_encoder_s|)) (_ BitVec 1) (bvnot (|boundary_nibble_encoder#19| state))) ; \w_N4
+(define-fun |boundary_nibble_encoder#21| ((state |boundary_nibble_encoder_s|)) (_ BitVec 1) (bvor (|boundary_nibble_encoder#17| state) (|boundary_nibble_encoder#20| state))) ; $or$./boundary_nibble_encoder.v:16$169_Y
+(define-fun |boundary_nibble_encoder#22| ((state |boundary_nibble_encoder_s|)) (_ BitVec 1) (bvnot (|boundary_nibble_encoder#21| state))) ; \w_N5
+(define-fun |boundary_nibble_encoder_n w_N5| ((state |boundary_nibble_encoder_s|)) Bool (= ((_ extract 0 0) (|boundary_nibble_encoder#22| state)) #b1))
 ; yosys-smt2-wire w_N4 1
-(define-fun |boundary_nibble_encoder_n w_N4| ((state |boundary_nibble_encoder_s|)) Bool (= ((_ extract 0 0) (|boundary_nibble_encoder#13| state)) #b1))
+(define-fun |boundary_nibble_encoder_n w_N4| ((state |boundary_nibble_encoder_s|)) Bool (= ((_ extract 0 0) (|boundary_nibble_encoder#20| state)) #b1))
 ; yosys-smt2-wire w_N3 1
-(declare-fun |boundary_nibble_encoder#19| (|boundary_nibble_encoder_s|) (_ BitVec 1)) ; \i_ZEROED_NIBBLES [1]
-(define-fun |boundary_nibble_encoder#20| ((state |boundary_nibble_encoder_s|)) (_ BitVec 1) (bvand (|boundary_nibble_encoder#0| state) (|boundary_nibble_encoder#19| state))) ; $and$./boundary_nibble_encoder.v:10$159_Y
-(define-fun |boundary_nibble_encoder#21| ((state |boundary_nibble_encoder_s|)) (_ BitVec 1) (bvnot (|boundary_nibble_encoder#20| state))) ; \w_N0
-(declare-fun |boundary_nibble_encoder#22| (|boundary_nibble_encoder_s|) (_ BitVec 1)) ; \i_ZEROED_NIBBLES [3]
-(define-fun |boundary_nibble_encoder#23| ((state |boundary_nibble_encoder_s|)) (_ BitVec 1) (bvand (|boundary_nibble_encoder#1| state) (|boundary_nibble_encoder#22| state))) ; $and$./boundary_nibble_encoder.v:11$161_Y
-(define-fun |boundary_nibble_encoder#24| ((state |boundary_nibble_encoder_s|)) (_ BitVec 1) (bvnot (|boundary_nibble_encoder#23| state))) ; \w_N1
-(define-fun |boundary_nibble_encoder#25| ((state |boundary_nibble_encoder_s|)) (_ BitVec 1) (bvor (|boundary_nibble_encoder#21| state) (|boundary_nibble_encoder#24| state))) ; $eq$./boundary_nibble_encoder.v:48$218_Y
-(define-fun |boundary_nibble_encoder#26| ((state |boundary_nibble_encoder_s|)) (_ BitVec 1) (bvnot (|boundary_nibble_encoder#25| state))) ; \w_N3
-(define-fun |boundary_nibble_encoder_n w_N3| ((state |boundary_nibble_encoder_s|)) Bool (= ((_ extract 0 0) (|boundary_nibble_encoder#26| state)) #b1))
-; yosys-smt2-wire w_N12 1
-(define-fun |boundary_nibble_encoder#27| ((state |boundary_nibble_encoder_s|)) (_ BitVec 1) (bvnot (|boundary_nibble_encoder#1| state))) ; $not$./boundary_nibble_encoder.v:24$179_Y
-(define-fun |boundary_nibble_encoder#28| ((state |boundary_nibble_encoder_s|)) (_ BitVec 1) (bvand (|boundary_nibble_encoder#27| state) (|boundary_nibble_encoder#19| state))) ; $and$./boundary_nibble_encoder.v:24$180_Y
-(define-fun |boundary_nibble_encoder#29| ((state |boundary_nibble_encoder_s|)) (_ BitVec 1) (bvnot (|boundary_nibble_encoder#28| state))) ; \w_N10
-(define-fun |boundary_nibble_encoder#30| ((state |boundary_nibble_encoder_s|)) (_ BitVec 1) (bvand (|boundary_nibble_encoder#0| state) (|boundary_nibble_encoder#29| state))) ; $and$./boundary_nibble_encoder.v:26$184_Y
-(define-fun |boundary_nibble_encoder#31| ((state |boundary_nibble_encoder_s|)) (_ BitVec 1) (bvand (|boundary_nibble_encoder#22| state) (|boundary_nibble_encoder#19| state))) ; $and$./boundary_nibble_encoder.v:25$182_Y
-(define-fun |boundary_nibble_encoder#32| ((state |boundary_nibble_encoder_s|)) (_ BitVec 1) (bvnot (|boundary_nibble_encoder#31| state))) ; \w_N11
-(define-fun |boundary_nibble_encoder#33| ((state |boundary_nibble_encoder_s|)) (_ BitVec 1) (bvand (|boundary_nibble_encoder#30| state) (|boundary_nibble_encoder#32| state))) ; $and$./boundary_nibble_encoder.v:26$185_Y
-(define-fun |boundary_nibble_encoder#34| ((state |boundary_nibble_encoder_s|)) (_ BitVec 1) (bvnot (|boundary_nibble_encoder#33| state))) ; \w_N12
-(define-fun |boundary_nibble_encoder_n w_N12| ((state |boundary_nibble_encoder_s|)) Bool (= ((_ extract 0 0) (|boundary_nibble_encoder#34| state)) #b1))
+(define-fun |boundary_nibble_encoder_n w_N3| ((state |boundary_nibble_encoder_s|)) Bool (= ((_ extract 0 0) (|boundary_nibble_encoder#17| state)) #b1))
+; yosys-smt2-wire w_N2 1
+(define-fun |boundary_nibble_encoder#23| ((state |boundary_nibble_encoder_s|)) (_ BitVec 1) (bvand (|boundary_nibble_encoder#10| state) (|boundary_nibble_encoder#2| state))) ; $and$./boundary_nibble_encoder.v:10$159_Y
+(define-fun |boundary_nibble_encoder#24| ((state |boundary_nibble_encoder_s|)) (_ BitVec 1) (bvnot (|boundary_nibble_encoder#23| state))) ; \w_N0
+(declare-fun |boundary_nibble_encoder#25| (|boundary_nibble_encoder_s|) (_ BitVec 1)) ; \i_ZEROED_NIBBLES [3]
+(define-fun |boundary_nibble_encoder#26| ((state |boundary_nibble_encoder_s|)) (_ BitVec 1) (bvand (|boundary_nibble_encoder#0| state) (|boundary_nibble_encoder#25| state))) ; $and$./boundary_nibble_encoder.v:11$161_Y
+(define-fun |boundary_nibble_encoder#27| ((state |boundary_nibble_encoder_s|)) (_ BitVec 1) (bvnot (|boundary_nibble_encoder#26| state))) ; \w_N1
+(define-fun |boundary_nibble_encoder#28| ((state |boundary_nibble_encoder_s|)) (_ BitVec 1) (bvor (|boundary_nibble_encoder#24| state) (|boundary_nibble_encoder#27| state))) ; $eq$./boundary_nibble_encoder.v:48$218_Y
+(define-fun |boundary_nibble_encoder#29| ((state |boundary_nibble_encoder_s|)) (_ BitVec 1) (bvnot (|boundary_nibble_encoder#28| state))) ; \w_N2
+(define-fun |boundary_nibble_encoder_n w_N2| ((state |boundary_nibble_encoder_s|)) Bool (= ((_ extract 0 0) (|boundary_nibble_encoder#29| state)) #b1))
 ; yosys-smt2-wire w_N11 1
-(define-fun |boundary_nibble_encoder_n w_N11| ((state |boundary_nibble_encoder_s|)) Bool (= ((_ extract 0 0) (|boundary_nibble_encoder#32| state)) #b1))
+(define-fun |boundary_nibble_encoder#30| ((state |boundary_nibble_encoder_s|)) (_ BitVec 1) (bvand (|boundary_nibble_encoder#10| state) (|boundary_nibble_encoder#4| state))) ; $and$./boundary_nibble_encoder.v:26$184_Y
+(define-fun |boundary_nibble_encoder#31| ((state |boundary_nibble_encoder_s|)) (_ BitVec 1) (bvand (|boundary_nibble_encoder#25| state) (|boundary_nibble_encoder#2| state))) ; $and$./boundary_nibble_encoder.v:25$182_Y
+(define-fun |boundary_nibble_encoder#32| ((state |boundary_nibble_encoder_s|)) (_ BitVec 1) (bvnot (|boundary_nibble_encoder#31| state))) ; \w_N10
+(define-fun |boundary_nibble_encoder#33| ((state |boundary_nibble_encoder_s|)) (_ BitVec 1) (bvand (|boundary_nibble_encoder#30| state) (|boundary_nibble_encoder#32| state))) ; $and$./boundary_nibble_encoder.v:26$185_Y
+(define-fun |boundary_nibble_encoder#34| ((state |boundary_nibble_encoder_s|)) (_ BitVec 1) (bvnot (|boundary_nibble_encoder#33| state))) ; \w_N11
+(define-fun |boundary_nibble_encoder_n w_N11| ((state |boundary_nibble_encoder_s|)) Bool (= ((_ extract 0 0) (|boundary_nibble_encoder#34| state)) #b1))
 ; yosys-smt2-wire w_N10 1
-(define-fun |boundary_nibble_encoder_n w_N10| ((state |boundary_nibble_encoder_s|)) Bool (= ((_ extract 0 0) (|boundary_nibble_encoder#29| state)) #b1))
+(define-fun |boundary_nibble_encoder_n w_N10| ((state |boundary_nibble_encoder_s|)) Bool (= ((_ extract 0 0) (|boundary_nibble_encoder#32| state)) #b1))
 ; yosys-smt2-wire w_N1 1
-(define-fun |boundary_nibble_encoder_n w_N1| ((state |boundary_nibble_encoder_s|)) Bool (= ((_ extract 0 0) (|boundary_nibble_encoder#24| state)) #b1))
+(define-fun |boundary_nibble_encoder_n w_N1| ((state |boundary_nibble_encoder_s|)) Bool (= ((_ extract 0 0) (|boundary_nibble_encoder#27| state)) #b1))
 ; yosys-smt2-wire w_N0 1
-(define-fun |boundary_nibble_encoder_n w_N0| ((state |boundary_nibble_encoder_s|)) Bool (= ((_ extract 0 0) (|boundary_nibble_encoder#21| state)) #b1))
+(define-fun |boundary_nibble_encoder_n w_N0| ((state |boundary_nibble_encoder_s|)) Bool (= ((_ extract 0 0) (|boundary_nibble_encoder#24| state)) #b1))
 ; yosys-smt2-output o_Y 3
 ; yosys-smt2-wire o_Y 3
-(define-fun |boundary_nibble_encoder#35| ((state |boundary_nibble_encoder_s|)) (_ BitVec 1) (bvand (|boundary_nibble_encoder#34| state) (|boundary_nibble_encoder#11| state))) ; $and$./boundary_nibble_encoder.v:30$191_Y
+(define-fun |boundary_nibble_encoder#35| ((state |boundary_nibble_encoder_s|)) (_ BitVec 1) (bvand (|boundary_nibble_encoder#15| state) (|boundary_nibble_encoder#34| state))) ; $and$./boundary_nibble_encoder.v:30$191_Y
 (define-fun |boundary_nibble_encoder#36| ((state |boundary_nibble_encoder_s|)) (_ BitVec 1) (bvnot (|boundary_nibble_encoder#35| state))) ; \o_Y [0]
-(define-fun |boundary_nibble_encoder#37| ((state |boundary_nibble_encoder_s|)) (_ BitVec 1) (bvand (|boundary_nibble_encoder#23| state) (|boundary_nibble_encoder#13| state))) ; $and$./boundary_nibble_encoder.v:29$188_Y
-(define-fun |boundary_nibble_encoder#38| ((state |boundary_nibble_encoder_s|)) (_ BitVec 1) (bvor (|boundary_nibble_encoder#37| state) (|boundary_nibble_encoder#21| state))) ; $eq$./boundary_nibble_encoder.v:54$228_Y
+(define-fun |boundary_nibble_encoder#37| ((state |boundary_nibble_encoder_s|)) (_ BitVec 1) (bvand (|boundary_nibble_encoder#26| state) (|boundary_nibble_encoder#17| state))) ; $and$./boundary_nibble_encoder.v:29$188_Y
+(define-fun |boundary_nibble_encoder#38| ((state |boundary_nibble_encoder_s|)) (_ BitVec 1) (bvor (|boundary_nibble_encoder#37| state) (|boundary_nibble_encoder#24| state))) ; $eq$./boundary_nibble_encoder.v:54$228_Y
 (define-fun |boundary_nibble_encoder#39| ((state |boundary_nibble_encoder_s|)) (_ BitVec 1) (bvnot (|boundary_nibble_encoder#38| state))) ; \o_Y [1]
-(define-fun |boundary_nibble_encoder_n o_Y| ((state |boundary_nibble_encoder_s|)) (_ BitVec 3) (concat (|boundary_nibble_encoder#26| state) (concat (|boundary_nibble_encoder#39| state) (|boundary_nibble_encoder#36| state))))
+(define-fun |boundary_nibble_encoder_n o_Y| ((state |boundary_nibble_encoder_s|)) (_ BitVec 3) (concat (|boundary_nibble_encoder#29| state) (concat (|boundary_nibble_encoder#39| state) (|boundary_nibble_encoder#36| state))))
 ; yosys-smt2-output o_INVALID 1
 ; yosys-smt2-wire o_INVALID 1
-(define-fun |boundary_nibble_encoder#40| ((state |boundary_nibble_encoder_s|)) (_ BitVec 1) (bvand (|boundary_nibble_encoder#26| state) (|boundary_nibble_encoder#18| state))) ; \o_INVALID
+(define-fun |boundary_nibble_encoder#40| ((state |boundary_nibble_encoder_s|)) (_ BitVec 1) (bvand (|boundary_nibble_encoder#29| state) (|boundary_nibble_encoder#22| state))) ; \o_INVALID
 (define-fun |boundary_nibble_encoder_n o_INVALID| ((state |boundary_nibble_encoder_s|)) Bool (= ((_ extract 0 0) (|boundary_nibble_encoder#40| state)) #b1))
 ; yosys-smt2-input i_ZEROED_NIBBLES 8
 ; yosys-smt2-wire i_ZEROED_NIBBLES 8
-(define-fun |boundary_nibble_encoder_n i_ZEROED_NIBBLES| ((state |boundary_nibble_encoder_s|)) (_ BitVec 8) (concat (|boundary_nibble_encoder#14| state) (concat (|boundary_nibble_encoder#5| state) (concat (|boundary_nibble_encoder#7| state) (concat (|boundary_nibble_encoder#3| state) (concat (|boundary_nibble_encoder#22| state) (concat (|boundary_nibble_encoder#1| state) (concat (|boundary_nibble_encoder#19| state) (|boundary_nibble_encoder#0| state)))))))))
+(define-fun |boundary_nibble_encoder_n i_ZEROED_NIBBLES| ((state |boundary_nibble_encoder_s|)) (_ BitVec 8) (concat (|boundary_nibble_encoder#18| state) (concat (|boundary_nibble_encoder#5| state) (concat (|boundary_nibble_encoder#7| state) (concat (|boundary_nibble_encoder#12| state) (concat (|boundary_nibble_encoder#25| state) (concat (|boundary_nibble_encoder#0| state) (concat (|boundary_nibble_encoder#2| state) (|boundary_nibble_encoder#10| state)))))))))
 ; yosys-smt2-anyseq boundary_nibble_encoder#41 1 $auto$setundef.cc:501:execute$650
 (declare-fun |boundary_nibble_encoder#41| (|boundary_nibble_encoder_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2437:Anyseq$651
-(define-fun |boundary_nibble_encoder#42| ((state |boundary_nibble_encoder_s|)) (_ BitVec 1) (bvnot (|boundary_nibble_encoder#19| state))) ; $not$./boundary_nibble_encoder.v:56$229_Y
-(define-fun |boundary_nibble_encoder#43| ((state |boundary_nibble_encoder_s|)) (_ BitVec 1) (bvnot (|boundary_nibble_encoder#22| state))) ; $not$./boundary_nibble_encoder.v:50$221_Y
-(define-fun |boundary_nibble_encoder#44| ((state |boundary_nibble_encoder_s|)) (_ BitVec 1) (bvand (|boundary_nibble_encoder#1| state) (|boundary_nibble_encoder#43| state))) ; $and$./boundary_nibble_encoder.v:56$231_Y
+(define-fun |boundary_nibble_encoder#42| ((state |boundary_nibble_encoder_s|)) (_ BitVec 1) (bvnot (|boundary_nibble_encoder#2| state))) ; $not$./boundary_nibble_encoder.v:56$229_Y
+(define-fun |boundary_nibble_encoder#43| ((state |boundary_nibble_encoder_s|)) (_ BitVec 1) (bvnot (|boundary_nibble_encoder#25| state))) ; $not$./boundary_nibble_encoder.v:50$221_Y
+(define-fun |boundary_nibble_encoder#44| ((state |boundary_nibble_encoder_s|)) (_ BitVec 1) (bvand (|boundary_nibble_encoder#0| state) (|boundary_nibble_encoder#43| state))) ; $and$./boundary_nibble_encoder.v:56$231_Y
 (define-fun |boundary_nibble_encoder#45| ((state |boundary_nibble_encoder_s|)) (_ BitVec 1) (bvor (|boundary_nibble_encoder#42| state) (|boundary_nibble_encoder#44| state))) ; $or$./boundary_nibble_encoder.v:56$232_Y
-(define-fun |boundary_nibble_encoder#46| ((state |boundary_nibble_encoder_s|)) (_ BitVec 1) (bvand (|boundary_nibble_encoder#0| state) (|boundary_nibble_encoder#45| state))) ; $and$./boundary_nibble_encoder.v:55$233_Y
+(define-fun |boundary_nibble_encoder#46| ((state |boundary_nibble_encoder_s|)) (_ BitVec 1) (bvand (|boundary_nibble_encoder#10| state) (|boundary_nibble_encoder#45| state))) ; $and$./boundary_nibble_encoder.v:55$233_Y
 (define-fun |boundary_nibble_encoder#47| ((state |boundary_nibble_encoder_s|)) (_ BitVec 1) (bvnot (|boundary_nibble_encoder#7| state))) ; $not$./boundary_nibble_encoder.v:58$236_Y
 (define-fun |boundary_nibble_encoder#48| ((state |boundary_nibble_encoder_s|)) (_ BitVec 1) (bvor (|boundary_nibble_encoder#47| state) (|boundary_nibble_encoder#5| state))) ; $or$./boundary_nibble_encoder.v:58$237_Y
-(define-fun |boundary_nibble_encoder#49| ((state |boundary_nibble_encoder_s|)) (_ BitVec 1) (bvand (|boundary_nibble_encoder#4| state) (|boundary_nibble_encoder#48| state))) ; $and$./boundary_nibble_encoder.v:57$238_Y
+(define-fun |boundary_nibble_encoder#49| ((state |boundary_nibble_encoder_s|)) (_ BitVec 1) (bvand (|boundary_nibble_encoder#13| state) (|boundary_nibble_encoder#48| state))) ; $and$./boundary_nibble_encoder.v:57$238_Y
 (define-fun |boundary_nibble_encoder#50| ((state |boundary_nibble_encoder_s|)) (_ BitVec 1) (bvor (|boundary_nibble_encoder#46| state) (|boundary_nibble_encoder#49| state))) ; $or$./boundary_nibble_encoder.v:55$239_Y
 (define-fun |boundary_nibble_encoder#51| ((state |boundary_nibble_encoder_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|boundary_nibble_encoder#50| state)) #b1) (|boundary_nibble_encoder#41| state) (|boundary_nibble_encoder#35| state))) ; $procmux$336_Y
 ; yosys-smt2-anyseq boundary_nibble_encoder#52 1 $auto$setundef.cc:501:execute$652
 (declare-fun |boundary_nibble_encoder#52| (|boundary_nibble_encoder_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2437:Anyseq$653
-(define-fun |boundary_nibble_encoder#53| ((state |boundary_nibble_encoder_s|)) Bool (= (concat (|boundary_nibble_encoder#14| state) (concat (|boundary_nibble_encoder#5| state) (concat (|boundary_nibble_encoder#7| state) (concat (|boundary_nibble_encoder#3| state) (concat (|boundary_nibble_encoder#22| state) (concat (|boundary_nibble_encoder#1| state) (concat (|boundary_nibble_encoder#19| state) (|boundary_nibble_encoder#0| state)))))))) #b11111111)) ; $eq$./boundary_nibble_encoder.v:35$212_Y
+(define-fun |boundary_nibble_encoder#53| ((state |boundary_nibble_encoder_s|)) Bool (= (concat (|boundary_nibble_encoder#18| state) (concat (|boundary_nibble_encoder#5| state) (concat (|boundary_nibble_encoder#7| state) (concat (|boundary_nibble_encoder#12| state) (concat (|boundary_nibble_encoder#25| state) (concat (|boundary_nibble_encoder#0| state) (concat (|boundary_nibble_encoder#2| state) (|boundary_nibble_encoder#10| state)))))))) #b11111111)) ; $eq$./boundary_nibble_encoder.v:35$212_Y
 (define-fun |boundary_nibble_encoder#54| ((state |boundary_nibble_encoder_s|)) (_ BitVec 1) (ite (|boundary_nibble_encoder#53| state) (|boundary_nibble_encoder#52| state) (|boundary_nibble_encoder#51| state))) ; $0$formal$./boundary_nibble_encoder.v:60$158_CHECK[0:0]$210
 (define-fun |boundary_nibble_encoder#55| ((state |boundary_nibble_encoder_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|boundary_nibble_encoder#50| state)) #b1) #b0 #b1)) ; $procmux$330_Y
 (define-fun |boundary_nibble_encoder#56| ((state |boundary_nibble_encoder_s|)) (_ BitVec 1) (ite (|boundary_nibble_encoder#53| state) #b0 (|boundary_nibble_encoder#55| state))) ; $0$formal$./boundary_nibble_encoder.v:60$158_EN[0:0]$211
@@ -108,9 +108,9 @@
 (define-fun |boundary_nibble_encoder_a 1| ((state |boundary_nibble_encoder_s|)) Bool (or (= ((_ extract 0 0) (|boundary_nibble_encoder#60| state)) #b1) (not (= ((_ extract 0 0) (|boundary_nibble_encoder#62| state)) #b1)))) ; $assert$./boundary_nibble_encoder.v:58$249
 ; yosys-smt2-anyseq boundary_nibble_encoder#63 1 $auto$setundef.cc:501:execute$642
 (declare-fun |boundary_nibble_encoder#63| (|boundary_nibble_encoder_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2437:Anyseq$643
-(define-fun |boundary_nibble_encoder#64| ((state |boundary_nibble_encoder_s|)) (_ BitVec 1) (bvor (|boundary_nibble_encoder#27| state) (|boundary_nibble_encoder#43| state))) ; $or$./boundary_nibble_encoder.v:50$222_Y
-(define-fun |boundary_nibble_encoder#65| ((state |boundary_nibble_encoder_s|)) (_ BitVec 1) (bvor (|boundary_nibble_encoder#64| state) (|boundary_nibble_encoder#12| state))) ; $eq$./boundary_nibble_encoder.v:50$225_Y
-(define-fun |boundary_nibble_encoder#66| ((state |boundary_nibble_encoder_s|)) (_ BitVec 1) (bvand (|boundary_nibble_encoder#20| state) (|boundary_nibble_encoder#65| state))) ; $and$./boundary_nibble_encoder.v:49$226_Y
+(define-fun |boundary_nibble_encoder#64| ((state |boundary_nibble_encoder_s|)) (_ BitVec 1) (bvor (|boundary_nibble_encoder#1| state) (|boundary_nibble_encoder#43| state))) ; $or$./boundary_nibble_encoder.v:50$222_Y
+(define-fun |boundary_nibble_encoder#65| ((state |boundary_nibble_encoder_s|)) (_ BitVec 1) (bvor (|boundary_nibble_encoder#64| state) (|boundary_nibble_encoder#16| state))) ; $eq$./boundary_nibble_encoder.v:50$225_Y
+(define-fun |boundary_nibble_encoder#66| ((state |boundary_nibble_encoder_s|)) (_ BitVec 1) (bvand (|boundary_nibble_encoder#23| state) (|boundary_nibble_encoder#65| state))) ; $and$./boundary_nibble_encoder.v:49$226_Y
 (define-fun |boundary_nibble_encoder#67| ((state |boundary_nibble_encoder_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|boundary_nibble_encoder#66| state)) #b1) (|boundary_nibble_encoder#63| state) (|boundary_nibble_encoder#38| state))) ; $procmux$312_Y
 ; yosys-smt2-anyseq boundary_nibble_encoder#68 1 $auto$setundef.cc:501:execute$644
 (declare-fun |boundary_nibble_encoder#68| (|boundary_nibble_encoder_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2437:Anyseq$645
@@ -131,8 +131,8 @@
 (define-fun |boundary_nibble_encoder_a 3| ((state |boundary_nibble_encoder_s|)) Bool (or (= ((_ extract 0 0) (|boundary_nibble_encoder#75| state)) #b1) (not (= ((_ extract 0 0) (|boundary_nibble_encoder#77| state)) #b1)))) ; $assert$./boundary_nibble_encoder.v:51$247
 ; yosys-smt2-anyseq boundary_nibble_encoder#78 1 $auto$setundef.cc:501:execute$634
 (declare-fun |boundary_nibble_encoder#78| (|boundary_nibble_encoder_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2437:Anyseq$635
-(define-fun |boundary_nibble_encoder#79| ((state |boundary_nibble_encoder_s|)) Bool (= (concat (|boundary_nibble_encoder#22| state) (concat (|boundary_nibble_encoder#1| state) (concat (|boundary_nibble_encoder#19| state) (|boundary_nibble_encoder#0| state)))) #b1111)) ; $eq$./boundary_nibble_encoder.v:45$216_Y
-(define-fun |boundary_nibble_encoder#80| ((state |boundary_nibble_encoder_s|)) (_ BitVec 1) (ite (|boundary_nibble_encoder#79| state) (|boundary_nibble_encoder#78| state) (|boundary_nibble_encoder#25| state))) ; $procmux$288_Y
+(define-fun |boundary_nibble_encoder#79| ((state |boundary_nibble_encoder_s|)) Bool (= (concat (|boundary_nibble_encoder#25| state) (concat (|boundary_nibble_encoder#0| state) (concat (|boundary_nibble_encoder#2| state) (|boundary_nibble_encoder#10| state)))) #b1111)) ; $eq$./boundary_nibble_encoder.v:45$216_Y
+(define-fun |boundary_nibble_encoder#80| ((state |boundary_nibble_encoder_s|)) (_ BitVec 1) (ite (|boundary_nibble_encoder#79| state) (|boundary_nibble_encoder#78| state) (|boundary_nibble_encoder#28| state))) ; $procmux$288_Y
 ; yosys-smt2-anyseq boundary_nibble_encoder#81 1 $auto$setundef.cc:501:execute$636
 (declare-fun |boundary_nibble_encoder#81| (|boundary_nibble_encoder_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2437:Anyseq$637
 (define-fun |boundary_nibble_encoder#82| ((state |boundary_nibble_encoder_s|)) (_ BitVec 1) (ite (|boundary_nibble_encoder#53| state) (|boundary_nibble_encoder#81| state) (|boundary_nibble_encoder#80| state))) ; $0$formal$./boundary_nibble_encoder.v:47$154_CHECK[0:0]$202
@@ -142,7 +142,7 @@
 (define-fun |boundary_nibble_encoder_a 4| ((state |boundary_nibble_encoder_s|)) Bool (or (= ((_ extract 0 0) (|boundary_nibble_encoder#82| state)) #b1) (not (= ((_ extract 0 0) (|boundary_nibble_encoder#84| state)) #b1)))) ; $assert$./boundary_nibble_encoder.v:47$246
 ; yosys-smt2-anyseq boundary_nibble_encoder#85 1 $auto$setundef.cc:501:execute$630
 (declare-fun |boundary_nibble_encoder#85| (|boundary_nibble_encoder_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2437:Anyseq$631
-(define-fun |boundary_nibble_encoder#86| ((state |boundary_nibble_encoder_s|)) (_ BitVec 1) (ite (|boundary_nibble_encoder#79| state) (|boundary_nibble_encoder#26| state) (|boundary_nibble_encoder#85| state))) ; $procmux$276_Y
+(define-fun |boundary_nibble_encoder#86| ((state |boundary_nibble_encoder_s|)) (_ BitVec 1) (ite (|boundary_nibble_encoder#79| state) (|boundary_nibble_encoder#29| state) (|boundary_nibble_encoder#85| state))) ; $procmux$276_Y
 ; yosys-smt2-anyseq boundary_nibble_encoder#87 1 $auto$setundef.cc:501:execute$632
 (declare-fun |boundary_nibble_encoder#87| (|boundary_nibble_encoder_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2437:Anyseq$633
 (define-fun |boundary_nibble_encoder#88| ((state |boundary_nibble_encoder_s|)) (_ BitVec 1) (ite (|boundary_nibble_encoder#53| state) (|boundary_nibble_encoder#87| state) (|boundary_nibble_encoder#86| state))) ; $0$formal$./boundary_nibble_encoder.v:45$153_CHECK[0:0]$200
@@ -159,7 +159,7 @@
 (define-fun |boundary_nibble_encoder_a 6| ((state |boundary_nibble_encoder_s|)) Bool (or (= ((_ extract 0 0) (|boundary_nibble_encoder#93| state)) #b1) (not (= ((_ extract 0 0) (|boundary_nibble_encoder#94| state)) #b1)))) ; $assert$./boundary_nibble_encoder.v:41$244
 ; yosys-smt2-anyseq boundary_nibble_encoder#95 1 $auto$setundef.cc:501:execute$626
 (declare-fun |boundary_nibble_encoder#95| (|boundary_nibble_encoder_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2437:Anyseq$627
-(define-fun |boundary_nibble_encoder#96| ((state |boundary_nibble_encoder_s|)) Bool (= (concat (|boundary_nibble_encoder#26| state) (concat (|boundary_nibble_encoder#39| state) (|boundary_nibble_encoder#36| state))) #b111)) ; $eq$./boundary_nibble_encoder.v:38$214_Y
+(define-fun |boundary_nibble_encoder#96| ((state |boundary_nibble_encoder_s|)) Bool (= (concat (|boundary_nibble_encoder#29| state) (concat (|boundary_nibble_encoder#39| state) (|boundary_nibble_encoder#36| state))) #b111)) ; $eq$./boundary_nibble_encoder.v:38$214_Y
 (define-fun |boundary_nibble_encoder#97| ((state |boundary_nibble_encoder_s|)) (_ BitVec 1) (ite (|boundary_nibble_encoder#53| state) (ite (|boundary_nibble_encoder#96| state) #b1 #b0) (|boundary_nibble_encoder#95| state))) ; $0$formal$./boundary_nibble_encoder.v:37$151_CHECK[0:0]$196
 (define-fun |boundary_nibble_encoder#98| ((state |boundary_nibble_encoder_s|)) (_ BitVec 1) (ite (|boundary_nibble_encoder#53| state) #b1 #b0)) ; $0$formal$./boundary_nibble_encoder.v:36$150_EN[0:0]$195
 ; yosys-smt2-assert 7 ./boundary_nibble_encoder.v:37.30-38.25
@@ -349,189 +349,189 @@
 (define-fun |nibble_local_count_i| ((state |nibble_local_count_s|)) Bool true)
 (define-fun |nibble_local_count_h| ((state |nibble_local_count_s|)) Bool true)
 (define-fun |nibble_local_count_t| ((state |nibble_local_count_s|) (next_state |nibble_local_count_s|)) Bool true) ; end of module nibble_local_count
-; yosys-smt2-module count_leading_zeros
-(declare-sort |count_leading_zeros_s| 0)
-(declare-fun |count_leading_zeros_is| (|count_leading_zeros_s|) Bool)
+; yosys-smt2-module count_leading_zeros_32
+(declare-sort |count_leading_zeros_32_s| 0)
+(declare-fun |count_leading_zeros_32_is| (|count_leading_zeros_32_s|) Bool)
 ; yosys-smt2-wire w_ZEROED_NIBBLE 8
-; yosys-smt2-cell nibble_local_count $genblock$./count_leading_zeros.v:16$1[0]./nlc_xx
-(declare-fun |count_leading_zeros#0| (|count_leading_zeros_s|) (_ BitVec 2)) ; \w_NIBBLE_LEAD_ZEROES [1:0]
-(declare-fun |count_leading_zeros#1| (|count_leading_zeros_s|) Bool) ; \w_ZEROED_NIBBLE [0]
-(declare-fun |count_leading_zeros_h $genblock$./count_leading_zeros.v:16$1[0]./nlc_xx| (|count_leading_zeros_s|) |nibble_local_count_s|)
-; yosys-smt2-cell nibble_local_count $genblock$./count_leading_zeros.v:16$2[1]./nlc_xx
-(declare-fun |count_leading_zeros#2| (|count_leading_zeros_s|) (_ BitVec 2)) ; \w_NIBBLE_LEAD_ZEROES [3:2]
-(declare-fun |count_leading_zeros#3| (|count_leading_zeros_s|) Bool) ; \w_ZEROED_NIBBLE [1]
-(declare-fun |count_leading_zeros_h $genblock$./count_leading_zeros.v:16$2[1]./nlc_xx| (|count_leading_zeros_s|) |nibble_local_count_s|)
-; yosys-smt2-cell nibble_local_count $genblock$./count_leading_zeros.v:16$3[2]./nlc_xx
-(declare-fun |count_leading_zeros#4| (|count_leading_zeros_s|) (_ BitVec 2)) ; \w_NIBBLE_LEAD_ZEROES [5:4]
-(declare-fun |count_leading_zeros#5| (|count_leading_zeros_s|) Bool) ; \w_ZEROED_NIBBLE [2]
-(declare-fun |count_leading_zeros_h $genblock$./count_leading_zeros.v:16$3[2]./nlc_xx| (|count_leading_zeros_s|) |nibble_local_count_s|)
-; yosys-smt2-cell nibble_local_count $genblock$./count_leading_zeros.v:16$4[3]./nlc_xx
-(declare-fun |count_leading_zeros#6| (|count_leading_zeros_s|) (_ BitVec 2)) ; \w_NIBBLE_LEAD_ZEROES [7:6]
-(declare-fun |count_leading_zeros#7| (|count_leading_zeros_s|) Bool) ; \w_ZEROED_NIBBLE [3]
-(declare-fun |count_leading_zeros_h $genblock$./count_leading_zeros.v:16$4[3]./nlc_xx| (|count_leading_zeros_s|) |nibble_local_count_s|)
-; yosys-smt2-cell nibble_local_count $genblock$./count_leading_zeros.v:16$5[4]./nlc_xx
-(declare-fun |count_leading_zeros#8| (|count_leading_zeros_s|) (_ BitVec 2)) ; \w_NIBBLE_LEAD_ZEROES [9:8]
-(declare-fun |count_leading_zeros#9| (|count_leading_zeros_s|) Bool) ; \w_ZEROED_NIBBLE [4]
-(declare-fun |count_leading_zeros_h $genblock$./count_leading_zeros.v:16$5[4]./nlc_xx| (|count_leading_zeros_s|) |nibble_local_count_s|)
-; yosys-smt2-cell nibble_local_count $genblock$./count_leading_zeros.v:16$6[5]./nlc_xx
-(declare-fun |count_leading_zeros#10| (|count_leading_zeros_s|) (_ BitVec 2)) ; \w_NIBBLE_LEAD_ZEROES [11:10]
-(declare-fun |count_leading_zeros#11| (|count_leading_zeros_s|) Bool) ; \w_ZEROED_NIBBLE [5]
-(declare-fun |count_leading_zeros_h $genblock$./count_leading_zeros.v:16$6[5]./nlc_xx| (|count_leading_zeros_s|) |nibble_local_count_s|)
-; yosys-smt2-cell nibble_local_count $genblock$./count_leading_zeros.v:16$7[6]./nlc_xx
-(declare-fun |count_leading_zeros#12| (|count_leading_zeros_s|) (_ BitVec 2)) ; \w_NIBBLE_LEAD_ZEROES [13:12]
-(declare-fun |count_leading_zeros#13| (|count_leading_zeros_s|) Bool) ; \w_ZEROED_NIBBLE [6]
-(declare-fun |count_leading_zeros_h $genblock$./count_leading_zeros.v:16$7[6]./nlc_xx| (|count_leading_zeros_s|) |nibble_local_count_s|)
-; yosys-smt2-cell nibble_local_count $genblock$./count_leading_zeros.v:16$8[7]./nlc_xx
-(declare-fun |count_leading_zeros#14| (|count_leading_zeros_s|) (_ BitVec 2)) ; \w_NIBBLE_LEAD_ZEROES [15:14]
-(declare-fun |count_leading_zeros#15| (|count_leading_zeros_s|) Bool) ; \w_ZEROED_NIBBLE [7]
-(declare-fun |count_leading_zeros_h $genblock$./count_leading_zeros.v:16$8[7]./nlc_xx| (|count_leading_zeros_s|) |nibble_local_count_s|)
-(define-fun |count_leading_zeros_n w_ZEROED_NIBBLE| ((state |count_leading_zeros_s|)) (_ BitVec 8) (concat (ite (|count_leading_zeros#15| state) #b1 #b0) (concat (ite (|count_leading_zeros#13| state) #b1 #b0) (concat (ite (|count_leading_zeros#11| state) #b1 #b0) (concat (ite (|count_leading_zeros#9| state) #b1 #b0) (concat (ite (|count_leading_zeros#7| state) #b1 #b0) (concat (ite (|count_leading_zeros#5| state) #b1 #b0) (concat (ite (|count_leading_zeros#3| state) #b1 #b0) (ite (|count_leading_zeros#1| state) #b1 #b0)))))))))
+; yosys-smt2-cell nibble_local_count $genblock$./count_leading_zeros_32.v:16$1[0]./nlc_xx
+(declare-fun |count_leading_zeros_32#0| (|count_leading_zeros_32_s|) (_ BitVec 2)) ; \w_NIBBLE_LEAD_ZEROES [1:0]
+(declare-fun |count_leading_zeros_32#1| (|count_leading_zeros_32_s|) Bool) ; \w_ZEROED_NIBBLE [0]
+(declare-fun |count_leading_zeros_32_h $genblock$./count_leading_zeros_32.v:16$1[0]./nlc_xx| (|count_leading_zeros_32_s|) |nibble_local_count_s|)
+; yosys-smt2-cell nibble_local_count $genblock$./count_leading_zeros_32.v:16$2[1]./nlc_xx
+(declare-fun |count_leading_zeros_32#2| (|count_leading_zeros_32_s|) (_ BitVec 2)) ; \w_NIBBLE_LEAD_ZEROES [3:2]
+(declare-fun |count_leading_zeros_32#3| (|count_leading_zeros_32_s|) Bool) ; \w_ZEROED_NIBBLE [1]
+(declare-fun |count_leading_zeros_32_h $genblock$./count_leading_zeros_32.v:16$2[1]./nlc_xx| (|count_leading_zeros_32_s|) |nibble_local_count_s|)
+; yosys-smt2-cell nibble_local_count $genblock$./count_leading_zeros_32.v:16$3[2]./nlc_xx
+(declare-fun |count_leading_zeros_32#4| (|count_leading_zeros_32_s|) (_ BitVec 2)) ; \w_NIBBLE_LEAD_ZEROES [5:4]
+(declare-fun |count_leading_zeros_32#5| (|count_leading_zeros_32_s|) Bool) ; \w_ZEROED_NIBBLE [2]
+(declare-fun |count_leading_zeros_32_h $genblock$./count_leading_zeros_32.v:16$3[2]./nlc_xx| (|count_leading_zeros_32_s|) |nibble_local_count_s|)
+; yosys-smt2-cell nibble_local_count $genblock$./count_leading_zeros_32.v:16$4[3]./nlc_xx
+(declare-fun |count_leading_zeros_32#6| (|count_leading_zeros_32_s|) (_ BitVec 2)) ; \w_NIBBLE_LEAD_ZEROES [7:6]
+(declare-fun |count_leading_zeros_32#7| (|count_leading_zeros_32_s|) Bool) ; \w_ZEROED_NIBBLE [3]
+(declare-fun |count_leading_zeros_32_h $genblock$./count_leading_zeros_32.v:16$4[3]./nlc_xx| (|count_leading_zeros_32_s|) |nibble_local_count_s|)
+; yosys-smt2-cell nibble_local_count $genblock$./count_leading_zeros_32.v:16$5[4]./nlc_xx
+(declare-fun |count_leading_zeros_32#8| (|count_leading_zeros_32_s|) (_ BitVec 2)) ; \w_NIBBLE_LEAD_ZEROES [9:8]
+(declare-fun |count_leading_zeros_32#9| (|count_leading_zeros_32_s|) Bool) ; \w_ZEROED_NIBBLE [4]
+(declare-fun |count_leading_zeros_32_h $genblock$./count_leading_zeros_32.v:16$5[4]./nlc_xx| (|count_leading_zeros_32_s|) |nibble_local_count_s|)
+; yosys-smt2-cell nibble_local_count $genblock$./count_leading_zeros_32.v:16$6[5]./nlc_xx
+(declare-fun |count_leading_zeros_32#10| (|count_leading_zeros_32_s|) (_ BitVec 2)) ; \w_NIBBLE_LEAD_ZEROES [11:10]
+(declare-fun |count_leading_zeros_32#11| (|count_leading_zeros_32_s|) Bool) ; \w_ZEROED_NIBBLE [5]
+(declare-fun |count_leading_zeros_32_h $genblock$./count_leading_zeros_32.v:16$6[5]./nlc_xx| (|count_leading_zeros_32_s|) |nibble_local_count_s|)
+; yosys-smt2-cell nibble_local_count $genblock$./count_leading_zeros_32.v:16$7[6]./nlc_xx
+(declare-fun |count_leading_zeros_32#12| (|count_leading_zeros_32_s|) (_ BitVec 2)) ; \w_NIBBLE_LEAD_ZEROES [13:12]
+(declare-fun |count_leading_zeros_32#13| (|count_leading_zeros_32_s|) Bool) ; \w_ZEROED_NIBBLE [6]
+(declare-fun |count_leading_zeros_32_h $genblock$./count_leading_zeros_32.v:16$7[6]./nlc_xx| (|count_leading_zeros_32_s|) |nibble_local_count_s|)
+; yosys-smt2-cell nibble_local_count $genblock$./count_leading_zeros_32.v:16$8[7]./nlc_xx
+(declare-fun |count_leading_zeros_32#14| (|count_leading_zeros_32_s|) (_ BitVec 2)) ; \w_NIBBLE_LEAD_ZEROES [15:14]
+(declare-fun |count_leading_zeros_32#15| (|count_leading_zeros_32_s|) Bool) ; \w_ZEROED_NIBBLE [7]
+(declare-fun |count_leading_zeros_32_h $genblock$./count_leading_zeros_32.v:16$8[7]./nlc_xx| (|count_leading_zeros_32_s|) |nibble_local_count_s|)
+(define-fun |count_leading_zeros_32_n w_ZEROED_NIBBLE| ((state |count_leading_zeros_32_s|)) (_ BitVec 8) (concat (ite (|count_leading_zeros_32#15| state) #b1 #b0) (concat (ite (|count_leading_zeros_32#13| state) #b1 #b0) (concat (ite (|count_leading_zeros_32#11| state) #b1 #b0) (concat (ite (|count_leading_zeros_32#9| state) #b1 #b0) (concat (ite (|count_leading_zeros_32#7| state) #b1 #b0) (concat (ite (|count_leading_zeros_32#5| state) #b1 #b0) (concat (ite (|count_leading_zeros_32#3| state) #b1 #b0) (ite (|count_leading_zeros_32#1| state) #b1 #b0)))))))))
 ; yosys-smt2-wire w_UPPER_COUNT_BITS 3
 ; yosys-smt2-cell boundary_nibble_encoder bne
-(declare-fun |count_leading_zeros#16| (|count_leading_zeros_s|) (_ BitVec 3)) ; \w_UPPER_COUNT_BITS
-(declare-fun |count_leading_zeros#17| (|count_leading_zeros_s|) Bool) ; \o_ALL_ZEROS
-(declare-fun |count_leading_zeros_h bne| (|count_leading_zeros_s|) |boundary_nibble_encoder_s|)
-(define-fun |count_leading_zeros_n w_UPPER_COUNT_BITS| ((state |count_leading_zeros_s|)) (_ BitVec 3) (|count_leading_zeros#16| state))
+(declare-fun |count_leading_zeros_32#16| (|count_leading_zeros_32_s|) (_ BitVec 3)) ; \w_UPPER_COUNT_BITS
+(declare-fun |count_leading_zeros_32#17| (|count_leading_zeros_32_s|) Bool) ; \o_ALL_ZEROS
+(declare-fun |count_leading_zeros_32_h bne| (|count_leading_zeros_32_s|) |boundary_nibble_encoder_s|)
+(define-fun |count_leading_zeros_32_n w_UPPER_COUNT_BITS| ((state |count_leading_zeros_32_s|)) (_ BitVec 3) (|count_leading_zeros_32#16| state))
 ; yosys-smt2-wire w_NIBBLE_LEAD_ZEROES 16
-(define-fun |count_leading_zeros_n w_NIBBLE_LEAD_ZEROES| ((state |count_leading_zeros_s|)) (_ BitVec 16) (concat (|count_leading_zeros#14| state) (concat (|count_leading_zeros#12| state) (concat (|count_leading_zeros#10| state) (concat (|count_leading_zeros#8| state) (concat (|count_leading_zeros#6| state) (concat (|count_leading_zeros#4| state) (concat (|count_leading_zeros#2| state) (|count_leading_zeros#0| state)))))))))
+(define-fun |count_leading_zeros_32_n w_NIBBLE_LEAD_ZEROES| ((state |count_leading_zeros_32_s|)) (_ BitVec 16) (concat (|count_leading_zeros_32#14| state) (concat (|count_leading_zeros_32#12| state) (concat (|count_leading_zeros_32#10| state) (concat (|count_leading_zeros_32#8| state) (concat (|count_leading_zeros_32#6| state) (concat (|count_leading_zeros_32#4| state) (concat (|count_leading_zeros_32#2| state) (|count_leading_zeros_32#0| state)))))))))
 ; yosys-smt2-wire r_LOWER_COUNT_BITS 2
-; yosys-smt2-anyseq count_leading_zeros#18 2 $auto$setundef.cc:501:execute$660
-(declare-fun |count_leading_zeros#18| (|count_leading_zeros_s|) (_ BitVec 2)) ; $auto$rtlil.cc:2437:Anyseq$661
-(define-fun |count_leading_zeros#19| ((state |count_leading_zeros_s|)) Bool (= (|count_leading_zeros#16| state) #b111)) ; $procmux$608_CMP
-(define-fun |count_leading_zeros#20| ((state |count_leading_zeros_s|)) Bool (= (|count_leading_zeros#16| state) #b110)) ; $procmux$609_CMP
-(define-fun |count_leading_zeros#21| ((state |count_leading_zeros_s|)) Bool (= (|count_leading_zeros#16| state) #b101)) ; $procmux$610_CMP
-(define-fun |count_leading_zeros#22| ((state |count_leading_zeros_s|)) Bool (= (|count_leading_zeros#16| state) #b100)) ; $procmux$611_CMP
-(define-fun |count_leading_zeros#23| ((state |count_leading_zeros_s|)) Bool (= (|count_leading_zeros#16| state) #b011)) ; $procmux$612_CMP
-(define-fun |count_leading_zeros#24| ((state |count_leading_zeros_s|)) Bool (= (|count_leading_zeros#16| state) #b010)) ; $procmux$613_CMP
-(define-fun |count_leading_zeros#25| ((state |count_leading_zeros_s|)) Bool (= (|count_leading_zeros#16| state) #b001)) ; $procmux$614_CMP
-(define-fun |count_leading_zeros#26| ((state |count_leading_zeros_s|)) Bool (not (or  (= ((_ extract 0 0) (|count_leading_zeros#16| state)) #b1) (= ((_ extract 1 1) (|count_leading_zeros#16| state)) #b1) (= ((_ extract 2 2) (|count_leading_zeros#16| state)) #b1)))) ; $procmux$615_CMP
-(define-fun |count_leading_zeros#27| ((state |count_leading_zeros_s|)) (_ BitVec 2) (ite (|count_leading_zeros#26| state) (|count_leading_zeros#0| state) (ite (|count_leading_zeros#25| state) (|count_leading_zeros#2| state) (ite (|count_leading_zeros#24| state) (|count_leading_zeros#4| state) (ite (|count_leading_zeros#23| state) (|count_leading_zeros#6| state) (ite (|count_leading_zeros#22| state) (|count_leading_zeros#8| state) (ite (|count_leading_zeros#21| state) (|count_leading_zeros#10| state) (ite (|count_leading_zeros#20| state) (|count_leading_zeros#12| state) (ite (|count_leading_zeros#19| state) (|count_leading_zeros#14| state) (|count_leading_zeros#18| state)))))))))) ; \r_LOWER_COUNT_BITS
-(define-fun |count_leading_zeros_n r_LOWER_COUNT_BITS| ((state |count_leading_zeros_s|)) (_ BitVec 2) (|count_leading_zeros#27| state))
+; yosys-smt2-anyseq count_leading_zeros_32#18 2 $auto$setundef.cc:501:execute$660
+(declare-fun |count_leading_zeros_32#18| (|count_leading_zeros_32_s|) (_ BitVec 2)) ; $auto$rtlil.cc:2437:Anyseq$661
+(define-fun |count_leading_zeros_32#19| ((state |count_leading_zeros_32_s|)) Bool (= (|count_leading_zeros_32#16| state) #b111)) ; $procmux$608_CMP
+(define-fun |count_leading_zeros_32#20| ((state |count_leading_zeros_32_s|)) Bool (= (|count_leading_zeros_32#16| state) #b110)) ; $procmux$609_CMP
+(define-fun |count_leading_zeros_32#21| ((state |count_leading_zeros_32_s|)) Bool (= (|count_leading_zeros_32#16| state) #b101)) ; $procmux$610_CMP
+(define-fun |count_leading_zeros_32#22| ((state |count_leading_zeros_32_s|)) Bool (= (|count_leading_zeros_32#16| state) #b100)) ; $procmux$611_CMP
+(define-fun |count_leading_zeros_32#23| ((state |count_leading_zeros_32_s|)) Bool (= (|count_leading_zeros_32#16| state) #b011)) ; $procmux$612_CMP
+(define-fun |count_leading_zeros_32#24| ((state |count_leading_zeros_32_s|)) Bool (= (|count_leading_zeros_32#16| state) #b010)) ; $procmux$613_CMP
+(define-fun |count_leading_zeros_32#25| ((state |count_leading_zeros_32_s|)) Bool (= (|count_leading_zeros_32#16| state) #b001)) ; $procmux$614_CMP
+(define-fun |count_leading_zeros_32#26| ((state |count_leading_zeros_32_s|)) Bool (not (or  (= ((_ extract 0 0) (|count_leading_zeros_32#16| state)) #b1) (= ((_ extract 1 1) (|count_leading_zeros_32#16| state)) #b1) (= ((_ extract 2 2) (|count_leading_zeros_32#16| state)) #b1)))) ; $procmux$615_CMP
+(define-fun |count_leading_zeros_32#27| ((state |count_leading_zeros_32_s|)) (_ BitVec 2) (ite (|count_leading_zeros_32#26| state) (|count_leading_zeros_32#0| state) (ite (|count_leading_zeros_32#25| state) (|count_leading_zeros_32#2| state) (ite (|count_leading_zeros_32#24| state) (|count_leading_zeros_32#4| state) (ite (|count_leading_zeros_32#23| state) (|count_leading_zeros_32#6| state) (ite (|count_leading_zeros_32#22| state) (|count_leading_zeros_32#8| state) (ite (|count_leading_zeros_32#21| state) (|count_leading_zeros_32#10| state) (ite (|count_leading_zeros_32#20| state) (|count_leading_zeros_32#12| state) (ite (|count_leading_zeros_32#19| state) (|count_leading_zeros_32#14| state) (|count_leading_zeros_32#18| state)))))))))) ; \r_LOWER_COUNT_BITS
+(define-fun |count_leading_zeros_32_n r_LOWER_COUNT_BITS| ((state |count_leading_zeros_32_s|)) (_ BitVec 2) (|count_leading_zeros_32#27| state))
 ; yosys-smt2-output o_ZERO_COUNT 5
 ; yosys-smt2-wire o_ZERO_COUNT 5
-(define-fun |count_leading_zeros_n o_ZERO_COUNT| ((state |count_leading_zeros_s|)) (_ BitVec 5) (concat (|count_leading_zeros#16| state) (|count_leading_zeros#27| state)))
+(define-fun |count_leading_zeros_32_n o_ZERO_COUNT| ((state |count_leading_zeros_32_s|)) (_ BitVec 5) (concat (|count_leading_zeros_32#16| state) (|count_leading_zeros_32#27| state)))
 ; yosys-smt2-output o_ALL_ZEROS 1
 ; yosys-smt2-wire o_ALL_ZEROS 1
-(define-fun |count_leading_zeros_n o_ALL_ZEROS| ((state |count_leading_zeros_s|)) Bool (|count_leading_zeros#17| state))
+(define-fun |count_leading_zeros_32_n o_ALL_ZEROS| ((state |count_leading_zeros_32_s|)) Bool (|count_leading_zeros_32#17| state))
 ; yosys-smt2-input i_WORD 32
 ; yosys-smt2-wire i_WORD 32
-(declare-fun |count_leading_zeros#28| (|count_leading_zeros_s|) (_ BitVec 32)) ; \i_WORD
-(define-fun |count_leading_zeros_n i_WORD| ((state |count_leading_zeros_s|)) (_ BitVec 32) (|count_leading_zeros#28| state))
+(declare-fun |count_leading_zeros_32#28| (|count_leading_zeros_32_s|) (_ BitVec 32)) ; \i_WORD
+(define-fun |count_leading_zeros_32_n i_WORD| ((state |count_leading_zeros_32_s|)) (_ BitVec 32) (|count_leading_zeros_32#28| state))
 ; yosys-smt2-wire fw_SHIFTED_WORD 32
-(define-fun |count_leading_zeros#29| ((state |count_leading_zeros_s|)) (_ BitVec 32) (bvshl (|count_leading_zeros#28| state) (concat #b000000000000000000000000000 (concat (|count_leading_zeros#16| state) (|count_leading_zeros#27| state))))) ; \fw_SHIFTED_WORD
-(define-fun |count_leading_zeros_n fw_SHIFTED_WORD| ((state |count_leading_zeros_s|)) (_ BitVec 32) (|count_leading_zeros#29| state))
-; yosys-smt2-anyseq count_leading_zeros#30 1 $auto$setundef.cc:501:execute$658
-(declare-fun |count_leading_zeros#30| (|count_leading_zeros_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2437:Anyseq$659
-(define-fun |count_leading_zeros#31| ((state |count_leading_zeros_s|)) Bool (not (or  (= ((_ extract 0 0) (|count_leading_zeros#28| state)) #b1) (= ((_ extract 1 1) (|count_leading_zeros#28| state)) #b1) (= ((_ extract 2 2) (|count_leading_zeros#28| state)) #b1) (= ((_ extract 3 3) (|count_leading_zeros#28| state)) #b1) (= ((_ extract 4 4) (|count_leading_zeros#28| state)) #b1) (= ((_ extract 5 5) (|count_leading_zeros#28| state)) #b1) (= ((_ extract 6 6) (|count_leading_zeros#28| state)) #b1) (= ((_ extract 7 7) (|count_leading_zeros#28| state)) #b1) (= ((_ extract 8 8) (|count_leading_zeros#28| state)) #b1) (= ((_ extract 9 9) (|count_leading_zeros#28| state)) #b1) (= ((_ extract 10 10) (|count_leading_zeros#28| state)) #b1) (= ((_ extract 11 11) (|count_leading_zeros#28| state)) #b1) (= ((_ extract 12 12) (|count_leading_zeros#28| state)) #b1) (= ((_ extract 13 13) (|count_leading_zeros#28| state)) #b1) (= ((_ extract 14 14) (|count_leading_zeros#28| state)) #b1) (= ((_ extract 15 15) (|count_leading_zeros#28| state)) #b1) (= ((_ extract 16 16) (|count_leading_zeros#28| state)) #b1) (= ((_ extract 17 17) (|count_leading_zeros#28| state)) #b1) (= ((_ extract 18 18) (|count_leading_zeros#28| state)) #b1) (= ((_ extract 19 19) (|count_leading_zeros#28| state)) #b1) (= ((_ extract 20 20) (|count_leading_zeros#28| state)) #b1) (= ((_ extract 21 21) (|count_leading_zeros#28| state)) #b1) (= ((_ extract 22 22) (|count_leading_zeros#28| state)) #b1) (= ((_ extract 23 23) (|count_leading_zeros#28| state)) #b1) (= ((_ extract 24 24) (|count_leading_zeros#28| state)) #b1) (= ((_ extract 25 25) (|count_leading_zeros#28| state)) #b1) (= ((_ extract 26 26) (|count_leading_zeros#28| state)) #b1) (= ((_ extract 27 27) (|count_leading_zeros#28| state)) #b1) (= ((_ extract 28 28) (|count_leading_zeros#28| state)) #b1) (= ((_ extract 29 29) (|count_leading_zeros#28| state)) #b1) (= ((_ extract 30 30) (|count_leading_zeros#28| state)) #b1) (= ((_ extract 31 31) (|count_leading_zeros#28| state)) #b1)))) ; $eq$./count_leading_zeros.v:77$39_Y
-(define-fun |count_leading_zeros#32| ((state |count_leading_zeros_s|)) (_ BitVec 1) (ite (|count_leading_zeros#31| state) (|count_leading_zeros#30| state) ((_ extract 31 31) (|count_leading_zeros#29| state)))) ; $0$formal$./count_leading_zeros.v:81$14_CHECK[0:0]$28
-(define-fun |count_leading_zeros#33| ((state |count_leading_zeros_s|)) (_ BitVec 1) (ite (|count_leading_zeros#31| state) #b0 #b1)) ; $0$formal$./count_leading_zeros.v:80$13_EN[0:0]$27
-; yosys-smt2-assert 0 ./count_leading_zeros.v:81.32-82.39
-(define-fun |count_leading_zeros_a 0| ((state |count_leading_zeros_s|)) Bool (or (= ((_ extract 0 0) (|count_leading_zeros#32| state)) #b1) (not (= ((_ extract 0 0) (|count_leading_zeros#33| state)) #b1)))) ; $assert$./count_leading_zeros.v:81$48
-(define-fun |count_leading_zeros#34| ((state |count_leading_zeros_s|)) (_ BitVec 1) (bvnot (ite (|count_leading_zeros#17| state) #b1 #b0))) ; $eq$./count_leading_zeros.v:74$31_Y
-; yosys-smt2-anyseq count_leading_zeros#35 1 $auto$setundef.cc:501:execute$656
-(declare-fun |count_leading_zeros#35| (|count_leading_zeros_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2437:Anyseq$657
-(define-fun |count_leading_zeros#36| ((state |count_leading_zeros_s|)) (_ BitVec 1) (ite (|count_leading_zeros#31| state) (|count_leading_zeros#35| state) (|count_leading_zeros#34| state))) ; $0$formal$./count_leading_zeros.v:80$13_CHECK[0:0]$26
-; yosys-smt2-assert 1 ./count_leading_zeros.v:80.8-81.31
-(define-fun |count_leading_zeros_a 1| ((state |count_leading_zeros_s|)) Bool (or (= ((_ extract 0 0) (|count_leading_zeros#36| state)) #b1) (not (= ((_ extract 0 0) (|count_leading_zeros#33| state)) #b1)))) ; $assert$./count_leading_zeros.v:80$47
-; yosys-smt2-anyseq count_leading_zeros#37 1 $auto$setundef.cc:501:execute$654
-(declare-fun |count_leading_zeros#37| (|count_leading_zeros_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2437:Anyseq$655
-(define-fun |count_leading_zeros#38| ((state |count_leading_zeros_s|)) (_ BitVec 1) (ite (|count_leading_zeros#31| state) (ite (|count_leading_zeros#17| state) #b1 #b0) (|count_leading_zeros#37| state))) ; $0$formal$./count_leading_zeros.v:77$12_CHECK[0:0]$24
-(define-fun |count_leading_zeros#39| ((state |count_leading_zeros_s|)) (_ BitVec 1) (ite (|count_leading_zeros#31| state) #b1 #b0)) ; $0$formal$./count_leading_zeros.v:77$12_EN[0:0]$25
-; yosys-smt2-assert 2 ./count_leading_zeros.v:77.22-78.31
-(define-fun |count_leading_zeros_a 2| ((state |count_leading_zeros_s|)) Bool (or (= ((_ extract 0 0) (|count_leading_zeros#38| state)) #b1) (not (= ((_ extract 0 0) (|count_leading_zeros#39| state)) #b1)))) ; $assert$./count_leading_zeros.v:77$46
-(define-fun |count_leading_zeros_a| ((state |count_leading_zeros_s|)) Bool (and
-  (|count_leading_zeros_a 0| state)
-  (|count_leading_zeros_a 1| state)
-  (|count_leading_zeros_a 2| state)
-  (|nibble_local_count_a| (|count_leading_zeros_h $genblock$./count_leading_zeros.v:16$1[0]./nlc_xx| state))
-  (|nibble_local_count_a| (|count_leading_zeros_h $genblock$./count_leading_zeros.v:16$2[1]./nlc_xx| state))
-  (|nibble_local_count_a| (|count_leading_zeros_h $genblock$./count_leading_zeros.v:16$3[2]./nlc_xx| state))
-  (|nibble_local_count_a| (|count_leading_zeros_h $genblock$./count_leading_zeros.v:16$4[3]./nlc_xx| state))
-  (|nibble_local_count_a| (|count_leading_zeros_h $genblock$./count_leading_zeros.v:16$5[4]./nlc_xx| state))
-  (|nibble_local_count_a| (|count_leading_zeros_h $genblock$./count_leading_zeros.v:16$6[5]./nlc_xx| state))
-  (|nibble_local_count_a| (|count_leading_zeros_h $genblock$./count_leading_zeros.v:16$7[6]./nlc_xx| state))
-  (|nibble_local_count_a| (|count_leading_zeros_h $genblock$./count_leading_zeros.v:16$8[7]./nlc_xx| state))
-  (|boundary_nibble_encoder_a| (|count_leading_zeros_h bne| state))
+(define-fun |count_leading_zeros_32#29| ((state |count_leading_zeros_32_s|)) (_ BitVec 32) (bvshl (|count_leading_zeros_32#28| state) (concat #b000000000000000000000000000 (concat (|count_leading_zeros_32#16| state) (|count_leading_zeros_32#27| state))))) ; \fw_SHIFTED_WORD
+(define-fun |count_leading_zeros_32_n fw_SHIFTED_WORD| ((state |count_leading_zeros_32_s|)) (_ BitVec 32) (|count_leading_zeros_32#29| state))
+; yosys-smt2-anyseq count_leading_zeros_32#30 1 $auto$setundef.cc:501:execute$658
+(declare-fun |count_leading_zeros_32#30| (|count_leading_zeros_32_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2437:Anyseq$659
+(define-fun |count_leading_zeros_32#31| ((state |count_leading_zeros_32_s|)) Bool (not (or  (= ((_ extract 0 0) (|count_leading_zeros_32#28| state)) #b1) (= ((_ extract 1 1) (|count_leading_zeros_32#28| state)) #b1) (= ((_ extract 2 2) (|count_leading_zeros_32#28| state)) #b1) (= ((_ extract 3 3) (|count_leading_zeros_32#28| state)) #b1) (= ((_ extract 4 4) (|count_leading_zeros_32#28| state)) #b1) (= ((_ extract 5 5) (|count_leading_zeros_32#28| state)) #b1) (= ((_ extract 6 6) (|count_leading_zeros_32#28| state)) #b1) (= ((_ extract 7 7) (|count_leading_zeros_32#28| state)) #b1) (= ((_ extract 8 8) (|count_leading_zeros_32#28| state)) #b1) (= ((_ extract 9 9) (|count_leading_zeros_32#28| state)) #b1) (= ((_ extract 10 10) (|count_leading_zeros_32#28| state)) #b1) (= ((_ extract 11 11) (|count_leading_zeros_32#28| state)) #b1) (= ((_ extract 12 12) (|count_leading_zeros_32#28| state)) #b1) (= ((_ extract 13 13) (|count_leading_zeros_32#28| state)) #b1) (= ((_ extract 14 14) (|count_leading_zeros_32#28| state)) #b1) (= ((_ extract 15 15) (|count_leading_zeros_32#28| state)) #b1) (= ((_ extract 16 16) (|count_leading_zeros_32#28| state)) #b1) (= ((_ extract 17 17) (|count_leading_zeros_32#28| state)) #b1) (= ((_ extract 18 18) (|count_leading_zeros_32#28| state)) #b1) (= ((_ extract 19 19) (|count_leading_zeros_32#28| state)) #b1) (= ((_ extract 20 20) (|count_leading_zeros_32#28| state)) #b1) (= ((_ extract 21 21) (|count_leading_zeros_32#28| state)) #b1) (= ((_ extract 22 22) (|count_leading_zeros_32#28| state)) #b1) (= ((_ extract 23 23) (|count_leading_zeros_32#28| state)) #b1) (= ((_ extract 24 24) (|count_leading_zeros_32#28| state)) #b1) (= ((_ extract 25 25) (|count_leading_zeros_32#28| state)) #b1) (= ((_ extract 26 26) (|count_leading_zeros_32#28| state)) #b1) (= ((_ extract 27 27) (|count_leading_zeros_32#28| state)) #b1) (= ((_ extract 28 28) (|count_leading_zeros_32#28| state)) #b1) (= ((_ extract 29 29) (|count_leading_zeros_32#28| state)) #b1) (= ((_ extract 30 30) (|count_leading_zeros_32#28| state)) #b1) (= ((_ extract 31 31) (|count_leading_zeros_32#28| state)) #b1)))) ; $eq$./count_leading_zeros_32.v:77$39_Y
+(define-fun |count_leading_zeros_32#32| ((state |count_leading_zeros_32_s|)) (_ BitVec 1) (ite (|count_leading_zeros_32#31| state) (|count_leading_zeros_32#30| state) ((_ extract 31 31) (|count_leading_zeros_32#29| state)))) ; $0$formal$./count_leading_zeros_32.v:81$14_CHECK[0:0]$28
+(define-fun |count_leading_zeros_32#33| ((state |count_leading_zeros_32_s|)) (_ BitVec 1) (ite (|count_leading_zeros_32#31| state) #b0 #b1)) ; $0$formal$./count_leading_zeros_32.v:80$13_EN[0:0]$27
+; yosys-smt2-assert 0 ./count_leading_zeros_32.v:81.32-82.39
+(define-fun |count_leading_zeros_32_a 0| ((state |count_leading_zeros_32_s|)) Bool (or (= ((_ extract 0 0) (|count_leading_zeros_32#32| state)) #b1) (not (= ((_ extract 0 0) (|count_leading_zeros_32#33| state)) #b1)))) ; $assert$./count_leading_zeros_32.v:81$48
+(define-fun |count_leading_zeros_32#34| ((state |count_leading_zeros_32_s|)) (_ BitVec 1) (bvnot (ite (|count_leading_zeros_32#17| state) #b1 #b0))) ; $eq$./count_leading_zeros_32.v:74$31_Y
+; yosys-smt2-anyseq count_leading_zeros_32#35 1 $auto$setundef.cc:501:execute$656
+(declare-fun |count_leading_zeros_32#35| (|count_leading_zeros_32_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2437:Anyseq$657
+(define-fun |count_leading_zeros_32#36| ((state |count_leading_zeros_32_s|)) (_ BitVec 1) (ite (|count_leading_zeros_32#31| state) (|count_leading_zeros_32#35| state) (|count_leading_zeros_32#34| state))) ; $0$formal$./count_leading_zeros_32.v:80$13_CHECK[0:0]$26
+; yosys-smt2-assert 1 ./count_leading_zeros_32.v:80.8-81.31
+(define-fun |count_leading_zeros_32_a 1| ((state |count_leading_zeros_32_s|)) Bool (or (= ((_ extract 0 0) (|count_leading_zeros_32#36| state)) #b1) (not (= ((_ extract 0 0) (|count_leading_zeros_32#33| state)) #b1)))) ; $assert$./count_leading_zeros_32.v:80$47
+; yosys-smt2-anyseq count_leading_zeros_32#37 1 $auto$setundef.cc:501:execute$654
+(declare-fun |count_leading_zeros_32#37| (|count_leading_zeros_32_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2437:Anyseq$655
+(define-fun |count_leading_zeros_32#38| ((state |count_leading_zeros_32_s|)) (_ BitVec 1) (ite (|count_leading_zeros_32#31| state) (ite (|count_leading_zeros_32#17| state) #b1 #b0) (|count_leading_zeros_32#37| state))) ; $0$formal$./count_leading_zeros_32.v:77$12_CHECK[0:0]$24
+(define-fun |count_leading_zeros_32#39| ((state |count_leading_zeros_32_s|)) (_ BitVec 1) (ite (|count_leading_zeros_32#31| state) #b1 #b0)) ; $0$formal$./count_leading_zeros_32.v:77$12_EN[0:0]$25
+; yosys-smt2-assert 2 ./count_leading_zeros_32.v:77.22-78.31
+(define-fun |count_leading_zeros_32_a 2| ((state |count_leading_zeros_32_s|)) Bool (or (= ((_ extract 0 0) (|count_leading_zeros_32#38| state)) #b1) (not (= ((_ extract 0 0) (|count_leading_zeros_32#39| state)) #b1)))) ; $assert$./count_leading_zeros_32.v:77$46
+(define-fun |count_leading_zeros_32_a| ((state |count_leading_zeros_32_s|)) Bool (and
+  (|count_leading_zeros_32_a 0| state)
+  (|count_leading_zeros_32_a 1| state)
+  (|count_leading_zeros_32_a 2| state)
+  (|nibble_local_count_a| (|count_leading_zeros_32_h $genblock$./count_leading_zeros_32.v:16$1[0]./nlc_xx| state))
+  (|nibble_local_count_a| (|count_leading_zeros_32_h $genblock$./count_leading_zeros_32.v:16$2[1]./nlc_xx| state))
+  (|nibble_local_count_a| (|count_leading_zeros_32_h $genblock$./count_leading_zeros_32.v:16$3[2]./nlc_xx| state))
+  (|nibble_local_count_a| (|count_leading_zeros_32_h $genblock$./count_leading_zeros_32.v:16$4[3]./nlc_xx| state))
+  (|nibble_local_count_a| (|count_leading_zeros_32_h $genblock$./count_leading_zeros_32.v:16$5[4]./nlc_xx| state))
+  (|nibble_local_count_a| (|count_leading_zeros_32_h $genblock$./count_leading_zeros_32.v:16$6[5]./nlc_xx| state))
+  (|nibble_local_count_a| (|count_leading_zeros_32_h $genblock$./count_leading_zeros_32.v:16$7[6]./nlc_xx| state))
+  (|nibble_local_count_a| (|count_leading_zeros_32_h $genblock$./count_leading_zeros_32.v:16$8[7]./nlc_xx| state))
+  (|boundary_nibble_encoder_a| (|count_leading_zeros_32_h bne| state))
 ))
-(define-fun |count_leading_zeros_u| ((state |count_leading_zeros_s|)) Bool (and
-  (|nibble_local_count_u| (|count_leading_zeros_h $genblock$./count_leading_zeros.v:16$1[0]./nlc_xx| state))
-  (|nibble_local_count_u| (|count_leading_zeros_h $genblock$./count_leading_zeros.v:16$2[1]./nlc_xx| state))
-  (|nibble_local_count_u| (|count_leading_zeros_h $genblock$./count_leading_zeros.v:16$3[2]./nlc_xx| state))
-  (|nibble_local_count_u| (|count_leading_zeros_h $genblock$./count_leading_zeros.v:16$4[3]./nlc_xx| state))
-  (|nibble_local_count_u| (|count_leading_zeros_h $genblock$./count_leading_zeros.v:16$5[4]./nlc_xx| state))
-  (|nibble_local_count_u| (|count_leading_zeros_h $genblock$./count_leading_zeros.v:16$6[5]./nlc_xx| state))
-  (|nibble_local_count_u| (|count_leading_zeros_h $genblock$./count_leading_zeros.v:16$7[6]./nlc_xx| state))
-  (|nibble_local_count_u| (|count_leading_zeros_h $genblock$./count_leading_zeros.v:16$8[7]./nlc_xx| state))
-  (|boundary_nibble_encoder_u| (|count_leading_zeros_h bne| state))
+(define-fun |count_leading_zeros_32_u| ((state |count_leading_zeros_32_s|)) Bool (and
+  (|nibble_local_count_u| (|count_leading_zeros_32_h $genblock$./count_leading_zeros_32.v:16$1[0]./nlc_xx| state))
+  (|nibble_local_count_u| (|count_leading_zeros_32_h $genblock$./count_leading_zeros_32.v:16$2[1]./nlc_xx| state))
+  (|nibble_local_count_u| (|count_leading_zeros_32_h $genblock$./count_leading_zeros_32.v:16$3[2]./nlc_xx| state))
+  (|nibble_local_count_u| (|count_leading_zeros_32_h $genblock$./count_leading_zeros_32.v:16$4[3]./nlc_xx| state))
+  (|nibble_local_count_u| (|count_leading_zeros_32_h $genblock$./count_leading_zeros_32.v:16$5[4]./nlc_xx| state))
+  (|nibble_local_count_u| (|count_leading_zeros_32_h $genblock$./count_leading_zeros_32.v:16$6[5]./nlc_xx| state))
+  (|nibble_local_count_u| (|count_leading_zeros_32_h $genblock$./count_leading_zeros_32.v:16$7[6]./nlc_xx| state))
+  (|nibble_local_count_u| (|count_leading_zeros_32_h $genblock$./count_leading_zeros_32.v:16$8[7]./nlc_xx| state))
+  (|boundary_nibble_encoder_u| (|count_leading_zeros_32_h bne| state))
 ))
-(define-fun |count_leading_zeros_i| ((state |count_leading_zeros_s|)) Bool (and
-  (|nibble_local_count_i| (|count_leading_zeros_h $genblock$./count_leading_zeros.v:16$1[0]./nlc_xx| state))
-  (|nibble_local_count_i| (|count_leading_zeros_h $genblock$./count_leading_zeros.v:16$2[1]./nlc_xx| state))
-  (|nibble_local_count_i| (|count_leading_zeros_h $genblock$./count_leading_zeros.v:16$3[2]./nlc_xx| state))
-  (|nibble_local_count_i| (|count_leading_zeros_h $genblock$./count_leading_zeros.v:16$4[3]./nlc_xx| state))
-  (|nibble_local_count_i| (|count_leading_zeros_h $genblock$./count_leading_zeros.v:16$5[4]./nlc_xx| state))
-  (|nibble_local_count_i| (|count_leading_zeros_h $genblock$./count_leading_zeros.v:16$6[5]./nlc_xx| state))
-  (|nibble_local_count_i| (|count_leading_zeros_h $genblock$./count_leading_zeros.v:16$7[6]./nlc_xx| state))
-  (|nibble_local_count_i| (|count_leading_zeros_h $genblock$./count_leading_zeros.v:16$8[7]./nlc_xx| state))
-  (|boundary_nibble_encoder_i| (|count_leading_zeros_h bne| state))
+(define-fun |count_leading_zeros_32_i| ((state |count_leading_zeros_32_s|)) Bool (and
+  (|nibble_local_count_i| (|count_leading_zeros_32_h $genblock$./count_leading_zeros_32.v:16$1[0]./nlc_xx| state))
+  (|nibble_local_count_i| (|count_leading_zeros_32_h $genblock$./count_leading_zeros_32.v:16$2[1]./nlc_xx| state))
+  (|nibble_local_count_i| (|count_leading_zeros_32_h $genblock$./count_leading_zeros_32.v:16$3[2]./nlc_xx| state))
+  (|nibble_local_count_i| (|count_leading_zeros_32_h $genblock$./count_leading_zeros_32.v:16$4[3]./nlc_xx| state))
+  (|nibble_local_count_i| (|count_leading_zeros_32_h $genblock$./count_leading_zeros_32.v:16$5[4]./nlc_xx| state))
+  (|nibble_local_count_i| (|count_leading_zeros_32_h $genblock$./count_leading_zeros_32.v:16$6[5]./nlc_xx| state))
+  (|nibble_local_count_i| (|count_leading_zeros_32_h $genblock$./count_leading_zeros_32.v:16$7[6]./nlc_xx| state))
+  (|nibble_local_count_i| (|count_leading_zeros_32_h $genblock$./count_leading_zeros_32.v:16$8[7]./nlc_xx| state))
+  (|boundary_nibble_encoder_i| (|count_leading_zeros_32_h bne| state))
 ))
-(define-fun |count_leading_zeros_h| ((state |count_leading_zeros_s|)) Bool (and
-  (= (|count_leading_zeros_is| state) (|nibble_local_count_is| (|count_leading_zeros_h $genblock$./count_leading_zeros.v:16$1[0]./nlc_xx| state)))
-  (= (|count_leading_zeros#0| state) (|nibble_local_count_n o_ZERO_COUNT| (|count_leading_zeros_h $genblock$./count_leading_zeros.v:16$1[0]./nlc_xx| state))) ; nibble_local_count.o_ZERO_COUNT
-  (= (|count_leading_zeros#1| state) (|nibble_local_count_n o_ALL_ZEROS| (|count_leading_zeros_h $genblock$./count_leading_zeros.v:16$1[0]./nlc_xx| state))) ; nibble_local_count.o_ALL_ZEROS
-  (= ((_ extract 31 28) (|count_leading_zeros#28| state)) (|nibble_local_count_n i_INPUT_NIBBLE| (|count_leading_zeros_h $genblock$./count_leading_zeros.v:16$1[0]./nlc_xx| state))) ; nibble_local_count.i_INPUT_NIBBLE
-  (= (|count_leading_zeros_is| state) (|nibble_local_count_is| (|count_leading_zeros_h $genblock$./count_leading_zeros.v:16$2[1]./nlc_xx| state)))
-  (= (|count_leading_zeros#2| state) (|nibble_local_count_n o_ZERO_COUNT| (|count_leading_zeros_h $genblock$./count_leading_zeros.v:16$2[1]./nlc_xx| state))) ; nibble_local_count.o_ZERO_COUNT
-  (= (|count_leading_zeros#3| state) (|nibble_local_count_n o_ALL_ZEROS| (|count_leading_zeros_h $genblock$./count_leading_zeros.v:16$2[1]./nlc_xx| state))) ; nibble_local_count.o_ALL_ZEROS
-  (= ((_ extract 27 24) (|count_leading_zeros#28| state)) (|nibble_local_count_n i_INPUT_NIBBLE| (|count_leading_zeros_h $genblock$./count_leading_zeros.v:16$2[1]./nlc_xx| state))) ; nibble_local_count.i_INPUT_NIBBLE
-  (= (|count_leading_zeros_is| state) (|nibble_local_count_is| (|count_leading_zeros_h $genblock$./count_leading_zeros.v:16$3[2]./nlc_xx| state)))
-  (= (|count_leading_zeros#4| state) (|nibble_local_count_n o_ZERO_COUNT| (|count_leading_zeros_h $genblock$./count_leading_zeros.v:16$3[2]./nlc_xx| state))) ; nibble_local_count.o_ZERO_COUNT
-  (= (|count_leading_zeros#5| state) (|nibble_local_count_n o_ALL_ZEROS| (|count_leading_zeros_h $genblock$./count_leading_zeros.v:16$3[2]./nlc_xx| state))) ; nibble_local_count.o_ALL_ZEROS
-  (= ((_ extract 23 20) (|count_leading_zeros#28| state)) (|nibble_local_count_n i_INPUT_NIBBLE| (|count_leading_zeros_h $genblock$./count_leading_zeros.v:16$3[2]./nlc_xx| state))) ; nibble_local_count.i_INPUT_NIBBLE
-  (= (|count_leading_zeros_is| state) (|nibble_local_count_is| (|count_leading_zeros_h $genblock$./count_leading_zeros.v:16$4[3]./nlc_xx| state)))
-  (= (|count_leading_zeros#6| state) (|nibble_local_count_n o_ZERO_COUNT| (|count_leading_zeros_h $genblock$./count_leading_zeros.v:16$4[3]./nlc_xx| state))) ; nibble_local_count.o_ZERO_COUNT
-  (= (|count_leading_zeros#7| state) (|nibble_local_count_n o_ALL_ZEROS| (|count_leading_zeros_h $genblock$./count_leading_zeros.v:16$4[3]./nlc_xx| state))) ; nibble_local_count.o_ALL_ZEROS
-  (= ((_ extract 19 16) (|count_leading_zeros#28| state)) (|nibble_local_count_n i_INPUT_NIBBLE| (|count_leading_zeros_h $genblock$./count_leading_zeros.v:16$4[3]./nlc_xx| state))) ; nibble_local_count.i_INPUT_NIBBLE
-  (= (|count_leading_zeros_is| state) (|nibble_local_count_is| (|count_leading_zeros_h $genblock$./count_leading_zeros.v:16$5[4]./nlc_xx| state)))
-  (= (|count_leading_zeros#8| state) (|nibble_local_count_n o_ZERO_COUNT| (|count_leading_zeros_h $genblock$./count_leading_zeros.v:16$5[4]./nlc_xx| state))) ; nibble_local_count.o_ZERO_COUNT
-  (= (|count_leading_zeros#9| state) (|nibble_local_count_n o_ALL_ZEROS| (|count_leading_zeros_h $genblock$./count_leading_zeros.v:16$5[4]./nlc_xx| state))) ; nibble_local_count.o_ALL_ZEROS
-  (= ((_ extract 15 12) (|count_leading_zeros#28| state)) (|nibble_local_count_n i_INPUT_NIBBLE| (|count_leading_zeros_h $genblock$./count_leading_zeros.v:16$5[4]./nlc_xx| state))) ; nibble_local_count.i_INPUT_NIBBLE
-  (= (|count_leading_zeros_is| state) (|nibble_local_count_is| (|count_leading_zeros_h $genblock$./count_leading_zeros.v:16$6[5]./nlc_xx| state)))
-  (= (|count_leading_zeros#10| state) (|nibble_local_count_n o_ZERO_COUNT| (|count_leading_zeros_h $genblock$./count_leading_zeros.v:16$6[5]./nlc_xx| state))) ; nibble_local_count.o_ZERO_COUNT
-  (= (|count_leading_zeros#11| state) (|nibble_local_count_n o_ALL_ZEROS| (|count_leading_zeros_h $genblock$./count_leading_zeros.v:16$6[5]./nlc_xx| state))) ; nibble_local_count.o_ALL_ZEROS
-  (= ((_ extract 11 8) (|count_leading_zeros#28| state)) (|nibble_local_count_n i_INPUT_NIBBLE| (|count_leading_zeros_h $genblock$./count_leading_zeros.v:16$6[5]./nlc_xx| state))) ; nibble_local_count.i_INPUT_NIBBLE
-  (= (|count_leading_zeros_is| state) (|nibble_local_count_is| (|count_leading_zeros_h $genblock$./count_leading_zeros.v:16$7[6]./nlc_xx| state)))
-  (= (|count_leading_zeros#12| state) (|nibble_local_count_n o_ZERO_COUNT| (|count_leading_zeros_h $genblock$./count_leading_zeros.v:16$7[6]./nlc_xx| state))) ; nibble_local_count.o_ZERO_COUNT
-  (= (|count_leading_zeros#13| state) (|nibble_local_count_n o_ALL_ZEROS| (|count_leading_zeros_h $genblock$./count_leading_zeros.v:16$7[6]./nlc_xx| state))) ; nibble_local_count.o_ALL_ZEROS
-  (= ((_ extract 7 4) (|count_leading_zeros#28| state)) (|nibble_local_count_n i_INPUT_NIBBLE| (|count_leading_zeros_h $genblock$./count_leading_zeros.v:16$7[6]./nlc_xx| state))) ; nibble_local_count.i_INPUT_NIBBLE
-  (= (|count_leading_zeros_is| state) (|nibble_local_count_is| (|count_leading_zeros_h $genblock$./count_leading_zeros.v:16$8[7]./nlc_xx| state)))
-  (= (|count_leading_zeros#14| state) (|nibble_local_count_n o_ZERO_COUNT| (|count_leading_zeros_h $genblock$./count_leading_zeros.v:16$8[7]./nlc_xx| state))) ; nibble_local_count.o_ZERO_COUNT
-  (= (|count_leading_zeros#15| state) (|nibble_local_count_n o_ALL_ZEROS| (|count_leading_zeros_h $genblock$./count_leading_zeros.v:16$8[7]./nlc_xx| state))) ; nibble_local_count.o_ALL_ZEROS
-  (= ((_ extract 3 0) (|count_leading_zeros#28| state)) (|nibble_local_count_n i_INPUT_NIBBLE| (|count_leading_zeros_h $genblock$./count_leading_zeros.v:16$8[7]./nlc_xx| state))) ; nibble_local_count.i_INPUT_NIBBLE
-  (= (|count_leading_zeros_is| state) (|boundary_nibble_encoder_is| (|count_leading_zeros_h bne| state)))
-  (= (|count_leading_zeros#16| state) (|boundary_nibble_encoder_n o_Y| (|count_leading_zeros_h bne| state))) ; boundary_nibble_encoder.o_Y
-  (= (|count_leading_zeros#17| state) (|boundary_nibble_encoder_n o_INVALID| (|count_leading_zeros_h bne| state))) ; boundary_nibble_encoder.o_INVALID
-  (= (concat (ite (|count_leading_zeros#15| state) #b1 #b0) (concat (ite (|count_leading_zeros#13| state) #b1 #b0) (concat (ite (|count_leading_zeros#11| state) #b1 #b0) (concat (ite (|count_leading_zeros#9| state) #b1 #b0) (concat (ite (|count_leading_zeros#7| state) #b1 #b0) (concat (ite (|count_leading_zeros#5| state) #b1 #b0) (concat (ite (|count_leading_zeros#3| state) #b1 #b0) (ite (|count_leading_zeros#1| state) #b1 #b0)))))))) (|boundary_nibble_encoder_n i_ZEROED_NIBBLES| (|count_leading_zeros_h bne| state))) ; boundary_nibble_encoder.i_ZEROED_NIBBLES
-  (|nibble_local_count_h| (|count_leading_zeros_h $genblock$./count_leading_zeros.v:16$1[0]./nlc_xx| state))
-  (|nibble_local_count_h| (|count_leading_zeros_h $genblock$./count_leading_zeros.v:16$2[1]./nlc_xx| state))
-  (|nibble_local_count_h| (|count_leading_zeros_h $genblock$./count_leading_zeros.v:16$3[2]./nlc_xx| state))
-  (|nibble_local_count_h| (|count_leading_zeros_h $genblock$./count_leading_zeros.v:16$4[3]./nlc_xx| state))
-  (|nibble_local_count_h| (|count_leading_zeros_h $genblock$./count_leading_zeros.v:16$5[4]./nlc_xx| state))
-  (|nibble_local_count_h| (|count_leading_zeros_h $genblock$./count_leading_zeros.v:16$6[5]./nlc_xx| state))
-  (|nibble_local_count_h| (|count_leading_zeros_h $genblock$./count_leading_zeros.v:16$7[6]./nlc_xx| state))
-  (|nibble_local_count_h| (|count_leading_zeros_h $genblock$./count_leading_zeros.v:16$8[7]./nlc_xx| state))
-  (|boundary_nibble_encoder_h| (|count_leading_zeros_h bne| state))
+(define-fun |count_leading_zeros_32_h| ((state |count_leading_zeros_32_s|)) Bool (and
+  (= (|count_leading_zeros_32_is| state) (|nibble_local_count_is| (|count_leading_zeros_32_h $genblock$./count_leading_zeros_32.v:16$1[0]./nlc_xx| state)))
+  (= (|count_leading_zeros_32#0| state) (|nibble_local_count_n o_ZERO_COUNT| (|count_leading_zeros_32_h $genblock$./count_leading_zeros_32.v:16$1[0]./nlc_xx| state))) ; nibble_local_count.o_ZERO_COUNT
+  (= (|count_leading_zeros_32#1| state) (|nibble_local_count_n o_ALL_ZEROS| (|count_leading_zeros_32_h $genblock$./count_leading_zeros_32.v:16$1[0]./nlc_xx| state))) ; nibble_local_count.o_ALL_ZEROS
+  (= ((_ extract 31 28) (|count_leading_zeros_32#28| state)) (|nibble_local_count_n i_INPUT_NIBBLE| (|count_leading_zeros_32_h $genblock$./count_leading_zeros_32.v:16$1[0]./nlc_xx| state))) ; nibble_local_count.i_INPUT_NIBBLE
+  (= (|count_leading_zeros_32_is| state) (|nibble_local_count_is| (|count_leading_zeros_32_h $genblock$./count_leading_zeros_32.v:16$2[1]./nlc_xx| state)))
+  (= (|count_leading_zeros_32#2| state) (|nibble_local_count_n o_ZERO_COUNT| (|count_leading_zeros_32_h $genblock$./count_leading_zeros_32.v:16$2[1]./nlc_xx| state))) ; nibble_local_count.o_ZERO_COUNT
+  (= (|count_leading_zeros_32#3| state) (|nibble_local_count_n o_ALL_ZEROS| (|count_leading_zeros_32_h $genblock$./count_leading_zeros_32.v:16$2[1]./nlc_xx| state))) ; nibble_local_count.o_ALL_ZEROS
+  (= ((_ extract 27 24) (|count_leading_zeros_32#28| state)) (|nibble_local_count_n i_INPUT_NIBBLE| (|count_leading_zeros_32_h $genblock$./count_leading_zeros_32.v:16$2[1]./nlc_xx| state))) ; nibble_local_count.i_INPUT_NIBBLE
+  (= (|count_leading_zeros_32_is| state) (|nibble_local_count_is| (|count_leading_zeros_32_h $genblock$./count_leading_zeros_32.v:16$3[2]./nlc_xx| state)))
+  (= (|count_leading_zeros_32#4| state) (|nibble_local_count_n o_ZERO_COUNT| (|count_leading_zeros_32_h $genblock$./count_leading_zeros_32.v:16$3[2]./nlc_xx| state))) ; nibble_local_count.o_ZERO_COUNT
+  (= (|count_leading_zeros_32#5| state) (|nibble_local_count_n o_ALL_ZEROS| (|count_leading_zeros_32_h $genblock$./count_leading_zeros_32.v:16$3[2]./nlc_xx| state))) ; nibble_local_count.o_ALL_ZEROS
+  (= ((_ extract 23 20) (|count_leading_zeros_32#28| state)) (|nibble_local_count_n i_INPUT_NIBBLE| (|count_leading_zeros_32_h $genblock$./count_leading_zeros_32.v:16$3[2]./nlc_xx| state))) ; nibble_local_count.i_INPUT_NIBBLE
+  (= (|count_leading_zeros_32_is| state) (|nibble_local_count_is| (|count_leading_zeros_32_h $genblock$./count_leading_zeros_32.v:16$4[3]./nlc_xx| state)))
+  (= (|count_leading_zeros_32#6| state) (|nibble_local_count_n o_ZERO_COUNT| (|count_leading_zeros_32_h $genblock$./count_leading_zeros_32.v:16$4[3]./nlc_xx| state))) ; nibble_local_count.o_ZERO_COUNT
+  (= (|count_leading_zeros_32#7| state) (|nibble_local_count_n o_ALL_ZEROS| (|count_leading_zeros_32_h $genblock$./count_leading_zeros_32.v:16$4[3]./nlc_xx| state))) ; nibble_local_count.o_ALL_ZEROS
+  (= ((_ extract 19 16) (|count_leading_zeros_32#28| state)) (|nibble_local_count_n i_INPUT_NIBBLE| (|count_leading_zeros_32_h $genblock$./count_leading_zeros_32.v:16$4[3]./nlc_xx| state))) ; nibble_local_count.i_INPUT_NIBBLE
+  (= (|count_leading_zeros_32_is| state) (|nibble_local_count_is| (|count_leading_zeros_32_h $genblock$./count_leading_zeros_32.v:16$5[4]./nlc_xx| state)))
+  (= (|count_leading_zeros_32#8| state) (|nibble_local_count_n o_ZERO_COUNT| (|count_leading_zeros_32_h $genblock$./count_leading_zeros_32.v:16$5[4]./nlc_xx| state))) ; nibble_local_count.o_ZERO_COUNT
+  (= (|count_leading_zeros_32#9| state) (|nibble_local_count_n o_ALL_ZEROS| (|count_leading_zeros_32_h $genblock$./count_leading_zeros_32.v:16$5[4]./nlc_xx| state))) ; nibble_local_count.o_ALL_ZEROS
+  (= ((_ extract 15 12) (|count_leading_zeros_32#28| state)) (|nibble_local_count_n i_INPUT_NIBBLE| (|count_leading_zeros_32_h $genblock$./count_leading_zeros_32.v:16$5[4]./nlc_xx| state))) ; nibble_local_count.i_INPUT_NIBBLE
+  (= (|count_leading_zeros_32_is| state) (|nibble_local_count_is| (|count_leading_zeros_32_h $genblock$./count_leading_zeros_32.v:16$6[5]./nlc_xx| state)))
+  (= (|count_leading_zeros_32#10| state) (|nibble_local_count_n o_ZERO_COUNT| (|count_leading_zeros_32_h $genblock$./count_leading_zeros_32.v:16$6[5]./nlc_xx| state))) ; nibble_local_count.o_ZERO_COUNT
+  (= (|count_leading_zeros_32#11| state) (|nibble_local_count_n o_ALL_ZEROS| (|count_leading_zeros_32_h $genblock$./count_leading_zeros_32.v:16$6[5]./nlc_xx| state))) ; nibble_local_count.o_ALL_ZEROS
+  (= ((_ extract 11 8) (|count_leading_zeros_32#28| state)) (|nibble_local_count_n i_INPUT_NIBBLE| (|count_leading_zeros_32_h $genblock$./count_leading_zeros_32.v:16$6[5]./nlc_xx| state))) ; nibble_local_count.i_INPUT_NIBBLE
+  (= (|count_leading_zeros_32_is| state) (|nibble_local_count_is| (|count_leading_zeros_32_h $genblock$./count_leading_zeros_32.v:16$7[6]./nlc_xx| state)))
+  (= (|count_leading_zeros_32#12| state) (|nibble_local_count_n o_ZERO_COUNT| (|count_leading_zeros_32_h $genblock$./count_leading_zeros_32.v:16$7[6]./nlc_xx| state))) ; nibble_local_count.o_ZERO_COUNT
+  (= (|count_leading_zeros_32#13| state) (|nibble_local_count_n o_ALL_ZEROS| (|count_leading_zeros_32_h $genblock$./count_leading_zeros_32.v:16$7[6]./nlc_xx| state))) ; nibble_local_count.o_ALL_ZEROS
+  (= ((_ extract 7 4) (|count_leading_zeros_32#28| state)) (|nibble_local_count_n i_INPUT_NIBBLE| (|count_leading_zeros_32_h $genblock$./count_leading_zeros_32.v:16$7[6]./nlc_xx| state))) ; nibble_local_count.i_INPUT_NIBBLE
+  (= (|count_leading_zeros_32_is| state) (|nibble_local_count_is| (|count_leading_zeros_32_h $genblock$./count_leading_zeros_32.v:16$8[7]./nlc_xx| state)))
+  (= (|count_leading_zeros_32#14| state) (|nibble_local_count_n o_ZERO_COUNT| (|count_leading_zeros_32_h $genblock$./count_leading_zeros_32.v:16$8[7]./nlc_xx| state))) ; nibble_local_count.o_ZERO_COUNT
+  (= (|count_leading_zeros_32#15| state) (|nibble_local_count_n o_ALL_ZEROS| (|count_leading_zeros_32_h $genblock$./count_leading_zeros_32.v:16$8[7]./nlc_xx| state))) ; nibble_local_count.o_ALL_ZEROS
+  (= ((_ extract 3 0) (|count_leading_zeros_32#28| state)) (|nibble_local_count_n i_INPUT_NIBBLE| (|count_leading_zeros_32_h $genblock$./count_leading_zeros_32.v:16$8[7]./nlc_xx| state))) ; nibble_local_count.i_INPUT_NIBBLE
+  (= (|count_leading_zeros_32_is| state) (|boundary_nibble_encoder_is| (|count_leading_zeros_32_h bne| state)))
+  (= (|count_leading_zeros_32#16| state) (|boundary_nibble_encoder_n o_Y| (|count_leading_zeros_32_h bne| state))) ; boundary_nibble_encoder.o_Y
+  (= (|count_leading_zeros_32#17| state) (|boundary_nibble_encoder_n o_INVALID| (|count_leading_zeros_32_h bne| state))) ; boundary_nibble_encoder.o_INVALID
+  (= (concat (ite (|count_leading_zeros_32#15| state) #b1 #b0) (concat (ite (|count_leading_zeros_32#13| state) #b1 #b0) (concat (ite (|count_leading_zeros_32#11| state) #b1 #b0) (concat (ite (|count_leading_zeros_32#9| state) #b1 #b0) (concat (ite (|count_leading_zeros_32#7| state) #b1 #b0) (concat (ite (|count_leading_zeros_32#5| state) #b1 #b0) (concat (ite (|count_leading_zeros_32#3| state) #b1 #b0) (ite (|count_leading_zeros_32#1| state) #b1 #b0)))))))) (|boundary_nibble_encoder_n i_ZEROED_NIBBLES| (|count_leading_zeros_32_h bne| state))) ; boundary_nibble_encoder.i_ZEROED_NIBBLES
+  (|nibble_local_count_h| (|count_leading_zeros_32_h $genblock$./count_leading_zeros_32.v:16$1[0]./nlc_xx| state))
+  (|nibble_local_count_h| (|count_leading_zeros_32_h $genblock$./count_leading_zeros_32.v:16$2[1]./nlc_xx| state))
+  (|nibble_local_count_h| (|count_leading_zeros_32_h $genblock$./count_leading_zeros_32.v:16$3[2]./nlc_xx| state))
+  (|nibble_local_count_h| (|count_leading_zeros_32_h $genblock$./count_leading_zeros_32.v:16$4[3]./nlc_xx| state))
+  (|nibble_local_count_h| (|count_leading_zeros_32_h $genblock$./count_leading_zeros_32.v:16$5[4]./nlc_xx| state))
+  (|nibble_local_count_h| (|count_leading_zeros_32_h $genblock$./count_leading_zeros_32.v:16$6[5]./nlc_xx| state))
+  (|nibble_local_count_h| (|count_leading_zeros_32_h $genblock$./count_leading_zeros_32.v:16$7[6]./nlc_xx| state))
+  (|nibble_local_count_h| (|count_leading_zeros_32_h $genblock$./count_leading_zeros_32.v:16$8[7]./nlc_xx| state))
+  (|boundary_nibble_encoder_h| (|count_leading_zeros_32_h bne| state))
 ))
-(define-fun |count_leading_zeros_t| ((state |count_leading_zeros_s|) (next_state |count_leading_zeros_s|)) Bool (and
-  (|nibble_local_count_t| (|count_leading_zeros_h $genblock$./count_leading_zeros.v:16$1[0]./nlc_xx| state) (|count_leading_zeros_h $genblock$./count_leading_zeros.v:16$1[0]./nlc_xx| next_state))
-  (|nibble_local_count_t| (|count_leading_zeros_h $genblock$./count_leading_zeros.v:16$2[1]./nlc_xx| state) (|count_leading_zeros_h $genblock$./count_leading_zeros.v:16$2[1]./nlc_xx| next_state))
-  (|nibble_local_count_t| (|count_leading_zeros_h $genblock$./count_leading_zeros.v:16$3[2]./nlc_xx| state) (|count_leading_zeros_h $genblock$./count_leading_zeros.v:16$3[2]./nlc_xx| next_state))
-  (|nibble_local_count_t| (|count_leading_zeros_h $genblock$./count_leading_zeros.v:16$4[3]./nlc_xx| state) (|count_leading_zeros_h $genblock$./count_leading_zeros.v:16$4[3]./nlc_xx| next_state))
-  (|nibble_local_count_t| (|count_leading_zeros_h $genblock$./count_leading_zeros.v:16$5[4]./nlc_xx| state) (|count_leading_zeros_h $genblock$./count_leading_zeros.v:16$5[4]./nlc_xx| next_state))
-  (|nibble_local_count_t| (|count_leading_zeros_h $genblock$./count_leading_zeros.v:16$6[5]./nlc_xx| state) (|count_leading_zeros_h $genblock$./count_leading_zeros.v:16$6[5]./nlc_xx| next_state))
-  (|nibble_local_count_t| (|count_leading_zeros_h $genblock$./count_leading_zeros.v:16$7[6]./nlc_xx| state) (|count_leading_zeros_h $genblock$./count_leading_zeros.v:16$7[6]./nlc_xx| next_state))
-  (|nibble_local_count_t| (|count_leading_zeros_h $genblock$./count_leading_zeros.v:16$8[7]./nlc_xx| state) (|count_leading_zeros_h $genblock$./count_leading_zeros.v:16$8[7]./nlc_xx| next_state))
-  (|boundary_nibble_encoder_t| (|count_leading_zeros_h bne| state) (|count_leading_zeros_h bne| next_state))
-)) ; end of module count_leading_zeros
-; yosys-smt2-topmod count_leading_zeros
+(define-fun |count_leading_zeros_32_t| ((state |count_leading_zeros_32_s|) (next_state |count_leading_zeros_32_s|)) Bool (and
+  (|nibble_local_count_t| (|count_leading_zeros_32_h $genblock$./count_leading_zeros_32.v:16$1[0]./nlc_xx| state) (|count_leading_zeros_32_h $genblock$./count_leading_zeros_32.v:16$1[0]./nlc_xx| next_state))
+  (|nibble_local_count_t| (|count_leading_zeros_32_h $genblock$./count_leading_zeros_32.v:16$2[1]./nlc_xx| state) (|count_leading_zeros_32_h $genblock$./count_leading_zeros_32.v:16$2[1]./nlc_xx| next_state))
+  (|nibble_local_count_t| (|count_leading_zeros_32_h $genblock$./count_leading_zeros_32.v:16$3[2]./nlc_xx| state) (|count_leading_zeros_32_h $genblock$./count_leading_zeros_32.v:16$3[2]./nlc_xx| next_state))
+  (|nibble_local_count_t| (|count_leading_zeros_32_h $genblock$./count_leading_zeros_32.v:16$4[3]./nlc_xx| state) (|count_leading_zeros_32_h $genblock$./count_leading_zeros_32.v:16$4[3]./nlc_xx| next_state))
+  (|nibble_local_count_t| (|count_leading_zeros_32_h $genblock$./count_leading_zeros_32.v:16$5[4]./nlc_xx| state) (|count_leading_zeros_32_h $genblock$./count_leading_zeros_32.v:16$5[4]./nlc_xx| next_state))
+  (|nibble_local_count_t| (|count_leading_zeros_32_h $genblock$./count_leading_zeros_32.v:16$6[5]./nlc_xx| state) (|count_leading_zeros_32_h $genblock$./count_leading_zeros_32.v:16$6[5]./nlc_xx| next_state))
+  (|nibble_local_count_t| (|count_leading_zeros_32_h $genblock$./count_leading_zeros_32.v:16$7[6]./nlc_xx| state) (|count_leading_zeros_32_h $genblock$./count_leading_zeros_32.v:16$7[6]./nlc_xx| next_state))
+  (|nibble_local_count_t| (|count_leading_zeros_32_h $genblock$./count_leading_zeros_32.v:16$8[7]./nlc_xx| state) (|count_leading_zeros_32_h $genblock$./count_leading_zeros_32.v:16$8[7]./nlc_xx| next_state))
+  (|boundary_nibble_encoder_t| (|count_leading_zeros_32_h bne| state) (|count_leading_zeros_32_h bne| next_state))
+)) ; end of module count_leading_zeros_32
+; yosys-smt2-topmod count_leading_zeros_32
 ; end of yosys output

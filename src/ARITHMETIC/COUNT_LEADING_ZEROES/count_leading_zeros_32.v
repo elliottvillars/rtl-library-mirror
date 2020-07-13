@@ -1,12 +1,11 @@
 //This is a zero counting module described here:
 //https://sci-hub.tw/10.2478/jee-2015-0054
-module count_leading_zeros (
+module count_leading_zeros_32(
 	input wire [31:0] i_WORD,
 	output wire o_ALL_ZEROS,
 	output wire [4:0] o_ZERO_COUNT
 );
 
-//TODO:TEST THIS MODULE
 wire [15:0] w_NIBBLE_LEAD_ZEROES;
 wire [7:0] w_ZEROED_NIBBLE;
 wire [2:0] w_UPPER_COUNT_BITS;

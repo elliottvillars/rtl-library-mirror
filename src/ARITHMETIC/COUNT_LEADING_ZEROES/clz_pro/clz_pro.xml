@@ -5,286 +5,291 @@
 <property name="os" value="posix"/>
 </properties>
 <testcase classname="clz" name="pro" status="PASS" time="22">
-<system-out>SBY 14:46:03 [clz_cov] Removing directory 'clz_cov'.
-SBY 14:46:03 [clz_pro] Removing directory 'clz_pro'.
-SBY 14:46:03 [clz_pro] Copy './nibble_local_count.v' to 'clz_pro/src/nibble_local_count.v'.
-SBY 14:46:03 [clz_pro] Copy './boundary_nibble_encoder.v' to 'clz_pro/src/boundary_nibble_encoder.v'.
-SBY 14:46:03 [clz_pro] Copy './count_leading_zeros.v' to 'clz_pro/src/count_leading_zeros.v'.
-SBY 14:46:03 [clz_pro] engine_0: smtbmc z3
-SBY 14:46:03 [clz_pro] engine_1: smtbmc yices
-SBY 14:46:03 [clz_pro] base: starting process &quot;cd clz_pro/src; /nix/store/2f796byhvz4rjzawa7g7xsvqb8g0il1s-yosys-2020.06.11/bin/yosys -ql ../model/design.log ../model/design.ys&quot;
-SBY 14:46:03 [clz_pro] base: finished (returncode=0)
-SBY 14:46:03 [clz_pro] smt2: starting process &quot;cd clz_pro/model; /nix/store/2f796byhvz4rjzawa7g7xsvqb8g0il1s-yosys-2020.06.11/bin/yosys -ql design_smt2.log design_smt2.ys&quot;
-SBY 14:46:03 [clz_pro] smt2: finished (returncode=0)
-SBY 14:46:03 [clz_pro] engine_0.basecase: starting process &quot;cd clz_pro; /nix/store/2f796byhvz4rjzawa7g7xsvqb8g0il1s-yosys-2020.06.11/bin/yosys-smtbmc -s z3 --presat --noprogress -t 64 --append 0 --dump-vcd engine_0/trace.vcd --dump-vlogtb engine_0/trace_tb.v --dump-smtc engine_0/trace.smtc model/design_smt2.smt2&quot;
-SBY 14:46:03 [clz_pro] engine_0.induction: starting process &quot;cd clz_pro; /nix/store/2f796byhvz4rjzawa7g7xsvqb8g0il1s-yosys-2020.06.11/bin/yosys-smtbmc -s z3 --presat -i --noprogress -t 64 --append 0 --dump-vcd engine_0/trace_induct.vcd --dump-vlogtb engine_0/trace_induct_tb.v --dump-smtc engine_0/trace_induct.smtc model/design_smt2.smt2&quot;
-SBY 14:46:03 [clz_pro] engine_1.basecase: starting process &quot;cd clz_pro; /nix/store/2f796byhvz4rjzawa7g7xsvqb8g0il1s-yosys-2020.06.11/bin/yosys-smtbmc -s yices --presat --unroll --noprogress -t 64 --append 0 --dump-vcd engine_1/trace.vcd --dump-vlogtb engine_1/trace_tb.v --dump-smtc engine_1/trace.smtc model/design_smt2.smt2&quot;
-SBY 14:46:03 [clz_pro] engine_1.induction: starting process &quot;cd clz_pro; /nix/store/2f796byhvz4rjzawa7g7xsvqb8g0il1s-yosys-2020.06.11/bin/yosys-smtbmc -s yices --presat --unroll -i --noprogress -t 64 --append 0 --dump-vcd engine_1/trace_induct.vcd --dump-vlogtb engine_1/trace_induct_tb.v --dump-smtc engine_1/trace_induct.smtc model/design_smt2.smt2&quot;
-SBY 14:46:03 [clz_pro] engine_0.induction: ##   0:00:00  Solver: z3
-SBY 14:46:03 [clz_pro] engine_1.induction: ##   0:00:00  Solver: yices
-SBY 14:46:03 [clz_pro] engine_0.basecase: ##   0:00:00  Solver: z3
-SBY 14:46:03 [clz_pro] engine_0.induction: ##   0:00:00  Trying induction in step 64..
-SBY 14:46:03 [clz_pro] engine_1.basecase: ##   0:00:00  Solver: yices
-SBY 14:46:03 [clz_pro] engine_0.basecase: ##   0:00:00  Checking assumptions in step 0..
-SBY 14:46:03 [clz_pro] engine_0.basecase: ##   0:00:00  Checking assertions in step 0..
-SBY 14:46:03 [clz_pro] engine_1.basecase: ##   0:00:00  Checking assumptions in step 0..
-SBY 14:46:03 [clz_pro] engine_1.basecase: ##   0:00:00  Checking assertions in step 0..
-SBY 14:46:03 [clz_pro] engine_1.induction: ##   0:00:00  Trying induction in step 64..
-SBY 14:46:03 [clz_pro] engine_0.basecase: ##   0:00:00  Checking assumptions in step 1..
-SBY 14:46:03 [clz_pro] engine_1.induction: ##   0:00:00  Temporal induction successful.
-SBY 14:46:03 [clz_pro] engine_1.induction: ##   0:00:00  Status: passed
-SBY 14:46:03 [clz_pro] engine_1.induction: finished (returncode=0)
-SBY 14:46:03 [clz_pro] engine_1: Status returned by engine for induction: pass
-SBY 14:46:03 [clz_pro] engine_0.induction: terminating process
-SBY 14:46:03 [clz_pro] engine_0.basecase: ##   0:00:00  Checking assertions in step 1..
-SBY 14:46:03 [clz_pro] engine_0.basecase: ##   0:00:00  Checking assumptions in step 2..
-SBY 14:46:03 [clz_pro] engine_0.basecase: ##   0:00:00  Checking assertions in step 2..
-SBY 14:46:04 [clz_pro] engine_1.basecase: ##   0:00:00  Checking assumptions in step 1..
-SBY 14:46:04 [clz_pro] engine_1.basecase: ##   0:00:00  Checking assertions in step 1..
-SBY 14:46:04 [clz_pro] engine_0.basecase: ##   0:00:00  Checking assumptions in step 3..
-SBY 14:46:04 [clz_pro] engine_0.basecase: ##   0:00:00  Checking assertions in step 3..
-SBY 14:46:04 [clz_pro] engine_1.basecase: ##   0:00:00  Checking assumptions in step 2..
-SBY 14:46:04 [clz_pro] engine_1.basecase: ##   0:00:00  Checking assertions in step 2..
-SBY 14:46:04 [clz_pro] engine_0.basecase: ##   0:00:00  Checking assumptions in step 4..
-SBY 14:46:04 [clz_pro] engine_0.basecase: ##   0:00:00  Checking assertions in step 4..
-SBY 14:46:04 [clz_pro] engine_1.basecase: ##   0:00:00  Checking assumptions in step 3..
-SBY 14:46:04 [clz_pro] engine_1.basecase: ##   0:00:00  Checking assertions in step 3..
-SBY 14:46:04 [clz_pro] engine_0.basecase: ##   0:00:00  Checking assumptions in step 5..
-SBY 14:46:04 [clz_pro] engine_0.basecase: ##   0:00:00  Checking assertions in step 5..
-SBY 14:46:04 [clz_pro] engine_1.basecase: ##   0:00:00  Checking assumptions in step 4..
-SBY 14:46:04 [clz_pro] engine_1.basecase: ##   0:00:00  Checking assertions in step 4..
-SBY 14:46:04 [clz_pro] engine_0.basecase: ##   0:00:00  Checking assumptions in step 6..
-SBY 14:46:04 [clz_pro] engine_0.basecase: ##   0:00:00  Checking assertions in step 6..
-SBY 14:46:04 [clz_pro] engine_1.basecase: ##   0:00:00  Checking assumptions in step 5..
-SBY 14:46:04 [clz_pro] engine_1.basecase: ##   0:00:00  Checking assertions in step 5..
-SBY 14:46:04 [clz_pro] engine_0.basecase: ##   0:00:01  Checking assumptions in step 7..
-SBY 14:46:04 [clz_pro] engine_0.basecase: ##   0:00:01  Checking assertions in step 7..
-SBY 14:46:04 [clz_pro] engine_1.basecase: ##   0:00:01  Checking assumptions in step 6..
-SBY 14:46:04 [clz_pro] engine_1.basecase: ##   0:00:01  Checking assertions in step 6..
-SBY 14:46:04 [clz_pro] engine_0.basecase: ##   0:00:01  Checking assumptions in step 8..
-SBY 14:46:04 [clz_pro] engine_0.basecase: ##   0:00:01  Checking assertions in step 8..
-SBY 14:46:05 [clz_pro] engine_1.basecase: ##   0:00:01  Checking assumptions in step 7..
-SBY 14:46:05 [clz_pro] engine_1.basecase: ##   0:00:01  Checking assertions in step 7..
-SBY 14:46:05 [clz_pro] engine_0.basecase: ##   0:00:01  Checking assumptions in step 9..
-SBY 14:46:05 [clz_pro] engine_0.basecase: ##   0:00:01  Checking assertions in step 9..
-SBY 14:46:05 [clz_pro] engine_1.basecase: ##   0:00:01  Checking assumptions in step 8..
-SBY 14:46:05 [clz_pro] engine_1.basecase: ##   0:00:01  Checking assertions in step 8..
-SBY 14:46:05 [clz_pro] engine_0.basecase: ##   0:00:01  Checking assumptions in step 10..
-SBY 14:46:05 [clz_pro] engine_0.basecase: ##   0:00:01  Checking assertions in step 10..
-SBY 14:46:05 [clz_pro] engine_1.basecase: ##   0:00:01  Checking assumptions in step 9..
-SBY 14:46:05 [clz_pro] engine_1.basecase: ##   0:00:01  Checking assertions in step 9..
-SBY 14:46:05 [clz_pro] engine_0.basecase: ##   0:00:01  Checking assumptions in step 11..
-SBY 14:46:05 [clz_pro] engine_0.basecase: ##   0:00:01  Checking assertions in step 11..
-SBY 14:46:05 [clz_pro] engine_1.basecase: ##   0:00:01  Checking assumptions in step 10..
-SBY 14:46:05 [clz_pro] engine_1.basecase: ##   0:00:01  Checking assertions in step 10..
-SBY 14:46:05 [clz_pro] engine_0.basecase: ##   0:00:01  Checking assumptions in step 12..
-SBY 14:46:05 [clz_pro] engine_0.basecase: ##   0:00:01  Checking assertions in step 12..
-SBY 14:46:05 [clz_pro] engine_1.basecase: ##   0:00:02  Checking assumptions in step 11..
-SBY 14:46:05 [clz_pro] engine_1.basecase: ##   0:00:02  Checking assertions in step 11..
-SBY 14:46:05 [clz_pro] engine_0.basecase: ##   0:00:02  Checking assumptions in step 13..
-SBY 14:46:05 [clz_pro] engine_0.basecase: ##   0:00:02  Checking assertions in step 13..
-SBY 14:46:06 [clz_pro] engine_1.basecase: ##   0:00:02  Checking assumptions in step 12..
-SBY 14:46:06 [clz_pro] engine_1.basecase: ##   0:00:02  Checking assertions in step 12..
-SBY 14:46:06 [clz_pro] engine_0.basecase: ##   0:00:02  Checking assumptions in step 14..
-SBY 14:46:06 [clz_pro] engine_0.basecase: ##   0:00:02  Checking assertions in step 14..
-SBY 14:46:06 [clz_pro] engine_0.basecase: ##   0:00:02  Checking assumptions in step 15..
-SBY 14:46:06 [clz_pro] engine_1.basecase: ##   0:00:02  Checking assumptions in step 13..
-SBY 14:46:06 [clz_pro] engine_1.basecase: ##   0:00:02  Checking assertions in step 13..
-SBY 14:46:06 [clz_pro] engine_0.basecase: ##   0:00:02  Checking assertions in step 15..
-SBY 14:46:06 [clz_pro] engine_1.basecase: ##   0:00:02  Checking assumptions in step 14..
-SBY 14:46:06 [clz_pro] engine_1.basecase: ##   0:00:02  Checking assertions in step 14..
-SBY 14:46:06 [clz_pro] engine_0.basecase: ##   0:00:02  Checking assumptions in step 16..
-SBY 14:46:06 [clz_pro] engine_0.basecase: ##   0:00:02  Checking assertions in step 16..
-SBY 14:46:06 [clz_pro] engine_1.basecase: ##   0:00:02  Checking assumptions in step 15..
-SBY 14:46:06 [clz_pro] engine_1.basecase: ##   0:00:02  Checking assertions in step 15..
-SBY 14:46:06 [clz_pro] engine_0.basecase: ##   0:00:03  Checking assumptions in step 17..
-SBY 14:46:06 [clz_pro] engine_0.basecase: ##   0:00:03  Checking assertions in step 17..
-SBY 14:46:06 [clz_pro] engine_1.basecase: ##   0:00:03  Checking assumptions in step 16..
-SBY 14:46:06 [clz_pro] engine_1.basecase: ##   0:00:03  Checking assertions in step 16..
-SBY 14:46:06 [clz_pro] engine_0.basecase: ##   0:00:03  Checking assumptions in step 18..
-SBY 14:46:06 [clz_pro] engine_0.basecase: ##   0:00:03  Checking assertions in step 18..
-SBY 14:46:07 [clz_pro] engine_1.basecase: ##   0:00:03  Checking assumptions in step 17..
-SBY 14:46:07 [clz_pro] engine_1.basecase: ##   0:00:03  Checking assertions in step 17..
-SBY 14:46:07 [clz_pro] engine_0.basecase: ##   0:00:03  Checking assumptions in step 19..
-SBY 14:46:07 [clz_pro] engine_0.basecase: ##   0:00:03  Checking assertions in step 19..
-SBY 14:46:07 [clz_pro] engine_0.basecase: ##   0:00:03  Checking assumptions in step 20..
-SBY 14:46:07 [clz_pro] engine_1.basecase: ##   0:00:03  Checking assumptions in step 18..
-SBY 14:46:07 [clz_pro] engine_1.basecase: ##   0:00:03  Checking assertions in step 18..
-SBY 14:46:07 [clz_pro] engine_0.basecase: ##   0:00:03  Checking assertions in step 20..
-SBY 14:46:07 [clz_pro] engine_0.basecase: ##   0:00:03  Checking assumptions in step 21..
-SBY 14:46:07 [clz_pro] engine_1.basecase: ##   0:00:03  Checking assumptions in step 19..
-SBY 14:46:07 [clz_pro] engine_0.basecase: ##   0:00:03  Checking assertions in step 21..
-SBY 14:46:07 [clz_pro] engine_1.basecase: ##   0:00:03  Checking assertions in step 19..
-SBY 14:46:07 [clz_pro] engine_0.basecase: ##   0:00:04  Checking assumptions in step 22..
-SBY 14:46:07 [clz_pro] engine_1.basecase: ##   0:00:04  Checking assumptions in step 20..
-SBY 14:46:07 [clz_pro] engine_1.basecase: ##   0:00:04  Checking assertions in step 20..
-SBY 14:46:07 [clz_pro] engine_0.basecase: ##   0:00:04  Checking assertions in step 22..
-SBY 14:46:07 [clz_pro] engine_0.basecase: ##   0:00:04  Checking assumptions in step 23..
-SBY 14:46:08 [clz_pro] engine_1.basecase: ##   0:00:04  Checking assumptions in step 21..
-SBY 14:46:08 [clz_pro] engine_1.basecase: ##   0:00:04  Checking assertions in step 21..
-SBY 14:46:08 [clz_pro] engine_0.basecase: ##   0:00:04  Checking assertions in step 23..
-SBY 14:46:08 [clz_pro] engine_1.basecase: ##   0:00:04  Checking assumptions in step 22..
-SBY 14:46:08 [clz_pro] engine_1.basecase: ##   0:00:04  Checking assertions in step 22..
-SBY 14:46:08 [clz_pro] engine_0.basecase: ##   0:00:04  Checking assumptions in step 24..
-SBY 14:46:08 [clz_pro] engine_0.basecase: ##   0:00:04  Checking assertions in step 24..
-SBY 14:46:08 [clz_pro] engine_1.basecase: ##   0:00:04  Checking assumptions in step 23..
-SBY 14:46:08 [clz_pro] engine_1.basecase: ##   0:00:04  Checking assertions in step 23..
-SBY 14:46:08 [clz_pro] engine_0.basecase: ##   0:00:04  Checking assumptions in step 25..
-SBY 14:46:08 [clz_pro] engine_0.basecase: ##   0:00:05  Checking assertions in step 25..
-SBY 14:46:08 [clz_pro] engine_1.basecase: ##   0:00:05  Checking assumptions in step 24..
-SBY 14:46:08 [clz_pro] engine_1.basecase: ##   0:00:05  Checking assertions in step 24..
-SBY 14:46:08 [clz_pro] engine_0.basecase: ##   0:00:05  Checking assumptions in step 26..
-SBY 14:46:09 [clz_pro] engine_0.basecase: ##   0:00:05  Checking assertions in step 26..
-SBY 14:46:09 [clz_pro] engine_0.basecase: ##   0:00:05  Checking assumptions in step 27..
-SBY 14:46:09 [clz_pro] engine_1.basecase: ##   0:00:05  Checking assumptions in step 25..
-SBY 14:46:09 [clz_pro] engine_1.basecase: ##   0:00:05  Checking assertions in step 25..
-SBY 14:46:09 [clz_pro] engine_0.basecase: ##   0:00:05  Checking assertions in step 27..
-SBY 14:46:09 [clz_pro] engine_0.basecase: ##   0:00:05  Checking assumptions in step 28..
-SBY 14:46:09 [clz_pro] engine_1.basecase: ##   0:00:05  Checking assumptions in step 26..
-SBY 14:46:09 [clz_pro] engine_1.basecase: ##   0:00:05  Checking assertions in step 26..
-SBY 14:46:09 [clz_pro] engine_0.basecase: ##   0:00:05  Checking assertions in step 28..
-SBY 14:46:09 [clz_pro] engine_0.basecase: ##   0:00:06  Checking assumptions in step 29..
-SBY 14:46:09 [clz_pro] engine_1.basecase: ##   0:00:06  Checking assumptions in step 27..
-SBY 14:46:09 [clz_pro] engine_1.basecase: ##   0:00:06  Checking assertions in step 27..
-SBY 14:46:09 [clz_pro] engine_0.basecase: ##   0:00:06  Checking assertions in step 29..
-SBY 14:46:10 [clz_pro] engine_1.basecase: ##   0:00:06  Checking assumptions in step 28..
-SBY 14:46:10 [clz_pro] engine_1.basecase: ##   0:00:06  Checking assertions in step 28..
-SBY 14:46:10 [clz_pro] engine_0.basecase: ##   0:00:06  Checking assumptions in step 30..
-SBY 14:46:10 [clz_pro] engine_0.basecase: ##   0:00:06  Checking assertions in step 30..
-SBY 14:46:10 [clz_pro] engine_1.basecase: ##   0:00:06  Checking assumptions in step 29..
-SBY 14:46:10 [clz_pro] engine_1.basecase: ##   0:00:06  Checking assertions in step 29..
-SBY 14:46:10 [clz_pro] engine_0.basecase: ##   0:00:06  Checking assumptions in step 31..
-SBY 14:46:10 [clz_pro] engine_0.basecase: ##   0:00:06  Checking assertions in step 31..
-SBY 14:46:10 [clz_pro] engine_1.basecase: ##   0:00:06  Checking assumptions in step 30..
-SBY 14:46:10 [clz_pro] engine_1.basecase: ##   0:00:06  Checking assertions in step 30..
-SBY 14:46:10 [clz_pro] engine_0.basecase: ##   0:00:07  Checking assumptions in step 32..
-SBY 14:46:10 [clz_pro] engine_0.basecase: ##   0:00:07  Checking assertions in step 32..
-SBY 14:46:10 [clz_pro] engine_1.basecase: ##   0:00:07  Checking assumptions in step 31..
-SBY 14:46:10 [clz_pro] engine_1.basecase: ##   0:00:07  Checking assertions in step 31..
-SBY 14:46:10 [clz_pro] engine_0.basecase: ##   0:00:07  Checking assumptions in step 33..
-SBY 14:46:11 [clz_pro] engine_0.basecase: ##   0:00:07  Checking assertions in step 33..
-SBY 14:46:11 [clz_pro] engine_0.basecase: ##   0:00:07  Checking assumptions in step 34..
-SBY 14:46:11 [clz_pro] engine_1.basecase: ##   0:00:07  Checking assumptions in step 32..
-SBY 14:46:11 [clz_pro] engine_1.basecase: ##   0:00:07  Checking assertions in step 32..
-SBY 14:46:11 [clz_pro] engine_0.basecase: ##   0:00:07  Checking assertions in step 34..
-SBY 14:46:11 [clz_pro] engine_0.basecase: ##   0:00:07  Checking assumptions in step 35..
-SBY 14:46:11 [clz_pro] engine_1.basecase: ##   0:00:07  Checking assumptions in step 33..
-SBY 14:46:11 [clz_pro] engine_1.basecase: ##   0:00:07  Checking assertions in step 33..
-SBY 14:46:11 [clz_pro] engine_0.basecase: ##   0:00:07  Checking assertions in step 35..
-SBY 14:46:11 [clz_pro] engine_0.basecase: ##   0:00:08  Checking assumptions in step 36..
-SBY 14:46:11 [clz_pro] engine_1.basecase: ##   0:00:08  Checking assumptions in step 34..
-SBY 14:46:11 [clz_pro] engine_1.basecase: ##   0:00:08  Checking assertions in step 34..
-SBY 14:46:12 [clz_pro] engine_1.basecase: ##   0:00:08  Checking assumptions in step 35..
-SBY 14:46:12 [clz_pro] engine_0.basecase: ##   0:00:08  Checking assertions in step 36..
-SBY 14:46:12 [clz_pro] engine_1.basecase: ##   0:00:08  Checking assertions in step 35..
-SBY 14:46:12 [clz_pro] engine_0.basecase: ##   0:00:08  Checking assumptions in step 37..
-SBY 14:46:12 [clz_pro] engine_1.basecase: ##   0:00:08  Checking assumptions in step 36..
-SBY 14:46:12 [clz_pro] engine_1.basecase: ##   0:00:08  Checking assertions in step 36..
-SBY 14:46:12 [clz_pro] engine_0.basecase: ##   0:00:08  Checking assertions in step 37..
-SBY 14:46:12 [clz_pro] engine_0.basecase: ##   0:00:09  Checking assumptions in step 38..
-SBY 14:46:12 [clz_pro] engine_1.basecase: ##   0:00:09  Checking assumptions in step 37..
-SBY 14:46:12 [clz_pro] engine_0.basecase: ##   0:00:09  Checking assertions in step 38..
-SBY 14:46:12 [clz_pro] engine_1.basecase: ##   0:00:09  Checking assertions in step 37..
-SBY 14:46:13 [clz_pro] engine_0.basecase: ##   0:00:09  Checking assumptions in step 39..
-SBY 14:46:13 [clz_pro] engine_1.basecase: ##   0:00:09  Checking assumptions in step 38..
-SBY 14:46:13 [clz_pro] engine_1.basecase: ##   0:00:09  Checking assertions in step 38..
-SBY 14:46:13 [clz_pro] engine_0.basecase: ##   0:00:09  Checking assertions in step 39..
-SBY 14:46:13 [clz_pro] engine_1.basecase: ##   0:00:09  Checking assumptions in step 39..
-SBY 14:46:13 [clz_pro] engine_1.basecase: ##   0:00:09  Checking assertions in step 39..
-SBY 14:46:13 [clz_pro] engine_0.basecase: ##   0:00:09  Checking assumptions in step 40..
-SBY 14:46:13 [clz_pro] engine_0.basecase: ##   0:00:10  Checking assertions in step 40..
-SBY 14:46:13 [clz_pro] engine_1.basecase: ##   0:00:10  Checking assumptions in step 40..
-SBY 14:46:13 [clz_pro] engine_1.basecase: ##   0:00:10  Checking assertions in step 40..
-SBY 14:46:14 [clz_pro] engine_0.basecase: ##   0:00:10  Checking assumptions in step 41..
-SBY 14:46:14 [clz_pro] engine_0.basecase: ##   0:00:10  Checking assertions in step 41..
-SBY 14:46:14 [clz_pro] engine_1.basecase: ##   0:00:10  Checking assumptions in step 41..
-SBY 14:46:14 [clz_pro] engine_1.basecase: ##   0:00:10  Checking assertions in step 41..
-SBY 14:46:14 [clz_pro] engine_0.basecase: ##   0:00:10  Checking assumptions in step 42..
-SBY 14:46:14 [clz_pro] engine_1.basecase: ##   0:00:10  Checking assumptions in step 42..
-SBY 14:46:14 [clz_pro] engine_1.basecase: ##   0:00:10  Checking assertions in step 42..
-SBY 14:46:14 [clz_pro] engine_0.basecase: ##   0:00:11  Checking assertions in step 42..
-SBY 14:46:14 [clz_pro] engine_1.basecase: ##   0:00:11  Checking assumptions in step 43..
-SBY 14:46:15 [clz_pro] engine_1.basecase: ##   0:00:11  Checking assertions in step 43..
-SBY 14:46:15 [clz_pro] engine_0.basecase: ##   0:00:11  Checking assumptions in step 43..
-SBY 14:46:15 [clz_pro] engine_0.basecase: ##   0:00:11  Checking assertions in step 43..
-SBY 14:46:15 [clz_pro] engine_1.basecase: ##   0:00:11  Checking assumptions in step 44..
-SBY 14:46:15 [clz_pro] engine_1.basecase: ##   0:00:11  Checking assertions in step 44..
-SBY 14:46:15 [clz_pro] engine_0.basecase: ##   0:00:11  Checking assumptions in step 44..
-SBY 14:46:15 [clz_pro] engine_0.basecase: ##   0:00:11  Checking assertions in step 44..
-SBY 14:46:15 [clz_pro] engine_1.basecase: ##   0:00:12  Checking assumptions in step 45..
-SBY 14:46:15 [clz_pro] engine_1.basecase: ##   0:00:12  Checking assertions in step 45..
-SBY 14:46:15 [clz_pro] engine_0.basecase: ##   0:00:12  Checking assumptions in step 45..
-SBY 14:46:16 [clz_pro] engine_0.basecase: ##   0:00:12  Checking assertions in step 45..
-SBY 14:46:16 [clz_pro] engine_1.basecase: ##   0:00:12  Checking assumptions in step 46..
-SBY 14:46:16 [clz_pro] engine_1.basecase: ##   0:00:12  Checking assertions in step 46..
-SBY 14:46:16 [clz_pro] engine_1.basecase: ##   0:00:12  Checking assumptions in step 47..
-SBY 14:46:16 [clz_pro] engine_1.basecase: ##   0:00:12  Checking assertions in step 47..
-SBY 14:46:16 [clz_pro] engine_0.basecase: ##   0:00:13  Checking assumptions in step 46..
-SBY 14:46:16 [clz_pro] engine_0.basecase: ##   0:00:13  Checking assertions in step 46..
-SBY 14:46:16 [clz_pro] engine_1.basecase: ##   0:00:13  Checking assumptions in step 48..
-SBY 14:46:16 [clz_pro] engine_1.basecase: ##   0:00:13  Checking assertions in step 48..
-SBY 14:46:17 [clz_pro] engine_0.basecase: ##   0:00:13  Checking assumptions in step 47..
-SBY 14:46:17 [clz_pro] engine_0.basecase: ##   0:00:13  Checking assertions in step 47..
-SBY 14:46:17 [clz_pro] engine_1.basecase: ##   0:00:13  Checking assumptions in step 49..
-SBY 14:46:17 [clz_pro] engine_1.basecase: ##   0:00:13  Checking assertions in step 49..
-SBY 14:46:17 [clz_pro] engine_0.basecase: ##   0:00:13  Checking assumptions in step 48..
-SBY 14:46:17 [clz_pro] engine_1.basecase: ##   0:00:14  Checking assumptions in step 50..
-SBY 14:46:17 [clz_pro] engine_1.basecase: ##   0:00:14  Checking assertions in step 50..
-SBY 14:46:18 [clz_pro] engine_1.basecase: ##   0:00:14  Checking assumptions in step 51..
-SBY 14:46:18 [clz_pro] engine_1.basecase: ##   0:00:14  Checking assertions in step 51..
-SBY 14:46:18 [clz_pro] engine_0.basecase: ##   0:00:14  Checking assertions in step 48..
-SBY 14:46:18 [clz_pro] engine_0.basecase: ##   0:00:14  Checking assumptions in step 49..
-SBY 14:46:18 [clz_pro] engine_1.basecase: ##   0:00:14  Checking assumptions in step 52..
-SBY 14:46:18 [clz_pro] engine_1.basecase: ##   0:00:14  Checking assertions in step 52..
-SBY 14:46:18 [clz_pro] engine_0.basecase: ##   0:00:15  Checking assertions in step 49..
-SBY 14:46:18 [clz_pro] engine_1.basecase: ##   0:00:15  Checking assumptions in step 53..
-SBY 14:46:18 [clz_pro] engine_1.basecase: ##   0:00:15  Checking assertions in step 53..
-SBY 14:46:19 [clz_pro] engine_0.basecase: ##   0:00:15  Checking assumptions in step 50..
-SBY 14:46:19 [clz_pro] engine_0.basecase: ##   0:00:15  Checking assertions in step 50..
-SBY 14:46:19 [clz_pro] engine_0.basecase: ##   0:00:15  Checking assumptions in step 51..
-SBY 14:46:19 [clz_pro] engine_1.basecase: ##   0:00:15  Checking assumptions in step 54..
-SBY 14:46:19 [clz_pro] engine_1.basecase: ##   0:00:15  Checking assertions in step 54..
-SBY 14:46:19 [clz_pro] engine_0.basecase: ##   0:00:15  Checking assertions in step 51..
-SBY 14:46:19 [clz_pro] engine_1.basecase: ##   0:00:16  Checking assumptions in step 55..
-SBY 14:46:19 [clz_pro] engine_1.basecase: ##   0:00:16  Checking assertions in step 55..
-SBY 14:46:19 [clz_pro] engine_0.basecase: ##   0:00:16  Checking assumptions in step 52..
-SBY 14:46:20 [clz_pro] engine_1.basecase: ##   0:00:16  Checking assumptions in step 56..
-SBY 14:46:20 [clz_pro] engine_1.basecase: ##   0:00:16  Checking assertions in step 56..
-SBY 14:46:20 [clz_pro] engine_0.basecase: ##   0:00:16  Checking assertions in step 52..
-SBY 14:46:20 [clz_pro] engine_0.basecase: ##   0:00:16  Checking assumptions in step 53..
-SBY 14:46:20 [clz_pro] engine_1.basecase: ##   0:00:16  Checking assumptions in step 57..
-SBY 14:46:20 [clz_pro] engine_1.basecase: ##   0:00:17  Checking assertions in step 57..
-SBY 14:46:20 [clz_pro] engine_0.basecase: ##   0:00:17  Checking assertions in step 53..
-SBY 14:46:21 [clz_pro] engine_0.basecase: ##   0:00:17  Checking assumptions in step 54..
-SBY 14:46:21 [clz_pro] engine_1.basecase: ##   0:00:17  Checking assumptions in step 58..
-SBY 14:46:21 [clz_pro] engine_1.basecase: ##   0:00:17  Checking assertions in step 58..
-SBY 14:46:21 [clz_pro] engine_0.basecase: ##   0:00:17  Checking assertions in step 54..
-SBY 14:46:21 [clz_pro] engine_0.basecase: ##   0:00:17  Checking assumptions in step 55..
-SBY 14:46:21 [clz_pro] engine_0.basecase: ##   0:00:17  Checking assertions in step 55..
-SBY 14:46:21 [clz_pro] engine_1.basecase: ##   0:00:17  Checking assumptions in step 59..
-SBY 14:46:21 [clz_pro] engine_1.basecase: ##   0:00:17  Checking assertions in step 59..
-SBY 14:46:22 [clz_pro] engine_1.basecase: ##   0:00:18  Checking assumptions in step 60..
-SBY 14:46:22 [clz_pro] engine_0.basecase: ##   0:00:18  Checking assumptions in step 56..
-SBY 14:46:22 [clz_pro] engine_1.basecase: ##   0:00:18  Checking assertions in step 60..
-SBY 14:46:22 [clz_pro] engine_1.basecase: ##   0:00:18  Checking assumptions in step 61..
-SBY 14:46:22 [clz_pro] engine_1.basecase: ##   0:00:18  Checking assertions in step 61..
-SBY 14:46:22 [clz_pro] engine_0.basecase: ##   0:00:19  Checking assertions in step 56..
-SBY 14:46:22 [clz_pro] engine_1.basecase: ##   0:00:19  Checking assumptions in step 62..
-SBY 14:46:22 [clz_pro] engine_1.basecase: ##   0:00:19  Checking assertions in step 62..
-SBY 14:46:22 [clz_pro] engine_0.basecase: ##   0:00:19  Checking assumptions in step 57..
-SBY 14:46:23 [clz_pro] engine_0.basecase: ##   0:00:19  Checking assertions in step 57..
-SBY 14:46:23 [clz_pro] engine_1.basecase: ##   0:00:19  Checking assumptions in step 63..
-SBY 14:46:23 [clz_pro] engine_1.basecase: ##   0:00:19  Checking assertions in step 63..
-SBY 14:46:23 [clz_pro] engine_0.basecase: ##   0:00:19  Checking assumptions in step 58..
-SBY 14:46:23 [clz_pro] engine_0.basecase: ##   0:00:19  Checking assertions in step 58..
-SBY 14:46:23 [clz_pro] engine_1.basecase: ##   0:00:20  Status: passed
-SBY 14:46:23 [clz_pro] engine_1.basecase: finished (returncode=0)
-SBY 14:46:23 [clz_pro] engine_1: Status returned by engine for basecase: pass
-SBY 14:46:23 [clz_pro] engine_0.basecase: terminating process
-SBY 14:46:23 [clz_pro] summary: Elapsed clock time [H:MM:SS (secs)]: 0:00:20 (20)
-SBY 14:46:23 [clz_pro] summary: Elapsed process time [H:MM:SS (secs)]: 0:00:22 (22)
-SBY 14:46:23 [clz_pro] summary: engine_1 (smtbmc yices) returned pass for induction
-SBY 14:46:23 [clz_pro] summary: engine_1 (smtbmc yices) returned pass for basecase
-SBY 14:46:23 [clz_pro] summary: successful proof by k-induction.
-SBY 14:46:23 [clz_pro] DONE (PASS, rc=0)
+<system-out>SBY 11:09:45 [clz_cov] Removing directory 'clz_cov'.
+SBY 11:09:45 [clz_pro] Removing directory 'clz_pro'.
+SBY 11:09:45 [clz_pro] Copy './nibble_local_count.v' to 'clz_pro/src/nibble_local_count.v'.
+SBY 11:09:45 [clz_pro] Copy './boundary_nibble_encoder.v' to 'clz_pro/src/boundary_nibble_encoder.v'.
+SBY 11:09:45 [clz_pro] Copy './count_leading_zeros_32.v' to 'clz_pro/src/count_leading_zeros_32.v'.
+SBY 11:09:45 [clz_pro] engine_0: smtbmc z3
+SBY 11:09:45 [clz_pro] engine_1: smtbmc yices
+SBY 11:09:45 [clz_pro] base: starting process &quot;cd clz_pro/src; /nix/store/2f796byhvz4rjzawa7g7xsvqb8g0il1s-yosys-2020.06.11/bin/yosys -ql ../model/design.log ../model/design.ys&quot;
+SBY 11:09:45 [clz_pro] base: finished (returncode=0)
+SBY 11:09:45 [clz_pro] smt2: starting process &quot;cd clz_pro/model; /nix/store/2f796byhvz4rjzawa7g7xsvqb8g0il1s-yosys-2020.06.11/bin/yosys -ql design_smt2.log design_smt2.ys&quot;
+SBY 11:09:45 [clz_pro] smt2: finished (returncode=0)
+SBY 11:09:45 [clz_pro] engine_0.basecase: starting process &quot;cd clz_pro; /nix/store/2f796byhvz4rjzawa7g7xsvqb8g0il1s-yosys-2020.06.11/bin/yosys-smtbmc -s z3 --presat --noprogress -t 64 --append 0 --dump-vcd engine_0/trace.vcd --dump-vlogtb engine_0/trace_tb.v --dump-smtc engine_0/trace.smtc model/design_smt2.smt2&quot;
+SBY 11:09:45 [clz_pro] engine_0.induction: starting process &quot;cd clz_pro; /nix/store/2f796byhvz4rjzawa7g7xsvqb8g0il1s-yosys-2020.06.11/bin/yosys-smtbmc -s z3 --presat -i --noprogress -t 64 --append 0 --dump-vcd engine_0/trace_induct.vcd --dump-vlogtb engine_0/trace_induct_tb.v --dump-smtc engine_0/trace_induct.smtc model/design_smt2.smt2&quot;
+SBY 11:09:45 [clz_pro] engine_1.basecase: starting process &quot;cd clz_pro; /nix/store/2f796byhvz4rjzawa7g7xsvqb8g0il1s-yosys-2020.06.11/bin/yosys-smtbmc -s yices --presat --unroll --noprogress -t 64 --append 0 --dump-vcd engine_1/trace.vcd --dump-vlogtb engine_1/trace_tb.v --dump-smtc engine_1/trace.smtc model/design_smt2.smt2&quot;
+SBY 11:09:45 [clz_pro] engine_1.induction: starting process &quot;cd clz_pro; /nix/store/2f796byhvz4rjzawa7g7xsvqb8g0il1s-yosys-2020.06.11/bin/yosys-smtbmc -s yices --presat --unroll -i --noprogress -t 64 --append 0 --dump-vcd engine_1/trace_induct.vcd --dump-vlogtb engine_1/trace_induct_tb.v --dump-smtc engine_1/trace_induct.smtc model/design_smt2.smt2&quot;
+SBY 11:09:45 [clz_pro] engine_0.basecase: ##   0:00:00  Solver: z3
+SBY 11:09:45 [clz_pro] engine_1.basecase: ##   0:00:00  Solver: yices
+SBY 11:09:45 [clz_pro] engine_0.induction: ##   0:00:00  Solver: z3
+SBY 11:09:45 [clz_pro] engine_0.basecase: ##   0:00:00  Checking assumptions in step 0..
+SBY 11:09:45 [clz_pro] engine_1.induction: ##   0:00:00  Solver: yices
+SBY 11:09:45 [clz_pro] engine_0.induction: ##   0:00:00  Trying induction in step 64..
+SBY 11:09:45 [clz_pro] engine_0.basecase: ##   0:00:00  Checking assertions in step 0..
+SBY 11:09:46 [clz_pro] engine_1.basecase: ##   0:00:00  Checking assumptions in step 0..
+SBY 11:09:46 [clz_pro] engine_1.basecase: ##   0:00:00  Checking assertions in step 0..
+SBY 11:09:46 [clz_pro] engine_0.basecase: ##   0:00:00  Checking assumptions in step 1..
+SBY 11:09:46 [clz_pro] engine_1.induction: ##   0:00:00  Trying induction in step 64..
+SBY 11:09:46 [clz_pro] engine_0.induction: ##   0:00:00  Temporal induction successful.
+SBY 11:09:46 [clz_pro] engine_0.induction: ##   0:00:00  Status: passed
+SBY 11:09:46 [clz_pro] engine_0.induction: finished (returncode=0)
+SBY 11:09:46 [clz_pro] engine_0: Status returned by engine for induction: pass
+SBY 11:09:46 [clz_pro] engine_1.induction: terminating process
+SBY 11:09:46 [clz_pro] engine_0.basecase: ##   0:00:00  Checking assertions in step 1..
+SBY 11:09:46 [clz_pro] engine_1.basecase: ##   0:00:00  Checking assumptions in step 1..
+SBY 11:09:46 [clz_pro] engine_1.basecase: ##   0:00:00  Checking assertions in step 1..
+SBY 11:09:46 [clz_pro] engine_0.basecase: ##   0:00:00  Checking assumptions in step 2..
+SBY 11:09:46 [clz_pro] engine_0.basecase: ##   0:00:00  Checking assertions in step 2..
+SBY 11:09:46 [clz_pro] engine_0.basecase: ##   0:00:00  Checking assumptions in step 3..
+SBY 11:09:46 [clz_pro] engine_0.basecase: ##   0:00:00  Checking assertions in step 3..
+SBY 11:09:46 [clz_pro] engine_1.basecase: ##   0:00:00  Checking assumptions in step 2..
+SBY 11:09:46 [clz_pro] engine_1.basecase: ##   0:00:00  Checking assertions in step 2..
+SBY 11:09:46 [clz_pro] engine_0.basecase: ##   0:00:00  Checking assumptions in step 4..
+SBY 11:09:46 [clz_pro] engine_0.basecase: ##   0:00:00  Checking assertions in step 4..
+SBY 11:09:46 [clz_pro] engine_1.basecase: ##   0:00:00  Checking assumptions in step 3..
+SBY 11:09:46 [clz_pro] engine_1.basecase: ##   0:00:00  Checking assertions in step 3..
+SBY 11:09:46 [clz_pro] engine_0.basecase: ##   0:00:00  Checking assumptions in step 5..
+SBY 11:09:46 [clz_pro] engine_0.basecase: ##   0:00:00  Checking assertions in step 5..
+SBY 11:09:46 [clz_pro] engine_1.basecase: ##   0:00:00  Checking assumptions in step 4..
+SBY 11:09:46 [clz_pro] engine_1.basecase: ##   0:00:00  Checking assertions in step 4..
+SBY 11:09:46 [clz_pro] engine_0.basecase: ##   0:00:00  Checking assumptions in step 6..
+SBY 11:09:46 [clz_pro] engine_0.basecase: ##   0:00:00  Checking assertions in step 6..
+SBY 11:09:46 [clz_pro] engine_1.basecase: ##   0:00:00  Checking assumptions in step 5..
+SBY 11:09:46 [clz_pro] engine_1.basecase: ##   0:00:00  Checking assertions in step 5..
+SBY 11:09:46 [clz_pro] engine_0.basecase: ##   0:00:00  Checking assumptions in step 7..
+SBY 11:09:46 [clz_pro] engine_0.basecase: ##   0:00:00  Checking assertions in step 7..
+SBY 11:09:46 [clz_pro] engine_1.basecase: ##   0:00:01  Checking assumptions in step 6..
+SBY 11:09:47 [clz_pro] engine_1.basecase: ##   0:00:01  Checking assertions in step 6..
+SBY 11:09:47 [clz_pro] engine_0.basecase: ##   0:00:01  Checking assumptions in step 8..
+SBY 11:09:47 [clz_pro] engine_0.basecase: ##   0:00:01  Checking assertions in step 8..
+SBY 11:09:47 [clz_pro] engine_1.basecase: ##   0:00:01  Checking assumptions in step 7..
+SBY 11:09:47 [clz_pro] engine_1.basecase: ##   0:00:01  Checking assertions in step 7..
+SBY 11:09:47 [clz_pro] engine_0.basecase: ##   0:00:01  Checking assumptions in step 9..
+SBY 11:09:47 [clz_pro] engine_0.basecase: ##   0:00:01  Checking assertions in step 9..
+SBY 11:09:47 [clz_pro] engine_1.basecase: ##   0:00:01  Checking assumptions in step 8..
+SBY 11:09:47 [clz_pro] engine_1.basecase: ##   0:00:01  Checking assertions in step 8..
+SBY 11:09:47 [clz_pro] engine_0.basecase: ##   0:00:01  Checking assumptions in step 10..
+SBY 11:09:47 [clz_pro] engine_0.basecase: ##   0:00:01  Checking assertions in step 10..
+SBY 11:09:47 [clz_pro] engine_1.basecase: ##   0:00:01  Checking assumptions in step 9..
+SBY 11:09:47 [clz_pro] engine_1.basecase: ##   0:00:01  Checking assertions in step 9..
+SBY 11:09:47 [clz_pro] engine_0.basecase: ##   0:00:01  Checking assumptions in step 11..
+SBY 11:09:47 [clz_pro] engine_0.basecase: ##   0:00:01  Checking assertions in step 11..
+SBY 11:09:47 [clz_pro] engine_1.basecase: ##   0:00:01  Checking assumptions in step 10..
+SBY 11:09:47 [clz_pro] engine_1.basecase: ##   0:00:01  Checking assertions in step 10..
+SBY 11:09:47 [clz_pro] engine_0.basecase: ##   0:00:01  Checking assumptions in step 12..
+SBY 11:09:47 [clz_pro] engine_0.basecase: ##   0:00:01  Checking assertions in step 12..
+SBY 11:09:47 [clz_pro] engine_1.basecase: ##   0:00:02  Checking assumptions in step 11..
+SBY 11:09:47 [clz_pro] engine_1.basecase: ##   0:00:02  Checking assertions in step 11..
+SBY 11:09:48 [clz_pro] engine_0.basecase: ##   0:00:02  Checking assumptions in step 13..
+SBY 11:09:48 [clz_pro] engine_0.basecase: ##   0:00:02  Checking assertions in step 13..
+SBY 11:09:48 [clz_pro] engine_0.basecase: ##   0:00:02  Checking assumptions in step 14..
+SBY 11:09:48 [clz_pro] engine_1.basecase: ##   0:00:02  Checking assumptions in step 12..
+SBY 11:09:48 [clz_pro] engine_1.basecase: ##   0:00:02  Checking assertions in step 12..
+SBY 11:09:48 [clz_pro] engine_0.basecase: ##   0:00:02  Checking assertions in step 14..
+SBY 11:09:48 [clz_pro] engine_0.basecase: ##   0:00:02  Checking assumptions in step 15..
+SBY 11:09:48 [clz_pro] engine_0.basecase: ##   0:00:02  Checking assertions in step 15..
+SBY 11:09:48 [clz_pro] engine_1.basecase: ##   0:00:02  Checking assumptions in step 13..
+SBY 11:09:48 [clz_pro] engine_1.basecase: ##   0:00:02  Checking assertions in step 13..
+SBY 11:09:48 [clz_pro] engine_0.basecase: ##   0:00:02  Checking assumptions in step 16..
+SBY 11:09:48 [clz_pro] engine_0.basecase: ##   0:00:02  Checking assertions in step 16..
+SBY 11:09:48 [clz_pro] engine_1.basecase: ##   0:00:02  Checking assumptions in step 14..
+SBY 11:09:48 [clz_pro] engine_1.basecase: ##   0:00:02  Checking assertions in step 14..
+SBY 11:09:48 [clz_pro] engine_0.basecase: ##   0:00:02  Checking assumptions in step 17..
+SBY 11:09:48 [clz_pro] engine_0.basecase: ##   0:00:02  Checking assertions in step 17..
+SBY 11:09:48 [clz_pro] engine_1.basecase: ##   0:00:02  Checking assumptions in step 15..
+SBY 11:09:48 [clz_pro] engine_1.basecase: ##   0:00:02  Checking assertions in step 15..
+SBY 11:09:48 [clz_pro] engine_0.basecase: ##   0:00:02  Checking assumptions in step 18..
+SBY 11:09:48 [clz_pro] engine_0.basecase: ##   0:00:03  Checking assertions in step 18..
+SBY 11:09:49 [clz_pro] engine_1.basecase: ##   0:00:03  Checking assumptions in step 16..
+SBY 11:09:49 [clz_pro] engine_1.basecase: ##   0:00:03  Checking assertions in step 16..
+SBY 11:09:49 [clz_pro] engine_0.basecase: ##   0:00:03  Checking assumptions in step 19..
+SBY 11:09:49 [clz_pro] engine_0.basecase: ##   0:00:03  Checking assertions in step 19..
+SBY 11:09:49 [clz_pro] engine_1.basecase: ##   0:00:03  Checking assumptions in step 17..
+SBY 11:09:49 [clz_pro] engine_1.basecase: ##   0:00:03  Checking assertions in step 17..
+SBY 11:09:49 [clz_pro] engine_0.basecase: ##   0:00:03  Checking assumptions in step 20..
+SBY 11:09:49 [clz_pro] engine_1.basecase: ##   0:00:03  Checking assumptions in step 18..
+SBY 11:09:49 [clz_pro] engine_1.basecase: ##   0:00:03  Checking assertions in step 18..
+SBY 11:09:49 [clz_pro] engine_0.basecase: ##   0:00:03  Checking assertions in step 20..
+SBY 11:09:49 [clz_pro] engine_0.basecase: ##   0:00:03  Checking assumptions in step 21..
+SBY 11:09:49 [clz_pro] engine_1.basecase: ##   0:00:03  Checking assumptions in step 19..
+SBY 11:09:49 [clz_pro] engine_1.basecase: ##   0:00:03  Checking assertions in step 19..
+SBY 11:09:49 [clz_pro] engine_0.basecase: ##   0:00:03  Checking assertions in step 21..
+SBY 11:09:49 [clz_pro] engine_1.basecase: ##   0:00:04  Checking assumptions in step 20..
+SBY 11:09:50 [clz_pro] engine_1.basecase: ##   0:00:04  Checking assertions in step 20..
+SBY 11:09:50 [clz_pro] engine_0.basecase: ##   0:00:04  Checking assumptions in step 22..
+SBY 11:09:50 [clz_pro] engine_0.basecase: ##   0:00:04  Checking assertions in step 22..
+SBY 11:09:50 [clz_pro] engine_1.basecase: ##   0:00:04  Checking assumptions in step 21..
+SBY 11:09:50 [clz_pro] engine_1.basecase: ##   0:00:04  Checking assertions in step 21..
+SBY 11:09:50 [clz_pro] engine_0.basecase: ##   0:00:04  Checking assumptions in step 23..
+SBY 11:09:50 [clz_pro] engine_0.basecase: ##   0:00:04  Checking assertions in step 23..
+SBY 11:09:50 [clz_pro] engine_1.basecase: ##   0:00:04  Checking assumptions in step 22..
+SBY 11:09:50 [clz_pro] engine_1.basecase: ##   0:00:04  Checking assertions in step 22..
+SBY 11:09:50 [clz_pro] engine_0.basecase: ##   0:00:04  Checking assumptions in step 24..
+SBY 11:09:50 [clz_pro] engine_0.basecase: ##   0:00:04  Checking assertions in step 24..
+SBY 11:09:50 [clz_pro] engine_1.basecase: ##   0:00:04  Checking assumptions in step 23..
+SBY 11:09:50 [clz_pro] engine_1.basecase: ##   0:00:04  Checking assertions in step 23..
+SBY 11:09:50 [clz_pro] engine_0.basecase: ##   0:00:04  Checking assumptions in step 25..
+SBY 11:09:50 [clz_pro] engine_0.basecase: ##   0:00:04  Checking assertions in step 25..
+SBY 11:09:51 [clz_pro] engine_1.basecase: ##   0:00:05  Checking assumptions in step 24..
+SBY 11:09:51 [clz_pro] engine_1.basecase: ##   0:00:05  Checking assertions in step 24..
+SBY 11:09:51 [clz_pro] engine_0.basecase: ##   0:00:05  Checking assumptions in step 26..
+SBY 11:09:51 [clz_pro] engine_0.basecase: ##   0:00:05  Checking assertions in step 26..
+SBY 11:09:51 [clz_pro] engine_1.basecase: ##   0:00:05  Checking assumptions in step 25..
+SBY 11:09:51 [clz_pro] engine_1.basecase: ##   0:00:05  Checking assertions in step 25..
+SBY 11:09:51 [clz_pro] engine_0.basecase: ##   0:00:05  Checking assumptions in step 27..
+SBY 11:09:51 [clz_pro] engine_0.basecase: ##   0:00:05  Checking assertions in step 27..
+SBY 11:09:51 [clz_pro] engine_1.basecase: ##   0:00:05  Checking assumptions in step 26..
+SBY 11:09:51 [clz_pro] engine_1.basecase: ##   0:00:05  Checking assertions in step 26..
+SBY 11:09:51 [clz_pro] engine_0.basecase: ##   0:00:05  Checking assumptions in step 28..
+SBY 11:09:51 [clz_pro] engine_0.basecase: ##   0:00:05  Checking assertions in step 28..
+SBY 11:09:51 [clz_pro] engine_1.basecase: ##   0:00:05  Checking assumptions in step 27..
+SBY 11:09:51 [clz_pro] engine_1.basecase: ##   0:00:05  Checking assertions in step 27..
+SBY 11:09:51 [clz_pro] engine_0.basecase: ##   0:00:05  Checking assumptions in step 29..
+SBY 11:09:52 [clz_pro] engine_0.basecase: ##   0:00:06  Checking assertions in step 29..
+SBY 11:09:52 [clz_pro] engine_1.basecase: ##   0:00:06  Checking assumptions in step 28..
+SBY 11:09:52 [clz_pro] engine_1.basecase: ##   0:00:06  Checking assertions in step 28..
+SBY 11:09:52 [clz_pro] engine_0.basecase: ##   0:00:06  Checking assumptions in step 30..
+SBY 11:09:52 [clz_pro] engine_0.basecase: ##   0:00:06  Checking assertions in step 30..
+SBY 11:09:52 [clz_pro] engine_1.basecase: ##   0:00:06  Checking assumptions in step 29..
+SBY 11:09:52 [clz_pro] engine_1.basecase: ##   0:00:06  Checking assertions in step 29..
+SBY 11:09:52 [clz_pro] engine_0.basecase: ##   0:00:06  Checking assumptions in step 31..
+SBY 11:09:52 [clz_pro] engine_0.basecase: ##   0:00:06  Checking assertions in step 31..
+SBY 11:09:52 [clz_pro] engine_1.basecase: ##   0:00:06  Checking assumptions in step 30..
+SBY 11:09:52 [clz_pro] engine_1.basecase: ##   0:00:06  Checking assertions in step 30..
+SBY 11:09:52 [clz_pro] engine_0.basecase: ##   0:00:06  Checking assumptions in step 32..
+SBY 11:09:52 [clz_pro] engine_0.basecase: ##   0:00:06  Checking assertions in step 32..
+SBY 11:09:52 [clz_pro] engine_1.basecase: ##   0:00:07  Checking assumptions in step 31..
+SBY 11:09:52 [clz_pro] engine_1.basecase: ##   0:00:07  Checking assertions in step 31..
+SBY 11:09:53 [clz_pro] engine_0.basecase: ##   0:00:07  Checking assumptions in step 33..
+SBY 11:09:53 [clz_pro] engine_0.basecase: ##   0:00:07  Checking assertions in step 33..
+SBY 11:09:53 [clz_pro] engine_1.basecase: ##   0:00:07  Checking assumptions in step 32..
+SBY 11:09:53 [clz_pro] engine_1.basecase: ##   0:00:07  Checking assertions in step 32..
+SBY 11:09:53 [clz_pro] engine_0.basecase: ##   0:00:07  Checking assumptions in step 34..
+SBY 11:09:53 [clz_pro] engine_0.basecase: ##   0:00:07  Checking assertions in step 34..
+SBY 11:09:53 [clz_pro] engine_1.basecase: ##   0:00:07  Checking assumptions in step 33..
+SBY 11:09:53 [clz_pro] engine_1.basecase: ##   0:00:07  Checking assertions in step 33..
+SBY 11:09:53 [clz_pro] engine_0.basecase: ##   0:00:07  Checking assumptions in step 35..
+SBY 11:09:53 [clz_pro] engine_0.basecase: ##   0:00:07  Checking assertions in step 35..
+SBY 11:09:53 [clz_pro] engine_1.basecase: ##   0:00:07  Checking assumptions in step 34..
+SBY 11:09:53 [clz_pro] engine_1.basecase: ##   0:00:07  Checking assertions in step 34..
+SBY 11:09:53 [clz_pro] engine_0.basecase: ##   0:00:08  Checking assumptions in step 36..
+SBY 11:09:54 [clz_pro] engine_0.basecase: ##   0:00:08  Checking assertions in step 36..
+SBY 11:09:54 [clz_pro] engine_1.basecase: ##   0:00:08  Checking assumptions in step 35..
+SBY 11:09:54 [clz_pro] engine_1.basecase: ##   0:00:08  Checking assertions in step 35..
+SBY 11:09:54 [clz_pro] engine_0.basecase: ##   0:00:08  Checking assumptions in step 37..
+SBY 11:09:54 [clz_pro] engine_0.basecase: ##   0:00:08  Checking assertions in step 37..
+SBY 11:09:54 [clz_pro] engine_1.basecase: ##   0:00:08  Checking assumptions in step 36..
+SBY 11:09:54 [clz_pro] engine_1.basecase: ##   0:00:08  Checking assertions in step 36..
+SBY 11:09:54 [clz_pro] engine_0.basecase: ##   0:00:08  Checking assumptions in step 38..
+SBY 11:09:54 [clz_pro] engine_0.basecase: ##   0:00:08  Checking assertions in step 38..
+SBY 11:09:54 [clz_pro] engine_1.basecase: ##   0:00:08  Checking assumptions in step 37..
+SBY 11:09:54 [clz_pro] engine_1.basecase: ##   0:00:08  Checking assertions in step 37..
+SBY 11:09:55 [clz_pro] engine_0.basecase: ##   0:00:09  Checking assumptions in step 39..
+SBY 11:09:55 [clz_pro] engine_0.basecase: ##   0:00:09  Checking assertions in step 39..
+SBY 11:09:55 [clz_pro] engine_1.basecase: ##   0:00:09  Checking assumptions in step 38..
+SBY 11:09:55 [clz_pro] engine_1.basecase: ##   0:00:09  Checking assertions in step 38..
+SBY 11:09:55 [clz_pro] engine_0.basecase: ##   0:00:09  Checking assumptions in step 40..
+SBY 11:09:55 [clz_pro] engine_0.basecase: ##   0:00:09  Checking assertions in step 40..
+SBY 11:09:55 [clz_pro] engine_1.basecase: ##   0:00:09  Checking assumptions in step 39..
+SBY 11:09:55 [clz_pro] engine_1.basecase: ##   0:00:09  Checking assertions in step 39..
+SBY 11:09:55 [clz_pro] engine_0.basecase: ##   0:00:09  Checking assumptions in step 41..
+SBY 11:09:55 [clz_pro] engine_1.basecase: ##   0:00:09  Checking assumptions in step 40..
+SBY 11:09:55 [clz_pro] engine_1.basecase: ##   0:00:10  Checking assertions in step 40..
+SBY 11:09:56 [clz_pro] engine_0.basecase: ##   0:00:10  Checking assertions in step 41..
+SBY 11:09:56 [clz_pro] engine_0.basecase: ##   0:00:10  Checking assumptions in step 42..
+SBY 11:09:56 [clz_pro] engine_1.basecase: ##   0:00:10  Checking assumptions in step 41..
+SBY 11:09:56 [clz_pro] engine_1.basecase: ##   0:00:10  Checking assertions in step 41..
+SBY 11:09:56 [clz_pro] engine_0.basecase: ##   0:00:10  Checking assertions in step 42..
+SBY 11:09:56 [clz_pro] engine_0.basecase: ##   0:00:10  Checking assumptions in step 43..
+SBY 11:09:56 [clz_pro] engine_1.basecase: ##   0:00:10  Checking assumptions in step 42..
+SBY 11:09:56 [clz_pro] engine_1.basecase: ##   0:00:10  Checking assertions in step 42..
+SBY 11:09:56 [clz_pro] engine_0.basecase: ##   0:00:10  Checking assertions in step 43..
+SBY 11:09:57 [clz_pro] engine_1.basecase: ##   0:00:11  Checking assumptions in step 43..
+SBY 11:09:57 [clz_pro] engine_1.basecase: ##   0:00:11  Checking assertions in step 43..
+SBY 11:09:57 [clz_pro] engine_0.basecase: ##   0:00:11  Checking assumptions in step 44..
+SBY 11:09:57 [clz_pro] engine_0.basecase: ##   0:00:11  Checking assertions in step 44..
+SBY 11:09:57 [clz_pro] engine_1.basecase: ##   0:00:11  Checking assumptions in step 44..
+SBY 11:09:57 [clz_pro] engine_1.basecase: ##   0:00:11  Checking assertions in step 44..
+SBY 11:09:57 [clz_pro] engine_0.basecase: ##   0:00:11  Checking assumptions in step 45..
+SBY 11:09:57 [clz_pro] engine_0.basecase: ##   0:00:11  Checking assertions in step 45..
+SBY 11:09:57 [clz_pro] engine_1.basecase: ##   0:00:11  Checking assumptions in step 45..
+SBY 11:09:57 [clz_pro] engine_1.basecase: ##   0:00:11  Checking assertions in step 45..
+SBY 11:09:57 [clz_pro] engine_0.basecase: ##   0:00:11  Checking assumptions in step 46..
+SBY 11:09:58 [clz_pro] engine_0.basecase: ##   0:00:12  Checking assertions in step 46..
+SBY 11:09:58 [clz_pro] engine_1.basecase: ##   0:00:12  Checking assumptions in step 46..
+SBY 11:09:58 [clz_pro] engine_1.basecase: ##   0:00:12  Checking assertions in step 46..
+SBY 11:09:58 [clz_pro] engine_0.basecase: ##   0:00:12  Checking assumptions in step 47..
+SBY 11:09:58 [clz_pro] engine_0.basecase: ##   0:00:12  Checking assertions in step 47..
+SBY 11:09:58 [clz_pro] engine_1.basecase: ##   0:00:12  Checking assumptions in step 47..
+SBY 11:09:58 [clz_pro] engine_1.basecase: ##   0:00:12  Checking assertions in step 47..
+SBY 11:09:58 [clz_pro] engine_0.basecase: ##   0:00:12  Checking assumptions in step 48..
+SBY 11:09:58 [clz_pro] engine_0.basecase: ##   0:00:12  Checking assertions in step 48..
+SBY 11:09:58 [clz_pro] engine_1.basecase: ##   0:00:12  Checking assumptions in step 48..
+SBY 11:09:58 [clz_pro] engine_1.basecase: ##   0:00:12  Checking assertions in step 48..
+SBY 11:09:59 [clz_pro] engine_0.basecase: ##   0:00:13  Checking assumptions in step 49..
+SBY 11:09:59 [clz_pro] engine_1.basecase: ##   0:00:13  Checking assumptions in step 49..
+SBY 11:09:59 [clz_pro] engine_1.basecase: ##   0:00:13  Checking assertions in step 49..
+SBY 11:09:59 [clz_pro] engine_0.basecase: ##   0:00:13  Checking assertions in step 49..
+SBY 11:09:59 [clz_pro] engine_0.basecase: ##   0:00:13  Checking assumptions in step 50..
+SBY 11:09:59 [clz_pro] engine_1.basecase: ##   0:00:13  Checking assumptions in step 50..
+SBY 11:09:59 [clz_pro] engine_1.basecase: ##   0:00:13  Checking assertions in step 50..
+SBY 11:09:59 [clz_pro] engine_0.basecase: ##   0:00:13  Checking assertions in step 50..
+SBY 11:09:59 [clz_pro] engine_0.basecase: ##   0:00:14  Checking assumptions in step 51..
+SBY 11:10:00 [clz_pro] engine_1.basecase: ##   0:00:14  Checking assumptions in step 51..
+SBY 11:10:00 [clz_pro] engine_1.basecase: ##   0:00:14  Checking assertions in step 51..
+SBY 11:10:00 [clz_pro] engine_0.basecase: ##   0:00:14  Checking assertions in step 51..
+SBY 11:10:00 [clz_pro] engine_1.basecase: ##   0:00:14  Checking assumptions in step 52..
+SBY 11:10:00 [clz_pro] engine_1.basecase: ##   0:00:14  Checking assertions in step 52..
+SBY 11:10:00 [clz_pro] engine_0.basecase: ##   0:00:14  Checking assumptions in step 52..
+SBY 11:10:00 [clz_pro] engine_0.basecase: ##   0:00:14  Checking assertions in step 52..
+SBY 11:10:00 [clz_pro] engine_1.basecase: ##   0:00:14  Checking assumptions in step 53..
+SBY 11:10:00 [clz_pro] engine_1.basecase: ##   0:00:15  Checking assertions in step 53..
+SBY 11:10:01 [clz_pro] engine_0.basecase: ##   0:00:15  Checking assumptions in step 53..
+SBY 11:10:01 [clz_pro] engine_0.basecase: ##   0:00:15  Checking assertions in step 53..
+SBY 11:10:01 [clz_pro] engine_1.basecase: ##   0:00:15  Checking assumptions in step 54..
+SBY 11:10:01 [clz_pro] engine_1.basecase: ##   0:00:15  Checking assertions in step 54..
+SBY 11:10:01 [clz_pro] engine_0.basecase: ##   0:00:15  Checking assumptions in step 54..
+SBY 11:10:01 [clz_pro] engine_0.basecase: ##   0:00:15  Checking assertions in step 54..
+SBY 11:10:01 [clz_pro] engine_1.basecase: ##   0:00:15  Checking assumptions in step 55..
+SBY 11:10:01 [clz_pro] engine_1.basecase: ##   0:00:15  Checking assertions in step 55..
+SBY 11:10:01 [clz_pro] engine_0.basecase: ##   0:00:15  Checking assumptions in step 55..
+SBY 11:10:02 [clz_pro] engine_0.basecase: ##   0:00:16  Checking assertions in step 55..
+SBY 11:10:02 [clz_pro] engine_1.basecase: ##   0:00:16  Checking assumptions in step 56..
+SBY 11:10:02 [clz_pro] engine_1.basecase: ##   0:00:16  Checking assertions in step 56..
+SBY 11:10:02 [clz_pro] engine_0.basecase: ##   0:00:16  Checking assumptions in step 56..
+SBY 11:10:02 [clz_pro] engine_0.basecase: ##   0:00:16  Checking assertions in step 56..
+SBY 11:10:02 [clz_pro] engine_1.basecase: ##   0:00:16  Checking assumptions in step 57..
+SBY 11:10:02 [clz_pro] engine_1.basecase: ##   0:00:16  Checking assertions in step 57..
+SBY 11:10:02 [clz_pro] engine_0.basecase: ##   0:00:16  Checking assumptions in step 57..
+SBY 11:10:03 [clz_pro] engine_0.basecase: ##   0:00:17  Checking assertions in step 57..
+SBY 11:10:03 [clz_pro] engine_1.basecase: ##   0:00:17  Checking assumptions in step 58..
+SBY 11:10:03 [clz_pro] engine_1.basecase: ##   0:00:17  Checking assertions in step 58..
+SBY 11:10:03 [clz_pro] engine_0.basecase: ##   0:00:17  Checking assumptions in step 58..
+SBY 11:10:03 [clz_pro] engine_0.basecase: ##   0:00:17  Checking assertions in step 58..
+SBY 11:10:03 [clz_pro] engine_1.basecase: ##   0:00:17  Checking assumptions in step 59..
+SBY 11:10:03 [clz_pro] engine_1.basecase: ##   0:00:17  Checking assertions in step 59..
+SBY 11:10:03 [clz_pro] engine_0.basecase: ##   0:00:17  Checking assumptions in step 59..
+SBY 11:10:03 [clz_pro] engine_1.basecase: ##   0:00:17  Checking assumptions in step 60..
+SBY 11:10:03 [clz_pro] engine_1.basecase: ##   0:00:18  Checking assertions in step 60..
+SBY 11:10:03 [clz_pro] engine_0.basecase: ##   0:00:18  Checking assertions in step 59..
+SBY 11:10:04 [clz_pro] engine_1.basecase: ##   0:00:18  Checking assumptions in step 61..
+SBY 11:10:04 [clz_pro] engine_1.basecase: ##   0:00:18  Checking assertions in step 61..
+SBY 11:10:04 [clz_pro] engine_0.basecase: ##   0:00:18  Checking assumptions in step 60..
+SBY 11:10:04 [clz_pro] engine_0.basecase: ##   0:00:18  Checking assertions in step 60..
+SBY 11:10:04 [clz_pro] engine_1.basecase: ##   0:00:18  Checking assumptions in step 62..
+SBY 11:10:04 [clz_pro] engine_1.basecase: ##   0:00:18  Checking assertions in step 62..
+SBY 11:10:05 [clz_pro] engine_0.basecase: ##   0:00:19  Checking assumptions in step 61..
+SBY 11:10:05 [clz_pro] engine_1.basecase: ##   0:00:19  Checking assumptions in step 63..
+SBY 11:10:05 [clz_pro] engine_1.basecase: ##   0:00:19  Checking assertions in step 63..
+SBY 11:10:05 [clz_pro] engine_1.basecase: ##   0:00:19  Status: passed
+SBY 11:10:05 [clz_pro] engine_1.basecase: finished (returncode=0)
+SBY 11:10:05 [clz_pro] engine_1: Status returned by engine for basecase: pass
+SBY 11:10:05 [clz_pro] engine_0.basecase: terminating process
+SBY 11:10:05 [clz_pro] summary: Elapsed clock time [H:MM:SS (secs)]: 0:00:20 (20)
+SBY 11:10:05 [clz_pro] summary: Elapsed process time [H:MM:SS (secs)]: 0:00:22 (22)
+SBY 11:10:05 [clz_pro] summary: engine_0 (smtbmc z3) returned pass for induction
+SBY 11:10:05 [clz_pro] summary: engine_1 (smtbmc yices) returned pass for basecase
+SBY 11:10:05 [clz_pro] summary: successful proof by k-induction.
+SBY 11:10:05 [clz_pro] DONE (PASS, rc=0)
 </system-out></testcase></testsuite></testsuites>

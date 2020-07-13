@@ -5,44 +5,44 @@
 <property name="os" value="posix"/>
 </properties>
 <testcase classname="clz" name="cov" status="PASS" time="0">
-<system-out>SBY 14:48:45 [clz_cov] Removing directory 'clz_cov'.
-SBY 14:48:45 [clz_cov] Copy './nibble_local_count.v' to 'clz_cov/src/nibble_local_count.v'.
-SBY 14:48:45 [clz_cov] Copy './boundary_nibble_encoder.v' to 'clz_cov/src/boundary_nibble_encoder.v'.
-SBY 14:48:45 [clz_cov] Copy './count_leading_zeros.v' to 'clz_cov/src/count_leading_zeros.v'.
-SBY 14:48:45 [clz_cov] engine_0: smtbmc z3
-SBY 14:48:45 [clz_cov] engine_1: smtbmc yices
-SBY 14:48:45 [clz_cov] base: starting process &quot;cd clz_cov/src; /nix/store/2f796byhvz4rjzawa7g7xsvqb8g0il1s-yosys-2020.06.11/bin/yosys -ql ../model/design.log ../model/design.ys&quot;
-SBY 14:48:45 [clz_cov] base: finished (returncode=0)
-SBY 14:48:45 [clz_cov] smt2: starting process &quot;cd clz_cov/model; /nix/store/2f796byhvz4rjzawa7g7xsvqb8g0il1s-yosys-2020.06.11/bin/yosys -ql design_smt2.log design_smt2.ys&quot;
-SBY 14:48:45 [clz_cov] smt2: finished (returncode=0)
-SBY 14:48:45 [clz_cov] engine_0: starting process &quot;cd clz_cov; /nix/store/2f796byhvz4rjzawa7g7xsvqb8g0il1s-yosys-2020.06.11/bin/yosys-smtbmc -s z3 --presat -c --noprogress -t 64 --append 0 --dump-vcd engine_0/trace%.vcd --dump-vlogtb engine_0/trace%_tb.v --dump-smtc engine_0/trace%.smtc model/design_smt2.smt2&quot;
-SBY 14:48:45 [clz_cov] engine_1: starting process &quot;cd clz_cov; /nix/store/2f796byhvz4rjzawa7g7xsvqb8g0il1s-yosys-2020.06.11/bin/yosys-smtbmc -s yices --presat --unroll -c --noprogress -t 64 --append 0 --dump-vcd engine_1/trace%.vcd --dump-vlogtb engine_1/trace%_tb.v --dump-smtc engine_1/trace%.smtc model/design_smt2.smt2&quot;
-SBY 14:48:45 [clz_cov] engine_1: ##   0:00:00  Solver: yices
-SBY 14:48:45 [clz_cov] engine_0: ##   0:00:00  Solver: z3
-SBY 14:48:45 [clz_cov] engine_0: ##   0:00:00  Checking cover reachability in step 0..
-SBY 14:48:45 [clz_cov] engine_0: ##   0:00:00  Reached cover statement at ./count_leading_zeros.v:75.49-76.48 in step 0.
-SBY 14:48:45 [clz_cov] engine_0: ##   0:00:00  Writing trace to VCD file: engine_0/trace0.vcd
-SBY 14:48:45 [clz_cov] engine_0: ##   0:00:00  Writing trace to Verilog testbench: engine_0/trace0_tb.v
-SBY 14:48:45 [clz_cov] engine_0: ##   0:00:00  Writing trace to constraints file: engine_0/trace0.smtc
-SBY 14:48:45 [clz_cov] engine_0: ##   0:00:00  Checking cover reachability in step 0..
-SBY 14:48:45 [clz_cov] engine_0: ##   0:00:00  Reached cover statement at ./count_leading_zeros.v:74.49-75.48 in step 0.
-SBY 14:48:45 [clz_cov] engine_0: ##   0:00:00  Writing trace to VCD file: engine_0/trace1.vcd
-SBY 14:48:45 [clz_cov] engine_0: ##   0:00:00  Writing trace to Verilog testbench: engine_0/trace1_tb.v
-SBY 14:48:45 [clz_cov] engine_0: ##   0:00:00  Writing trace to constraints file: engine_0/trace1.smtc
-SBY 14:48:45 [clz_cov] engine_0: ##   0:00:00  Checking cover reachability in step 0..
-SBY 14:48:45 [clz_cov] engine_0: ##   0:00:00  Reached cover statement at ./count_leading_zeros.v:73.7-74.48 in step 0.
-SBY 14:48:45 [clz_cov] engine_0: ##   0:00:00  Writing trace to VCD file: engine_0/trace2.vcd
-SBY 14:48:45 [clz_cov] engine_0: ##   0:00:00  Writing trace to Verilog testbench: engine_0/trace2_tb.v
-SBY 14:48:45 [clz_cov] engine_0: ##   0:00:00  Writing trace to constraints file: engine_0/trace2.smtc
-SBY 14:48:45 [clz_cov] engine_0: ##   0:00:00  Status: passed
-SBY 14:48:45 [clz_cov] engine_0: finished (returncode=0)
-SBY 14:48:45 [clz_cov] engine_0: Status returned by engine: pass
-SBY 14:48:45 [clz_cov] engine_1: terminating process
-SBY 14:48:45 [clz_cov] summary: Elapsed clock time [H:MM:SS (secs)]: 0:00:00 (0)
-SBY 14:48:45 [clz_cov] summary: Elapsed process time [H:MM:SS (secs)]: 0:00:00 (0)
-SBY 14:48:45 [clz_cov] summary: engine_0 (smtbmc z3) returned pass
-SBY 14:48:45 [clz_cov] summary: trace: clz_cov/engine_0/trace0.vcd
-SBY 14:48:45 [clz_cov] summary: trace: clz_cov/engine_0/trace1.vcd
-SBY 14:48:45 [clz_cov] summary: trace: clz_cov/engine_0/trace2.vcd
-SBY 14:48:45 [clz_cov] DONE (PASS, rc=0)
+<system-out>SBY 11:09:45 [clz_cov] Removing directory 'clz_cov'.
+SBY 11:09:45 [clz_cov] Copy './nibble_local_count.v' to 'clz_cov/src/nibble_local_count.v'.
+SBY 11:09:45 [clz_cov] Copy './boundary_nibble_encoder.v' to 'clz_cov/src/boundary_nibble_encoder.v'.
+SBY 11:09:45 [clz_cov] Copy './count_leading_zeros_32.v' to 'clz_cov/src/count_leading_zeros_32.v'.
+SBY 11:09:45 [clz_cov] engine_0: smtbmc z3
+SBY 11:09:45 [clz_cov] engine_1: smtbmc yices
+SBY 11:09:45 [clz_cov] base: starting process &quot;cd clz_cov/src; /nix/store/2f796byhvz4rjzawa7g7xsvqb8g0il1s-yosys-2020.06.11/bin/yosys -ql ../model/design.log ../model/design.ys&quot;
+SBY 11:09:45 [clz_cov] base: finished (returncode=0)
+SBY 11:09:45 [clz_cov] smt2: starting process &quot;cd clz_cov/model; /nix/store/2f796byhvz4rjzawa7g7xsvqb8g0il1s-yosys-2020.06.11/bin/yosys -ql design_smt2.log design_smt2.ys&quot;
+SBY 11:09:45 [clz_cov] smt2: finished (returncode=0)
+SBY 11:09:45 [clz_cov] engine_0: starting process &quot;cd clz_cov; /nix/store/2f796byhvz4rjzawa7g7xsvqb8g0il1s-yosys-2020.06.11/bin/yosys-smtbmc -s z3 --presat -c --noprogress -t 64 --append 0 --dump-vcd engine_0/trace%.vcd --dump-vlogtb engine_0/trace%_tb.v --dump-smtc engine_0/trace%.smtc model/design_smt2.smt2&quot;
+SBY 11:09:45 [clz_cov] engine_1: starting process &quot;cd clz_cov; /nix/store/2f796byhvz4rjzawa7g7xsvqb8g0il1s-yosys-2020.06.11/bin/yosys-smtbmc -s yices --presat --unroll -c --noprogress -t 64 --append 0 --dump-vcd engine_1/trace%.vcd --dump-vlogtb engine_1/trace%_tb.v --dump-smtc engine_1/trace%.smtc model/design_smt2.smt2&quot;
+SBY 11:09:45 [clz_cov] engine_0: ##   0:00:00  Solver: z3
+SBY 11:09:45 [clz_cov] engine_1: ##   0:00:00  Solver: yices
+SBY 11:09:45 [clz_cov] engine_0: ##   0:00:00  Checking cover reachability in step 0..
+SBY 11:09:45 [clz_cov] engine_0: ##   0:00:00  Reached cover statement at ./count_leading_zeros_32.v:75.49-76.48 in step 0.
+SBY 11:09:45 [clz_cov] engine_0: ##   0:00:00  Writing trace to VCD file: engine_0/trace0.vcd
+SBY 11:09:45 [clz_cov] engine_0: ##   0:00:00  Writing trace to Verilog testbench: engine_0/trace0_tb.v
+SBY 11:09:45 [clz_cov] engine_0: ##   0:00:00  Writing trace to constraints file: engine_0/trace0.smtc
+SBY 11:09:45 [clz_cov] engine_0: ##   0:00:00  Checking cover reachability in step 0..
+SBY 11:09:45 [clz_cov] engine_0: ##   0:00:00  Reached cover statement at ./count_leading_zeros_32.v:74.49-75.48 in step 0.
+SBY 11:09:45 [clz_cov] engine_0: ##   0:00:00  Writing trace to VCD file: engine_0/trace1.vcd
+SBY 11:09:45 [clz_cov] engine_0: ##   0:00:00  Writing trace to Verilog testbench: engine_0/trace1_tb.v
+SBY 11:09:45 [clz_cov] engine_0: ##   0:00:00  Writing trace to constraints file: engine_0/trace1.smtc
+SBY 11:09:45 [clz_cov] engine_0: ##   0:00:00  Checking cover reachability in step 0..
+SBY 11:09:45 [clz_cov] engine_0: ##   0:00:00  Reached cover statement at ./count_leading_zeros_32.v:73.7-74.48 in step 0.
+SBY 11:09:45 [clz_cov] engine_0: ##   0:00:00  Writing trace to VCD file: engine_0/trace2.vcd
+SBY 11:09:45 [clz_cov] engine_0: ##   0:00:00  Writing trace to Verilog testbench: engine_0/trace2_tb.v
+SBY 11:09:45 [clz_cov] engine_0: ##   0:00:00  Writing trace to constraints file: engine_0/trace2.smtc
+SBY 11:09:45 [clz_cov] engine_0: ##   0:00:00  Status: passed
+SBY 11:09:45 [clz_cov] engine_0: finished (returncode=0)
+SBY 11:09:45 [clz_cov] engine_0: Status returned by engine: pass
+SBY 11:09:45 [clz_cov] engine_1: terminating process
+SBY 11:09:45 [clz_cov] summary: Elapsed clock time [H:MM:SS (secs)]: 0:00:00 (0)
+SBY 11:09:45 [clz_cov] summary: Elapsed process time [H:MM:SS (secs)]: 0:00:00 (0)
+SBY 11:09:45 [clz_cov] summary: engine_0 (smtbmc z3) returned pass
+SBY 11:09:45 [clz_cov] summary: trace: clz_cov/engine_0/trace0.vcd
+SBY 11:09:45 [clz_cov] summary: trace: clz_cov/engine_0/trace1.vcd
+SBY 11:09:45 [clz_cov] summary: trace: clz_cov/engine_0/trace2.vcd
+SBY 11:09:45 [clz_cov] DONE (PASS, rc=0)
 </system-out></testcase></testsuite></testsuites>

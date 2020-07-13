@@ -1,4 +1,4 @@
 initial
 
 state 0
-assume (= [i_WORD] #xa0008a28)
+assume (= [i_WORD] #xa82aa208)

@@ -1,8 +1,8 @@
 # running in clz_cov/src/
 read -formal ./nibble_local_count.v
 read -formal ./boundary_nibble_encoder.v
-read -formal ./count_leading_zeros.v
-prep -top count_leading_zeros
+read -formal ./count_leading_zeros_32.v
+prep -top count_leading_zeros_32
 memory_nordff
 async2sync
 chformal -assume -early

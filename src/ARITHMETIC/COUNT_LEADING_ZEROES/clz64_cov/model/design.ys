@@ -1,0 +1,16 @@
+# running in clz64_cov/src/
+read -formal ./nibble_local_count.v
+read -formal ./boundary_nibble_encoder.v
+read -formal ./count_leading_zeros_32.v
+read -formal ./count_leading_zeros_64.v
+prep -top count_leading_zeros_64
+memory_nordff
+async2sync
+chformal -assume -early
+chformal -live -fair -remove
+opt_clean
+setundef -anyseq
+opt -keepdc -fast
+check
+hierarchy -simcheck
+write_ilang ../model/design.il

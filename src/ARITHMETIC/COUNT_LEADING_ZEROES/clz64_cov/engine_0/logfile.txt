@@ -1,0 +1,28 @@
+##   0:00:00  Solver: z3
+##   0:00:00  Checking cover reachability in step 0..
+##   0:00:00  Reached cover statement at ./count_leading_zeros_32.v:74.49-75.48 in step 0.
+##   0:00:00  Reached cover statement at ./count_leading_zeros_32.v:72.7-73.48 in step 0.
+##   0:00:00  Writing trace to VCD file: engine_0/trace0.vcd
+##   0:00:00  Writing trace to Verilog testbench: engine_0/trace0_tb.v
+##   0:00:00  Writing trace to constraints file: engine_0/trace0.smtc
+##   0:00:00  Checking cover reachability in step 0..
+##   0:00:00  Reached cover statement at ./count_leading_zeros_32.v:73.49-74.48 in step 0.
+##   0:00:00  Writing trace to VCD file: engine_0/trace1.vcd
+##   0:00:00  Writing trace to Verilog testbench: engine_0/trace1_tb.v
+##   0:00:00  Writing trace to constraints file: engine_0/trace1.smtc
+##   0:00:00  Checking cover reachability in step 0..
+##   0:00:00  Reached cover statement at ./count_leading_zeros_32.v:72.7-73.48 in step 0.
+##   0:00:00  Writing trace to VCD file: engine_0/trace2.vcd
+##   0:00:00  Writing trace to Verilog testbench: engine_0/trace2_tb.v
+##   0:00:00  Writing trace to constraints file: engine_0/trace2.smtc
+##   0:00:00  Checking cover reachability in step 0..
+##   0:00:00  Reached cover statement at ./count_leading_zeros_32.v:73.49-74.48 in step 0.
+##   0:00:00  Writing trace to VCD file: engine_0/trace3.vcd
+##   0:00:00  Writing trace to Verilog testbench: engine_0/trace3_tb.v
+##   0:00:00  Writing trace to constraints file: engine_0/trace3.smtc
+##   0:00:00  Checking cover reachability in step 0..
+##   0:00:00  Reached cover statement at ./count_leading_zeros_32.v:74.49-75.48 in step 0.
+##   0:00:00  Writing trace to VCD file: engine_0/trace4.vcd
+##   0:00:00  Writing trace to Verilog testbench: engine_0/trace4_tb.v
+##   0:00:00  Writing trace to constraints file: engine_0/trace4.smtc
+##   0:00:00  Status: passed

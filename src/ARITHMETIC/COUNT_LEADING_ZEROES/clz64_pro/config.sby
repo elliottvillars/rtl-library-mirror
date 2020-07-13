@@ -1,0 +1,21 @@
+[options]
+mode prove
+depth 128
+
+[engines]
+smtbmc z3
+smtbmc yices
+smtbmc boolector
+
+[files]
+./nibble_local_count.v
+./boundary_nibble_encoder.v
+./count_leading_zeros_32.v
+./count_leading_zeros_64.v
+
+[script]
+read -formal ./nibble_local_count.v
+read -formal ./boundary_nibble_encoder.v
+read -formal ./count_leading_zeros_32.v
+read -formal ./count_leading_zeros_64.v
+prep -top count_leading_zeros_64

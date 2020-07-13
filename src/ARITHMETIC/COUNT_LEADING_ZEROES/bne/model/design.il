@@ -3,42 +3,42 @@ autoidx 222
 attribute \keep 1
 attribute \hdlname "\\boundary_nibble_encoder"
 attribute \top 1
-attribute \src "./boundary_nibble_encoder.v:2.1-67.10"
+attribute \src "./boundary_nibble_encoder.v:2.1-66.10"
 module \boundary_nibble_encoder
-  attribute \src "./boundary_nibble_encoder.v:34.2-65.5"
-  wire $0$formal$./boundary_nibble_encoder.v:37$1_CHECK[0:0]$45
-  attribute \src "./boundary_nibble_encoder.v:34.2-65.5"
-  wire $0$formal$./boundary_nibble_encoder.v:37$1_EN[0:0]$46
-  attribute \src "./boundary_nibble_encoder.v:34.2-65.5"
-  wire $0$formal$./boundary_nibble_encoder.v:38$2_CHECK[0:0]$47
-  attribute \src "./boundary_nibble_encoder.v:34.2-65.5"
-  wire $0$formal$./boundary_nibble_encoder.v:42$3_CHECK[0:0]$49
-  attribute \src "./boundary_nibble_encoder.v:34.2-65.5"
-  wire $0$formal$./boundary_nibble_encoder.v:42$3_EN[0:0]$50
-  attribute \src "./boundary_nibble_encoder.v:34.2-65.5"
-  wire $0$formal$./boundary_nibble_encoder.v:46$4_CHECK[0:0]$51
-  attribute \src "./boundary_nibble_encoder.v:34.2-65.5"
-  wire $0$formal$./boundary_nibble_encoder.v:46$4_EN[0:0]$52
-  attribute \src "./boundary_nibble_encoder.v:34.2-65.5"
-  wire $0$formal$./boundary_nibble_encoder.v:48$5_CHECK[0:0]$53
-  attribute \src "./boundary_nibble_encoder.v:34.2-65.5"
-  wire $0$formal$./boundary_nibble_encoder.v:48$5_EN[0:0]$54
-  attribute \src "./boundary_nibble_encoder.v:34.2-65.5"
-  wire $0$formal$./boundary_nibble_encoder.v:52$6_CHECK[0:0]$55
-  attribute \src "./boundary_nibble_encoder.v:34.2-65.5"
-  wire $0$formal$./boundary_nibble_encoder.v:52$6_EN[0:0]$56
-  attribute \src "./boundary_nibble_encoder.v:34.2-65.5"
-  wire $0$formal$./boundary_nibble_encoder.v:54$7_CHECK[0:0]$57
-  attribute \src "./boundary_nibble_encoder.v:34.2-65.5"
-  wire $0$formal$./boundary_nibble_encoder.v:54$7_EN[0:0]$58
-  attribute \src "./boundary_nibble_encoder.v:34.2-65.5"
-  wire $0$formal$./boundary_nibble_encoder.v:59$8_CHECK[0:0]$59
-  attribute \src "./boundary_nibble_encoder.v:34.2-65.5"
-  wire $0$formal$./boundary_nibble_encoder.v:59$8_EN[0:0]$60
-  attribute \src "./boundary_nibble_encoder.v:34.2-65.5"
-  wire $0$formal$./boundary_nibble_encoder.v:61$9_CHECK[0:0]$61
-  attribute \src "./boundary_nibble_encoder.v:34.2-65.5"
-  wire $0$formal$./boundary_nibble_encoder.v:61$9_EN[0:0]$62
+  attribute \src "./boundary_nibble_encoder.v:33.2-64.5"
+  wire $0$formal$./boundary_nibble_encoder.v:36$1_CHECK[0:0]$45
+  attribute \src "./boundary_nibble_encoder.v:33.2-64.5"
+  wire $0$formal$./boundary_nibble_encoder.v:36$1_EN[0:0]$46
+  attribute \src "./boundary_nibble_encoder.v:33.2-64.5"
+  wire $0$formal$./boundary_nibble_encoder.v:37$2_CHECK[0:0]$47
+  attribute \src "./boundary_nibble_encoder.v:33.2-64.5"
+  wire $0$formal$./boundary_nibble_encoder.v:41$3_CHECK[0:0]$49
+  attribute \src "./boundary_nibble_encoder.v:33.2-64.5"
+  wire $0$formal$./boundary_nibble_encoder.v:41$3_EN[0:0]$50
+  attribute \src "./boundary_nibble_encoder.v:33.2-64.5"
+  wire $0$formal$./boundary_nibble_encoder.v:45$4_CHECK[0:0]$51
+  attribute \src "./boundary_nibble_encoder.v:33.2-64.5"
+  wire $0$formal$./boundary_nibble_encoder.v:45$4_EN[0:0]$52
+  attribute \src "./boundary_nibble_encoder.v:33.2-64.5"
+  wire $0$formal$./boundary_nibble_encoder.v:47$5_CHECK[0:0]$53
+  attribute \src "./boundary_nibble_encoder.v:33.2-64.5"
+  wire $0$formal$./boundary_nibble_encoder.v:47$5_EN[0:0]$54
+  attribute \src "./boundary_nibble_encoder.v:33.2-64.5"
+  wire $0$formal$./boundary_nibble_encoder.v:51$6_CHECK[0:0]$55
+  attribute \src "./boundary_nibble_encoder.v:33.2-64.5"
+  wire $0$formal$./boundary_nibble_encoder.v:51$6_EN[0:0]$56
+  attribute \src "./boundary_nibble_encoder.v:33.2-64.5"
+  wire $0$formal$./boundary_nibble_encoder.v:53$7_CHECK[0:0]$57
+  attribute \src "./boundary_nibble_encoder.v:33.2-64.5"
+  wire $0$formal$./boundary_nibble_encoder.v:53$7_EN[0:0]$58
+  attribute \src "./boundary_nibble_encoder.v:33.2-64.5"
+  wire $0$formal$./boundary_nibble_encoder.v:58$8_CHECK[0:0]$59
+  attribute \src "./boundary_nibble_encoder.v:33.2-64.5"
+  wire $0$formal$./boundary_nibble_encoder.v:58$8_EN[0:0]$60
+  attribute \src "./boundary_nibble_encoder.v:33.2-64.5"
+  wire $0$formal$./boundary_nibble_encoder.v:60$9_CHECK[0:0]$61
+  attribute \src "./boundary_nibble_encoder.v:33.2-64.5"
+  wire $0$formal$./boundary_nibble_encoder.v:60$9_EN[0:0]$62
   attribute \src "./boundary_nibble_encoder.v:10.17-10.58"
   wire $and$./boundary_nibble_encoder.v:10$10_Y
   attribute \src "./boundary_nibble_encoder.v:11.17-11.58"
@@ -53,26 +53,26 @@ module \boundary_nibble_encoder
   wire $and$./boundary_nibble_encoder.v:21$26_Y
   attribute \src "./boundary_nibble_encoder.v:22.17-22.28"
   wire $and$./boundary_nibble_encoder.v:22$28_Y
-  attribute \src "./boundary_nibble_encoder.v:24.18-24.60"
+  attribute \src "./boundary_nibble_encoder.v:24.17-24.59"
   wire $and$./boundary_nibble_encoder.v:24$31_Y
   attribute \src "./boundary_nibble_encoder.v:25.18-25.59"
   wire $and$./boundary_nibble_encoder.v:25$33_Y
-  attribute \src "./boundary_nibble_encoder.v:26.18-26.45"
+  attribute \src "./boundary_nibble_encoder.v:26.18-26.44"
   wire $and$./boundary_nibble_encoder.v:26$35_Y
-  attribute \src "./boundary_nibble_encoder.v:26.18-26.53"
+  attribute \src "./boundary_nibble_encoder.v:26.18-26.52"
   wire $and$./boundary_nibble_encoder.v:26$36_Y
   attribute \src "./boundary_nibble_encoder.v:29.20-29.32"
   wire $and$./boundary_nibble_encoder.v:29$39_Y
   attribute \src "./boundary_nibble_encoder.v:30.19-30.31"
   wire $and$./boundary_nibble_encoder.v:30$42_Y
-  attribute \src "./boundary_nibble_encoder.v:50.7-52.57"
-  wire $and$./boundary_nibble_encoder.v:50$77_Y
-  attribute \src "./boundary_nibble_encoder.v:56.7-57.72"
-  wire $and$./boundary_nibble_encoder.v:56$84_Y
-  attribute \src "./boundary_nibble_encoder.v:57.29-57.71"
-  wire $and$./boundary_nibble_encoder.v:57$82_Y
-  attribute \src "./boundary_nibble_encoder.v:58.6-59.49"
-  wire $and$./boundary_nibble_encoder.v:58$89_Y
+  attribute \src "./boundary_nibble_encoder.v:49.7-51.57"
+  wire $and$./boundary_nibble_encoder.v:49$77_Y
+  attribute \src "./boundary_nibble_encoder.v:55.7-56.72"
+  wire $and$./boundary_nibble_encoder.v:55$84_Y
+  attribute \src "./boundary_nibble_encoder.v:56.29-56.71"
+  wire $and$./boundary_nibble_encoder.v:56$82_Y
+  attribute \src "./boundary_nibble_encoder.v:57.6-58.49"
+  wire $and$./boundary_nibble_encoder.v:57$89_Y
   wire $auto$rtlil.cc:2437:Anyseq$193
   wire $auto$rtlil.cc:2437:Anyseq$195
   wire $auto$rtlil.cc:2437:Anyseq$197
@@ -88,40 +88,40 @@ module \boundary_nibble_encoder
   wire $auto$rtlil.cc:2437:Anyseq$217
   wire $auto$rtlil.cc:2437:Anyseq$219
   wire $auto$rtlil.cc:2437:Anyseq$221
-  attribute \src "./boundary_nibble_encoder.v:36.6-36.32"
-  wire $eq$./boundary_nibble_encoder.v:36$63_Y
-  attribute \src "./boundary_nibble_encoder.v:39.11-39.24"
-  wire $eq$./boundary_nibble_encoder.v:39$65_Y
-  attribute \src "./boundary_nibble_encoder.v:43.11-43.28"
-  wire $eq$./boundary_nibble_encoder.v:43$66_Y
-  attribute \src "./boundary_nibble_encoder.v:46.7-46.39"
-  wire $eq$./boundary_nibble_encoder.v:46$67_Y
-  attribute \src "./boundary_nibble_encoder.v:49.12-49.26"
-  wire $eq$./boundary_nibble_encoder.v:49$69_Y
-  attribute \src "./boundary_nibble_encoder.v:51.5-52.57"
-  wire $eq$./boundary_nibble_encoder.v:51$76_Y
-  attribute \src "./boundary_nibble_encoder.v:55.12-55.26"
-  wire $eq$./boundary_nibble_encoder.v:55$79_Y
+  attribute \src "./boundary_nibble_encoder.v:35.6-35.32"
+  wire $eq$./boundary_nibble_encoder.v:35$63_Y
+  attribute \src "./boundary_nibble_encoder.v:38.11-38.24"
+  wire $eq$./boundary_nibble_encoder.v:38$65_Y
+  attribute \src "./boundary_nibble_encoder.v:42.11-42.28"
+  wire $eq$./boundary_nibble_encoder.v:42$66_Y
+  attribute \src "./boundary_nibble_encoder.v:45.7-45.39"
+  wire $eq$./boundary_nibble_encoder.v:45$67_Y
+  attribute \src "./boundary_nibble_encoder.v:48.12-48.26"
+  wire $eq$./boundary_nibble_encoder.v:48$69_Y
+  attribute \src "./boundary_nibble_encoder.v:50.5-51.57"
+  wire $eq$./boundary_nibble_encoder.v:50$76_Y
+  attribute \src "./boundary_nibble_encoder.v:54.12-54.26"
+  wire $eq$./boundary_nibble_encoder.v:54$79_Y
   attribute \src "./boundary_nibble_encoder.v:20.17-20.37"
   wire $not$./boundary_nibble_encoder.v:20$23_Y
-  attribute \src "./boundary_nibble_encoder.v:24.18-24.38"
+  attribute \src "./boundary_nibble_encoder.v:24.17-24.37"
   wire $not$./boundary_nibble_encoder.v:24$30_Y
-  attribute \src "./boundary_nibble_encoder.v:51.29-51.49"
-  wire $not$./boundary_nibble_encoder.v:51$72_Y
-  attribute \src "./boundary_nibble_encoder.v:57.6-57.26"
-  wire $not$./boundary_nibble_encoder.v:57$80_Y
-  attribute \src "./boundary_nibble_encoder.v:59.6-59.26"
-  wire $not$./boundary_nibble_encoder.v:59$87_Y
+  attribute \src "./boundary_nibble_encoder.v:50.29-50.49"
+  wire $not$./boundary_nibble_encoder.v:50$72_Y
+  attribute \src "./boundary_nibble_encoder.v:56.6-56.26"
+  wire $not$./boundary_nibble_encoder.v:56$80_Y
+  attribute \src "./boundary_nibble_encoder.v:58.6-58.26"
+  wire $not$./boundary_nibble_encoder.v:58$87_Y
   attribute \src "./boundary_nibble_encoder.v:16.17-16.28"
   wire $or$./boundary_nibble_encoder.v:16$20_Y
-  attribute \src "./boundary_nibble_encoder.v:51.6-51.49"
-  wire $or$./boundary_nibble_encoder.v:51$73_Y
-  attribute \src "./boundary_nibble_encoder.v:56.7-59.50"
-  wire $or$./boundary_nibble_encoder.v:56$90_Y
-  attribute \src "./boundary_nibble_encoder.v:57.6-57.71"
-  wire $or$./boundary_nibble_encoder.v:57$83_Y
-  attribute \src "./boundary_nibble_encoder.v:59.6-59.48"
-  wire $or$./boundary_nibble_encoder.v:59$88_Y
+  attribute \src "./boundary_nibble_encoder.v:50.6-50.49"
+  wire $or$./boundary_nibble_encoder.v:50$73_Y
+  attribute \src "./boundary_nibble_encoder.v:55.7-58.50"
+  wire $or$./boundary_nibble_encoder.v:55$90_Y
+  attribute \src "./boundary_nibble_encoder.v:56.6-56.71"
+  wire $or$./boundary_nibble_encoder.v:56$83_Y
+  attribute \src "./boundary_nibble_encoder.v:58.6-58.48"
+  wire $or$./boundary_nibble_encoder.v:58$88_Y
   wire $procmux$121_Y
   wire $procmux$127_Y
   wire $procmux$133_Y
@@ -144,25 +144,25 @@ module \boundary_nibble_encoder
   wire \w_N0
   attribute \src "./boundary_nibble_encoder.v:8.11-8.15"
   wire \w_N1
-  attribute \src "./boundary_nibble_encoder.v:8.51-8.56"
+  attribute \src "./boundary_nibble_encoder.v:8.56-8.61"
   wire \w_N10
-  attribute \src "./boundary_nibble_encoder.v:8.57-8.62"
+  attribute \src "./boundary_nibble_encoder.v:8.62-8.67"
   wire \w_N11
-  attribute \src "./boundary_nibble_encoder.v:8.63-8.68"
-  wire \w_N12
   attribute \src "./boundary_nibble_encoder.v:8.16-8.20"
-  wire \w_N3
+  wire \w_N2
   attribute \src "./boundary_nibble_encoder.v:8.21-8.25"
-  wire \w_N4
+  wire \w_N3
   attribute \src "./boundary_nibble_encoder.v:8.26-8.30"
-  wire \w_N5
+  wire \w_N4
   attribute \src "./boundary_nibble_encoder.v:8.31-8.35"
-  wire \w_N6
+  wire \w_N5
   attribute \src "./boundary_nibble_encoder.v:8.36-8.40"
-  wire \w_N7
+  wire \w_N6
   attribute \src "./boundary_nibble_encoder.v:8.41-8.45"
-  wire \w_N8
+  wire \w_N7
   attribute \src "./boundary_nibble_encoder.v:8.46-8.50"
+  wire \w_N8
+  attribute \src "./boundary_nibble_encoder.v:8.51-8.55"
   wire \w_N9
   attribute \src "./boundary_nibble_encoder.v:10.17-10.58"
   cell $and $and$./boundary_nibble_encoder.v:10$10
@@ -215,8 +215,8 @@ module \boundary_nibble_encoder
     parameter \B_SIGNED 0
     parameter \B_WIDTH 1
     parameter \Y_WIDTH 1
-    connect \A \w_N3
-    connect \B \w_N6
+    connect \A \w_N2
+    connect \B \w_N5
     connect \Y \o_INVALID
   end
   attribute \src "./boundary_nibble_encoder.v:20.17-20.59"
@@ -250,7 +250,7 @@ module \boundary_nibble_encoder
     parameter \Y_WIDTH 1
     connect \A $and$./boundary_nibble_encoder.v:21$26_Y
     connect \B \i_ZEROED_NIBBLES [4]
-    connect \Y \w_N8
+    connect \Y \w_N7
   end
   attribute \src "./boundary_nibble_encoder.v:22.17-22.28"
   cell $and $and$./boundary_nibble_encoder.v:22$28
@@ -259,11 +259,11 @@ module \boundary_nibble_encoder
     parameter \B_SIGNED 0
     parameter \B_WIDTH 1
     parameter \Y_WIDTH 1
-    connect \A \w_N8
+    connect \A \w_N6
     connect \B \w_N7
     connect \Y $and$./boundary_nibble_encoder.v:22$28_Y
   end
-  attribute \src "./boundary_nibble_encoder.v:24.18-24.60"
+  attribute \src "./boundary_nibble_encoder.v:24.17-24.59"
   cell $and $and$./boundary_nibble_encoder.v:24$31
     parameter \A_SIGNED 0
     parameter \A_WIDTH 1
@@ -285,7 +285,7 @@ module \boundary_nibble_encoder
     connect \B \i_ZEROED_NIBBLES [1]
     connect \Y $and$./boundary_nibble_encoder.v:25$33_Y
   end
-  attribute \src "./boundary_nibble_encoder.v:26.18-26.45"
+  attribute \src "./boundary_nibble_encoder.v:26.18-26.44"
   cell $and $and$./boundary_nibble_encoder.v:26$35
     parameter \A_SIGNED 0
     parameter \A_WIDTH 1
@@ -293,10 +293,10 @@ module \boundary_nibble_encoder
     parameter \B_WIDTH 1
     parameter \Y_WIDTH 1
     connect \A \i_ZEROED_NIBBLES [0]
-    connect \B \w_N10
+    connect \B \w_N9
     connect \Y $and$./boundary_nibble_encoder.v:26$35_Y
   end
-  attribute \src "./boundary_nibble_encoder.v:26.18-26.53"
+  attribute \src "./boundary_nibble_encoder.v:26.18-26.52"
   cell $and $and$./boundary_nibble_encoder.v:26$36
     parameter \A_SIGNED 0
     parameter \A_WIDTH 1
@@ -304,7 +304,7 @@ module \boundary_nibble_encoder
     parameter \B_WIDTH 1
     parameter \Y_WIDTH 1
     connect \A $and$./boundary_nibble_encoder.v:26$35_Y
-    connect \B \w_N11
+    connect \B \w_N10
     connect \Y $and$./boundary_nibble_encoder.v:26$36_Y
   end
   attribute \src "./boundary_nibble_encoder.v:29.20-29.32"
@@ -315,7 +315,7 @@ module \boundary_nibble_encoder
     parameter \B_WIDTH 1
     parameter \Y_WIDTH 1
     connect \A $and$./boundary_nibble_encoder.v:11$12_Y
-    connect \B \w_N4
+    connect \B \w_N3
     connect \Y $and$./boundary_nibble_encoder.v:29$39_Y
   end
   attribute \src "./boundary_nibble_encoder.v:30.19-30.31"
@@ -325,98 +325,98 @@ module \boundary_nibble_encoder
     parameter \B_SIGNED 0
     parameter \B_WIDTH 1
     parameter \Y_WIDTH 1
-    connect \A \w_N12
-    connect \B \w_N9
+    connect \A \w_N8
+    connect \B \w_N11
     connect \Y $and$./boundary_nibble_encoder.v:30$42_Y
   end
-  attribute \src "./boundary_nibble_encoder.v:50.7-52.57"
-  cell $and $and$./boundary_nibble_encoder.v:50$77
+  attribute \src "./boundary_nibble_encoder.v:49.7-51.57"
+  cell $and $and$./boundary_nibble_encoder.v:49$77
     parameter \A_SIGNED 0
     parameter \A_WIDTH 1
     parameter \B_SIGNED 0
     parameter \B_WIDTH 1
     parameter \Y_WIDTH 1
     connect \A $and$./boundary_nibble_encoder.v:10$10_Y
-    connect \B $eq$./boundary_nibble_encoder.v:51$76_Y
-    connect \Y $and$./boundary_nibble_encoder.v:50$77_Y
+    connect \B $eq$./boundary_nibble_encoder.v:50$76_Y
+    connect \Y $and$./boundary_nibble_encoder.v:49$77_Y
   end
-  attribute \src "./boundary_nibble_encoder.v:56.7-57.72"
-  cell $and $and$./boundary_nibble_encoder.v:56$84
+  attribute \src "./boundary_nibble_encoder.v:55.7-56.72"
+  cell $and $and$./boundary_nibble_encoder.v:55$84
     parameter \A_SIGNED 0
     parameter \A_WIDTH 1
     parameter \B_SIGNED 0
     parameter \B_WIDTH 1
     parameter \Y_WIDTH 1
     connect \A \i_ZEROED_NIBBLES [0]
-    connect \B $or$./boundary_nibble_encoder.v:57$83_Y
-    connect \Y $and$./boundary_nibble_encoder.v:56$84_Y
+    connect \B $or$./boundary_nibble_encoder.v:56$83_Y
+    connect \Y $and$./boundary_nibble_encoder.v:55$84_Y
   end
-  attribute \src "./boundary_nibble_encoder.v:57.29-57.71"
-  cell $and $and$./boundary_nibble_encoder.v:57$82
+  attribute \src "./boundary_nibble_encoder.v:56.29-56.71"
+  cell $and $and$./boundary_nibble_encoder.v:56$82
     parameter \A_SIGNED 0
     parameter \A_WIDTH 1
     parameter \B_SIGNED 0
     parameter \B_WIDTH 1
     parameter \Y_WIDTH 1
     connect \A \i_ZEROED_NIBBLES [2]
-    connect \B $not$./boundary_nibble_encoder.v:51$72_Y
-    connect \Y $and$./boundary_nibble_encoder.v:57$82_Y
+    connect \B $not$./boundary_nibble_encoder.v:50$72_Y
+    connect \Y $and$./boundary_nibble_encoder.v:56$82_Y
   end
-  attribute \src "./boundary_nibble_encoder.v:58.6-59.49"
-  cell $and $and$./boundary_nibble_encoder.v:58$89
+  attribute \src "./boundary_nibble_encoder.v:57.6-58.49"
+  cell $and $and$./boundary_nibble_encoder.v:57$89
     parameter \A_SIGNED 0
     parameter \A_WIDTH 1
     parameter \B_SIGNED 0
     parameter \B_WIDTH 1
     parameter \Y_WIDTH 1
-    connect \A \w_N8
-    connect \B $or$./boundary_nibble_encoder.v:59$88_Y
-    connect \Y $and$./boundary_nibble_encoder.v:58$89_Y
+    connect \A \w_N7
+    connect \B $or$./boundary_nibble_encoder.v:58$88_Y
+    connect \Y $and$./boundary_nibble_encoder.v:57$89_Y
   end
-  attribute \src "./boundary_nibble_encoder.v:37.8-38.29"
-  cell $assert $assert$./boundary_nibble_encoder.v:37$93
-    connect \A $0$formal$./boundary_nibble_encoder.v:37$1_CHECK[0:0]$45
-    connect \EN $0$formal$./boundary_nibble_encoder.v:37$1_EN[0:0]$46
+  attribute \src "./boundary_nibble_encoder.v:36.8-37.29"
+  cell $assert $assert$./boundary_nibble_encoder.v:36$93
+    connect \A $0$formal$./boundary_nibble_encoder.v:36$1_CHECK[0:0]$45
+    connect \EN $0$formal$./boundary_nibble_encoder.v:36$1_EN[0:0]$46
   end
-  attribute \src "./boundary_nibble_encoder.v:38.30-39.25"
-  cell $assert $assert$./boundary_nibble_encoder.v:38$94
-    connect \A $0$formal$./boundary_nibble_encoder.v:38$2_CHECK[0:0]$47
-    connect \EN $0$formal$./boundary_nibble_encoder.v:37$1_EN[0:0]$46
+  attribute \src "./boundary_nibble_encoder.v:37.30-38.25"
+  cell $assert $assert$./boundary_nibble_encoder.v:37$94
+    connect \A $0$formal$./boundary_nibble_encoder.v:37$2_CHECK[0:0]$47
+    connect \EN $0$formal$./boundary_nibble_encoder.v:36$1_EN[0:0]$46
   end
-  attribute \src "./boundary_nibble_encoder.v:42.8-43.29"
-  cell $assert $assert$./boundary_nibble_encoder.v:42$95
-    connect \A $0$formal$./boundary_nibble_encoder.v:42$3_CHECK[0:0]$49
-    connect \EN $0$formal$./boundary_nibble_encoder.v:42$3_EN[0:0]$50
+  attribute \src "./boundary_nibble_encoder.v:41.8-42.29"
+  cell $assert $assert$./boundary_nibble_encoder.v:41$95
+    connect \A $0$formal$./boundary_nibble_encoder.v:41$3_CHECK[0:0]$49
+    connect \EN $0$formal$./boundary_nibble_encoder.v:41$3_EN[0:0]$50
   end
-  attribute \src "./boundary_nibble_encoder.v:46.40-47.27"
-  cell $assert $assert$./boundary_nibble_encoder.v:46$96
-    connect \A $0$formal$./boundary_nibble_encoder.v:46$4_CHECK[0:0]$51
-    connect \EN $0$formal$./boundary_nibble_encoder.v:46$4_EN[0:0]$52
+  attribute \src "./boundary_nibble_encoder.v:45.40-46.27"
+  cell $assert $assert$./boundary_nibble_encoder.v:45$96
+    connect \A $0$formal$./boundary_nibble_encoder.v:45$4_CHECK[0:0]$51
+    connect \EN $0$formal$./boundary_nibble_encoder.v:45$4_EN[0:0]$52
   end
-  attribute \src "./boundary_nibble_encoder.v:48.8-49.27"
-  cell $assert $assert$./boundary_nibble_encoder.v:48$97
-    connect \A $0$formal$./boundary_nibble_encoder.v:48$5_CHECK[0:0]$53
-    connect \EN $0$formal$./boundary_nibble_encoder.v:48$5_EN[0:0]$54
+  attribute \src "./boundary_nibble_encoder.v:47.8-48.27"
+  cell $assert $assert$./boundary_nibble_encoder.v:47$97
+    connect \A $0$formal$./boundary_nibble_encoder.v:47$5_CHECK[0:0]$53
+    connect \EN $0$formal$./boundary_nibble_encoder.v:47$5_EN[0:0]$54
   end
-  attribute \src "./boundary_nibble_encoder.v:52.58-53.27"
-  cell $assert $assert$./boundary_nibble_encoder.v:52$98
-    connect \A $0$formal$./boundary_nibble_encoder.v:52$6_CHECK[0:0]$55
-    connect \EN $0$formal$./boundary_nibble_encoder.v:52$6_EN[0:0]$56
+  attribute \src "./boundary_nibble_encoder.v:51.58-52.27"
+  cell $assert $assert$./boundary_nibble_encoder.v:51$98
+    connect \A $0$formal$./boundary_nibble_encoder.v:51$6_CHECK[0:0]$55
+    connect \EN $0$formal$./boundary_nibble_encoder.v:51$6_EN[0:0]$56
   end
-  attribute \src "./boundary_nibble_encoder.v:54.8-55.27"
-  cell $assert $assert$./boundary_nibble_encoder.v:54$99
-    connect \A $0$formal$./boundary_nibble_encoder.v:54$7_CHECK[0:0]$57
-    connect \EN $0$formal$./boundary_nibble_encoder.v:54$7_EN[0:0]$58
+  attribute \src "./boundary_nibble_encoder.v:53.8-54.27"
+  cell $assert $assert$./boundary_nibble_encoder.v:53$99
+    connect \A $0$formal$./boundary_nibble_encoder.v:53$7_CHECK[0:0]$57
+    connect \EN $0$formal$./boundary_nibble_encoder.v:53$7_EN[0:0]$58
   end
-  attribute \src "./boundary_nibble_encoder.v:59.51-60.27"
-  cell $assert $assert$./boundary_nibble_encoder.v:59$100
-    connect \A $0$formal$./boundary_nibble_encoder.v:59$8_CHECK[0:0]$59
-    connect \EN $0$formal$./boundary_nibble_encoder.v:59$8_EN[0:0]$60
+  attribute \src "./boundary_nibble_encoder.v:58.51-59.27"
+  cell $assert $assert$./boundary_nibble_encoder.v:58$100
+    connect \A $0$formal$./boundary_nibble_encoder.v:58$8_CHECK[0:0]$59
+    connect \EN $0$formal$./boundary_nibble_encoder.v:58$8_EN[0:0]$60
   end
-  attribute \src "./boundary_nibble_encoder.v:61.8-62.27"
-  cell $assert $assert$./boundary_nibble_encoder.v:61$101
-    connect \A $0$formal$./boundary_nibble_encoder.v:61$9_CHECK[0:0]$61
-    connect \EN $0$formal$./boundary_nibble_encoder.v:61$9_EN[0:0]$62
+  attribute \src "./boundary_nibble_encoder.v:60.8-61.27"
+  cell $assert $assert$./boundary_nibble_encoder.v:60$101
+    connect \A $0$formal$./boundary_nibble_encoder.v:60$9_CHECK[0:0]$61
+    connect \EN $0$formal$./boundary_nibble_encoder.v:60$9_EN[0:0]$62
   end
   cell $anyseq $auto$setundef.cc:501:execute$192
     parameter \WIDTH 1
@@ -478,8 +478,8 @@ module \boundary_nibble_encoder
     parameter \WIDTH 1
     connect \Y $auto$rtlil.cc:2437:Anyseq$221
   end
-  attribute \src "./boundary_nibble_encoder.v:36.6-36.32"
-  cell $eq $eq$./boundary_nibble_encoder.v:36$63
+  attribute \src "./boundary_nibble_encoder.v:35.6-35.32"
+  cell $eq $eq$./boundary_nibble_encoder.v:35$63
     parameter \A_SIGNED 0
     parameter \A_WIDTH 8
     parameter \B_SIGNED 0
@@ -487,29 +487,29 @@ module \boundary_nibble_encoder
     parameter \Y_WIDTH 1
     connect \A \i_ZEROED_NIBBLES
     connect \B 8'11111111
-    connect \Y $eq$./boundary_nibble_encoder.v:36$63_Y
+    connect \Y $eq$./boundary_nibble_encoder.v:35$63_Y
   end
-  attribute \src "./boundary_nibble_encoder.v:39.11-39.24"
-  cell $eq $eq$./boundary_nibble_encoder.v:39$65
+  attribute \src "./boundary_nibble_encoder.v:38.11-38.24"
+  cell $eq $eq$./boundary_nibble_encoder.v:38$65
     parameter \A_SIGNED 0
     parameter \A_WIDTH 3
     parameter \B_SIGNED 0
     parameter \B_WIDTH 3
     parameter \Y_WIDTH 1
-    connect \A { \w_N3 \o_Y [1:0] }
+    connect \A { \w_N2 \o_Y [1:0] }
     connect \B 3'111
-    connect \Y $eq$./boundary_nibble_encoder.v:39$65_Y
+    connect \Y $eq$./boundary_nibble_encoder.v:38$65_Y
   end
-  attribute \src "./boundary_nibble_encoder.v:43.11-43.28"
-  cell $not $eq$./boundary_nibble_encoder.v:43$66
+  attribute \src "./boundary_nibble_encoder.v:42.11-42.28"
+  cell $not $eq$./boundary_nibble_encoder.v:42$66
     parameter \A_SIGNED 0
     parameter \A_WIDTH 1
     parameter \Y_WIDTH 1
     connect \A \o_INVALID
-    connect \Y $eq$./boundary_nibble_encoder.v:43$66_Y
+    connect \Y $eq$./boundary_nibble_encoder.v:42$66_Y
   end
-  attribute \src "./boundary_nibble_encoder.v:46.7-46.39"
-  cell $eq $eq$./boundary_nibble_encoder.v:46$67
+  attribute \src "./boundary_nibble_encoder.v:45.7-45.39"
+  cell $eq $eq$./boundary_nibble_encoder.v:45$67
     parameter \A_SIGNED 0
     parameter \A_WIDTH 4
     parameter \B_SIGNED 0
@@ -517,7 +517,7 @@ module \boundary_nibble_encoder
     parameter \Y_WIDTH 1
     connect \A \i_ZEROED_NIBBLES [3:0]
     connect \B 4'1111
-    connect \Y $eq$./boundary_nibble_encoder.v:46$67_Y
+    connect \Y $eq$./boundary_nibble_encoder.v:45$67_Y
   end
   attribute \src "./boundary_nibble_encoder.v:10.15-10.59"
   cell $not $not$./boundary_nibble_encoder.v:10$11
@@ -540,8 +540,8 @@ module \boundary_nibble_encoder
     parameter \A_SIGNED 0
     parameter \A_WIDTH 1
     parameter \Y_WIDTH 1
-    connect \A $eq$./boundary_nibble_encoder.v:49$69_Y
-    connect \Y \w_N3
+    connect \A $eq$./boundary_nibble_encoder.v:48$69_Y
+    connect \Y \w_N2
   end
   attribute \src "./boundary_nibble_encoder.v:14.15-14.59"
   cell $not $not$./boundary_nibble_encoder.v:14$17
@@ -549,7 +549,7 @@ module \boundary_nibble_encoder
     parameter \A_WIDTH 1
     parameter \Y_WIDTH 1
     connect \A $and$./boundary_nibble_encoder.v:14$16_Y
-    connect \Y \w_N4
+    connect \Y \w_N3
   end
   attribute \src "./boundary_nibble_encoder.v:15.15-15.59"
   cell $not $not$./boundary_nibble_encoder.v:15$19
@@ -557,7 +557,7 @@ module \boundary_nibble_encoder
     parameter \A_WIDTH 1
     parameter \Y_WIDTH 1
     connect \A $and$./boundary_nibble_encoder.v:15$18_Y
-    connect \Y \w_N5
+    connect \Y \w_N4
   end
   attribute \src "./boundary_nibble_encoder.v:16.15-16.29"
   cell $not $not$./boundary_nibble_encoder.v:16$21
@@ -565,7 +565,7 @@ module \boundary_nibble_encoder
     parameter \A_WIDTH 1
     parameter \Y_WIDTH 1
     connect \A $or$./boundary_nibble_encoder.v:16$20_Y
-    connect \Y \w_N6
+    connect \Y \w_N5
   end
   attribute \src "./boundary_nibble_encoder.v:20.17-20.37"
   cell $not $not$./boundary_nibble_encoder.v:20$23
@@ -581,7 +581,7 @@ module \boundary_nibble_encoder
     parameter \A_WIDTH 1
     parameter \Y_WIDTH 1
     connect \A $and$./boundary_nibble_encoder.v:20$24_Y
-    connect \Y \w_N7
+    connect \Y \w_N6
   end
   attribute \src "./boundary_nibble_encoder.v:22.15-22.29"
   cell $not $not$./boundary_nibble_encoder.v:22$29
@@ -589,9 +589,9 @@ module \boundary_nibble_encoder
     parameter \A_WIDTH 1
     parameter \Y_WIDTH 1
     connect \A $and$./boundary_nibble_encoder.v:22$28_Y
-    connect \Y \w_N9
+    connect \Y \w_N8
   end
-  attribute \src "./boundary_nibble_encoder.v:24.18-24.38"
+  attribute \src "./boundary_nibble_encoder.v:24.17-24.37"
   cell $not $not$./boundary_nibble_encoder.v:24$30
     parameter \A_SIGNED 0
     parameter \A_WIDTH 1
@@ -599,13 +599,13 @@ module \boundary_nibble_encoder
     connect \A \i_ZEROED_NIBBLES [2]
     connect \Y $not$./boundary_nibble_encoder.v:24$30_Y
   end
-  attribute \src "./boundary_nibble_encoder.v:24.16-24.61"
+  attribute \src "./boundary_nibble_encoder.v:24.15-24.60"
   cell $not $not$./boundary_nibble_encoder.v:24$32
     parameter \A_SIGNED 0
     parameter \A_WIDTH 1
     parameter \Y_WIDTH 1
     connect \A $and$./boundary_nibble_encoder.v:24$31_Y
-    connect \Y \w_N10
+    connect \Y \w_N9
   end
   attribute \src "./boundary_nibble_encoder.v:25.16-25.60"
   cell $not $not$./boundary_nibble_encoder.v:25$34
@@ -613,22 +613,22 @@ module \boundary_nibble_encoder
     parameter \A_WIDTH 1
     parameter \Y_WIDTH 1
     connect \A $and$./boundary_nibble_encoder.v:25$33_Y
-    connect \Y \w_N11
+    connect \Y \w_N10
   end
-  attribute \src "./boundary_nibble_encoder.v:26.16-26.54"
+  attribute \src "./boundary_nibble_encoder.v:26.16-26.53"
   cell $not $not$./boundary_nibble_encoder.v:26$37
     parameter \A_SIGNED 0
     parameter \A_WIDTH 1
     parameter \Y_WIDTH 1
     connect \A $and$./boundary_nibble_encoder.v:26$36_Y
-    connect \Y \w_N12
+    connect \Y \w_N11
   end
   attribute \src "./boundary_nibble_encoder.v:29.17-29.41"
   cell $not $not$./boundary_nibble_encoder.v:29$41
     parameter \A_SIGNED 0
     parameter \A_WIDTH 1
     parameter \Y_WIDTH 1
-    connect \A $eq$./boundary_nibble_encoder.v:55$79_Y
+    connect \A $eq$./boundary_nibble_encoder.v:54$79_Y
     connect \Y \o_Y [1]
   end
   attribute \src "./boundary_nibble_encoder.v:30.17-30.32"
@@ -639,29 +639,29 @@ module \boundary_nibble_encoder
     connect \A $and$./boundary_nibble_encoder.v:30$42_Y
     connect \Y \o_Y [0]
   end
-  attribute \src "./boundary_nibble_encoder.v:51.29-51.49"
-  cell $not $not$./boundary_nibble_encoder.v:51$72
+  attribute \src "./boundary_nibble_encoder.v:50.29-50.49"
+  cell $not $not$./boundary_nibble_encoder.v:50$72
     parameter \A_SIGNED 0
     parameter \A_WIDTH 1
     parameter \Y_WIDTH 1
     connect \A \i_ZEROED_NIBBLES [3]
-    connect \Y $not$./boundary_nibble_encoder.v:51$72_Y
+    connect \Y $not$./boundary_nibble_encoder.v:50$72_Y
   end
-  attribute \src "./boundary_nibble_encoder.v:57.6-57.26"
-  cell $not $not$./boundary_nibble_encoder.v:57$80
+  attribute \src "./boundary_nibble_encoder.v:56.6-56.26"
+  cell $not $not$./boundary_nibble_encoder.v:56$80
     parameter \A_SIGNED 0
     parameter \A_WIDTH 1
     parameter \Y_WIDTH 1
     connect \A \i_ZEROED_NIBBLES [1]
-    connect \Y $not$./boundary_nibble_encoder.v:57$80_Y
+    connect \Y $not$./boundary_nibble_encoder.v:56$80_Y
   end
-  attribute \src "./boundary_nibble_encoder.v:59.6-59.26"
-  cell $not $not$./boundary_nibble_encoder.v:59$87
+  attribute \src "./boundary_nibble_encoder.v:58.6-58.26"
+  cell $not $not$./boundary_nibble_encoder.v:58$87
     parameter \A_SIGNED 0
     parameter \A_WIDTH 1
     parameter \Y_WIDTH 1
     connect \A \i_ZEROED_NIBBLES [5]
-    connect \Y $not$./boundary_nibble_encoder.v:59$87_Y
+    connect \Y $not$./boundary_nibble_encoder.v:58$87_Y
   end
   attribute \src "./boundary_nibble_encoder.v:12.17-12.28"
   cell $or $or$./boundary_nibble_encoder.v:12$14
@@ -672,7 +672,7 @@ module \boundary_nibble_encoder
     parameter \Y_WIDTH 1
     connect \A \w_N0
     connect \B \w_N1
-    connect \Y $eq$./boundary_nibble_encoder.v:49$69_Y
+    connect \Y $eq$./boundary_nibble_encoder.v:48$69_Y
   end
   attribute \src "./boundary_nibble_encoder.v:16.17-16.28"
   cell $or $or$./boundary_nibble_encoder.v:16$20
@@ -681,8 +681,8 @@ module \boundary_nibble_encoder
     parameter \B_SIGNED 0
     parameter \B_WIDTH 1
     parameter \Y_WIDTH 1
-    connect \A \w_N4
-    connect \B \w_N5
+    connect \A \w_N3
+    connect \B \w_N4
     connect \Y $or$./boundary_nibble_encoder.v:16$20_Y
   end
   attribute \src "./boundary_nibble_encoder.v:29.19-29.40"
@@ -694,323 +694,323 @@ module \boundary_nibble_encoder
     parameter \Y_WIDTH 1
     connect \A $and$./boundary_nibble_encoder.v:29$39_Y
     connect \B \w_N0
-    connect \Y $eq$./boundary_nibble_encoder.v:55$79_Y
+    connect \Y $eq$./boundary_nibble_encoder.v:54$79_Y
   end
-  attribute \src "./boundary_nibble_encoder.v:51.6-51.49"
-  cell $or $or$./boundary_nibble_encoder.v:51$73
+  attribute \src "./boundary_nibble_encoder.v:50.6-50.49"
+  cell $or $or$./boundary_nibble_encoder.v:50$73
     parameter \A_SIGNED 0
     parameter \A_WIDTH 1
     parameter \B_SIGNED 0
     parameter \B_WIDTH 1
     parameter \Y_WIDTH 1
     connect \A $not$./boundary_nibble_encoder.v:24$30_Y
-    connect \B $not$./boundary_nibble_encoder.v:51$72_Y
-    connect \Y $or$./boundary_nibble_encoder.v:51$73_Y
+    connect \B $not$./boundary_nibble_encoder.v:50$72_Y
+    connect \Y $or$./boundary_nibble_encoder.v:50$73_Y
   end
-  attribute \src "./boundary_nibble_encoder.v:51.6-52.48"
-  cell $or $or$./boundary_nibble_encoder.v:51$75
+  attribute \src "./boundary_nibble_encoder.v:50.6-51.48"
+  cell $or $or$./boundary_nibble_encoder.v:50$75
     parameter \A_SIGNED 0
     parameter \A_WIDTH 1
     parameter \B_SIGNED 0
     parameter \B_WIDTH 1
     parameter \Y_WIDTH 1
-    connect \A $or$./boundary_nibble_encoder.v:51$73_Y
+    connect \A $or$./boundary_nibble_encoder.v:50$73_Y
     connect \B $and$./boundary_nibble_encoder.v:14$16_Y
-    connect \Y $eq$./boundary_nibble_encoder.v:51$76_Y
+    connect \Y $eq$./boundary_nibble_encoder.v:50$76_Y
   end
-  attribute \src "./boundary_nibble_encoder.v:56.7-59.50"
-  cell $or $or$./boundary_nibble_encoder.v:56$90
+  attribute \src "./boundary_nibble_encoder.v:55.7-58.50"
+  cell $or $or$./boundary_nibble_encoder.v:55$90
     parameter \A_SIGNED 0
     parameter \A_WIDTH 1
     parameter \B_SIGNED 0
     parameter \B_WIDTH 1
     parameter \Y_WIDTH 1
-    connect \A $and$./boundary_nibble_encoder.v:56$84_Y
-    connect \B $and$./boundary_nibble_encoder.v:58$89_Y
-    connect \Y $or$./boundary_nibble_encoder.v:56$90_Y
+    connect \A $and$./boundary_nibble_encoder.v:55$84_Y
+    connect \B $and$./boundary_nibble_encoder.v:57$89_Y
+    connect \Y $or$./boundary_nibble_encoder.v:55$90_Y
   end
-  attribute \src "./boundary_nibble_encoder.v:57.6-57.71"
-  cell $or $or$./boundary_nibble_encoder.v:57$83
+  attribute \src "./boundary_nibble_encoder.v:56.6-56.71"
+  cell $or $or$./boundary_nibble_encoder.v:56$83
     parameter \A_SIGNED 0
     parameter \A_WIDTH 1
     parameter \B_SIGNED 0
     parameter \B_WIDTH 1
     parameter \Y_WIDTH 1
-    connect \A $not$./boundary_nibble_encoder.v:57$80_Y
-    connect \B $and$./boundary_nibble_encoder.v:57$82_Y
-    connect \Y $or$./boundary_nibble_encoder.v:57$83_Y
+    connect \A $not$./boundary_nibble_encoder.v:56$80_Y
+    connect \B $and$./boundary_nibble_encoder.v:56$82_Y
+    connect \Y $or$./boundary_nibble_encoder.v:56$83_Y
   end
-  attribute \src "./boundary_nibble_encoder.v:59.6-59.48"
-  cell $or $or$./boundary_nibble_encoder.v:59$88
+  attribute \src "./boundary_nibble_encoder.v:58.6-58.48"
+  cell $or $or$./boundary_nibble_encoder.v:58$88
     parameter \A_SIGNED 0
     parameter \A_WIDTH 1
     parameter \B_SIGNED 0
     parameter \B_WIDTH 1
     parameter \Y_WIDTH 1
-    connect \A $not$./boundary_nibble_encoder.v:59$87_Y
+    connect \A $not$./boundary_nibble_encoder.v:58$87_Y
     connect \B \i_ZEROED_NIBBLES [6]
-    connect \Y $or$./boundary_nibble_encoder.v:59$88_Y
+    connect \Y $or$./boundary_nibble_encoder.v:58$88_Y
   end
   attribute \full_case 1
-  attribute \src "./boundary_nibble_encoder.v:36.6-36.32|./boundary_nibble_encoder.v:36.3-64.6"
+  attribute \src "./boundary_nibble_encoder.v:35.6-35.32|./boundary_nibble_encoder.v:35.3-63.6"
   cell $mux $procmux$103
     parameter \WIDTH 1
     connect \A 1'0
     connect \B 1'1
-    connect \S $eq$./boundary_nibble_encoder.v:36$63_Y
-    connect \Y $0$formal$./boundary_nibble_encoder.v:37$1_EN[0:0]$46
+    connect \S $eq$./boundary_nibble_encoder.v:35$63_Y
+    connect \Y $0$formal$./boundary_nibble_encoder.v:36$1_EN[0:0]$46
   end
   attribute \full_case 1
-  attribute \src "./boundary_nibble_encoder.v:36.6-36.32|./boundary_nibble_encoder.v:36.3-64.6"
+  attribute \src "./boundary_nibble_encoder.v:35.6-35.32|./boundary_nibble_encoder.v:35.3-63.6"
   cell $mux $procmux$106
     parameter \WIDTH 1
     connect \A $auto$rtlil.cc:2437:Anyseq$193
     connect \B \o_INVALID
-    connect \S $eq$./boundary_nibble_encoder.v:36$63_Y
-    connect \Y $0$formal$./boundary_nibble_encoder.v:37$1_CHECK[0:0]$45
+    connect \S $eq$./boundary_nibble_encoder.v:35$63_Y
+    connect \Y $0$formal$./boundary_nibble_encoder.v:36$1_CHECK[0:0]$45
   end
   attribute \full_case 1
-  attribute \src "./boundary_nibble_encoder.v:36.6-36.32|./boundary_nibble_encoder.v:36.3-64.6"
+  attribute \src "./boundary_nibble_encoder.v:35.6-35.32|./boundary_nibble_encoder.v:35.3-63.6"
   cell $mux $procmux$112
     parameter \WIDTH 1
     connect \A $auto$rtlil.cc:2437:Anyseq$195
-    connect \B $eq$./boundary_nibble_encoder.v:39$65_Y
-    connect \S $eq$./boundary_nibble_encoder.v:36$63_Y
-    connect \Y $0$formal$./boundary_nibble_encoder.v:38$2_CHECK[0:0]$47
+    connect \B $eq$./boundary_nibble_encoder.v:38$65_Y
+    connect \S $eq$./boundary_nibble_encoder.v:35$63_Y
+    connect \Y $0$formal$./boundary_nibble_encoder.v:37$2_CHECK[0:0]$47
   end
   attribute \full_case 1
-  attribute \src "./boundary_nibble_encoder.v:36.6-36.32|./boundary_nibble_encoder.v:36.3-64.6"
+  attribute \src "./boundary_nibble_encoder.v:35.6-35.32|./boundary_nibble_encoder.v:35.3-63.6"
   cell $mux $procmux$115
     parameter \WIDTH 1
     connect \A 1'1
     connect \B 1'0
-    connect \S $eq$./boundary_nibble_encoder.v:36$63_Y
-    connect \Y $0$formal$./boundary_nibble_encoder.v:42$3_EN[0:0]$50
+    connect \S $eq$./boundary_nibble_encoder.v:35$63_Y
+    connect \Y $0$formal$./boundary_nibble_encoder.v:41$3_EN[0:0]$50
   end
   attribute \full_case 1
-  attribute \src "./boundary_nibble_encoder.v:36.6-36.32|./boundary_nibble_encoder.v:36.3-64.6"
+  attribute \src "./boundary_nibble_encoder.v:35.6-35.32|./boundary_nibble_encoder.v:35.3-63.6"
   cell $mux $procmux$118
     parameter \WIDTH 1
-    connect \A $eq$./boundary_nibble_encoder.v:43$66_Y
+    connect \A $eq$./boundary_nibble_encoder.v:42$66_Y
     connect \B $auto$rtlil.cc:2437:Anyseq$197
-    connect \S $eq$./boundary_nibble_encoder.v:36$63_Y
-    connect \Y $0$formal$./boundary_nibble_encoder.v:42$3_CHECK[0:0]$49
+    connect \S $eq$./boundary_nibble_encoder.v:35$63_Y
+    connect \Y $0$formal$./boundary_nibble_encoder.v:41$3_CHECK[0:0]$49
   end
   attribute \full_case 1
-  attribute \src "./boundary_nibble_encoder.v:46.7-46.39|./boundary_nibble_encoder.v:46.4-49.28"
+  attribute \src "./boundary_nibble_encoder.v:45.7-45.39|./boundary_nibble_encoder.v:45.4-48.28"
   cell $mux $procmux$121
     parameter \WIDTH 1
     connect \A 1'0
     connect \B 1'1
-    connect \S $eq$./boundary_nibble_encoder.v:46$67_Y
+    connect \S $eq$./boundary_nibble_encoder.v:45$67_Y
     connect \Y $procmux$121_Y
   end
   attribute \full_case 1
-  attribute \src "./boundary_nibble_encoder.v:36.6-36.32|./boundary_nibble_encoder.v:36.3-64.6"
+  attribute \src "./boundary_nibble_encoder.v:35.6-35.32|./boundary_nibble_encoder.v:35.3-63.6"
   cell $mux $procmux$124
     parameter \WIDTH 1
     connect \A $procmux$121_Y
     connect \B 1'0
-    connect \S $eq$./boundary_nibble_encoder.v:36$63_Y
-    connect \Y $0$formal$./boundary_nibble_encoder.v:46$4_EN[0:0]$52
+    connect \S $eq$./boundary_nibble_encoder.v:35$63_Y
+    connect \Y $0$formal$./boundary_nibble_encoder.v:45$4_EN[0:0]$52
   end
   attribute \full_case 1
-  attribute \src "./boundary_nibble_encoder.v:46.7-46.39|./boundary_nibble_encoder.v:46.4-49.28"
+  attribute \src "./boundary_nibble_encoder.v:45.7-45.39|./boundary_nibble_encoder.v:45.4-48.28"
   cell $mux $procmux$127
     parameter \WIDTH 1
     connect \A $auto$rtlil.cc:2437:Anyseq$199
-    connect \B \w_N3
-    connect \S $eq$./boundary_nibble_encoder.v:46$67_Y
+    connect \B \w_N2
+    connect \S $eq$./boundary_nibble_encoder.v:45$67_Y
     connect \Y $procmux$127_Y
   end
   attribute \full_case 1
-  attribute \src "./boundary_nibble_encoder.v:36.6-36.32|./boundary_nibble_encoder.v:36.3-64.6"
+  attribute \src "./boundary_nibble_encoder.v:35.6-35.32|./boundary_nibble_encoder.v:35.3-63.6"
   cell $mux $procmux$130
     parameter \WIDTH 1
     connect \A $procmux$127_Y
     connect \B $auto$rtlil.cc:2437:Anyseq$201
-    connect \S $eq$./boundary_nibble_encoder.v:36$63_Y
-    connect \Y $0$formal$./boundary_nibble_encoder.v:46$4_CHECK[0:0]$51
+    connect \S $eq$./boundary_nibble_encoder.v:35$63_Y
+    connect \Y $0$formal$./boundary_nibble_encoder.v:45$4_CHECK[0:0]$51
   end
   attribute \full_case 1
-  attribute \src "./boundary_nibble_encoder.v:46.7-46.39|./boundary_nibble_encoder.v:46.4-49.28"
+  attribute \src "./boundary_nibble_encoder.v:45.7-45.39|./boundary_nibble_encoder.v:45.4-48.28"
   cell $mux $procmux$133
     parameter \WIDTH 1
     connect \A 1'1
     connect \B 1'0
-    connect \S $eq$./boundary_nibble_encoder.v:46$67_Y
+    connect \S $eq$./boundary_nibble_encoder.v:45$67_Y
     connect \Y $procmux$133_Y
   end
   attribute \full_case 1
-  attribute \src "./boundary_nibble_encoder.v:36.6-36.32|./boundary_nibble_encoder.v:36.3-64.6"
+  attribute \src "./boundary_nibble_encoder.v:35.6-35.32|./boundary_nibble_encoder.v:35.3-63.6"
   cell $mux $procmux$136
     parameter \WIDTH 1
     connect \A $procmux$133_Y
     connect \B 1'0
-    connect \S $eq$./boundary_nibble_encoder.v:36$63_Y
-    connect \Y $0$formal$./boundary_nibble_encoder.v:48$5_EN[0:0]$54
+    connect \S $eq$./boundary_nibble_encoder.v:35$63_Y
+    connect \Y $0$formal$./boundary_nibble_encoder.v:47$5_EN[0:0]$54
   end
   attribute \full_case 1
-  attribute \src "./boundary_nibble_encoder.v:46.7-46.39|./boundary_nibble_encoder.v:46.4-49.28"
+  attribute \src "./boundary_nibble_encoder.v:45.7-45.39|./boundary_nibble_encoder.v:45.4-48.28"
   cell $mux $procmux$139
     parameter \WIDTH 1
-    connect \A $eq$./boundary_nibble_encoder.v:49$69_Y
+    connect \A $eq$./boundary_nibble_encoder.v:48$69_Y
     connect \B $auto$rtlil.cc:2437:Anyseq$203
-    connect \S $eq$./boundary_nibble_encoder.v:46$67_Y
+    connect \S $eq$./boundary_nibble_encoder.v:45$67_Y
     connect \Y $procmux$139_Y
   end
   attribute \full_case 1
-  attribute \src "./boundary_nibble_encoder.v:36.6-36.32|./boundary_nibble_encoder.v:36.3-64.6"
+  attribute \src "./boundary_nibble_encoder.v:35.6-35.32|./boundary_nibble_encoder.v:35.3-63.6"
   cell $mux $procmux$142
     parameter \WIDTH 1
     connect \A $procmux$139_Y
     connect \B $auto$rtlil.cc:2437:Anyseq$205
-    connect \S $eq$./boundary_nibble_encoder.v:36$63_Y
-    connect \Y $0$formal$./boundary_nibble_encoder.v:48$5_CHECK[0:0]$53
+    connect \S $eq$./boundary_nibble_encoder.v:35$63_Y
+    connect \Y $0$formal$./boundary_nibble_encoder.v:47$5_CHECK[0:0]$53
   end
   attribute \full_case 1
-  attribute \src "./boundary_nibble_encoder.v:50.7-52.57|./boundary_nibble_encoder.v:50.4-55.28"
+  attribute \src "./boundary_nibble_encoder.v:49.7-51.57|./boundary_nibble_encoder.v:49.4-54.28"
   cell $mux $procmux$145
     parameter \WIDTH 1
     connect \A 1'0
     connect \B 1'1
-    connect \S $and$./boundary_nibble_encoder.v:50$77_Y
+    connect \S $and$./boundary_nibble_encoder.v:49$77_Y
     connect \Y $procmux$145_Y
   end
   attribute \full_case 1
-  attribute \src "./boundary_nibble_encoder.v:36.6-36.32|./boundary_nibble_encoder.v:36.3-64.6"
+  attribute \src "./boundary_nibble_encoder.v:35.6-35.32|./boundary_nibble_encoder.v:35.3-63.6"
   cell $mux $procmux$148
     parameter \WIDTH 1
     connect \A $procmux$145_Y
     connect \B 1'0
-    connect \S $eq$./boundary_nibble_encoder.v:36$63_Y
-    connect \Y $0$formal$./boundary_nibble_encoder.v:52$6_EN[0:0]$56
+    connect \S $eq$./boundary_nibble_encoder.v:35$63_Y
+    connect \Y $0$formal$./boundary_nibble_encoder.v:51$6_EN[0:0]$56
   end
   attribute \full_case 1
-  attribute \src "./boundary_nibble_encoder.v:50.7-52.57|./boundary_nibble_encoder.v:50.4-55.28"
+  attribute \src "./boundary_nibble_encoder.v:49.7-51.57|./boundary_nibble_encoder.v:49.4-54.28"
   cell $mux $procmux$151
     parameter \WIDTH 1
     connect \A $auto$rtlil.cc:2437:Anyseq$207
     connect \B \o_Y [1]
-    connect \S $and$./boundary_nibble_encoder.v:50$77_Y
+    connect \S $and$./boundary_nibble_encoder.v:49$77_Y
     connect \Y $procmux$151_Y
   end
   attribute \full_case 1
-  attribute \src "./boundary_nibble_encoder.v:36.6-36.32|./boundary_nibble_encoder.v:36.3-64.6"
+  attribute \src "./boundary_nibble_encoder.v:35.6-35.32|./boundary_nibble_encoder.v:35.3-63.6"
   cell $mux $procmux$154
     parameter \WIDTH 1
     connect \A $procmux$151_Y
     connect \B $auto$rtlil.cc:2437:Anyseq$209
-    connect \S $eq$./boundary_nibble_encoder.v:36$63_Y
-    connect \Y $0$formal$./boundary_nibble_encoder.v:52$6_CHECK[0:0]$55
+    connect \S $eq$./boundary_nibble_encoder.v:35$63_Y
+    connect \Y $0$formal$./boundary_nibble_encoder.v:51$6_CHECK[0:0]$55
   end
   attribute \full_case 1
-  attribute \src "./boundary_nibble_encoder.v:50.7-52.57|./boundary_nibble_encoder.v:50.4-55.28"
+  attribute \src "./boundary_nibble_encoder.v:49.7-51.57|./boundary_nibble_encoder.v:49.4-54.28"
   cell $mux $procmux$157
     parameter \WIDTH 1
     connect \A 1'1
     connect \B 1'0
-    connect \S $and$./boundary_nibble_encoder.v:50$77_Y
+    connect \S $and$./boundary_nibble_encoder.v:49$77_Y
     connect \Y $procmux$157_Y
   end
   attribute \full_case 1
-  attribute \src "./boundary_nibble_encoder.v:36.6-36.32|./boundary_nibble_encoder.v:36.3-64.6"
+  attribute \src "./boundary_nibble_encoder.v:35.6-35.32|./boundary_nibble_encoder.v:35.3-63.6"
   cell $mux $procmux$160
     parameter \WIDTH 1
     connect \A $procmux$157_Y
     connect \B 1'0
-    connect \S $eq$./boundary_nibble_encoder.v:36$63_Y
-    connect \Y $0$formal$./boundary_nibble_encoder.v:54$7_EN[0:0]$58
+    connect \S $eq$./boundary_nibble_encoder.v:35$63_Y
+    connect \Y $0$formal$./boundary_nibble_encoder.v:53$7_EN[0:0]$58
   end
   attribute \full_case 1
-  attribute \src "./boundary_nibble_encoder.v:50.7-52.57|./boundary_nibble_encoder.v:50.4-55.28"
+  attribute \src "./boundary_nibble_encoder.v:49.7-51.57|./boundary_nibble_encoder.v:49.4-54.28"
   cell $mux $procmux$163
     parameter \WIDTH 1
-    connect \A $eq$./boundary_nibble_encoder.v:55$79_Y
+    connect \A $eq$./boundary_nibble_encoder.v:54$79_Y
     connect \B $auto$rtlil.cc:2437:Anyseq$211
-    connect \S $and$./boundary_nibble_encoder.v:50$77_Y
+    connect \S $and$./boundary_nibble_encoder.v:49$77_Y
     connect \Y $procmux$163_Y
   end
   attribute \full_case 1
-  attribute \src "./boundary_nibble_encoder.v:36.6-36.32|./boundary_nibble_encoder.v:36.3-64.6"
+  attribute \src "./boundary_nibble_encoder.v:35.6-35.32|./boundary_nibble_encoder.v:35.3-63.6"
   cell $mux $procmux$166
     parameter \WIDTH 1
     connect \A $procmux$163_Y
     connect \B $auto$rtlil.cc:2437:Anyseq$213
-    connect \S $eq$./boundary_nibble_encoder.v:36$63_Y
-    connect \Y $0$formal$./boundary_nibble_encoder.v:54$7_CHECK[0:0]$57
+    connect \S $eq$./boundary_nibble_encoder.v:35$63_Y
+    connect \Y $0$formal$./boundary_nibble_encoder.v:53$7_CHECK[0:0]$57
   end
   attribute \full_case 1
-  attribute \src "./boundary_nibble_encoder.v:56.7-59.50|./boundary_nibble_encoder.v:56.4-62.28"
+  attribute \src "./boundary_nibble_encoder.v:55.7-58.50|./boundary_nibble_encoder.v:55.4-61.28"
   cell $mux $procmux$169
     parameter \WIDTH 1
     connect \A 1'0
     connect \B 1'1
-    connect \S $or$./boundary_nibble_encoder.v:56$90_Y
+    connect \S $or$./boundary_nibble_encoder.v:55$90_Y
     connect \Y $procmux$169_Y
   end
   attribute \full_case 1
-  attribute \src "./boundary_nibble_encoder.v:36.6-36.32|./boundary_nibble_encoder.v:36.3-64.6"
+  attribute \src "./boundary_nibble_encoder.v:35.6-35.32|./boundary_nibble_encoder.v:35.3-63.6"
   cell $mux $procmux$172
     parameter \WIDTH 1
     connect \A $procmux$169_Y
     connect \B 1'0
-    connect \S $eq$./boundary_nibble_encoder.v:36$63_Y
-    connect \Y $0$formal$./boundary_nibble_encoder.v:59$8_EN[0:0]$60
+    connect \S $eq$./boundary_nibble_encoder.v:35$63_Y
+    connect \Y $0$formal$./boundary_nibble_encoder.v:58$8_EN[0:0]$60
   end
   attribute \full_case 1
-  attribute \src "./boundary_nibble_encoder.v:56.7-59.50|./boundary_nibble_encoder.v:56.4-62.28"
+  attribute \src "./boundary_nibble_encoder.v:55.7-58.50|./boundary_nibble_encoder.v:55.4-61.28"
   cell $mux $procmux$175
     parameter \WIDTH 1
     connect \A $auto$rtlil.cc:2437:Anyseq$215
     connect \B \o_Y [0]
-    connect \S $or$./boundary_nibble_encoder.v:56$90_Y
+    connect \S $or$./boundary_nibble_encoder.v:55$90_Y
     connect \Y $procmux$175_Y
   end
   attribute \full_case 1
-  attribute \src "./boundary_nibble_encoder.v:36.6-36.32|./boundary_nibble_encoder.v:36.3-64.6"
+  attribute \src "./boundary_nibble_encoder.v:35.6-35.32|./boundary_nibble_encoder.v:35.3-63.6"
   cell $mux $procmux$178
     parameter \WIDTH 1
     connect \A $procmux$175_Y
     connect \B $auto$rtlil.cc:2437:Anyseq$217
-    connect \S $eq$./boundary_nibble_encoder.v:36$63_Y
-    connect \Y $0$formal$./boundary_nibble_encoder.v:59$8_CHECK[0:0]$59
+    connect \S $eq$./boundary_nibble_encoder.v:35$63_Y
+    connect \Y $0$formal$./boundary_nibble_encoder.v:58$8_CHECK[0:0]$59
   end
   attribute \full_case 1
-  attribute \src "./boundary_nibble_encoder.v:56.7-59.50|./boundary_nibble_encoder.v:56.4-62.28"
+  attribute \src "./boundary_nibble_encoder.v:55.7-58.50|./boundary_nibble_encoder.v:55.4-61.28"
   cell $mux $procmux$181
     parameter \WIDTH 1
     connect \A 1'1
     connect \B 1'0
-    connect \S $or$./boundary_nibble_encoder.v:56$90_Y
+    connect \S $or$./boundary_nibble_encoder.v:55$90_Y
     connect \Y $procmux$181_Y
   end
   attribute \full_case 1
-  attribute \src "./boundary_nibble_encoder.v:36.6-36.32|./boundary_nibble_encoder.v:36.3-64.6"
+  attribute \src "./boundary_nibble_encoder.v:35.6-35.32|./boundary_nibble_encoder.v:35.3-63.6"
   cell $mux $procmux$184
     parameter \WIDTH 1
     connect \A $procmux$181_Y
     connect \B 1'0
-    connect \S $eq$./boundary_nibble_encoder.v:36$63_Y
-    connect \Y $0$formal$./boundary_nibble_encoder.v:61$9_EN[0:0]$62
+    connect \S $eq$./boundary_nibble_encoder.v:35$63_Y
+    connect \Y $0$formal$./boundary_nibble_encoder.v:60$9_EN[0:0]$62
   end
   attribute \full_case 1
-  attribute \src "./boundary_nibble_encoder.v:56.7-59.50|./boundary_nibble_encoder.v:56.4-62.28"
+  attribute \src "./boundary_nibble_encoder.v:55.7-58.50|./boundary_nibble_encoder.v:55.4-61.28"
   cell $mux $procmux$187
     parameter \WIDTH 1
     connect \A $and$./boundary_nibble_encoder.v:30$42_Y
     connect \B $auto$rtlil.cc:2437:Anyseq$219
-    connect \S $or$./boundary_nibble_encoder.v:56$90_Y
+    connect \S $or$./boundary_nibble_encoder.v:55$90_Y
     connect \Y $procmux$187_Y
   end
   attribute \full_case 1
-  attribute \src "./boundary_nibble_encoder.v:36.6-36.32|./boundary_nibble_encoder.v:36.3-64.6"
+  attribute \src "./boundary_nibble_encoder.v:35.6-35.32|./boundary_nibble_encoder.v:35.3-63.6"
   cell $mux $procmux$190
     parameter \WIDTH 1
     connect \A $procmux$187_Y
     connect \B $auto$rtlil.cc:2437:Anyseq$221
-    connect \S $eq$./boundary_nibble_encoder.v:36$63_Y
-    connect \Y $0$formal$./boundary_nibble_encoder.v:61$9_CHECK[0:0]$61
+    connect \S $eq$./boundary_nibble_encoder.v:35$63_Y
+    connect \Y $0$formal$./boundary_nibble_encoder.v:60$9_CHECK[0:0]$61
   end
-  connect \o_Y [2] \w_N3
+  connect \o_Y [2] \w_N2
 end

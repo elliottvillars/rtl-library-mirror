@@ -1,0 +1,4 @@
+initial
+
+state 0
+assume (= [i_WORD] #x8040440100000001)
