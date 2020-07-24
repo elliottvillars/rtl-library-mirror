@@ -1,3 +1,5 @@
 1) Create script to automate verilator testbench creation and recompilation.
 2) Simulate modules that couldn't be completely formally verified.
-3) Finish stack module and FIFO.
+3) Create systolic multiplier
+4) Create super-systolic multiplier.
+5) Create systolic adder?
