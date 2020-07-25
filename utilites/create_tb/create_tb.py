@@ -1,10 +1,12 @@
+#! /usr/bin/env python3
+
 import glob
 import sys
+import stat
 import os
 import shutil
 from datetime import datetime
 # datetime object containing current date and time
-#TODO: change file permissions
 NOW = datetime.now()
 DT_STRING = NOW.strftime("%Y-%m-%d %H:%M:%S")
 PATH = os.getcwd() + '/'
@@ -13,7 +15,6 @@ S_PATH = PATH + "sim"
 FILES = glob.glob(PATH + "/*.v")
 HELP_STR = """
 --help: Print this menu
---engine: Chose an SMT solver. Possible options are yices,z3,boolector. Default is yices.
 --top: Name of top module. REQUIRED.
 """
 
@@ -33,10 +34,11 @@ prove: mode prove
 prove: depth {depth}
 cover: mode cover
 cover: depth {depth}
+[engines]
+smtbmc boolector
 """
     files_str = "[files]\n"
     script_str = "[script]\n"
-    engine_str = "[engines]\n"
     cmake_str = """
 cmake_minimum_required(VERSION 3.17)
 project(cmake_example)
@@ -82,8 +84,6 @@ int main(int argc, char ** argv) {{
 }}
 """
     tokens = []
-    engine_arg_supplied = False
-    top_arg_supplied = False
     top = "FIXME"
     if len(sys.argv) == 1:
         print(HELP_STR)
@@ -91,35 +91,21 @@ int main(int argc, char ** argv) {{
     else:
         for arg in sys.argv:
             tokens.append(arg)
-        for idx, tok in enumerate(tokens):
-            if(tok == "--engine" and not engine_arg_supplied):
-                engine = tokens[idx + 1]
-                if engine in ("z3", "yices", "boolector"):
-                    #TODO dont hardcode engines
-                    engine_str += engine
-                    engine_arg_supplied = True
-            elif(tok == "--top" and not top_arg_supplied):
-                top = tokens[idx+1]
-                if not top.endswith(".v"):
-                    print("The supplied file does not appear to be a Verilog file, exiting.")
-                    sys.exit()
-                else:
-                    top = (top.rsplit(".", 1)[0])
-                    top_arg_supplied = True
-    if not top_arg_supplied:
-        print("--top is a required argument. Exiting")
-        sys.exit()
-    if not engine_arg_supplied:
-        print("No engine argument supplied. Defaulting to yices.")
-        engine_str += "smtbmc yices\n"
+        for idx in enumerate(tokens):
+            top = tokens[idx+1]
+            if not top.endswith(".v"):
+                print("The supplied file does not appear to be a Verilog file, exiting.")
+                sys.exit()
+            else:
+                top = (top.rsplit(".", 1)[0])
 
     dir_check()
-    generate_formal_harness(header_str, tb_str, cmake_str, files_str, script_str, engine_str, top)
+    generate_formal_harness(header_str, tb_str, cmake_str, files_str, script_str, top)
     create_verilator_tb(top, sim_str, header_str)
     create_cmake_harness(top, cmake_str)
     create_final_script()
 
-def generate_formal_harness(header_str, tb_str, cmake_str, files_str, script_str, engine_str, top):
+def generate_formal_harness(header_str, tb_str, cmake_str, files_str, script_str, top):
     print("Generating formal verification harness.")
     fm_file = open(PATH + "formal/config.sby", mode="w")
     tb_str = tb_str.format(depth=64)
@@ -135,7 +121,7 @@ def generate_formal_harness(header_str, tb_str, cmake_str, files_str, script_str
     cmake_str += ")"
     script_str += "prep -top {top}"
     script_str = script_str.format(top=top)
-    fm_file.write(header_str + tb_str + engine_str + files_str + script_str)
+    fm_file.write(header_str + tb_str + files_str + script_str)
     fm_file.close()
     print("Formal verification harness successfully generated.")
 
@@ -147,7 +133,9 @@ def dir_check():
 
 def create_verilator_tb(top, sim_str, header_str):
     print("Generating verilator simulation harness.")
-    sim_file = open(S_PATH + '/' + "sim_main.cpp", mode="w")
+    path_to_ofile = S_PATH + '/' + "sim_main.cpp"
+    sim_file = open(path_to_ofile, mode="w")
+    os.chmod(path_to_ofile, stat.S_IRUSR | stat.S_IWUSR)
     sim_str = sim_str.format(top=top)
     sim_file.write("/*\n" + header_str + "*/" + sim_str)
     sim_file.close()

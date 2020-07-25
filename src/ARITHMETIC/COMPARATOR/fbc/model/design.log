@@ -1,0 +1,386 @@
+
+ /----------------------------------------------------------------------------\
+ |                                                                            |
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |                                                                            |
+ |  Copyright (C) 2012 - 2020  Claire Wolf <claire@symbioticeda.com>          |
+ |                                                                            |
+ |  Permission to use, copy, modify, and/or distribute this software for any  |
+ |  purpose with or without fee is hereby granted, provided that the above    |
+ |  copyright notice and this permission notice appear in all copies.         |
+ |                                                                            |
+ |  THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES  |
+ |  WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF          |
+ |  MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR   |
+ |  ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES    |
+ |  WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN     |
+ |  ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF   |
+ |  OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.            |
+ |                                                                            |
+ \----------------------------------------------------------------------------/
+
+ Yosys 0.9+2406 (git sha1 000fd08198, g++ 9.3.0 -fPIC -Os)
+
+
+-- Executing script file `../model/design.ys' --
+
+1. Executing Verilog-2005 frontend: ./look_ahead_logic_cell.v
+Parsing formal SystemVerilog input from `./look_ahead_logic_cell.v' to AST representation.
+Storing AST representation for module `$abstract\look_ahead_logic_cell'.
+Successfully finished Verilog frontend.
+
+2. Executing Verilog-2005 frontend: ./four_bit_comparator.v
+Parsing formal SystemVerilog input from `./four_bit_comparator.v' to AST representation.
+Storing AST representation for module `$abstract\four_bit_comparator'.
+Successfully finished Verilog frontend.
+
+3. Executing PREP pass.
+
+3.1. Executing HIERARCHY pass (managing design hierarchy).
+
+3.2. Executing AST frontend in derive mode using pre-parsed AST for module `\four_bit_comparator'.
+Generating RTLIL representation for module `\four_bit_comparator'.
+
+3.2.1. Analyzing design hierarchy..
+Top module:  \four_bit_comparator
+
+3.2.2. Executing AST frontend in derive mode using pre-parsed AST for module `\look_ahead_logic_cell'.
+Generating RTLIL representation for module `\look_ahead_logic_cell'.
+
+3.2.3. Analyzing design hierarchy..
+Top module:  \four_bit_comparator
+Used module:     \look_ahead_logic_cell
+
+3.2.4. Analyzing design hierarchy..
+Top module:  \four_bit_comparator
+Used module:     \look_ahead_logic_cell
+Removing unused module `$abstract\four_bit_comparator'.
+Removing unused module `$abstract\look_ahead_logic_cell'.
+Removed 2 unused modules.
+Module look_ahead_logic_cell directly or indirectly contains formal properties -> setting "keep" attribute.
+Module four_bit_comparator directly or indirectly contains formal properties -> setting "keep" attribute.
+
+3.3. Executing PROC pass (convert processes to netlists).
+
+3.3.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+3.3.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Marked 4 switch rules as full_case in process $proc$./look_ahead_logic_cell.v:25$84 in module look_ahead_logic_cell.
+Marked 2 switch rules as full_case in process $proc$./four_bit_comparator.v:37$36 in module four_bit_comparator.
+Removed a total of 0 dead cases.
+
+3.3.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 0 redundant assignments.
+Promoted 0 assignments to connections.
+
+3.3.4. Executing PROC_INIT pass (extract init attributes).
+
+3.3.5. Executing PROC_ARST pass (detect async resets in processes).
+
+3.3.6. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\look_ahead_logic_cell.$proc$./look_ahead_logic_cell.v:25$84'.
+     1/16: $0$formal$./look_ahead_logic_cell.v:27$60_EN[0:0]$86
+     2/16: $0$formal$./look_ahead_logic_cell.v:27$60_CHECK[0:0]$85
+     3/16: $0$formal$./look_ahead_logic_cell.v:29$61_EN[0:0]$88
+     4/16: $0$formal$./look_ahead_logic_cell.v:29$61_CHECK[0:0]$87
+     5/16: $0$formal$./look_ahead_logic_cell.v:31$62_EN[0:0]$90
+     6/16: $0$formal$./look_ahead_logic_cell.v:31$62_CHECK[0:0]$89
+     7/16: $0$formal$./look_ahead_logic_cell.v:33$63_EN[0:0]$92
+     8/16: $0$formal$./look_ahead_logic_cell.v:33$63_CHECK[0:0]$91
+     9/16: $0$formal$./look_ahead_logic_cell.v:35$64_EN[0:0]$94
+    10/16: $0$formal$./look_ahead_logic_cell.v:35$64_CHECK[0:0]$93
+    11/16: $0$formal$./look_ahead_logic_cell.v:37$65_EN[0:0]$96
+    12/16: $0$formal$./look_ahead_logic_cell.v:37$65_CHECK[0:0]$95
+    13/16: $0$formal$./look_ahead_logic_cell.v:40$66_EN[0:0]$98
+    14/16: $0$formal$./look_ahead_logic_cell.v:40$66_CHECK[0:0]$97
+    15/16: $0$formal$./look_ahead_logic_cell.v:42$67_EN[0:0]$100
+    16/16: $0$formal$./look_ahead_logic_cell.v:42$67_CHECK[0:0]$99
+Creating decoders for process `\four_bit_comparator.$proc$./four_bit_comparator.v:37$36'.
+     1/6: $0$formal$./four_bit_comparator.v:39$1_EN[0:0]$38
+     2/6: $0$formal$./four_bit_comparator.v:39$1_CHECK[0:0]$37
+     3/6: $0$formal$./four_bit_comparator.v:41$2_EN[0:0]$40
+     4/6: $0$formal$./four_bit_comparator.v:41$2_CHECK[0:0]$39
+     5/6: $0$formal$./four_bit_comparator.v:43$3_EN[0:0]$42
+     6/6: $0$formal$./four_bit_comparator.v:43$3_CHECK[0:0]$41
+
+3.3.7. Executing PROC_DLATCH pass (convert process syncs to latches).
+No latch inferred for signal `\look_ahead_logic_cell.$formal$./look_ahead_logic_cell.v:27$60_CHECK' from process `\look_ahead_logic_cell.$proc$./look_ahead_logic_cell.v:25$84'.
+No latch inferred for signal `\look_ahead_logic_cell.$formal$./look_ahead_logic_cell.v:27$60_EN' from process `\look_ahead_logic_cell.$proc$./look_ahead_logic_cell.v:25$84'.
+No latch inferred for signal `\look_ahead_logic_cell.$formal$./look_ahead_logic_cell.v:29$61_CHECK' from process `\look_ahead_logic_cell.$proc$./look_ahead_logic_cell.v:25$84'.
+No latch inferred for signal `\look_ahead_logic_cell.$formal$./look_ahead_logic_cell.v:29$61_EN' from process `\look_ahead_logic_cell.$proc$./look_ahead_logic_cell.v:25$84'.
+No latch inferred for signal `\look_ahead_logic_cell.$formal$./look_ahead_logic_cell.v:31$62_CHECK' from process `\look_ahead_logic_cell.$proc$./look_ahead_logic_cell.v:25$84'.
+No latch inferred for signal `\look_ahead_logic_cell.$formal$./look_ahead_logic_cell.v:31$62_EN' from process `\look_ahead_logic_cell.$proc$./look_ahead_logic_cell.v:25$84'.
+No latch inferred for signal `\look_ahead_logic_cell.$formal$./look_ahead_logic_cell.v:33$63_CHECK' from process `\look_ahead_logic_cell.$proc$./look_ahead_logic_cell.v:25$84'.
+No latch inferred for signal `\look_ahead_logic_cell.$formal$./look_ahead_logic_cell.v:33$63_EN' from process `\look_ahead_logic_cell.$proc$./look_ahead_logic_cell.v:25$84'.
+No latch inferred for signal `\look_ahead_logic_cell.$formal$./look_ahead_logic_cell.v:35$64_CHECK' from process `\look_ahead_logic_cell.$proc$./look_ahead_logic_cell.v:25$84'.
+No latch inferred for signal `\look_ahead_logic_cell.$formal$./look_ahead_logic_cell.v:35$64_EN' from process `\look_ahead_logic_cell.$proc$./look_ahead_logic_cell.v:25$84'.
+No latch inferred for signal `\look_ahead_logic_cell.$formal$./look_ahead_logic_cell.v:37$65_CHECK' from process `\look_ahead_logic_cell.$proc$./look_ahead_logic_cell.v:25$84'.
+No latch inferred for signal `\look_ahead_logic_cell.$formal$./look_ahead_logic_cell.v:37$65_EN' from process `\look_ahead_logic_cell.$proc$./look_ahead_logic_cell.v:25$84'.
+No latch inferred for signal `\look_ahead_logic_cell.$formal$./look_ahead_logic_cell.v:40$66_CHECK' from process `\look_ahead_logic_cell.$proc$./look_ahead_logic_cell.v:25$84'.
+No latch inferred for signal `\look_ahead_logic_cell.$formal$./look_ahead_logic_cell.v:40$66_EN' from process `\look_ahead_logic_cell.$proc$./look_ahead_logic_cell.v:25$84'.
+No latch inferred for signal `\look_ahead_logic_cell.$formal$./look_ahead_logic_cell.v:42$67_CHECK' from process `\look_ahead_logic_cell.$proc$./look_ahead_logic_cell.v:25$84'.
+No latch inferred for signal `\look_ahead_logic_cell.$formal$./look_ahead_logic_cell.v:42$67_EN' from process `\look_ahead_logic_cell.$proc$./look_ahead_logic_cell.v:25$84'.
+No latch inferred for signal `\four_bit_comparator.$formal$./four_bit_comparator.v:39$1_CHECK' from process `\four_bit_comparator.$proc$./four_bit_comparator.v:37$36'.
+No latch inferred for signal `\four_bit_comparator.$formal$./four_bit_comparator.v:39$1_EN' from process `\four_bit_comparator.$proc$./four_bit_comparator.v:37$36'.
+No latch inferred for signal `\four_bit_comparator.$formal$./four_bit_comparator.v:41$2_CHECK' from process `\four_bit_comparator.$proc$./four_bit_comparator.v:37$36'.
+No latch inferred for signal `\four_bit_comparator.$formal$./four_bit_comparator.v:41$2_EN' from process `\four_bit_comparator.$proc$./four_bit_comparator.v:37$36'.
+No latch inferred for signal `\four_bit_comparator.$formal$./four_bit_comparator.v:43$3_CHECK' from process `\four_bit_comparator.$proc$./four_bit_comparator.v:37$36'.
+No latch inferred for signal `\four_bit_comparator.$formal$./four_bit_comparator.v:43$3_EN' from process `\four_bit_comparator.$proc$./four_bit_comparator.v:37$36'.
+
+3.3.8. Executing PROC_DFF pass (convert process syncs to FFs).
+
+3.3.9. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Found and cleaned up 4 empty switches in `\look_ahead_logic_cell.$proc$./look_ahead_logic_cell.v:25$84'.
+Removing empty process `look_ahead_logic_cell.$proc$./look_ahead_logic_cell.v:25$84'.
+Found and cleaned up 2 empty switches in `\four_bit_comparator.$proc$./four_bit_comparator.v:37$36'.
+Removing empty process `four_bit_comparator.$proc$./four_bit_comparator.v:37$36'.
+Cleaned up 6 empty switches.
+
+3.4. Executing OPT_EXPR pass (perform const folding).
+Optimizing module look_ahead_logic_cell.
+<suppressed ~1 debug messages>
+Optimizing module four_bit_comparator.
+<suppressed ~2 debug messages>
+
+3.5. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \look_ahead_logic_cell..
+Finding unused cells or wires in module \four_bit_comparator..
+Removed 0 unused cells and 91 unused wires.
+<suppressed ~2 debug messages>
+
+3.6. Executing CHECK pass (checking for obvious problems).
+checking module four_bit_comparator..
+checking module look_ahead_logic_cell..
+found and reported 0 problems.
+
+3.7. Executing OPT pass (performing simple optimizations).
+
+3.7.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module four_bit_comparator.
+Optimizing module look_ahead_logic_cell.
+
+3.7.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\four_bit_comparator'.
+<suppressed ~6 debug messages>
+Finding identical cells in module `\look_ahead_logic_cell'.
+<suppressed ~30 debug messages>
+Removed a total of 12 cells.
+
+3.7.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \four_bit_comparator..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \look_ahead_logic_cell..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+      Replacing known input bits on port B of cell $procmux$134: \w_TEMP_WIRE_3 -> 1'1
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~22 debug messages>
+
+3.7.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \four_bit_comparator.
+  Optimizing cells in module \look_ahead_logic_cell.
+Performed a total of 0 changes.
+
+3.7.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\four_bit_comparator'.
+Finding identical cells in module `\look_ahead_logic_cell'.
+Removed a total of 0 cells.
+
+3.7.6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \four_bit_comparator..
+Finding unused cells or wires in module \look_ahead_logic_cell..
+Removed 0 unused cells and 12 unused wires.
+<suppressed ~2 debug messages>
+
+3.7.7. Executing OPT_EXPR pass (perform const folding).
+Optimizing module four_bit_comparator.
+Optimizing module look_ahead_logic_cell.
+
+3.7.8. Rerunning OPT passes. (Maybe there is more to do..)
+
+3.7.9. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \four_bit_comparator..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \look_ahead_logic_cell..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~22 debug messages>
+
+3.7.10. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \four_bit_comparator.
+  Optimizing cells in module \look_ahead_logic_cell.
+Performed a total of 0 changes.
+
+3.7.11. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\four_bit_comparator'.
+Finding identical cells in module `\look_ahead_logic_cell'.
+Removed a total of 0 cells.
+
+3.7.12. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \four_bit_comparator..
+Finding unused cells or wires in module \look_ahead_logic_cell..
+
+3.7.13. Executing OPT_EXPR pass (perform const folding).
+Optimizing module four_bit_comparator.
+Optimizing module look_ahead_logic_cell.
+
+3.7.14. Finished OPT passes. (There is nothing left to do.)
+
+3.8. Executing WREDUCE pass (reducing word size of cells).
+
+3.9. Executing MEMORY_DFF pass (merging $dff cells to $memrd and $memwr).
+
+3.10. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \four_bit_comparator..
+Finding unused cells or wires in module \look_ahead_logic_cell..
+
+3.11. Executing MEMORY_COLLECT pass (generating $mem cells).
+
+3.12. Executing OPT pass (performing simple optimizations).
+
+3.12.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module four_bit_comparator.
+Optimizing module look_ahead_logic_cell.
+
+3.12.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\four_bit_comparator'.
+Finding identical cells in module `\look_ahead_logic_cell'.
+Removed a total of 0 cells.
+
+3.12.3. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \four_bit_comparator..
+Finding unused cells or wires in module \look_ahead_logic_cell..
+
+3.12.4. Finished fast OPT passes.
+
+3.13. Printing statistics.
+
+=== four_bit_comparator ===
+
+   Number of wires:                 49
+   Number of wire bits:             64
+   Number of public wires:           8
+   Number of public wire bits:      23
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 56
+     $and                           22
+     $assert                         3
+     $gt                             1
+     $lt                             1
+     $mux                           10
+     $not                           11
+     $or                             7
+     look_ahead_logic_cell           1
+
+=== look_ahead_logic_cell ===
+
+   Number of wires:                 42
+   Number of wire bits:             51
+   Number of public wires:           7
+   Number of public wire bits:      16
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 50
+     $and                            5
+     $assert                         8
+     $eq                             3
+     $logic_and                      5
+     $mux                           16
+     $ne                             3
+     $not                            6
+     $xor                            4
+
+=== design hierarchy ===
+
+   four_bit_comparator               1
+     look_ahead_logic_cell           1
+
+   Number of wires:                 91
+   Number of wire bits:            115
+   Number of public wires:          15
+   Number of public wire bits:      39
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                105
+     $and                           27
+     $assert                        11
+     $eq                             3
+     $gt                             1
+     $logic_and                      5
+     $lt                             1
+     $mux                           26
+     $ne                             3
+     $not                           17
+     $or                             7
+     $xor                            4
+
+3.14. Executing CHECK pass (checking for obvious problems).
+checking module four_bit_comparator..
+checking module look_ahead_logic_cell..
+found and reported 0 problems.
+
+4. Executing MEMORY_NORDFF pass (extracting $dff cells from $mem).
+
+5. Executing ASYNC2SYNC pass.
+
+6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \four_bit_comparator..
+Finding unused cells or wires in module \look_ahead_logic_cell..
+
+7. Executing SETUNDEF pass (replace undef values with defined constants).
+
+8. Executing OPT pass (performing simple optimizations).
+
+8.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module four_bit_comparator.
+Optimizing module look_ahead_logic_cell.
+
+8.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\four_bit_comparator'.
+Finding identical cells in module `\look_ahead_logic_cell'.
+Removed a total of 0 cells.
+
+8.3. Executing OPT_RMDFF pass (remove dff with constant values).
+
+8.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \four_bit_comparator..
+Finding unused cells or wires in module \look_ahead_logic_cell..
+
+8.5. Finished fast OPT passes.
+
+9. Executing CHECK pass (checking for obvious problems).
+checking module four_bit_comparator..
+checking module look_ahead_logic_cell..
+found and reported 0 problems.
+
+10. Executing HIERARCHY pass (managing design hierarchy).
+
+10.1. Analyzing design hierarchy..
+Top module:  \four_bit_comparator
+Used module:     \look_ahead_logic_cell
+
+10.2. Analyzing design hierarchy..
+Top module:  \four_bit_comparator
+Used module:     \look_ahead_logic_cell
+Removed 0 unused modules.
+Module four_bit_comparator directly or indirectly contains formal properties -> setting "keep" attribute.
+Module look_ahead_logic_cell directly or indirectly contains formal properties -> setting "keep" attribute.
+
+11. Executing ILANG backend.
+Output filename: ../model/design.il
+
+End of script. Logfile hash: 0e4e21babc, CPU: user 0.07s system 0.01s, MEM: 13.62 MB peak
+Yosys 0.9+2406 (git sha1 000fd08198, g++ 9.3.0 -fPIC -Os)
+Time spent: 24% 7x opt_clean (0 sec), 17% 6x opt_expr (0 sec), ...
