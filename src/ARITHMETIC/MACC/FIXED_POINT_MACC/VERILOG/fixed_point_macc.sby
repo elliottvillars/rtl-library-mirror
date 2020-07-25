@@ -1,0 +1,12 @@
+[options]
+mode prove
+depth 25
+
+[engines]
+smtbmc boolector
+[files]
+./fixed_point_macc.v
+
+[script]
+read -formal ./fixed_point_macc.v
+prep -top fixed_point_macc

@@ -2,29 +2,49 @@ import glob
 import sys
 import os
 import shutil
-from os import path
-from shutil import copy
 from datetime import datetime
 # datetime object containing current date and time
 #TODO: change file permissions
-now = datetime.now()
-dt_string = now.strftime("%Y-%m-%d %H:%M:%S")
-path = os.getcwd() + '/'
-f_path = path + "formal"
-s_path = path + "sim"
-files = glob.glob(path + "/*.v")
-help_str = """
+NOW = datetime.now()
+DT_STRING = NOW.strftime("%Y-%m-%d %H:%M:%S")
+PATH = os.getcwd() + '/'
+F_PATH = PATH + "formal"
+S_PATH = PATH + "sim"
+FILES = glob.glob(PATH + "/*.v")
+HELP_STR = """
 --help: Print this menu
 --engine: Chose an SMT solver. Possible options are yices,z3,boolector. Default is yices.
 --top: Name of top module. REQUIRED.
 """
+
+
 def main():
     header_str = """###################################################
 #THIS IS A COMPUTER GENERATED FILE, DO NOT MODIFY.#
 #GENERATED: %s                   #
 ###################################################
-""" % (dt_string)
-    sim_string = """
+""" % (DT_STRING)
+    tb_str = """
+[tasks]
+prove
+cover
+[options]
+prove: mode prove
+prove: depth {depth}
+cover: mode cover
+cover: depth {depth}
+"""
+    files_str = "[files]\n"
+    script_str = "[script]\n"
+    engine_str = "[engines]\n"
+    cmake_str = """
+cmake_minimum_required(VERSION 3.17)
+project(cmake_example)
+find_package(verilator HINTS $ENV{{VERILATOR_ROOT}})
+add_executable(V{top} sim_main.cpp)
+verilate(V{top} TOP_MODULE {top} SOURCES
+"""
+    sim_str = """
 #include \"verilated.h\"
 #include \"verilated_vcd_c.h\"
 #include \"V{top}.h\"
@@ -52,7 +72,7 @@ int main(int argc, char ** argv) {{
 \t/* TEST SECTION */
 \twhile(1) {{
 \t\tcycle(dut);
-\t\t//main_time += time_step; 
+\t\t//main_time += time_step;
 \t\t//tfp->dump(main_time);
 \t}}
 \t/* END OF TEST  */
@@ -61,102 +81,97 @@ int main(int argc, char ** argv) {{
 \tdelete dut;
 }}
 """
-    tb_string = """ 
-[tasks]
-prove
-cover
-[options]
-prove: mode prove
-prove: depth {depth}
-cover: mode cover
-cover: depth {depth}
-"""
-    cmake_string = """
-cmake_minimum_required(VERSION 3.17)
-project(cmake_example)
-find_package(verilator HINTS $ENV{{VERILATOR_ROOT}})
-add_executable(V{top} sim_main.cpp)
-verilate(V{top} TOP_MODULE {top} SOURCES
-"""
-    files_string   = "[files]\n"
-    script_string  = "[script]\n"
-    engine_string = "[engines]\n"
     tokens = []
     engine_arg_supplied = False
     top_arg_supplied = False
     top = "FIXME"
-    if(len(sys.argv) == 1):
-        print(help_str)
+    if len(sys.argv) == 1:
+        print(HELP_STR)
         sys.exit()
     else:
         for arg in sys.argv:
             tokens.append(arg)
-        for idx,tok in enumerate(tokens):
-            if(tok == "--engine" and engine_arg_supplied == False):
+        for idx, tok in enumerate(tokens):
+            if(tok == "--engine" and not engine_arg_supplied):
                 engine = tokens[idx + 1]
-                if(engine == "z3" or engine == "yices" or engine == "boolector"):
-                    #TODO dont hardcode engines 
-                    engine_string += engine
+                if engine in ("z3", "yices", "boolector"):
+                    #TODO dont hardcode engines
+                    engine_str += engine
                     engine_arg_supplied = True
-            elif(tok == "--top" and top_arg_supplied == False):
+            elif(tok == "--top" and not top_arg_supplied):
                 top = tokens[idx+1]
-                if(not top.endswith(".v")):
+                if not top.endswith(".v"):
                     print("The supplied file does not appear to be a Verilog file, exiting.")
                     sys.exit()
                 else:
-                    top = (top.rsplit(".",1)[0])
+                    top = (top.rsplit(".", 1)[0])
                     top_arg_supplied = True
-    if(top_arg_supplied == False):
+    if not top_arg_supplied:
         print("--top is a required argument. Exiting")
         sys.exit()
-
-    if(not os.path.exists(f_path)):
-        os.mkdir(f_path)
-    if(not os.path.exists(s_path)):
-        os.mkdir(s_path)
-
-    print("Generating formal verification harness.")
-    fm_file = open(path + "formal/config.sby",mode = "w")
-    tb_string = tb_string.format(depth = 64)
-    for file_ in files:
-        basename = os.path.basename(file_)
-        cmake_string += basename
-        shutil.copyfile(file_,f_path + '/' + basename)
-        shutil.copyfile(file_,s_path + '/' + basename)
-        print("File copied to %s" % f_path + '/' + basename)
-        print("File copied to %s" % s_path + '/' + basename)
-        files_string += os.path.basename(basename + '\n')
-        script_string += "read -formal " + os.path.basename(basename + '\n')
-    cmake_string += ")"
-    fin = "prep -top {top}"
-    fin = fin.format(top = top)
-    script_string += fin
-    if(engine_arg_supplied == False):
+    if not engine_arg_supplied:
         print("No engine argument supplied. Defaulting to yices.")
-        engine_string += "smtbmc yices\n"
-    fm_file.write(header_str + tb_string + engine_string + files_string + script_string)
+        engine_str += "smtbmc yices\n"
+
+    dir_check()
+    generate_formal_harness(header_str, tb_str, cmake_str, files_str, script_str, engine_str, top)
+    create_verilator_tb(top, sim_str, header_str)
+    create_cmake_harness(top, cmake_str)
+    create_final_script()
+
+def generate_formal_harness(header_str, tb_str, cmake_str, files_str, script_str, engine_str, top):
+    print("Generating formal verification harness.")
+    fm_file = open(PATH + "formal/config.sby", mode="w")
+    tb_str = tb_str.format(depth=64)
+    for file_ in FILES:
+        basename = os.path.basename(file_)
+        cmake_str += basename
+        shutil.copyfile(file_, F_PATH + '/' + basename)
+        shutil.copyfile(file_, S_PATH + '/' + basename)
+        print("File copied to %s" % F_PATH + '/' + basename)
+        print("File copied to %s" % S_PATH + '/' + basename)
+        files_str += os.path.basename(basename + '\n')
+        script_str += "read -formal " + os.path.basename(basename + '\n')
+    cmake_str += ")"
+    script_str += "prep -top {top}"
+    script_str = script_str.format(top=top)
+    fm_file.write(header_str + tb_str + engine_str + files_str + script_str)
     fm_file.close()
     print("Formal verification harness successfully generated.")
+
+def dir_check():
+    if not os.path.exists(F_PATH):
+        os.mkdir(F_PATH)
+    if not os.path.exists(S_PATH):
+        os.mkdir(S_PATH)
+
+def create_verilator_tb(top, sim_str, header_str):
     print("Generating verilator simulation harness.")
-    sim_file = open(s_path + '/' + "sim_main.cpp", mode = "w")
-    sim_string = sim_string.format(top = top) #FIXME
-    sim_file.write("/*\n" + header_str + "*/" + sim_string)
+    sim_file = open(S_PATH + '/' + "sim_main.cpp", mode="w")
+    sim_str = sim_str.format(top=top)
+    sim_file.write("/*\n" + header_str + "*/" + sim_str)
     sim_file.close()
     print("Verilator simulation harness successfully generated.")
+
+def create_cmake_harness(top, cmake_str):
     print("Generating CMake file.")
-    cmake_file = open(s_path + '/' + "CMakeLists.txt", mode = "w")
-    cmake_string = cmake_string.format(top = top)
-    cmake_file.write(cmake_string)
+    cmake_file = open(S_PATH + '/' + "CMakeLists.txt", mode="w")
+    cmake_str = cmake_str.format(top=top)
+    cmake_file.write(cmake_str)
     cmake_file.close()
+    print("CMake file successfully generated.")
+
+def create_final_script():
     print("Generating final build script.")
-    final_script = open(s_path + '/' + "build.sh", mode = "w")
+    final_script = open(S_PATH + '/' + "build.sh", mode="w")
     final_script.write("""
     #!/bin/sh
-    mkdir build 
-    cd build 
-    cmake -GNinja .. 
+    mkdir build
+    cd build
+    cmake -GNinja ..
     ninja """)
     final_script.close()
     print("Build script successfully generated.")
+
 
 main()

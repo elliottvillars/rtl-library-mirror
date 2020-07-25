@@ -1,4 +1,4 @@
-module macc #(parameter p_INPUT_WIDTH = 4) (
+module fixed_point_macc #(parameter p_INPUT_WIDTH = 4) (
 	input wire i_CLK,
 	input wire i_RESET,
 	input wire i_CLEAR_ACC_REG,
@@ -27,7 +27,6 @@ begin
 		o_RESULT <= r_SUM_RESULT;
 	end
 end
-//TODO: Verify me
 
 `ifdef FORMAL
 	reg fr_past_valid = 0;

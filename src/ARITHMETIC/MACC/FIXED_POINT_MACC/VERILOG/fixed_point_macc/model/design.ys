@@ -1,6 +1,6 @@
-# running in macc/src/
-read -formal ./macc.v
-prep -top macc
+# running in fixed_point_macc/src/
+read -formal ./fixed_point_macc.v
+prep -top fixed_point_macc
 memory_nordff
 async2sync
 chformal -assume -early
