@@ -15,7 +15,6 @@ S_PATH = PATH + "sim"
 FILES = glob.glob(PATH + "/*.v")
 HELP_STR = """
 --help: Print this menu
---top: Name of top module. REQUIRED.
 """
 
 

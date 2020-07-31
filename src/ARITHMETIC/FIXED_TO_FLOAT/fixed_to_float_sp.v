@@ -1,7 +1,6 @@
 module fixed_to_float_sp (
 	input wire i_CLK,
 	input wire signed [31:0] i_FIXED_WORD,
-	input wire [5:0] i_INTEGER_BIT_WIDTH,
 	output wire o_INVALID,
 	output wire signed [31:0] o_FLOAT_WORD
 );
@@ -18,13 +17,14 @@ reg [7:0] r_EXPONENT_STAGE_1;
 reg r_SIGN_STAGE_0;
 reg r_SIGN_STAGE_1;
 localparam lp_BIAS = 127;
+parameter p_WORD_WIDTH = 31;
 
 
 always@(posedge i_CLK)
 begin
 	r_TEMP_REG_0 <= i_FIXED_WORD;
 	r_TEMP_REG_COMPLEMENT <= ~i_FIXED_WORD + 1'b1;
-	r_EXPONENT_STAGE_0 <= lp_BIAS + {2'b00,i_INTEGER_BIT_WIDTH};
+	r_EXPONENT_STAGE_0 <= lp_BIAS + p_WORD_WIDTH;
 	r_EXPONENT_STAGE_1 <= r_EXPONENT_STAGE_0 - {3'b000,w_SHIFT_AMOUNT};
 	r_SIGN_STAGE_0 <= i_FIXED_WORD[31];
 	r_SIGN_STAGE_1 <= r_SIGN_STAGE_0;

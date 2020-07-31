@@ -1,3 +1,35 @@
+--Author: Elliott Villars
+--
+--Name: Full Adder
+--
+--Date: 31/7/2020
+--
+--Format: VHDL
+--
+--Description: A full adder logic primative.
+--Not really useful by itself. Intended as a basic building block for more
+--complicated adder designs. Not registered.
+--
+--Estimated Logic Usage:  The following resource usage is determined by
+--Yosys when running the "synth_ice40" command on the design. All estimations
+--are liberal with resource usage.
+--
+--TBD
+--
+--Ports: 
+--i_INPUT_A: A 1-bit wide input for the "A" operand.
+--
+--i_INPUT_B: A 1-bit wide input for the "B" operand.
+--
+--i_CIN: A 1-bit wide input for a carry in value from an adjacent FA slice.
+--
+--o_SUM: A 1-bit wide output for the result of "A xor B xor CIN"
+--
+--o_COUT: A 1-bit wide output for the possible carry generation from the above
+--operation
+--
+
+--TODO: Formally verify this module.
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 entity full_adder is 

@@ -1,0 +1,13 @@
+[options]
+mode prove
+depth 16
+
+[engines]
+smtbmc boolector
+
+[files]
+./half_adder.v
+
+[script]
+read -formal half_adder.v
+prep -top half_adder
