@@ -1,0 +1,15 @@
+###################################################
+#THIS IS A COMPUTER GENERATED FILE, MODIFICATION UNADVISED.#
+#GENERATED: 2020-08-02 15:20:14                   #
+###################################################
+
+[options]
+mode prove
+depth 64
+[engines]
+smtbmc boolector
+[files]
+foo.v
+[script]
+read -formal foo.v
+prep -top foo

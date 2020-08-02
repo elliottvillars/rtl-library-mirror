@@ -1,3 +1,4 @@
+`default_nettype none
 module  sign_extend #(parameter p_INPUT_WIDTH = 8, parameter p_OUTPUT_WIDTH = 16)(
 	input wire [p_INPUT_WIDTH-1:0] i_INPUT,
 	output reg [p_OUTPUT_WIDTH-1:0] o_OUTPUT
@@ -11,7 +12,6 @@ begin
 end
 
 `ifdef FORMAL
-	integer i;
 	always@(*)
 	begin
 		assert(o_OUTPUT[p_OUTPUT_WIDTH-1] == i_INPUT[p_INPUT_WIDTH-1]); //Show that extension holds

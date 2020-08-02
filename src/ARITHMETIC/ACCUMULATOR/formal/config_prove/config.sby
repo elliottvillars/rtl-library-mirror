@@ -1,0 +1,15 @@
+###################################################
+#THIS IS A COMPUTER GENERATED FILE, MODIFICATION UNADVISED.#
+#GENERATED: 2020-08-02 15:23:14                   #
+###################################################
+
+[options]
+mode prove
+depth 64
+[engines]
+smtbmc boolector
+[files]
+accumulator.v
+[script]
+read -formal accumulator.v
+prep -top accumulator

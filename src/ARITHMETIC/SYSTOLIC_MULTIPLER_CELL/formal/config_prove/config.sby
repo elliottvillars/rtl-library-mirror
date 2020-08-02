@@ -1,0 +1,17 @@
+###################################################
+#THIS IS A COMPUTER GENERATED FILE, MODIFICATION UNADVISED.#
+#GENERATED: 2020-08-02 15:44:21                   #
+###################################################
+
+[options]
+mode prove
+depth 64
+[engines]
+smtbmc boolector
+[files]
+systolic_mult_cell.v
+full_adder.v
+[script]
+read -formal systolic_mult_cell.v
+read -formal full_adder.v
+prep -top systolic_mult_cell

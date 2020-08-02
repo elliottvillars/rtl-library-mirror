@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites disabled="0" errors="1" failures="0" tests="1" time="0">
+<testsuite disabled="0" errors="1" failures="0" name="config" skipped="0" tests="1" time="0">
+<properties>
+<property name="os" value="posix"/>
+</properties>
+<testcase classname="config" name="cover" status="ERROR" time="0">
+<error message="ERROR" type="ERROR"/>
+<system-out>SBY 15:21:45 [config_prove] Removing directory 'config_prove'.
+SBY 15:21:45 [config_cover] Removing directory 'config_cover'.
+SBY 15:21:45 [config_cover] Copy 'foo.v' to 'config_cover/src/foo.v'.
+SBY 15:21:45 [config_cover] engine_0: smtbmc boolector
+SBY 15:21:45 [config_cover] base: starting process &quot;cd config_cover/src; /nix/store/y4qxzapi73hszjabd2wb1hs3c47v4b05-yosys-2020.07.07/bin/yosys -ql ../model/design.log ../model/design.ys&quot;
+SBY 15:21:45 [config_cover] base: finished (returncode=0)
+SBY 15:21:45 [config_cover] smt2: starting process &quot;cd config_cover/model; /nix/store/y4qxzapi73hszjabd2wb1hs3c47v4b05-yosys-2020.07.07/bin/yosys -ql design_smt2.log design_smt2.ys&quot;
+SBY 15:21:45 [config_cover] smt2: finished (returncode=0)
+SBY 15:21:45 [config_cover] engine_0: starting process &quot;cd config_cover; /nix/store/y4qxzapi73hszjabd2wb1hs3c47v4b05-yosys-2020.07.07/bin/yosys-smtbmc -s boolector --presat --unroll -c --noprogress -t 64  --append 0 --dump-vcd engine_0/trace%.vcd --dump-vlogtb engine_0/trace%_tb.v --dump-smtc engine_0/trace%.smtc model/design_smt2.smt2&quot;
+SBY 15:21:45 [config_cover] engine_0: ##   0:00:00  Solver: boolector
+SBY 15:21:45 [config_cover] engine_0: Traceback (most recent call last):
+SBY 15:21:45 [config_cover] engine_0: File &quot;/nix/store/y4qxzapi73hszjabd2wb1hs3c47v4b05-yosys-2020.07.07/bin/yosys-smtbmc&quot;, line 411, in &lt;module&gt;
+SBY 15:21:45 [config_cover] engine_0: assert topmod is not None
+SBY 15:21:45 [config_cover] engine_0: AssertionError
+SBY 15:21:45 [config_cover] engine_0: finished (returncode=1)
+SBY 15:21:45 [config_cover] ERROR: engine_0: Engine terminated without status.
+SBY 15:21:45 [config_cover] DONE (ERROR, rc=16)
+</system-out></testcase></testsuite></testsuites>

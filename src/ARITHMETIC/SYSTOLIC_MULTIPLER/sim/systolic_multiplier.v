@@ -1,20 +1,20 @@
+
 //
 //Author: Elliott Villars
 //
 //Name: Accumulator
 //
-//Date: 31/7/2020
+//Date: 1/8/2020
 //
 //Format: Verilog
 //
-//Description: A systolic multiplier cell implementation from here:
+//Description: A systolic multiplier implementation from here:
 //https://sci-hub.tw/10.1109/aspdac.2003.1195065
 //Systolic architectures trade latency for higher frequency and lower area.
 //Registered.
 //
-//Parameters: None
-//
-//Local Parameters: None
+//Parameters: 
+//p_WORD_WIDTH:
 //
 //Ports: 
 //i_CLK: System clock input. All module operation is predicated on a rising
@@ -53,80 +53,60 @@
 //are liberal with resource usage. 
 //
 //(Lattice)
-//3 SB_DFF
-//2 SB_LUT4s  
+//2 SB_DFF
+//1 SB_LUT4s  
 //
-
+//TODO: Finish doc
 `default_nettype none
-module systolic_mult_cell (
+module systolic_multiplier #(parameter p_WORD_WIDTH = 4)(
 	input wire i_CLK,
-	input wire i_INPUT, 
-	input wire i_WEIGHT, 
-	input wire i_CARRY_IN,
-	input wire i_ADJ_RESULT, 
-	output reg o_OUTPUT,
-	output reg o_INPUT_BROADCAST, 
-	output reg o_CARRY_OUT
+	input wire [p_WORD_WIDTH-1:0] i_MULTIPLIER,
+	input wire i_MULTIPLICAND,
+	output wire o_OUTPUT
 );
 
-reg r_TEMP_WIRE;
-reg r_ADD_RESULT;
-wire w_CARRY_OUT;
+wire [p_WORD_WIDTH-1:0] w_CARRY_FEEDBACK;
+wire [p_WORD_WIDTH-2:0] w_CELL_INTERCONNECT_RESULT;
+wire [p_WORD_WIDTH-2:0] w_CELL_INTERCONNECT_BROADCAST;
 
-full_adder fa (
-	.i_INPUT_A(i_ADJ_RESULT),
-	.i_INPUT_B(r_TEMP_WIRE),
-	.i_CIN(i_CARRY_IN),
-	.o_SUM(r_ADD_RESULT),
-	.o_COUT(w_CARRY_OUT)
+systolic_mult_cell s0 (
+	.i_CLK(i_CLK),
+	.i_INPUT(i_MULTIPLICAND),
+	.i_CARRY_IN(w_CARRY_FEEDBACK[0]),
+	.i_WEIGHT(i_MULTIPLIER[0]),
+	.i_ADJ_RESULT(w_CELL_INTERCONNECT_RESULT[0]),
+	.o_INPUT_BROADCAST(w_CELL_INTERCONNECT_BROADCAST[0]),
+	.o_CARRY_OUT(w_CARRY_FEEDBACK[0]),
+	.o_OUTPUT(o_OUTPUT)
 );
-
-
-always@(*)
-begin
-	r_TEMP_WIRE = i_INPUT & i_WEIGHT;
-end
-
-always@(posedge i_CLK)
-begin
-	o_INPUT_BROADCAST <= i_INPUT;
-	o_CARRY_OUT <= w_CARRY_OUT;
-	o_OUTPUT <= r_ADD_RESULT;
-end
-
-`ifdef FORMAL 
-	reg rf_PAST_VALID = 0;
-	always@(posedge i_CLK)
-	begin
-		assume($changed(i_CLK));
-		rf_PAST_VALID <= 1;
-		if($rose(i_CLK) && rf_PAST_VALID)
-		begin
-			assert(o_INPUT_BROADCAST == $past(i_INPUT));
-			if($past(i_ADJ_RESULT & r_TEMP_WIRE |  (i_ADJ_RESULT ^ r_TEMP_WIRE) & i_CARRY_IN))
-				assert(o_CARRY_OUT);
-			else
-				assert(!o_CARRY_OUT);
-			if($past(i_ADJ_RESULT ^ r_TEMP_WIRE ^ i_CARRY_IN))
-				assert(o_OUTPUT);
-			else
-				assert(!o_OUTPUT);
-			if(i_INPUT ^ i_WEIGHT == 1'b1 || i_INPUT & i_WEIGHT == 1'b0)
-				assert(!r_TEMP_WIRE);
-			if(i_INPUT & i_WEIGHT)
-				assert(r_TEMP_WIRE);
-		end
-		if(!$rose(i_CLK))
-		begin
-			assume($stable(i_INPUT));
-			assume($stable(i_WEIGHT));
-			assume($stable(i_CARRY_IN));
-			assume($stable(i_ADJ_RESULT));
-		end
-	end
-
-	always@(*)
-	begin
-	end
-`endif
+systolic_mult_cell s1 (
+	.i_CLK(i_CLK),
+	.i_INPUT(w_CELL_INTERCONNECT_BROADCAST[0]),
+	.i_CARRY_IN(w_CARRY_FEEDBACK[1]),
+	.i_WEIGHT(i_MULTIPLIER[1]),
+	.i_ADJ_RESULT(w_CELL_INTERCONNECT_RESULT[1]),
+	.o_INPUT_BROADCAST(w_CELL_INTERCONNECT_BROADCAST[1]),
+	.o_CARRY_OUT(w_CARRY_FEEDBACK[1]),
+	.o_OUTPUT(w_CELL_INTERCONNECT_RESULT[0])
+);
+systolic_mult_cell s2 (
+	.i_CLK(i_CLK),
+	.i_INPUT(w_CELL_INTERCONNECT_BROADCAST[1]),
+	.i_CARRY_IN(w_CARRY_FEEDBACK[2]),
+	.i_WEIGHT(i_MULTIPLIER[2]),
+	.i_ADJ_RESULT(w_CELL_INTERCONNECT_RESULT[2]),
+	.o_INPUT_BROADCAST(w_CELL_INTERCONNECT_BROADCAST[2]),
+	.o_CARRY_OUT(w_CARRY_FEEDBACK[2]),
+	.o_OUTPUT(w_CELL_INTERCONNECT_RESULT[1])
+);
+systolic_mult_cell s3 (
+	.i_CLK(i_CLK),
+	.i_INPUT(w_CELL_INTERCONNECT_BROADCAST[2]),
+	.i_CARRY_IN(w_CARRY_FEEDBACK[3]),
+	.i_WEIGHT(i_MULTIPLIER[3]),
+	.i_ADJ_RESULT(),
+	.o_INPUT_BROADCAST(),
+	.o_CARRY_OUT(w_CARRY_FEEDBACK[3]),
+	.o_OUTPUT(w_CELL_INTERCONNECT_RESULT[2])
+);
 endmodule

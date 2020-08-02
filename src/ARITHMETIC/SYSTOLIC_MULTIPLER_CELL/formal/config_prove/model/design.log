@@ -1,0 +1,598 @@
+
+ /----------------------------------------------------------------------------\
+ |                                                                            |
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |                                                                            |
+ |  Copyright (C) 2012 - 2020  Claire Wolf <claire@symbioticeda.com>          |
+ |                                                                            |
+ |  Permission to use, copy, modify, and/or distribute this software for any  |
+ |  purpose with or without fee is hereby granted, provided that the above    |
+ |  copyright notice and this permission notice appear in all copies.         |
+ |                                                                            |
+ |  THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES  |
+ |  WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF          |
+ |  MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR   |
+ |  ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES    |
+ |  WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN     |
+ |  ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF   |
+ |  OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.            |
+ |                                                                            |
+ \----------------------------------------------------------------------------/
+
+ Yosys 0.9+2406 (git sha1 000fd08198, g++ 9.3.0 -fPIC -Os)
+
+
+-- Executing script file `../model/design.ys' --
+
+1. Executing Verilog-2005 frontend: systolic_mult_cell.v
+Parsing formal SystemVerilog input from `systolic_mult_cell.v' to AST representation.
+Storing AST representation for module `$abstract\systolic_mult_cell'.
+Successfully finished Verilog frontend.
+
+2. Executing Verilog-2005 frontend: full_adder.v
+Parsing formal SystemVerilog input from `full_adder.v' to AST representation.
+Storing AST representation for module `$abstract\full_adder'.
+Successfully finished Verilog frontend.
+
+3. Executing PREP pass.
+
+3.1. Executing HIERARCHY pass (managing design hierarchy).
+
+3.2. Executing AST frontend in derive mode using pre-parsed AST for module `\systolic_mult_cell'.
+Generating RTLIL representation for module `\systolic_mult_cell'.
+
+3.2.1. Analyzing design hierarchy..
+Top module:  \systolic_mult_cell
+
+3.2.2. Executing AST frontend in derive mode using pre-parsed AST for module `\full_adder'.
+Generating RTLIL representation for module `\full_adder'.
+
+3.2.3. Analyzing design hierarchy..
+Top module:  \systolic_mult_cell
+Used module:     \full_adder
+
+3.2.4. Analyzing design hierarchy..
+Top module:  \systolic_mult_cell
+Used module:     \full_adder
+Removing unused module `$abstract\full_adder'.
+Removing unused module `$abstract\systolic_mult_cell'.
+Removed 2 unused modules.
+Module full_adder directly or indirectly contains formal properties -> setting "keep" attribute.
+Module systolic_mult_cell directly or indirectly contains formal properties -> setting "keep" attribute.
+
+3.3. Executing PROC pass (convert processes to netlists).
+
+3.3.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Removing empty process `systolic_mult_cell.$proc$systolic_mult_cell.v:128$92'.
+Cleaned up 0 empty switches.
+
+3.3.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Marked 2 switch rules as full_case in process $proc$full_adder.v:51$141 in module full_adder.
+Marked 2 switch rules as full_case in process $proc$systolic_mult_cell.v:99$26 in module systolic_mult_cell.
+Removed a total of 0 dead cases.
+
+3.3.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 0 redundant assignments.
+Promoted 32 assignments to connections.
+
+3.3.4. Executing PROC_INIT pass (extract init attributes).
+Found init rule in `\systolic_mult_cell.$proc$systolic_mult_cell.v:0$126'.
+  Set init value: $formal$systolic_mult_cell.v:122$21_EN = 1'0
+Found init rule in `\systolic_mult_cell.$proc$systolic_mult_cell.v:0$124'.
+  Set init value: $formal$systolic_mult_cell.v:121$20_EN = 1'0
+Found init rule in `\systolic_mult_cell.$proc$systolic_mult_cell.v:0$122'.
+  Set init value: $formal$systolic_mult_cell.v:120$19_EN = 1'0
+Found init rule in `\systolic_mult_cell.$proc$systolic_mult_cell.v:0$120'.
+  Set init value: $formal$systolic_mult_cell.v:116$18_EN = 1'0
+Found init rule in `\systolic_mult_cell.$proc$systolic_mult_cell.v:0$118'.
+  Set init value: $formal$systolic_mult_cell.v:114$17_EN = 1'0
+Found init rule in `\systolic_mult_cell.$proc$systolic_mult_cell.v:0$116'.
+  Set init value: $formal$systolic_mult_cell.v:112$16_EN = 1'0
+Found init rule in `\systolic_mult_cell.$proc$systolic_mult_cell.v:0$114'.
+  Set init value: $formal$systolic_mult_cell.v:110$15_EN = 1'0
+Found init rule in `\systolic_mult_cell.$proc$systolic_mult_cell.v:0$112'.
+  Set init value: $formal$systolic_mult_cell.v:108$14_EN = 1'0
+Found init rule in `\systolic_mult_cell.$proc$systolic_mult_cell.v:0$110'.
+  Set init value: $formal$systolic_mult_cell.v:106$13_EN = 1'0
+Found init rule in `\systolic_mult_cell.$proc$systolic_mult_cell.v:0$108'.
+  Set init value: $formal$systolic_mult_cell.v:104$12_EN = 1'0
+Found init rule in `\systolic_mult_cell.$proc$systolic_mult_cell.v:0$106'.
+  Set init value: $formal$systolic_mult_cell.v:100$11_EN = 1'0
+Found init rule in `\systolic_mult_cell.$proc$systolic_mult_cell.v:98$105'.
+  Set init value: \rf_PAST_VALID = 1'0
+Found init rule in `\systolic_mult_cell.$proc$systolic_mult_cell.v:0$128'.
+  Set init value: $formal$systolic_mult_cell.v:123$22_EN = 1'0
+
+3.3.5. Executing PROC_ARST pass (detect async resets in processes).
+
+3.3.6. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\full_adder.$proc$full_adder.v:51$141'.
+     1/8: $0$formal$full_adder.v:53$130_EN[0:0]$143
+     2/8: $0$formal$full_adder.v:53$130_CHECK[0:0]$142
+     3/8: $0$formal$full_adder.v:55$131_EN[0:0]$145
+     4/8: $0$formal$full_adder.v:55$131_CHECK[0:0]$144
+     5/8: $0$formal$full_adder.v:57$132_EN[0:0]$147
+     6/8: $0$formal$full_adder.v:57$132_CHECK[0:0]$146
+     7/8: $0$formal$full_adder.v:59$133_EN[0:0]$149
+     8/8: $0$formal$full_adder.v:59$133_CHECK[0:0]$148
+Creating decoders for process `\full_adder.$proc$full_adder.v:41$134'.
+Creating decoders for process `\systolic_mult_cell.$proc$systolic_mult_cell.v:0$126'.
+Creating decoders for process `\systolic_mult_cell.$proc$systolic_mult_cell.v:0$124'.
+Creating decoders for process `\systolic_mult_cell.$proc$systolic_mult_cell.v:0$122'.
+Creating decoders for process `\systolic_mult_cell.$proc$systolic_mult_cell.v:0$120'.
+Creating decoders for process `\systolic_mult_cell.$proc$systolic_mult_cell.v:0$118'.
+Creating decoders for process `\systolic_mult_cell.$proc$systolic_mult_cell.v:0$116'.
+Creating decoders for process `\systolic_mult_cell.$proc$systolic_mult_cell.v:0$114'.
+Creating decoders for process `\systolic_mult_cell.$proc$systolic_mult_cell.v:0$112'.
+Creating decoders for process `\systolic_mult_cell.$proc$systolic_mult_cell.v:0$110'.
+Creating decoders for process `\systolic_mult_cell.$proc$systolic_mult_cell.v:0$108'.
+Creating decoders for process `\systolic_mult_cell.$proc$systolic_mult_cell.v:0$106'.
+Creating decoders for process `\systolic_mult_cell.$proc$systolic_mult_cell.v:98$105'.
+Creating decoders for process `\systolic_mult_cell.$proc$systolic_mult_cell.v:0$128'.
+Creating decoders for process `\systolic_mult_cell.$proc$systolic_mult_cell.v:99$26'.
+     1/22: $0$formal$systolic_mult_cell.v:104$12_EN[0:0]$40
+     2/22: $0$formal$systolic_mult_cell.v:104$12_CHECK[0:0]$39
+     3/22: $0$formal$systolic_mult_cell.v:106$13_EN[0:0]$42
+     4/22: $0$formal$systolic_mult_cell.v:106$13_CHECK[0:0]$41
+     5/22: $0$formal$systolic_mult_cell.v:108$14_EN[0:0]$44
+     6/22: $0$formal$systolic_mult_cell.v:108$14_CHECK[0:0]$43
+     7/22: $0$formal$systolic_mult_cell.v:110$15_EN[0:0]$46
+     8/22: $0$formal$systolic_mult_cell.v:110$15_CHECK[0:0]$45
+     9/22: $0$formal$systolic_mult_cell.v:112$16_EN[0:0]$48
+    10/22: $0$formal$systolic_mult_cell.v:112$16_CHECK[0:0]$47
+    11/22: $0$formal$systolic_mult_cell.v:114$17_EN[0:0]$50
+    12/22: $0$formal$systolic_mult_cell.v:114$17_CHECK[0:0]$49
+    13/22: $0$formal$systolic_mult_cell.v:116$18_EN[0:0]$52
+    14/22: $0$formal$systolic_mult_cell.v:116$18_CHECK[0:0]$51
+    15/22: $0$formal$systolic_mult_cell.v:120$19_EN[0:0]$54
+    16/22: $0$formal$systolic_mult_cell.v:120$19_CHECK[0:0]$53
+    17/22: $0$formal$systolic_mult_cell.v:121$20_EN[0:0]$56
+    18/22: $0$formal$systolic_mult_cell.v:121$20_CHECK[0:0]$55
+    19/22: $0$formal$systolic_mult_cell.v:122$21_EN[0:0]$58
+    20/22: $0$formal$systolic_mult_cell.v:122$21_CHECK[0:0]$57
+    21/22: $0$formal$systolic_mult_cell.v:123$22_EN[0:0]$60
+    22/22: $0$formal$systolic_mult_cell.v:123$22_CHECK[0:0]$59
+Creating decoders for process `\systolic_mult_cell.$proc$systolic_mult_cell.v:90$25'.
+Creating decoders for process `\systolic_mult_cell.$proc$systolic_mult_cell.v:85$23'.
+
+3.3.7. Executing PROC_DLATCH pass (convert process syncs to latches).
+No latch inferred for signal `\full_adder.$formal$full_adder.v:53$130_CHECK' from process `\full_adder.$proc$full_adder.v:51$141'.
+No latch inferred for signal `\full_adder.$formal$full_adder.v:53$130_EN' from process `\full_adder.$proc$full_adder.v:51$141'.
+No latch inferred for signal `\full_adder.$formal$full_adder.v:55$131_CHECK' from process `\full_adder.$proc$full_adder.v:51$141'.
+No latch inferred for signal `\full_adder.$formal$full_adder.v:55$131_EN' from process `\full_adder.$proc$full_adder.v:51$141'.
+No latch inferred for signal `\full_adder.$formal$full_adder.v:57$132_CHECK' from process `\full_adder.$proc$full_adder.v:51$141'.
+No latch inferred for signal `\full_adder.$formal$full_adder.v:57$132_EN' from process `\full_adder.$proc$full_adder.v:51$141'.
+No latch inferred for signal `\full_adder.$formal$full_adder.v:59$133_CHECK' from process `\full_adder.$proc$full_adder.v:51$141'.
+No latch inferred for signal `\full_adder.$formal$full_adder.v:59$133_EN' from process `\full_adder.$proc$full_adder.v:51$141'.
+No latch inferred for signal `\full_adder.\o_SUM' from process `\full_adder.$proc$full_adder.v:41$134'.
+No latch inferred for signal `\full_adder.\o_COUT' from process `\full_adder.$proc$full_adder.v:41$134'.
+No latch inferred for signal `\systolic_mult_cell.\r_TEMP_WIRE' from process `\systolic_mult_cell.$proc$systolic_mult_cell.v:85$23'.
+
+3.3.8. Executing PROC_DFF pass (convert process syncs to FFs).
+Creating register for signal `\systolic_mult_cell.\rf_PAST_VALID' using process `\systolic_mult_cell.$proc$systolic_mult_cell.v:99$26'.
+  created $dff cell `$procdff$270' with positive edge clock.
+Creating register for signal `\systolic_mult_cell.$past$systolic_mult_cell.v:101$1$0' using process `\systolic_mult_cell.$proc$systolic_mult_cell.v:99$26'.
+  created $dff cell `$procdff$271' with positive edge clock.
+Creating register for signal `\systolic_mult_cell.$past$systolic_mult_cell.v:103$2$0' using process `\systolic_mult_cell.$proc$systolic_mult_cell.v:99$26'.
+  created $dff cell `$procdff$272' with positive edge clock.
+Creating register for signal `\systolic_mult_cell.$past$systolic_mult_cell.v:105$3$0' using process `\systolic_mult_cell.$proc$systolic_mult_cell.v:99$26'.
+  created $dff cell `$procdff$273' with positive edge clock.
+Creating register for signal `\systolic_mult_cell.$past$systolic_mult_cell.v:106$4$0' using process `\systolic_mult_cell.$proc$systolic_mult_cell.v:99$26'.
+  created $dff cell `$procdff$274' with positive edge clock.
+Creating register for signal `\systolic_mult_cell.$past$systolic_mult_cell.v:110$5$0' using process `\systolic_mult_cell.$proc$systolic_mult_cell.v:99$26'.
+  created $dff cell `$procdff$275' with positive edge clock.
+Creating register for signal `\systolic_mult_cell.$past$systolic_mult_cell.v:119$6$0' using process `\systolic_mult_cell.$proc$systolic_mult_cell.v:99$26'.
+  created $dff cell `$procdff$276' with positive edge clock.
+Creating register for signal `\systolic_mult_cell.$past$systolic_mult_cell.v:121$7$0' using process `\systolic_mult_cell.$proc$systolic_mult_cell.v:99$26'.
+  created $dff cell `$procdff$277' with positive edge clock.
+Creating register for signal `\systolic_mult_cell.$past$systolic_mult_cell.v:122$8$0' using process `\systolic_mult_cell.$proc$systolic_mult_cell.v:99$26'.
+  created $dff cell `$procdff$278' with positive edge clock.
+Creating register for signal `\systolic_mult_cell.$past$systolic_mult_cell.v:123$9$0' using process `\systolic_mult_cell.$proc$systolic_mult_cell.v:99$26'.
+  created $dff cell `$procdff$279' with positive edge clock.
+Creating register for signal `\systolic_mult_cell.$past$systolic_mult_cell.v:124$10$0' using process `\systolic_mult_cell.$proc$systolic_mult_cell.v:99$26'.
+  created $dff cell `$procdff$280' with positive edge clock.
+Creating register for signal `\systolic_mult_cell.$formal$systolic_mult_cell.v:100$11_CHECK' using process `\systolic_mult_cell.$proc$systolic_mult_cell.v:99$26'.
+  created $dff cell `$procdff$281' with positive edge clock.
+Creating register for signal `\systolic_mult_cell.$formal$systolic_mult_cell.v:100$11_EN' using process `\systolic_mult_cell.$proc$systolic_mult_cell.v:99$26'.
+  created $dff cell `$procdff$282' with positive edge clock.
+Creating register for signal `\systolic_mult_cell.$formal$systolic_mult_cell.v:104$12_CHECK' using process `\systolic_mult_cell.$proc$systolic_mult_cell.v:99$26'.
+  created $dff cell `$procdff$283' with positive edge clock.
+Creating register for signal `\systolic_mult_cell.$formal$systolic_mult_cell.v:104$12_EN' using process `\systolic_mult_cell.$proc$systolic_mult_cell.v:99$26'.
+  created $dff cell `$procdff$284' with positive edge clock.
+Creating register for signal `\systolic_mult_cell.$formal$systolic_mult_cell.v:106$13_CHECK' using process `\systolic_mult_cell.$proc$systolic_mult_cell.v:99$26'.
+  created $dff cell `$procdff$285' with positive edge clock.
+Creating register for signal `\systolic_mult_cell.$formal$systolic_mult_cell.v:106$13_EN' using process `\systolic_mult_cell.$proc$systolic_mult_cell.v:99$26'.
+  created $dff cell `$procdff$286' with positive edge clock.
+Creating register for signal `\systolic_mult_cell.$formal$systolic_mult_cell.v:108$14_CHECK' using process `\systolic_mult_cell.$proc$systolic_mult_cell.v:99$26'.
+  created $dff cell `$procdff$287' with positive edge clock.
+Creating register for signal `\systolic_mult_cell.$formal$systolic_mult_cell.v:108$14_EN' using process `\systolic_mult_cell.$proc$systolic_mult_cell.v:99$26'.
+  created $dff cell `$procdff$288' with positive edge clock.
+Creating register for signal `\systolic_mult_cell.$formal$systolic_mult_cell.v:110$15_CHECK' using process `\systolic_mult_cell.$proc$systolic_mult_cell.v:99$26'.
+  created $dff cell `$procdff$289' with positive edge clock.
+Creating register for signal `\systolic_mult_cell.$formal$systolic_mult_cell.v:110$15_EN' using process `\systolic_mult_cell.$proc$systolic_mult_cell.v:99$26'.
+  created $dff cell `$procdff$290' with positive edge clock.
+Creating register for signal `\systolic_mult_cell.$formal$systolic_mult_cell.v:112$16_CHECK' using process `\systolic_mult_cell.$proc$systolic_mult_cell.v:99$26'.
+  created $dff cell `$procdff$291' with positive edge clock.
+Creating register for signal `\systolic_mult_cell.$formal$systolic_mult_cell.v:112$16_EN' using process `\systolic_mult_cell.$proc$systolic_mult_cell.v:99$26'.
+  created $dff cell `$procdff$292' with positive edge clock.
+Creating register for signal `\systolic_mult_cell.$formal$systolic_mult_cell.v:114$17_CHECK' using process `\systolic_mult_cell.$proc$systolic_mult_cell.v:99$26'.
+  created $dff cell `$procdff$293' with positive edge clock.
+Creating register for signal `\systolic_mult_cell.$formal$systolic_mult_cell.v:114$17_EN' using process `\systolic_mult_cell.$proc$systolic_mult_cell.v:99$26'.
+  created $dff cell `$procdff$294' with positive edge clock.
+Creating register for signal `\systolic_mult_cell.$formal$systolic_mult_cell.v:116$18_CHECK' using process `\systolic_mult_cell.$proc$systolic_mult_cell.v:99$26'.
+  created $dff cell `$procdff$295' with positive edge clock.
+Creating register for signal `\systolic_mult_cell.$formal$systolic_mult_cell.v:116$18_EN' using process `\systolic_mult_cell.$proc$systolic_mult_cell.v:99$26'.
+  created $dff cell `$procdff$296' with positive edge clock.
+Creating register for signal `\systolic_mult_cell.$formal$systolic_mult_cell.v:120$19_CHECK' using process `\systolic_mult_cell.$proc$systolic_mult_cell.v:99$26'.
+  created $dff cell `$procdff$297' with positive edge clock.
+Creating register for signal `\systolic_mult_cell.$formal$systolic_mult_cell.v:120$19_EN' using process `\systolic_mult_cell.$proc$systolic_mult_cell.v:99$26'.
+  created $dff cell `$procdff$298' with positive edge clock.
+Creating register for signal `\systolic_mult_cell.$formal$systolic_mult_cell.v:121$20_CHECK' using process `\systolic_mult_cell.$proc$systolic_mult_cell.v:99$26'.
+  created $dff cell `$procdff$299' with positive edge clock.
+Creating register for signal `\systolic_mult_cell.$formal$systolic_mult_cell.v:121$20_EN' using process `\systolic_mult_cell.$proc$systolic_mult_cell.v:99$26'.
+  created $dff cell `$procdff$300' with positive edge clock.
+Creating register for signal `\systolic_mult_cell.$formal$systolic_mult_cell.v:122$21_CHECK' using process `\systolic_mult_cell.$proc$systolic_mult_cell.v:99$26'.
+  created $dff cell `$procdff$301' with positive edge clock.
+Creating register for signal `\systolic_mult_cell.$formal$systolic_mult_cell.v:122$21_EN' using process `\systolic_mult_cell.$proc$systolic_mult_cell.v:99$26'.
+  created $dff cell `$procdff$302' with positive edge clock.
+Creating register for signal `\systolic_mult_cell.$formal$systolic_mult_cell.v:123$22_CHECK' using process `\systolic_mult_cell.$proc$systolic_mult_cell.v:99$26'.
+  created $dff cell `$procdff$303' with positive edge clock.
+Creating register for signal `\systolic_mult_cell.$formal$systolic_mult_cell.v:123$22_EN' using process `\systolic_mult_cell.$proc$systolic_mult_cell.v:99$26'.
+  created $dff cell `$procdff$304' with positive edge clock.
+Creating register for signal `\systolic_mult_cell.\o_OUTPUT' using process `\systolic_mult_cell.$proc$systolic_mult_cell.v:90$25'.
+  created $dff cell `$procdff$305' with positive edge clock.
+Creating register for signal `\systolic_mult_cell.\o_INPUT_BROADCAST' using process `\systolic_mult_cell.$proc$systolic_mult_cell.v:90$25'.
+  created $dff cell `$procdff$306' with positive edge clock.
+Creating register for signal `\systolic_mult_cell.\o_CARRY_OUT' using process `\systolic_mult_cell.$proc$systolic_mult_cell.v:90$25'.
+  created $dff cell `$procdff$307' with positive edge clock.
+
+3.3.9. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Found and cleaned up 2 empty switches in `\full_adder.$proc$full_adder.v:51$141'.
+Removing empty process `full_adder.$proc$full_adder.v:51$141'.
+Removing empty process `full_adder.$proc$full_adder.v:41$134'.
+Removing empty process `systolic_mult_cell.$proc$systolic_mult_cell.v:0$126'.
+Removing empty process `systolic_mult_cell.$proc$systolic_mult_cell.v:0$124'.
+Removing empty process `systolic_mult_cell.$proc$systolic_mult_cell.v:0$122'.
+Removing empty process `systolic_mult_cell.$proc$systolic_mult_cell.v:0$120'.
+Removing empty process `systolic_mult_cell.$proc$systolic_mult_cell.v:0$118'.
+Removing empty process `systolic_mult_cell.$proc$systolic_mult_cell.v:0$116'.
+Removing empty process `systolic_mult_cell.$proc$systolic_mult_cell.v:0$114'.
+Removing empty process `systolic_mult_cell.$proc$systolic_mult_cell.v:0$112'.
+Removing empty process `systolic_mult_cell.$proc$systolic_mult_cell.v:0$110'.
+Removing empty process `systolic_mult_cell.$proc$systolic_mult_cell.v:0$108'.
+Removing empty process `systolic_mult_cell.$proc$systolic_mult_cell.v:0$106'.
+Removing empty process `systolic_mult_cell.$proc$systolic_mult_cell.v:98$105'.
+Removing empty process `systolic_mult_cell.$proc$systolic_mult_cell.v:0$128'.
+Found and cleaned up 6 empty switches in `\systolic_mult_cell.$proc$systolic_mult_cell.v:99$26'.
+Removing empty process `systolic_mult_cell.$proc$systolic_mult_cell.v:99$26'.
+Removing empty process `systolic_mult_cell.$proc$systolic_mult_cell.v:90$25'.
+Removing empty process `systolic_mult_cell.$proc$systolic_mult_cell.v:85$23'.
+Cleaned up 8 empty switches.
+
+3.4. Executing OPT_EXPR pass (perform const folding).
+Optimizing module full_adder.
+Optimizing module systolic_mult_cell.
+<suppressed ~10 debug messages>
+
+3.5. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \full_adder..
+Finding unused cells or wires in module \systolic_mult_cell..
+Removed 1 unused cells and 117 unused wires.
+<suppressed ~3 debug messages>
+
+3.6. Executing CHECK pass (checking for obvious problems).
+checking module full_adder..
+checking module systolic_mult_cell..
+found and reported 0 problems.
+
+3.7. Executing OPT pass (performing simple optimizations).
+
+3.7.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module full_adder.
+Optimizing module systolic_mult_cell.
+
+3.7.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\full_adder'.
+<suppressed ~6 debug messages>
+Finding identical cells in module `\systolic_mult_cell'.
+<suppressed ~33 debug messages>
+Removed a total of 13 cells.
+
+3.7.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \full_adder..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \systolic_mult_cell..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+      Replacing known input bits on port B of cell $procmux$250: \r_TEMP_WIRE -> 1'1
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~30 debug messages>
+
+3.7.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \full_adder.
+  Optimizing cells in module \systolic_mult_cell.
+Performed a total of 0 changes.
+
+3.7.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\full_adder'.
+Finding identical cells in module `\systolic_mult_cell'.
+<suppressed ~18 debug messages>
+Removed a total of 6 cells.
+
+3.7.6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \full_adder..
+Finding unused cells or wires in module \systolic_mult_cell..
+Removed 0 unused cells and 19 unused wires.
+<suppressed ~2 debug messages>
+
+3.7.7. Executing OPT_EXPR pass (perform const folding).
+Optimizing module full_adder.
+Optimizing module systolic_mult_cell.
+<suppressed ~1 debug messages>
+
+3.7.8. Rerunning OPT passes. (Maybe there is more to do..)
+
+3.7.9. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \full_adder..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \systolic_mult_cell..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~27 debug messages>
+
+3.7.10. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \full_adder.
+  Optimizing cells in module \systolic_mult_cell.
+Performed a total of 0 changes.
+
+3.7.11. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\full_adder'.
+Finding identical cells in module `\systolic_mult_cell'.
+Removed a total of 0 cells.
+
+3.7.12. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \full_adder..
+Finding unused cells or wires in module \systolic_mult_cell..
+Removed 0 unused cells and 1 unused wires.
+<suppressed ~1 debug messages>
+
+3.7.13. Executing OPT_EXPR pass (perform const folding).
+Optimizing module full_adder.
+Optimizing module systolic_mult_cell.
+
+3.7.14. Rerunning OPT passes. (Maybe there is more to do..)
+
+3.7.15. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \full_adder..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \systolic_mult_cell..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~27 debug messages>
+
+3.7.16. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \full_adder.
+  Optimizing cells in module \systolic_mult_cell.
+Performed a total of 0 changes.
+
+3.7.17. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\full_adder'.
+Finding identical cells in module `\systolic_mult_cell'.
+Removed a total of 0 cells.
+
+3.7.18. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \full_adder..
+Finding unused cells or wires in module \systolic_mult_cell..
+
+3.7.19. Executing OPT_EXPR pass (perform const folding).
+Optimizing module full_adder.
+Optimizing module systolic_mult_cell.
+
+3.7.20. Finished OPT passes. (There is nothing left to do.)
+
+3.8. Executing WREDUCE pass (reducing word size of cells).
+Removed top 2 bits (of 3) from port B of cell full_adder.$eq$full_adder.v:53$150 ($eq).
+Removed top 1 bits (of 3) from port B of cell full_adder.$eq$full_adder.v:53$151 ($eq).
+Removed top 1 bits (of 3) from port B of cell full_adder.$eq$full_adder.v:57$161 ($eq).
+Removed top 31 bits (of 32) from port B of cell systolic_mult_cell.$and$systolic_mult_cell.v:0$64 ($and).
+Removed top 31 bits (of 32) from port Y of cell systolic_mult_cell.$and$systolic_mult_cell.v:0$64 ($and).
+Removed top 31 bits (of 32) from port B of cell systolic_mult_cell.$and$systolic_mult_cell.v:0$77 ($and).
+Removed top 31 bits (of 32) from port Y of cell systolic_mult_cell.$and$systolic_mult_cell.v:0$77 ($and).
+Removed top 31 bits (of 32) from wire systolic_mult_cell.$and$systolic_mult_cell.v:0$62_Y.
+Removed top 31 bits (of 32) from wire systolic_mult_cell.$and$systolic_mult_cell.v:0$64_Y.
+
+3.9. Executing MEMORY_DFF pass (merging $dff cells to $memrd and $memwr).
+
+3.10. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \full_adder..
+Finding unused cells or wires in module \systolic_mult_cell..
+Removed 0 unused cells and 2 unused wires.
+<suppressed ~1 debug messages>
+
+3.11. Executing MEMORY_COLLECT pass (generating $mem cells).
+
+3.12. Executing OPT pass (performing simple optimizations).
+
+3.12.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module full_adder.
+Optimizing module systolic_mult_cell.
+<suppressed ~2 debug messages>
+
+3.12.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\full_adder'.
+Finding identical cells in module `\systolic_mult_cell'.
+Removed a total of 0 cells.
+
+3.12.3. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \full_adder..
+Finding unused cells or wires in module \systolic_mult_cell..
+Removed 0 unused cells and 2 unused wires.
+<suppressed ~1 debug messages>
+
+3.12.4. Finished fast OPT passes.
+
+3.13. Printing statistics.
+
+=== full_adder ===
+
+   Number of wires:                 32
+   Number of wire bits:             34
+   Number of public wires:           6
+   Number of public wire bits:       8
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 32
+     $and                            2
+     $assert                         4
+     $eq                             7
+     $logic_or                       6
+     $mux                            8
+     $not                            2
+     $or                             1
+     $xor                            2
+
+=== systolic_mult_cell ===
+
+   Number of wires:                 89
+   Number of wire bits:             89
+   Number of public wires:          12
+   Number of public wire bits:      12
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 95
+     $and                            4
+     $assert                         7
+     $assume                         5
+     $dff                           30
+     $eq                             4
+     $logic_and                      2
+     $logic_not                      4
+     $logic_or                       1
+     $mux                           31
+     $ne                             1
+     $not                            1
+     $or                             1
+     $xor                            3
+     full_adder                      1
+
+=== design hierarchy ===
+
+   systolic_mult_cell                1
+     full_adder                      1
+
+   Number of wires:                121
+   Number of wire bits:            123
+   Number of public wires:          18
+   Number of public wire bits:      20
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                126
+     $and                            6
+     $assert                        11
+     $assume                         5
+     $dff                           30
+     $eq                            11
+     $logic_and                      2
+     $logic_not                      4
+     $logic_or                       7
+     $mux                           39
+     $ne                             1
+     $not                            3
+     $or                             2
+     $xor                            5
+
+3.14. Executing CHECK pass (checking for obvious problems).
+checking module full_adder..
+checking module systolic_mult_cell..
+found and reported 0 problems.
+
+4. Executing MEMORY_NORDFF pass (extracting $dff cells from $mem).
+
+5. Executing ASYNC2SYNC pass.
+
+6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \full_adder..
+Finding unused cells or wires in module \systolic_mult_cell..
+Removed 6 unused cells and 5 unused wires.
+<suppressed ~7 debug messages>
+
+7. Executing SETUNDEF pass (replace undef values with defined constants).
+
+8. Executing OPT pass (performing simple optimizations).
+
+8.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module full_adder.
+Optimizing module systolic_mult_cell.
+
+8.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\full_adder'.
+Finding identical cells in module `\systolic_mult_cell'.
+Removed a total of 0 cells.
+
+8.3. Executing OPT_RMDFF pass (remove dff with constant values).
+Promoting init spec $formal$systolic_mult_cell.v:120$19_EN = 1'0 to constant driver in module systolic_mult_cell.
+Promoted 1 init specs to constant drivers.
+
+8.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \full_adder..
+Finding unused cells or wires in module \systolic_mult_cell..
+Removed 0 unused cells and 1 unused wires.
+<suppressed ~1 debug messages>
+
+8.5. Rerunning OPT passes. (Removed registers in this run.)
+
+8.6. Executing OPT_EXPR pass (perform const folding).
+Optimizing module full_adder.
+Optimizing module systolic_mult_cell.
+
+8.7. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\full_adder'.
+Finding identical cells in module `\systolic_mult_cell'.
+Removed a total of 0 cells.
+
+8.8. Executing OPT_RMDFF pass (remove dff with constant values).
+
+8.9. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \full_adder..
+Finding unused cells or wires in module \systolic_mult_cell..
+
+8.10. Finished fast OPT passes.
+
+9. Executing CHECK pass (checking for obvious problems).
+checking module full_adder..
+checking module systolic_mult_cell..
+found and reported 0 problems.
+
+10. Executing HIERARCHY pass (managing design hierarchy).
+
+10.1. Analyzing design hierarchy..
+Top module:  \systolic_mult_cell
+Used module:     \full_adder
+
+10.2. Analyzing design hierarchy..
+Top module:  \systolic_mult_cell
+Used module:     \full_adder
+Removed 0 unused modules.
+Module full_adder directly or indirectly contains formal properties -> setting "keep" attribute.
+Module systolic_mult_cell directly or indirectly contains formal properties -> setting "keep" attribute.
+
+11. Executing ILANG backend.
+Output filename: ../model/design.il
+
+End of script. Logfile hash: 327c3f6247, CPU: user 0.10s system 0.00s, MEM: 13.91 MB peak
+Yosys 0.9+2406 (git sha1 000fd08198, g++ 9.3.0 -fPIC -Os)
+Time spent: 25% 9x opt_clean (0 sec), 18% 7x opt_merge (0 sec), ...

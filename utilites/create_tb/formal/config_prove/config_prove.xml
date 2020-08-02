@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites disabled="0" errors="1" failures="0" tests="1" time="0">
+<testsuite disabled="0" errors="1" failures="0" name="config" skipped="0" tests="1" time="0">
+<properties>
+<property name="os" value="posix"/>
+</properties>
+<testcase classname="config" name="prove" status="ERROR" time="0">
+<error message="ERROR" type="ERROR"/>
+<system-out>SBY 15:21:45 [config_prove] Removing directory 'config_prove'.
+SBY 15:21:45 [config_prove] Copy 'foo.v' to 'config_prove/src/foo.v'.
+SBY 15:21:45 [config_prove] engine_0: smtbmc boolector
+SBY 15:21:45 [config_prove] base: starting process &quot;cd config_prove/src; /nix/store/y4qxzapi73hszjabd2wb1hs3c47v4b05-yosys-2020.07.07/bin/yosys -ql ../model/design.log ../model/design.ys&quot;
+SBY 15:21:45 [config_prove] base: finished (returncode=0)
+SBY 15:21:45 [config_prove] smt2: starting process &quot;cd config_prove/model; /nix/store/y4qxzapi73hszjabd2wb1hs3c47v4b05-yosys-2020.07.07/bin/yosys -ql design_smt2.log design_smt2.ys&quot;
+SBY 15:21:45 [config_prove] smt2: finished (returncode=0)
+SBY 15:21:45 [config_prove] engine_0.basecase: starting process &quot;cd config_prove; /nix/store/y4qxzapi73hszjabd2wb1hs3c47v4b05-yosys-2020.07.07/bin/yosys-smtbmc -s boolector --presat --unroll --noprogress -t 64  --append 0 --dump-vcd engine_0/trace.vcd --dump-vlogtb engine_0/trace_tb.v --dump-smtc engine_0/trace.smtc model/design_smt2.smt2&quot;
+SBY 15:21:45 [config_prove] engine_0.induction: starting process &quot;cd config_prove; /nix/store/y4qxzapi73hszjabd2wb1hs3c47v4b05-yosys-2020.07.07/bin/yosys-smtbmc -s boolector --presat --unroll -i --noprogress -t 64  --append 0 --dump-vcd engine_0/trace_induct.vcd --dump-vlogtb engine_0/trace_induct_tb.v --dump-smtc engine_0/trace_induct.smtc model/design_smt2.smt2&quot;
+SBY 15:21:45 [config_prove] engine_0.basecase: ##   0:00:00  Solver: boolector
+SBY 15:21:45 [config_prove] engine_0.basecase: Traceback (most recent call last):
+SBY 15:21:45 [config_prove] engine_0.basecase: File &quot;/nix/store/y4qxzapi73hszjabd2wb1hs3c47v4b05-yosys-2020.07.07/bin/yosys-smtbmc&quot;, line 411, in &lt;module&gt;
+SBY 15:21:45 [config_prove] engine_0.basecase: assert topmod is not None
+SBY 15:21:45 [config_prove] engine_0.basecase: AssertionError
+SBY 15:21:45 [config_prove] engine_0.induction: ##   0:00:00  Solver: boolector
+SBY 15:21:45 [config_prove] engine_0.induction: Traceback (most recent call last):
+SBY 15:21:45 [config_prove] engine_0.induction: File &quot;/nix/store/y4qxzapi73hszjabd2wb1hs3c47v4b05-yosys-2020.07.07/bin/yosys-smtbmc&quot;, line 411, in &lt;module&gt;
+SBY 15:21:45 [config_prove] engine_0.induction: assert topmod is not None
+SBY 15:21:45 [config_prove] engine_0.induction: AssertionError
+SBY 15:21:45 [config_prove] engine_0.basecase: finished (returncode=1)
+SBY 15:21:45 [config_prove] ERROR: engine_0: Engine terminated without status.
+SBY 15:21:45 [config_prove] engine_0.induction: terminating process
+SBY 15:21:45 [config_prove] DONE (ERROR, rc=16)
+</system-out></testcase></testsuite></testsuites>

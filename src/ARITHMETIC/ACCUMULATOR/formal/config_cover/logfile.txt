@@ -1,0 +1,31 @@
+SBY 15:24:13 [config_prove] Removing directory 'config_prove'.
+SBY 15:24:19 [config_cover] Removing directory 'config_cover'.
+SBY 15:24:19 [config_cover] Copy 'accumulator.v' to 'config_cover/src/accumulator.v'.
+SBY 15:24:19 [config_cover] engine_0: smtbmc boolector
+SBY 15:24:19 [config_cover] base: starting process "cd config_cover/src; /nix/store/y4qxzapi73hszjabd2wb1hs3c47v4b05-yosys-2020.07.07/bin/yosys -ql ../model/design.log ../model/design.ys"
+SBY 15:24:19 [config_cover] base: finished (returncode=0)
+SBY 15:24:19 [config_cover] smt2: starting process "cd config_cover/model; /nix/store/y4qxzapi73hszjabd2wb1hs3c47v4b05-yosys-2020.07.07/bin/yosys -ql design_smt2.log design_smt2.ys"
+SBY 15:24:19 [config_cover] smt2: finished (returncode=0)
+SBY 15:24:19 [config_cover] engine_0: starting process "cd config_cover; /nix/store/y4qxzapi73hszjabd2wb1hs3c47v4b05-yosys-2020.07.07/bin/yosys-smtbmc -s boolector --presat --unroll -c --noprogress -t 64  --append 0 --dump-vcd engine_0/trace%.vcd --dump-vlogtb engine_0/trace%_tb.v --dump-smtc engine_0/trace%.smtc model/design_smt2.smt2"
+SBY 15:24:19 [config_cover] engine_0: ##   0:00:00  Solver: boolector
+SBY 15:24:19 [config_cover] engine_0: ##   0:00:00  Checking cover reachability in step 0..
+SBY 15:24:19 [config_cover] engine_0: ##   0:00:00  Checking cover reachability in step 1..
+SBY 15:24:19 [config_cover] engine_0: ##   0:00:00  Checking cover reachability in step 2..
+SBY 15:24:19 [config_cover] engine_0: ##   0:00:00  Reached cover statement at accumulator.v:73.32-74.32 in step 2.
+SBY 15:24:19 [config_cover] engine_0: ##   0:00:00  Writing trace to VCD file: engine_0/trace0.vcd
+SBY 15:24:19 [config_cover] engine_0: ##   0:00:00  Writing trace to Verilog testbench: engine_0/trace0_tb.v
+SBY 15:24:19 [config_cover] engine_0: ##   0:00:00  Writing trace to constraints file: engine_0/trace0.smtc
+SBY 15:24:19 [config_cover] engine_0: ##   0:00:00  Checking cover reachability in step 2..
+SBY 15:24:19 [config_cover] engine_0: ##   0:00:00  Reached cover statement at accumulator.v:72.8-73.31 in step 2.
+SBY 15:24:19 [config_cover] engine_0: ##   0:00:00  Writing trace to VCD file: engine_0/trace1.vcd
+SBY 15:24:19 [config_cover] engine_0: ##   0:00:00  Writing trace to Verilog testbench: engine_0/trace1_tb.v
+SBY 15:24:19 [config_cover] engine_0: ##   0:00:00  Writing trace to constraints file: engine_0/trace1.smtc
+SBY 15:24:19 [config_cover] engine_0: ##   0:00:00  Status: passed
+SBY 15:24:19 [config_cover] engine_0: finished (returncode=0)
+SBY 15:24:19 [config_cover] engine_0: Status returned by engine: pass
+SBY 15:24:19 [config_cover] summary: Elapsed clock time [H:MM:SS (secs)]: 0:00:00 (0)
+SBY 15:24:19 [config_cover] summary: Elapsed process time [H:MM:SS (secs)]: 0:00:00 (0)
+SBY 15:24:19 [config_cover] summary: engine_0 (smtbmc boolector) returned pass
+SBY 15:24:19 [config_cover] summary: trace: config_cover/engine_0/trace0.vcd
+SBY 15:24:19 [config_cover] summary: trace: config_cover/engine_0/trace1.vcd
+SBY 15:24:19 [config_cover] DONE (PASS, rc=0)

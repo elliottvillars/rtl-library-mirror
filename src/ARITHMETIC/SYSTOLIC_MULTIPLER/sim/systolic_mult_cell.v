@@ -14,8 +14,6 @@
 //
 //Parameters: None
 //
-//Local Parameters: None
-//
 //Ports: 
 //i_CLK: System clock input. All module operation is predicated on a rising
 //edge clock signal.
@@ -53,8 +51,8 @@
 //are liberal with resource usage. 
 //
 //(Lattice)
-//3 SB_DFF
-//2 SB_LUT4s  
+//2 SB_DFF
+//1 SB_LUT4s  
 //
 
 `default_nettype none
@@ -71,62 +69,18 @@ module systolic_mult_cell (
 
 reg r_TEMP_WIRE;
 reg r_ADD_RESULT;
-wire w_CARRY_OUT;
-
-full_adder fa (
-	.i_INPUT_A(i_ADJ_RESULT),
-	.i_INPUT_B(r_TEMP_WIRE),
-	.i_CIN(i_CARRY_IN),
-	.o_SUM(r_ADD_RESULT),
-	.o_COUT(w_CARRY_OUT)
-);
 
 
 always@(*)
 begin
 	r_TEMP_WIRE = i_INPUT & i_WEIGHT;
+	r_ADD_RESULT = i_ADJ_RESULT + i_CARRY_IN + r_TEMP_WIRE;
 end
 
 always@(posedge i_CLK)
 begin
 	o_INPUT_BROADCAST <= i_INPUT;
-	o_CARRY_OUT <= w_CARRY_OUT;
+	o_CARRY_OUT <= r_ADD_RESULT;
 	o_OUTPUT <= r_ADD_RESULT;
 end
-
-`ifdef FORMAL 
-	reg rf_PAST_VALID = 0;
-	always@(posedge i_CLK)
-	begin
-		assume($changed(i_CLK));
-		rf_PAST_VALID <= 1;
-		if($rose(i_CLK) && rf_PAST_VALID)
-		begin
-			assert(o_INPUT_BROADCAST == $past(i_INPUT));
-			if($past(i_ADJ_RESULT & r_TEMP_WIRE |  (i_ADJ_RESULT ^ r_TEMP_WIRE) & i_CARRY_IN))
-				assert(o_CARRY_OUT);
-			else
-				assert(!o_CARRY_OUT);
-			if($past(i_ADJ_RESULT ^ r_TEMP_WIRE ^ i_CARRY_IN))
-				assert(o_OUTPUT);
-			else
-				assert(!o_OUTPUT);
-			if(i_INPUT ^ i_WEIGHT == 1'b1 || i_INPUT & i_WEIGHT == 1'b0)
-				assert(!r_TEMP_WIRE);
-			if(i_INPUT & i_WEIGHT)
-				assert(r_TEMP_WIRE);
-		end
-		if(!$rose(i_CLK))
-		begin
-			assume($stable(i_INPUT));
-			assume($stable(i_WEIGHT));
-			assume($stable(i_CARRY_IN));
-			assume($stable(i_ADJ_RESULT));
-		end
-	end
-
-	always@(*)
-	begin
-	end
-`endif
 endmodule

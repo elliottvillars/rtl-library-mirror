@@ -1,0 +1,5 @@
+##   0:00:00  Solver: boolector
+Traceback (most recent call last):
+File "/nix/store/y4qxzapi73hszjabd2wb1hs3c47v4b05-yosys-2020.07.07/bin/yosys-smtbmc", line 411, in <module>
+assert topmod is not None
+AssertionError

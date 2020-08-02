@@ -1,0 +1,35 @@
+initial
+assume (= [$and$accumulator.v:0$57_Y] #b1)
+assume (= [$eq$accumulator.v:75$64_Y] #b0)
+assume (= [$eq$accumulator.v:77$66_Y] #b0)
+assume (= [$formal$accumulator.v:72$13_CHECK] #b0)
+assume (= [$formal$accumulator.v:72$13_EN] #b0)
+assume (= [$formal$accumulator.v:73$14_CHECK] #b0)
+assume (= [$formal$accumulator.v:75$15_CHECK] #b0)
+assume (= [$formal$accumulator.v:75$15_EN] #b0)
+assume (= [$formal$accumulator.v:77$16_CHECK] #b0)
+assume (= [$formal$accumulator.v:77$16_EN] #b0)
+assume (= [$formal$accumulator.v:79$17_CHECK] #b0)
+assume (= [$formal$accumulator.v:79$17_EN] #b0)
+assume (= [$past$accumulator.v:78$5$0] #b00000000)
+assume (= [$past$accumulator.v:78$6$0] #b00000000)
+assume (= [o_ACCUMULATION] #b11111111)
+assume (= [r_PAST_VALID] #b0)
+
+state 0
+assume (= [i_CLK] #b0)
+assume (= [i_CLK_ENABLE] #b0)
+assume (= [i_RESET] #b0)
+assume (= [i_SUMMAND] #b00000000)
+
+state 1
+assume (= [i_CLK] #b1)
+assume (= [i_CLK_ENABLE] #b0)
+assume (= [i_RESET] #b0)
+assume (= [i_SUMMAND] #b00010000)
+
+state 2
+assume (= [i_CLK] #b0)
+assume (= [i_CLK_ENABLE] #b0)
+assume (= [i_RESET] #b0)
+assume (= [i_SUMMAND] #b00010000)
