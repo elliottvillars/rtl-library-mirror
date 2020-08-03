@@ -1,3 +1,4 @@
+`default_nettype none
 module nibble_local_count (
 	input wire [3:0] i_INPUT_NIBBLE,
 	output wire o_ALL_ZEROS, //this would be a_i 

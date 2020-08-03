@@ -1,4 +1,5 @@
 //from Fig 3 of : https://sci-hub.tw/10.2478/jee-2015-0054
+`default_nettype none
 module boundary_nibble_encoder (
 	input wire [7:0] i_ZEROED_NIBBLES,
 	output wire o_INVALID,

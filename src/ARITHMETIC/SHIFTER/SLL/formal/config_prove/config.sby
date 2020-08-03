@@ -1,0 +1,15 @@
+###################################################
+#THIS IS A COMPUTER GENERATED FILE, MODIFICATION UNADVISED.#
+#GENERATED: 2020-08-03 07:53:39                   #
+###################################################
+
+[options]
+mode prove
+depth 64
+[engines]
+smtbmc boolector
+[files]
+sll.v
+[script]
+read -formal sll.v
+prep -top sll
