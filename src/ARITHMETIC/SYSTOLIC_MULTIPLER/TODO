@@ -1,3 +1,4 @@
 1) TEST THIS FILE
-2) CREATE TEST HARNESS AUTOMATION FOR VERIILATOR
 3) FIX SYSTOLIC MULTIPLIER
+4) Need to add load registers to make this easier.
+NOTE: It appears to be working but I need a harness to check.

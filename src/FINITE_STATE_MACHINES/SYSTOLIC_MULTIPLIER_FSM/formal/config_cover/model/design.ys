@@ -1,0 +1,13 @@
+# running in config_cover/src/
+read -formal systolic_multiplier_fsm.v
+prep -top systolic_multiplier_fsm
+memory_nordff
+async2sync
+chformal -assume -early
+chformal -live -fair -remove
+opt_clean
+setundef -anyseq
+opt -keepdc -fast
+check
+hierarchy -simcheck
+write_ilang ../model/design.il

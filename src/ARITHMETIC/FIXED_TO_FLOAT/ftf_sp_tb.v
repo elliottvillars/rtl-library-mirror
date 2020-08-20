@@ -19,16 +19,16 @@ fixed_to_float_sp ftf (
 initial begin
 	#5 r_FIXED_WORD = -1;
 	#100;
-	$monitor("o_FLOAT_WORD output: %32b",w_FLOAT_WORD);
+	$monitor("o_FLOAT_WORD output: %32b, i_FIXED_WORD input: %32b",w_FLOAT_WORD,r_FIXED_WORD);
 	#5 r_FIXED_WORD = 1;
 	#100;
-	$monitor("o_FLOAT_WORD output: %32b",w_FLOAT_WORD);
+	$monitor("o_FLOAT_WORD output: %32b, i_FIXED_WORD input: %32b",w_FLOAT_WORD,r_FIXED_WORD);
 	#5 r_FIXED_WORD = -32;
 	#100;
-	$monitor("o_FLOAT_WORD output: %32b",w_FLOAT_WORD);
+	$monitor("o_FLOAT_WORD output: %32b, i_FIXED_WORD input: %32b",w_FLOAT_WORD,r_FIXED_WORD);
 	#5 r_FIXED_WORD = 32;
 	#100;
-	$monitor("o_FLOAT_WORD output: %32b",w_FLOAT_WORD);
+	$monitor("o_FLOAT_WORD output: %32b, i_FIXED_WORD input: %32b",w_FLOAT_WORD,r_FIXED_WORD);
 	#5 $finish();
 end
 endmodule

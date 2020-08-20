@@ -11,7 +11,7 @@ module sync_fifo #(parameter p_ADDRESS_WIDTH = 2, parameter p_DATA_WIDTH = 8)(
 	output reg [p_DATA_WIDTH-1:0] o_OUTPUT
 );
 
-//TODO: Implement almost flags
+//TODO: Perform QA pass and reverify.
 reg [p_ADDRESS_WIDTH-1:0] r_WRITE_POINTER;
 reg [p_ADDRESS_WIDTH-1:0] r_READ_POINTER;
 reg [p_DATA_WIDTH-1:0] r_MEMORY [0:2**p_ADDRESS_WIDTH-1];
@@ -19,6 +19,8 @@ reg [p_ADDRESS_WIDTH-1:0] r_QUANTITY;
 
 parameter p_ALMOST_FULL_FLAG  = 1;
 parameter p_ALMOST_EMPTY_FLAG = 1;
+
+localparam lp_EMPTY = 0;
 
 initial 
 begin
@@ -72,7 +74,7 @@ begin
 
 		//STATUS FLAGS
 		case(r_QUANTITY)
-			0: 
+			lp_EMPTY: 
 			begin
 				o_FIFO_EMPTY <= 1'b1;
 				o_FIFO_FULL <= 1'b0;

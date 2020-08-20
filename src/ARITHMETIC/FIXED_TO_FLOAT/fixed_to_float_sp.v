@@ -19,6 +19,7 @@ reg r_SIGN_STAGE_1;
 localparam lp_BIAS = 127;
 parameter p_WORD_WIDTH = 31;
 
+//TODO: Perform QA pass and document.
 
 always@(posedge i_CLK)
 begin
@@ -42,7 +43,7 @@ count_leading_zeros clz (
 	.o_ZERO_COUNT(w_SHIFT_AMOUNT)
 );
 
-shifter_32 shft (
+sll #(.p_DATA_WIDTH(32)) shft (
 	.i_INPUT(w_TEMP_WIRE_0),
 	.i_SHIFT_AMOUNT(w_SHIFT_AMOUNT),
 	.o_RESULT(w_TEMP_WIRE_1)

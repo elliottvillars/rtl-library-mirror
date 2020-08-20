@@ -1,0 +1,12 @@
+[options]
+mode prove
+depth 64
+
+[engines]
+smtbmc boolector
+[files]
+./sign_extend.v
+
+[script]
+read -formal ./sign_extend.v
+prep -top sign_extend

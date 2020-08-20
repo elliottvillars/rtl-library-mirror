@@ -1,0 +1,15 @@
+###################################################
+#THIS IS A COMPUTER GENERATED FILE, MODIFICATION UNADVISED.#
+#GENERATED: 2020-08-05 12:54:47                   #
+###################################################
+
+[options]
+mode cover
+depth 64
+[engines]
+smtbmc boolector
+[files]
+systolic_multiplier_fsm.v
+[script]
+read -formal systolic_multiplier_fsm.v
+prep -top systolic_multiplier_fsm

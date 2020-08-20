@@ -1,0 +1,529 @@
+
+ /----------------------------------------------------------------------------\
+ |                                                                            |
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |                                                                            |
+ |  Copyright (C) 2012 - 2020  Claire Wolf <claire@symbioticeda.com>          |
+ |                                                                            |
+ |  Permission to use, copy, modify, and/or distribute this software for any  |
+ |  purpose with or without fee is hereby granted, provided that the above    |
+ |  copyright notice and this permission notice appear in all copies.         |
+ |                                                                            |
+ |  THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES  |
+ |  WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF          |
+ |  MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR   |
+ |  ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES    |
+ |  WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN     |
+ |  ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF   |
+ |  OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.            |
+ |                                                                            |
+ \----------------------------------------------------------------------------/
+
+ Yosys 0.9+2406 (git sha1 000fd08198, g++ 9.3.0 -fPIC -Os)
+
+
+-- Executing script file `../model/design.ys' --
+
+1. Executing Verilog-2005 frontend: systolic_multiplier_fsm.v
+Parsing formal SystemVerilog input from `systolic_multiplier_fsm.v' to AST representation.
+Storing AST representation for module `$abstract\systolic_multiplier_fsm'.
+Successfully finished Verilog frontend.
+
+2. Executing PREP pass.
+
+2.1. Executing HIERARCHY pass (managing design hierarchy).
+
+2.2. Executing AST frontend in derive mode using pre-parsed AST for module `\systolic_multiplier_fsm'.
+Generating RTLIL representation for module `\systolic_multiplier_fsm'.
+
+2.2.1. Analyzing design hierarchy..
+Top module:  \systolic_multiplier_fsm
+
+2.2.2. Analyzing design hierarchy..
+Top module:  \systolic_multiplier_fsm
+Removing unused module `$abstract\systolic_multiplier_fsm'.
+Removed 1 unused modules.
+Module systolic_multiplier_fsm directly or indirectly contains formal properties -> setting "keep" attribute.
+
+2.3. Executing PROC pass (convert processes to netlists).
+
+2.3.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+2.3.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Marked 2 switch rules as full_case in process $proc$systolic_multiplier_fsm.v:160$46 in module systolic_multiplier_fsm.
+Marked 1 switch rules as full_case in process $proc$systolic_multiplier_fsm.v:125$43 in module systolic_multiplier_fsm.
+Marked 2 switch rules as full_case in process $proc$systolic_multiplier_fsm.v:113$40 in module systolic_multiplier_fsm.
+Removed 1 dead cases from process $proc$systolic_multiplier_fsm.v:86$37 in module systolic_multiplier_fsm.
+Marked 3 switch rules as full_case in process $proc$systolic_multiplier_fsm.v:86$37 in module systolic_multiplier_fsm.
+Removed a total of 1 dead cases.
+
+2.3.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 1 redundant assignment.
+Promoted 45 assignments to connections.
+
+2.3.4. Executing PROC_INIT pass (extract init attributes).
+Found init rule in `\systolic_multiplier_fsm.$proc$systolic_multiplier_fsm.v:0$192'.
+  Set init value: $formal$systolic_multiplier_fsm.v:196$36_EN = 1'0
+Found init rule in `\systolic_multiplier_fsm.$proc$systolic_multiplier_fsm.v:0$190'.
+  Set init value: $formal$systolic_multiplier_fsm.v:195$35_EN = 1'0
+Found init rule in `\systolic_multiplier_fsm.$proc$systolic_multiplier_fsm.v:0$188'.
+  Set init value: $formal$systolic_multiplier_fsm.v:190$34_EN = 1'0
+Found init rule in `\systolic_multiplier_fsm.$proc$systolic_multiplier_fsm.v:0$186'.
+  Set init value: $formal$systolic_multiplier_fsm.v:188$33_EN = 1'0
+Found init rule in `\systolic_multiplier_fsm.$proc$systolic_multiplier_fsm.v:0$184'.
+  Set init value: $formal$systolic_multiplier_fsm.v:186$32_EN = 1'0
+Found init rule in `\systolic_multiplier_fsm.$proc$systolic_multiplier_fsm.v:0$182'.
+  Set init value: $formal$systolic_multiplier_fsm.v:184$31_EN = 1'0
+Found init rule in `\systolic_multiplier_fsm.$proc$systolic_multiplier_fsm.v:0$180'.
+  Set init value: $formal$systolic_multiplier_fsm.v:182$30_EN = 1'0
+Found init rule in `\systolic_multiplier_fsm.$proc$systolic_multiplier_fsm.v:0$178'.
+  Set init value: $formal$systolic_multiplier_fsm.v:179$29_EN = 1'0
+Found init rule in `\systolic_multiplier_fsm.$proc$systolic_multiplier_fsm.v:0$176'.
+  Set init value: $formal$systolic_multiplier_fsm.v:177$28_EN = 1'0
+Found init rule in `\systolic_multiplier_fsm.$proc$systolic_multiplier_fsm.v:0$174'.
+  Set init value: $formal$systolic_multiplier_fsm.v:175$27_EN = 1'0
+Found init rule in `\systolic_multiplier_fsm.$proc$systolic_multiplier_fsm.v:0$172'.
+  Set init value: $formal$systolic_multiplier_fsm.v:173$26_EN = 1'0
+Found init rule in `\systolic_multiplier_fsm.$proc$systolic_multiplier_fsm.v:0$170'.
+  Set init value: $formal$systolic_multiplier_fsm.v:171$25_EN = 1'0
+Found init rule in `\systolic_multiplier_fsm.$proc$systolic_multiplier_fsm.v:0$168'.
+  Set init value: $formal$systolic_multiplier_fsm.v:169$24_EN = 1'0
+Found init rule in `\systolic_multiplier_fsm.$proc$systolic_multiplier_fsm.v:0$166'.
+  Set init value: $formal$systolic_multiplier_fsm.v:167$23_EN = 1'0
+Found init rule in `\systolic_multiplier_fsm.$proc$systolic_multiplier_fsm.v:0$164'.
+  Set init value: $formal$systolic_multiplier_fsm.v:163$22_EN = 1'0
+Found init rule in `\systolic_multiplier_fsm.$proc$systolic_multiplier_fsm.v:0$162'.
+  Set init value: $formal$systolic_multiplier_fsm.v:162$21_EN = 1'0
+Found init rule in `\systolic_multiplier_fsm.$proc$systolic_multiplier_fsm.v:0$160'.
+  Set init value: $formal$systolic_multiplier_fsm.v:161$20_EN = 1'0
+Found init rule in `\systolic_multiplier_fsm.$proc$systolic_multiplier_fsm.v:159$159'.
+  Set init value: \fr_PAST_VALID = 1'0
+
+2.3.5. Executing PROC_ARST pass (detect async resets in processes).
+
+2.3.6. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\systolic_multiplier_fsm.$proc$systolic_multiplier_fsm.v:0$192'.
+Creating decoders for process `\systolic_multiplier_fsm.$proc$systolic_multiplier_fsm.v:0$190'.
+Creating decoders for process `\systolic_multiplier_fsm.$proc$systolic_multiplier_fsm.v:0$188'.
+Creating decoders for process `\systolic_multiplier_fsm.$proc$systolic_multiplier_fsm.v:0$186'.
+Creating decoders for process `\systolic_multiplier_fsm.$proc$systolic_multiplier_fsm.v:0$184'.
+Creating decoders for process `\systolic_multiplier_fsm.$proc$systolic_multiplier_fsm.v:0$182'.
+Creating decoders for process `\systolic_multiplier_fsm.$proc$systolic_multiplier_fsm.v:0$180'.
+Creating decoders for process `\systolic_multiplier_fsm.$proc$systolic_multiplier_fsm.v:0$178'.
+Creating decoders for process `\systolic_multiplier_fsm.$proc$systolic_multiplier_fsm.v:0$176'.
+Creating decoders for process `\systolic_multiplier_fsm.$proc$systolic_multiplier_fsm.v:0$174'.
+Creating decoders for process `\systolic_multiplier_fsm.$proc$systolic_multiplier_fsm.v:0$172'.
+Creating decoders for process `\systolic_multiplier_fsm.$proc$systolic_multiplier_fsm.v:0$170'.
+Creating decoders for process `\systolic_multiplier_fsm.$proc$systolic_multiplier_fsm.v:0$168'.
+Creating decoders for process `\systolic_multiplier_fsm.$proc$systolic_multiplier_fsm.v:0$166'.
+Creating decoders for process `\systolic_multiplier_fsm.$proc$systolic_multiplier_fsm.v:0$164'.
+Creating decoders for process `\systolic_multiplier_fsm.$proc$systolic_multiplier_fsm.v:0$162'.
+Creating decoders for process `\systolic_multiplier_fsm.$proc$systolic_multiplier_fsm.v:0$160'.
+Creating decoders for process `\systolic_multiplier_fsm.$proc$systolic_multiplier_fsm.v:159$159'.
+Creating decoders for process `\systolic_multiplier_fsm.$proc$systolic_multiplier_fsm.v:160$46'.
+     1/28: $0$formal$systolic_multiplier_fsm.v:167$23_EN[0:0]$73
+     2/28: $0$formal$systolic_multiplier_fsm.v:167$23_CHECK[0:0]$72
+     3/28: $0$formal$systolic_multiplier_fsm.v:169$24_EN[0:0]$75
+     4/28: $0$formal$systolic_multiplier_fsm.v:169$24_CHECK[0:0]$74
+     5/28: $0$formal$systolic_multiplier_fsm.v:171$25_EN[0:0]$77
+     6/28: $0$formal$systolic_multiplier_fsm.v:171$25_CHECK[0:0]$76
+     7/28: $0$formal$systolic_multiplier_fsm.v:173$26_EN[0:0]$79
+     8/28: $0$formal$systolic_multiplier_fsm.v:173$26_CHECK[0:0]$78
+     9/28: $0$formal$systolic_multiplier_fsm.v:175$27_EN[0:0]$81
+    10/28: $0$formal$systolic_multiplier_fsm.v:175$27_CHECK[0:0]$80
+    11/28: $0$formal$systolic_multiplier_fsm.v:177$28_EN[0:0]$83
+    12/28: $0$formal$systolic_multiplier_fsm.v:177$28_CHECK[0:0]$82
+    13/28: $0$formal$systolic_multiplier_fsm.v:179$29_EN[0:0]$85
+    14/28: $0$formal$systolic_multiplier_fsm.v:179$29_CHECK[0:0]$84
+    15/28: $0$formal$systolic_multiplier_fsm.v:182$30_EN[0:0]$87
+    16/28: $0$formal$systolic_multiplier_fsm.v:182$30_CHECK[0:0]$86
+    17/28: $0$formal$systolic_multiplier_fsm.v:184$31_EN[0:0]$89
+    18/28: $0$formal$systolic_multiplier_fsm.v:184$31_CHECK[0:0]$88
+    19/28: $0$formal$systolic_multiplier_fsm.v:186$32_EN[0:0]$91
+    20/28: $0$formal$systolic_multiplier_fsm.v:186$32_CHECK[0:0]$90
+    21/28: $0$formal$systolic_multiplier_fsm.v:188$33_EN[0:0]$93
+    22/28: $0$formal$systolic_multiplier_fsm.v:188$33_CHECK[0:0]$92
+    23/28: $0$formal$systolic_multiplier_fsm.v:190$34_EN[0:0]$95
+    24/28: $0$formal$systolic_multiplier_fsm.v:190$34_CHECK[0:0]$94
+    25/28: $0$formal$systolic_multiplier_fsm.v:195$35_EN[0:0]$97
+    26/28: $0$formal$systolic_multiplier_fsm.v:195$35_CHECK[0:0]$96
+    27/28: $0$formal$systolic_multiplier_fsm.v:196$36_EN[0:0]$99
+    28/28: $0$formal$systolic_multiplier_fsm.v:196$36_CHECK[0:0]$98
+Creating decoders for process `\systolic_multiplier_fsm.$proc$systolic_multiplier_fsm.v:125$43'.
+     1/3: $0\r_CALC_COUNTER[3:0]
+     2/3: $0\o_RESULT_READY[0:0]
+     3/3: $0\o_SHIFT_REG_LOAD[0:0]
+Creating decoders for process `\systolic_multiplier_fsm.$proc$systolic_multiplier_fsm.v:113$40'.
+     1/1: $0\r_CURRENT_STATE[1:0]
+Creating decoders for process `\systolic_multiplier_fsm.$proc$systolic_multiplier_fsm.v:86$37'.
+     1/3: $3\r_NEXT_STATE[1:0]
+     2/3: $2\r_NEXT_STATE[1:0]
+     3/3: $1\r_NEXT_STATE[1:0]
+
+2.3.7. Executing PROC_DLATCH pass (convert process syncs to latches).
+No latch inferred for signal `\systolic_multiplier_fsm.\r_NEXT_STATE' from process `\systolic_multiplier_fsm.$proc$systolic_multiplier_fsm.v:86$37'.
+
+2.3.8. Executing PROC_DFF pass (convert process syncs to FFs).
+Creating register for signal `\systolic_multiplier_fsm.\fr_PAST_VALID' using process `\systolic_multiplier_fsm.$proc$systolic_multiplier_fsm.v:160$46'.
+  created $dff cell `$procdff$348' with positive edge clock.
+Creating register for signal `\systolic_multiplier_fsm.$past$systolic_multiplier_fsm.v:162$1$0' using process `\systolic_multiplier_fsm.$proc$systolic_multiplier_fsm.v:160$46'.
+  created $dff cell `$procdff$349' with positive edge clock.
+Creating register for signal `\systolic_multiplier_fsm.$past$systolic_multiplier_fsm.v:166$2$0' using process `\systolic_multiplier_fsm.$proc$systolic_multiplier_fsm.v:160$46'.
+  created $dff cell `$procdff$350' with positive edge clock.
+Creating register for signal `\systolic_multiplier_fsm.$past$systolic_multiplier_fsm.v:168$3$0' using process `\systolic_multiplier_fsm.$proc$systolic_multiplier_fsm.v:160$46'.
+  created $dff cell `$procdff$351' with positive edge clock.
+Creating register for signal `\systolic_multiplier_fsm.$past$systolic_multiplier_fsm.v:169$4$0' using process `\systolic_multiplier_fsm.$proc$systolic_multiplier_fsm.v:160$46'.
+  created $dff cell `$procdff$352' with positive edge clock.
+Creating register for signal `\systolic_multiplier_fsm.$past$systolic_multiplier_fsm.v:173$5$0' using process `\systolic_multiplier_fsm.$proc$systolic_multiplier_fsm.v:160$46'.
+  created $dff cell `$procdff$353' with positive edge clock.
+Creating register for signal `\systolic_multiplier_fsm.$past$systolic_multiplier_fsm.v:174$6$0' using process `\systolic_multiplier_fsm.$proc$systolic_multiplier_fsm.v:160$46'.
+  created $dff cell `$procdff$354' with positive edge clock.
+Creating register for signal `\systolic_multiplier_fsm.$past$systolic_multiplier_fsm.v:175$7$0' using process `\systolic_multiplier_fsm.$proc$systolic_multiplier_fsm.v:160$46'.
+  created $dff cell `$procdff$355' with positive edge clock.
+Creating register for signal `\systolic_multiplier_fsm.$past$systolic_multiplier_fsm.v:177$8$0' using process `\systolic_multiplier_fsm.$proc$systolic_multiplier_fsm.v:160$46'.
+  created $dff cell `$procdff$356' with positive edge clock.
+Creating register for signal `\systolic_multiplier_fsm.$past$systolic_multiplier_fsm.v:182$9$0' using process `\systolic_multiplier_fsm.$proc$systolic_multiplier_fsm.v:160$46'.
+  created $dff cell `$procdff$357' with positive edge clock.
+Creating register for signal `\systolic_multiplier_fsm.$past$systolic_multiplier_fsm.v:184$10$0' using process `\systolic_multiplier_fsm.$proc$systolic_multiplier_fsm.v:160$46'.
+  created $dff cell `$procdff$358' with positive edge clock.
+Creating register for signal `\systolic_multiplier_fsm.$past$systolic_multiplier_fsm.v:186$11$0' using process `\systolic_multiplier_fsm.$proc$systolic_multiplier_fsm.v:160$46'.
+  created $dff cell `$procdff$359' with positive edge clock.
+Creating register for signal `\systolic_multiplier_fsm.$past$systolic_multiplier_fsm.v:186$12$0' using process `\systolic_multiplier_fsm.$proc$systolic_multiplier_fsm.v:160$46'.
+  created $dff cell `$procdff$360' with positive edge clock.
+Creating register for signal `\systolic_multiplier_fsm.$past$systolic_multiplier_fsm.v:188$13$0' using process `\systolic_multiplier_fsm.$proc$systolic_multiplier_fsm.v:160$46'.
+  created $dff cell `$procdff$361' with positive edge clock.
+Creating register for signal `\systolic_multiplier_fsm.$past$systolic_multiplier_fsm.v:188$14$0' using process `\systolic_multiplier_fsm.$proc$systolic_multiplier_fsm.v:160$46'.
+  created $dff cell `$procdff$362' with positive edge clock.
+Creating register for signal `\systolic_multiplier_fsm.$past$systolic_multiplier_fsm.v:190$15$0' using process `\systolic_multiplier_fsm.$proc$systolic_multiplier_fsm.v:160$46'.
+  created $dff cell `$procdff$363' with positive edge clock.
+Creating register for signal `\systolic_multiplier_fsm.$past$systolic_multiplier_fsm.v:190$16$0' using process `\systolic_multiplier_fsm.$proc$systolic_multiplier_fsm.v:160$46'.
+  created $dff cell `$procdff$364' with positive edge clock.
+Creating register for signal `\systolic_multiplier_fsm.$past$systolic_multiplier_fsm.v:194$17$0' using process `\systolic_multiplier_fsm.$proc$systolic_multiplier_fsm.v:160$46'.
+  created $dff cell `$procdff$365' with positive edge clock.
+Creating register for signal `\systolic_multiplier_fsm.$past$systolic_multiplier_fsm.v:196$18$0' using process `\systolic_multiplier_fsm.$proc$systolic_multiplier_fsm.v:160$46'.
+  created $dff cell `$procdff$366' with positive edge clock.
+Creating register for signal `\systolic_multiplier_fsm.$past$systolic_multiplier_fsm.v:197$19$0' using process `\systolic_multiplier_fsm.$proc$systolic_multiplier_fsm.v:160$46'.
+  created $dff cell `$procdff$367' with positive edge clock.
+Creating register for signal `\systolic_multiplier_fsm.$formal$systolic_multiplier_fsm.v:161$20_CHECK' using process `\systolic_multiplier_fsm.$proc$systolic_multiplier_fsm.v:160$46'.
+  created $dff cell `$procdff$368' with positive edge clock.
+Creating register for signal `\systolic_multiplier_fsm.$formal$systolic_multiplier_fsm.v:161$20_EN' using process `\systolic_multiplier_fsm.$proc$systolic_multiplier_fsm.v:160$46'.
+  created $dff cell `$procdff$369' with positive edge clock.
+Creating register for signal `\systolic_multiplier_fsm.$formal$systolic_multiplier_fsm.v:162$21_CHECK' using process `\systolic_multiplier_fsm.$proc$systolic_multiplier_fsm.v:160$46'.
+  created $dff cell `$procdff$370' with positive edge clock.
+Creating register for signal `\systolic_multiplier_fsm.$formal$systolic_multiplier_fsm.v:162$21_EN' using process `\systolic_multiplier_fsm.$proc$systolic_multiplier_fsm.v:160$46'.
+  created $dff cell `$procdff$371' with positive edge clock.
+Creating register for signal `\systolic_multiplier_fsm.$formal$systolic_multiplier_fsm.v:163$22_CHECK' using process `\systolic_multiplier_fsm.$proc$systolic_multiplier_fsm.v:160$46'.
+  created $dff cell `$procdff$372' with positive edge clock.
+Creating register for signal `\systolic_multiplier_fsm.$formal$systolic_multiplier_fsm.v:163$22_EN' using process `\systolic_multiplier_fsm.$proc$systolic_multiplier_fsm.v:160$46'.
+  created $dff cell `$procdff$373' with positive edge clock.
+Creating register for signal `\systolic_multiplier_fsm.$formal$systolic_multiplier_fsm.v:167$23_CHECK' using process `\systolic_multiplier_fsm.$proc$systolic_multiplier_fsm.v:160$46'.
+  created $dff cell `$procdff$374' with positive edge clock.
+Creating register for signal `\systolic_multiplier_fsm.$formal$systolic_multiplier_fsm.v:167$23_EN' using process `\systolic_multiplier_fsm.$proc$systolic_multiplier_fsm.v:160$46'.
+  created $dff cell `$procdff$375' with positive edge clock.
+Creating register for signal `\systolic_multiplier_fsm.$formal$systolic_multiplier_fsm.v:169$24_CHECK' using process `\systolic_multiplier_fsm.$proc$systolic_multiplier_fsm.v:160$46'.
+  created $dff cell `$procdff$376' with positive edge clock.
+Creating register for signal `\systolic_multiplier_fsm.$formal$systolic_multiplier_fsm.v:169$24_EN' using process `\systolic_multiplier_fsm.$proc$systolic_multiplier_fsm.v:160$46'.
+  created $dff cell `$procdff$377' with positive edge clock.
+Creating register for signal `\systolic_multiplier_fsm.$formal$systolic_multiplier_fsm.v:171$25_CHECK' using process `\systolic_multiplier_fsm.$proc$systolic_multiplier_fsm.v:160$46'.
+  created $dff cell `$procdff$378' with positive edge clock.
+Creating register for signal `\systolic_multiplier_fsm.$formal$systolic_multiplier_fsm.v:171$25_EN' using process `\systolic_multiplier_fsm.$proc$systolic_multiplier_fsm.v:160$46'.
+  created $dff cell `$procdff$379' with positive edge clock.
+Creating register for signal `\systolic_multiplier_fsm.$formal$systolic_multiplier_fsm.v:173$26_CHECK' using process `\systolic_multiplier_fsm.$proc$systolic_multiplier_fsm.v:160$46'.
+  created $dff cell `$procdff$380' with positive edge clock.
+Creating register for signal `\systolic_multiplier_fsm.$formal$systolic_multiplier_fsm.v:173$26_EN' using process `\systolic_multiplier_fsm.$proc$systolic_multiplier_fsm.v:160$46'.
+  created $dff cell `$procdff$381' with positive edge clock.
+Creating register for signal `\systolic_multiplier_fsm.$formal$systolic_multiplier_fsm.v:175$27_CHECK' using process `\systolic_multiplier_fsm.$proc$systolic_multiplier_fsm.v:160$46'.
+  created $dff cell `$procdff$382' with positive edge clock.
+Creating register for signal `\systolic_multiplier_fsm.$formal$systolic_multiplier_fsm.v:175$27_EN' using process `\systolic_multiplier_fsm.$proc$systolic_multiplier_fsm.v:160$46'.
+  created $dff cell `$procdff$383' with positive edge clock.
+Creating register for signal `\systolic_multiplier_fsm.$formal$systolic_multiplier_fsm.v:177$28_CHECK' using process `\systolic_multiplier_fsm.$proc$systolic_multiplier_fsm.v:160$46'.
+  created $dff cell `$procdff$384' with positive edge clock.
+Creating register for signal `\systolic_multiplier_fsm.$formal$systolic_multiplier_fsm.v:177$28_EN' using process `\systolic_multiplier_fsm.$proc$systolic_multiplier_fsm.v:160$46'.
+  created $dff cell `$procdff$385' with positive edge clock.
+Creating register for signal `\systolic_multiplier_fsm.$formal$systolic_multiplier_fsm.v:179$29_CHECK' using process `\systolic_multiplier_fsm.$proc$systolic_multiplier_fsm.v:160$46'.
+  created $dff cell `$procdff$386' with positive edge clock.
+Creating register for signal `\systolic_multiplier_fsm.$formal$systolic_multiplier_fsm.v:179$29_EN' using process `\systolic_multiplier_fsm.$proc$systolic_multiplier_fsm.v:160$46'.
+  created $dff cell `$procdff$387' with positive edge clock.
+Creating register for signal `\systolic_multiplier_fsm.$formal$systolic_multiplier_fsm.v:182$30_CHECK' using process `\systolic_multiplier_fsm.$proc$systolic_multiplier_fsm.v:160$46'.
+  created $dff cell `$procdff$388' with positive edge clock.
+Creating register for signal `\systolic_multiplier_fsm.$formal$systolic_multiplier_fsm.v:182$30_EN' using process `\systolic_multiplier_fsm.$proc$systolic_multiplier_fsm.v:160$46'.
+  created $dff cell `$procdff$389' with positive edge clock.
+Creating register for signal `\systolic_multiplier_fsm.$formal$systolic_multiplier_fsm.v:184$31_CHECK' using process `\systolic_multiplier_fsm.$proc$systolic_multiplier_fsm.v:160$46'.
+  created $dff cell `$procdff$390' with positive edge clock.
+Creating register for signal `\systolic_multiplier_fsm.$formal$systolic_multiplier_fsm.v:184$31_EN' using process `\systolic_multiplier_fsm.$proc$systolic_multiplier_fsm.v:160$46'.
+  created $dff cell `$procdff$391' with positive edge clock.
+Creating register for signal `\systolic_multiplier_fsm.$formal$systolic_multiplier_fsm.v:186$32_CHECK' using process `\systolic_multiplier_fsm.$proc$systolic_multiplier_fsm.v:160$46'.
+  created $dff cell `$procdff$392' with positive edge clock.
+Creating register for signal `\systolic_multiplier_fsm.$formal$systolic_multiplier_fsm.v:186$32_EN' using process `\systolic_multiplier_fsm.$proc$systolic_multiplier_fsm.v:160$46'.
+  created $dff cell `$procdff$393' with positive edge clock.
+Creating register for signal `\systolic_multiplier_fsm.$formal$systolic_multiplier_fsm.v:188$33_CHECK' using process `\systolic_multiplier_fsm.$proc$systolic_multiplier_fsm.v:160$46'.
+  created $dff cell `$procdff$394' with positive edge clock.
+Creating register for signal `\systolic_multiplier_fsm.$formal$systolic_multiplier_fsm.v:188$33_EN' using process `\systolic_multiplier_fsm.$proc$systolic_multiplier_fsm.v:160$46'.
+  created $dff cell `$procdff$395' with positive edge clock.
+Creating register for signal `\systolic_multiplier_fsm.$formal$systolic_multiplier_fsm.v:190$34_CHECK' using process `\systolic_multiplier_fsm.$proc$systolic_multiplier_fsm.v:160$46'.
+  created $dff cell `$procdff$396' with positive edge clock.
+Creating register for signal `\systolic_multiplier_fsm.$formal$systolic_multiplier_fsm.v:190$34_EN' using process `\systolic_multiplier_fsm.$proc$systolic_multiplier_fsm.v:160$46'.
+  created $dff cell `$procdff$397' with positive edge clock.
+Creating register for signal `\systolic_multiplier_fsm.$formal$systolic_multiplier_fsm.v:195$35_CHECK' using process `\systolic_multiplier_fsm.$proc$systolic_multiplier_fsm.v:160$46'.
+  created $dff cell `$procdff$398' with positive edge clock.
+Creating register for signal `\systolic_multiplier_fsm.$formal$systolic_multiplier_fsm.v:195$35_EN' using process `\systolic_multiplier_fsm.$proc$systolic_multiplier_fsm.v:160$46'.
+  created $dff cell `$procdff$399' with positive edge clock.
+Creating register for signal `\systolic_multiplier_fsm.$formal$systolic_multiplier_fsm.v:196$36_CHECK' using process `\systolic_multiplier_fsm.$proc$systolic_multiplier_fsm.v:160$46'.
+  created $dff cell `$procdff$400' with positive edge clock.
+Creating register for signal `\systolic_multiplier_fsm.$formal$systolic_multiplier_fsm.v:196$36_EN' using process `\systolic_multiplier_fsm.$proc$systolic_multiplier_fsm.v:160$46'.
+  created $dff cell `$procdff$401' with positive edge clock.
+Creating register for signal `\systolic_multiplier_fsm.\o_SHIFT_REG_LOAD' using process `\systolic_multiplier_fsm.$proc$systolic_multiplier_fsm.v:125$43'.
+  created $dff cell `$procdff$402' with positive edge clock.
+Creating register for signal `\systolic_multiplier_fsm.\o_RESULT_READY' using process `\systolic_multiplier_fsm.$proc$systolic_multiplier_fsm.v:125$43'.
+  created $dff cell `$procdff$403' with positive edge clock.
+Creating register for signal `\systolic_multiplier_fsm.\r_CALC_COUNTER' using process `\systolic_multiplier_fsm.$proc$systolic_multiplier_fsm.v:125$43'.
+  created $dff cell `$procdff$404' with positive edge clock.
+Creating register for signal `\systolic_multiplier_fsm.\r_CURRENT_STATE' using process `\systolic_multiplier_fsm.$proc$systolic_multiplier_fsm.v:113$40'.
+  created $dff cell `$procdff$405' with positive edge clock.
+
+2.3.9. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Removing empty process `systolic_multiplier_fsm.$proc$systolic_multiplier_fsm.v:0$192'.
+Removing empty process `systolic_multiplier_fsm.$proc$systolic_multiplier_fsm.v:0$190'.
+Removing empty process `systolic_multiplier_fsm.$proc$systolic_multiplier_fsm.v:0$188'.
+Removing empty process `systolic_multiplier_fsm.$proc$systolic_multiplier_fsm.v:0$186'.
+Removing empty process `systolic_multiplier_fsm.$proc$systolic_multiplier_fsm.v:0$184'.
+Removing empty process `systolic_multiplier_fsm.$proc$systolic_multiplier_fsm.v:0$182'.
+Removing empty process `systolic_multiplier_fsm.$proc$systolic_multiplier_fsm.v:0$180'.
+Removing empty process `systolic_multiplier_fsm.$proc$systolic_multiplier_fsm.v:0$178'.
+Removing empty process `systolic_multiplier_fsm.$proc$systolic_multiplier_fsm.v:0$176'.
+Removing empty process `systolic_multiplier_fsm.$proc$systolic_multiplier_fsm.v:0$174'.
+Removing empty process `systolic_multiplier_fsm.$proc$systolic_multiplier_fsm.v:0$172'.
+Removing empty process `systolic_multiplier_fsm.$proc$systolic_multiplier_fsm.v:0$170'.
+Removing empty process `systolic_multiplier_fsm.$proc$systolic_multiplier_fsm.v:0$168'.
+Removing empty process `systolic_multiplier_fsm.$proc$systolic_multiplier_fsm.v:0$166'.
+Removing empty process `systolic_multiplier_fsm.$proc$systolic_multiplier_fsm.v:0$164'.
+Removing empty process `systolic_multiplier_fsm.$proc$systolic_multiplier_fsm.v:0$162'.
+Removing empty process `systolic_multiplier_fsm.$proc$systolic_multiplier_fsm.v:0$160'.
+Removing empty process `systolic_multiplier_fsm.$proc$systolic_multiplier_fsm.v:159$159'.
+Found and cleaned up 11 empty switches in `\systolic_multiplier_fsm.$proc$systolic_multiplier_fsm.v:160$46'.
+Removing empty process `systolic_multiplier_fsm.$proc$systolic_multiplier_fsm.v:160$46'.
+Found and cleaned up 2 empty switches in `\systolic_multiplier_fsm.$proc$systolic_multiplier_fsm.v:125$43'.
+Removing empty process `systolic_multiplier_fsm.$proc$systolic_multiplier_fsm.v:125$43'.
+Found and cleaned up 2 empty switches in `\systolic_multiplier_fsm.$proc$systolic_multiplier_fsm.v:113$40'.
+Removing empty process `systolic_multiplier_fsm.$proc$systolic_multiplier_fsm.v:113$40'.
+Found and cleaned up 3 empty switches in `\systolic_multiplier_fsm.$proc$systolic_multiplier_fsm.v:86$37'.
+Removing empty process `systolic_multiplier_fsm.$proc$systolic_multiplier_fsm.v:86$37'.
+Cleaned up 18 empty switches.
+
+2.4. Executing OPT_EXPR pass (perform const folding).
+Optimizing module systolic_multiplier_fsm.
+<suppressed ~22 debug messages>
+
+2.5. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \systolic_multiplier_fsm..
+Removed 1 unused cells and 145 unused wires.
+<suppressed ~2 debug messages>
+
+2.6. Executing CHECK pass (checking for obvious problems).
+checking module systolic_multiplier_fsm..
+found and reported 0 problems.
+
+2.7. Executing OPT pass (performing simple optimizations).
+
+2.7.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module systolic_multiplier_fsm.
+
+2.7.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\systolic_multiplier_fsm'.
+<suppressed ~135 debug messages>
+Removed a total of 45 cells.
+
+2.7.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \systolic_multiplier_fsm..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+    dead port 2/2 on $mux $procmux$333.
+    dead port 2/2 on $mux $procmux$341.
+Removed 2 multiplexer ports.
+<suppressed ~32 debug messages>
+
+2.7.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \systolic_multiplier_fsm.
+    New ctrl vector for $pmux cell $procmux$302: { $eq$systolic_multiplier_fsm.v:185$122_Y $auto$opt_reduce.cc:134:opt_mux$407 }
+    New ctrl vector for $pmux cell $procmux$309: { $auto$opt_reduce.cc:134:opt_mux$409 $eq$systolic_multiplier_fsm.v:191$134_Y }
+    New ctrl vector for $pmux cell $procmux$316: { $eq$systolic_multiplier_fsm.v:187$126_Y $auto$opt_reduce.cc:134:opt_mux$411 }
+  Optimizing cells in module \systolic_multiplier_fsm.
+Performed a total of 3 changes.
+
+2.7.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\systolic_multiplier_fsm'.
+<suppressed ~15 debug messages>
+Removed a total of 5 cells.
+
+2.7.6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \systolic_multiplier_fsm..
+Removed 0 unused cells and 52 unused wires.
+<suppressed ~1 debug messages>
+
+2.7.7. Executing OPT_EXPR pass (perform const folding).
+Optimizing module systolic_multiplier_fsm.
+
+2.7.8. Rerunning OPT passes. (Maybe there is more to do..)
+
+2.7.9. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \systolic_multiplier_fsm..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~30 debug messages>
+
+2.7.10. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \systolic_multiplier_fsm.
+Performed a total of 0 changes.
+
+2.7.11. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\systolic_multiplier_fsm'.
+Removed a total of 0 cells.
+
+2.7.12. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \systolic_multiplier_fsm..
+
+2.7.13. Executing OPT_EXPR pass (perform const folding).
+Optimizing module systolic_multiplier_fsm.
+
+2.7.14. Finished OPT passes. (There is nothing left to do.)
+
+2.8. Executing WREDUCE pass (reducing word size of cells).
+Removed top 31 bits (of 32) from port B of cell systolic_multiplier_fsm.$and$systolic_multiplier_fsm.v:0$105 ($and).
+Removed top 31 bits (of 32) from port Y of cell systolic_multiplier_fsm.$and$systolic_multiplier_fsm.v:0$105 ($and).
+Removed top 1 bits (of 2) from port B of cell systolic_multiplier_fsm.$eq$systolic_multiplier_fsm.v:177$117 ($eq).
+Removed top 1 bits (of 2) from port B of cell systolic_multiplier_fsm.$eq$systolic_multiplier_fsm.v:187$126 ($eq).
+Removed top 31 bits (of 32) from port B of cell systolic_multiplier_fsm.$and$systolic_multiplier_fsm.v:0$135 ($and).
+Removed top 31 bits (of 32) from port Y of cell systolic_multiplier_fsm.$and$systolic_multiplier_fsm.v:0$135 ($and).
+Removed top 1 bits (of 2) from mux cell systolic_multiplier_fsm.$procmux$331 ($mux).
+Removed top 1 bits (of 2) from mux cell systolic_multiplier_fsm.$procmux$339 ($mux).
+Removed top 1 bits (of 2) from wire systolic_multiplier_fsm.$2\r_NEXT_STATE[1:0].
+Removed top 1 bits (of 2) from wire systolic_multiplier_fsm.$3\r_NEXT_STATE[1:0].
+Removed top 31 bits (of 32) from wire systolic_multiplier_fsm.$and$systolic_multiplier_fsm.v:0$103_Y.
+Removed top 31 bits (of 32) from wire systolic_multiplier_fsm.$and$systolic_multiplier_fsm.v:0$105_Y.
+
+2.9. Executing MEMORY_DFF pass (merging $dff cells to $memrd and $memwr).
+
+2.10. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \systolic_multiplier_fsm..
+Removed 0 unused cells and 4 unused wires.
+<suppressed ~1 debug messages>
+
+2.11. Executing MEMORY_COLLECT pass (generating $mem cells).
+
+2.12. Executing OPT pass (performing simple optimizations).
+
+2.12.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module systolic_multiplier_fsm.
+<suppressed ~2 debug messages>
+
+2.12.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\systolic_multiplier_fsm'.
+Removed a total of 0 cells.
+
+2.12.3. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \systolic_multiplier_fsm..
+Removed 0 unused cells and 2 unused wires.
+<suppressed ~1 debug messages>
+
+2.12.4. Finished fast OPT passes.
+
+2.13. Printing statistics.
+
+=== systolic_multiplier_fsm ===
+
+   Number of wires:                133
+   Number of wire bits:            153
+   Number of public wires:          10
+   Number of public wire bits:      15
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                146
+     $add                            1
+     $assert                        11
+     $assume                         5
+     $cover                          1
+     $dff                           39
+     $eq                            10
+     $logic_and                      6
+     $logic_not                      7
+     $mux                           54
+     $ne                             4
+     $not                            1
+     $pmux                           4
+     $reduce_or                      3
+
+2.14. Executing CHECK pass (checking for obvious problems).
+checking module systolic_multiplier_fsm..
+found and reported 0 problems.
+
+3. Executing MEMORY_NORDFF pass (extracting $dff cells from $mem).
+
+4. Executing ASYNC2SYNC pass.
+
+5. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \systolic_multiplier_fsm..
+Removed 11 unused cells and 9 unused wires.
+<suppressed ~12 debug messages>
+
+6. Executing SETUNDEF pass (replace undef values with defined constants).
+
+7. Executing OPT pass (performing simple optimizations).
+
+7.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module systolic_multiplier_fsm.
+
+7.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\systolic_multiplier_fsm'.
+Removed a total of 0 cells.
+
+7.3. Executing OPT_RMDFF pass (remove dff with constant values).
+Promoting init spec $formal$systolic_multiplier_fsm.v:167$23_EN = 1'0 to constant driver in module systolic_multiplier_fsm.
+Promoting init spec $formal$systolic_multiplier_fsm.v:195$35_EN = 1'0 to constant driver in module systolic_multiplier_fsm.
+Promoted 2 init specs to constant drivers.
+
+7.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \systolic_multiplier_fsm..
+Removed 0 unused cells and 2 unused wires.
+<suppressed ~1 debug messages>
+
+7.5. Rerunning OPT passes. (Removed registers in this run.)
+
+7.6. Executing OPT_EXPR pass (perform const folding).
+Optimizing module systolic_multiplier_fsm.
+
+7.7. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\systolic_multiplier_fsm'.
+Removed a total of 0 cells.
+
+7.8. Executing OPT_RMDFF pass (remove dff with constant values).
+
+7.9. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \systolic_multiplier_fsm..
+
+7.10. Finished fast OPT passes.
+
+8. Executing CHECK pass (checking for obvious problems).
+checking module systolic_multiplier_fsm..
+found and reported 0 problems.
+
+9. Executing HIERARCHY pass (managing design hierarchy).
+
+9.1. Analyzing design hierarchy..
+Top module:  \systolic_multiplier_fsm
+
+9.2. Analyzing design hierarchy..
+Top module:  \systolic_multiplier_fsm
+Removed 0 unused modules.
+Module systolic_multiplier_fsm directly or indirectly contains formal properties -> setting "keep" attribute.
+
+10. Executing ILANG backend.
+Output filename: ../model/design.il
+
+End of script. Logfile hash: 6309cf6489, CPU: user 0.07s system 0.00s, MEM: 14.35 MB peak
+Yosys 0.9+2406 (git sha1 000fd08198, g++ 9.3.0 -fPIC -Os)
+Time spent: 25% 8x opt_clean (0 sec), 16% 6x opt_merge (0 sec), ...

@@ -19,10 +19,10 @@
 // 
 //////////////////////////////////////////////////////////////////////////////////
 
-
+`default_nettype none
 module static_clock_divider(
 	input wire i_CLK,
-	input wire i_RST,
+	input wire i_RESET,
 	input wire i_ENABLE,
 	output reg o_ENABLE_OUT
 );
@@ -31,7 +31,7 @@ parameter p_DIV_VALUE = 3;
 reg [31:0] r_Count;
 always @ (posedge(i_CLK)) //Counter
 begin
-	if (i_RST == 1'b1)
+	if (i_RESET == 1'b1)
 	begin
 		r_Count <= 32'b0;
 	end
@@ -53,7 +53,7 @@ end
 
 always @ (posedge(i_CLK)) //FF with comparator
 begin
-	if (i_RST == 1'b1)
+	if (i_RESET == 1'b1)
 	begin
 		o_ENABLE_OUT <= 1'b0;
 	end
@@ -70,13 +70,13 @@ begin
 	end
 end
 
-//TODO:Add reset(?)
+//TODO:Perform QA pass and reverify this module.
 `ifdef FORMAL
 	reg r_PAST_VALID;
 	initial begin
 		assume(r_Count == 0);
 		assume(i_CLK == 0);
-		assume(i_RST == 1);
+		assume(i_RESET == 1);
 	end
 
 	always@(posedge i_CLK)
@@ -85,14 +85,14 @@ end
 		assume(i_CLK != $past(i_CLK));
 		if(r_PAST_VALID == 1 && $rose(i_CLK))
 		begin
-			if($past(i_RST) == 1)
+			if($past(i_RESET) == 1)
 			begin
 				assert(r_Count == 0);
 				assert(o_ENABLE_OUT == 0);
 			end
 			else
 			begin
-				if($stable(i_RST) && $past(i_RST) == 0)
+				if($stable(i_RESET) && $past(i_RESET) == 0)
 				begin
 					if($stable(i_ENABLE) && $past(i_ENABLE) == 1)
 					begin
