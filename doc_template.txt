@@ -1,0 +1,22 @@
+//Author: 
+//
+//Name: 
+//
+//Date: 
+//
+//Format: 
+//
+//Description: 
+//
+//Parameters: 
+//
+//Local Parameters:
+//
+//Ports: 
+//
+//Estimated Logic Usage:  The following resource usage is determined by
+//Yosys when running the "synth_ice40" command on the design. All estimations
+//are liberal with resource usage. 
+//
+//(Lattice) 
+//

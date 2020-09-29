@@ -1,8 +1,8 @@
-module fixed_to_float_sp (
+module fixed_to_float_sp #(parameter p_DATA_WIDTH = 32)(
 	input wire i_CLK,
-	input wire signed [31:0] i_FIXED_WORD,
+	input wire signed [p_DATA_WIDTH-1:0] i_FIXED_WORD,
 	output wire o_INVALID,
-	output wire signed [31:0] o_FLOAT_WORD
+	output wire signed [p_DATA_WIDTH-1:0] o_FLOAT_WORD
 );
 
 reg signed [31:0] r_TEMP_REG_0;
@@ -17,15 +17,16 @@ reg [7:0] r_EXPONENT_STAGE_1;
 reg r_SIGN_STAGE_0;
 reg r_SIGN_STAGE_1;
 localparam lp_BIAS = 127;
-parameter p_WORD_WIDTH = 31;
+localparam lp_WORD_WIDTH = p_DATA_WIDTH - 1;
 
 //TODO: Perform QA pass and document.
-
+//TODO: Add sign extension to handle fixed point words other than 32'bit
+//TODO: Add conditional instantiate of shifter/conv_round
 always@(posedge i_CLK)
 begin
 	r_TEMP_REG_0 <= i_FIXED_WORD;
 	r_TEMP_REG_COMPLEMENT <= ~i_FIXED_WORD + 1'b1;
-	r_EXPONENT_STAGE_0 <= lp_BIAS + p_WORD_WIDTH;
+	r_EXPONENT_STAGE_0 <= lp_BIAS + lp_WORD_WIDTH;
 	r_EXPONENT_STAGE_1 <= r_EXPONENT_STAGE_0 - {3'b000,w_SHIFT_AMOUNT};
 	r_SIGN_STAGE_0 <= i_FIXED_WORD[31];
 	r_SIGN_STAGE_1 <= r_SIGN_STAGE_0;
@@ -43,7 +44,7 @@ count_leading_zeros clz (
 	.o_ZERO_COUNT(w_SHIFT_AMOUNT)
 );
 
-sll #(.p_DATA_WIDTH(32)) shft (
+sll #(.p_DATA_WIDTH(p_DATA_WIDTH)) shft (
 	.i_INPUT(w_TEMP_WIRE_0),
 	.i_SHIFT_AMOUNT(w_SHIFT_AMOUNT),
 	.o_RESULT(w_TEMP_WIRE_1)

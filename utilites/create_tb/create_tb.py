@@ -156,7 +156,7 @@ def create_cmake_harness(top, cmake_str):
     cmake_str = cmake_str.format(top=top)
     for file_ in FILES:
         basename = os.path.basename(file_)
-        cmake_str += basename
+        cmake_str += (basename + ' ')
     cmake_str += ")"
     cmake_file.write(cmake_str)
     cmake_file.close()
