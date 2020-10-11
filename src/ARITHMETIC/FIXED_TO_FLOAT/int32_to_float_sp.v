@@ -1,4 +1,4 @@
-module fixed_to_float_sp (
+module int32_to_float_sp (
 	input wire i_CLK,
 	input wire signed [31:0] i_FIXED_WORD,
 	output wire o_INVALID,
@@ -16,14 +16,14 @@ reg [7:0] r_EXPONENT_STAGE_0;
 reg [7:0] r_EXPONENT_STAGE_1;
 reg r_SIGN_STAGE_0;
 reg r_SIGN_STAGE_1;
-localparam lp_BIAS = 127;
-localparam lp_WORD_WIDTH = 31;
+//Single precision bias + width of incoming integer minus sign bit.
+localparam lp_BIAS = 127 + 31;
 
 always@(posedge i_CLK)
 begin
 	r_TEMP_REG_0 <= i_FIXED_WORD;
 	r_TEMP_REG_COMPLEMENT <= ~i_FIXED_WORD + 1'b1;
-	r_EXPONENT_STAGE_0 <= lp_BIAS + lp_WORD_WIDTH;
+	r_EXPONENT_STAGE_0 <= lp_BIAS;
 	r_EXPONENT_STAGE_1 <= r_EXPONENT_STAGE_0 - {3'b000,w_SHIFT_AMOUNT};
 	r_SIGN_STAGE_0 <= i_FIXED_WORD[31];
 	r_SIGN_STAGE_1 <= r_SIGN_STAGE_0;
