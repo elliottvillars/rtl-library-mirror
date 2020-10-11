@@ -29,6 +29,9 @@ initial begin
 	#5 r_FIXED_WORD = 32;
 	#100;
 	$monitor("o_FLOAT_WORD output: %32b, i_FIXED_WORD input: %32b",w_FLOAT_WORD,r_FIXED_WORD);
+	#5 r_FIXED_WORD = 2;
+	#100;
+	$monitor("o_FLOAT_WORD output: %32b, i_FIXED_WORD input: %32b",w_FLOAT_WORD,r_FIXED_WORD);
 	#5 $finish();
 end
 endmodule
