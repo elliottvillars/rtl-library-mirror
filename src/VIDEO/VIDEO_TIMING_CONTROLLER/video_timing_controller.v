@@ -49,6 +49,7 @@ reg [11:0] r_VERT_COUNT;
 //
 //TODO: Set compiler directives to create parameter sets.
 //
+//TODO: Fix pink bar at edge of screen
 
 always@(posedge i_CLK) begin: X_COORDINATES
 	if(r_HORIZ_COUNT <= p_HA_END)

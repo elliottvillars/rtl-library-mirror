@@ -12,22 +12,17 @@ localparam s_START_TX 	= 2'd1;
 localparam s_TRANSMIT 	= 2'd2;
 localparam s_STOP_TX 	= 2'd3;
 
-localparam lp_CLOCKS_PER_BAUD = 100_000_000 / 115200;
-
 reg [1:0] r_CURRENT_STATE;
 reg [1:0] r_NEXT_STATE;
 reg [2:0] r_BIT_COUNT;
-reg [31:0] r_BAUD_COUNTER;
 reg [7:0] r_DATA_REG;
 
-//TODO: Add baud rate counter
 initial 
 begin
 	r_CURRENT_STATE = 2'd0;
 	r_NEXT_STATE 	= 2'd0;
 	r_BIT_COUNT 	= 3'd0;
 	r_DATA_REG 	= 8'd0;
-	r_BAUD_COUNTER  = 32'd0;
 end
 always@(*)
 begin

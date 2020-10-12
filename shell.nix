@@ -19,6 +19,8 @@ in pkgs.mkShell {
     verilator
     verilog
     #    ghdl
+    ddd
+    gdb
     cmake
     ninja
     python38Packages.pylint
