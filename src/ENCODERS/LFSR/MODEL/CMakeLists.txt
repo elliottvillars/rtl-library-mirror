@@ -1,0 +1,5 @@
+cmake_minimum_required(VERSION 3.17)
+project(lfsr)
+find_package(verilator HINTS $ENV{VERILATOR_ROOT})
+add_executable(Vlfsr sim_main.cpp)
+verilate(Vlfsr SOURCES lfsr.v)
