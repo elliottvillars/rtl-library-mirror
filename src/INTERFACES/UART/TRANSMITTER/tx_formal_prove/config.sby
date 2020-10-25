@@ -3,7 +3,7 @@ smtbmc yices
 
 [options]
 mode prove
-depth 100
+depth 64
 
 [files]
 ./uart_transmitter.v

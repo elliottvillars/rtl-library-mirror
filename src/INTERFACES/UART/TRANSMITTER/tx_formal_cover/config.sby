@@ -1,15 +1,9 @@
-[tasks]
-prove prove
-cover cover
-
 [engines]
 smtbmc yices
 
 [options]
-prove:mode prove
-prove:depth 64
-cover:mode cover
-cover:depth 64
+mode cover
+depth 64
 
 [files]
 ./uart_transmitter.v

@@ -31,26 +31,27 @@ Input filename: design.il
 
 === uart_transmitter ===
 
-   Number of wires:                352
-   Number of wire bits:            656
+   Number of wires:                298
+   Number of wire bits:            557
    Number of public wires:          15
    Number of public wire bits:      74
    Number of memories:               0
    Number of memory bits:            0
    Number of processes:              0
-   Number of cells:                381
-     $add                            5
-     $anyseq                        82
-     $assert                        27
+   Number of cells:                322
+     $add                            4
+     $anyseq                        65
+     $assert                        22
      $assume                         6
-     $dff                           62
-     $eq                            20
+     $cover                          1
+     $dff                           55
+     $eq                            17
      $le                             1
-     $logic_and                     10
-     $logic_not                     10
+     $logic_and                     11
+     $logic_not                      9
      $logic_or                       2
-     $mux                          141
-     $ne                             3
+     $mux                          115
+     $ne                             2
      $not                            2
      $pmux                           4
      $reduce_bool                    1
@@ -60,7 +61,7 @@ Input filename: design.il
 3. Executing SMT2 backend.
 Creating SMT-LIBv2 representation of module uart_transmitter.
 
-End of script. Logfile hash: 568f540649
-CPU: user 0.01s system 0.00s, MEM: 45.32 MB total, 9.33 MB resident
+End of script. Logfile hash: d63fd525da
+CPU: user 0.01s system 0.00s, MEM: 45.16 MB total, 8.98 MB resident
 Yosys 0.9+932 (git sha1 65f197e2, clang 6.0.0-1ubuntu2 -fPIC -Os)
-Time spent: 56% 2x write_smt2 (0 sec), 42% 2x read_ilang (0 sec), ...
+Time spent: 53% 2x write_smt2 (0 sec), 45% 2x read_ilang (0 sec), ...
