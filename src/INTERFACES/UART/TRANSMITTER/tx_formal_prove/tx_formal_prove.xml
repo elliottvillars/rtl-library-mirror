@@ -1,12 +1,19 @@
-SBY 17:55:06 [tx_formal_prove] Removing direcory 'tx_formal_prove'.
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites disabled="0" errors="0" failures="0" tests="1" time="4">
+<testsuite disabled="0" errors="0" failures="0" name="tx_formal" skipped="0" tests="1" time="4">
+<properties>
+<property name="os" value="posix"/>
+</properties>
+<testcase classname="tx_formal" name="prove" status="PASS" time="4">
+<system-out>SBY 17:55:06 [tx_formal_prove] Removing direcory 'tx_formal_prove'.
 SBY 17:55:06 [tx_formal_prove] Copy './uart_transmitter.v' to 'tx_formal_prove/src/uart_transmitter.v'.
 SBY 17:55:06 [tx_formal_prove] engine_0: smtbmc yices
-SBY 17:55:06 [tx_formal_prove] base: starting process "cd tx_formal_prove/src; yosys -ql ../model/design.log ../model/design.ys"
+SBY 17:55:06 [tx_formal_prove] base: starting process &quot;cd tx_formal_prove/src; yosys -ql ../model/design.log ../model/design.ys&quot;
 SBY 17:55:06 [tx_formal_prove] base: finished (returncode=0)
-SBY 17:55:06 [tx_formal_prove] smt2: starting process "cd tx_formal_prove/model; yosys -ql design_smt2.log design_smt2.ys"
+SBY 17:55:06 [tx_formal_prove] smt2: starting process &quot;cd tx_formal_prove/model; yosys -ql design_smt2.log design_smt2.ys&quot;
 SBY 17:55:06 [tx_formal_prove] smt2: finished (returncode=0)
-SBY 17:55:06 [tx_formal_prove] engine_0.basecase: starting process "cd tx_formal_prove; yosys-smtbmc -s yices --presat --unroll --noprogress -t 64 --append 0 --dump-vcd engine_0/trace.vcd --dump-vlogtb engine_0/trace_tb.v --dump-smtc engine_0/trace.smtc model/design_smt2.smt2"
-SBY 17:55:06 [tx_formal_prove] engine_0.induction: starting process "cd tx_formal_prove; yosys-smtbmc -s yices --presat --unroll -i --noprogress -t 64 --append 0 --dump-vcd engine_0/trace_induct.vcd --dump-vlogtb engine_0/trace_induct_tb.v --dump-smtc engine_0/trace_induct.smtc model/design_smt2.smt2"
+SBY 17:55:06 [tx_formal_prove] engine_0.basecase: starting process &quot;cd tx_formal_prove; yosys-smtbmc -s yices --presat --unroll --noprogress -t 64 --append 0 --dump-vcd engine_0/trace.vcd --dump-vlogtb engine_0/trace_tb.v --dump-smtc engine_0/trace.smtc model/design_smt2.smt2&quot;
+SBY 17:55:06 [tx_formal_prove] engine_0.induction: starting process &quot;cd tx_formal_prove; yosys-smtbmc -s yices --presat --unroll -i --noprogress -t 64 --append 0 --dump-vcd engine_0/trace_induct.vcd --dump-vlogtb engine_0/trace_induct_tb.v --dump-smtc engine_0/trace_induct.smtc model/design_smt2.smt2&quot;
 SBY 17:55:06 [tx_formal_prove] engine_0.basecase: ##   0:00:00  Solver: yices
 SBY 17:55:06 [tx_formal_prove] engine_0.induction: ##   0:00:00  Solver: yices
 SBY 17:55:06 [tx_formal_prove] engine_0.basecase: ##   0:00:00  Checking assumptions in step 0..
@@ -163,3 +170,4 @@ SBY 17:55:10 [tx_formal_prove] summary: engine_0 (smtbmc yices) returned pass fo
 SBY 17:55:10 [tx_formal_prove] summary: engine_0 (smtbmc yices) returned pass for basecase
 SBY 17:55:10 [tx_formal_prove] summary: successful proof by k-induction.
 SBY 17:55:10 [tx_formal_prove] DONE (PASS, rc=0)
+</system-out></testcase></testsuite></testsuites>

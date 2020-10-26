@@ -31,37 +31,36 @@ Input filename: design.il
 
 === uart_transmitter ===
 
-   Number of wires:                298
-   Number of wire bits:            557
-   Number of public wires:          15
-   Number of public wire bits:      74
+   Number of wires:                274
+   Number of wire bits:            376
+   Number of public wires:          13
+   Number of public wire bits:      41
    Number of memories:               0
    Number of memory bits:            0
    Number of processes:              0
-   Number of cells:                322
-     $add                            4
+   Number of cells:                293
+     $add                            3
      $anyseq                        65
-     $assert                        22
-     $assume                         6
+     $assert                        19
+     $assume                         4
      $cover                          1
-     $dff                           55
-     $eq                            17
+     $dff                           46
+     $eq                            15
      $le                             1
-     $logic_and                     11
-     $logic_not                      9
-     $logic_or                       2
-     $mux                          115
+     $logic_and                      7
+     $logic_not                      8
+     $mux                          110
      $ne                             2
-     $not                            2
+     $not                            1
      $pmux                           4
      $reduce_bool                    1
-     $reduce_or                      3
+     $reduce_or                      4
      $shiftx                         2
 
 3. Executing SMT2 backend.
 Creating SMT-LIBv2 representation of module uart_transmitter.
 
-End of script. Logfile hash: d63fd525da
-CPU: user 0.01s system 0.00s, MEM: 45.16 MB total, 8.98 MB resident
+End of script. Logfile hash: 2c4d9bd4ac
+CPU: user 0.01s system 0.00s, MEM: 45.03 MB total, 8.96 MB resident
 Yosys 0.9+932 (git sha1 65f197e2, clang 6.0.0-1ubuntu2 -fPIC -Os)
-Time spent: 53% 2x write_smt2 (0 sec), 45% 2x read_ilang (0 sec), ...
+Time spent: 52% 2x write_smt2 (0 sec), 45% 2x read_ilang (0 sec), ...

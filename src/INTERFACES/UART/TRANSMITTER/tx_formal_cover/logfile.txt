@@ -1,81 +1,45 @@
-SBY 20:43:49 [tx_formal_cover] Removing direcory 'tx_formal_cover'.
-SBY 20:43:49 [tx_formal_cover] Copy './uart_transmitter.v' to 'tx_formal_cover/src/uart_transmitter.v'.
-SBY 20:43:49 [tx_formal_cover] engine_0: smtbmc yices
-SBY 20:43:49 [tx_formal_cover] base: starting process "cd tx_formal_cover/src; yosys -ql ../model/design.log ../model/design.ys"
-SBY 20:43:49 [tx_formal_cover] base: finished (returncode=0)
-SBY 20:43:49 [tx_formal_cover] smt2: starting process "cd tx_formal_cover/model; yosys -ql design_smt2.log design_smt2.ys"
-SBY 20:43:49 [tx_formal_cover] smt2: finished (returncode=0)
-SBY 20:43:49 [tx_formal_cover] engine_0: starting process "cd tx_formal_cover; yosys-smtbmc -s yices --presat --unroll -c --noprogress -t 64 --append 0 --dump-vcd engine_0/trace%.vcd --dump-vlogtb engine_0/trace%_tb.v --dump-smtc engine_0/trace%.smtc model/design_smt2.smt2"
-SBY 20:43:49 [tx_formal_cover] engine_0: ##   0:00:00  Solver: yices
-SBY 20:43:49 [tx_formal_cover] engine_0: ##   0:00:00  Checking cover reachability in step 0..
-SBY 20:43:49 [tx_formal_cover] engine_0: ##   0:00:00  Checking cover reachability in step 1..
-SBY 20:43:49 [tx_formal_cover] engine_0: ##   0:00:00  Checking cover reachability in step 2..
-SBY 20:43:49 [tx_formal_cover] engine_0: ##   0:00:00  Checking cover reachability in step 3..
-SBY 20:43:49 [tx_formal_cover] engine_0: ##   0:00:00  Checking cover reachability in step 4..
-SBY 20:43:49 [tx_formal_cover] engine_0: ##   0:00:00  Checking cover reachability in step 5..
-SBY 20:43:49 [tx_formal_cover] engine_0: ##   0:00:00  Checking cover reachability in step 6..
-SBY 20:43:49 [tx_formal_cover] engine_0: ##   0:00:00  Checking cover reachability in step 7..
-SBY 20:43:49 [tx_formal_cover] engine_0: ##   0:00:00  Checking cover reachability in step 8..
-SBY 20:43:49 [tx_formal_cover] engine_0: ##   0:00:00  Checking cover reachability in step 9..
-SBY 20:43:49 [tx_formal_cover] engine_0: ##   0:00:00  Checking cover reachability in step 10..
-SBY 20:43:50 [tx_formal_cover] engine_0: ##   0:00:00  Checking cover reachability in step 11..
-SBY 20:43:50 [tx_formal_cover] engine_0: ##   0:00:00  Checking cover reachability in step 12..
-SBY 20:43:50 [tx_formal_cover] engine_0: ##   0:00:00  Checking cover reachability in step 13..
-SBY 20:43:50 [tx_formal_cover] engine_0: ##   0:00:00  Checking cover reachability in step 14..
-SBY 20:43:50 [tx_formal_cover] engine_0: ##   0:00:00  Checking cover reachability in step 15..
-SBY 20:43:50 [tx_formal_cover] engine_0: ##   0:00:00  Checking cover reachability in step 16..
-SBY 20:43:50 [tx_formal_cover] engine_0: ##   0:00:00  Checking cover reachability in step 17..
-SBY 20:43:50 [tx_formal_cover] engine_0: ##   0:00:00  Checking cover reachability in step 18..
-SBY 20:43:50 [tx_formal_cover] engine_0: ##   0:00:00  Checking cover reachability in step 19..
-SBY 20:43:50 [tx_formal_cover] engine_0: ##   0:00:00  Checking cover reachability in step 20..
-SBY 20:43:50 [tx_formal_cover] engine_0: ##   0:00:00  Checking cover reachability in step 21..
-SBY 20:43:50 [tx_formal_cover] engine_0: ##   0:00:00  Checking cover reachability in step 22..
-SBY 20:43:50 [tx_formal_cover] engine_0: ##   0:00:00  Checking cover reachability in step 23..
-SBY 20:43:50 [tx_formal_cover] engine_0: ##   0:00:00  Checking cover reachability in step 24..
-SBY 20:43:50 [tx_formal_cover] engine_0: ##   0:00:00  Checking cover reachability in step 25..
-SBY 20:43:50 [tx_formal_cover] engine_0: ##   0:00:01  Checking cover reachability in step 26..
-SBY 20:43:50 [tx_formal_cover] engine_0: ##   0:00:01  Checking cover reachability in step 27..
-SBY 20:43:50 [tx_formal_cover] engine_0: ##   0:00:01  Checking cover reachability in step 28..
-SBY 20:43:50 [tx_formal_cover] engine_0: ##   0:00:01  Checking cover reachability in step 29..
-SBY 20:43:50 [tx_formal_cover] engine_0: ##   0:00:01  Checking cover reachability in step 30..
-SBY 20:43:50 [tx_formal_cover] engine_0: ##   0:00:01  Checking cover reachability in step 31..
-SBY 20:43:51 [tx_formal_cover] engine_0: ##   0:00:01  Checking cover reachability in step 32..
-SBY 20:43:51 [tx_formal_cover] engine_0: ##   0:00:01  Checking cover reachability in step 33..
-SBY 20:43:51 [tx_formal_cover] engine_0: ##   0:00:01  Checking cover reachability in step 34..
-SBY 20:43:51 [tx_formal_cover] engine_0: ##   0:00:01  Checking cover reachability in step 35..
-SBY 20:43:51 [tx_formal_cover] engine_0: ##   0:00:01  Checking cover reachability in step 36..
-SBY 20:43:51 [tx_formal_cover] engine_0: ##   0:00:01  Checking cover reachability in step 37..
-SBY 20:43:51 [tx_formal_cover] engine_0: ##   0:00:01  Checking cover reachability in step 38..
-SBY 20:43:51 [tx_formal_cover] engine_0: ##   0:00:01  Checking cover reachability in step 39..
-SBY 20:43:51 [tx_formal_cover] engine_0: ##   0:00:01  Checking cover reachability in step 40..
-SBY 20:43:51 [tx_formal_cover] engine_0: ##   0:00:01  Checking cover reachability in step 41..
-SBY 20:43:51 [tx_formal_cover] engine_0: ##   0:00:01  Checking cover reachability in step 42..
-SBY 20:43:51 [tx_formal_cover] engine_0: ##   0:00:02  Checking cover reachability in step 43..
-SBY 20:43:51 [tx_formal_cover] engine_0: ##   0:00:02  Checking cover reachability in step 44..
-SBY 20:43:51 [tx_formal_cover] engine_0: ##   0:00:02  Checking cover reachability in step 45..
-SBY 20:43:51 [tx_formal_cover] engine_0: ##   0:00:02  Checking cover reachability in step 46..
-SBY 20:43:52 [tx_formal_cover] engine_0: ##   0:00:02  Checking cover reachability in step 47..
-SBY 20:43:52 [tx_formal_cover] engine_0: ##   0:00:02  Checking cover reachability in step 48..
-SBY 20:43:52 [tx_formal_cover] engine_0: ##   0:00:02  Checking cover reachability in step 49..
-SBY 20:43:52 [tx_formal_cover] engine_0: ##   0:00:02  Checking cover reachability in step 50..
-SBY 20:43:52 [tx_formal_cover] engine_0: ##   0:00:02  Checking cover reachability in step 51..
-SBY 20:43:52 [tx_formal_cover] engine_0: ##   0:00:02  Checking cover reachability in step 52..
-SBY 20:43:52 [tx_formal_cover] engine_0: ##   0:00:02  Checking cover reachability in step 53..
-SBY 20:43:52 [tx_formal_cover] engine_0: ##   0:00:02  Checking cover reachability in step 54..
-SBY 20:43:52 [tx_formal_cover] engine_0: ##   0:00:02  Checking cover reachability in step 55..
-SBY 20:43:52 [tx_formal_cover] engine_0: ##   0:00:03  Checking cover reachability in step 56..
-SBY 20:43:52 [tx_formal_cover] engine_0: ##   0:00:03  Checking cover reachability in step 57..
-SBY 20:43:52 [tx_formal_cover] engine_0: ##   0:00:03  Checking cover reachability in step 58..
-SBY 20:43:53 [tx_formal_cover] engine_0: ##   0:00:03  Checking cover reachability in step 59..
-SBY 20:43:53 [tx_formal_cover] engine_0: ##   0:00:03  Checking cover reachability in step 60..
-SBY 20:43:53 [tx_formal_cover] engine_0: ##   0:00:03  Checking cover reachability in step 61..
-SBY 20:43:53 [tx_formal_cover] engine_0: ##   0:00:03  Checking cover reachability in step 62..
-SBY 20:43:53 [tx_formal_cover] engine_0: ##   0:00:03  Checking cover reachability in step 63..
-SBY 20:43:53 [tx_formal_cover] engine_0: ##   0:00:03  Unreached cover statement at ./uart_transmitter.v:181.
-SBY 20:43:53 [tx_formal_cover] engine_0: ##   0:00:03  Status: failed
-SBY 20:43:53 [tx_formal_cover] engine_0: finished (returncode=1)
-SBY 20:43:53 [tx_formal_cover] engine_0: Status returned by engine: FAIL
-SBY 20:43:53 [tx_formal_cover] summary: Elapsed clock time [H:MM:SS (secs)]: 0:00:04 (4)
-SBY 20:43:53 [tx_formal_cover] summary: Elapsed process time [H:MM:SS (secs)]: 0:00:04 (4)
-SBY 20:43:53 [tx_formal_cover] summary: engine_0 (smtbmc yices) returned FAIL
-SBY 20:43:53 [tx_formal_cover] DONE (FAIL, rc=2)
+SBY 17:40:01 [tx_formal_cover] Removing direcory 'tx_formal_cover'.
+SBY 17:40:01 [tx_formal_cover] Copy './uart_transmitter.v' to 'tx_formal_cover/src/uart_transmitter.v'.
+SBY 17:40:01 [tx_formal_cover] engine_0: smtbmc yices
+SBY 17:40:01 [tx_formal_cover] base: starting process "cd tx_formal_cover/src; yosys -ql ../model/design.log ../model/design.ys"
+SBY 17:40:01 [tx_formal_cover] base: finished (returncode=0)
+SBY 17:40:01 [tx_formal_cover] smt2: starting process "cd tx_formal_cover/model; yosys -ql design_smt2.log design_smt2.ys"
+SBY 17:40:01 [tx_formal_cover] smt2: finished (returncode=0)
+SBY 17:40:01 [tx_formal_cover] engine_0: starting process "cd tx_formal_cover; yosys-smtbmc -s yices --presat --unroll -c --noprogress -t 64 --append 0 --dump-vcd engine_0/trace%.vcd --dump-vlogtb engine_0/trace%_tb.v --dump-smtc engine_0/trace%.smtc model/design_smt2.smt2"
+SBY 17:40:01 [tx_formal_cover] engine_0: ##   0:00:00  Solver: yices
+SBY 17:40:01 [tx_formal_cover] engine_0: ##   0:00:00  Checking cover reachability in step 0..
+SBY 17:40:01 [tx_formal_cover] engine_0: ##   0:00:00  Checking cover reachability in step 1..
+SBY 17:40:01 [tx_formal_cover] engine_0: ##   0:00:00  Checking cover reachability in step 2..
+SBY 17:40:02 [tx_formal_cover] engine_0: ##   0:00:00  Checking cover reachability in step 3..
+SBY 17:40:02 [tx_formal_cover] engine_0: ##   0:00:00  Checking cover reachability in step 4..
+SBY 17:40:02 [tx_formal_cover] engine_0: ##   0:00:00  Checking cover reachability in step 5..
+SBY 17:40:02 [tx_formal_cover] engine_0: ##   0:00:00  Checking cover reachability in step 6..
+SBY 17:40:02 [tx_formal_cover] engine_0: ##   0:00:00  Checking cover reachability in step 7..
+SBY 17:40:02 [tx_formal_cover] engine_0: ##   0:00:00  Checking cover reachability in step 8..
+SBY 17:40:02 [tx_formal_cover] engine_0: ##   0:00:00  Checking cover reachability in step 9..
+SBY 17:40:02 [tx_formal_cover] engine_0: ##   0:00:00  Checking cover reachability in step 10..
+SBY 17:40:02 [tx_formal_cover] engine_0: ##   0:00:00  Checking cover reachability in step 11..
+SBY 17:40:02 [tx_formal_cover] engine_0: ##   0:00:00  Checking cover reachability in step 12..
+SBY 17:40:02 [tx_formal_cover] engine_0: ##   0:00:00  Checking cover reachability in step 13..
+SBY 17:40:02 [tx_formal_cover] engine_0: ##   0:00:00  Checking cover reachability in step 14..
+SBY 17:40:02 [tx_formal_cover] engine_0: ##   0:00:00  Checking cover reachability in step 15..
+SBY 17:40:02 [tx_formal_cover] engine_0: ##   0:00:00  Checking cover reachability in step 16..
+SBY 17:40:02 [tx_formal_cover] engine_0: ##   0:00:00  Checking cover reachability in step 17..
+SBY 17:40:02 [tx_formal_cover] engine_0: ##   0:00:00  Checking cover reachability in step 18..
+SBY 17:40:02 [tx_formal_cover] engine_0: ##   0:00:00  Checking cover reachability in step 19..
+SBY 17:40:02 [tx_formal_cover] engine_0: ##   0:00:00  Checking cover reachability in step 20..
+SBY 17:40:02 [tx_formal_cover] engine_0: ##   0:00:00  Checking cover reachability in step 21..
+SBY 17:40:02 [tx_formal_cover] engine_0: ##   0:00:00  Checking cover reachability in step 22..
+SBY 17:40:02 [tx_formal_cover] engine_0: ##   0:00:00  Checking cover reachability in step 23..
+SBY 17:40:02 [tx_formal_cover] engine_0: ##   0:00:00  Checking cover reachability in step 24..
+SBY 17:40:02 [tx_formal_cover] engine_0: ##   0:00:00  Reached cover statement at ./uart_transmitter.v:111 in step 24.
+SBY 17:40:02 [tx_formal_cover] engine_0: ##   0:00:00  Writing trace to VCD file: engine_0/trace0.vcd
+SBY 17:40:02 [tx_formal_cover] engine_0: ##   0:00:01  Writing trace to Verilog testbench: engine_0/trace0_tb.v
+SBY 17:40:02 [tx_formal_cover] engine_0: ##   0:00:01  Writing trace to constraints file: engine_0/trace0.smtc
+SBY 17:40:02 [tx_formal_cover] engine_0: ##   0:00:01  Status: passed
+SBY 17:40:02 [tx_formal_cover] engine_0: finished (returncode=0)
+SBY 17:40:02 [tx_formal_cover] engine_0: Status returned by engine: pass
+SBY 17:40:02 [tx_formal_cover] summary: Elapsed clock time [H:MM:SS (secs)]: 0:00:01 (1)
+SBY 17:40:02 [tx_formal_cover] summary: Elapsed process time [H:MM:SS (secs)]: 0:00:01 (1)
+SBY 17:40:02 [tx_formal_cover] summary: engine_0 (smtbmc yices) returned pass
+SBY 17:40:02 [tx_formal_cover] DONE (PASS, rc=0)
