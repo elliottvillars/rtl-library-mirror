@@ -4,13 +4,12 @@ cover cover
 
 [engines]
 smtbmc z3
-smtbmc yices
 
 [options]
 prove:mode prove
-prove:depth 100
+prove:depth 64
 cover:mode cover
-cover:depth 100
+cover:depth 64
 
 [files]
 ./uart_receiver.v

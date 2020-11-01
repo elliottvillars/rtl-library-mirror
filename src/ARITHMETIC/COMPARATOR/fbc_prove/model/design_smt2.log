@@ -1,0 +1,106 @@
+
+ /----------------------------------------------------------------------------\
+ |                                                                            |
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |                                                                            |
+ |  Copyright (C) 2012 - 2020  Claire Wolf <claire@symbioticeda.com>          |
+ |                                                                            |
+ |  Permission to use, copy, modify, and/or distribute this software for any  |
+ |  purpose with or without fee is hereby granted, provided that the above    |
+ |  copyright notice and this permission notice appear in all copies.         |
+ |                                                                            |
+ |  THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES  |
+ |  WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF          |
+ |  MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR   |
+ |  ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES    |
+ |  WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN     |
+ |  ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF   |
+ |  OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.            |
+ |                                                                            |
+ \----------------------------------------------------------------------------/
+
+ Yosys 0.9+3627 (git sha1 06347b119b, g++ 9.3.0 -fPIC -Os)
+
+
+-- Executing script file `design_smt2.ys' --
+
+1. Executing RTLIL frontend.
+Input filename: design.il
+
+2. Executing DFFUNMAP pass (unmap clock enable and synchronous reset from FFs).
+
+3. Printing statistics.
+
+=== look_ahead_logic_cell ===
+
+   Number of wires:                 50
+   Number of wire bits:             59
+   Number of public wires:           7
+   Number of public wire bits:      16
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 58
+     $and                            5
+     $anyseq                         8
+     $assert                         8
+     $eq                             3
+     $logic_and                      5
+     $mux                           16
+     $ne                             3
+     $not                            6
+     $xor                            4
+
+=== four_bit_comparator ===
+
+   Number of wires:                 54
+   Number of wire bits:             69
+   Number of public wires:           8
+   Number of public wire bits:      23
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 61
+     $and                           22
+     $anyseq                         5
+     $assert                         3
+     $gt                             1
+     $lt                             1
+     $mux                           10
+     $not                           11
+     $or                             7
+     look_ahead_logic_cell           1
+
+=== design hierarchy ===
+
+   four_bit_comparator               1
+     look_ahead_logic_cell           1
+
+   Number of wires:                104
+   Number of wire bits:            128
+   Number of public wires:          15
+   Number of public wire bits:      39
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                118
+     $and                           27
+     $anyseq                        13
+     $assert                        11
+     $eq                             3
+     $gt                             1
+     $logic_and                      5
+     $lt                             1
+     $mux                           26
+     $ne                             3
+     $not                           17
+     $or                             7
+     $xor                            4
+
+4. Executing SMT2 backend.
+Creating SMT-LIBv2 representation of module look_ahead_logic_cell.
+Creating SMT-LIBv2 representation of module four_bit_comparator.
+
+End of script. Logfile hash: 299946146a, CPU: user 0.01s system 0.00s, MEM: 13.18 MB peak
+Yosys 0.9+3627 (git sha1 06347b119b, g++ 9.3.0 -fPIC -Os)
+Time spent: 48% 2x read_ilang (0 sec), 48% 2x write_smt2 (0 sec), ...

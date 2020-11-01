@@ -130,7 +130,7 @@ end
 		begin
 
 			//cover write
-			cover(o_FIFO_FULL == 1);
+			cover(o_FIFO_FULL == 1 && r_MEMORY[0] == 1);
 
 			assert((o_FIFO_FULL & o_FIFO_EMPTY) != 1);
 			if($past(r_QUANTITY) == 0)

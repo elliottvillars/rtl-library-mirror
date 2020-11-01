@@ -1,0 +1,16 @@
+[options]
+mode prove
+depth 16
+
+
+[engines]
+smtbmc boolector
+
+[files]
+./look_ahead_logic_cell.v
+./four_bit_comparator.v
+
+[script]
+read -formal ./look_ahead_logic_cell.v
+read -formal ./four_bit_comparator.v
+prep -top four_bit_comparator

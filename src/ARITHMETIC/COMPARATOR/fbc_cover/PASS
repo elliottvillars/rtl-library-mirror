@@ -1,0 +1,6 @@
+Elapsed clock time [H:MM:SS (secs)]: 0:00:00 (0)
+Elapsed process time [H:MM:SS (secs)]: 0:00:00 (0)
+engine_0 (smtbmc boolector) returned pass
+trace: fbc_cover/engine_0/trace0.vcd
+trace: fbc_cover/engine_0/trace1.vcd
+trace: fbc_cover/engine_0/trace2.vcd

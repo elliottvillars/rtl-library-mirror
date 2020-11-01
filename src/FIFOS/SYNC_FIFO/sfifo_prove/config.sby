@@ -1,6 +1,5 @@
 [engines]
 smtbmc z3
-smtbmc yices
 
 [options]
 mode prove

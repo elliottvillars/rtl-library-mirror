@@ -4,7 +4,6 @@ cover cover
 
 [engines]
 smtbmc z3
-smtbmc yices
 
 [options]
 prove: mode prove

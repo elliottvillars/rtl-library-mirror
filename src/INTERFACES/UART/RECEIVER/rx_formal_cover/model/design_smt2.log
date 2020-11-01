@@ -19,46 +19,50 @@
  |                                                                            |
  \----------------------------------------------------------------------------/
 
- Yosys 0.9+1706 (git sha1 c9555c9ade, g++ 9.3.0 -fPIC -Os)
+ Yosys 0.9+3627 (git sha1 06347b119b, g++ 9.3.0 -fPIC -Os)
 
 
 -- Executing script file `design_smt2.ys' --
 
-1. Executing ILANG frontend.
+1. Executing RTLIL frontend.
 Input filename: design.il
 
-2. Printing statistics.
+2. Executing DFFUNMAP pass (unmap clock enable and synchronous reset from FFs).
+
+3. Printing statistics.
 
 === uart_receiver ===
 
-   Number of wires:                301
-   Number of wire bits:            383
+   Number of wires:                358
+   Number of wire bits:            447
    Number of public wires:          12
    Number of public wire bits:      31
    Number of memories:               0
    Number of memory bits:            0
    Number of processes:              0
-   Number of cells:                329
+   Number of cells:                383
      $add                            1
      $and                            2
-     $anyseq                        70
-     $assert                        20
-     $assume                         4
+     $anyseq                        99
+     $assert                        23
+     $assume                         6
      $cover                          1
-     $dff                           46
-     $eq                            11
+     $dff                           50
+     $eq                            12
      $ff                             1
      $logic_and                      7
      $logic_not                      6
-     $mux                          135
+     $mux                          141
      $ne                             4
-     $not                            6
+     $not                            9
      $pmux                          13
-     $reduce_or                      2
+     $reduce_and                     2
+     $reduce_bool                    2
+     $reduce_or                      4
 
-3. Executing SMT2 backend.
+4. Executing SMT2 backend.
 Creating SMT-LIBv2 representation of module uart_receiver.
 
-End of script. Logfile hash: 59f4f22743, CPU: user 0.02s system 0.00s, MEM: 13.27 MB peak
-Yosys 0.9+1706 (git sha1 c9555c9ade, g++ 9.3.0 -fPIC -Os)
-Time spent: 56% 2x read_ilang (0 sec), 41% 2x write_smt2 (0 sec), ...
+End of script. Logfile hash: 64a3ec5bce, CPU: user 0.02s system 0.00s, MEM: 14.29 MB peak
+Yosys 0.9+3627 (git sha1 06347b119b, g++ 9.3.0 -fPIC -Os)
+Time spent: 48% 2x write_smt2 (0 sec), 45% 2x read_ilang (0 sec), ...
