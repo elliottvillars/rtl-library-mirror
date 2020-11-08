@@ -23,22 +23,19 @@ begin
 	r_MANT_B <= {1'b1,i_B[22:0]};
 	//TODO: USE LARGER/SMALLER MANT NOT A/B
 
-	if(r_EXP_A > r_EXP_B)
-		r_EXP_DIFF <= r_EXP_A - r_EXP_B;
-	else if(r_EXP_B > r_EXP_A)
-		r_EXP_DIFF <= r_EXP_B - r_EXP_B;
-	else
-		r_EXP_DIFF <= 0;
-
-	if(r_MANT_A > r_MANT_B)
+	//EXPONENT DIFFERENCE
+	r_EXP_DIFF <= r_EXP_A - r_EXP_B
+	//DENORMALIZE
+	if(r_EXP_A > r_EXP_DIFF)
 		r_MANT_B <= r_MANT_B >> r_EXP_DIFF;
 	else
-		r_MANT_A <= r_MANT_A >> r_EXP_DIFF;
+		r_MANT_B <= r_MANT_B >> r_EXP_A;
+
 
 	r_ARITH_RESULT <= (r_SUB) ? r_MANT_A + r_MANT_B : r_MANT_A - r_MANT_B;
 	if(r_ARITH_RESULT[24])
 		r_ARITH_RESULT <= r_ARITH_RESULT >> 1; //INC EXP AS WELL
-	
+
 	//ROUND
 
 
