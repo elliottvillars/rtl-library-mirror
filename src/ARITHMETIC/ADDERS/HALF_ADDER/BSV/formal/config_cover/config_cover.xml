@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites disabled="0" errors="1" failures="0" tests="1" time="0">
+<testsuite disabled="0" errors="1" failures="0" name="config" skipped="0" tests="1" time="0">
+<properties>
+<property name="os" value="posix"/>
+</properties>
+<testcase classname="config" name="cover" status="ERROR" time="0">
+<error message="ERROR" type="ERROR"/>
+<system-out>SBY 21:24:57 [config_prove] Removing directory 'config_prove'.
+SBY 21:24:57 [config_cover] Removing directory 'config_cover'.
+SBY 21:24:57 [config_cover] Copy 'halfadder_formal.v' to 'config_cover/src/halfadder_formal.v'.
+SBY 21:24:57 [config_cover] engine_0: smtbmc yices
+SBY 21:24:57 [config_cover] base: starting process &quot;cd config_cover/src; /nix/store/icmrxqlz2fkwam2f2z7wq973zk8sljx7-yosys-2020.10.20/bin/yosys -ql ../model/design.log ../model/design.ys&quot;
+SBY 21:24:57 [config_cover] base: halfadder_formal.v:65: ERROR: syntax error, unexpected TOK_MODULE
+SBY 21:24:57 [config_cover] base: finished (returncode=1)
+SBY 21:24:57 [config_cover] base: job failed. ERROR.
+SBY 21:24:57 [config_cover] summary: Elapsed clock time [H:MM:SS (secs)]: 0:00:00 (0)
+SBY 21:24:57 [config_cover] summary: Elapsed process time [H:MM:SS (secs)]: 0:00:00 (0)
+SBY 21:24:57 [config_cover] DONE (ERROR, rc=16)
+</system-out></testcase></testsuite></testsuites>

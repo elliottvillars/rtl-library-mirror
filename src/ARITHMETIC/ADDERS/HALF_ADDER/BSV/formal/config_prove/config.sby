@@ -1,0 +1,10 @@
+[engines]
+smtbmc yices
+[options]
+mode prove
+depth 64
+[files]
+halfadder_formal.v
+[script]
+read -formal *.v
+prep -top halfadder_formal

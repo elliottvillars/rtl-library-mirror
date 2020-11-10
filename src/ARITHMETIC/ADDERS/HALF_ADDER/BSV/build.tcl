@@ -15,7 +15,7 @@ if {$argc < 1} {
 				set simflag 1
 			}
 			"gen" {
-				puts "Generating file"
+				puts "Generating files"
 			}
 			default {
 				puts "ERROR: arguement unrecognized - $arg"
@@ -53,12 +53,18 @@ set fp [open "./formal/$top\_formal.v" w+]
 set data [split $file_data "\n"]
 
 foreach line $data {
+	if {[string match "module $top*" $line]} {
+		puts $fp "module $top\_formal(CLK,"
+		continue
+	} 
 	if {[string match endmodule* $line]} {
 		puts $fp "\n //Formal verification for use with Symbiyosys"
 		puts $fp " `ifdef FORMAL"
 		puts $fp " `endif"
+		puts $fp $line
+	} else {
+		puts $fp $line
 	}
-	puts $fp $line
 }
 close $fp
 
@@ -73,6 +79,11 @@ puts $fp "prove: mode prove"
 puts $fp "prove: depth 64"
 puts $fp "cover: mode cover"
 puts $fp "cover: depth 64"
+puts $fp "\[files\]"
+puts $fp "$top\_formal.v"
+puts $fp "\[script\]"
+puts $fp "read -formal *.v"
+puts $fp "prep -top $top\_formal"
 close $fp
 
 

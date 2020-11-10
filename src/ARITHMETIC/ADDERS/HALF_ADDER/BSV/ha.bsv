@@ -17,17 +17,13 @@ module halfadder(HAInterface);
 	Wire#(Bit#(1)) w_S <- mkDWire(0);
 	Wire#(Bit#(1)) w_C <- mkDWire(0);
 
-	rule calc_add; 
-		w_S <= w_A ^ w_B;
-		w_C <= w_A & w_B;
-	endrule
 
 	method Bit#(1) o_S();
-		return w_S;
+		return w_A ^ w_B;
 	endmethod
 
 	method Bit#(1) o_Cout();
-		return w_C;
+		return w_A & w_B;
 	endmethod
 
 	method Action getInput(i_A,i_B);

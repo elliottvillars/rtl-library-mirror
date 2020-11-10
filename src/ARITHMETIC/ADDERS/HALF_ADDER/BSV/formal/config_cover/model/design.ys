@@ -1,0 +1,13 @@
+# running in config_cover/src/
+read -formal *.v
+prep -top halfadder_formal
+memory_nordff
+async2sync
+chformal -assume -early
+chformal -live -fair -remove
+opt_clean
+setundef -anyseq
+opt -keepdc -fast
+check
+hierarchy -simcheck
+write_ilang ../model/design.il
