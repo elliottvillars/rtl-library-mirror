@@ -35,47 +35,51 @@ module testbench(input clock, output reg genclock);
 `ifndef VERILATOR
     #1;
 `endif
-    // UUT.$and$./uart_receiver.v:0$119_Y = 1'b0;
-    // UUT.$auto$async2sync.cc:192:execute$800 = 2'b00;
-    // UUT.$eq$./uart_receiver.v:136$124_Y = 1'b0;
-    // UUT.$eq$./uart_receiver.v:162$141_Y = 1'b0;
-    // UUT.$formal$./uart_receiver.v:137$17_EN = 1'b0;
-    // UUT.$formal$./uart_receiver.v:139$18_CHECK = 1'b0;
-    // UUT.$formal$./uart_receiver.v:146$19_CHECK = 1'b0;
-    // UUT.$formal$./uart_receiver.v:146$19_EN = 1'b0;
-    // UUT.$formal$./uart_receiver.v:147$20_CHECK = 1'b0;
-    // UUT.$formal$./uart_receiver.v:148$21_CHECK = 1'b0;
-    // UUT.$formal$./uart_receiver.v:149$22_CHECK = 1'b0;
-    // UUT.$formal$./uart_receiver.v:153$23_CHECK = 1'b0;
-    // UUT.$formal$./uart_receiver.v:153$23_EN = 1'b0;
-    // UUT.$formal$./uart_receiver.v:154$24_CHECK = 1'b0;
-    // UUT.$formal$./uart_receiver.v:155$25_CHECK = 1'b0;
-    // UUT.$formal$./uart_receiver.v:156$26_CHECK = 1'b0;
-    // UUT.$formal$./uart_receiver.v:157$27_CHECK = 1'b0;
-    // UUT.$formal$./uart_receiver.v:163$28_CHECK = 1'b0;
-    // UUT.$formal$./uart_receiver.v:163$28_EN = 1'b0;
-    // UUT.$formal$./uart_receiver.v:164$29_CHECK = 1'b0;
-    // UUT.$formal$./uart_receiver.v:168$30_CHECK = 1'b0;
-    // UUT.$formal$./uart_receiver.v:168$30_EN = 1'b0;
-    // UUT.$formal$./uart_receiver.v:169$31_CHECK = 1'b0;
-    // UUT.$formal$./uart_receiver.v:171$32_CHECK = 1'b0;
-    // UUT.$formal$./uart_receiver.v:171$32_EN = 1'b0;
-    // UUT.$formal$./uart_receiver.v:172$33_CHECK = 1'b0;
-    // UUT.$formal$./uart_receiver.v:177$34_CHECK = 1'b0;
-    // UUT.$formal$./uart_receiver.v:177$34_EN = 1'b0;
-    // UUT.$formal$./uart_receiver.v:179$35_CHECK = 1'b0;
-    // UUT.$formal$./uart_receiver.v:179$35_EN = 1'b0;
-    // UUT.$formal$./uart_receiver.v:181$36_CHECK = 1'b0;
-    // UUT.$formal$./uart_receiver.v:181$36_EN = 1'b0;
-    // UUT.$formal$./uart_receiver.v:183$37_CHECK = 1'b0;
-    // UUT.$formal$./uart_receiver.v:183$37_EN = 1'b0;
-    // UUT.$formal$./uart_receiver.v:185$38_CHECK = 1'b0;
-    // UUT.$formal$./uart_receiver.v:185$38_EN = 1'b0;
-    // UUT.$past$./uart_receiver.v:142$5$0 = 2'b01;
-    // UUT.$past$./uart_receiver.v:157$9$0 = 4'b0000;
-    // UUT.$past$./uart_receiver.v:165$12$0 = 8'b00000000;
-    // UUT.$past$./uart_receiver.v:191$14$0 = 1'b0;
-    UUT.o_DATA = 8'b00000100;
+    // UUT.$and$.\/uart_receiver .\v:0$134_Y  = 1'b0;
+    // UUT.$auto$async2sync.\cc:171:execute$1012  = 2'b00;
+    // UUT.$eq$.\/uart_receiver .\v:144$142_Y  = 1'b0;
+    // UUT.$eq$.\/uart_receiver .\v:170$159_Y  = 1'b0;
+    // UUT.$formal$.\/uart_receiver .\v:137$20_CHECK  = 1'b0;
+    // UUT.$formal$.\/uart_receiver .\v:137$20_EN  = 1'b0;
+    // UUT.$formal$.\/uart_receiver .\v:138$21_CHECK  = 1'b0;
+    // UUT.$formal$.\/uart_receiver .\v:139$22_CHECK  = 1'b0;
+    // UUT.$formal$.\/uart_receiver .\v:147$24_CHECK  = 1'b1;
+    // UUT.$formal$.\/uart_receiver .\v:147$24_EN  = 1'b0;
+    // UUT.$formal$.\/uart_receiver .\v:154$25_CHECK  = 1'b0;
+    // UUT.$formal$.\/uart_receiver .\v:154$25_EN  = 1'b0;
+    // UUT.$formal$.\/uart_receiver .\v:155$26_CHECK  = 1'b0;
+    // UUT.$formal$.\/uart_receiver .\v:156$27_CHECK  = 1'b0;
+    // UUT.$formal$.\/uart_receiver .\v:157$28_CHECK  = 1'b0;
+    // UUT.$formal$.\/uart_receiver .\v:161$29_CHECK  = 1'b0;
+    // UUT.$formal$.\/uart_receiver .\v:161$29_EN  = 1'b0;
+    // UUT.$formal$.\/uart_receiver .\v:162$30_CHECK  = 1'b1;
+    // UUT.$formal$.\/uart_receiver .\v:163$31_CHECK  = 1'b0;
+    // UUT.$formal$.\/uart_receiver .\v:164$32_CHECK  = 1'b0;
+    // UUT.$formal$.\/uart_receiver .\v:165$33_CHECK  = 1'b0;
+    // UUT.$formal$.\/uart_receiver .\v:171$34_CHECK  = 1'b0;
+    // UUT.$formal$.\/uart_receiver .\v:171$34_EN  = 1'b0;
+    // UUT.$formal$.\/uart_receiver .\v:172$35_CHECK  = 1'b0;
+    // UUT.$formal$.\/uart_receiver .\v:176$36_CHECK  = 1'b0;
+    // UUT.$formal$.\/uart_receiver .\v:176$36_EN  = 1'b0;
+    // UUT.$formal$.\/uart_receiver .\v:177$37_CHECK  = 1'b0;
+    // UUT.$formal$.\/uart_receiver .\v:179$38_CHECK  = 1'b0;
+    // UUT.$formal$.\/uart_receiver .\v:179$38_EN  = 1'b0;
+    // UUT.$formal$.\/uart_receiver .\v:180$39_CHECK  = 1'b0;
+    // UUT.$formal$.\/uart_receiver .\v:185$40_CHECK  = 1'b0;
+    // UUT.$formal$.\/uart_receiver .\v:185$40_EN  = 1'b0;
+    // UUT.$formal$.\/uart_receiver .\v:187$41_CHECK  = 1'b0;
+    // UUT.$formal$.\/uart_receiver .\v:187$41_EN  = 1'b0;
+    // UUT.$formal$.\/uart_receiver .\v:189$42_CHECK  = 1'b0;
+    // UUT.$formal$.\/uart_receiver .\v:189$42_EN  = 1'b0;
+    // UUT.$formal$.\/uart_receiver .\v:191$43_CHECK  = 1'b0;
+    // UUT.$formal$.\/uart_receiver .\v:191$43_EN  = 1'b0;
+    // UUT.$formal$.\/uart_receiver .\v:193$44_CHECK  = 1'b0;
+    // UUT.$formal$.\/uart_receiver .\v:193$44_EN  = 1'b0;
+    // UUT.$past$.\/uart_receiver .\v:136$3$0  = 1'b1;
+    // UUT.$past$.\/uart_receiver .\v:150$6$0  = 2'b01;
+    // UUT.$past$.\/uart_receiver .\v:165$10$0  = 4'b0000;
+    // UUT.$past$.\/uart_receiver .\v:173$13$0  = 8'b00000000;
+    UUT.o_DATA = 8'b00000000;
     UUT.o_FRAMING_ERROR = 1'b0;
     UUT.o_RX_DONE = 1'b0;
     UUT.r_BIT_COUNT = 4'b0000;
@@ -158,24 +162,24 @@ module testbench(input clock, output reg genclock);
     if (cycle == 8) begin
       PI_i_CLK_ENABLE <= 1'b1;
       PI_i_CLK <= 1'b0;
-      PI_i_RX <= 1'b1;
+      PI_i_RX <= 1'b0;
       PI_i_RESET <= 1'b0;
     end
 
     // state 10
     if (cycle == 9) begin
-      PI_i_CLK_ENABLE <= 1'b0;
+      PI_i_CLK_ENABLE <= 1'b1;
       PI_i_CLK <= 1'b1;
-      PI_i_RX <= 1'b0;
-      PI_i_RESET <= 1'b1;
+      PI_i_RX <= 1'b1;
+      PI_i_RESET <= 1'b0;
     end
 
     // state 11
     if (cycle == 10) begin
-      PI_i_CLK_ENABLE <= 1'b0;
+      PI_i_CLK_ENABLE <= 1'b1;
       PI_i_CLK <= 1'b0;
       PI_i_RX <= 1'b1;
-      PI_i_RESET <= 1'b1;
+      PI_i_RESET <= 1'b0;
     end
 
     genclock <= cycle < 11;

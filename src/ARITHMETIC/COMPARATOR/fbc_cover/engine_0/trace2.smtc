@@ -1,0 +1,5 @@
+initial
+
+state 0
+assume (= [i_OPERAND_A] #b1110)
+assume (= [i_OPERAND_B] #b1101)

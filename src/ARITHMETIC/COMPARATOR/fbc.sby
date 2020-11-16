@@ -1,6 +1,12 @@
+[tasks]
+prove prove
+cover cover
 [options]
-mode prove
-depth 16
+prove: mode prove
+prove: depth 16
+cover: mode cover
+cover: depth 16
+
 
 [engines]
 smtbmc boolector

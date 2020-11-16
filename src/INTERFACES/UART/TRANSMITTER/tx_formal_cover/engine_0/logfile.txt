@@ -12,20 +12,8 @@
 ##   0:00:00  Checking cover reachability in step 10..
 ##   0:00:00  Checking cover reachability in step 11..
 ##   0:00:00  Checking cover reachability in step 12..
-##   0:00:00  Checking cover reachability in step 13..
-##   0:00:00  Checking cover reachability in step 14..
-##   0:00:00  Checking cover reachability in step 15..
-##   0:00:00  Checking cover reachability in step 16..
-##   0:00:00  Checking cover reachability in step 17..
-##   0:00:00  Checking cover reachability in step 18..
-##   0:00:00  Checking cover reachability in step 19..
-##   0:00:00  Checking cover reachability in step 20..
-##   0:00:00  Checking cover reachability in step 21..
-##   0:00:00  Checking cover reachability in step 22..
-##   0:00:00  Checking cover reachability in step 23..
-##   0:00:00  Checking cover reachability in step 24..
-##   0:00:00  Reached cover statement at ./uart_transmitter.v:111 in step 24.
+##   0:00:00  Reached cover statement at ./uart_transmitter.v:122.30-123.77 in step 12.
 ##   0:00:00  Writing trace to VCD file: engine_0/trace0.vcd
-##   0:00:01  Writing trace to Verilog testbench: engine_0/trace0_tb.v
-##   0:00:01  Writing trace to constraints file: engine_0/trace0.smtc
-##   0:00:01  Status: passed
+##   0:00:00  Writing trace to Verilog testbench: engine_0/trace0_tb.v
+##   0:00:00  Writing trace to constraints file: engine_0/trace0.smtc
+##   0:00:00  Status: passed

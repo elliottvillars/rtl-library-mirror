@@ -1,0 +1,10 @@
+SBY 21:24:57 [config_prove] Removing directory 'config_prove'.
+SBY 21:24:57 [config_prove] Copy 'halfadder_formal.v' to 'config_prove/src/halfadder_formal.v'.
+SBY 21:24:57 [config_prove] engine_0: smtbmc yices
+SBY 21:24:57 [config_prove] base: starting process "cd config_prove/src; /nix/store/icmrxqlz2fkwam2f2z7wq973zk8sljx7-yosys-2020.10.20/bin/yosys -ql ../model/design.log ../model/design.ys"
+SBY 21:24:57 [config_prove] base: halfadder_formal.v:65: ERROR: syntax error, unexpected TOK_MODULE
+SBY 21:24:57 [config_prove] base: finished (returncode=1)
+SBY 21:24:57 [config_prove] base: job failed. ERROR.
+SBY 21:24:57 [config_prove] summary: Elapsed clock time [H:MM:SS (secs)]: 0:00:00 (0)
+SBY 21:24:57 [config_prove] summary: Elapsed process time [H:MM:SS (secs)]: 0:00:00 (0)
+SBY 21:24:57 [config_prove] DONE (ERROR, rc=16)

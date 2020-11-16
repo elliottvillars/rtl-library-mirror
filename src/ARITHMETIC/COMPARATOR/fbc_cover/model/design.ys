@@ -1,0 +1,14 @@
+# running in fbc_cover/src/
+read -formal ./look_ahead_logic_cell.v
+read -formal ./four_bit_comparator.v
+prep -top four_bit_comparator
+memory_nordff
+async2sync
+chformal -assume -early
+chformal -live -fair -remove
+opt_clean
+setundef -anyseq
+opt -keepdc -fast
+check
+hierarchy -simcheck
+write_ilang ../model/design.il

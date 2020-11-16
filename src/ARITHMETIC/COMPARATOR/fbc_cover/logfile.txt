@@ -1,0 +1,36 @@
+SBY 20:06:25 [fbc_prove] Removing directory 'fbc_prove'.
+SBY 20:06:26 [fbc_cover] Removing directory 'fbc_cover'.
+SBY 20:06:26 [fbc_cover] Copy './look_ahead_logic_cell.v' to 'fbc_cover/src/look_ahead_logic_cell.v'.
+SBY 20:06:26 [fbc_cover] Copy './four_bit_comparator.v' to 'fbc_cover/src/four_bit_comparator.v'.
+SBY 20:06:26 [fbc_cover] engine_0: smtbmc boolector
+SBY 20:06:26 [fbc_cover] base: starting process "cd fbc_cover/src; /nix/store/icmrxqlz2fkwam2f2z7wq973zk8sljx7-yosys-2020.10.20/bin/yosys -ql ../model/design.log ../model/design.ys"
+SBY 20:06:26 [fbc_cover] base: finished (returncode=0)
+SBY 20:06:26 [fbc_cover] smt2: starting process "cd fbc_cover/model; /nix/store/icmrxqlz2fkwam2f2z7wq973zk8sljx7-yosys-2020.10.20/bin/yosys -ql design_smt2.log design_smt2.ys"
+SBY 20:06:26 [fbc_cover] smt2: finished (returncode=0)
+SBY 20:06:26 [fbc_cover] engine_0: starting process "cd fbc_cover; /nix/store/icmrxqlz2fkwam2f2z7wq973zk8sljx7-yosys-2020.10.20/bin/yosys-smtbmc -s boolector --presat --unroll -c --noprogress -t 16  --append 0 --dump-vcd engine_0/trace%.vcd --dump-vlogtb engine_0/trace%_tb.v --dump-smtc engine_0/trace%.smtc model/design_smt2.smt2"
+SBY 20:06:26 [fbc_cover] engine_0: ##   0:00:00  Solver: boolector
+SBY 20:06:26 [fbc_cover] engine_0: ##   0:00:00  Checking cover reachability in step 0..
+SBY 20:06:26 [fbc_cover] engine_0: ##   0:00:00  Reached cover statement at ./four_bit_comparator.v:40.15-41.14 in step 0.
+SBY 20:06:26 [fbc_cover] engine_0: ##   0:00:00  Writing trace to VCD file: engine_0/trace0.vcd
+SBY 20:06:26 [fbc_cover] engine_0: ##   0:00:00  Writing trace to Verilog testbench: engine_0/trace0_tb.v
+SBY 20:06:26 [fbc_cover] engine_0: ##   0:00:00  Writing trace to constraints file: engine_0/trace0.smtc
+SBY 20:06:26 [fbc_cover] engine_0: ##   0:00:00  Checking cover reachability in step 0..
+SBY 20:06:26 [fbc_cover] engine_0: ##   0:00:00  Reached cover statement at ./four_bit_comparator.v:39.15-40.14 in step 0.
+SBY 20:06:26 [fbc_cover] engine_0: ##   0:00:00  Writing trace to VCD file: engine_0/trace1.vcd
+SBY 20:06:26 [fbc_cover] engine_0: ##   0:00:00  Writing trace to Verilog testbench: engine_0/trace1_tb.v
+SBY 20:06:26 [fbc_cover] engine_0: ##   0:00:00  Writing trace to constraints file: engine_0/trace1.smtc
+SBY 20:06:26 [fbc_cover] engine_0: ##   0:00:00  Checking cover reachability in step 0..
+SBY 20:06:26 [fbc_cover] engine_0: ##   0:00:00  Reached cover statement at ./four_bit_comparator.v:38.7-39.14 in step 0.
+SBY 20:06:26 [fbc_cover] engine_0: ##   0:00:00  Writing trace to VCD file: engine_0/trace2.vcd
+SBY 20:06:26 [fbc_cover] engine_0: ##   0:00:00  Writing trace to Verilog testbench: engine_0/trace2_tb.v
+SBY 20:06:26 [fbc_cover] engine_0: ##   0:00:00  Writing trace to constraints file: engine_0/trace2.smtc
+SBY 20:06:26 [fbc_cover] engine_0: ##   0:00:00  Status: passed
+SBY 20:06:26 [fbc_cover] engine_0: finished (returncode=0)
+SBY 20:06:26 [fbc_cover] engine_0: Status returned by engine: pass
+SBY 20:06:26 [fbc_cover] summary: Elapsed clock time [H:MM:SS (secs)]: 0:00:00 (0)
+SBY 20:06:26 [fbc_cover] summary: Elapsed process time [H:MM:SS (secs)]: 0:00:00 (0)
+SBY 20:06:26 [fbc_cover] summary: engine_0 (smtbmc boolector) returned pass
+SBY 20:06:26 [fbc_cover] summary: trace: fbc_cover/engine_0/trace0.vcd
+SBY 20:06:26 [fbc_cover] summary: trace: fbc_cover/engine_0/trace1.vcd
+SBY 20:06:26 [fbc_cover] summary: trace: fbc_cover/engine_0/trace2.vcd
+SBY 20:06:26 [fbc_cover] DONE (PASS, rc=0)

@@ -1,3 +1,4 @@
-Elapsed clock time [H:MM:SS (secs)]: 0:00:01 (1)
-Elapsed process time [H:MM:SS (secs)]: 0:00:01 (1)
+Elapsed clock time [H:MM:SS (secs)]: 0:00:00 (0)
+Elapsed process time [H:MM:SS (secs)]: 0:00:00 (0)
 engine_0 (smtbmc yices) returned pass
+trace: tx_formal_cover/engine_0/trace0.vcd

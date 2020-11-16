@@ -1,0 +1,58 @@
+SBY 20:06:25 [fbc_prove] Removing directory 'fbc_prove'.
+SBY 20:06:25 [fbc_prove] Copy './look_ahead_logic_cell.v' to 'fbc_prove/src/look_ahead_logic_cell.v'.
+SBY 20:06:25 [fbc_prove] Copy './four_bit_comparator.v' to 'fbc_prove/src/four_bit_comparator.v'.
+SBY 20:06:25 [fbc_prove] engine_0: smtbmc boolector
+SBY 20:06:25 [fbc_prove] base: starting process "cd fbc_prove/src; /nix/store/icmrxqlz2fkwam2f2z7wq973zk8sljx7-yosys-2020.10.20/bin/yosys -ql ../model/design.log ../model/design.ys"
+SBY 20:06:25 [fbc_prove] base: finished (returncode=0)
+SBY 20:06:25 [fbc_prove] smt2: starting process "cd fbc_prove/model; /nix/store/icmrxqlz2fkwam2f2z7wq973zk8sljx7-yosys-2020.10.20/bin/yosys -ql design_smt2.log design_smt2.ys"
+SBY 20:06:25 [fbc_prove] smt2: finished (returncode=0)
+SBY 20:06:25 [fbc_prove] engine_0.basecase: starting process "cd fbc_prove; /nix/store/icmrxqlz2fkwam2f2z7wq973zk8sljx7-yosys-2020.10.20/bin/yosys-smtbmc -s boolector --presat --unroll --noprogress -t 16  --append 0 --dump-vcd engine_0/trace.vcd --dump-vlogtb engine_0/trace_tb.v --dump-smtc engine_0/trace.smtc model/design_smt2.smt2"
+SBY 20:06:25 [fbc_prove] engine_0.induction: starting process "cd fbc_prove; /nix/store/icmrxqlz2fkwam2f2z7wq973zk8sljx7-yosys-2020.10.20/bin/yosys-smtbmc -s boolector --presat --unroll -i --noprogress -t 16  --append 0 --dump-vcd engine_0/trace_induct.vcd --dump-vlogtb engine_0/trace_induct_tb.v --dump-smtc engine_0/trace_induct.smtc model/design_smt2.smt2"
+SBY 20:06:25 [fbc_prove] engine_0.basecase: ##   0:00:00  Solver: boolector
+SBY 20:06:25 [fbc_prove] engine_0.induction: ##   0:00:00  Solver: boolector
+SBY 20:06:25 [fbc_prove] engine_0.basecase: ##   0:00:00  Checking assumptions in step 0..
+SBY 20:06:25 [fbc_prove] engine_0.induction: ##   0:00:00  Trying induction in step 16..
+SBY 20:06:25 [fbc_prove] engine_0.basecase: ##   0:00:00  Checking assertions in step 0..
+SBY 20:06:25 [fbc_prove] engine_0.induction: ##   0:00:00  Temporal induction successful.
+SBY 20:06:25 [fbc_prove] engine_0.induction: ##   0:00:00  Status: passed
+SBY 20:06:25 [fbc_prove] engine_0.induction: finished (returncode=0)
+SBY 20:06:25 [fbc_prove] engine_0: Status returned by engine for induction: pass
+SBY 20:06:25 [fbc_prove] engine_0.basecase: ##   0:00:00  Checking assumptions in step 1..
+SBY 20:06:25 [fbc_prove] engine_0.basecase: ##   0:00:00  Checking assertions in step 1..
+SBY 20:06:25 [fbc_prove] engine_0.basecase: ##   0:00:00  Checking assumptions in step 2..
+SBY 20:06:25 [fbc_prove] engine_0.basecase: ##   0:00:00  Checking assertions in step 2..
+SBY 20:06:25 [fbc_prove] engine_0.basecase: ##   0:00:00  Checking assumptions in step 3..
+SBY 20:06:25 [fbc_prove] engine_0.basecase: ##   0:00:00  Checking assertions in step 3..
+SBY 20:06:25 [fbc_prove] engine_0.basecase: ##   0:00:00  Checking assumptions in step 4..
+SBY 20:06:25 [fbc_prove] engine_0.basecase: ##   0:00:00  Checking assertions in step 4..
+SBY 20:06:25 [fbc_prove] engine_0.basecase: ##   0:00:00  Checking assumptions in step 5..
+SBY 20:06:25 [fbc_prove] engine_0.basecase: ##   0:00:00  Checking assertions in step 5..
+SBY 20:06:25 [fbc_prove] engine_0.basecase: ##   0:00:00  Checking assumptions in step 6..
+SBY 20:06:25 [fbc_prove] engine_0.basecase: ##   0:00:00  Checking assertions in step 6..
+SBY 20:06:25 [fbc_prove] engine_0.basecase: ##   0:00:00  Checking assumptions in step 7..
+SBY 20:06:25 [fbc_prove] engine_0.basecase: ##   0:00:00  Checking assertions in step 7..
+SBY 20:06:25 [fbc_prove] engine_0.basecase: ##   0:00:00  Checking assumptions in step 8..
+SBY 20:06:25 [fbc_prove] engine_0.basecase: ##   0:00:00  Checking assertions in step 8..
+SBY 20:06:25 [fbc_prove] engine_0.basecase: ##   0:00:00  Checking assumptions in step 9..
+SBY 20:06:25 [fbc_prove] engine_0.basecase: ##   0:00:00  Checking assertions in step 9..
+SBY 20:06:25 [fbc_prove] engine_0.basecase: ##   0:00:00  Checking assumptions in step 10..
+SBY 20:06:25 [fbc_prove] engine_0.basecase: ##   0:00:00  Checking assertions in step 10..
+SBY 20:06:25 [fbc_prove] engine_0.basecase: ##   0:00:00  Checking assumptions in step 11..
+SBY 20:06:25 [fbc_prove] engine_0.basecase: ##   0:00:00  Checking assertions in step 11..
+SBY 20:06:25 [fbc_prove] engine_0.basecase: ##   0:00:00  Checking assumptions in step 12..
+SBY 20:06:25 [fbc_prove] engine_0.basecase: ##   0:00:00  Checking assertions in step 12..
+SBY 20:06:25 [fbc_prove] engine_0.basecase: ##   0:00:00  Checking assumptions in step 13..
+SBY 20:06:25 [fbc_prove] engine_0.basecase: ##   0:00:00  Checking assertions in step 13..
+SBY 20:06:26 [fbc_prove] engine_0.basecase: ##   0:00:00  Checking assumptions in step 14..
+SBY 20:06:26 [fbc_prove] engine_0.basecase: ##   0:00:00  Checking assertions in step 14..
+SBY 20:06:26 [fbc_prove] engine_0.basecase: ##   0:00:00  Checking assumptions in step 15..
+SBY 20:06:26 [fbc_prove] engine_0.basecase: ##   0:00:00  Checking assertions in step 15..
+SBY 20:06:26 [fbc_prove] engine_0.basecase: ##   0:00:00  Status: passed
+SBY 20:06:26 [fbc_prove] engine_0.basecase: finished (returncode=0)
+SBY 20:06:26 [fbc_prove] engine_0: Status returned by engine for basecase: pass
+SBY 20:06:26 [fbc_prove] summary: Elapsed clock time [H:MM:SS (secs)]: 0:00:00 (0)
+SBY 20:06:26 [fbc_prove] summary: Elapsed process time [H:MM:SS (secs)]: 0:00:00 (0)
+SBY 20:06:26 [fbc_prove] summary: engine_0 (smtbmc boolector) returned pass for induction
+SBY 20:06:26 [fbc_prove] summary: engine_0 (smtbmc boolector) returned pass for basecase
+SBY 20:06:26 [fbc_prove] summary: successful proof by k-induction.
+SBY 20:06:26 [fbc_prove] DONE (PASS, rc=0)

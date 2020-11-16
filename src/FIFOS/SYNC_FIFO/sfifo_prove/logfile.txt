@@ -1,138 +1,87 @@
-SBY 12:06:28 [sfifo_prove] Removing directory 'sfifo_prove'.
-SBY 12:06:28 [sfifo_prove] Copy './sync_fifo.v' to 'sfifo_prove/src/sync_fifo.v'.
-SBY 12:06:28 [sfifo_prove] engine_0: smtbmc z3
-SBY 12:06:28 [sfifo_prove] engine_1: smtbmc yices
-SBY 12:06:28 [sfifo_prove] base: starting process "cd sfifo_prove/src; yosys -ql ../model/design.log ../model/design.ys"
-SBY 12:06:28 [sfifo_prove] base: finished (returncode=0)
-SBY 12:06:28 [sfifo_prove] smt2: starting process "cd sfifo_prove/model; yosys -ql design_smt2.log design_smt2.ys"
-SBY 12:06:28 [sfifo_prove] smt2: finished (returncode=0)
-SBY 12:06:28 [sfifo_prove] engine_0.basecase: starting process "cd sfifo_prove; yosys-smtbmc -s z3 --presat --noprogress -t 30 --append 0 --dump-vcd engine_0/trace.vcd --dump-vlogtb engine_0/trace_tb.v --dump-smtc engine_0/trace.smtc model/design_smt2.smt2"
-SBY 12:06:28 [sfifo_prove] engine_0.induction: starting process "cd sfifo_prove; yosys-smtbmc -s z3 --presat -i --noprogress -t 30 --append 0 --dump-vcd engine_0/trace_induct.vcd --dump-vlogtb engine_0/trace_induct_tb.v --dump-smtc engine_0/trace_induct.smtc model/design_smt2.smt2"
-SBY 12:06:28 [sfifo_prove] engine_1.basecase: starting process "cd sfifo_prove; yosys-smtbmc -s yices --presat --unroll --noprogress -t 30 --append 0 --dump-vcd engine_1/trace.vcd --dump-vlogtb engine_1/trace_tb.v --dump-smtc engine_1/trace.smtc model/design_smt2.smt2"
-SBY 12:06:28 [sfifo_prove] engine_1.induction: starting process "cd sfifo_prove; yosys-smtbmc -s yices --presat --unroll -i --noprogress -t 30 --append 0 --dump-vcd engine_1/trace_induct.vcd --dump-vlogtb engine_1/trace_induct_tb.v --dump-smtc engine_1/trace_induct.smtc model/design_smt2.smt2"
-SBY 12:06:28 [sfifo_prove] engine_0.basecase: ##   0:00:00  Solver: z3
-SBY 12:06:28 [sfifo_prove] engine_0.induction: ##   0:00:00  Solver: z3
-SBY 12:06:28 [sfifo_prove] engine_1.induction: ##   0:00:00  Solver: yices
-SBY 12:06:28 [sfifo_prove] engine_0.basecase: ##   0:00:00  Checking assumptions in step 0..
-SBY 12:06:28 [sfifo_prove] engine_0.induction: ##   0:00:00  Trying induction in step 30..
-SBY 12:06:28 [sfifo_prove] engine_0.basecase: ##   0:00:00  Checking assertions in step 0..
-SBY 12:06:28 [sfifo_prove] engine_0.basecase: ##   0:00:00  Checking assumptions in step 1..
-SBY 12:06:28 [sfifo_prove] engine_0.basecase: ##   0:00:00  Checking assertions in step 1..
-SBY 12:06:28 [sfifo_prove] engine_0.induction: ##   0:00:00  Trying induction in step 29..
-SBY 12:06:28 [sfifo_prove] engine_0.basecase: ##   0:00:00  Checking assumptions in step 2..
-SBY 12:06:28 [sfifo_prove] engine_1.basecase: ##   0:00:00  Solver: yices
-SBY 12:06:28 [sfifo_prove] engine_0.basecase: ##   0:00:00  Checking assertions in step 2..
-SBY 12:06:28 [sfifo_prove] engine_0.basecase: ##   0:00:00  Checking assumptions in step 3..
-SBY 12:06:28 [sfifo_prove] engine_0.induction: ##   0:00:00  Trying induction in step 28..
-SBY 12:06:28 [sfifo_prove] engine_0.basecase: ##   0:00:00  Checking assertions in step 3..
-SBY 12:06:28 [sfifo_prove] engine_0.basecase: ##   0:00:00  Checking assumptions in step 4..
-SBY 12:06:29 [sfifo_prove] engine_1.induction: ##   0:00:00  Trying induction in step 30..
-SBY 12:06:29 [sfifo_prove] engine_0.basecase: ##   0:00:00  Checking assertions in step 4..
-SBY 12:06:29 [sfifo_prove] engine_0.basecase: ##   0:00:00  Checking assumptions in step 5..
-SBY 12:06:29 [sfifo_prove] engine_1.basecase: ##   0:00:00  Checking assumptions in step 0..
-SBY 12:06:29 [sfifo_prove] engine_1.basecase: ##   0:00:00  Checking assertions in step 0..
-SBY 12:06:29 [sfifo_prove] engine_0.basecase: ##   0:00:00  Checking assertions in step 5..
-SBY 12:06:29 [sfifo_prove] engine_1.induction: ##   0:00:00  Trying induction in step 29..
-SBY 12:06:29 [sfifo_prove] engine_0.induction: ##   0:00:00  Temporal induction successful.
-SBY 12:06:29 [sfifo_prove] engine_0.induction: ##   0:00:00  Status: passed
-SBY 12:06:29 [sfifo_prove] engine_1.induction: ##   0:00:00  Trying induction in step 28..
-SBY 12:06:29 [sfifo_prove] engine_0.induction: finished (returncode=0)
-SBY 12:06:29 [sfifo_prove] engine_0: Status returned by engine for induction: pass
-SBY 12:06:29 [sfifo_prove] engine_1.induction: terminating process
-SBY 12:06:29 [sfifo_prove] engine_1.basecase: ##   0:00:00  Checking assumptions in step 1..
-SBY 12:06:29 [sfifo_prove] engine_1.basecase: ##   0:00:00  Checking assertions in step 1..
-SBY 12:06:29 [sfifo_prove] engine_0.basecase: ##   0:00:00  Checking assumptions in step 6..
-SBY 12:06:29 [sfifo_prove] engine_0.basecase: ##   0:00:00  Checking assertions in step 6..
-SBY 12:06:29 [sfifo_prove] engine_1.basecase: ##   0:00:00  Checking assumptions in step 2..
-SBY 12:06:29 [sfifo_prove] engine_1.basecase: ##   0:00:00  Checking assertions in step 2..
-SBY 12:06:29 [sfifo_prove] engine_1.basecase: ##   0:00:00  Checking assumptions in step 3..
-SBY 12:06:29 [sfifo_prove] engine_1.basecase: ##   0:00:00  Checking assertions in step 3..
-SBY 12:06:29 [sfifo_prove] engine_0.basecase: ##   0:00:00  Checking assumptions in step 7..
-SBY 12:06:29 [sfifo_prove] engine_0.basecase: ##   0:00:00  Checking assertions in step 7..
-SBY 12:06:29 [sfifo_prove] engine_1.basecase: ##   0:00:00  Checking assumptions in step 4..
-SBY 12:06:29 [sfifo_prove] engine_1.basecase: ##   0:00:00  Checking assertions in step 4..
-SBY 12:06:29 [sfifo_prove] engine_0.basecase: ##   0:00:00  Checking assumptions in step 8..
-SBY 12:06:29 [sfifo_prove] engine_1.basecase: ##   0:00:00  Checking assumptions in step 5..
-SBY 12:06:29 [sfifo_prove] engine_1.basecase: ##   0:00:00  Checking assertions in step 5..
-SBY 12:06:29 [sfifo_prove] engine_0.basecase: ##   0:00:00  Checking assertions in step 8..
-SBY 12:06:29 [sfifo_prove] engine_1.basecase: ##   0:00:00  Checking assumptions in step 6..
-SBY 12:06:29 [sfifo_prove] engine_1.basecase: ##   0:00:00  Checking assertions in step 6..
-SBY 12:06:29 [sfifo_prove] engine_1.basecase: ##   0:00:00  Checking assumptions in step 7..
-SBY 12:06:29 [sfifo_prove] engine_0.basecase: ##   0:00:00  Checking assumptions in step 9..
-SBY 12:06:29 [sfifo_prove] engine_1.basecase: ##   0:00:00  Checking assertions in step 7..
-SBY 12:06:29 [sfifo_prove] engine_0.basecase: ##   0:00:00  Checking assertions in step 9..
-SBY 12:06:29 [sfifo_prove] engine_1.basecase: ##   0:00:00  Checking assumptions in step 8..
-SBY 12:06:29 [sfifo_prove] engine_1.basecase: ##   0:00:00  Checking assertions in step 8..
-SBY 12:06:29 [sfifo_prove] engine_1.basecase: ##   0:00:00  Checking assumptions in step 9..
-SBY 12:06:29 [sfifo_prove] engine_1.basecase: ##   0:00:00  Checking assertions in step 9..
-SBY 12:06:29 [sfifo_prove] engine_0.basecase: ##   0:00:00  Checking assumptions in step 10..
-SBY 12:06:29 [sfifo_prove] engine_1.basecase: ##   0:00:00  Checking assumptions in step 10..
-SBY 12:06:29 [sfifo_prove] engine_1.basecase: ##   0:00:00  Checking assertions in step 10..
-SBY 12:06:29 [sfifo_prove] engine_1.basecase: ##   0:00:00  Checking assumptions in step 11..
-SBY 12:06:29 [sfifo_prove] engine_1.basecase: ##   0:00:00  Checking assertions in step 11..
-SBY 12:06:29 [sfifo_prove] engine_0.basecase: ##   0:00:01  Checking assertions in step 10..
-SBY 12:06:30 [sfifo_prove] engine_0.basecase: ##   0:00:01  Checking assumptions in step 11..
-SBY 12:06:30 [sfifo_prove] engine_1.basecase: ##   0:00:01  Checking assumptions in step 12..
-SBY 12:06:30 [sfifo_prove] engine_1.basecase: ##   0:00:01  Checking assertions in step 12..
-SBY 12:06:30 [sfifo_prove] engine_0.basecase: ##   0:00:01  Checking assertions in step 11..
-SBY 12:06:30 [sfifo_prove] engine_0.basecase: ##   0:00:01  Checking assumptions in step 12..
-SBY 12:06:30 [sfifo_prove] engine_1.basecase: ##   0:00:01  Checking assumptions in step 13..
-SBY 12:06:30 [sfifo_prove] engine_1.basecase: ##   0:00:01  Checking assertions in step 13..
-SBY 12:06:30 [sfifo_prove] engine_1.basecase: ##   0:00:01  Checking assumptions in step 14..
-SBY 12:06:30 [sfifo_prove] engine_1.basecase: ##   0:00:01  Checking assertions in step 14..
-SBY 12:06:30 [sfifo_prove] engine_1.basecase: ##   0:00:01  Checking assumptions in step 15..
-SBY 12:06:30 [sfifo_prove] engine_0.basecase: ##   0:00:01  Checking assertions in step 12..
-SBY 12:06:30 [sfifo_prove] engine_1.basecase: ##   0:00:01  Checking assertions in step 15..
-SBY 12:06:30 [sfifo_prove] engine_0.basecase: ##   0:00:01  Checking assumptions in step 13..
-SBY 12:06:30 [sfifo_prove] engine_1.basecase: ##   0:00:01  Checking assumptions in step 16..
-SBY 12:06:31 [sfifo_prove] engine_0.basecase: ##   0:00:02  Checking assertions in step 13..
-SBY 12:06:31 [sfifo_prove] engine_1.basecase: ##   0:00:02  Checking assertions in step 16..
-SBY 12:06:31 [sfifo_prove] engine_0.basecase: ##   0:00:02  Checking assumptions in step 14..
-SBY 12:06:31 [sfifo_prove] engine_0.basecase: ##   0:00:02  Checking assertions in step 14..
-SBY 12:06:31 [sfifo_prove] engine_1.basecase: ##   0:00:02  Checking assumptions in step 17..
-SBY 12:06:31 [sfifo_prove] engine_0.basecase: ##   0:00:02  Checking assumptions in step 15..
-SBY 12:06:31 [sfifo_prove] engine_1.basecase: ##   0:00:02  Checking assertions in step 17..
-SBY 12:06:31 [sfifo_prove] engine_1.basecase: ##   0:00:02  Checking assumptions in step 18..
-SBY 12:06:31 [sfifo_prove] engine_1.basecase: ##   0:00:02  Checking assertions in step 18..
-SBY 12:06:31 [sfifo_prove] engine_0.basecase: ##   0:00:02  Checking assertions in step 15..
-SBY 12:06:31 [sfifo_prove] engine_1.basecase: ##   0:00:02  Checking assumptions in step 19..
-SBY 12:06:32 [sfifo_prove] engine_0.basecase: ##   0:00:03  Checking assumptions in step 16..
-SBY 12:06:32 [sfifo_prove] engine_1.basecase: ##   0:00:03  Checking assertions in step 19..
-SBY 12:06:32 [sfifo_prove] engine_1.basecase: ##   0:00:03  Checking assumptions in step 20..
-SBY 12:06:32 [sfifo_prove] engine_1.basecase: ##   0:00:03  Checking assertions in step 20..
-SBY 12:06:32 [sfifo_prove] engine_0.basecase: ##   0:00:03  Checking assertions in step 16..
-SBY 12:06:32 [sfifo_prove] engine_1.basecase: ##   0:00:03  Checking assumptions in step 21..
-SBY 12:06:33 [sfifo_prove] engine_0.basecase: ##   0:00:04  Checking assumptions in step 17..
-SBY 12:06:33 [sfifo_prove] engine_1.basecase: ##   0:00:04  Checking assertions in step 21..
-SBY 12:06:33 [sfifo_prove] engine_1.basecase: ##   0:00:04  Checking assumptions in step 22..
-SBY 12:06:33 [sfifo_prove] engine_1.basecase: ##   0:00:04  Checking assertions in step 22..
-SBY 12:06:33 [sfifo_prove] engine_0.basecase: ##   0:00:04  Checking assertions in step 17..
-SBY 12:06:33 [sfifo_prove] engine_1.basecase: ##   0:00:04  Checking assumptions in step 23..
-SBY 12:06:33 [sfifo_prove] engine_0.basecase: ##   0:00:05  Checking assumptions in step 18..
-SBY 12:06:34 [sfifo_prove] engine_1.basecase: ##   0:00:05  Checking assertions in step 23..
-SBY 12:06:34 [sfifo_prove] engine_1.basecase: ##   0:00:05  Checking assumptions in step 24..
-SBY 12:06:34 [sfifo_prove] engine_0.basecase: ##   0:00:06  Checking assertions in step 18..
-SBY 12:06:35 [sfifo_prove] engine_1.basecase: ##   0:00:06  Checking assertions in step 24..
-SBY 12:06:35 [sfifo_prove] engine_1.basecase: ##   0:00:06  Checking assumptions in step 25..
-SBY 12:06:36 [sfifo_prove] engine_1.basecase: ##   0:00:07  Checking assertions in step 25..
-SBY 12:06:36 [sfifo_prove] engine_1.basecase: ##   0:00:07  Checking assumptions in step 26..
-SBY 12:06:37 [sfifo_prove] engine_1.basecase: ##   0:00:08  Checking assertions in step 26..
-SBY 12:06:37 [sfifo_prove] engine_0.basecase: ##   0:00:08  Checking assumptions in step 19..
-SBY 12:06:37 [sfifo_prove] engine_1.basecase: ##   0:00:08  Checking assumptions in step 27..
-SBY 12:06:38 [sfifo_prove] engine_1.basecase: ##   0:00:09  Checking assertions in step 27..
-SBY 12:06:38 [sfifo_prove] engine_1.basecase: ##   0:00:09  Checking assumptions in step 28..
-SBY 12:06:39 [sfifo_prove] engine_0.basecase: ##   0:00:10  Checking assertions in step 19..
-SBY 12:06:39 [sfifo_prove] engine_0.basecase: ##   0:00:10  Checking assumptions in step 20..
-SBY 12:06:39 [sfifo_prove] engine_1.basecase: ##   0:00:10  Checking assertions in step 28..
-SBY 12:06:40 [sfifo_prove] engine_1.basecase: ##   0:00:11  Checking assumptions in step 29..
-SBY 12:06:40 [sfifo_prove] engine_1.basecase: ##   0:00:11  Checking assertions in step 29..
-SBY 12:06:40 [sfifo_prove] engine_1.basecase: ##   0:00:11  Status: passed
-SBY 12:06:40 [sfifo_prove] engine_1.basecase: finished (returncode=0)
-SBY 12:06:40 [sfifo_prove] engine_1: Status returned by engine for basecase: pass
-SBY 12:06:40 [sfifo_prove] engine_0.basecase: terminating process
-SBY 12:06:40 [sfifo_prove] summary: Elapsed clock time [H:MM:SS (secs)]: 0:00:12 (12)
-SBY 12:06:40 [sfifo_prove] summary: Elapsed process time [H:MM:SS (secs)]: 0:00:12 (12)
-SBY 12:06:40 [sfifo_prove] summary: engine_0 (smtbmc z3) returned pass for induction
-SBY 12:06:40 [sfifo_prove] summary: engine_1 (smtbmc yices) returned pass for basecase
-SBY 12:06:40 [sfifo_prove] summary: successful proof by k-induction.
-SBY 12:06:40 [sfifo_prove] DONE (PASS, rc=0)
+SBY 13:37:54 [sfifo_prove] Removing directory 'sfifo_prove'.
+SBY 13:37:54 [sfifo_prove] Copy './sync_fifo.v' to 'sfifo_prove/src/sync_fifo.v'.
+SBY 13:37:54 [sfifo_prove] engine_0: smtbmc z3
+SBY 13:37:54 [sfifo_prove] base: starting process "cd sfifo_prove/src; /nix/store/icmrxqlz2fkwam2f2z7wq973zk8sljx7-yosys-2020.10.20/bin/yosys -ql ../model/design.log ../model/design.ys"
+SBY 13:37:54 [sfifo_prove] base: finished (returncode=0)
+SBY 13:37:54 [sfifo_prove] smt2: starting process "cd sfifo_prove/model; /nix/store/icmrxqlz2fkwam2f2z7wq973zk8sljx7-yosys-2020.10.20/bin/yosys -ql design_smt2.log design_smt2.ys"
+SBY 13:37:54 [sfifo_prove] smt2: finished (returncode=0)
+SBY 13:37:54 [sfifo_prove] engine_0.basecase: starting process "cd sfifo_prove; /nix/store/icmrxqlz2fkwam2f2z7wq973zk8sljx7-yosys-2020.10.20/bin/yosys-smtbmc -s z3 --presat --noprogress -t 30  --append 0 --dump-vcd engine_0/trace.vcd --dump-vlogtb engine_0/trace_tb.v --dump-smtc engine_0/trace.smtc model/design_smt2.smt2"
+SBY 13:37:54 [sfifo_prove] engine_0.induction: starting process "cd sfifo_prove; /nix/store/icmrxqlz2fkwam2f2z7wq973zk8sljx7-yosys-2020.10.20/bin/yosys-smtbmc -s z3 --presat -i --noprogress -t 30  --append 0 --dump-vcd engine_0/trace_induct.vcd --dump-vlogtb engine_0/trace_induct_tb.v --dump-smtc engine_0/trace_induct.smtc model/design_smt2.smt2"
+SBY 13:37:54 [sfifo_prove] engine_0.basecase: ##   0:00:00  Solver: z3
+SBY 13:37:54 [sfifo_prove] engine_0.induction: ##   0:00:00  Solver: z3
+SBY 13:37:54 [sfifo_prove] engine_0.basecase: ##   0:00:00  Checking assumptions in step 0..
+SBY 13:37:54 [sfifo_prove] engine_0.induction: ##   0:00:00  Trying induction in step 30..
+SBY 13:37:54 [sfifo_prove] engine_0.basecase: ##   0:00:00  Checking assertions in step 0..
+SBY 13:37:54 [sfifo_prove] engine_0.basecase: ##   0:00:00  Checking assumptions in step 1..
+SBY 13:37:54 [sfifo_prove] engine_0.basecase: ##   0:00:00  Checking assertions in step 1..
+SBY 13:37:54 [sfifo_prove] engine_0.basecase: ##   0:00:00  Checking assumptions in step 2..
+SBY 13:37:54 [sfifo_prove] engine_0.induction: ##   0:00:00  Trying induction in step 29..
+SBY 13:37:54 [sfifo_prove] engine_0.basecase: ##   0:00:00  Checking assertions in step 2..
+SBY 13:37:54 [sfifo_prove] engine_0.basecase: ##   0:00:00  Checking assumptions in step 3..
+SBY 13:37:54 [sfifo_prove] engine_0.basecase: ##   0:00:00  Checking assertions in step 3..
+SBY 13:37:54 [sfifo_prove] engine_0.basecase: ##   0:00:00  Checking assumptions in step 4..
+SBY 13:37:54 [sfifo_prove] engine_0.induction: ##   0:00:00  Trying induction in step 28..
+SBY 13:37:54 [sfifo_prove] engine_0.basecase: ##   0:00:00  Checking assertions in step 4..
+SBY 13:37:54 [sfifo_prove] engine_0.basecase: ##   0:00:00  Checking assumptions in step 5..
+SBY 13:37:54 [sfifo_prove] engine_0.basecase: ##   0:00:00  Checking assertions in step 5..
+SBY 13:37:54 [sfifo_prove] engine_0.induction: ##   0:00:00  Temporal induction successful.
+SBY 13:37:54 [sfifo_prove] engine_0.induction: ##   0:00:00  Status: passed
+SBY 13:37:54 [sfifo_prove] engine_0.basecase: ##   0:00:00  Checking assumptions in step 6..
+SBY 13:37:54 [sfifo_prove] engine_0.induction: finished (returncode=0)
+SBY 13:37:54 [sfifo_prove] engine_0: Status returned by engine for induction: pass
+SBY 13:37:54 [sfifo_prove] engine_0.basecase: ##   0:00:00  Checking assertions in step 6..
+SBY 13:37:54 [sfifo_prove] engine_0.basecase: ##   0:00:00  Checking assumptions in step 7..
+SBY 13:37:54 [sfifo_prove] engine_0.basecase: ##   0:00:00  Checking assertions in step 7..
+SBY 13:37:54 [sfifo_prove] engine_0.basecase: ##   0:00:00  Checking assumptions in step 8..
+SBY 13:37:54 [sfifo_prove] engine_0.basecase: ##   0:00:00  Checking assertions in step 8..
+SBY 13:37:54 [sfifo_prove] engine_0.basecase: ##   0:00:00  Checking assumptions in step 9..
+SBY 13:37:55 [sfifo_prove] engine_0.basecase: ##   0:00:00  Checking assertions in step 9..
+SBY 13:37:55 [sfifo_prove] engine_0.basecase: ##   0:00:00  Checking assumptions in step 10..
+SBY 13:37:55 [sfifo_prove] engine_0.basecase: ##   0:00:00  Checking assertions in step 10..
+SBY 13:37:55 [sfifo_prove] engine_0.basecase: ##   0:00:00  Checking assumptions in step 11..
+SBY 13:37:55 [sfifo_prove] engine_0.basecase: ##   0:00:00  Checking assertions in step 11..
+SBY 13:37:55 [sfifo_prove] engine_0.basecase: ##   0:00:00  Checking assumptions in step 12..
+SBY 13:37:55 [sfifo_prove] engine_0.basecase: ##   0:00:00  Checking assertions in step 12..
+SBY 13:37:55 [sfifo_prove] engine_0.basecase: ##   0:00:00  Checking assumptions in step 13..
+SBY 13:37:55 [sfifo_prove] engine_0.basecase: ##   0:00:00  Checking assertions in step 13..
+SBY 13:37:55 [sfifo_prove] engine_0.basecase: ##   0:00:01  Checking assumptions in step 14..
+SBY 13:37:56 [sfifo_prove] engine_0.basecase: ##   0:00:01  Checking assertions in step 14..
+SBY 13:37:56 [sfifo_prove] engine_0.basecase: ##   0:00:01  Checking assumptions in step 15..
+SBY 13:37:56 [sfifo_prove] engine_0.basecase: ##   0:00:02  Checking assertions in step 15..
+SBY 13:37:56 [sfifo_prove] engine_0.basecase: ##   0:00:02  Checking assumptions in step 16..
+SBY 13:37:57 [sfifo_prove] engine_0.basecase: ##   0:00:02  Checking assertions in step 16..
+SBY 13:37:58 [sfifo_prove] engine_0.basecase: ##   0:00:03  Checking assumptions in step 17..
+SBY 13:37:59 [sfifo_prove] engine_0.basecase: ##   0:00:04  Checking assertions in step 17..
+SBY 13:38:00 [sfifo_prove] engine_0.basecase: ##   0:00:06  Checking assumptions in step 18..
+SBY 13:38:02 [sfifo_prove] engine_0.basecase: ##   0:00:07  Checking assertions in step 18..
+SBY 13:38:02 [sfifo_prove] engine_0.basecase: ##   0:00:07  Checking assumptions in step 19..
+SBY 13:38:04 [sfifo_prove] engine_0.basecase: ##   0:00:10  Checking assertions in step 19..
+SBY 13:38:05 [sfifo_prove] engine_0.basecase: ##   0:00:10  Checking assumptions in step 20..
+SBY 13:38:07 [sfifo_prove] engine_0.basecase: ##   0:00:13  Checking assertions in step 20..
+SBY 13:38:08 [sfifo_prove] engine_0.basecase: ##   0:00:13  Checking assumptions in step 21..
+SBY 13:38:10 [sfifo_prove] engine_0.basecase: ##   0:00:15  Checking assertions in step 21..
+SBY 13:38:10 [sfifo_prove] engine_0.basecase: ##   0:00:15  Checking assumptions in step 22..
+SBY 13:38:16 [sfifo_prove] engine_0.basecase: ##   0:00:21  Checking assertions in step 22..
+SBY 13:38:18 [sfifo_prove] engine_0.basecase: ##   0:00:24  Checking assumptions in step 23..
+SBY 13:38:25 [sfifo_prove] engine_0.basecase: ##   0:00:31  Checking assertions in step 23..
+SBY 13:38:26 [sfifo_prove] engine_0.basecase: ##   0:00:31  Checking assumptions in step 24..
+SBY 13:38:33 [sfifo_prove] engine_0.basecase: ##   0:00:38  Checking assertions in step 24..
+SBY 13:38:34 [sfifo_prove] engine_0.basecase: ##   0:00:39  Checking assumptions in step 25..
+SBY 13:38:37 [sfifo_prove] engine_0.basecase: ##   0:00:43  Checking assertions in step 25..
+SBY 13:38:38 [sfifo_prove] engine_0.basecase: ##   0:00:43  Checking assumptions in step 26..
+SBY 13:38:39 [sfifo_prove] engine_0.basecase: ##   0:00:44  Checking assertions in step 26..
+SBY 13:38:39 [sfifo_prove] engine_0.basecase: ##   0:00:44  Checking assumptions in step 27..
+SBY 13:38:43 [sfifo_prove] engine_0.basecase: ##   0:00:49  Checking assertions in step 27..
+SBY 13:38:44 [sfifo_prove] engine_0.basecase: ##   0:00:49  Checking assumptions in step 28..
+SBY 13:38:56 [sfifo_prove] engine_0.basecase: ##   0:01:01  Checking assertions in step 28..
+SBY 13:38:56 [sfifo_prove] engine_0.basecase: ##   0:01:02  Checking assumptions in step 29..
+SBY 13:39:01 [sfifo_prove] engine_0.basecase: ##   0:01:06  Checking assertions in step 29..
+SBY 13:39:02 [sfifo_prove] engine_0.basecase: ##   0:01:07  Status: passed
+SBY 13:39:02 [sfifo_prove] engine_0.basecase: finished (returncode=0)
+SBY 13:39:02 [sfifo_prove] engine_0: Status returned by engine for basecase: pass
+SBY 13:39:02 [sfifo_prove] summary: Elapsed clock time [H:MM:SS (secs)]: 0:01:07 (67)
+SBY 13:39:02 [sfifo_prove] summary: Elapsed process time [H:MM:SS (secs)]: 0:01:07 (67)
+SBY 13:39:02 [sfifo_prove] summary: engine_0 (smtbmc z3) returned pass for induction
+SBY 13:39:02 [sfifo_prove] summary: engine_0 (smtbmc z3) returned pass for basecase
+SBY 13:39:02 [sfifo_prove] summary: successful proof by k-induction.
+SBY 13:39:02 [sfifo_prove] DONE (PASS, rc=0)

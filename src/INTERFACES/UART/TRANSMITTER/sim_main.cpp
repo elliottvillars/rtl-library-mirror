@@ -23,41 +23,80 @@
 
 using namespace std;
 
+void tick(Vuart_transmitter * top) {
+	top->i_CLK = 0;
+	top->eval();
+	top->i_CLK = 1;
+	top->eval();
+	top->i_CLK = 0;
+	top->eval();
+}
+void tx_state(Vuart_transmitter * top,int cycle)
+{
+	switch(top->uart_transmitter__DOT__r_CURRENT_STATE) {
+		case 0: printf("%d: CURRENT TX STATE: IDLE\n",cycle);
+			break;
+		case 1: printf("%d: CURRENT TX STATE: START TX\n",cycle);
+			break;
+		case 2: printf("%d: CURRENT TX STATE: TRANSMIT\n",cycle);
+			break;
+		case 3: printf("%d: CURRENT TX STATE: STOP TX\n",cycle);
+			break;
+	}
+}
+
 int main(int argc,char ** argv)
 {
 	Verilated::commandArgs(argc,argv);
-	unsigned int cycles = 0;
 
 	Vuart_transmitter * top = new Vuart_transmitter;
-	VerilatedVcdC * trace_ = new VerilatedVcdC;
-	Verilated::traceEverOn(true);
 	cout << "Objects created." << '\n';
 
-	trace_->open("trace.vcd");
-	cout << "File opened." << '\n';
-	
-
-	top->trace(trace_,5);
-
 	top->i_CLK = 0;
+	top->i_RESET = 1;
+	top->i_CLK_EN = 1;
+	top->i_TX_ENABLE = 0;
+	top->i_DATA_IN = 0x0;
+	tick(top);
 	top->i_RESET = 0;
-	top->i_TX_ENABLE = 1;
-	top->i_DATA_IN = 0x8;
-	cout << "Initial input loaded." << '\n';
-	while(cycles < 16)
+	top->i_TX_ENABLE = 0;
+	tick(top);
+	unsigned out = 0;
+	for(unsigned i = 0; i < 256 ; i = i + 1)
 	{
-		cout << "Start of loop: " << cycles << '\n';
-		top->eval();
-		top->i_CLK = !top->i_CLK;
-		top->eval();
-		cout << "Dumping trace #: " << cycles << '\n';
-		trace_->dump(10 * cycles + 5);
-		cycles++;
+		top->i_TX_ENABLE = 1;
+		top->i_DATA_IN = i;
+		tx_state(top,i);
+		assert(top->o_TX);
+		assert(!top->o_TX_BUSY);
 
+		tick(top);
+		tx_state(top,i);
+		assert(!top->o_TX);
+		assert(top->o_TX_BUSY);
+
+		for(unsigned j = 0; j < 8; j = j + 1)
+		{
+			tick(top);
+			out = (out >> 1) | (top->o_TX << 7);
+		}
+		assert(out == i);
+		assert(top->o_TX_BUSY);
+		tx_state(top,i);
+
+		tick(top);
+		tx_state(top,i);
+		assert(top->o_TX);
+		assert(top->o_TX_BUSY);
+
+		tick(top);
+		tx_state(top,i);
+		assert(top->o_TX);
+		assert(!top->o_TX_BUSY);
+		i++;
+		out = 0;
 	}
 	top->final();
-	trace_->close();
 	cout << "Simulation finished." << '\n';
 	delete top;
-	delete trace_;
 }

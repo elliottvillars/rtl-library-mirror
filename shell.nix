@@ -26,5 +26,6 @@ in pkgs.mkShell {
     python38Packages.pylint
     ormolu
     hsEnv
+    bluespec
   ];
 }

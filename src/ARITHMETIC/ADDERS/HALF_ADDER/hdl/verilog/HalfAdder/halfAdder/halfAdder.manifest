@@ -1,2 +1,0 @@
-Manifest {manifestHash = (-5381756817975293659,Nothing), successFlags = (20,20,False), portInNames = ["i_A","i_B"], portInTypes = ["",""], portOutNames = ["o_SUM","o_COUT"], portOutTypes = ["",""], componentNames = ["halfAdder"]}
-

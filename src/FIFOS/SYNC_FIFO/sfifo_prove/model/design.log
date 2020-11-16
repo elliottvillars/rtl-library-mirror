@@ -3,7 +3,7 @@
  |                                                                            |
  |  yosys -- Yosys Open SYnthesis Suite                                       |
  |                                                                            |
- |  Copyright (C) 2012 - 2019  Clifford Wolf <clifford@clifford.at>           |
+ |  Copyright (C) 2012 - 2020  Claire Wolf <claire@symbioticeda.com>          |
  |                                                                            |
  |  Permission to use, copy, modify, and/or distribute this software for any  |
  |  purpose with or without fee is hereby granted, provided that the above    |
@@ -19,7 +19,7 @@
  |                                                                            |
  \----------------------------------------------------------------------------/
 
- Yosys 0.9+1706 (git sha1 2e8d6ec0b0, g++ 9.2.0 -fPIC -Os)
+ Yosys 0.9+3627 (git sha1 06347b119b, g++ 9.3.0 -fPIC -Os)
 
 
 -- Executing script file `../model/design.ys' --
@@ -51,9 +51,9 @@ Module sync_fifo directly or indirectly contains formal properties -> setting "k
 Cleaned up 0 empty switches.
 
 2.3.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
-Marked 4 switch rules as full_case in process $proc$./sync_fifo.v:113$83 in module sync_fifo.
-Removed 1 dead cases from process $proc$./sync_fifo.v:23$67 in module sync_fifo.
-Marked 3 switch rules as full_case in process $proc$./sync_fifo.v:23$67 in module sync_fifo.
+Marked 4 switch rules as full_case in process $proc$./sync_fifo.v:122$83 in module sync_fifo.
+Removed 1 dead cases from process $proc$./sync_fifo.v:32$67 in module sync_fifo.
+Marked 3 switch rules as full_case in process $proc$./sync_fifo.v:32$67 in module sync_fifo.
 Removed a total of 1 dead cases.
 
 2.3.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
@@ -61,206 +61,202 @@ Removed 3 redundant assignments.
 Promoted 77 assignments to connections.
 
 2.3.4. Executing PROC_INIT pass (extract init attributes).
-Found init rule in `\sync_fifo.$proc$./sync_fifo.v:181$366'.
-  Set init value: $formal$./sync_fifo.v:181$66_EN = 1'0
-Found init rule in `\sync_fifo.$proc$./sync_fifo.v:180$364'.
-  Set init value: $formal$./sync_fifo.v:180$65_EN = 1'0
-Found init rule in `\sync_fifo.$proc$./sync_fifo.v:179$362'.
-  Set init value: $formal$./sync_fifo.v:179$64_EN = 1'0
-Found init rule in `\sync_fifo.$proc$./sync_fifo.v:175$360'.
-  Set init value: $formal$./sync_fifo.v:175$63_EN = 1'0
-Found init rule in `\sync_fifo.$proc$./sync_fifo.v:172$358'.
-  Set init value: $formal$./sync_fifo.v:172$62_EN = 1'0
-Found init rule in `\sync_fifo.$proc$./sync_fifo.v:171$356'.
-  Set init value: $formal$./sync_fifo.v:171$61_EN = 1'0
-Found init rule in `\sync_fifo.$proc$./sync_fifo.v:170$354'.
-  Set init value: $formal$./sync_fifo.v:170$60_EN = 1'0
-Found init rule in `\sync_fifo.$proc$./sync_fifo.v:166$352'.
-  Set init value: $formal$./sync_fifo.v:166$59_EN = 1'0
-Found init rule in `\sync_fifo.$proc$./sync_fifo.v:165$350'.
-  Set init value: $formal$./sync_fifo.v:165$58_EN = 1'0
-Found init rule in `\sync_fifo.$proc$./sync_fifo.v:164$348'.
-  Set init value: $formal$./sync_fifo.v:164$57_EN = 1'0
-Found init rule in `\sync_fifo.$proc$./sync_fifo.v:160$346'.
-  Set init value: $formal$./sync_fifo.v:160$56_EN = 1'0
-Found init rule in `\sync_fifo.$proc$./sync_fifo.v:159$344'.
-  Set init value: $formal$./sync_fifo.v:159$55_EN = 1'0
-Found init rule in `\sync_fifo.$proc$./sync_fifo.v:158$342'.
-  Set init value: $formal$./sync_fifo.v:158$54_EN = 1'0
-Found init rule in `\sync_fifo.$proc$./sync_fifo.v:157$340'.
-  Set init value: $formal$./sync_fifo.v:157$53_EN = 1'0
-Found init rule in `\sync_fifo.$proc$./sync_fifo.v:153$338'.
-  Set init value: $formal$./sync_fifo.v:153$52_EN = 1'0
-Found init rule in `\sync_fifo.$proc$./sync_fifo.v:152$336'.
-  Set init value: $formal$./sync_fifo.v:152$51_EN = 1'0
-Found init rule in `\sync_fifo.$proc$./sync_fifo.v:151$334'.
-  Set init value: $formal$./sync_fifo.v:151$50_EN = 1'0
-Found init rule in `\sync_fifo.$proc$./sync_fifo.v:150$332'.
-  Set init value: $formal$./sync_fifo.v:150$49_EN = 1'0
-Found init rule in `\sync_fifo.$proc$./sync_fifo.v:146$330'.
-  Set init value: $formal$./sync_fifo.v:146$48_EN = 1'0
-Found init rule in `\sync_fifo.$proc$./sync_fifo.v:145$328'.
-  Set init value: $formal$./sync_fifo.v:145$47_EN = 1'0
-Found init rule in `\sync_fifo.$proc$./sync_fifo.v:144$326'.
-  Set init value: $formal$./sync_fifo.v:144$46_EN = 1'0
-Found init rule in `\sync_fifo.$proc$./sync_fifo.v:143$324'.
-  Set init value: $formal$./sync_fifo.v:143$45_EN = 1'0
-Found init rule in `\sync_fifo.$proc$./sync_fifo.v:139$322'.
-  Set init value: $formal$./sync_fifo.v:139$44_EN = 1'0
-Found init rule in `\sync_fifo.$proc$./sync_fifo.v:138$320'.
-  Set init value: $formal$./sync_fifo.v:138$43_EN = 1'0
-Found init rule in `\sync_fifo.$proc$./sync_fifo.v:137$318'.
-  Set init value: $formal$./sync_fifo.v:137$42_EN = 1'0
-Found init rule in `\sync_fifo.$proc$./sync_fifo.v:136$316'.
-  Set init value: $formal$./sync_fifo.v:136$41_EN = 1'0
-Found init rule in `\sync_fifo.$proc$./sync_fifo.v:132$314'.
-  Set init value: $formal$./sync_fifo.v:132$40_EN = 1'0
-Found init rule in `\sync_fifo.$proc$./sync_fifo.v:131$312'.
-  Set init value: $formal$./sync_fifo.v:131$39_EN = 1'0
-Found init rule in `\sync_fifo.$proc$./sync_fifo.v:130$310'.
-  Set init value: $formal$./sync_fifo.v:130$38_EN = 1'0
-Found init rule in `\sync_fifo.$proc$./sync_fifo.v:129$308'.
-  Set init value: $formal$./sync_fifo.v:129$37_EN = 1'0
-Found init rule in `\sync_fifo.$proc$./sync_fifo.v:126$306'.
-  Set init value: $formal$./sync_fifo.v:126$36_EN = 1'0
-Found init rule in `\sync_fifo.$proc$./sync_fifo.v:124$304'.
-  Set init value: $formal$./sync_fifo.v:124$35_EN = 1'0
-Found init rule in `\sync_fifo.$proc$./sync_fifo.v:118$302'.
-  Set init value: $formal$./sync_fifo.v:118$34_EN = 1'0
-Found init rule in `\sync_fifo.$proc$./sync_fifo.v:117$300'.
-  Set init value: $formal$./sync_fifo.v:117$33_EN = 1'0
-Found init rule in `\sync_fifo.$proc$./sync_fifo.v:116$298'.
-  Set init value: $formal$./sync_fifo.v:116$32_EN = 1'0
-Found init rule in `\sync_fifo.$proc$./sync_fifo.v:115$296'.
-  Set init value: $formal$./sync_fifo.v:115$31_EN = 1'0
-Found init rule in `\sync_fifo.$proc$./sync_fifo.v:108$288'.
+Found init rule in `\sync_fifo.$proc$./sync_fifo.v:0$367'.
+  Set init value: $formal$./sync_fifo.v:189$66_EN = 1'0
+Found init rule in `\sync_fifo.$proc$./sync_fifo.v:0$365'.
+  Set init value: $formal$./sync_fifo.v:188$65_EN = 1'0
+Found init rule in `\sync_fifo.$proc$./sync_fifo.v:0$363'.
+  Set init value: $formal$./sync_fifo.v:187$64_EN = 1'0
+Found init rule in `\sync_fifo.$proc$./sync_fifo.v:0$361'.
+  Set init value: $formal$./sync_fifo.v:183$63_EN = 1'0
+Found init rule in `\sync_fifo.$proc$./sync_fifo.v:0$359'.
+  Set init value: $formal$./sync_fifo.v:180$62_EN = 1'0
+Found init rule in `\sync_fifo.$proc$./sync_fifo.v:0$357'.
+  Set init value: $formal$./sync_fifo.v:179$61_EN = 1'0
+Found init rule in `\sync_fifo.$proc$./sync_fifo.v:0$355'.
+  Set init value: $formal$./sync_fifo.v:178$60_EN = 1'0
+Found init rule in `\sync_fifo.$proc$./sync_fifo.v:0$353'.
+  Set init value: $formal$./sync_fifo.v:174$59_EN = 1'0
+Found init rule in `\sync_fifo.$proc$./sync_fifo.v:0$351'.
+  Set init value: $formal$./sync_fifo.v:173$58_EN = 1'0
+Found init rule in `\sync_fifo.$proc$./sync_fifo.v:0$349'.
+  Set init value: $formal$./sync_fifo.v:172$57_EN = 1'0
+Found init rule in `\sync_fifo.$proc$./sync_fifo.v:0$347'.
+  Set init value: $formal$./sync_fifo.v:168$56_EN = 1'0
+Found init rule in `\sync_fifo.$proc$./sync_fifo.v:0$345'.
+  Set init value: $formal$./sync_fifo.v:167$55_EN = 1'0
+Found init rule in `\sync_fifo.$proc$./sync_fifo.v:0$343'.
+  Set init value: $formal$./sync_fifo.v:166$54_EN = 1'0
+Found init rule in `\sync_fifo.$proc$./sync_fifo.v:0$341'.
+  Set init value: $formal$./sync_fifo.v:165$53_EN = 1'0
+Found init rule in `\sync_fifo.$proc$./sync_fifo.v:0$339'.
+  Set init value: $formal$./sync_fifo.v:161$52_EN = 1'0
+Found init rule in `\sync_fifo.$proc$./sync_fifo.v:0$337'.
+  Set init value: $formal$./sync_fifo.v:160$51_EN = 1'0
+Found init rule in `\sync_fifo.$proc$./sync_fifo.v:0$335'.
+  Set init value: $formal$./sync_fifo.v:159$50_EN = 1'0
+Found init rule in `\sync_fifo.$proc$./sync_fifo.v:0$333'.
+  Set init value: $formal$./sync_fifo.v:158$49_EN = 1'0
+Found init rule in `\sync_fifo.$proc$./sync_fifo.v:0$331'.
+  Set init value: $formal$./sync_fifo.v:154$48_EN = 1'0
+Found init rule in `\sync_fifo.$proc$./sync_fifo.v:0$329'.
+  Set init value: $formal$./sync_fifo.v:153$47_EN = 1'0
+Found init rule in `\sync_fifo.$proc$./sync_fifo.v:0$327'.
+  Set init value: $formal$./sync_fifo.v:152$46_EN = 1'0
+Found init rule in `\sync_fifo.$proc$./sync_fifo.v:0$325'.
+  Set init value: $formal$./sync_fifo.v:151$45_EN = 1'0
+Found init rule in `\sync_fifo.$proc$./sync_fifo.v:0$323'.
+  Set init value: $formal$./sync_fifo.v:147$44_EN = 1'0
+Found init rule in `\sync_fifo.$proc$./sync_fifo.v:0$321'.
+  Set init value: $formal$./sync_fifo.v:146$43_EN = 1'0
+Found init rule in `\sync_fifo.$proc$./sync_fifo.v:0$319'.
+  Set init value: $formal$./sync_fifo.v:145$42_EN = 1'0
+Found init rule in `\sync_fifo.$proc$./sync_fifo.v:0$317'.
+  Set init value: $formal$./sync_fifo.v:144$41_EN = 1'0
+Found init rule in `\sync_fifo.$proc$./sync_fifo.v:0$315'.
+  Set init value: $formal$./sync_fifo.v:140$40_EN = 1'0
+Found init rule in `\sync_fifo.$proc$./sync_fifo.v:0$313'.
+  Set init value: $formal$./sync_fifo.v:139$39_EN = 1'0
+Found init rule in `\sync_fifo.$proc$./sync_fifo.v:0$311'.
+  Set init value: $formal$./sync_fifo.v:138$38_EN = 1'0
+Found init rule in `\sync_fifo.$proc$./sync_fifo.v:0$309'.
+  Set init value: $formal$./sync_fifo.v:137$37_EN = 1'0
+Found init rule in `\sync_fifo.$proc$./sync_fifo.v:0$307'.
+  Set init value: $formal$./sync_fifo.v:133$36_EN = 1'0
+Found init rule in `\sync_fifo.$proc$./sync_fifo.v:0$305'.
+  Set init value: $formal$./sync_fifo.v:130$35_EN = 1'0
+Found init rule in `\sync_fifo.$proc$./sync_fifo.v:0$303'.
+  Set init value: $formal$./sync_fifo.v:126$34_EN = 1'0
+Found init rule in `\sync_fifo.$proc$./sync_fifo.v:0$301'.
+  Set init value: $formal$./sync_fifo.v:125$33_EN = 1'0
+Found init rule in `\sync_fifo.$proc$./sync_fifo.v:0$299'.
+  Set init value: $formal$./sync_fifo.v:124$32_EN = 1'0
+Found init rule in `\sync_fifo.$proc$./sync_fifo.v:0$297'.
+  Set init value: $formal$./sync_fifo.v:123$31_EN = 1'0
+Found init rule in `\sync_fifo.$proc$./sync_fifo.v:117$289'.
   Set init value: \r_PAST_VALID = 1'0
-Found init rule in `\sync_fifo.$proc$./sync_fifo.v:18$287'.
-  Set init value: \r_QUANTITY = 2'00
-Found init rule in `\sync_fifo.$proc$./sync_fifo.v:16$286'.
-  Set init value: \r_READ_POINTER = 2'00
-Found init rule in `\sync_fifo.$proc$./sync_fifo.v:15$285'.
+Found init rule in `\sync_fifo.$proc$./sync_fifo.v:0$288'.
   Set init value: \r_WRITE_POINTER = 2'00
+  Set init value: \r_READ_POINTER = 2'00
+  Set init value: \r_QUANTITY = 2'00
 
 2.3.5. Executing PROC_ARST pass (detect async resets in processes).
 
 2.3.6. Executing PROC_MUX pass (convert decision trees to multiplexers).
-Creating decoders for process `\sync_fifo.$proc$./sync_fifo.v:181$366'.
-Creating decoders for process `\sync_fifo.$proc$./sync_fifo.v:180$364'.
-Creating decoders for process `\sync_fifo.$proc$./sync_fifo.v:179$362'.
-Creating decoders for process `\sync_fifo.$proc$./sync_fifo.v:175$360'.
-Creating decoders for process `\sync_fifo.$proc$./sync_fifo.v:172$358'.
-Creating decoders for process `\sync_fifo.$proc$./sync_fifo.v:171$356'.
-Creating decoders for process `\sync_fifo.$proc$./sync_fifo.v:170$354'.
-Creating decoders for process `\sync_fifo.$proc$./sync_fifo.v:166$352'.
-Creating decoders for process `\sync_fifo.$proc$./sync_fifo.v:165$350'.
-Creating decoders for process `\sync_fifo.$proc$./sync_fifo.v:164$348'.
-Creating decoders for process `\sync_fifo.$proc$./sync_fifo.v:160$346'.
-Creating decoders for process `\sync_fifo.$proc$./sync_fifo.v:159$344'.
-Creating decoders for process `\sync_fifo.$proc$./sync_fifo.v:158$342'.
-Creating decoders for process `\sync_fifo.$proc$./sync_fifo.v:157$340'.
-Creating decoders for process `\sync_fifo.$proc$./sync_fifo.v:153$338'.
-Creating decoders for process `\sync_fifo.$proc$./sync_fifo.v:152$336'.
-Creating decoders for process `\sync_fifo.$proc$./sync_fifo.v:151$334'.
-Creating decoders for process `\sync_fifo.$proc$./sync_fifo.v:150$332'.
-Creating decoders for process `\sync_fifo.$proc$./sync_fifo.v:146$330'.
-Creating decoders for process `\sync_fifo.$proc$./sync_fifo.v:145$328'.
-Creating decoders for process `\sync_fifo.$proc$./sync_fifo.v:144$326'.
-Creating decoders for process `\sync_fifo.$proc$./sync_fifo.v:143$324'.
-Creating decoders for process `\sync_fifo.$proc$./sync_fifo.v:139$322'.
-Creating decoders for process `\sync_fifo.$proc$./sync_fifo.v:138$320'.
-Creating decoders for process `\sync_fifo.$proc$./sync_fifo.v:137$318'.
-Creating decoders for process `\sync_fifo.$proc$./sync_fifo.v:136$316'.
-Creating decoders for process `\sync_fifo.$proc$./sync_fifo.v:132$314'.
-Creating decoders for process `\sync_fifo.$proc$./sync_fifo.v:131$312'.
-Creating decoders for process `\sync_fifo.$proc$./sync_fifo.v:130$310'.
-Creating decoders for process `\sync_fifo.$proc$./sync_fifo.v:129$308'.
-Creating decoders for process `\sync_fifo.$proc$./sync_fifo.v:126$306'.
-Creating decoders for process `\sync_fifo.$proc$./sync_fifo.v:124$304'.
-Creating decoders for process `\sync_fifo.$proc$./sync_fifo.v:118$302'.
-Creating decoders for process `\sync_fifo.$proc$./sync_fifo.v:117$300'.
-Creating decoders for process `\sync_fifo.$proc$./sync_fifo.v:116$298'.
-Creating decoders for process `\sync_fifo.$proc$./sync_fifo.v:115$296'.
-Creating decoders for process `\sync_fifo.$proc$./sync_fifo.v:109$289'.
-Creating decoders for process `\sync_fifo.$proc$./sync_fifo.v:108$288'.
-Creating decoders for process `\sync_fifo.$proc$./sync_fifo.v:18$287'.
-Creating decoders for process `\sync_fifo.$proc$./sync_fifo.v:16$286'.
-Creating decoders for process `\sync_fifo.$proc$./sync_fifo.v:15$285'.
-Creating decoders for process `\sync_fifo.$proc$./sync_fifo.v:113$83'.
-     1/64: $0$formal$./sync_fifo.v:124$35_EN[0:0]$117
-     2/64: $0$formal$./sync_fifo.v:124$35_CHECK[0:0]$116
-     3/64: $0$formal$./sync_fifo.v:126$36_EN[0:0]$119
-     4/64: $0$formal$./sync_fifo.v:126$36_CHECK[0:0]$118
-     5/64: $0$formal$./sync_fifo.v:129$37_EN[0:0]$121
-     6/64: $0$formal$./sync_fifo.v:129$37_CHECK[0:0]$120
-     7/64: $0$formal$./sync_fifo.v:130$38_EN[0:0]$123
-     8/64: $0$formal$./sync_fifo.v:130$38_CHECK[0:0]$122
-     9/64: $0$formal$./sync_fifo.v:131$39_EN[0:0]$125
-    10/64: $0$formal$./sync_fifo.v:131$39_CHECK[0:0]$124
-    11/64: $0$formal$./sync_fifo.v:132$40_EN[0:0]$127
-    12/64: $0$formal$./sync_fifo.v:132$40_CHECK[0:0]$126
-    13/64: $0$formal$./sync_fifo.v:136$41_EN[0:0]$129
-    14/64: $0$formal$./sync_fifo.v:136$41_CHECK[0:0]$128
-    15/64: $0$formal$./sync_fifo.v:137$42_EN[0:0]$131
-    16/64: $0$formal$./sync_fifo.v:137$42_CHECK[0:0]$130
-    17/64: $0$formal$./sync_fifo.v:138$43_EN[0:0]$133
-    18/64: $0$formal$./sync_fifo.v:138$43_CHECK[0:0]$132
-    19/64: $0$formal$./sync_fifo.v:139$44_EN[0:0]$135
-    20/64: $0$formal$./sync_fifo.v:139$44_CHECK[0:0]$134
-    21/64: $0$formal$./sync_fifo.v:143$45_EN[0:0]$137
-    22/64: $0$formal$./sync_fifo.v:143$45_CHECK[0:0]$136
-    23/64: $0$formal$./sync_fifo.v:144$46_EN[0:0]$139
-    24/64: $0$formal$./sync_fifo.v:144$46_CHECK[0:0]$138
-    25/64: $0$formal$./sync_fifo.v:145$47_EN[0:0]$141
-    26/64: $0$formal$./sync_fifo.v:145$47_CHECK[0:0]$140
-    27/64: $0$formal$./sync_fifo.v:146$48_EN[0:0]$143
-    28/64: $0$formal$./sync_fifo.v:146$48_CHECK[0:0]$142
-    29/64: $0$formal$./sync_fifo.v:150$49_EN[0:0]$145
-    30/64: $0$formal$./sync_fifo.v:150$49_CHECK[0:0]$144
-    31/64: $0$formal$./sync_fifo.v:151$50_EN[0:0]$147
-    32/64: $0$formal$./sync_fifo.v:151$50_CHECK[0:0]$146
-    33/64: $0$formal$./sync_fifo.v:152$51_EN[0:0]$149
-    34/64: $0$formal$./sync_fifo.v:152$51_CHECK[0:0]$148
-    35/64: $0$formal$./sync_fifo.v:153$52_EN[0:0]$151
-    36/64: $0$formal$./sync_fifo.v:153$52_CHECK[0:0]$150
-    37/64: $0$formal$./sync_fifo.v:157$53_EN[0:0]$153
-    38/64: $0$formal$./sync_fifo.v:157$53_CHECK[0:0]$152
-    39/64: $0$formal$./sync_fifo.v:158$54_EN[0:0]$155
-    40/64: $0$formal$./sync_fifo.v:158$54_CHECK[0:0]$154
-    41/64: $0$formal$./sync_fifo.v:159$55_EN[0:0]$157
-    42/64: $0$formal$./sync_fifo.v:159$55_CHECK[0:0]$156
-    43/64: $0$formal$./sync_fifo.v:160$56_EN[0:0]$159
-    44/64: $0$formal$./sync_fifo.v:160$56_CHECK[0:0]$158
-    45/64: $0$formal$./sync_fifo.v:164$57_EN[0:0]$161
-    46/64: $0$formal$./sync_fifo.v:164$57_CHECK[0:0]$160
-    47/64: $0$formal$./sync_fifo.v:165$58_EN[0:0]$163
-    48/64: $0$formal$./sync_fifo.v:165$58_CHECK[0:0]$162
-    49/64: $0$formal$./sync_fifo.v:166$59_EN[0:0]$165
-    50/64: $0$formal$./sync_fifo.v:166$59_CHECK[0:0]$164
-    51/64: $0$formal$./sync_fifo.v:170$60_EN[0:0]$167
-    52/64: $0$formal$./sync_fifo.v:170$60_CHECK[0:0]$166
-    53/64: $0$formal$./sync_fifo.v:171$61_EN[0:0]$169
-    54/64: $0$formal$./sync_fifo.v:171$61_CHECK[0:0]$168
-    55/64: $0$formal$./sync_fifo.v:172$62_EN[0:0]$171
-    56/64: $0$formal$./sync_fifo.v:172$62_CHECK[0:0]$170
-    57/64: $0$formal$./sync_fifo.v:175$63_EN[0:0]$173
-    58/64: $0$formal$./sync_fifo.v:175$63_CHECK[0:0]$172
-    59/64: $0$formal$./sync_fifo.v:179$64_EN[0:0]$175
-    60/64: $0$formal$./sync_fifo.v:179$64_CHECK[0:0]$174
-    61/64: $0$formal$./sync_fifo.v:180$65_EN[0:0]$177
-    62/64: $0$formal$./sync_fifo.v:180$65_CHECK[0:0]$176
-    63/64: $0$formal$./sync_fifo.v:181$66_EN[0:0]$179
-    64/64: $0$formal$./sync_fifo.v:181$66_CHECK[0:0]$178
-Creating decoders for process `\sync_fifo.$proc$./sync_fifo.v:23$67'.
+Creating decoders for process `\sync_fifo.$proc$./sync_fifo.v:0$367'.
+Creating decoders for process `\sync_fifo.$proc$./sync_fifo.v:0$365'.
+Creating decoders for process `\sync_fifo.$proc$./sync_fifo.v:0$363'.
+Creating decoders for process `\sync_fifo.$proc$./sync_fifo.v:0$361'.
+Creating decoders for process `\sync_fifo.$proc$./sync_fifo.v:0$359'.
+Creating decoders for process `\sync_fifo.$proc$./sync_fifo.v:0$357'.
+Creating decoders for process `\sync_fifo.$proc$./sync_fifo.v:0$355'.
+Creating decoders for process `\sync_fifo.$proc$./sync_fifo.v:0$353'.
+Creating decoders for process `\sync_fifo.$proc$./sync_fifo.v:0$351'.
+Creating decoders for process `\sync_fifo.$proc$./sync_fifo.v:0$349'.
+Creating decoders for process `\sync_fifo.$proc$./sync_fifo.v:0$347'.
+Creating decoders for process `\sync_fifo.$proc$./sync_fifo.v:0$345'.
+Creating decoders for process `\sync_fifo.$proc$./sync_fifo.v:0$343'.
+Creating decoders for process `\sync_fifo.$proc$./sync_fifo.v:0$341'.
+Creating decoders for process `\sync_fifo.$proc$./sync_fifo.v:0$339'.
+Creating decoders for process `\sync_fifo.$proc$./sync_fifo.v:0$337'.
+Creating decoders for process `\sync_fifo.$proc$./sync_fifo.v:0$335'.
+Creating decoders for process `\sync_fifo.$proc$./sync_fifo.v:0$333'.
+Creating decoders for process `\sync_fifo.$proc$./sync_fifo.v:0$331'.
+Creating decoders for process `\sync_fifo.$proc$./sync_fifo.v:0$329'.
+Creating decoders for process `\sync_fifo.$proc$./sync_fifo.v:0$327'.
+Creating decoders for process `\sync_fifo.$proc$./sync_fifo.v:0$325'.
+Creating decoders for process `\sync_fifo.$proc$./sync_fifo.v:0$323'.
+Creating decoders for process `\sync_fifo.$proc$./sync_fifo.v:0$321'.
+Creating decoders for process `\sync_fifo.$proc$./sync_fifo.v:0$319'.
+Creating decoders for process `\sync_fifo.$proc$./sync_fifo.v:0$317'.
+Creating decoders for process `\sync_fifo.$proc$./sync_fifo.v:0$315'.
+Creating decoders for process `\sync_fifo.$proc$./sync_fifo.v:0$313'.
+Creating decoders for process `\sync_fifo.$proc$./sync_fifo.v:0$311'.
+Creating decoders for process `\sync_fifo.$proc$./sync_fifo.v:0$309'.
+Creating decoders for process `\sync_fifo.$proc$./sync_fifo.v:0$307'.
+Creating decoders for process `\sync_fifo.$proc$./sync_fifo.v:0$305'.
+Creating decoders for process `\sync_fifo.$proc$./sync_fifo.v:0$303'.
+Creating decoders for process `\sync_fifo.$proc$./sync_fifo.v:0$301'.
+Creating decoders for process `\sync_fifo.$proc$./sync_fifo.v:0$299'.
+Creating decoders for process `\sync_fifo.$proc$./sync_fifo.v:0$297'.
+Creating decoders for process `\sync_fifo.$proc$./sync_fifo.v:0$290'.
+Creating decoders for process `\sync_fifo.$proc$./sync_fifo.v:117$289'.
+Creating decoders for process `\sync_fifo.$proc$./sync_fifo.v:0$288'.
+Creating decoders for process `\sync_fifo.$proc$./sync_fifo.v:122$83'.
+     1/64: $0$formal$./sync_fifo.v:130$35_EN[0:0]$117
+     2/64: $0$formal$./sync_fifo.v:130$35_CHECK[0:0]$116
+     3/64: $0$formal$./sync_fifo.v:133$36_EN[0:0]$119
+     4/64: $0$formal$./sync_fifo.v:133$36_CHECK[0:0]$118
+     5/64: $0$formal$./sync_fifo.v:137$37_EN[0:0]$121
+     6/64: $0$formal$./sync_fifo.v:137$37_CHECK[0:0]$120
+     7/64: $0$formal$./sync_fifo.v:138$38_EN[0:0]$123
+     8/64: $0$formal$./sync_fifo.v:138$38_CHECK[0:0]$122
+     9/64: $0$formal$./sync_fifo.v:139$39_EN[0:0]$125
+    10/64: $0$formal$./sync_fifo.v:139$39_CHECK[0:0]$124
+    11/64: $0$formal$./sync_fifo.v:140$40_EN[0:0]$127
+    12/64: $0$formal$./sync_fifo.v:140$40_CHECK[0:0]$126
+    13/64: $0$formal$./sync_fifo.v:144$41_EN[0:0]$129
+    14/64: $0$formal$./sync_fifo.v:144$41_CHECK[0:0]$128
+    15/64: $0$formal$./sync_fifo.v:145$42_EN[0:0]$131
+    16/64: $0$formal$./sync_fifo.v:145$42_CHECK[0:0]$130
+    17/64: $0$formal$./sync_fifo.v:146$43_EN[0:0]$133
+    18/64: $0$formal$./sync_fifo.v:146$43_CHECK[0:0]$132
+    19/64: $0$formal$./sync_fifo.v:147$44_EN[0:0]$135
+    20/64: $0$formal$./sync_fifo.v:147$44_CHECK[0:0]$134
+    21/64: $0$formal$./sync_fifo.v:151$45_EN[0:0]$137
+    22/64: $0$formal$./sync_fifo.v:151$45_CHECK[0:0]$136
+    23/64: $0$formal$./sync_fifo.v:152$46_EN[0:0]$139
+    24/64: $0$formal$./sync_fifo.v:152$46_CHECK[0:0]$138
+    25/64: $0$formal$./sync_fifo.v:153$47_EN[0:0]$141
+    26/64: $0$formal$./sync_fifo.v:153$47_CHECK[0:0]$140
+    27/64: $0$formal$./sync_fifo.v:154$48_EN[0:0]$143
+    28/64: $0$formal$./sync_fifo.v:154$48_CHECK[0:0]$142
+    29/64: $0$formal$./sync_fifo.v:158$49_EN[0:0]$145
+    30/64: $0$formal$./sync_fifo.v:158$49_CHECK[0:0]$144
+    31/64: $0$formal$./sync_fifo.v:159$50_EN[0:0]$147
+    32/64: $0$formal$./sync_fifo.v:159$50_CHECK[0:0]$146
+    33/64: $0$formal$./sync_fifo.v:160$51_EN[0:0]$149
+    34/64: $0$formal$./sync_fifo.v:160$51_CHECK[0:0]$148
+    35/64: $0$formal$./sync_fifo.v:161$52_EN[0:0]$151
+    36/64: $0$formal$./sync_fifo.v:161$52_CHECK[0:0]$150
+    37/64: $0$formal$./sync_fifo.v:165$53_EN[0:0]$153
+    38/64: $0$formal$./sync_fifo.v:165$53_CHECK[0:0]$152
+    39/64: $0$formal$./sync_fifo.v:166$54_EN[0:0]$155
+    40/64: $0$formal$./sync_fifo.v:166$54_CHECK[0:0]$154
+    41/64: $0$formal$./sync_fifo.v:167$55_EN[0:0]$157
+    42/64: $0$formal$./sync_fifo.v:167$55_CHECK[0:0]$156
+    43/64: $0$formal$./sync_fifo.v:168$56_EN[0:0]$159
+    44/64: $0$formal$./sync_fifo.v:168$56_CHECK[0:0]$158
+    45/64: $0$formal$./sync_fifo.v:172$57_EN[0:0]$161
+    46/64: $0$formal$./sync_fifo.v:172$57_CHECK[0:0]$160
+    47/64: $0$formal$./sync_fifo.v:173$58_EN[0:0]$163
+    48/64: $0$formal$./sync_fifo.v:173$58_CHECK[0:0]$162
+    49/64: $0$formal$./sync_fifo.v:174$59_EN[0:0]$165
+    50/64: $0$formal$./sync_fifo.v:174$59_CHECK[0:0]$164
+    51/64: $0$formal$./sync_fifo.v:178$60_EN[0:0]$167
+    52/64: $0$formal$./sync_fifo.v:178$60_CHECK[0:0]$166
+    53/64: $0$formal$./sync_fifo.v:179$61_EN[0:0]$169
+    54/64: $0$formal$./sync_fifo.v:179$61_CHECK[0:0]$168
+    55/64: $0$formal$./sync_fifo.v:180$62_EN[0:0]$171
+    56/64: $0$formal$./sync_fifo.v:180$62_CHECK[0:0]$170
+    57/64: $0$formal$./sync_fifo.v:183$63_EN[0:0]$173
+    58/64: $0$formal$./sync_fifo.v:183$63_CHECK[0:0]$172
+    59/64: $0$formal$./sync_fifo.v:187$64_EN[0:0]$175
+    60/64: $0$formal$./sync_fifo.v:187$64_CHECK[0:0]$174
+    61/64: $0$formal$./sync_fifo.v:188$65_EN[0:0]$177
+    62/64: $0$formal$./sync_fifo.v:188$65_CHECK[0:0]$176
+    63/64: $0$formal$./sync_fifo.v:189$66_EN[0:0]$179
+    64/64: $0$formal$./sync_fifo.v:189$66_CHECK[0:0]$178
+Creating decoders for process `\sync_fifo.$proc$./sync_fifo.v:32$67'.
      1/14: $0\o_FIFO_FULL[0:0]
      2/14: $0\o_FIFO_EMPTY[0:0]
      3/14: $0\r_QUANTITY[1:0]
-     4/14: $0$memwr$\r_MEMORY$./sync_fifo.v:52$25_EN[7:0]$70
-     5/14: $0$memwr$\r_MEMORY$./sync_fifo.v:52$25_DATA[7:0]$69
-     6/14: $0$memwr$\r_MEMORY$./sync_fifo.v:52$25_ADDR[1:0]$68
-     7/14: $0$memwr$\r_MEMORY$./sync_fifo.v:59$26_EN[7:0]$73
-     8/14: $0$memwr$\r_MEMORY$./sync_fifo.v:59$26_DATA[7:0]$72
-     9/14: $0$memwr$\r_MEMORY$./sync_fifo.v:59$26_ADDR[1:0]$71
+     4/14: $0$memwr$\r_MEMORY$./sync_fifo.v:61$25_EN[7:0]$70
+     5/14: $0$memwr$\r_MEMORY$./sync_fifo.v:61$25_DATA[7:0]$69
+     6/14: $0$memwr$\r_MEMORY$./sync_fifo.v:61$25_ADDR[1:0]$68
+     7/14: $0$memwr$\r_MEMORY$./sync_fifo.v:68$26_EN[7:0]$73
+     8/14: $0$memwr$\r_MEMORY$./sync_fifo.v:68$26_DATA[7:0]$72
+     9/14: $0$memwr$\r_MEMORY$./sync_fifo.v:68$26_ADDR[1:0]$71
     10/14: $0\r_READ_POINTER[1:0]
     11/14: $0\r_WRITE_POINTER[1:0]
     12/14: $0\o_OUTPUT[7:0]
@@ -268,281 +264,279 @@ Creating decoders for process `\sync_fifo.$proc$./sync_fifo.v:23$67'.
     14/14: $0\o_FIFO_ALMOST_EMPTY[0:0]
 
 2.3.7. Executing PROC_DLATCH pass (convert process syncs to latches).
-No latch inferred for signal `\sync_fifo.$formal$./sync_fifo.v:110$27_CHECK' from process `\sync_fifo.$proc$./sync_fifo.v:109$289'.
-No latch inferred for signal `\sync_fifo.$formal$./sync_fifo.v:110$27_EN' from process `\sync_fifo.$proc$./sync_fifo.v:109$289'.
-No latch inferred for signal `\sync_fifo.$formal$./sync_fifo.v:111$29_CHECK' from process `\sync_fifo.$proc$./sync_fifo.v:109$289'.
-No latch inferred for signal `\sync_fifo.$formal$./sync_fifo.v:111$29_EN' from process `\sync_fifo.$proc$./sync_fifo.v:109$289'.
+No latch inferred for signal `\sync_fifo.$formal$./sync_fifo.v:118$27_CHECK' from process `\sync_fifo.$proc$./sync_fifo.v:0$290'.
+No latch inferred for signal `\sync_fifo.$formal$./sync_fifo.v:118$27_EN' from process `\sync_fifo.$proc$./sync_fifo.v:0$290'.
+No latch inferred for signal `\sync_fifo.$formal$./sync_fifo.v:119$29_CHECK' from process `\sync_fifo.$proc$./sync_fifo.v:0$290'.
+No latch inferred for signal `\sync_fifo.$formal$./sync_fifo.v:119$29_EN' from process `\sync_fifo.$proc$./sync_fifo.v:0$290'.
 
 2.3.8. Executing PROC_DFF pass (convert process syncs to FFs).
-Creating register for signal `\sync_fifo.\r_PAST_VALID' using process `\sync_fifo.$proc$./sync_fifo.v:113$83'.
-  created $dff cell `$procdff$947' with positive edge clock.
-Creating register for signal `\sync_fifo.$past$./sync_fifo.v:115$1$0' using process `\sync_fifo.$proc$./sync_fifo.v:113$83'.
+Creating register for signal `\sync_fifo.\r_PAST_VALID' using process `\sync_fifo.$proc$./sync_fifo.v:122$83'.
   created $dff cell `$procdff$948' with positive edge clock.
-Creating register for signal `\sync_fifo.$past$./sync_fifo.v:120$2$0' using process `\sync_fifo.$proc$./sync_fifo.v:113$83'.
+Creating register for signal `\sync_fifo.$past$./sync_fifo.v:124$1$0' using process `\sync_fifo.$proc$./sync_fifo.v:122$83'.
   created $dff cell `$procdff$949' with positive edge clock.
-Creating register for signal `\sync_fifo.$past$./sync_fifo.v:127$3$0' using process `\sync_fifo.$proc$./sync_fifo.v:113$83'.
+Creating register for signal `\sync_fifo.$past$./sync_fifo.v:129$2$0' using process `\sync_fifo.$proc$./sync_fifo.v:122$83'.
   created $dff cell `$procdff$950' with positive edge clock.
-Creating register for signal `\sync_fifo.$past$./sync_fifo.v:134$4$0' using process `\sync_fifo.$proc$./sync_fifo.v:113$83'.
+Creating register for signal `\sync_fifo.$past$./sync_fifo.v:136$3$0' using process `\sync_fifo.$proc$./sync_fifo.v:122$83'.
   created $dff cell `$procdff$951' with positive edge clock.
-Creating register for signal `\sync_fifo.$past$./sync_fifo.v:141$5$0' using process `\sync_fifo.$proc$./sync_fifo.v:113$83'.
+Creating register for signal `\sync_fifo.$past$./sync_fifo.v:143$4$0' using process `\sync_fifo.$proc$./sync_fifo.v:122$83'.
   created $dff cell `$procdff$952' with positive edge clock.
-Creating register for signal `\sync_fifo.$past$./sync_fifo.v:148$6$0' using process `\sync_fifo.$proc$./sync_fifo.v:113$83'.
+Creating register for signal `\sync_fifo.$past$./sync_fifo.v:150$5$0' using process `\sync_fifo.$proc$./sync_fifo.v:122$83'.
   created $dff cell `$procdff$953' with positive edge clock.
-Creating register for signal `\sync_fifo.$past$./sync_fifo.v:162$7$0' using process `\sync_fifo.$proc$./sync_fifo.v:113$83'.
+Creating register for signal `\sync_fifo.$past$./sync_fifo.v:157$6$0' using process `\sync_fifo.$proc$./sync_fifo.v:122$83'.
   created $dff cell `$procdff$954' with positive edge clock.
-Creating register for signal `\sync_fifo.$past$./sync_fifo.v:162$8$0' using process `\sync_fifo.$proc$./sync_fifo.v:113$83'.
+Creating register for signal `\sync_fifo.$past$./sync_fifo.v:171$7$0' using process `\sync_fifo.$proc$./sync_fifo.v:122$83'.
   created $dff cell `$procdff$955' with positive edge clock.
-Creating register for signal `\sync_fifo.$past$./sync_fifo.v:164$9$0' using process `\sync_fifo.$proc$./sync_fifo.v:113$83'.
+Creating register for signal `\sync_fifo.$past$./sync_fifo.v:171$8$0' using process `\sync_fifo.$proc$./sync_fifo.v:122$83'.
   created $dff cell `$procdff$956' with positive edge clock.
-Creating register for signal `\sync_fifo.$past$./sync_fifo.v:165$10$0' using process `\sync_fifo.$proc$./sync_fifo.v:113$83'.
+Creating register for signal `\sync_fifo.$past$./sync_fifo.v:173$9$0' using process `\sync_fifo.$proc$./sync_fifo.v:122$83'.
   created $dff cell `$procdff$957' with positive edge clock.
-Creating register for signal `\sync_fifo.$past$./sync_fifo.v:166$11$0' using process `\sync_fifo.$proc$./sync_fifo.v:113$83'.
+Creating register for signal `\sync_fifo.$past$./sync_fifo.v:174$10$0' using process `\sync_fifo.$proc$./sync_fifo.v:122$83'.
   created $dff cell `$procdff$958' with positive edge clock.
-Creating register for signal `\sync_fifo.$past$./sync_fifo.v:168$12$0' using process `\sync_fifo.$proc$./sync_fifo.v:113$83'.
+Creating register for signal `\sync_fifo.$past$./sync_fifo.v:175$11$0' using process `\sync_fifo.$proc$./sync_fifo.v:122$83'.
   created $dff cell `$procdff$959' with positive edge clock.
-Creating register for signal `\sync_fifo.$past$./sync_fifo.v:168$13$0' using process `\sync_fifo.$proc$./sync_fifo.v:113$83'.
+Creating register for signal `\sync_fifo.$past$./sync_fifo.v:177$12$0' using process `\sync_fifo.$proc$./sync_fifo.v:122$83'.
   created $dff cell `$procdff$960' with positive edge clock.
-Creating register for signal `\sync_fifo.$past$./sync_fifo.v:170$14$0' using process `\sync_fifo.$proc$./sync_fifo.v:113$83'.
+Creating register for signal `\sync_fifo.$past$./sync_fifo.v:177$13$0' using process `\sync_fifo.$proc$./sync_fifo.v:122$83'.
   created $dff cell `$procdff$961' with positive edge clock.
-Creating register for signal `\sync_fifo.$past$./sync_fifo.v:171$15$0' using process `\sync_fifo.$proc$./sync_fifo.v:113$83'.
+Creating register for signal `\sync_fifo.$past$./sync_fifo.v:179$14$0' using process `\sync_fifo.$proc$./sync_fifo.v:122$83'.
   created $dff cell `$procdff$962' with positive edge clock.
-Creating register for signal `\sync_fifo.$past$./sync_fifo.v:172$16$0' using process `\sync_fifo.$proc$./sync_fifo.v:113$83'.
+Creating register for signal `\sync_fifo.$past$./sync_fifo.v:180$15$0' using process `\sync_fifo.$proc$./sync_fifo.v:122$83'.
   created $dff cell `$procdff$963' with positive edge clock.
-Creating register for signal `\sync_fifo.$past$./sync_fifo.v:172$17$0' using process `\sync_fifo.$proc$./sync_fifo.v:113$83'.
+Creating register for signal `\sync_fifo.$past$./sync_fifo.v:181$16$0' using process `\sync_fifo.$proc$./sync_fifo.v:122$83'.
   created $dff cell `$procdff$964' with positive edge clock.
-Creating register for signal `\sync_fifo.$past$./sync_fifo.v:174$18$0' using process `\sync_fifo.$proc$./sync_fifo.v:113$83'.
+Creating register for signal `\sync_fifo.$past$./sync_fifo.v:181$17$0' using process `\sync_fifo.$proc$./sync_fifo.v:122$83'.
   created $dff cell `$procdff$965' with positive edge clock.
-Creating register for signal `\sync_fifo.$past$./sync_fifo.v:174$19$0' using process `\sync_fifo.$proc$./sync_fifo.v:113$83'.
+Creating register for signal `\sync_fifo.$past$./sync_fifo.v:183$18$0' using process `\sync_fifo.$proc$./sync_fifo.v:122$83'.
   created $dff cell `$procdff$966' with positive edge clock.
-Creating register for signal `\sync_fifo.$past$./sync_fifo.v:175$20$0' using process `\sync_fifo.$proc$./sync_fifo.v:113$83'.
+Creating register for signal `\sync_fifo.$past$./sync_fifo.v:183$19$0' using process `\sync_fifo.$proc$./sync_fifo.v:122$83'.
   created $dff cell `$procdff$967' with positive edge clock.
-Creating register for signal `\sync_fifo.$past$./sync_fifo.v:177$21$0' using process `\sync_fifo.$proc$./sync_fifo.v:113$83'.
+Creating register for signal `\sync_fifo.$past$./sync_fifo.v:184$20$0' using process `\sync_fifo.$proc$./sync_fifo.v:122$83'.
   created $dff cell `$procdff$968' with positive edge clock.
-Creating register for signal `\sync_fifo.$past$./sync_fifo.v:179$22$0' using process `\sync_fifo.$proc$./sync_fifo.v:113$83'.
+Creating register for signal `\sync_fifo.$past$./sync_fifo.v:186$21$0' using process `\sync_fifo.$proc$./sync_fifo.v:122$83'.
   created $dff cell `$procdff$969' with positive edge clock.
-Creating register for signal `\sync_fifo.$past$./sync_fifo.v:180$23$0' using process `\sync_fifo.$proc$./sync_fifo.v:113$83'.
+Creating register for signal `\sync_fifo.$past$./sync_fifo.v:188$22$0' using process `\sync_fifo.$proc$./sync_fifo.v:122$83'.
   created $dff cell `$procdff$970' with positive edge clock.
-Creating register for signal `\sync_fifo.$past$./sync_fifo.v:181$24$0' using process `\sync_fifo.$proc$./sync_fifo.v:113$83'.
+Creating register for signal `\sync_fifo.$past$./sync_fifo.v:189$23$0' using process `\sync_fifo.$proc$./sync_fifo.v:122$83'.
   created $dff cell `$procdff$971' with positive edge clock.
-Creating register for signal `\sync_fifo.$formal$./sync_fifo.v:115$31_CHECK' using process `\sync_fifo.$proc$./sync_fifo.v:113$83'.
+Creating register for signal `\sync_fifo.$past$./sync_fifo.v:190$24$0' using process `\sync_fifo.$proc$./sync_fifo.v:122$83'.
   created $dff cell `$procdff$972' with positive edge clock.
-Creating register for signal `\sync_fifo.$formal$./sync_fifo.v:115$31_EN' using process `\sync_fifo.$proc$./sync_fifo.v:113$83'.
+Creating register for signal `\sync_fifo.$formal$./sync_fifo.v:123$31_CHECK' using process `\sync_fifo.$proc$./sync_fifo.v:122$83'.
   created $dff cell `$procdff$973' with positive edge clock.
-Creating register for signal `\sync_fifo.$formal$./sync_fifo.v:116$32_CHECK' using process `\sync_fifo.$proc$./sync_fifo.v:113$83'.
+Creating register for signal `\sync_fifo.$formal$./sync_fifo.v:123$31_EN' using process `\sync_fifo.$proc$./sync_fifo.v:122$83'.
   created $dff cell `$procdff$974' with positive edge clock.
-Creating register for signal `\sync_fifo.$formal$./sync_fifo.v:116$32_EN' using process `\sync_fifo.$proc$./sync_fifo.v:113$83'.
+Creating register for signal `\sync_fifo.$formal$./sync_fifo.v:124$32_CHECK' using process `\sync_fifo.$proc$./sync_fifo.v:122$83'.
   created $dff cell `$procdff$975' with positive edge clock.
-Creating register for signal `\sync_fifo.$formal$./sync_fifo.v:117$33_CHECK' using process `\sync_fifo.$proc$./sync_fifo.v:113$83'.
+Creating register for signal `\sync_fifo.$formal$./sync_fifo.v:124$32_EN' using process `\sync_fifo.$proc$./sync_fifo.v:122$83'.
   created $dff cell `$procdff$976' with positive edge clock.
-Creating register for signal `\sync_fifo.$formal$./sync_fifo.v:117$33_EN' using process `\sync_fifo.$proc$./sync_fifo.v:113$83'.
+Creating register for signal `\sync_fifo.$formal$./sync_fifo.v:125$33_CHECK' using process `\sync_fifo.$proc$./sync_fifo.v:122$83'.
   created $dff cell `$procdff$977' with positive edge clock.
-Creating register for signal `\sync_fifo.$formal$./sync_fifo.v:118$34_CHECK' using process `\sync_fifo.$proc$./sync_fifo.v:113$83'.
+Creating register for signal `\sync_fifo.$formal$./sync_fifo.v:125$33_EN' using process `\sync_fifo.$proc$./sync_fifo.v:122$83'.
   created $dff cell `$procdff$978' with positive edge clock.
-Creating register for signal `\sync_fifo.$formal$./sync_fifo.v:118$34_EN' using process `\sync_fifo.$proc$./sync_fifo.v:113$83'.
+Creating register for signal `\sync_fifo.$formal$./sync_fifo.v:126$34_CHECK' using process `\sync_fifo.$proc$./sync_fifo.v:122$83'.
   created $dff cell `$procdff$979' with positive edge clock.
-Creating register for signal `\sync_fifo.$formal$./sync_fifo.v:124$35_CHECK' using process `\sync_fifo.$proc$./sync_fifo.v:113$83'.
+Creating register for signal `\sync_fifo.$formal$./sync_fifo.v:126$34_EN' using process `\sync_fifo.$proc$./sync_fifo.v:122$83'.
   created $dff cell `$procdff$980' with positive edge clock.
-Creating register for signal `\sync_fifo.$formal$./sync_fifo.v:124$35_EN' using process `\sync_fifo.$proc$./sync_fifo.v:113$83'.
+Creating register for signal `\sync_fifo.$formal$./sync_fifo.v:130$35_CHECK' using process `\sync_fifo.$proc$./sync_fifo.v:122$83'.
   created $dff cell `$procdff$981' with positive edge clock.
-Creating register for signal `\sync_fifo.$formal$./sync_fifo.v:126$36_CHECK' using process `\sync_fifo.$proc$./sync_fifo.v:113$83'.
+Creating register for signal `\sync_fifo.$formal$./sync_fifo.v:130$35_EN' using process `\sync_fifo.$proc$./sync_fifo.v:122$83'.
   created $dff cell `$procdff$982' with positive edge clock.
-Creating register for signal `\sync_fifo.$formal$./sync_fifo.v:126$36_EN' using process `\sync_fifo.$proc$./sync_fifo.v:113$83'.
+Creating register for signal `\sync_fifo.$formal$./sync_fifo.v:133$36_CHECK' using process `\sync_fifo.$proc$./sync_fifo.v:122$83'.
   created $dff cell `$procdff$983' with positive edge clock.
-Creating register for signal `\sync_fifo.$formal$./sync_fifo.v:129$37_CHECK' using process `\sync_fifo.$proc$./sync_fifo.v:113$83'.
+Creating register for signal `\sync_fifo.$formal$./sync_fifo.v:133$36_EN' using process `\sync_fifo.$proc$./sync_fifo.v:122$83'.
   created $dff cell `$procdff$984' with positive edge clock.
-Creating register for signal `\sync_fifo.$formal$./sync_fifo.v:129$37_EN' using process `\sync_fifo.$proc$./sync_fifo.v:113$83'.
+Creating register for signal `\sync_fifo.$formal$./sync_fifo.v:137$37_CHECK' using process `\sync_fifo.$proc$./sync_fifo.v:122$83'.
   created $dff cell `$procdff$985' with positive edge clock.
-Creating register for signal `\sync_fifo.$formal$./sync_fifo.v:130$38_CHECK' using process `\sync_fifo.$proc$./sync_fifo.v:113$83'.
+Creating register for signal `\sync_fifo.$formal$./sync_fifo.v:137$37_EN' using process `\sync_fifo.$proc$./sync_fifo.v:122$83'.
   created $dff cell `$procdff$986' with positive edge clock.
-Creating register for signal `\sync_fifo.$formal$./sync_fifo.v:130$38_EN' using process `\sync_fifo.$proc$./sync_fifo.v:113$83'.
+Creating register for signal `\sync_fifo.$formal$./sync_fifo.v:138$38_CHECK' using process `\sync_fifo.$proc$./sync_fifo.v:122$83'.
   created $dff cell `$procdff$987' with positive edge clock.
-Creating register for signal `\sync_fifo.$formal$./sync_fifo.v:131$39_CHECK' using process `\sync_fifo.$proc$./sync_fifo.v:113$83'.
+Creating register for signal `\sync_fifo.$formal$./sync_fifo.v:138$38_EN' using process `\sync_fifo.$proc$./sync_fifo.v:122$83'.
   created $dff cell `$procdff$988' with positive edge clock.
-Creating register for signal `\sync_fifo.$formal$./sync_fifo.v:131$39_EN' using process `\sync_fifo.$proc$./sync_fifo.v:113$83'.
+Creating register for signal `\sync_fifo.$formal$./sync_fifo.v:139$39_CHECK' using process `\sync_fifo.$proc$./sync_fifo.v:122$83'.
   created $dff cell `$procdff$989' with positive edge clock.
-Creating register for signal `\sync_fifo.$formal$./sync_fifo.v:132$40_CHECK' using process `\sync_fifo.$proc$./sync_fifo.v:113$83'.
+Creating register for signal `\sync_fifo.$formal$./sync_fifo.v:139$39_EN' using process `\sync_fifo.$proc$./sync_fifo.v:122$83'.
   created $dff cell `$procdff$990' with positive edge clock.
-Creating register for signal `\sync_fifo.$formal$./sync_fifo.v:132$40_EN' using process `\sync_fifo.$proc$./sync_fifo.v:113$83'.
+Creating register for signal `\sync_fifo.$formal$./sync_fifo.v:140$40_CHECK' using process `\sync_fifo.$proc$./sync_fifo.v:122$83'.
   created $dff cell `$procdff$991' with positive edge clock.
-Creating register for signal `\sync_fifo.$formal$./sync_fifo.v:136$41_CHECK' using process `\sync_fifo.$proc$./sync_fifo.v:113$83'.
+Creating register for signal `\sync_fifo.$formal$./sync_fifo.v:140$40_EN' using process `\sync_fifo.$proc$./sync_fifo.v:122$83'.
   created $dff cell `$procdff$992' with positive edge clock.
-Creating register for signal `\sync_fifo.$formal$./sync_fifo.v:136$41_EN' using process `\sync_fifo.$proc$./sync_fifo.v:113$83'.
+Creating register for signal `\sync_fifo.$formal$./sync_fifo.v:144$41_CHECK' using process `\sync_fifo.$proc$./sync_fifo.v:122$83'.
   created $dff cell `$procdff$993' with positive edge clock.
-Creating register for signal `\sync_fifo.$formal$./sync_fifo.v:137$42_CHECK' using process `\sync_fifo.$proc$./sync_fifo.v:113$83'.
+Creating register for signal `\sync_fifo.$formal$./sync_fifo.v:144$41_EN' using process `\sync_fifo.$proc$./sync_fifo.v:122$83'.
   created $dff cell `$procdff$994' with positive edge clock.
-Creating register for signal `\sync_fifo.$formal$./sync_fifo.v:137$42_EN' using process `\sync_fifo.$proc$./sync_fifo.v:113$83'.
+Creating register for signal `\sync_fifo.$formal$./sync_fifo.v:145$42_CHECK' using process `\sync_fifo.$proc$./sync_fifo.v:122$83'.
   created $dff cell `$procdff$995' with positive edge clock.
-Creating register for signal `\sync_fifo.$formal$./sync_fifo.v:138$43_CHECK' using process `\sync_fifo.$proc$./sync_fifo.v:113$83'.
+Creating register for signal `\sync_fifo.$formal$./sync_fifo.v:145$42_EN' using process `\sync_fifo.$proc$./sync_fifo.v:122$83'.
   created $dff cell `$procdff$996' with positive edge clock.
-Creating register for signal `\sync_fifo.$formal$./sync_fifo.v:138$43_EN' using process `\sync_fifo.$proc$./sync_fifo.v:113$83'.
+Creating register for signal `\sync_fifo.$formal$./sync_fifo.v:146$43_CHECK' using process `\sync_fifo.$proc$./sync_fifo.v:122$83'.
   created $dff cell `$procdff$997' with positive edge clock.
-Creating register for signal `\sync_fifo.$formal$./sync_fifo.v:139$44_CHECK' using process `\sync_fifo.$proc$./sync_fifo.v:113$83'.
+Creating register for signal `\sync_fifo.$formal$./sync_fifo.v:146$43_EN' using process `\sync_fifo.$proc$./sync_fifo.v:122$83'.
   created $dff cell `$procdff$998' with positive edge clock.
-Creating register for signal `\sync_fifo.$formal$./sync_fifo.v:139$44_EN' using process `\sync_fifo.$proc$./sync_fifo.v:113$83'.
+Creating register for signal `\sync_fifo.$formal$./sync_fifo.v:147$44_CHECK' using process `\sync_fifo.$proc$./sync_fifo.v:122$83'.
   created $dff cell `$procdff$999' with positive edge clock.
-Creating register for signal `\sync_fifo.$formal$./sync_fifo.v:143$45_CHECK' using process `\sync_fifo.$proc$./sync_fifo.v:113$83'.
+Creating register for signal `\sync_fifo.$formal$./sync_fifo.v:147$44_EN' using process `\sync_fifo.$proc$./sync_fifo.v:122$83'.
   created $dff cell `$procdff$1000' with positive edge clock.
-Creating register for signal `\sync_fifo.$formal$./sync_fifo.v:143$45_EN' using process `\sync_fifo.$proc$./sync_fifo.v:113$83'.
+Creating register for signal `\sync_fifo.$formal$./sync_fifo.v:151$45_CHECK' using process `\sync_fifo.$proc$./sync_fifo.v:122$83'.
   created $dff cell `$procdff$1001' with positive edge clock.
-Creating register for signal `\sync_fifo.$formal$./sync_fifo.v:144$46_CHECK' using process `\sync_fifo.$proc$./sync_fifo.v:113$83'.
+Creating register for signal `\sync_fifo.$formal$./sync_fifo.v:151$45_EN' using process `\sync_fifo.$proc$./sync_fifo.v:122$83'.
   created $dff cell `$procdff$1002' with positive edge clock.
-Creating register for signal `\sync_fifo.$formal$./sync_fifo.v:144$46_EN' using process `\sync_fifo.$proc$./sync_fifo.v:113$83'.
+Creating register for signal `\sync_fifo.$formal$./sync_fifo.v:152$46_CHECK' using process `\sync_fifo.$proc$./sync_fifo.v:122$83'.
   created $dff cell `$procdff$1003' with positive edge clock.
-Creating register for signal `\sync_fifo.$formal$./sync_fifo.v:145$47_CHECK' using process `\sync_fifo.$proc$./sync_fifo.v:113$83'.
+Creating register for signal `\sync_fifo.$formal$./sync_fifo.v:152$46_EN' using process `\sync_fifo.$proc$./sync_fifo.v:122$83'.
   created $dff cell `$procdff$1004' with positive edge clock.
-Creating register for signal `\sync_fifo.$formal$./sync_fifo.v:145$47_EN' using process `\sync_fifo.$proc$./sync_fifo.v:113$83'.
+Creating register for signal `\sync_fifo.$formal$./sync_fifo.v:153$47_CHECK' using process `\sync_fifo.$proc$./sync_fifo.v:122$83'.
   created $dff cell `$procdff$1005' with positive edge clock.
-Creating register for signal `\sync_fifo.$formal$./sync_fifo.v:146$48_CHECK' using process `\sync_fifo.$proc$./sync_fifo.v:113$83'.
+Creating register for signal `\sync_fifo.$formal$./sync_fifo.v:153$47_EN' using process `\sync_fifo.$proc$./sync_fifo.v:122$83'.
   created $dff cell `$procdff$1006' with positive edge clock.
-Creating register for signal `\sync_fifo.$formal$./sync_fifo.v:146$48_EN' using process `\sync_fifo.$proc$./sync_fifo.v:113$83'.
+Creating register for signal `\sync_fifo.$formal$./sync_fifo.v:154$48_CHECK' using process `\sync_fifo.$proc$./sync_fifo.v:122$83'.
   created $dff cell `$procdff$1007' with positive edge clock.
-Creating register for signal `\sync_fifo.$formal$./sync_fifo.v:150$49_CHECK' using process `\sync_fifo.$proc$./sync_fifo.v:113$83'.
+Creating register for signal `\sync_fifo.$formal$./sync_fifo.v:154$48_EN' using process `\sync_fifo.$proc$./sync_fifo.v:122$83'.
   created $dff cell `$procdff$1008' with positive edge clock.
-Creating register for signal `\sync_fifo.$formal$./sync_fifo.v:150$49_EN' using process `\sync_fifo.$proc$./sync_fifo.v:113$83'.
+Creating register for signal `\sync_fifo.$formal$./sync_fifo.v:158$49_CHECK' using process `\sync_fifo.$proc$./sync_fifo.v:122$83'.
   created $dff cell `$procdff$1009' with positive edge clock.
-Creating register for signal `\sync_fifo.$formal$./sync_fifo.v:151$50_CHECK' using process `\sync_fifo.$proc$./sync_fifo.v:113$83'.
+Creating register for signal `\sync_fifo.$formal$./sync_fifo.v:158$49_EN' using process `\sync_fifo.$proc$./sync_fifo.v:122$83'.
   created $dff cell `$procdff$1010' with positive edge clock.
-Creating register for signal `\sync_fifo.$formal$./sync_fifo.v:151$50_EN' using process `\sync_fifo.$proc$./sync_fifo.v:113$83'.
+Creating register for signal `\sync_fifo.$formal$./sync_fifo.v:159$50_CHECK' using process `\sync_fifo.$proc$./sync_fifo.v:122$83'.
   created $dff cell `$procdff$1011' with positive edge clock.
-Creating register for signal `\sync_fifo.$formal$./sync_fifo.v:152$51_CHECK' using process `\sync_fifo.$proc$./sync_fifo.v:113$83'.
+Creating register for signal `\sync_fifo.$formal$./sync_fifo.v:159$50_EN' using process `\sync_fifo.$proc$./sync_fifo.v:122$83'.
   created $dff cell `$procdff$1012' with positive edge clock.
-Creating register for signal `\sync_fifo.$formal$./sync_fifo.v:152$51_EN' using process `\sync_fifo.$proc$./sync_fifo.v:113$83'.
+Creating register for signal `\sync_fifo.$formal$./sync_fifo.v:160$51_CHECK' using process `\sync_fifo.$proc$./sync_fifo.v:122$83'.
   created $dff cell `$procdff$1013' with positive edge clock.
-Creating register for signal `\sync_fifo.$formal$./sync_fifo.v:153$52_CHECK' using process `\sync_fifo.$proc$./sync_fifo.v:113$83'.
+Creating register for signal `\sync_fifo.$formal$./sync_fifo.v:160$51_EN' using process `\sync_fifo.$proc$./sync_fifo.v:122$83'.
   created $dff cell `$procdff$1014' with positive edge clock.
-Creating register for signal `\sync_fifo.$formal$./sync_fifo.v:153$52_EN' using process `\sync_fifo.$proc$./sync_fifo.v:113$83'.
+Creating register for signal `\sync_fifo.$formal$./sync_fifo.v:161$52_CHECK' using process `\sync_fifo.$proc$./sync_fifo.v:122$83'.
   created $dff cell `$procdff$1015' with positive edge clock.
-Creating register for signal `\sync_fifo.$formal$./sync_fifo.v:157$53_CHECK' using process `\sync_fifo.$proc$./sync_fifo.v:113$83'.
+Creating register for signal `\sync_fifo.$formal$./sync_fifo.v:161$52_EN' using process `\sync_fifo.$proc$./sync_fifo.v:122$83'.
   created $dff cell `$procdff$1016' with positive edge clock.
-Creating register for signal `\sync_fifo.$formal$./sync_fifo.v:157$53_EN' using process `\sync_fifo.$proc$./sync_fifo.v:113$83'.
+Creating register for signal `\sync_fifo.$formal$./sync_fifo.v:165$53_CHECK' using process `\sync_fifo.$proc$./sync_fifo.v:122$83'.
   created $dff cell `$procdff$1017' with positive edge clock.
-Creating register for signal `\sync_fifo.$formal$./sync_fifo.v:158$54_CHECK' using process `\sync_fifo.$proc$./sync_fifo.v:113$83'.
+Creating register for signal `\sync_fifo.$formal$./sync_fifo.v:165$53_EN' using process `\sync_fifo.$proc$./sync_fifo.v:122$83'.
   created $dff cell `$procdff$1018' with positive edge clock.
-Creating register for signal `\sync_fifo.$formal$./sync_fifo.v:158$54_EN' using process `\sync_fifo.$proc$./sync_fifo.v:113$83'.
+Creating register for signal `\sync_fifo.$formal$./sync_fifo.v:166$54_CHECK' using process `\sync_fifo.$proc$./sync_fifo.v:122$83'.
   created $dff cell `$procdff$1019' with positive edge clock.
-Creating register for signal `\sync_fifo.$formal$./sync_fifo.v:159$55_CHECK' using process `\sync_fifo.$proc$./sync_fifo.v:113$83'.
+Creating register for signal `\sync_fifo.$formal$./sync_fifo.v:166$54_EN' using process `\sync_fifo.$proc$./sync_fifo.v:122$83'.
   created $dff cell `$procdff$1020' with positive edge clock.
-Creating register for signal `\sync_fifo.$formal$./sync_fifo.v:159$55_EN' using process `\sync_fifo.$proc$./sync_fifo.v:113$83'.
+Creating register for signal `\sync_fifo.$formal$./sync_fifo.v:167$55_CHECK' using process `\sync_fifo.$proc$./sync_fifo.v:122$83'.
   created $dff cell `$procdff$1021' with positive edge clock.
-Creating register for signal `\sync_fifo.$formal$./sync_fifo.v:160$56_CHECK' using process `\sync_fifo.$proc$./sync_fifo.v:113$83'.
+Creating register for signal `\sync_fifo.$formal$./sync_fifo.v:167$55_EN' using process `\sync_fifo.$proc$./sync_fifo.v:122$83'.
   created $dff cell `$procdff$1022' with positive edge clock.
-Creating register for signal `\sync_fifo.$formal$./sync_fifo.v:160$56_EN' using process `\sync_fifo.$proc$./sync_fifo.v:113$83'.
+Creating register for signal `\sync_fifo.$formal$./sync_fifo.v:168$56_CHECK' using process `\sync_fifo.$proc$./sync_fifo.v:122$83'.
   created $dff cell `$procdff$1023' with positive edge clock.
-Creating register for signal `\sync_fifo.$formal$./sync_fifo.v:164$57_CHECK' using process `\sync_fifo.$proc$./sync_fifo.v:113$83'.
+Creating register for signal `\sync_fifo.$formal$./sync_fifo.v:168$56_EN' using process `\sync_fifo.$proc$./sync_fifo.v:122$83'.
   created $dff cell `$procdff$1024' with positive edge clock.
-Creating register for signal `\sync_fifo.$formal$./sync_fifo.v:164$57_EN' using process `\sync_fifo.$proc$./sync_fifo.v:113$83'.
+Creating register for signal `\sync_fifo.$formal$./sync_fifo.v:172$57_CHECK' using process `\sync_fifo.$proc$./sync_fifo.v:122$83'.
   created $dff cell `$procdff$1025' with positive edge clock.
-Creating register for signal `\sync_fifo.$formal$./sync_fifo.v:165$58_CHECK' using process `\sync_fifo.$proc$./sync_fifo.v:113$83'.
+Creating register for signal `\sync_fifo.$formal$./sync_fifo.v:172$57_EN' using process `\sync_fifo.$proc$./sync_fifo.v:122$83'.
   created $dff cell `$procdff$1026' with positive edge clock.
-Creating register for signal `\sync_fifo.$formal$./sync_fifo.v:165$58_EN' using process `\sync_fifo.$proc$./sync_fifo.v:113$83'.
+Creating register for signal `\sync_fifo.$formal$./sync_fifo.v:173$58_CHECK' using process `\sync_fifo.$proc$./sync_fifo.v:122$83'.
   created $dff cell `$procdff$1027' with positive edge clock.
-Creating register for signal `\sync_fifo.$formal$./sync_fifo.v:166$59_CHECK' using process `\sync_fifo.$proc$./sync_fifo.v:113$83'.
+Creating register for signal `\sync_fifo.$formal$./sync_fifo.v:173$58_EN' using process `\sync_fifo.$proc$./sync_fifo.v:122$83'.
   created $dff cell `$procdff$1028' with positive edge clock.
-Creating register for signal `\sync_fifo.$formal$./sync_fifo.v:166$59_EN' using process `\sync_fifo.$proc$./sync_fifo.v:113$83'.
+Creating register for signal `\sync_fifo.$formal$./sync_fifo.v:174$59_CHECK' using process `\sync_fifo.$proc$./sync_fifo.v:122$83'.
   created $dff cell `$procdff$1029' with positive edge clock.
-Creating register for signal `\sync_fifo.$formal$./sync_fifo.v:170$60_CHECK' using process `\sync_fifo.$proc$./sync_fifo.v:113$83'.
+Creating register for signal `\sync_fifo.$formal$./sync_fifo.v:174$59_EN' using process `\sync_fifo.$proc$./sync_fifo.v:122$83'.
   created $dff cell `$procdff$1030' with positive edge clock.
-Creating register for signal `\sync_fifo.$formal$./sync_fifo.v:170$60_EN' using process `\sync_fifo.$proc$./sync_fifo.v:113$83'.
+Creating register for signal `\sync_fifo.$formal$./sync_fifo.v:178$60_CHECK' using process `\sync_fifo.$proc$./sync_fifo.v:122$83'.
   created $dff cell `$procdff$1031' with positive edge clock.
-Creating register for signal `\sync_fifo.$formal$./sync_fifo.v:171$61_CHECK' using process `\sync_fifo.$proc$./sync_fifo.v:113$83'.
+Creating register for signal `\sync_fifo.$formal$./sync_fifo.v:178$60_EN' using process `\sync_fifo.$proc$./sync_fifo.v:122$83'.
   created $dff cell `$procdff$1032' with positive edge clock.
-Creating register for signal `\sync_fifo.$formal$./sync_fifo.v:171$61_EN' using process `\sync_fifo.$proc$./sync_fifo.v:113$83'.
+Creating register for signal `\sync_fifo.$formal$./sync_fifo.v:179$61_CHECK' using process `\sync_fifo.$proc$./sync_fifo.v:122$83'.
   created $dff cell `$procdff$1033' with positive edge clock.
-Creating register for signal `\sync_fifo.$formal$./sync_fifo.v:172$62_CHECK' using process `\sync_fifo.$proc$./sync_fifo.v:113$83'.
+Creating register for signal `\sync_fifo.$formal$./sync_fifo.v:179$61_EN' using process `\sync_fifo.$proc$./sync_fifo.v:122$83'.
   created $dff cell `$procdff$1034' with positive edge clock.
-Creating register for signal `\sync_fifo.$formal$./sync_fifo.v:172$62_EN' using process `\sync_fifo.$proc$./sync_fifo.v:113$83'.
+Creating register for signal `\sync_fifo.$formal$./sync_fifo.v:180$62_CHECK' using process `\sync_fifo.$proc$./sync_fifo.v:122$83'.
   created $dff cell `$procdff$1035' with positive edge clock.
-Creating register for signal `\sync_fifo.$formal$./sync_fifo.v:175$63_CHECK' using process `\sync_fifo.$proc$./sync_fifo.v:113$83'.
+Creating register for signal `\sync_fifo.$formal$./sync_fifo.v:180$62_EN' using process `\sync_fifo.$proc$./sync_fifo.v:122$83'.
   created $dff cell `$procdff$1036' with positive edge clock.
-Creating register for signal `\sync_fifo.$formal$./sync_fifo.v:175$63_EN' using process `\sync_fifo.$proc$./sync_fifo.v:113$83'.
+Creating register for signal `\sync_fifo.$formal$./sync_fifo.v:183$63_CHECK' using process `\sync_fifo.$proc$./sync_fifo.v:122$83'.
   created $dff cell `$procdff$1037' with positive edge clock.
-Creating register for signal `\sync_fifo.$formal$./sync_fifo.v:179$64_CHECK' using process `\sync_fifo.$proc$./sync_fifo.v:113$83'.
+Creating register for signal `\sync_fifo.$formal$./sync_fifo.v:183$63_EN' using process `\sync_fifo.$proc$./sync_fifo.v:122$83'.
   created $dff cell `$procdff$1038' with positive edge clock.
-Creating register for signal `\sync_fifo.$formal$./sync_fifo.v:179$64_EN' using process `\sync_fifo.$proc$./sync_fifo.v:113$83'.
+Creating register for signal `\sync_fifo.$formal$./sync_fifo.v:187$64_CHECK' using process `\sync_fifo.$proc$./sync_fifo.v:122$83'.
   created $dff cell `$procdff$1039' with positive edge clock.
-Creating register for signal `\sync_fifo.$formal$./sync_fifo.v:180$65_CHECK' using process `\sync_fifo.$proc$./sync_fifo.v:113$83'.
+Creating register for signal `\sync_fifo.$formal$./sync_fifo.v:187$64_EN' using process `\sync_fifo.$proc$./sync_fifo.v:122$83'.
   created $dff cell `$procdff$1040' with positive edge clock.
-Creating register for signal `\sync_fifo.$formal$./sync_fifo.v:180$65_EN' using process `\sync_fifo.$proc$./sync_fifo.v:113$83'.
+Creating register for signal `\sync_fifo.$formal$./sync_fifo.v:188$65_CHECK' using process `\sync_fifo.$proc$./sync_fifo.v:122$83'.
   created $dff cell `$procdff$1041' with positive edge clock.
-Creating register for signal `\sync_fifo.$formal$./sync_fifo.v:181$66_CHECK' using process `\sync_fifo.$proc$./sync_fifo.v:113$83'.
+Creating register for signal `\sync_fifo.$formal$./sync_fifo.v:188$65_EN' using process `\sync_fifo.$proc$./sync_fifo.v:122$83'.
   created $dff cell `$procdff$1042' with positive edge clock.
-Creating register for signal `\sync_fifo.$formal$./sync_fifo.v:181$66_EN' using process `\sync_fifo.$proc$./sync_fifo.v:113$83'.
+Creating register for signal `\sync_fifo.$formal$./sync_fifo.v:189$66_CHECK' using process `\sync_fifo.$proc$./sync_fifo.v:122$83'.
   created $dff cell `$procdff$1043' with positive edge clock.
-Creating register for signal `\sync_fifo.\o_FIFO_EMPTY' using process `\sync_fifo.$proc$./sync_fifo.v:23$67'.
+Creating register for signal `\sync_fifo.$formal$./sync_fifo.v:189$66_EN' using process `\sync_fifo.$proc$./sync_fifo.v:122$83'.
   created $dff cell `$procdff$1044' with positive edge clock.
-Creating register for signal `\sync_fifo.\o_FIFO_FULL' using process `\sync_fifo.$proc$./sync_fifo.v:23$67'.
+Creating register for signal `\sync_fifo.\o_FIFO_EMPTY' using process `\sync_fifo.$proc$./sync_fifo.v:32$67'.
   created $dff cell `$procdff$1045' with positive edge clock.
-Creating register for signal `\sync_fifo.\o_FIFO_ALMOST_EMPTY' using process `\sync_fifo.$proc$./sync_fifo.v:23$67'.
+Creating register for signal `\sync_fifo.\o_FIFO_FULL' using process `\sync_fifo.$proc$./sync_fifo.v:32$67'.
   created $dff cell `$procdff$1046' with positive edge clock.
-Creating register for signal `\sync_fifo.\o_FIFO_ALMOST_FULL' using process `\sync_fifo.$proc$./sync_fifo.v:23$67'.
+Creating register for signal `\sync_fifo.\o_FIFO_ALMOST_EMPTY' using process `\sync_fifo.$proc$./sync_fifo.v:32$67'.
   created $dff cell `$procdff$1047' with positive edge clock.
-Creating register for signal `\sync_fifo.\o_OUTPUT' using process `\sync_fifo.$proc$./sync_fifo.v:23$67'.
+Creating register for signal `\sync_fifo.\o_FIFO_ALMOST_FULL' using process `\sync_fifo.$proc$./sync_fifo.v:32$67'.
   created $dff cell `$procdff$1048' with positive edge clock.
-Creating register for signal `\sync_fifo.\r_WRITE_POINTER' using process `\sync_fifo.$proc$./sync_fifo.v:23$67'.
+Creating register for signal `\sync_fifo.\o_OUTPUT' using process `\sync_fifo.$proc$./sync_fifo.v:32$67'.
   created $dff cell `$procdff$1049' with positive edge clock.
-Creating register for signal `\sync_fifo.\r_READ_POINTER' using process `\sync_fifo.$proc$./sync_fifo.v:23$67'.
+Creating register for signal `\sync_fifo.\r_WRITE_POINTER' using process `\sync_fifo.$proc$./sync_fifo.v:32$67'.
   created $dff cell `$procdff$1050' with positive edge clock.
-Creating register for signal `\sync_fifo.\r_QUANTITY' using process `\sync_fifo.$proc$./sync_fifo.v:23$67'.
+Creating register for signal `\sync_fifo.\r_READ_POINTER' using process `\sync_fifo.$proc$./sync_fifo.v:32$67'.
   created $dff cell `$procdff$1051' with positive edge clock.
-Creating register for signal `\sync_fifo.$memwr$\r_MEMORY$./sync_fifo.v:52$25_ADDR' using process `\sync_fifo.$proc$./sync_fifo.v:23$67'.
+Creating register for signal `\sync_fifo.\r_QUANTITY' using process `\sync_fifo.$proc$./sync_fifo.v:32$67'.
   created $dff cell `$procdff$1052' with positive edge clock.
-Creating register for signal `\sync_fifo.$memwr$\r_MEMORY$./sync_fifo.v:52$25_DATA' using process `\sync_fifo.$proc$./sync_fifo.v:23$67'.
+Creating register for signal `\sync_fifo.$memwr$\r_MEMORY$./sync_fifo.v:61$25_ADDR' using process `\sync_fifo.$proc$./sync_fifo.v:32$67'.
   created $dff cell `$procdff$1053' with positive edge clock.
-Creating register for signal `\sync_fifo.$memwr$\r_MEMORY$./sync_fifo.v:52$25_EN' using process `\sync_fifo.$proc$./sync_fifo.v:23$67'.
+Creating register for signal `\sync_fifo.$memwr$\r_MEMORY$./sync_fifo.v:61$25_DATA' using process `\sync_fifo.$proc$./sync_fifo.v:32$67'.
   created $dff cell `$procdff$1054' with positive edge clock.
-Creating register for signal `\sync_fifo.$memwr$\r_MEMORY$./sync_fifo.v:59$26_ADDR' using process `\sync_fifo.$proc$./sync_fifo.v:23$67'.
+Creating register for signal `\sync_fifo.$memwr$\r_MEMORY$./sync_fifo.v:61$25_EN' using process `\sync_fifo.$proc$./sync_fifo.v:32$67'.
   created $dff cell `$procdff$1055' with positive edge clock.
-Creating register for signal `\sync_fifo.$memwr$\r_MEMORY$./sync_fifo.v:59$26_DATA' using process `\sync_fifo.$proc$./sync_fifo.v:23$67'.
+Creating register for signal `\sync_fifo.$memwr$\r_MEMORY$./sync_fifo.v:68$26_ADDR' using process `\sync_fifo.$proc$./sync_fifo.v:32$67'.
   created $dff cell `$procdff$1056' with positive edge clock.
-Creating register for signal `\sync_fifo.$memwr$\r_MEMORY$./sync_fifo.v:59$26_EN' using process `\sync_fifo.$proc$./sync_fifo.v:23$67'.
+Creating register for signal `\sync_fifo.$memwr$\r_MEMORY$./sync_fifo.v:68$26_DATA' using process `\sync_fifo.$proc$./sync_fifo.v:32$67'.
   created $dff cell `$procdff$1057' with positive edge clock.
+Creating register for signal `\sync_fifo.$memwr$\r_MEMORY$./sync_fifo.v:68$26_EN' using process `\sync_fifo.$proc$./sync_fifo.v:32$67'.
+  created $dff cell `$procdff$1058' with positive edge clock.
 
 2.3.9. Executing PROC_CLEAN pass (remove empty switches from decision trees).
-Removing empty process `sync_fifo.$proc$./sync_fifo.v:181$366'.
-Removing empty process `sync_fifo.$proc$./sync_fifo.v:180$364'.
-Removing empty process `sync_fifo.$proc$./sync_fifo.v:179$362'.
-Removing empty process `sync_fifo.$proc$./sync_fifo.v:175$360'.
-Removing empty process `sync_fifo.$proc$./sync_fifo.v:172$358'.
-Removing empty process `sync_fifo.$proc$./sync_fifo.v:171$356'.
-Removing empty process `sync_fifo.$proc$./sync_fifo.v:170$354'.
-Removing empty process `sync_fifo.$proc$./sync_fifo.v:166$352'.
-Removing empty process `sync_fifo.$proc$./sync_fifo.v:165$350'.
-Removing empty process `sync_fifo.$proc$./sync_fifo.v:164$348'.
-Removing empty process `sync_fifo.$proc$./sync_fifo.v:160$346'.
-Removing empty process `sync_fifo.$proc$./sync_fifo.v:159$344'.
-Removing empty process `sync_fifo.$proc$./sync_fifo.v:158$342'.
-Removing empty process `sync_fifo.$proc$./sync_fifo.v:157$340'.
-Removing empty process `sync_fifo.$proc$./sync_fifo.v:153$338'.
-Removing empty process `sync_fifo.$proc$./sync_fifo.v:152$336'.
-Removing empty process `sync_fifo.$proc$./sync_fifo.v:151$334'.
-Removing empty process `sync_fifo.$proc$./sync_fifo.v:150$332'.
-Removing empty process `sync_fifo.$proc$./sync_fifo.v:146$330'.
-Removing empty process `sync_fifo.$proc$./sync_fifo.v:145$328'.
-Removing empty process `sync_fifo.$proc$./sync_fifo.v:144$326'.
-Removing empty process `sync_fifo.$proc$./sync_fifo.v:143$324'.
-Removing empty process `sync_fifo.$proc$./sync_fifo.v:139$322'.
-Removing empty process `sync_fifo.$proc$./sync_fifo.v:138$320'.
-Removing empty process `sync_fifo.$proc$./sync_fifo.v:137$318'.
-Removing empty process `sync_fifo.$proc$./sync_fifo.v:136$316'.
-Removing empty process `sync_fifo.$proc$./sync_fifo.v:132$314'.
-Removing empty process `sync_fifo.$proc$./sync_fifo.v:131$312'.
-Removing empty process `sync_fifo.$proc$./sync_fifo.v:130$310'.
-Removing empty process `sync_fifo.$proc$./sync_fifo.v:129$308'.
-Removing empty process `sync_fifo.$proc$./sync_fifo.v:126$306'.
-Removing empty process `sync_fifo.$proc$./sync_fifo.v:124$304'.
-Removing empty process `sync_fifo.$proc$./sync_fifo.v:118$302'.
-Removing empty process `sync_fifo.$proc$./sync_fifo.v:117$300'.
-Removing empty process `sync_fifo.$proc$./sync_fifo.v:116$298'.
-Removing empty process `sync_fifo.$proc$./sync_fifo.v:115$296'.
-Removing empty process `sync_fifo.$proc$./sync_fifo.v:109$289'.
-Removing empty process `sync_fifo.$proc$./sync_fifo.v:108$288'.
-Removing empty process `sync_fifo.$proc$./sync_fifo.v:18$287'.
-Removing empty process `sync_fifo.$proc$./sync_fifo.v:16$286'.
-Removing empty process `sync_fifo.$proc$./sync_fifo.v:15$285'.
-Found and cleaned up 9 empty switches in `\sync_fifo.$proc$./sync_fifo.v:113$83'.
-Removing empty process `sync_fifo.$proc$./sync_fifo.v:113$83'.
-Found and cleaned up 3 empty switches in `\sync_fifo.$proc$./sync_fifo.v:23$67'.
-Removing empty process `sync_fifo.$proc$./sync_fifo.v:23$67'.
+Removing empty process `sync_fifo.$proc$./sync_fifo.v:0$367'.
+Removing empty process `sync_fifo.$proc$./sync_fifo.v:0$365'.
+Removing empty process `sync_fifo.$proc$./sync_fifo.v:0$363'.
+Removing empty process `sync_fifo.$proc$./sync_fifo.v:0$361'.
+Removing empty process `sync_fifo.$proc$./sync_fifo.v:0$359'.
+Removing empty process `sync_fifo.$proc$./sync_fifo.v:0$357'.
+Removing empty process `sync_fifo.$proc$./sync_fifo.v:0$355'.
+Removing empty process `sync_fifo.$proc$./sync_fifo.v:0$353'.
+Removing empty process `sync_fifo.$proc$./sync_fifo.v:0$351'.
+Removing empty process `sync_fifo.$proc$./sync_fifo.v:0$349'.
+Removing empty process `sync_fifo.$proc$./sync_fifo.v:0$347'.
+Removing empty process `sync_fifo.$proc$./sync_fifo.v:0$345'.
+Removing empty process `sync_fifo.$proc$./sync_fifo.v:0$343'.
+Removing empty process `sync_fifo.$proc$./sync_fifo.v:0$341'.
+Removing empty process `sync_fifo.$proc$./sync_fifo.v:0$339'.
+Removing empty process `sync_fifo.$proc$./sync_fifo.v:0$337'.
+Removing empty process `sync_fifo.$proc$./sync_fifo.v:0$335'.
+Removing empty process `sync_fifo.$proc$./sync_fifo.v:0$333'.
+Removing empty process `sync_fifo.$proc$./sync_fifo.v:0$331'.
+Removing empty process `sync_fifo.$proc$./sync_fifo.v:0$329'.
+Removing empty process `sync_fifo.$proc$./sync_fifo.v:0$327'.
+Removing empty process `sync_fifo.$proc$./sync_fifo.v:0$325'.
+Removing empty process `sync_fifo.$proc$./sync_fifo.v:0$323'.
+Removing empty process `sync_fifo.$proc$./sync_fifo.v:0$321'.
+Removing empty process `sync_fifo.$proc$./sync_fifo.v:0$319'.
+Removing empty process `sync_fifo.$proc$./sync_fifo.v:0$317'.
+Removing empty process `sync_fifo.$proc$./sync_fifo.v:0$315'.
+Removing empty process `sync_fifo.$proc$./sync_fifo.v:0$313'.
+Removing empty process `sync_fifo.$proc$./sync_fifo.v:0$311'.
+Removing empty process `sync_fifo.$proc$./sync_fifo.v:0$309'.
+Removing empty process `sync_fifo.$proc$./sync_fifo.v:0$307'.
+Removing empty process `sync_fifo.$proc$./sync_fifo.v:0$305'.
+Removing empty process `sync_fifo.$proc$./sync_fifo.v:0$303'.
+Removing empty process `sync_fifo.$proc$./sync_fifo.v:0$301'.
+Removing empty process `sync_fifo.$proc$./sync_fifo.v:0$299'.
+Removing empty process `sync_fifo.$proc$./sync_fifo.v:0$297'.
+Removing empty process `sync_fifo.$proc$./sync_fifo.v:0$290'.
+Removing empty process `sync_fifo.$proc$./sync_fifo.v:117$289'.
+Removing empty process `sync_fifo.$proc$./sync_fifo.v:0$288'.
+Found and cleaned up 9 empty switches in `\sync_fifo.$proc$./sync_fifo.v:122$83'.
+Removing empty process `sync_fifo.$proc$./sync_fifo.v:122$83'.
+Found and cleaned up 3 empty switches in `\sync_fifo.$proc$./sync_fifo.v:32$67'.
+Removing empty process `sync_fifo.$proc$./sync_fifo.v:32$67'.
 Cleaned up 12 empty switches.
 
 2.4. Executing OPT_EXPR pass (perform const folding).
@@ -573,81 +567,81 @@ Running muxtree optimizer on module \sync_fifo..
   Creating internal representation of mux trees.
   Evaluating internal representation of mux trees.
   Analyzing evaluation results.
-    dead port 1/2 on $mux $procmux$481.
-    dead port 1/2 on $mux $procmux$492.
-    dead port 1/2 on $mux $procmux$503.
-    dead port 1/2 on $mux $procmux$514.
-    dead port 1/2 on $mux $procmux$525.
-    dead port 1/2 on $mux $procmux$536.
-    dead port 1/2 on $mux $procmux$547.
-    dead port 1/2 on $mux $procmux$558.
-    dead port 1/2 on $mux $procmux$572.
-    dead port 1/2 on $mux $procmux$586.
-    dead port 1/2 on $mux $procmux$600.
-    dead port 1/2 on $mux $procmux$614.
-    dead port 1/2 on $mux $procmux$628.
-    dead port 1/2 on $mux $procmux$642.
-    dead port 1/2 on $mux $procmux$656.
-    dead port 1/2 on $mux $procmux$670.
-    dead port 1/2 on $mux $procmux$684.
-    dead port 1/2 on $mux $procmux$698.
-    dead port 1/2 on $mux $procmux$712.
-    dead port 1/2 on $mux $procmux$726.
-    dead port 1/2 on $mux $procmux$740.
-    dead port 1/2 on $mux $procmux$754.
-    dead port 1/2 on $mux $procmux$768.
-    dead port 1/2 on $mux $procmux$782.
+    dead port 1/2 on $mux $procmux$482.
+    dead port 1/2 on $mux $procmux$493.
+    dead port 1/2 on $mux $procmux$504.
+    dead port 1/2 on $mux $procmux$515.
+    dead port 1/2 on $mux $procmux$526.
+    dead port 1/2 on $mux $procmux$537.
+    dead port 1/2 on $mux $procmux$548.
+    dead port 1/2 on $mux $procmux$559.
+    dead port 1/2 on $mux $procmux$573.
+    dead port 1/2 on $mux $procmux$587.
+    dead port 1/2 on $mux $procmux$601.
+    dead port 1/2 on $mux $procmux$615.
+    dead port 1/2 on $mux $procmux$629.
+    dead port 1/2 on $mux $procmux$643.
+    dead port 1/2 on $mux $procmux$657.
+    dead port 1/2 on $mux $procmux$671.
+    dead port 1/2 on $mux $procmux$685.
+    dead port 1/2 on $mux $procmux$699.
+    dead port 1/2 on $mux $procmux$713.
+    dead port 1/2 on $mux $procmux$727.
+    dead port 1/2 on $mux $procmux$741.
+    dead port 1/2 on $mux $procmux$755.
+    dead port 1/2 on $mux $procmux$769.
+    dead port 1/2 on $mux $procmux$783.
 Removed 24 multiplexer ports.
 <suppressed ~78 debug messages>
 
 2.7.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
   Optimizing cells in module \sync_fifo.
-    New ctrl vector for $mux cell $procmux$484: { }
-    New ctrl vector for $mux cell $procmux$487: { }
-    New ctrl vector for $mux cell $procmux$489: { }
-    New ctrl vector for $mux cell $procmux$495: { }
-    New ctrl vector for $mux cell $procmux$498: { }
-    New ctrl vector for $mux cell $procmux$500: { }
-    New ctrl vector for $mux cell $procmux$506: { }
-    New ctrl vector for $mux cell $procmux$509: { }
-    New ctrl vector for $mux cell $procmux$511: { }
-    New ctrl vector for $mux cell $procmux$517: { }
-    New ctrl vector for $mux cell $procmux$520: { }
-    New ctrl vector for $mux cell $procmux$522: { }
-    New ctrl vector for $mux cell $procmux$528: { }
-    New ctrl vector for $mux cell $procmux$531: { }
-    New ctrl vector for $mux cell $procmux$533: { }
-    New ctrl vector for $mux cell $procmux$539: { }
-    New ctrl vector for $mux cell $procmux$542: { }
-    New ctrl vector for $mux cell $procmux$544: { }
-    New ctrl vector for $mux cell $procmux$550: { }
-    New ctrl vector for $mux cell $procmux$553: { }
-    New ctrl vector for $mux cell $procmux$555: { }
-    New ctrl vector for $mux cell $procmux$561: { }
-    New ctrl vector for $mux cell $procmux$564: { }
-    New ctrl vector for $mux cell $procmux$566: { }
-    New ctrl vector for $pmux cell $procmux$874: { $procmux$877_CMP $procmux$876_CMP $auto$opt_reduce.cc:134:opt_mux$1059 }
-    Consolidated identical input bits for $mux cell $procmux$883:
-      Old ports: A=8'00000000, B=8'11111111, Y=$procmux$883_Y
-      New ports: A=1'0, B=1'1, Y=$procmux$883_Y [0]
-      New connections: $procmux$883_Y [7:1] = { $procmux$883_Y [0] $procmux$883_Y [0] $procmux$883_Y [0] $procmux$883_Y [0] $procmux$883_Y [0] $procmux$883_Y [0] $procmux$883_Y [0] }
-    Consolidated identical input bits for $mux cell $procmux$900:
-      Old ports: A=8'00000000, B=8'11111111, Y=$procmux$900_Y
-      New ports: A=1'0, B=1'1, Y=$procmux$900_Y [0]
-      New connections: $procmux$900_Y [7:1] = { $procmux$900_Y [0] $procmux$900_Y [0] $procmux$900_Y [0] $procmux$900_Y [0] $procmux$900_Y [0] $procmux$900_Y [0] $procmux$900_Y [0] }
-    New ctrl vector for $pmux cell $procmux$915: $auto$opt_reduce.cc:134:opt_mux$1061
-    New ctrl vector for $pmux cell $procmux$921: $auto$opt_reduce.cc:134:opt_mux$1063
-    New ctrl vector for $pmux cell $procmux$927: $auto$opt_reduce.cc:134:opt_mux$1065
-    New ctrl vector for $pmux cell $procmux$941: $auto$opt_reduce.cc:134:opt_mux$1067
+    New ctrl vector for $mux cell $procmux$485: { }
+    New ctrl vector for $mux cell $procmux$488: { }
+    New ctrl vector for $mux cell $procmux$490: { }
+    New ctrl vector for $mux cell $procmux$496: { }
+    New ctrl vector for $mux cell $procmux$499: { }
+    New ctrl vector for $mux cell $procmux$501: { }
+    New ctrl vector for $mux cell $procmux$507: { }
+    New ctrl vector for $mux cell $procmux$510: { }
+    New ctrl vector for $mux cell $procmux$512: { }
+    New ctrl vector for $mux cell $procmux$518: { }
+    New ctrl vector for $mux cell $procmux$521: { }
+    New ctrl vector for $mux cell $procmux$523: { }
+    New ctrl vector for $mux cell $procmux$529: { }
+    New ctrl vector for $mux cell $procmux$532: { }
+    New ctrl vector for $mux cell $procmux$534: { }
+    New ctrl vector for $mux cell $procmux$540: { }
+    New ctrl vector for $mux cell $procmux$543: { }
+    New ctrl vector for $mux cell $procmux$545: { }
+    New ctrl vector for $mux cell $procmux$551: { }
+    New ctrl vector for $mux cell $procmux$554: { }
+    New ctrl vector for $mux cell $procmux$556: { }
+    New ctrl vector for $mux cell $procmux$562: { }
+    New ctrl vector for $mux cell $procmux$565: { }
+    New ctrl vector for $mux cell $procmux$567: { }
+    New ctrl vector for $pmux cell $procmux$875: { $procmux$878_CMP $procmux$877_CMP $auto$opt_reduce.cc:134:opt_mux$1060 }
+    Consolidated identical input bits for $mux cell $procmux$884:
+      Old ports: A=8'00000000, B=8'11111111, Y=$procmux$884_Y
+      New ports: A=1'0, B=1'1, Y=$procmux$884_Y [0]
+      New connections: $procmux$884_Y [7:1] = { $procmux$884_Y [0] $procmux$884_Y [0] $procmux$884_Y [0] $procmux$884_Y [0] $procmux$884_Y [0] $procmux$884_Y [0] $procmux$884_Y [0] }
+    Consolidated identical input bits for $mux cell $procmux$901:
+      Old ports: A=8'00000000, B=8'11111111, Y=$procmux$901_Y
+      New ports: A=1'0, B=1'1, Y=$procmux$901_Y [0]
+      New connections: $procmux$901_Y [7:1] = { $procmux$901_Y [0] $procmux$901_Y [0] $procmux$901_Y [0] $procmux$901_Y [0] $procmux$901_Y [0] $procmux$901_Y [0] $procmux$901_Y [0] }
+    New ctrl vector for $pmux cell $procmux$916: $auto$opt_reduce.cc:134:opt_mux$1062
+    New ctrl vector for $pmux cell $procmux$922: $auto$opt_reduce.cc:134:opt_mux$1064
+    New ctrl vector for $pmux cell $procmux$928: $auto$opt_reduce.cc:134:opt_mux$1066
+    New ctrl vector for $pmux cell $procmux$942: $auto$opt_reduce.cc:134:opt_mux$1068
   Optimizing cells in module \sync_fifo.
-    Consolidated identical input bits for $mux cell $procmux$886:
-      Old ports: A=$procmux$883_Y, B=8'00000000, Y=$0$memwr$\r_MEMORY$./sync_fifo.v:52$25_EN[7:0]$70
-      New ports: A=$procmux$883_Y [0], B=1'0, Y=$0$memwr$\r_MEMORY$./sync_fifo.v:52$25_EN[7:0]$70 [0]
-      New connections: $0$memwr$\r_MEMORY$./sync_fifo.v:52$25_EN[7:0]$70 [7:1] = { $0$memwr$\r_MEMORY$./sync_fifo.v:52$25_EN[7:0]$70 [0] $0$memwr$\r_MEMORY$./sync_fifo.v:52$25_EN[7:0]$70 [0] $0$memwr$\r_MEMORY$./sync_fifo.v:52$25_EN[7:0]$70 [0] $0$memwr$\r_MEMORY$./sync_fifo.v:52$25_EN[7:0]$70 [0] $0$memwr$\r_MEMORY$./sync_fifo.v:52$25_EN[7:0]$70 [0] $0$memwr$\r_MEMORY$./sync_fifo.v:52$25_EN[7:0]$70 [0] $0$memwr$\r_MEMORY$./sync_fifo.v:52$25_EN[7:0]$70 [0] }
-    Consolidated identical input bits for $mux cell $procmux$903:
-      Old ports: A=$procmux$900_Y, B=8'00000000, Y=$0$memwr$\r_MEMORY$./sync_fifo.v:59$26_EN[7:0]$73
-      New ports: A=$procmux$900_Y [0], B=1'0, Y=$0$memwr$\r_MEMORY$./sync_fifo.v:59$26_EN[7:0]$73 [0]
-      New connections: $0$memwr$\r_MEMORY$./sync_fifo.v:59$26_EN[7:0]$73 [7:1] = { $0$memwr$\r_MEMORY$./sync_fifo.v:59$26_EN[7:0]$73 [0] $0$memwr$\r_MEMORY$./sync_fifo.v:59$26_EN[7:0]$73 [0] $0$memwr$\r_MEMORY$./sync_fifo.v:59$26_EN[7:0]$73 [0] $0$memwr$\r_MEMORY$./sync_fifo.v:59$26_EN[7:0]$73 [0] $0$memwr$\r_MEMORY$./sync_fifo.v:59$26_EN[7:0]$73 [0] $0$memwr$\r_MEMORY$./sync_fifo.v:59$26_EN[7:0]$73 [0] $0$memwr$\r_MEMORY$./sync_fifo.v:59$26_EN[7:0]$73 [0] }
+    Consolidated identical input bits for $mux cell $procmux$887:
+      Old ports: A=$procmux$884_Y, B=8'00000000, Y=$0$memwr$\r_MEMORY$./sync_fifo.v:61$25_EN[7:0]$70
+      New ports: A=$procmux$884_Y [0], B=1'0, Y=$0$memwr$\r_MEMORY$./sync_fifo.v:61$25_EN[7:0]$70 [0]
+      New connections: $0$memwr$\r_MEMORY$./sync_fifo.v:61$25_EN[7:0]$70 [7:1] = { $0$memwr$\r_MEMORY$./sync_fifo.v:61$25_EN[7:0]$70 [0] $0$memwr$\r_MEMORY$./sync_fifo.v:61$25_EN[7:0]$70 [0] $0$memwr$\r_MEMORY$./sync_fifo.v:61$25_EN[7:0]$70 [0] $0$memwr$\r_MEMORY$./sync_fifo.v:61$25_EN[7:0]$70 [0] $0$memwr$\r_MEMORY$./sync_fifo.v:61$25_EN[7:0]$70 [0] $0$memwr$\r_MEMORY$./sync_fifo.v:61$25_EN[7:0]$70 [0] $0$memwr$\r_MEMORY$./sync_fifo.v:61$25_EN[7:0]$70 [0] }
+    Consolidated identical input bits for $mux cell $procmux$904:
+      Old ports: A=$procmux$901_Y, B=8'00000000, Y=$0$memwr$\r_MEMORY$./sync_fifo.v:68$26_EN[7:0]$73
+      New ports: A=$procmux$901_Y [0], B=1'0, Y=$0$memwr$\r_MEMORY$./sync_fifo.v:68$26_EN[7:0]$73 [0]
+      New connections: $0$memwr$\r_MEMORY$./sync_fifo.v:68$26_EN[7:0]$73 [7:1] = { $0$memwr$\r_MEMORY$./sync_fifo.v:68$26_EN[7:0]$73 [0] $0$memwr$\r_MEMORY$./sync_fifo.v:68$26_EN[7:0]$73 [0] $0$memwr$\r_MEMORY$./sync_fifo.v:68$26_EN[7:0]$73 [0] $0$memwr$\r_MEMORY$./sync_fifo.v:68$26_EN[7:0]$73 [0] $0$memwr$\r_MEMORY$./sync_fifo.v:68$26_EN[7:0]$73 [0] $0$memwr$\r_MEMORY$./sync_fifo.v:68$26_EN[7:0]$73 [0] $0$memwr$\r_MEMORY$./sync_fifo.v:68$26_EN[7:0]$73 [0] }
   Optimizing cells in module \sync_fifo.
 Performed a total of 33 changes.
 
@@ -656,22 +650,17 @@ Finding identical cells in module `\sync_fifo'.
 <suppressed ~237 debug messages>
 Removed a total of 80 cells.
 
-2.7.6. Executing OPT_RMDFF pass (remove dff with constant values).
-Removing $procdff$1000 ($dff) from module sync_fifo.
-Removing $procdff$1001 ($dff) from module sync_fifo.
-Replaced 2 DFF cells.
-
-2.7.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+2.7.6. Executing OPT_CLEAN pass (remove unused cells and wires).
 Finding unused cells or wires in module \sync_fifo..
-Removed 0 unused cells and 182 unused wires.
-<suppressed ~1 debug messages>
+Removed 0 unused cells and 180 unused wires.
+<suppressed ~2 debug messages>
 
-2.7.8. Executing OPT_EXPR pass (perform const folding).
+2.7.7. Executing OPT_EXPR pass (perform const folding).
 Optimizing module sync_fifo.
 
-2.7.9. Rerunning OPT passes. (Maybe there is more to do..)
+2.7.8. Rerunning OPT passes. (Maybe there is more to do..)
 
-2.7.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+2.7.9. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
 Running muxtree optimizer on module \sync_fifo..
   Creating internal representation of mux trees.
   Evaluating internal representation of mux trees.
@@ -679,59 +668,62 @@ Running muxtree optimizer on module \sync_fifo..
 Removed 0 multiplexer ports.
 <suppressed ~52 debug messages>
 
-2.7.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+2.7.10. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
   Optimizing cells in module \sync_fifo.
 Performed a total of 0 changes.
 
-2.7.12. Executing OPT_MERGE pass (detect identical cells).
+2.7.11. Executing OPT_MERGE pass (detect identical cells).
 Finding identical cells in module `\sync_fifo'.
 Removed a total of 0 cells.
 
-2.7.13. Executing OPT_RMDFF pass (remove dff with constant values).
-
-2.7.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+2.7.12. Executing OPT_CLEAN pass (remove unused cells and wires).
 Finding unused cells or wires in module \sync_fifo..
 
-2.7.15. Executing OPT_EXPR pass (perform const folding).
+2.7.13. Executing OPT_EXPR pass (perform const folding).
 Optimizing module sync_fifo.
 
-2.7.16. Finished OPT passes. (There is nothing left to do.)
+2.7.14. Finished OPT passes. (There is nothing left to do.)
 
 2.8. Executing WREDUCE pass (reducing word size of cells).
-Removed top 31 bits (of 32) from port Y of cell sync_fifo.$and$./sync_fifo.v:117$182 ($and).
-Removed top 31 bits (of 32) from port Y of cell sync_fifo.$and$./sync_fifo.v:118$184 ($and).
-Removed top 31 bits (of 32) from port B of cell sync_fifo.$and$./sync_fifo.v:120$187 ($and).
-Removed top 31 bits (of 32) from port Y of cell sync_fifo.$and$./sync_fifo.v:120$187 ($and).
-Removed top 31 bits (of 32) from port B of cell sync_fifo.$and$./sync_fifo.v:120$189 ($and).
-Removed top 31 bits (of 32) from port Y of cell sync_fifo.$and$./sync_fifo.v:120$189 ($and).
-Removed top 31 bits (of 32) from port Y of cell sync_fifo.$and$./sync_fifo.v:126$193 ($and).
-Removed top 31 bits (of 32) from port A of cell sync_fifo.$ne$./sync_fifo.v:126$194 ($ne).
-Removed top 31 bits (of 32) from port B of cell sync_fifo.$ne$./sync_fifo.v:126$194 ($ne).
-Removed top 1 bits (of 2) from port B of cell sync_fifo.$eq$./sync_fifo.v:134$200 ($eq).
-Removed top 1 bits (of 2) from port B of cell sync_fifo.$procmux$877_CMP0 ($eq).
-Removed top 1 bits (of 2) from port B of cell sync_fifo.$procmux$942_CMP0 ($eq).
-Removed top 7 bits (of 8) from FF cell sync_fifo.$procdff$1054 ($dff).
-Removed top 7 bits (of 8) from FF cell sync_fifo.$procdff$1057 ($dff).
-Removed top 31 bits (of 32) from wire sync_fifo.$and$./sync_fifo.v:117$182_Y.
-Removed top 31 bits (of 32) from wire sync_fifo.$and$./sync_fifo.v:120$189_Y.
-Removed top 31 bits (of 32) from wire sync_fifo.$and$./sync_fifo.v:126$193_Y.
+Removed top 30 address bits (of 32) from memory read port sync_fifo.$memrd$\r_MEMORY$./sync_fifo.v:133$193 (r_MEMORY).
+Removed top 31 bits (of 32) from port Y of cell sync_fifo.$and$./sync_fifo.v:126$182 ($and).
+Removed top 31 bits (of 32) from port Y of cell sync_fifo.$and$./sync_fifo.v:127$184 ($and).
+Removed top 31 bits (of 32) from port B of cell sync_fifo.$and$./sync_fifo.v:0$187 ($and).
+Removed top 31 bits (of 32) from port Y of cell sync_fifo.$and$./sync_fifo.v:0$187 ($and).
+Removed top 31 bits (of 32) from port B of cell sync_fifo.$and$./sync_fifo.v:0$189 ($and).
+Removed top 31 bits (of 32) from port Y of cell sync_fifo.$and$./sync_fifo.v:0$189 ($and).
+Removed top 7 bits (of 8) from port B of cell sync_fifo.$eq$./sync_fifo.v:133$194 ($eq).
+Removed top 31 bits (of 32) from port Y of cell sync_fifo.$and$./sync_fifo.v:135$196 ($and).
+Removed top 31 bits (of 32) from port A of cell sync_fifo.$ne$./sync_fifo.v:135$197 ($ne).
+Removed top 31 bits (of 32) from port B of cell sync_fifo.$ne$./sync_fifo.v:135$197 ($ne).
+Removed top 1 bits (of 2) from port B of cell sync_fifo.$eq$./sync_fifo.v:143$203 ($eq).
+Removed top 1 bits (of 2) from port B of cell sync_fifo.$procmux$878_CMP0 ($eq).
+Removed top 1 bits (of 2) from port B of cell sync_fifo.$procmux$943_CMP0 ($eq).
+Removed cell sync_fifo.$procdff$1002 ($dff).
+Removed top 7 bits (of 8) from FF cell sync_fifo.$procdff$1055 ($dff).
+Removed top 7 bits (of 8) from FF cell sync_fifo.$procdff$1058 ($dff).
+Removed top 31 bits (of 32) from wire sync_fifo.$and$./sync_fifo.v:0$187_Y.
+Removed top 31 bits (of 32) from wire sync_fifo.$and$./sync_fifo.v:0$189_Y.
+Removed top 31 bits (of 32) from wire sync_fifo.$and$./sync_fifo.v:126$182_Y.
+Removed top 31 bits (of 32) from wire sync_fifo.$and$./sync_fifo.v:135$196_Y.
 
 2.9. Executing MEMORY_DFF pass (merging $dff cells to $memrd and $memwr).
-Checking cell `$memwr$\r_MEMORY$./sync_fifo.v:52$245' in module `\sync_fifo': merged $dff to cell.
-Checking cell `$memwr$\r_MEMORY$./sync_fifo.v:59$246' in module `\sync_fifo': merged $dff to cell.
+Checking cell `$memwr$\r_MEMORY$./sync_fifo.v:0$248' in module `\sync_fifo': merged $dff to cell.
+Checking cell `$memwr$\r_MEMORY$./sync_fifo.v:0$249' in module `\sync_fifo': merged $dff to cell.
 
 2.10. Executing OPT_CLEAN pass (remove unused cells and wires).
 Finding unused cells or wires in module \sync_fifo..
-Removed 6 unused cells and 9 unused wires.
+Removed 6 unused cells and 11 unused wires.
 <suppressed ~7 debug messages>
 
 2.11. Executing MEMORY_COLLECT pass (generating $mem cells).
 Collecting $memrd, $memwr and $meminit for memory `\r_MEMORY' in module `\sync_fifo':
-  $memwr$\r_MEMORY$./sync_fifo.v:52$245 ($memwr)
-  $memwr$\r_MEMORY$./sync_fifo.v:59$246 ($memwr)
-  $memrd$\r_MEMORY$./sync_fifo.v:46$75 ($memrd)
-  $memrd$\r_MEMORY$./sync_fifo.v:166$224 ($memrd)
-  $memrd$\r_MEMORY$./sync_fifo.v:172$231 ($memrd)
+  $memwr$\r_MEMORY$./sync_fifo.v:0$248 ($memwr)
+  $memwr$\r_MEMORY$./sync_fifo.v:0$249 ($memwr)
+  $memrd$\r_MEMORY$./sync_fifo.v:55$75 ($memrd)
+  $memrd$\r_MEMORY$./sync_fifo.v:133$193 ($memrd)
+  $memrd$\r_MEMORY$./sync_fifo.v:175$227 ($memrd)
+  $memrd$\r_MEMORY$./sync_fifo.v:181$234 ($memrd)
 
 2.12. Executing OPT pass (performing simple optimizations).
 
@@ -743,36 +735,34 @@ Optimizing module sync_fifo.
 Finding identical cells in module `\sync_fifo'.
 Removed a total of 0 cells.
 
-2.12.3. Executing OPT_RMDFF pass (remove dff with constant values).
-
-2.12.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+2.12.3. Executing OPT_CLEAN pass (remove unused cells and wires).
 Finding unused cells or wires in module \sync_fifo..
 Removed 0 unused cells and 2 unused wires.
 <suppressed ~1 debug messages>
 
-2.12.5. Finished fast OPT passes.
+2.12.4. Finished fast OPT passes.
 
 2.13. Printing statistics.
 
 === sync_fifo ===
 
-   Number of wires:                234
-   Number of wire bits:            428
+   Number of wires:                238
+   Number of wire bits:            408
    Number of public wires:          14
    Number of public wire bits:      31
    Number of memories:               0
    Number of memory bits:            0
    Number of processes:              0
-   Number of cells:                262
+   Number of cells:                265
      $add                            3
      $and                            3
      $assert                        25
      $assume                         9
      $cover                          1
-     $dff                           57
-     $eq                            13
+     $dff                           58
+     $eq                            14
      $initstate                      1
-     $logic_and                      5
+     $logic_and                      6
      $logic_not                      9
      $mem                            1
      $mux                          118
@@ -792,8 +782,8 @@ found and reported 0 problems.
 
 5. Executing OPT_CLEAN pass (remove unused cells and wires).
 Finding unused cells or wires in module \sync_fifo..
-Removed 10 unused cells and 9 unused wires.
-<suppressed ~11 debug messages>
+Removed 12 unused cells and 11 unused wires.
+<suppressed ~13 debug messages>
 
 6. Executing SETUNDEF pass (replace undef values with defined constants).
 
@@ -806,28 +796,48 @@ Optimizing module sync_fifo.
 Finding identical cells in module `\sync_fifo'.
 Removed a total of 0 cells.
 
-7.3. Executing OPT_RMDFF pass (remove dff with constant values).
-Promoting init spec $formal$./sync_fifo.v:179$64_EN = 1'0 to constant driver in module sync_fifo.
-Promoted 1 init specs to constant drivers.
+7.3. Executing OPT_DFF pass (perform DFF optimizations).
+Adding SRST signal on $procdff$986 ($dff) from module sync_fifo (D = $procmux$378_Y, Q = $formal$./sync_fifo.v:137$37_EN, rval = 1'0).
+Adding SRST signal on $procdff$1052 ($dff) from module sync_fifo (D = $procmux$875_Y, Q = \r_QUANTITY, rval = 2'00).
+Adding EN signal on $auto$opt_dff.cc:702:run$1235 ($sdff) from module sync_fifo (D = $procmux$875_Y, Q = \r_QUANTITY).
+Adding SRST signal on $procdff$1051 ($dff) from module sync_fifo (D = $procmux$916_Y, Q = \r_READ_POINTER, rval = 2'00).
+Adding EN signal on $auto$opt_dff.cc:702:run$1239 ($sdff) from module sync_fifo (D = $add$./sync_fifo.v:56$76_Y, Q = \r_READ_POINTER).
+Adding SRST signal on $procdff$1050 ($dff) from module sync_fifo (D = $procmux$922_Y, Q = \r_WRITE_POINTER, rval = 2'00).
+Adding EN signal on $auto$opt_dff.cc:702:run$1241 ($sdff) from module sync_fifo (D = $add$./sync_fifo.v:62$78_Y, Q = \r_WRITE_POINTER).
+Adding EN signal on $procdff$1049 ($dff) from module sync_fifo (D = $memrd$\r_MEMORY$./sync_fifo.v:55$75_DATA, Q = \o_OUTPUT).
+Adding EN signal on $procdff$1048 ($dff) from module sync_fifo (D = $procmux$862_Y, Q = \o_FIFO_ALMOST_FULL).
+Adding EN signal on $procdff$1047 ($dff) from module sync_fifo (D = $procmux$942_Y, Q = \o_FIFO_ALMOST_EMPTY).
+Adding SRST signal on $procdff$1046 ($dff) from module sync_fifo (D = $procmux$862_Y, Q = \o_FIFO_FULL, rval = 1'0).
+Adding SRST signal on $procdff$1045 ($dff) from module sync_fifo (D = $procmux$870_Y, Q = \o_FIFO_EMPTY, rval = 1'1).
+Adding SRST signal on $procdff$1038 ($dff) from module sync_fifo (D = $procmux$841_Y, Q = $formal$./sync_fifo.v:183$63_EN, rval = 1'0).
+Adding SRST signal on $procdff$1032 ($dff) from module sync_fifo (D = $procmux$817_Y, Q = $formal$./sync_fifo.v:178$60_EN, rval = 1'0).
+Adding SRST signal on $procdff$1026 ($dff) from module sync_fifo (D = $procmux$793_Y, Q = $formal$./sync_fifo.v:172$57_EN, rval = 1'0).
+Adding SRST signal on $procdff$1018 ($dff) from module sync_fifo (D = $procmux$682_Y, Q = $formal$./sync_fifo.v:165$53_EN, rval = 1'0).
+Adding SRST signal on $procdff$1010 ($dff) from module sync_fifo (D = $procmux$570_Y, Q = $formal$./sync_fifo.v:158$49_EN, rval = 1'0).
+Adding SRST signal on $procdff$1000 ($dff) from module sync_fifo (D = $procmux$418_Y, Q = $formal$./sync_fifo.v:147$44_EN, rval = 1'0).
 
 7.4. Executing OPT_CLEAN pass (remove unused cells and wires).
 Finding unused cells or wires in module \sync_fifo..
-Removed 0 unused cells and 1 unused wires.
-<suppressed ~1 debug messages>
+Removed 23 unused cells and 23 unused wires.
+<suppressed ~24 debug messages>
 
 7.5. Rerunning OPT passes. (Removed registers in this run.)
 
 7.6. Executing OPT_EXPR pass (perform const folding).
 Optimizing module sync_fifo.
+<suppressed ~2 debug messages>
 
 7.7. Executing OPT_MERGE pass (detect identical cells).
 Finding identical cells in module `\sync_fifo'.
-Removed a total of 0 cells.
+<suppressed ~9 debug messages>
+Removed a total of 3 cells.
 
-7.8. Executing OPT_RMDFF pass (remove dff with constant values).
+7.8. Executing OPT_DFF pass (perform DFF optimizations).
 
 7.9. Executing OPT_CLEAN pass (remove unused cells and wires).
 Finding unused cells or wires in module \sync_fifo..
+Removed 1 unused cells and 4 unused wires.
+<suppressed ~2 debug messages>
 
 7.10. Finished fast OPT passes.
 
@@ -845,9 +855,9 @@ Top module:  \sync_fifo
 Removed 0 unused modules.
 Module sync_fifo directly or indirectly contains formal properties -> setting "keep" attribute.
 
-10. Executing ILANG backend.
+10. Executing RTLIL backend.
 Output filename: ../model/design.il
 
-End of script. Logfile hash: 896133eab8, CPU: user 0.22s system 0.00s, MEM: 14.66 MB peak
-Yosys 0.9+1706 (git sha1 2e8d6ec0b0, g++ 9.2.0 -fPIC -Os)
-Time spent: 25% 8x opt_clean (0 sec), 18% 7x opt_expr (0 sec), ...
+End of script. Logfile hash: 51c3340525, CPU: user 0.17s system 0.00s, MEM: 15.71 MB peak
+Yosys 0.9+3627 (git sha1 06347b119b, g++ 9.3.0 -fPIC -Os)
+Time spent: 21% 8x opt_clean (0 sec), 20% 7x opt_expr (0 sec), ...
