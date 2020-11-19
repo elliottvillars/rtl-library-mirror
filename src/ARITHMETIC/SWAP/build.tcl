@@ -1,6 +1,3 @@
-package require Bluetcl
-package require Bluesim
-
 if {$argc < 1} {
 	puts "ERROR: No arguments supplied. Exiting"
 	exit 1
@@ -45,7 +42,6 @@ file mkdir $vdir
 exec bsc -verilog -vdir $vdir -O -bdir $bflag -sat-yices -g $top -u $flist
 #Read the output file and add formal stuff
 
-exec sed -i "s/CLK,//g ; s/input  CLK;//g ; s/RST_N,//g ; s/input  RST_N;//g" "./hdl/$top.v"
 set fp [open "./hdl/$top.v" r]
 set file_data [read $fp]
 close $fp

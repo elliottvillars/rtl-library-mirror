@@ -3,7 +3,7 @@
  |                                                                            |
  |  yosys -- Yosys Open SYnthesis Suite                                       |
  |                                                                            |
- |  Copyright (C) 2012 - 2019  Clifford Wolf <clifford@clifford.at>           |
+ |  Copyright (C) 2012 - 2020  Claire Wolf <claire@symbioticeda.com>          |
  |                                                                            |
  |  Permission to use, copy, modify, and/or distribute this software for any  |
  |  purpose with or without fee is hereby granted, provided that the above    |
@@ -19,14 +19,563 @@
  |                                                                            |
  \----------------------------------------------------------------------------/
 
- Yosys 0.9 (git sha1 UNKNOWN, clang 9.0.0 -march=x86-64 -mtune=generic -O2 -fno-plt -fPIC -Os)
+ Yosys 0.9+3627 (git sha1 06347b119b, g++ 9.3.0 -fPIC -Os)
 
 
 -- Executing script file `../model/design.ys' --
 
 1. Executing Verilog-2005 frontend: basic_axi4_lite_slave.v
 Parsing formal SystemVerilog input from `basic_axi4_lite_slave.v' to AST representation.
+Storing AST representation for module `$abstract\basic_axi4_lite_slave'.
+Successfully finished Verilog frontend.
+
+2. Executing PREP pass.
+
+2.1. Executing HIERARCHY pass (managing design hierarchy).
+
+2.2. Executing AST frontend in derive mode using pre-parsed AST for module `\basic_axi4_lite_slave'.
 Generating RTLIL representation for module `\basic_axi4_lite_slave'.
-Warning: wire '\i' is assigned in a block at basic_axi4_lite_slave.v:37.
-Warning: wire '\i' is assigned in a block at basic_axi4_lite_slave.v:37.
-basic_axi4_lite_slave.v:37: ERROR: Left hand side of 1st expression of generate for-loop is not a register!
+
+2.2.1. Analyzing design hierarchy..
+Top module:  \basic_axi4_lite_slave
+
+2.2.2. Analyzing design hierarchy..
+Top module:  \basic_axi4_lite_slave
+Removing unused module `$abstract\basic_axi4_lite_slave'.
+Removed 1 unused modules.
+Module basic_axi4_lite_slave directly or indirectly contains formal properties -> setting "keep" attribute.
+
+2.3. Executing PROC pass (convert processes to netlists).
+
+2.3.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+2.3.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Marked 5 switch rules as full_case in process $proc$basic_axi4_lite_slave.v:95$70 in module basic_axi4_lite_slave.
+Marked 2 switch rules as full_case in process $proc$basic_axi4_lite_slave.v:78$65 in module basic_axi4_lite_slave.
+Marked 1 switch rules as full_case in process $proc$basic_axi4_lite_slave.v:72$61 in module basic_axi4_lite_slave.
+Marked 2 switch rules as full_case in process $proc$basic_axi4_lite_slave.v:61$56 in module basic_axi4_lite_slave.
+Marked 1 switch rules as full_case in process $proc$basic_axi4_lite_slave.v:55$52 in module basic_axi4_lite_slave.
+Marked 1 switch rules as full_case in process $proc$basic_axi4_lite_slave.v:49$48 in module basic_axi4_lite_slave.
+Removed a total of 0 dead cases.
+
+2.3.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 5 redundant assignments.
+Promoted 39 assignments to connections.
+
+2.3.4. Executing PROC_INIT pass (extract init attributes).
+Found init rule in `\basic_axi4_lite_slave.$proc$basic_axi4_lite_slave.v:0$222'.
+  Set init value: $formal$basic_axi4_lite_slave.v:134$35_EN = 1'0
+Found init rule in `\basic_axi4_lite_slave.$proc$basic_axi4_lite_slave.v:0$220'.
+  Set init value: $formal$basic_axi4_lite_slave.v:132$34_EN = 1'0
+Found init rule in `\basic_axi4_lite_slave.$proc$basic_axi4_lite_slave.v:0$218'.
+  Set init value: $formal$basic_axi4_lite_slave.v:130$33_EN = 1'0
+Found init rule in `\basic_axi4_lite_slave.$proc$basic_axi4_lite_slave.v:0$216'.
+  Set init value: $formal$basic_axi4_lite_slave.v:128$32_EN = 1'0
+Found init rule in `\basic_axi4_lite_slave.$proc$basic_axi4_lite_slave.v:0$214'.
+  Set init value: $formal$basic_axi4_lite_slave.v:126$31_EN = 1'0
+Found init rule in `\basic_axi4_lite_slave.$proc$basic_axi4_lite_slave.v:0$212'.
+  Set init value: $formal$basic_axi4_lite_slave.v:124$30_EN = 1'0
+Found init rule in `\basic_axi4_lite_slave.$proc$basic_axi4_lite_slave.v:0$210'.
+  Set init value: $formal$basic_axi4_lite_slave.v:122$29_EN = 1'0
+Found init rule in `\basic_axi4_lite_slave.$proc$basic_axi4_lite_slave.v:0$208'.
+  Set init value: $formal$basic_axi4_lite_slave.v:120$28_EN = 1'0
+Found init rule in `\basic_axi4_lite_slave.$proc$basic_axi4_lite_slave.v:0$206'.
+  Set init value: $formal$basic_axi4_lite_slave.v:118$27_EN = 1'0
+Found init rule in `\basic_axi4_lite_slave.$proc$basic_axi4_lite_slave.v:0$204'.
+  Set init value: $formal$basic_axi4_lite_slave.v:116$26_EN = 1'0
+Found init rule in `\basic_axi4_lite_slave.$proc$basic_axi4_lite_slave.v:0$202'.
+  Set init value: $formal$basic_axi4_lite_slave.v:114$25_EN = 1'0
+Found init rule in `\basic_axi4_lite_slave.$proc$basic_axi4_lite_slave.v:0$200'.
+  Set init value: $formal$basic_axi4_lite_slave.v:112$24_EN = 1'0
+Found init rule in `\basic_axi4_lite_slave.$proc$basic_axi4_lite_slave.v:0$198'.
+  Set init value: $formal$basic_axi4_lite_slave.v:110$23_EN = 1'0
+Found init rule in `\basic_axi4_lite_slave.$proc$basic_axi4_lite_slave.v:0$196'.
+  Set init value: $formal$basic_axi4_lite_slave.v:108$22_EN = 1'0
+Found init rule in `\basic_axi4_lite_slave.$proc$basic_axi4_lite_slave.v:0$194'.
+  Set init value: $formal$basic_axi4_lite_slave.v:107$21_EN = 1'0
+Found init rule in `\basic_axi4_lite_slave.$proc$basic_axi4_lite_slave.v:0$192'.
+  Set init value: $formal$basic_axi4_lite_slave.v:103$20_EN = 1'0
+Found init rule in `\basic_axi4_lite_slave.$proc$basic_axi4_lite_slave.v:0$190'.
+  Set init value: $formal$basic_axi4_lite_slave.v:102$19_EN = 1'0
+Found init rule in `\basic_axi4_lite_slave.$proc$basic_axi4_lite_slave.v:0$188'.
+  Set init value: $formal$basic_axi4_lite_slave.v:96$18_EN = 1'0
+Found init rule in `\basic_axi4_lite_slave.$proc$basic_axi4_lite_slave.v:94$187'.
+  Set init value: \r_PAST_VALID = 1'0
+
+2.3.5. Executing PROC_ARST pass (detect async resets in processes).
+
+2.3.6. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\basic_axi4_lite_slave.$proc$basic_axi4_lite_slave.v:0$222'.
+Creating decoders for process `\basic_axi4_lite_slave.$proc$basic_axi4_lite_slave.v:0$220'.
+Creating decoders for process `\basic_axi4_lite_slave.$proc$basic_axi4_lite_slave.v:0$218'.
+Creating decoders for process `\basic_axi4_lite_slave.$proc$basic_axi4_lite_slave.v:0$216'.
+Creating decoders for process `\basic_axi4_lite_slave.$proc$basic_axi4_lite_slave.v:0$214'.
+Creating decoders for process `\basic_axi4_lite_slave.$proc$basic_axi4_lite_slave.v:0$212'.
+Creating decoders for process `\basic_axi4_lite_slave.$proc$basic_axi4_lite_slave.v:0$210'.
+Creating decoders for process `\basic_axi4_lite_slave.$proc$basic_axi4_lite_slave.v:0$208'.
+Creating decoders for process `\basic_axi4_lite_slave.$proc$basic_axi4_lite_slave.v:0$206'.
+Creating decoders for process `\basic_axi4_lite_slave.$proc$basic_axi4_lite_slave.v:0$204'.
+Creating decoders for process `\basic_axi4_lite_slave.$proc$basic_axi4_lite_slave.v:0$202'.
+Creating decoders for process `\basic_axi4_lite_slave.$proc$basic_axi4_lite_slave.v:0$200'.
+Creating decoders for process `\basic_axi4_lite_slave.$proc$basic_axi4_lite_slave.v:0$198'.
+Creating decoders for process `\basic_axi4_lite_slave.$proc$basic_axi4_lite_slave.v:0$196'.
+Creating decoders for process `\basic_axi4_lite_slave.$proc$basic_axi4_lite_slave.v:0$194'.
+Creating decoders for process `\basic_axi4_lite_slave.$proc$basic_axi4_lite_slave.v:0$192'.
+Creating decoders for process `\basic_axi4_lite_slave.$proc$basic_axi4_lite_slave.v:0$190'.
+Creating decoders for process `\basic_axi4_lite_slave.$proc$basic_axi4_lite_slave.v:0$188'.
+Creating decoders for process `\basic_axi4_lite_slave.$proc$basic_axi4_lite_slave.v:94$187'.
+Creating decoders for process `\basic_axi4_lite_slave.$proc$basic_axi4_lite_slave.v:95$70'.
+     1/34: $0$formal$basic_axi4_lite_slave.v:102$19_EN[0:0]$90
+     2/34: $0$formal$basic_axi4_lite_slave.v:102$19_CHECK[0:0]$89
+     3/34: $0$formal$basic_axi4_lite_slave.v:103$20_EN[0:0]$92
+     4/34: $0$formal$basic_axi4_lite_slave.v:103$20_CHECK[0:0]$91
+     5/34: $0$formal$basic_axi4_lite_slave.v:107$21_EN[0:0]$94
+     6/34: $0$formal$basic_axi4_lite_slave.v:107$21_CHECK[0:0]$93
+     7/34: $0$formal$basic_axi4_lite_slave.v:108$22_EN[0:0]$96
+     8/34: $0$formal$basic_axi4_lite_slave.v:108$22_CHECK[0:0]$95
+     9/34: $0$formal$basic_axi4_lite_slave.v:110$23_EN[0:0]$98
+    10/34: $0$formal$basic_axi4_lite_slave.v:110$23_CHECK[0:0]$97
+    11/34: $0$formal$basic_axi4_lite_slave.v:112$24_EN[0:0]$100
+    12/34: $0$formal$basic_axi4_lite_slave.v:112$24_CHECK[0:0]$99
+    13/34: $0$formal$basic_axi4_lite_slave.v:114$25_EN[0:0]$102
+    14/34: $0$formal$basic_axi4_lite_slave.v:114$25_CHECK[0:0]$101
+    15/34: $0$formal$basic_axi4_lite_slave.v:116$26_EN[0:0]$104
+    16/34: $0$formal$basic_axi4_lite_slave.v:116$26_CHECK[0:0]$103
+    17/34: $0$formal$basic_axi4_lite_slave.v:118$27_EN[0:0]$106
+    18/34: $0$formal$basic_axi4_lite_slave.v:118$27_CHECK[0:0]$105
+    19/34: $0$formal$basic_axi4_lite_slave.v:120$28_EN[0:0]$108
+    20/34: $0$formal$basic_axi4_lite_slave.v:120$28_CHECK[0:0]$107
+    21/34: $0$formal$basic_axi4_lite_slave.v:122$29_EN[0:0]$110
+    22/34: $0$formal$basic_axi4_lite_slave.v:122$29_CHECK[0:0]$109
+    23/34: $0$formal$basic_axi4_lite_slave.v:124$30_EN[0:0]$112
+    24/34: $0$formal$basic_axi4_lite_slave.v:124$30_CHECK[0:0]$111
+    25/34: $0$formal$basic_axi4_lite_slave.v:126$31_EN[0:0]$114
+    26/34: $0$formal$basic_axi4_lite_slave.v:126$31_CHECK[0:0]$113
+    27/34: $0$formal$basic_axi4_lite_slave.v:128$32_EN[0:0]$116
+    28/34: $0$formal$basic_axi4_lite_slave.v:128$32_CHECK[0:0]$115
+    29/34: $0$formal$basic_axi4_lite_slave.v:130$33_EN[0:0]$118
+    30/34: $0$formal$basic_axi4_lite_slave.v:130$33_CHECK[0:0]$117
+    31/34: $0$formal$basic_axi4_lite_slave.v:132$34_EN[0:0]$120
+    32/34: $0$formal$basic_axi4_lite_slave.v:132$34_CHECK[0:0]$119
+    33/34: $0$formal$basic_axi4_lite_slave.v:134$35_EN[0:0]$122
+    34/34: $0$formal$basic_axi4_lite_slave.v:134$35_CHECK[0:0]$121
+Creating decoders for process `\basic_axi4_lite_slave.$proc$basic_axi4_lite_slave.v:78$65'.
+     1/1: $0\o_S_RVALID[0:0]
+Creating decoders for process `\basic_axi4_lite_slave.$proc$basic_axi4_lite_slave.v:72$61'.
+     1/1: $0\o_S_ARREADY[0:0]
+Creating decoders for process `\basic_axi4_lite_slave.$proc$basic_axi4_lite_slave.v:61$56'.
+     1/1: $0\o_S_BVALID[0:0]
+Creating decoders for process `\basic_axi4_lite_slave.$proc$basic_axi4_lite_slave.v:55$52'.
+     1/1: $0\o_S_WREADY[0:0]
+Creating decoders for process `\basic_axi4_lite_slave.$proc$basic_axi4_lite_slave.v:49$48'.
+     1/1: $0\o_S_AWREADY[0:0]
+Creating decoders for process `\basic_axi4_lite_slave.$proc$basic_axi4_lite_slave.v:40$37'.
+     1/4: $0$memwr$\r_MEMORY$basic_axi4_lite_slave.v:43$17_EN[7:0]$40
+     2/4: $0$memwr$\r_MEMORY$basic_axi4_lite_slave.v:43$17_DATA[7:0]$39
+     3/4: $0$memwr$\r_MEMORY$basic_axi4_lite_slave.v:43$17_ADDR[1:0]$38
+     4/4: $0\o_S_RDATA[7:0]
+Creating decoders for process `\basic_axi4_lite_slave.$proc$basic_axi4_lite_slave.v:35$36'.
+
+2.3.7. Executing PROC_DLATCH pass (convert process syncs to latches).
+
+2.3.8. Executing PROC_DFF pass (convert process syncs to FFs).
+Creating register for signal `\basic_axi4_lite_slave.\r_PAST_VALID' using process `\basic_axi4_lite_slave.$proc$basic_axi4_lite_slave.v:95$70'.
+  created $dff cell `$procdff$491' with positive edge clock.
+Creating register for signal `\basic_axi4_lite_slave.$past$basic_axi4_lite_slave.v:97$1$0' using process `\basic_axi4_lite_slave.$proc$basic_axi4_lite_slave.v:95$70'.
+  created $dff cell `$procdff$492' with positive edge clock.
+Creating register for signal `\basic_axi4_lite_slave.$past$basic_axi4_lite_slave.v:99$2$0' using process `\basic_axi4_lite_slave.$proc$basic_axi4_lite_slave.v:95$70'.
+  created $dff cell `$procdff$493' with positive edge clock.
+Creating register for signal `\basic_axi4_lite_slave.$past$basic_axi4_lite_slave.v:101$3$0' using process `\basic_axi4_lite_slave.$proc$basic_axi4_lite_slave.v:95$70'.
+  created $dff cell `$procdff$494' with positive edge clock.
+Creating register for signal `\basic_axi4_lite_slave.$past$basic_axi4_lite_slave.v:110$4$0' using process `\basic_axi4_lite_slave.$proc$basic_axi4_lite_slave.v:95$70'.
+  created $dff cell `$procdff$495' with positive edge clock.
+Creating register for signal `\basic_axi4_lite_slave.$past$basic_axi4_lite_slave.v:112$5$0' using process `\basic_axi4_lite_slave.$proc$basic_axi4_lite_slave.v:95$70'.
+  created $dff cell `$procdff$496' with positive edge clock.
+Creating register for signal `\basic_axi4_lite_slave.$past$basic_axi4_lite_slave.v:115$6$0' using process `\basic_axi4_lite_slave.$proc$basic_axi4_lite_slave.v:95$70'.
+  created $dff cell `$procdff$497' with positive edge clock.
+Creating register for signal `\basic_axi4_lite_slave.$past$basic_axi4_lite_slave.v:117$7$0' using process `\basic_axi4_lite_slave.$proc$basic_axi4_lite_slave.v:95$70'.
+  created $dff cell `$procdff$498' with positive edge clock.
+Creating register for signal `\basic_axi4_lite_slave.$past$basic_axi4_lite_slave.v:119$8$0' using process `\basic_axi4_lite_slave.$proc$basic_axi4_lite_slave.v:95$70'.
+  created $dff cell `$procdff$499' with positive edge clock.
+Creating register for signal `\basic_axi4_lite_slave.$past$basic_axi4_lite_slave.v:120$9$0' using process `\basic_axi4_lite_slave.$proc$basic_axi4_lite_slave.v:95$70'.
+  created $dff cell `$procdff$500' with positive edge clock.
+Creating register for signal `\basic_axi4_lite_slave.$past$basic_axi4_lite_slave.v:120$10$0' using process `\basic_axi4_lite_slave.$proc$basic_axi4_lite_slave.v:95$70'.
+  created $dff cell `$procdff$501' with positive edge clock.
+Creating register for signal `\basic_axi4_lite_slave.$past$basic_axi4_lite_slave.v:124$11$0' using process `\basic_axi4_lite_slave.$proc$basic_axi4_lite_slave.v:95$70'.
+  created $dff cell `$procdff$502' with positive edge clock.
+Creating register for signal `\basic_axi4_lite_slave.$past$basic_axi4_lite_slave.v:124$12$0' using process `\basic_axi4_lite_slave.$proc$basic_axi4_lite_slave.v:95$70'.
+  created $dff cell `$procdff$503' with positive edge clock.
+Creating register for signal `\basic_axi4_lite_slave.$past$basic_axi4_lite_slave.v:128$13$0' using process `\basic_axi4_lite_slave.$proc$basic_axi4_lite_slave.v:95$70'.
+  created $dff cell `$procdff$504' with positive edge clock.
+Creating register for signal `\basic_axi4_lite_slave.$past$basic_axi4_lite_slave.v:128$14$0' using process `\basic_axi4_lite_slave.$proc$basic_axi4_lite_slave.v:95$70'.
+  created $dff cell `$procdff$505' with positive edge clock.
+Creating register for signal `\basic_axi4_lite_slave.$past$basic_axi4_lite_slave.v:132$15$0' using process `\basic_axi4_lite_slave.$proc$basic_axi4_lite_slave.v:95$70'.
+  created $dff cell `$procdff$506' with positive edge clock.
+Creating register for signal `\basic_axi4_lite_slave.$past$basic_axi4_lite_slave.v:132$16$0' using process `\basic_axi4_lite_slave.$proc$basic_axi4_lite_slave.v:95$70'.
+  created $dff cell `$procdff$507' with positive edge clock.
+Creating register for signal `\basic_axi4_lite_slave.$formal$basic_axi4_lite_slave.v:96$18_CHECK' using process `\basic_axi4_lite_slave.$proc$basic_axi4_lite_slave.v:95$70'.
+  created $dff cell `$procdff$508' with positive edge clock.
+Creating register for signal `\basic_axi4_lite_slave.$formal$basic_axi4_lite_slave.v:96$18_EN' using process `\basic_axi4_lite_slave.$proc$basic_axi4_lite_slave.v:95$70'.
+  created $dff cell `$procdff$509' with positive edge clock.
+Creating register for signal `\basic_axi4_lite_slave.$formal$basic_axi4_lite_slave.v:102$19_CHECK' using process `\basic_axi4_lite_slave.$proc$basic_axi4_lite_slave.v:95$70'.
+  created $dff cell `$procdff$510' with positive edge clock.
+Creating register for signal `\basic_axi4_lite_slave.$formal$basic_axi4_lite_slave.v:102$19_EN' using process `\basic_axi4_lite_slave.$proc$basic_axi4_lite_slave.v:95$70'.
+  created $dff cell `$procdff$511' with positive edge clock.
+Creating register for signal `\basic_axi4_lite_slave.$formal$basic_axi4_lite_slave.v:103$20_CHECK' using process `\basic_axi4_lite_slave.$proc$basic_axi4_lite_slave.v:95$70'.
+  created $dff cell `$procdff$512' with positive edge clock.
+Creating register for signal `\basic_axi4_lite_slave.$formal$basic_axi4_lite_slave.v:103$20_EN' using process `\basic_axi4_lite_slave.$proc$basic_axi4_lite_slave.v:95$70'.
+  created $dff cell `$procdff$513' with positive edge clock.
+Creating register for signal `\basic_axi4_lite_slave.$formal$basic_axi4_lite_slave.v:107$21_CHECK' using process `\basic_axi4_lite_slave.$proc$basic_axi4_lite_slave.v:95$70'.
+  created $dff cell `$procdff$514' with positive edge clock.
+Creating register for signal `\basic_axi4_lite_slave.$formal$basic_axi4_lite_slave.v:107$21_EN' using process `\basic_axi4_lite_slave.$proc$basic_axi4_lite_slave.v:95$70'.
+  created $dff cell `$procdff$515' with positive edge clock.
+Creating register for signal `\basic_axi4_lite_slave.$formal$basic_axi4_lite_slave.v:108$22_CHECK' using process `\basic_axi4_lite_slave.$proc$basic_axi4_lite_slave.v:95$70'.
+  created $dff cell `$procdff$516' with positive edge clock.
+Creating register for signal `\basic_axi4_lite_slave.$formal$basic_axi4_lite_slave.v:108$22_EN' using process `\basic_axi4_lite_slave.$proc$basic_axi4_lite_slave.v:95$70'.
+  created $dff cell `$procdff$517' with positive edge clock.
+Creating register for signal `\basic_axi4_lite_slave.$formal$basic_axi4_lite_slave.v:110$23_CHECK' using process `\basic_axi4_lite_slave.$proc$basic_axi4_lite_slave.v:95$70'.
+  created $dff cell `$procdff$518' with positive edge clock.
+Creating register for signal `\basic_axi4_lite_slave.$formal$basic_axi4_lite_slave.v:110$23_EN' using process `\basic_axi4_lite_slave.$proc$basic_axi4_lite_slave.v:95$70'.
+  created $dff cell `$procdff$519' with positive edge clock.
+Creating register for signal `\basic_axi4_lite_slave.$formal$basic_axi4_lite_slave.v:112$24_CHECK' using process `\basic_axi4_lite_slave.$proc$basic_axi4_lite_slave.v:95$70'.
+  created $dff cell `$procdff$520' with positive edge clock.
+Creating register for signal `\basic_axi4_lite_slave.$formal$basic_axi4_lite_slave.v:112$24_EN' using process `\basic_axi4_lite_slave.$proc$basic_axi4_lite_slave.v:95$70'.
+  created $dff cell `$procdff$521' with positive edge clock.
+Creating register for signal `\basic_axi4_lite_slave.$formal$basic_axi4_lite_slave.v:114$25_CHECK' using process `\basic_axi4_lite_slave.$proc$basic_axi4_lite_slave.v:95$70'.
+  created $dff cell `$procdff$522' with positive edge clock.
+Creating register for signal `\basic_axi4_lite_slave.$formal$basic_axi4_lite_slave.v:114$25_EN' using process `\basic_axi4_lite_slave.$proc$basic_axi4_lite_slave.v:95$70'.
+  created $dff cell `$procdff$523' with positive edge clock.
+Creating register for signal `\basic_axi4_lite_slave.$formal$basic_axi4_lite_slave.v:116$26_CHECK' using process `\basic_axi4_lite_slave.$proc$basic_axi4_lite_slave.v:95$70'.
+  created $dff cell `$procdff$524' with positive edge clock.
+Creating register for signal `\basic_axi4_lite_slave.$formal$basic_axi4_lite_slave.v:116$26_EN' using process `\basic_axi4_lite_slave.$proc$basic_axi4_lite_slave.v:95$70'.
+  created $dff cell `$procdff$525' with positive edge clock.
+Creating register for signal `\basic_axi4_lite_slave.$formal$basic_axi4_lite_slave.v:118$27_CHECK' using process `\basic_axi4_lite_slave.$proc$basic_axi4_lite_slave.v:95$70'.
+  created $dff cell `$procdff$526' with positive edge clock.
+Creating register for signal `\basic_axi4_lite_slave.$formal$basic_axi4_lite_slave.v:118$27_EN' using process `\basic_axi4_lite_slave.$proc$basic_axi4_lite_slave.v:95$70'.
+  created $dff cell `$procdff$527' with positive edge clock.
+Creating register for signal `\basic_axi4_lite_slave.$formal$basic_axi4_lite_slave.v:120$28_CHECK' using process `\basic_axi4_lite_slave.$proc$basic_axi4_lite_slave.v:95$70'.
+  created $dff cell `$procdff$528' with positive edge clock.
+Creating register for signal `\basic_axi4_lite_slave.$formal$basic_axi4_lite_slave.v:120$28_EN' using process `\basic_axi4_lite_slave.$proc$basic_axi4_lite_slave.v:95$70'.
+  created $dff cell `$procdff$529' with positive edge clock.
+Creating register for signal `\basic_axi4_lite_slave.$formal$basic_axi4_lite_slave.v:122$29_CHECK' using process `\basic_axi4_lite_slave.$proc$basic_axi4_lite_slave.v:95$70'.
+  created $dff cell `$procdff$530' with positive edge clock.
+Creating register for signal `\basic_axi4_lite_slave.$formal$basic_axi4_lite_slave.v:122$29_EN' using process `\basic_axi4_lite_slave.$proc$basic_axi4_lite_slave.v:95$70'.
+  created $dff cell `$procdff$531' with positive edge clock.
+Creating register for signal `\basic_axi4_lite_slave.$formal$basic_axi4_lite_slave.v:124$30_CHECK' using process `\basic_axi4_lite_slave.$proc$basic_axi4_lite_slave.v:95$70'.
+  created $dff cell `$procdff$532' with positive edge clock.
+Creating register for signal `\basic_axi4_lite_slave.$formal$basic_axi4_lite_slave.v:124$30_EN' using process `\basic_axi4_lite_slave.$proc$basic_axi4_lite_slave.v:95$70'.
+  created $dff cell `$procdff$533' with positive edge clock.
+Creating register for signal `\basic_axi4_lite_slave.$formal$basic_axi4_lite_slave.v:126$31_CHECK' using process `\basic_axi4_lite_slave.$proc$basic_axi4_lite_slave.v:95$70'.
+  created $dff cell `$procdff$534' with positive edge clock.
+Creating register for signal `\basic_axi4_lite_slave.$formal$basic_axi4_lite_slave.v:126$31_EN' using process `\basic_axi4_lite_slave.$proc$basic_axi4_lite_slave.v:95$70'.
+  created $dff cell `$procdff$535' with positive edge clock.
+Creating register for signal `\basic_axi4_lite_slave.$formal$basic_axi4_lite_slave.v:128$32_CHECK' using process `\basic_axi4_lite_slave.$proc$basic_axi4_lite_slave.v:95$70'.
+  created $dff cell `$procdff$536' with positive edge clock.
+Creating register for signal `\basic_axi4_lite_slave.$formal$basic_axi4_lite_slave.v:128$32_EN' using process `\basic_axi4_lite_slave.$proc$basic_axi4_lite_slave.v:95$70'.
+  created $dff cell `$procdff$537' with positive edge clock.
+Creating register for signal `\basic_axi4_lite_slave.$formal$basic_axi4_lite_slave.v:130$33_CHECK' using process `\basic_axi4_lite_slave.$proc$basic_axi4_lite_slave.v:95$70'.
+  created $dff cell `$procdff$538' with positive edge clock.
+Creating register for signal `\basic_axi4_lite_slave.$formal$basic_axi4_lite_slave.v:130$33_EN' using process `\basic_axi4_lite_slave.$proc$basic_axi4_lite_slave.v:95$70'.
+  created $dff cell `$procdff$539' with positive edge clock.
+Creating register for signal `\basic_axi4_lite_slave.$formal$basic_axi4_lite_slave.v:132$34_CHECK' using process `\basic_axi4_lite_slave.$proc$basic_axi4_lite_slave.v:95$70'.
+  created $dff cell `$procdff$540' with positive edge clock.
+Creating register for signal `\basic_axi4_lite_slave.$formal$basic_axi4_lite_slave.v:132$34_EN' using process `\basic_axi4_lite_slave.$proc$basic_axi4_lite_slave.v:95$70'.
+  created $dff cell `$procdff$541' with positive edge clock.
+Creating register for signal `\basic_axi4_lite_slave.$formal$basic_axi4_lite_slave.v:134$35_CHECK' using process `\basic_axi4_lite_slave.$proc$basic_axi4_lite_slave.v:95$70'.
+  created $dff cell `$procdff$542' with positive edge clock.
+Creating register for signal `\basic_axi4_lite_slave.$formal$basic_axi4_lite_slave.v:134$35_EN' using process `\basic_axi4_lite_slave.$proc$basic_axi4_lite_slave.v:95$70'.
+  created $dff cell `$procdff$543' with positive edge clock.
+Creating register for signal `\basic_axi4_lite_slave.\o_S_RVALID' using process `\basic_axi4_lite_slave.$proc$basic_axi4_lite_slave.v:78$65'.
+  created $dff cell `$procdff$544' with positive edge clock.
+Creating register for signal `\basic_axi4_lite_slave.\o_S_ARREADY' using process `\basic_axi4_lite_slave.$proc$basic_axi4_lite_slave.v:72$61'.
+  created $dff cell `$procdff$545' with positive edge clock.
+Creating register for signal `\basic_axi4_lite_slave.\o_S_BVALID' using process `\basic_axi4_lite_slave.$proc$basic_axi4_lite_slave.v:61$56'.
+  created $dff cell `$procdff$546' with positive edge clock.
+Creating register for signal `\basic_axi4_lite_slave.\o_S_WREADY' using process `\basic_axi4_lite_slave.$proc$basic_axi4_lite_slave.v:55$52'.
+  created $dff cell `$procdff$547' with positive edge clock.
+Creating register for signal `\basic_axi4_lite_slave.\o_S_AWREADY' using process `\basic_axi4_lite_slave.$proc$basic_axi4_lite_slave.v:49$48'.
+  created $dff cell `$procdff$548' with positive edge clock.
+Creating register for signal `\basic_axi4_lite_slave.\o_S_RDATA' using process `\basic_axi4_lite_slave.$proc$basic_axi4_lite_slave.v:40$37'.
+  created $dff cell `$procdff$549' with positive edge clock.
+Creating register for signal `\basic_axi4_lite_slave.$memwr$\r_MEMORY$basic_axi4_lite_slave.v:43$17_ADDR' using process `\basic_axi4_lite_slave.$proc$basic_axi4_lite_slave.v:40$37'.
+  created $dff cell `$procdff$550' with positive edge clock.
+Creating register for signal `\basic_axi4_lite_slave.$memwr$\r_MEMORY$basic_axi4_lite_slave.v:43$17_DATA' using process `\basic_axi4_lite_slave.$proc$basic_axi4_lite_slave.v:40$37'.
+  created $dff cell `$procdff$551' with positive edge clock.
+Creating register for signal `\basic_axi4_lite_slave.$memwr$\r_MEMORY$basic_axi4_lite_slave.v:43$17_EN' using process `\basic_axi4_lite_slave.$proc$basic_axi4_lite_slave.v:40$37'.
+  created $dff cell `$procdff$552' with positive edge clock.
+Creating register for signal `\basic_axi4_lite_slave.\o_S_BRESP' using process `\basic_axi4_lite_slave.$proc$basic_axi4_lite_slave.v:35$36'.
+  created $dff cell `$procdff$553' with positive edge clock.
+
+2.3.9. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Removing empty process `basic_axi4_lite_slave.$proc$basic_axi4_lite_slave.v:0$222'.
+Removing empty process `basic_axi4_lite_slave.$proc$basic_axi4_lite_slave.v:0$220'.
+Removing empty process `basic_axi4_lite_slave.$proc$basic_axi4_lite_slave.v:0$218'.
+Removing empty process `basic_axi4_lite_slave.$proc$basic_axi4_lite_slave.v:0$216'.
+Removing empty process `basic_axi4_lite_slave.$proc$basic_axi4_lite_slave.v:0$214'.
+Removing empty process `basic_axi4_lite_slave.$proc$basic_axi4_lite_slave.v:0$212'.
+Removing empty process `basic_axi4_lite_slave.$proc$basic_axi4_lite_slave.v:0$210'.
+Removing empty process `basic_axi4_lite_slave.$proc$basic_axi4_lite_slave.v:0$208'.
+Removing empty process `basic_axi4_lite_slave.$proc$basic_axi4_lite_slave.v:0$206'.
+Removing empty process `basic_axi4_lite_slave.$proc$basic_axi4_lite_slave.v:0$204'.
+Removing empty process `basic_axi4_lite_slave.$proc$basic_axi4_lite_slave.v:0$202'.
+Removing empty process `basic_axi4_lite_slave.$proc$basic_axi4_lite_slave.v:0$200'.
+Removing empty process `basic_axi4_lite_slave.$proc$basic_axi4_lite_slave.v:0$198'.
+Removing empty process `basic_axi4_lite_slave.$proc$basic_axi4_lite_slave.v:0$196'.
+Removing empty process `basic_axi4_lite_slave.$proc$basic_axi4_lite_slave.v:0$194'.
+Removing empty process `basic_axi4_lite_slave.$proc$basic_axi4_lite_slave.v:0$192'.
+Removing empty process `basic_axi4_lite_slave.$proc$basic_axi4_lite_slave.v:0$190'.
+Removing empty process `basic_axi4_lite_slave.$proc$basic_axi4_lite_slave.v:0$188'.
+Removing empty process `basic_axi4_lite_slave.$proc$basic_axi4_lite_slave.v:94$187'.
+Found and cleaned up 11 empty switches in `\basic_axi4_lite_slave.$proc$basic_axi4_lite_slave.v:95$70'.
+Removing empty process `basic_axi4_lite_slave.$proc$basic_axi4_lite_slave.v:95$70'.
+Found and cleaned up 2 empty switches in `\basic_axi4_lite_slave.$proc$basic_axi4_lite_slave.v:78$65'.
+Removing empty process `basic_axi4_lite_slave.$proc$basic_axi4_lite_slave.v:78$65'.
+Found and cleaned up 1 empty switch in `\basic_axi4_lite_slave.$proc$basic_axi4_lite_slave.v:72$61'.
+Removing empty process `basic_axi4_lite_slave.$proc$basic_axi4_lite_slave.v:72$61'.
+Found and cleaned up 2 empty switches in `\basic_axi4_lite_slave.$proc$basic_axi4_lite_slave.v:61$56'.
+Removing empty process `basic_axi4_lite_slave.$proc$basic_axi4_lite_slave.v:61$56'.
+Found and cleaned up 1 empty switch in `\basic_axi4_lite_slave.$proc$basic_axi4_lite_slave.v:55$52'.
+Removing empty process `basic_axi4_lite_slave.$proc$basic_axi4_lite_slave.v:55$52'.
+Found and cleaned up 1 empty switch in `\basic_axi4_lite_slave.$proc$basic_axi4_lite_slave.v:49$48'.
+Removing empty process `basic_axi4_lite_slave.$proc$basic_axi4_lite_slave.v:49$48'.
+Found and cleaned up 2 empty switches in `\basic_axi4_lite_slave.$proc$basic_axi4_lite_slave.v:40$37'.
+Removing empty process `basic_axi4_lite_slave.$proc$basic_axi4_lite_slave.v:40$37'.
+Removing empty process `basic_axi4_lite_slave.$proc$basic_axi4_lite_slave.v:35$36'.
+Cleaned up 20 empty switches.
+
+2.4. Executing OPT_EXPR pass (perform const folding).
+Optimizing module basic_axi4_lite_slave.
+<suppressed ~89 debug messages>
+
+2.5. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \basic_axi4_lite_slave..
+Removed 6 unused cells and 219 unused wires.
+<suppressed ~7 debug messages>
+
+2.6. Executing CHECK pass (checking for obvious problems).
+checking module basic_axi4_lite_slave..
+found and reported 0 problems.
+
+2.7. Executing OPT pass (performing simple optimizations).
+
+2.7.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module basic_axi4_lite_slave.
+
+2.7.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\basic_axi4_lite_slave'.
+<suppressed ~42 debug messages>
+Removed a total of 14 cells.
+
+2.7.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \basic_axi4_lite_slave..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~43 debug messages>
+
+2.7.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \basic_axi4_lite_slave.
+    Consolidated identical input bits for $mux cell $procmux$483:
+      Old ports: A=8'00000000, B=8'11111111, Y=$0$memwr$\r_MEMORY$basic_axi4_lite_slave.v:43$17_EN[7:0]$40
+      New ports: A=1'0, B=1'1, Y=$0$memwr$\r_MEMORY$basic_axi4_lite_slave.v:43$17_EN[7:0]$40 [0]
+      New connections: $0$memwr$\r_MEMORY$basic_axi4_lite_slave.v:43$17_EN[7:0]$40 [7:1] = { $0$memwr$\r_MEMORY$basic_axi4_lite_slave.v:43$17_EN[7:0]$40 [0] $0$memwr$\r_MEMORY$basic_axi4_lite_slave.v:43$17_EN[7:0]$40 [0] $0$memwr$\r_MEMORY$basic_axi4_lite_slave.v:43$17_EN[7:0]$40 [0] $0$memwr$\r_MEMORY$basic_axi4_lite_slave.v:43$17_EN[7:0]$40 [0] $0$memwr$\r_MEMORY$basic_axi4_lite_slave.v:43$17_EN[7:0]$40 [0] $0$memwr$\r_MEMORY$basic_axi4_lite_slave.v:43$17_EN[7:0]$40 [0] $0$memwr$\r_MEMORY$basic_axi4_lite_slave.v:43$17_EN[7:0]$40 [0] }
+  Optimizing cells in module \basic_axi4_lite_slave.
+Performed a total of 1 changes.
+
+2.7.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\basic_axi4_lite_slave'.
+<suppressed ~18 debug messages>
+Removed a total of 6 cells.
+
+2.7.6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \basic_axi4_lite_slave..
+Removed 0 unused cells and 20 unused wires.
+<suppressed ~1 debug messages>
+
+2.7.7. Executing OPT_EXPR pass (perform const folding).
+Optimizing module basic_axi4_lite_slave.
+
+2.7.8. Rerunning OPT passes. (Maybe there is more to do..)
+
+2.7.9. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \basic_axi4_lite_slave..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~41 debug messages>
+
+2.7.10. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \basic_axi4_lite_slave.
+Performed a total of 0 changes.
+
+2.7.11. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\basic_axi4_lite_slave'.
+Removed a total of 0 cells.
+
+2.7.12. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \basic_axi4_lite_slave..
+
+2.7.13. Executing OPT_EXPR pass (perform const folding).
+Optimizing module basic_axi4_lite_slave.
+
+2.7.14. Finished OPT passes. (There is nothing left to do.)
+
+2.8. Executing WREDUCE pass (reducing word size of cells).
+Removed top 30 address bits (of 32) from memory read port basic_axi4_lite_slave.$memrd$\r_MEMORY$basic_axi4_lite_slave.v:108$133 (r_MEMORY).
+Removed top 31 bits (of 32) from port B of cell basic_axi4_lite_slave.$and$basic_axi4_lite_slave.v:0$125 ($and).
+Removed top 31 bits (of 32) from port Y of cell basic_axi4_lite_slave.$and$basic_axi4_lite_slave.v:0$125 ($and).
+Removed top 31 bits (of 32) from port B of cell basic_axi4_lite_slave.$and$basic_axi4_lite_slave.v:0$127 ($and).
+Removed top 31 bits (of 32) from port Y of cell basic_axi4_lite_slave.$and$basic_axi4_lite_slave.v:0$127 ($and).
+Removed top 4 bits (of 8) from port B of cell basic_axi4_lite_slave.$eq$basic_axi4_lite_slave.v:108$134 ($eq).
+Removed top 4 bits (of 8) from port B of cell basic_axi4_lite_slave.$eq$basic_axi4_lite_slave.v:108$135 ($eq).
+Removed top 7 bits (of 8) from FF cell basic_axi4_lite_slave.$procdff$552 ($dff).
+Removed cell basic_axi4_lite_slave.$procdff$553 ($dff).
+Removed top 31 bits (of 32) from wire basic_axi4_lite_slave.$and$basic_axi4_lite_slave.v:0$125_Y.
+Removed top 31 bits (of 32) from wire basic_axi4_lite_slave.$and$basic_axi4_lite_slave.v:0$127_Y.
+
+2.9. Executing MEMORY_DFF pass (merging $dff cells to $memrd and $memwr).
+Checking cell `$memwr$\r_MEMORY$basic_axi4_lite_slave.v:0$168' in module `\basic_axi4_lite_slave': merged $dff to cell.
+
+2.10. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \basic_axi4_lite_slave..
+Removed 3 unused cells and 5 unused wires.
+<suppressed ~4 debug messages>
+
+2.11. Executing MEMORY_COLLECT pass (generating $mem cells).
+Collecting $memrd, $memwr and $meminit for memory `\r_MEMORY' in module `\basic_axi4_lite_slave':
+  $memwr$\r_MEMORY$basic_axi4_lite_slave.v:0$168 ($memwr)
+  $memrd$\r_MEMORY$basic_axi4_lite_slave.v:45$47 ($memrd)
+  $memrd$\r_MEMORY$basic_axi4_lite_slave.v:108$133 ($memrd)
+
+2.12. Executing OPT pass (performing simple optimizations).
+
+2.12.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module basic_axi4_lite_slave.
+<suppressed ~3 debug messages>
+
+2.12.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\basic_axi4_lite_slave'.
+Removed a total of 0 cells.
+
+2.12.3. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \basic_axi4_lite_slave..
+Removed 0 unused cells and 3 unused wires.
+<suppressed ~1 debug messages>
+
+2.12.4. Finished fast OPT passes.
+
+2.13. Printing statistics.
+
+=== basic_axi4_lite_slave ===
+
+   Number of wires:                189
+   Number of wire bits:            242
+   Number of public wires:          18
+   Number of public wire bits:      35
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                195
+     $assert                        16
+     $assume                         1
+     $cover                          1
+     $dff                           51
+     $eq                             2
+     $logic_and                     14
+     $logic_not                      1
+     $mem                            1
+     $mux                          101
+     $ne                             1
+     $not                            6
+
+2.14. Executing CHECK pass (checking for obvious problems).
+checking module basic_axi4_lite_slave..
+found and reported 0 problems.
+
+3. Executing MEMORY_NORDFF pass (extracting $dff cells from $mem).
+
+4. Executing ASYNC2SYNC pass.
+
+5. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \basic_axi4_lite_slave..
+Removed 1 unused cells and 1 unused wires.
+<suppressed ~2 debug messages>
+
+6. Executing SETUNDEF pass (replace undef values with defined constants).
+
+7. Executing OPT pass (performing simple optimizations).
+
+7.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module basic_axi4_lite_slave.
+
+7.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\basic_axi4_lite_slave'.
+Removed a total of 0 cells.
+
+7.3. Executing OPT_DFF pass (perform DFF optimizations).
+Adding EN signal on $procdff$549 ($dff) from module basic_axi4_lite_slave (D = $memrd$\r_MEMORY$basic_axi4_lite_slave.v:45$47_DATA, Q = \o_S_RDATA).
+Adding SRST signal on $procdff$546 ($dff) from module basic_axi4_lite_slave (D = $procmux$472_Y, Q = \o_S_BVALID, rval = 1'0).
+Adding SRST signal on $procdff$544 ($dff) from module basic_axi4_lite_slave (D = $procmux$463_Y, Q = \o_S_RVALID, rval = 1'0).
+Adding SRST signal on $procdff$543 ($dff) from module basic_axi4_lite_slave (D = $procmux$447_Y, Q = $formal$basic_axi4_lite_slave.v:134$35_EN, rval = 1'0).
+Adding SRST signal on $procdff$541 ($dff) from module basic_axi4_lite_slave (D = $procmux$431_Y, Q = $formal$basic_axi4_lite_slave.v:132$34_EN, rval = 1'0).
+Adding SRST signal on $procdff$539 ($dff) from module basic_axi4_lite_slave (D = $procmux$415_Y, Q = $formal$basic_axi4_lite_slave.v:130$33_EN, rval = 1'0).
+Adding SRST signal on $procdff$537 ($dff) from module basic_axi4_lite_slave (D = $procmux$399_Y, Q = $formal$basic_axi4_lite_slave.v:128$32_EN, rval = 1'0).
+Adding SRST signal on $procdff$535 ($dff) from module basic_axi4_lite_slave (D = $procmux$383_Y, Q = $formal$basic_axi4_lite_slave.v:126$31_EN, rval = 1'0).
+Adding SRST signal on $procdff$533 ($dff) from module basic_axi4_lite_slave (D = $procmux$367_Y, Q = $formal$basic_axi4_lite_slave.v:124$30_EN, rval = 1'0).
+Adding SRST signal on $procdff$531 ($dff) from module basic_axi4_lite_slave (D = $procmux$351_Y, Q = $formal$basic_axi4_lite_slave.v:122$29_EN, rval = 1'0).
+Adding SRST signal on $procdff$529 ($dff) from module basic_axi4_lite_slave (D = $procmux$335_Y, Q = $formal$basic_axi4_lite_slave.v:120$28_EN, rval = 1'0).
+Adding SRST signal on $procdff$527 ($dff) from module basic_axi4_lite_slave (D = $procmux$320_Y, Q = $formal$basic_axi4_lite_slave.v:118$27_EN, rval = 1'0).
+Adding SRST signal on $procdff$525 ($dff) from module basic_axi4_lite_slave (D = $procmux$306_Y, Q = $formal$basic_axi4_lite_slave.v:116$26_EN, rval = 1'0).
+Adding SRST signal on $procdff$523 ($dff) from module basic_axi4_lite_slave (D = $procmux$292_Y, Q = $formal$basic_axi4_lite_slave.v:114$25_EN, rval = 1'0).
+Adding SRST signal on $procdff$521 ($dff) from module basic_axi4_lite_slave (D = $procmux$278_Y, Q = $formal$basic_axi4_lite_slave.v:112$24_EN, rval = 1'0).
+Adding SRST signal on $procdff$519 ($dff) from module basic_axi4_lite_slave (D = $procmux$264_Y, Q = $formal$basic_axi4_lite_slave.v:110$23_EN, rval = 1'0).
+Adding SRST signal on $procdff$515 ($dff) from module basic_axi4_lite_slave (D = $procmux$245_Y, Q = $formal$basic_axi4_lite_slave.v:107$21_EN, rval = 1'0).
+Adding SRST signal on $procdff$511 ($dff) from module basic_axi4_lite_slave (D = $procmux$225_Y, Q = $formal$basic_axi4_lite_slave.v:102$19_EN, rval = 1'0).
+
+7.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \basic_axi4_lite_slave..
+Removed 31 unused cells and 31 unused wires.
+<suppressed ~32 debug messages>
+
+7.5. Rerunning OPT passes. (Removed registers in this run.)
+
+7.6. Executing OPT_EXPR pass (perform const folding).
+Optimizing module basic_axi4_lite_slave.
+
+7.7. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\basic_axi4_lite_slave'.
+<suppressed ~36 debug messages>
+Removed a total of 12 cells.
+
+7.8. Executing OPT_DFF pass (perform DFF optimizations).
+
+7.9. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \basic_axi4_lite_slave..
+Removed 0 unused cells and 12 unused wires.
+<suppressed ~1 debug messages>
+
+7.10. Finished fast OPT passes.
+
+8. Executing CHECK pass (checking for obvious problems).
+checking module basic_axi4_lite_slave..
+found and reported 0 problems.
+
+9. Executing HIERARCHY pass (managing design hierarchy).
+
+9.1. Analyzing design hierarchy..
+Top module:  \basic_axi4_lite_slave
+
+9.2. Analyzing design hierarchy..
+Top module:  \basic_axi4_lite_slave
+Removed 0 unused modules.
+Module basic_axi4_lite_slave directly or indirectly contains formal properties -> setting "keep" attribute.
+
+10. Executing RTLIL backend.
+Output filename: ../model/design.il
+
+End of script. Logfile hash: bfb6f2a181, CPU: user 0.11s system 0.00s, MEM: 14.66 MB peak
+Yosys 0.9+3627 (git sha1 06347b119b, g++ 9.3.0 -fPIC -Os)
+Time spent: 22% 7x opt_expr (0 sec), 22% 8x opt_clean (0 sec), ...

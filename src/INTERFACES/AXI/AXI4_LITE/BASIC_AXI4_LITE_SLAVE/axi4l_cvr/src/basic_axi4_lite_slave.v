@@ -30,13 +30,8 @@ module basic_axi4_lite_slave #(parameter p_ADDRESS_WIDTH = 2, parameter p_DATA_W
 //
 
 localparam lp_STROBE_WIDTH =  (p_DATA_WIDTH >= 8) ? p_DATA_WIDTH / 8 : 1; //Get byte count
+reg [p_DATA_WIDTH-1:0] r_MEMORY [0:2**p_ADDRESS_WIDTH-1];
 
-reg [p_DATA_WIDTH-1:0] r_MEMORY [0:2];
-initial begin
-	integer i;
-	for(i = 0; i < p_ADDRESS_WIDTH; i = i + 1)
-		r_MEMORY[0] = {p_DATA_WIDTH{1'b0}};
-end
 always@(posedge i_ACLK)
 begin
 	o_S_BRESP <= 2'b00;

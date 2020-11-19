@@ -1,4 +1,5 @@
 # running in axi4l_prv/model/
 read_ilang design.il
+dffunmap
 stat
 write_smt2 -wires design_smt2.smt2

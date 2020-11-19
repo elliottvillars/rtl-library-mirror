@@ -38,11 +38,9 @@ int main(int argc, char ** argv) {
 	tick(top);
 	tick(top);
 	top->i_RESET = 0;
-
 	for (int i = 0; i < 256; i++) {
-		printf("Byte %d: %x\n",i,top->o_DATA_OUT);
-		printf("LFSR State: %x\n\n",top->o_STATE_OUT);
 		tick(top);
+		printf("Byte %d: %x\n",i,top->o_DATA_OUT);
 	}
 	delete top;
 }

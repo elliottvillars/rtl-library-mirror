@@ -3,4 +3,4 @@
 ##   0:00:00  Trying induction in step 119..
 ##   0:00:00  Trying induction in step 118..
 ##   0:00:00  Temporal induction successful.
-##   0:00:00  Status: PASSED
+##   0:00:00  Status: passed

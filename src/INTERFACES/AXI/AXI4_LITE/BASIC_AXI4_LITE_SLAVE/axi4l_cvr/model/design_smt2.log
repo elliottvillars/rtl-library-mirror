@@ -33,22 +33,24 @@ Input filename: design.il
 
 === basic_axi4_lite_slave ===
 
-   Number of wires:                217
-   Number of wire bits:            278
+   Number of wires:                225
+   Number of wire bits:            286
    Number of public wires:          18
    Number of public wire bits:      35
    Number of memories:               0
    Number of memory bits:            0
    Number of processes:              0
-   Number of cells:                222
-     $anyseq                        47
+   Number of cells:                231
+     $anyseq                        49
      $assert                        16
      $assume                         1
-     $dff                           49
-     $logic_and                     13
+     $cover                          1
+     $dff                           50
+     $eq                             2
+     $logic_and                     14
      $logic_not                      1
      $mem                            1
-     $mux                           86
+     $mux                           88
      $ne                             1
      $not                            6
      $reduce_and                     1
@@ -56,6 +58,6 @@ Input filename: design.il
 4. Executing SMT2 backend.
 Creating SMT-LIBv2 representation of module basic_axi4_lite_slave.
 
-End of script. Logfile hash: b1d97a655b, CPU: user 0.02s system 0.00s, MEM: 13.83 MB peak
+End of script. Logfile hash: bb373c8f2d, CPU: user 0.01s system 0.00s, MEM: 13.81 MB peak
 Yosys 0.9+3627 (git sha1 06347b119b, g++ 9.3.0 -fPIC -Os)
-Time spent: 49% 2x read_ilang (0 sec), 43% 2x write_smt2 (0 sec), ...
+Time spent: 47% 2x write_smt2 (0 sec), 45% 2x read_ilang (0 sec), ...
