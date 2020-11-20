@@ -3,7 +3,7 @@
  |                                                                            |
  |  yosys -- Yosys Open SYnthesis Suite                                       |
  |                                                                            |
- |  Copyright (C) 2012 - 2019  Clifford Wolf <clifford@clifford.at>           |
+ |  Copyright (C) 2012 - 2020  Claire Wolf <claire@symbioticeda.com>          |
  |                                                                            |
  |  Permission to use, copy, modify, and/or distribute this software for any  |
  |  purpose with or without fee is hereby granted, provided that the above    |
@@ -19,44 +19,44 @@
  |                                                                            |
  \----------------------------------------------------------------------------/
 
- Yosys 0.9+932 (git sha1 65f197e2, clang 6.0.0-1ubuntu2 -fPIC -Os)
+ Yosys 0.9+3675 (git sha1 71ca9a8253, g++ 9.3.0 -fPIC -Os)
 
 
 -- Executing script file `design_smt2.ys' --
 
-1. Executing ILANG frontend.
+1. Executing RTLIL frontend.
 Input filename: design.il
 
-2. Printing statistics.
+2. Executing DFFUNMAP pass (unmap clock enable and synchronous reset from FFs).
 
-=== static_clock_divider ===
+3. Printing statistics.
 
-   Number of wires:                 89
-   Number of wire bits:            275
-   Number of public wires:           5
-   Number of public wire bits:      36
+=== static_clock_divider_formal ===
+
+   Number of wires:                 79
+   Number of wire bits:            265
+   Number of public wires:          11
+   Number of public wire bits:      73
    Number of memories:               0
    Number of memory bits:            0
    Number of processes:              0
-   Number of cells:                 95
+   Number of cells:                 80
      $add                            1
-     $anyseq                        19
+     $anyseq                        14
      $assert                         5
-     $assume                         4
-     $dff                           14
+     $assume                         3
+     $dff                           16
      $eq                             3
-     $ge                             1
-     $initstate                      1
-     $logic_and                      4
-     $logic_not                      2
-     $mux                           36
+     $logic_and                      3
+     $logic_not                      3
+     $mux                           28
      $ne                             2
-     $not                            3
+     $not                            1
+     $reduce_and                     1
 
-3. Executing SMT2 backend.
-Creating SMT-LIBv2 representation of module static_clock_divider.
+4. Executing SMT2 backend.
+Creating SMT-LIBv2 representation of module static_clock_divider_formal.
 
-End of script. Logfile hash: 8aaaf5e352
-CPU: user 0.01s system 0.00s, MEM: 44.51 MB total, 8.19 MB resident
-Yosys 0.9+932 (git sha1 65f197e2, clang 6.0.0-1ubuntu2 -fPIC -Os)
-Time spent: 60% 2x write_smt2 (0 sec), 37% 2x read_ilang (0 sec), ...
+End of script. Logfile hash: db61d7daad, CPU: user 0.01s system 0.00s, MEM: 13.47 MB peak
+Yosys 0.9+3675 (git sha1 71ca9a8253, g++ 9.3.0 -fPIC -Os)
+Time spent: 54% 2x write_smt2 (0 sec), 35% 2x read_ilang (0 sec), ...

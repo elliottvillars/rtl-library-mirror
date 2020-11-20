@@ -1,0 +1,397 @@
+
+ /----------------------------------------------------------------------------\
+ |                                                                            |
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |                                                                            |
+ |  Copyright (C) 2012 - 2020  Claire Wolf <claire@symbioticeda.com>          |
+ |                                                                            |
+ |  Permission to use, copy, modify, and/or distribute this software for any  |
+ |  purpose with or without fee is hereby granted, provided that the above    |
+ |  copyright notice and this permission notice appear in all copies.         |
+ |                                                                            |
+ |  THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES  |
+ |  WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF          |
+ |  MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR   |
+ |  ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES    |
+ |  WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN     |
+ |  ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF   |
+ |  OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.            |
+ |                                                                            |
+ \----------------------------------------------------------------------------/
+
+ Yosys 0.9+3675 (git sha1 71ca9a8253, g++ 9.3.0 -fPIC -Os)
+
+
+-- Executing script file `../model/design.ys' --
+
+1. Executing Verilog-2005 frontend: static_clock_divider_formal.v
+Parsing formal Verilog input from `static_clock_divider_formal.v' to AST representation.
+Warning: Found one of those horrible `(synopsys|synthesis) translate_off' comments.
+Yosys does support them but it is recommended to use `ifdef constructs instead!
+Generating RTLIL representation for module `\static_clock_divider_formal'.
+Successfully finished Verilog frontend.
+
+2. Executing PREP pass.
+
+2.1. Executing HIERARCHY pass (managing design hierarchy).
+
+2.1.1. Analyzing design hierarchy..
+Top module:  \static_clock_divider_formal
+
+2.1.2. Analyzing design hierarchy..
+Top module:  \static_clock_divider_formal
+Removed 0 unused modules.
+Module static_clock_divider_formal directly or indirectly contains formal properties -> setting "keep" attribute.
+
+2.2. Executing PROC pass (convert processes to netlists).
+
+2.2.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+2.2.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Marked 1 switch rules as full_case in process $proc$static_clock_divider_formal.v:104$24 in module static_clock_divider_formal.
+Marked 1 switch rules as full_case in process $proc$static_clock_divider_formal.v:76$22 in module static_clock_divider_formal.
+Removed a total of 0 dead cases.
+
+2.2.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 0 redundant assignments.
+Promoted 21 assignments to connections.
+
+2.2.4. Executing PROC_INIT pass (extract init attributes).
+Found init rule in `\static_clock_divider_formal.$proc$static_clock_divider_formal.v:0$93'.
+  Set init value: $formal$static_clock_divider_formal.v:126$17_EN = 1'0
+Found init rule in `\static_clock_divider_formal.$proc$static_clock_divider_formal.v:0$91'.
+  Set init value: $formal$static_clock_divider_formal.v:125$16_EN = 1'0
+Found init rule in `\static_clock_divider_formal.$proc$static_clock_divider_formal.v:0$89'.
+  Set init value: $formal$static_clock_divider_formal.v:120$15_EN = 1'0
+Found init rule in `\static_clock_divider_formal.$proc$static_clock_divider_formal.v:0$87'.
+  Set init value: $formal$static_clock_divider_formal.v:118$14_EN = 1'0
+Found init rule in `\static_clock_divider_formal.$proc$static_clock_divider_formal.v:0$85'.
+  Set init value: $formal$static_clock_divider_formal.v:116$13_EN = 1'0
+Found init rule in `\static_clock_divider_formal.$proc$static_clock_divider_formal.v:0$83'.
+  Set init value: $formal$static_clock_divider_formal.v:112$12_EN = 1'0
+Found init rule in `\static_clock_divider_formal.$proc$static_clock_divider_formal.v:0$81'.
+  Set init value: $formal$static_clock_divider_formal.v:111$11_EN = 1'0
+Found init rule in `\static_clock_divider_formal.$proc$static_clock_divider_formal.v:0$79'.
+  Set init value: $formal$static_clock_divider_formal.v:106$10_EN = 1'0
+Found init rule in `\static_clock_divider_formal.$proc$static_clock_divider_formal.v:103$78'.
+  Set init value: \f_past_valid = 1'0
+
+2.2.5. Executing PROC_ARST pass (detect async resets in processes).
+
+2.2.6. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\static_clock_divider_formal.$proc$static_clock_divider_formal.v:0$93'.
+Creating decoders for process `\static_clock_divider_formal.$proc$static_clock_divider_formal.v:0$91'.
+Creating decoders for process `\static_clock_divider_formal.$proc$static_clock_divider_formal.v:0$89'.
+Creating decoders for process `\static_clock_divider_formal.$proc$static_clock_divider_formal.v:0$87'.
+Creating decoders for process `\static_clock_divider_formal.$proc$static_clock_divider_formal.v:0$85'.
+Creating decoders for process `\static_clock_divider_formal.$proc$static_clock_divider_formal.v:0$83'.
+Creating decoders for process `\static_clock_divider_formal.$proc$static_clock_divider_formal.v:0$81'.
+Creating decoders for process `\static_clock_divider_formal.$proc$static_clock_divider_formal.v:0$79'.
+Creating decoders for process `\static_clock_divider_formal.$proc$static_clock_divider_formal.v:103$78'.
+Creating decoders for process `\static_clock_divider_formal.$proc$static_clock_divider_formal.v:104$24'.
+     1/14: $0$formal$static_clock_divider_formal.v:111$11_EN[0:0]$37
+     2/14: $0$formal$static_clock_divider_formal.v:111$11_CHECK[0:0]$36
+     3/14: $0$formal$static_clock_divider_formal.v:112$12_EN[0:0]$39
+     4/14: $0$formal$static_clock_divider_formal.v:112$12_CHECK[0:0]$38
+     5/14: $0$formal$static_clock_divider_formal.v:116$13_EN[0:0]$41
+     6/14: $0$formal$static_clock_divider_formal.v:116$13_CHECK[0:0]$40
+     7/14: $0$formal$static_clock_divider_formal.v:118$14_EN[0:0]$43
+     8/14: $0$formal$static_clock_divider_formal.v:118$14_CHECK[0:0]$42
+     9/14: $0$formal$static_clock_divider_formal.v:120$15_EN[0:0]$45
+    10/14: $0$formal$static_clock_divider_formal.v:120$15_CHECK[0:0]$44
+    11/14: $0$formal$static_clock_divider_formal.v:125$16_EN[0:0]$47
+    12/14: $0$formal$static_clock_divider_formal.v:125$16_CHECK[0:0]$46
+    13/14: $0$formal$static_clock_divider_formal.v:126$17_EN[0:0]$49
+    14/14: $0$formal$static_clock_divider_formal.v:126$17_CHECK[0:0]$48
+Creating decoders for process `\static_clock_divider_formal.$proc$static_clock_divider_formal.v:76$22'.
+     1/2: $0\en_OUT[0:0]
+     2/2: $0\counter[31:0]
+
+2.2.7. Executing PROC_DLATCH pass (convert process syncs to latches).
+
+2.2.8. Executing PROC_DFF pass (convert process syncs to FFs).
+Creating register for signal `\static_clock_divider_formal.\f_past_valid' using process `\static_clock_divider_formal.$proc$static_clock_divider_formal.v:104$24'.
+  created $dff cell `$procdff$165' with positive edge clock.
+Creating register for signal `\static_clock_divider_formal.$past$static_clock_divider_formal.v:107$1$0' using process `\static_clock_divider_formal.$proc$static_clock_divider_formal.v:104$24'.
+  created $dff cell `$procdff$166' with positive edge clock.
+Creating register for signal `\static_clock_divider_formal.$past$static_clock_divider_formal.v:108$2$0' using process `\static_clock_divider_formal.$proc$static_clock_divider_formal.v:104$24'.
+  created $dff cell `$procdff$167' with positive edge clock.
+Creating register for signal `\static_clock_divider_formal.$past$static_clock_divider_formal.v:110$3$0' using process `\static_clock_divider_formal.$proc$static_clock_divider_formal.v:104$24'.
+  created $dff cell `$procdff$168' with positive edge clock.
+Creating register for signal `\static_clock_divider_formal.$past$static_clock_divider_formal.v:115$4$0' using process `\static_clock_divider_formal.$proc$static_clock_divider_formal.v:104$24'.
+  created $dff cell `$procdff$169' with positive edge clock.
+Creating register for signal `\static_clock_divider_formal.$past$static_clock_divider_formal.v:115$5$0' using process `\static_clock_divider_formal.$proc$static_clock_divider_formal.v:104$24'.
+  created $dff cell `$procdff$170' with positive edge clock.
+Creating register for signal `\static_clock_divider_formal.$past$static_clock_divider_formal.v:117$6$0' using process `\static_clock_divider_formal.$proc$static_clock_divider_formal.v:104$24'.
+  created $dff cell `$procdff$171' with positive edge clock.
+Creating register for signal `\static_clock_divider_formal.$past$static_clock_divider_formal.v:124$7$0' using process `\static_clock_divider_formal.$proc$static_clock_divider_formal.v:104$24'.
+  created $dff cell `$procdff$172' with positive edge clock.
+Creating register for signal `\static_clock_divider_formal.$past$static_clock_divider_formal.v:126$8$0' using process `\static_clock_divider_formal.$proc$static_clock_divider_formal.v:104$24'.
+  created $dff cell `$procdff$173' with positive edge clock.
+Creating register for signal `\static_clock_divider_formal.$past$static_clock_divider_formal.v:127$9$0' using process `\static_clock_divider_formal.$proc$static_clock_divider_formal.v:104$24'.
+  created $dff cell `$procdff$174' with positive edge clock.
+Creating register for signal `\static_clock_divider_formal.$formal$static_clock_divider_formal.v:106$10_CHECK' using process `\static_clock_divider_formal.$proc$static_clock_divider_formal.v:104$24'.
+  created $dff cell `$procdff$175' with positive edge clock.
+Creating register for signal `\static_clock_divider_formal.$formal$static_clock_divider_formal.v:106$10_EN' using process `\static_clock_divider_formal.$proc$static_clock_divider_formal.v:104$24'.
+  created $dff cell `$procdff$176' with positive edge clock.
+Creating register for signal `\static_clock_divider_formal.$formal$static_clock_divider_formal.v:111$11_CHECK' using process `\static_clock_divider_formal.$proc$static_clock_divider_formal.v:104$24'.
+  created $dff cell `$procdff$177' with positive edge clock.
+Creating register for signal `\static_clock_divider_formal.$formal$static_clock_divider_formal.v:111$11_EN' using process `\static_clock_divider_formal.$proc$static_clock_divider_formal.v:104$24'.
+  created $dff cell `$procdff$178' with positive edge clock.
+Creating register for signal `\static_clock_divider_formal.$formal$static_clock_divider_formal.v:112$12_CHECK' using process `\static_clock_divider_formal.$proc$static_clock_divider_formal.v:104$24'.
+  created $dff cell `$procdff$179' with positive edge clock.
+Creating register for signal `\static_clock_divider_formal.$formal$static_clock_divider_formal.v:112$12_EN' using process `\static_clock_divider_formal.$proc$static_clock_divider_formal.v:104$24'.
+  created $dff cell `$procdff$180' with positive edge clock.
+Creating register for signal `\static_clock_divider_formal.$formal$static_clock_divider_formal.v:116$13_CHECK' using process `\static_clock_divider_formal.$proc$static_clock_divider_formal.v:104$24'.
+  created $dff cell `$procdff$181' with positive edge clock.
+Creating register for signal `\static_clock_divider_formal.$formal$static_clock_divider_formal.v:116$13_EN' using process `\static_clock_divider_formal.$proc$static_clock_divider_formal.v:104$24'.
+  created $dff cell `$procdff$182' with positive edge clock.
+Creating register for signal `\static_clock_divider_formal.$formal$static_clock_divider_formal.v:118$14_CHECK' using process `\static_clock_divider_formal.$proc$static_clock_divider_formal.v:104$24'.
+  created $dff cell `$procdff$183' with positive edge clock.
+Creating register for signal `\static_clock_divider_formal.$formal$static_clock_divider_formal.v:118$14_EN' using process `\static_clock_divider_formal.$proc$static_clock_divider_formal.v:104$24'.
+  created $dff cell `$procdff$184' with positive edge clock.
+Creating register for signal `\static_clock_divider_formal.$formal$static_clock_divider_formal.v:120$15_CHECK' using process `\static_clock_divider_formal.$proc$static_clock_divider_formal.v:104$24'.
+  created $dff cell `$procdff$185' with positive edge clock.
+Creating register for signal `\static_clock_divider_formal.$formal$static_clock_divider_formal.v:120$15_EN' using process `\static_clock_divider_formal.$proc$static_clock_divider_formal.v:104$24'.
+  created $dff cell `$procdff$186' with positive edge clock.
+Creating register for signal `\static_clock_divider_formal.$formal$static_clock_divider_formal.v:125$16_CHECK' using process `\static_clock_divider_formal.$proc$static_clock_divider_formal.v:104$24'.
+  created $dff cell `$procdff$187' with positive edge clock.
+Creating register for signal `\static_clock_divider_formal.$formal$static_clock_divider_formal.v:125$16_EN' using process `\static_clock_divider_formal.$proc$static_clock_divider_formal.v:104$24'.
+  created $dff cell `$procdff$188' with positive edge clock.
+Creating register for signal `\static_clock_divider_formal.$formal$static_clock_divider_formal.v:126$17_CHECK' using process `\static_clock_divider_formal.$proc$static_clock_divider_formal.v:104$24'.
+  created $dff cell `$procdff$189' with positive edge clock.
+Creating register for signal `\static_clock_divider_formal.$formal$static_clock_divider_formal.v:126$17_EN' using process `\static_clock_divider_formal.$proc$static_clock_divider_formal.v:104$24'.
+  created $dff cell `$procdff$190' with positive edge clock.
+Creating register for signal `\static_clock_divider_formal.\counter' using process `\static_clock_divider_formal.$proc$static_clock_divider_formal.v:76$22'.
+  created $dff cell `$procdff$191' with positive edge clock.
+Creating register for signal `\static_clock_divider_formal.\en_OUT' using process `\static_clock_divider_formal.$proc$static_clock_divider_formal.v:76$22'.
+  created $dff cell `$procdff$192' with positive edge clock.
+
+2.2.9. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Removing empty process `static_clock_divider_formal.$proc$static_clock_divider_formal.v:0$93'.
+Removing empty process `static_clock_divider_formal.$proc$static_clock_divider_formal.v:0$91'.
+Removing empty process `static_clock_divider_formal.$proc$static_clock_divider_formal.v:0$89'.
+Removing empty process `static_clock_divider_formal.$proc$static_clock_divider_formal.v:0$87'.
+Removing empty process `static_clock_divider_formal.$proc$static_clock_divider_formal.v:0$85'.
+Removing empty process `static_clock_divider_formal.$proc$static_clock_divider_formal.v:0$83'.
+Removing empty process `static_clock_divider_formal.$proc$static_clock_divider_formal.v:0$81'.
+Removing empty process `static_clock_divider_formal.$proc$static_clock_divider_formal.v:0$79'.
+Removing empty process `static_clock_divider_formal.$proc$static_clock_divider_formal.v:103$78'.
+Found and cleaned up 5 empty switches in `\static_clock_divider_formal.$proc$static_clock_divider_formal.v:104$24'.
+Removing empty process `static_clock_divider_formal.$proc$static_clock_divider_formal.v:104$24'.
+Found and cleaned up 3 empty switches in `\static_clock_divider_formal.$proc$static_clock_divider_formal.v:76$22'.
+Removing empty process `static_clock_divider_formal.$proc$static_clock_divider_formal.v:76$22'.
+Cleaned up 8 empty switches.
+
+2.3. Executing OPT_EXPR pass (perform const folding).
+Optimizing module static_clock_divider_formal.
+<suppressed ~14 debug messages>
+
+2.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \static_clock_divider_formal..
+Removed 3 unused cells and 74 unused wires.
+<suppressed ~4 debug messages>
+
+2.5. Executing CHECK pass (checking for obvious problems).
+checking module static_clock_divider_formal..
+found and reported 0 problems.
+
+2.6. Executing OPT pass (performing simple optimizations).
+
+2.6.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module static_clock_divider_formal.
+
+2.6.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\static_clock_divider_formal'.
+<suppressed ~36 debug messages>
+Removed a total of 12 cells.
+
+2.6.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \static_clock_divider_formal..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~16 debug messages>
+
+2.6.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \static_clock_divider_formal.
+Performed a total of 0 changes.
+
+2.6.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\static_clock_divider_formal'.
+<suppressed ~15 debug messages>
+Removed a total of 5 cells.
+
+2.6.6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \static_clock_divider_formal..
+Removed 0 unused cells and 17 unused wires.
+<suppressed ~1 debug messages>
+
+2.6.7. Executing OPT_EXPR pass (perform const folding).
+Optimizing module static_clock_divider_formal.
+
+2.6.8. Rerunning OPT passes. (Maybe there is more to do..)
+
+2.6.9. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \static_clock_divider_formal..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~14 debug messages>
+
+2.6.10. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \static_clock_divider_formal.
+Performed a total of 0 changes.
+
+2.6.11. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\static_clock_divider_formal'.
+Removed a total of 0 cells.
+
+2.6.12. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \static_clock_divider_formal..
+
+2.6.13. Executing OPT_EXPR pass (perform const folding).
+Optimizing module static_clock_divider_formal.
+
+2.6.14. Finished OPT passes. (There is nothing left to do.)
+
+2.7. Executing WREDUCE pass (reducing word size of cells).
+Removed top 31 bits (of 32) from port B of cell static_clock_divider_formal.$add$static_clock_divider_formal.v:67$19 ($add).
+Removed top 31 bits (of 32) from port B of cell static_clock_divider_formal.$and$static_clock_divider_formal.v:0$51 ($and).
+Removed top 31 bits (of 32) from port Y of cell static_clock_divider_formal.$and$static_clock_divider_formal.v:0$51 ($and).
+Removed top 31 bits (of 32) from port B of cell static_clock_divider_formal.$and$static_clock_divider_formal.v:0$53 ($and).
+Removed top 31 bits (of 32) from port Y of cell static_clock_divider_formal.$and$static_clock_divider_formal.v:0$53 ($and).
+Removed top 31 bits (of 32) from wire static_clock_divider_formal.$and$static_clock_divider_formal.v:0$51_Y.
+Removed top 31 bits (of 32) from wire static_clock_divider_formal.$and$static_clock_divider_formal.v:0$53_Y.
+
+2.8. Executing MEMORY_DFF pass (merging $dff cells to $memrd and $memwr).
+
+2.9. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \static_clock_divider_formal..
+Removed 0 unused cells and 2 unused wires.
+<suppressed ~1 debug messages>
+
+2.10. Executing MEMORY_COLLECT pass (generating $mem cells).
+
+2.11. Executing OPT pass (performing simple optimizations).
+
+2.11.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module static_clock_divider_formal.
+<suppressed ~2 debug messages>
+
+2.11.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\static_clock_divider_formal'.
+Removed a total of 0 cells.
+
+2.11.3. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \static_clock_divider_formal..
+Removed 0 unused cells and 2 unused wires.
+<suppressed ~1 debug messages>
+
+2.11.4. Finished fast OPT passes.
+
+2.12. Printing statistics.
+
+=== static_clock_divider_formal ===
+
+   Number of wires:                 69
+   Number of wire bits:            255
+   Number of public wires:          11
+   Number of public wire bits:      73
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 71
+     $add                            1
+     $assert                         5
+     $assume                         3
+     $dff                           20
+     $eq                             3
+     $logic_and                      3
+     $logic_not                      3
+     $mux                           30
+     $ne                             2
+     $not                            1
+
+2.13. Executing CHECK pass (checking for obvious problems).
+checking module static_clock_divider_formal..
+found and reported 0 problems.
+
+3. Executing MEMORY_NORDFF pass (extracting $dff cells from memories).
+
+4. Executing ASYNC2SYNC pass.
+
+5. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \static_clock_divider_formal..
+Removed 4 unused cells and 3 unused wires.
+<suppressed ~5 debug messages>
+
+6. Executing SETUNDEF pass (replace undef values with defined constants).
+
+7. Executing OPT pass (performing simple optimizations).
+
+7.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module static_clock_divider_formal.
+
+7.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\static_clock_divider_formal'.
+Removed a total of 0 cells.
+
+7.3. Executing OPT_DFF pass (perform DFF optimizations).
+Adding SRST signal on $procdff$192 ($dff) from module static_clock_divider_formal (D = $procmux$155_Y, Q = \en_OUT, rval = 1'0).
+Adding EN signal on $auto$opt_dff.cc:702:run$223 ($sdff) from module static_clock_divider_formal (D = \en_OUT$D_IN, Q = \en_OUT).
+Adding SRST signal on $procdff$191 ($dff) from module static_clock_divider_formal (D = $procmux$160_Y, Q = \counter, rval = 0).
+Adding EN signal on $auto$opt_dff.cc:702:run$225 ($sdff) from module static_clock_divider_formal (D = \counter$D_IN, Q = \counter).
+Adding SRST signal on $procdff$186 ($dff) from module static_clock_divider_formal (D = $procmux$134_Y, Q = $formal$static_clock_divider_formal.v:120$15_EN, rval = 1'0).
+Adding SRST signal on $procdff$184 ($dff) from module static_clock_divider_formal (D = $procmux$120_Y, Q = $formal$static_clock_divider_formal.v:118$14_EN, rval = 1'0).
+Adding SRST signal on $procdff$182 ($dff) from module static_clock_divider_formal (D = $procmux$111_Y, Q = $formal$static_clock_divider_formal.v:116$13_EN, rval = 1'0).
+Adding SRST signal on $procdff$178 ($dff) from module static_clock_divider_formal (D = $procmux$103_Y, Q = $formal$static_clock_divider_formal.v:111$11_EN, rval = 1'0).
+
+7.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \static_clock_divider_formal..
+Removed 10 unused cells and 10 unused wires.
+<suppressed ~11 debug messages>
+
+7.5. Rerunning OPT passes. (Removed registers in this run.)
+
+7.6. Executing OPT_EXPR pass (perform const folding).
+Optimizing module static_clock_divider_formal.
+
+7.7. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\static_clock_divider_formal'.
+<suppressed ~3 debug messages>
+Removed a total of 1 cells.
+
+7.8. Executing OPT_DFF pass (perform DFF optimizations).
+
+7.9. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \static_clock_divider_formal..
+Removed 0 unused cells and 1 unused wires.
+<suppressed ~1 debug messages>
+
+7.10. Finished fast OPT passes.
+
+8. Executing CHECK pass (checking for obvious problems).
+checking module static_clock_divider_formal..
+found and reported 0 problems.
+
+9. Executing HIERARCHY pass (managing design hierarchy).
+
+9.1. Analyzing design hierarchy..
+Top module:  \static_clock_divider_formal
+
+9.2. Analyzing design hierarchy..
+Top module:  \static_clock_divider_formal
+Removed 0 unused modules.
+Module static_clock_divider_formal directly or indirectly contains formal properties -> setting "keep" attribute.
+
+10. Executing RTLIL backend.
+Output filename: ../model/design.il
+
+Warnings: 1 unique messages, 1 total
+End of script. Logfile hash: 3cb93d3ade, CPU: user 0.08s system 0.01s, MEM: 13.88 MB peak
+Yosys 0.9+3675 (git sha1 71ca9a8253, g++ 9.3.0 -fPIC -Os)
+Time spent: 25% 8x opt_clean (0 sec), 23% 7x opt_expr (0 sec), ...

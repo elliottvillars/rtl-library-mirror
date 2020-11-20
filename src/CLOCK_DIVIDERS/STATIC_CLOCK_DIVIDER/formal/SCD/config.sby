@@ -1,0 +1,13 @@
+[engines]
+smtbmc yices
+
+[options]
+mode prove
+depth 16
+
+[files]
+static_clock_divider_formal.v
+
+[script]
+read_verilog -formal static_clock_divider_formal.v
+prep -top static_clock_divider_formal

@@ -1,6 +1,6 @@
 # running in SCD/src/
-read_verilog -formal static_clock_divider.v
-prep -top static_clock_divider
+read_verilog -formal static_clock_divider_formal.v
+prep -top static_clock_divider_formal
 memory_nordff
 async2sync
 chformal -assume -early
