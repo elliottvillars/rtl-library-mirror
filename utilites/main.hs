@@ -1,4 +1,4 @@
-module CIC where
+module Main where
 
 import System.Environment
 import System.Exit
@@ -62,12 +62,12 @@ helpMes :: [String]
 helpMes = usage ++ help ++ targ ++ decr ++ intr ++ iwid ++ ddel
   where
     usage = ["Usage: cicgen [ -h | -t <arg> | -d <arg> | -i | -n <arg> | -f <arg> ]"]
-    help = ["-h: Prints this menu."]
-    targ = ["-t: Sets target resolution in bits. Default is 16-bit resolution."]
-    decr = ["-d: Sets the decimation/interpolation ratio. Default is 1x."]
-    intr = ["-i: generate an CIC interpolator instead of a decimator."]
-    iwid = ["-n: Set input size in bits. Default is 2-bit wide input."]
-    ddel = ["-f: Sets diffential delay. Default is 1."]
+    help  = ["-h: Prints this menu."]
+    targ  = ["-t: Sets target resolution in bits. Default is 16-bit resolution."]
+    decr  = ["-d: Sets the decimation/interpolation ratio. Default is 1x."]
+    intr  = ["-i: generate an CIC interpolator instead of a decimator."]
+    iwid  = ["-n: Set input size in bits. Default is 2-bit wide input."]
+    ddel  = ["-f: Sets diffential delay. Default is 1."]
 
 main :: IO ()
 main = do
@@ -123,32 +123,17 @@ genHeader (InputWidth iw) (OutputWidth ow) (Interp sw) = head ++ body ++ tail
     body = map (\x -> "  " ++ x) ports
     ports = ["input wire i_CLK,", "input wire signed [" ++ (show iw) ++ ":0] i_DIN,", "output reg signed [" ++ (show ow) ++ ":0] o_DOUT"]
     tail = [");"]
---
--- merge
---
+
 genRegs :: StageCount -> OutputWidth -> [String]
-genRegs stg ow = (genIntRegs stg ow) ++ (genCombRegs stg ow) ++ (genDiffRegs stg ow)
-
-genIntRegs :: StageCount -> OutputWidth -> [String]
-genIntRegs (StageCount stg) (OutputWidth ow) = map (\x -> x ++ ";") $ zipWith (++) base idx
+genRegs (StageCount stg) (OutputWidth ow) = map (\x -> x ++ ";") res
   where
-    base = replicate stg $ "reg [" ++ (show ow) ++ ":0] r_INT_S"
+    base1 = zipWith (++) (replicate stg $ "reg [" ++ (show ow) ++ ":0] r_INT_S") idx
+    base2 = zipWith (++) (replicate stg $ "reg [" ++ (show ow) ++ ":0] r_COMB_S") idx
+    base3 = zipWith (++) (replicate stg $ "reg [" ++ (show ow) ++ ":0] r_DDELAY_S") idx
     idx = map show $ enumFromTo 0 $ stg - 1
+    res = base1 ++ base2 ++ base3
 
-genCombRegs :: StageCount -> OutputWidth -> [String]
-genCombRegs (StageCount stg) (OutputWidth ow) = map (\x -> x ++ ";") $ zipWith (++) base idx
-  where
-    base = replicate stg $ "reg [" ++ (show ow) ++ ":0] r_COMB_S"
-    idx = map show $ enumFromTo 0 $ stg - 1
 
-genDiffRegs :: StageCount -> OutputWidth -> [String]
-genDiffRegs (StageCount stg) (OutputWidth ow) = map (\x -> x ++ ";") $ zipWith (++) base idx
-  where
-    base = replicate stg $ "reg [" ++ (show ow) ++ ":0] r_DDELAY_S"
-    idx = map show $ enumFromTo 0 $ stg - 1
-
--- 
---
 genIntDecim :: StageCount -> InputWidth -> OutputWidth -> [String]
 genIntDecim (StageCount stg) (InputWidth iw) (OutputWidth ow) = head ++ body ++ tail
   where
