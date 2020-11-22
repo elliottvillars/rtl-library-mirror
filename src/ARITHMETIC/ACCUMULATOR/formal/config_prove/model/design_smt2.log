@@ -19,40 +19,44 @@
  |                                                                            |
  \----------------------------------------------------------------------------/
 
- Yosys 0.9+2406 (git sha1 000fd08198, g++ 9.3.0 -fPIC -Os)
+ Yosys 0.9+3675 (git sha1 71ca9a8253, g++ 9.3.0 -fPIC -Os)
 
 
 -- Executing script file `design_smt2.ys' --
 
-1. Executing ILANG frontend.
+1. Executing RTLIL frontend.
 Input filename: design.il
 
-2. Printing statistics.
+2. Executing DFFUNMAP pass (unmap clock enable and synchronous reset from FFs).
 
-=== accumulator ===
+3. Printing statistics.
 
-   Number of wires:                 62
-   Number of wire bits:            118
-   Number of public wires:           6
-   Number of public wire bits:      20
+=== accumulator_formal ===
+
+   Number of wires:                 69
+   Number of wire bits:            348
+   Number of public wires:           9
+   Number of public wire bits:     133
    Number of memories:               0
    Number of memory bits:            0
    Number of processes:              0
-   Number of cells:                 65
+   Number of cells:                 68
      $add                            2
-     $anyseq                        11
+     $anyseq                        10
      $assert                         3
      $assume                         4
-     $dff                           13
+     $dff                           15
      $eq                             5
-     $logic_and                      2
-     $logic_not                      2
-     $mux                           22
+     $logic_and                      4
+     $logic_not                      3
+     $mux                           19
      $ne                             1
+     $not                            1
+     $reduce_or                      1
 
-3. Executing SMT2 backend.
-Creating SMT-LIBv2 representation of module accumulator.
+4. Executing SMT2 backend.
+Creating SMT-LIBv2 representation of module accumulator_formal.
 
-End of script. Logfile hash: 908797c2b7, CPU: user 0.01s system 0.01s, MEM: 12.89 MB peak
-Yosys 0.9+2406 (git sha1 000fd08198, g++ 9.3.0 -fPIC -Os)
-Time spent: 54% 2x write_smt2 (0 sec), 43% 2x read_ilang (0 sec), ...
+End of script. Logfile hash: 543be9eaa6, CPU: user 0.01s system 0.00s, MEM: 13.36 MB peak
+Yosys 0.9+3675 (git sha1 71ca9a8253, g++ 9.3.0 -fPIC -Os)
+Time spent: 57% 2x write_smt2 (0 sec), 34% 2x read_ilang (0 sec), ...

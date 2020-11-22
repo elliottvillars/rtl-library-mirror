@@ -49,7 +49,7 @@ module testbench(input clock, output reg genclock);
     // UUT.$past$accumulator_formal.\v:108$3$0  = 32'b00000000000000000000000000000000;
     // UUT.$past$accumulator_formal.\v:111$6$0  = 1'b1;
     // UUT.$past$accumulator_formal.\v:113$7$0  = 1'b0;
-    // UUT.$past$accumulator_formal.\v:114$9$0  = 32'b00000000000000000000000001100100;
+    // UUT.$past$accumulator_formal.\v:114$9$0  = 32'b11111111111111111111111111100000;
     // UUT.$past$accumulator_formal.\v:115$10$0  = 1'b0;
     // UUT.$past$accumulator_formal.\v:120$13$0  = 1'b1;
     UUT.f_past_valid = 1'b0;
@@ -58,7 +58,7 @@ module testbench(input clock, output reg genclock);
     // state 0
     PI_i_CLK = 1'b0;
     PI_i_ENABLE = 1'b1;
-    PI_i_DATA_IN = 32'b00000000000000000000000001100100;
+    PI_i_DATA_IN = 32'b11111111111111111111111111100000;
     PI_i_RESET_N = 1'b1;
   end
   always @(posedge clock) begin

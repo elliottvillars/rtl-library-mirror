@@ -131,15 +131,17 @@ module	lfsr(i_clk, i_reset, i_ce, o_word,i_din);
 					^(sreg[(LN+WS-2):(WS-1)]&tapv[k]);
 	end endgenerate
 
-	assign	o_word = sreg[(WS-1):0]^ i_din;
-	assign  o_word[0] = i_din[0] ^ sreg[WS-1];
-	assign  o_word[1] = i_din[1] ^ sreg[WS-2];
-	assign  o_word[2] = i_din[2] ^ sreg[WS-3];
-	assign  o_word[3] = i_din[3] ^ sreg[WS-4];
-	assign  o_word[4] = i_din[4] ^ sreg[WS-5];
-	assign  o_word[5] = i_din[5] ^ sreg[WS-6];
-	assign  o_word[6] = i_din[6] ^ sreg[WS-7];
-	assign  o_word[7] = i_din[7] ^ sreg[WS-8];
+	//assign	o_word = sreg[(WS-1):0] ^ i_din;
+	//assign  o_word[0] = i_din[0] ^ sreg[WS-1];
+	//assign  o_word[1] = i_din[1] ^ sreg[WS-2];
+	//assign  o_word[2] = i_din[2] ^ sreg[WS-3];
+	//assign  o_word[3] = i_din[3] ^ sreg[WS-4];
+	//assign  o_word[4] = i_din[4] ^ sreg[WS-5];
+	//assign  o_word[5] = i_din[5] ^ sreg[WS-6];
+	//assign  o_word[6] = i_din[6] ^ sreg[WS-7];
+	//assign  o_word[7] = i_din[7] ^ sreg[WS-8];
+	//
+	assign o_word = sreg[22:15];
 
 `ifdef	FORMAL
 

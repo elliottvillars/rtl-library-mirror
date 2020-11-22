@@ -8,15 +8,15 @@ module testbench(input clock, output reg genclock);
 `endif
   reg genclock = 1;
   reg [31:0] cycle = 0;
-  reg [0:0] PI_i_CLK_ENABLE;
-  reg [7:0] PI_i_SUMMAND;
   reg [0:0] PI_i_CLK;
-  reg [0:0] PI_i_RESET;
-  accumulator UUT (
-    .i_CLK_ENABLE(PI_i_CLK_ENABLE),
-    .i_SUMMAND(PI_i_SUMMAND),
+  reg [0:0] PI_i_ENABLE;
+  reg [31:0] PI_i_DATA_IN;
+  reg [0:0] PI_i_RESET_N;
+  accumulator_formal UUT (
     .i_CLK(PI_i_CLK),
-    .i_RESET(PI_i_RESET)
+    .i_ENABLE(PI_i_ENABLE),
+    .i_DATA_IN(PI_i_DATA_IN),
+    .i_RESET_N(PI_i_RESET_N)
   );
 `ifndef VERILATOR
   initial begin
@@ -35,44 +35,47 @@ module testbench(input clock, output reg genclock);
 `ifndef VERILATOR
     #1;
 `endif
-    // UUT.$and$accumulator.v:0$57_Y = 1'b1;
-    // UUT.$eq$accumulator.v:75$64_Y = 1'b0;
-    // UUT.$eq$accumulator.v:77$66_Y = 1'b0;
-    // UUT.$formal$accumulator.v:72$13_CHECK = 1'b0;
-    // UUT.$formal$accumulator.v:72$13_EN = 1'b0;
-    // UUT.$formal$accumulator.v:73$14_CHECK = 1'b0;
-    // UUT.$formal$accumulator.v:75$15_CHECK = 1'b0;
-    // UUT.$formal$accumulator.v:75$15_EN = 1'b0;
-    // UUT.$formal$accumulator.v:77$16_CHECK = 1'b0;
-    // UUT.$formal$accumulator.v:77$16_EN = 1'b0;
-    // UUT.$formal$accumulator.v:79$17_CHECK = 1'b0;
-    // UUT.$formal$accumulator.v:79$17_EN = 1'b0;
-    // UUT.$past$accumulator.v:78$5$0 = 8'b00000000;
-    // UUT.$past$accumulator.v:78$6$0 = 8'b00000000;
-    UUT.o_ACCUMULATION = 8'b01100100;
-    UUT.r_PAST_VALID = 1'b0;
+    // UUT.$and$accumulator_formal.\v:0$66_Y  = 1'b1;
+    // UUT.$formal$accumulator_formal.\v:107$17_CHECK  = 1'b0;
+    // UUT.$formal$accumulator_formal.\v:107$17_EN  = 1'b0;
+    // UUT.$formal$accumulator_formal.\v:108$18_CHECK  = 1'b0;
+    // UUT.$formal$accumulator_formal.\v:109$19_CHECK  = 1'b0;
+    // UUT.$formal$accumulator_formal.\v:111$20_CHECK  = 1'b0;
+    // UUT.$formal$accumulator_formal.\v:111$20_EN  = 1'b0;
+    // UUT.$formal$accumulator_formal.\v:113$21_CHECK  = 1'b0;
+    // UUT.$formal$accumulator_formal.\v:113$21_EN  = 1'b0;
+    // UUT.$formal$accumulator_formal.\v:115$22_CHECK  = 1'b0;
+    // UUT.$formal$accumulator_formal.\v:115$22_EN  = 1'b0;
+    // UUT.$past$accumulator_formal.\v:108$3$0  = 32'b00000000000000000000000000000000;
+    // UUT.$past$accumulator_formal.\v:111$6$0  = 1'b1;
+    // UUT.$past$accumulator_formal.\v:113$7$0  = 1'b0;
+    // UUT.$past$accumulator_formal.\v:114$9$0  = 32'b00000000000000000000000000000000;
+    // UUT.$past$accumulator_formal.\v:115$10$0  = 1'b0;
+    // UUT.$past$accumulator_formal.\v:120$13$0  = 1'b0;
+    UUT.f_past_valid = 1'b0;
+    UUT.total = 32'b00000000000000000000000000000000;
 
     // state 0
-    PI_i_CLK_ENABLE = 1'b0;
-    PI_i_SUMMAND = 8'b00000000;
     PI_i_CLK = 1'b0;
-    PI_i_RESET = 1'b0;
+    PI_i_ENABLE = 1'b0;
+    PI_i_DATA_IN = 32'b00000000000000000000000000000000;
+    PI_i_RESET_N = 1'b1;
   end
   always @(posedge clock) begin
     // state 1
     if (cycle == 0) begin
-      PI_i_CLK_ENABLE <= 1'b0;
-      PI_i_SUMMAND <= 8'b00010000;
       PI_i_CLK <= 1'b1;
-      PI_i_RESET <= 1'b0;
+      PI_i_ENABLE <= 1'b0;
+      PI_i_DATA_IN <= 32'b01000000000000000000000000000000;
+      PI_i_RESET_N <= 1'b0;
     end
 
     // state 2
     if (cycle == 1) begin
-      PI_i_CLK_ENABLE <= 1'b0;
-      PI_i_SUMMAND <= 8'b00010000;
       PI_i_CLK <= 1'b0;
-      PI_i_RESET <= 1'b0;
+      PI_i_ENABLE <= 1'b0;
+      PI_i_DATA_IN <= 32'b01000000000000000000000000000000;
+      PI_i_RESET_N <= 1'b0;
     end
 
     genclock <= cycle < 2;

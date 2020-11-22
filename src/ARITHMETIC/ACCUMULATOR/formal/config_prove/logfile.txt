@@ -1,155 +1,61 @@
-SBY 15:24:13 [config_prove] Removing directory 'config_prove'.
-SBY 15:24:13 [config_prove] Copy 'accumulator.v' to 'config_prove/src/accumulator.v'.
-SBY 15:24:13 [config_prove] engine_0: smtbmc boolector
-SBY 15:24:13 [config_prove] base: starting process "cd config_prove/src; /nix/store/y4qxzapi73hszjabd2wb1hs3c47v4b05-yosys-2020.07.07/bin/yosys -ql ../model/design.log ../model/design.ys"
-SBY 15:24:13 [config_prove] base: finished (returncode=0)
-SBY 15:24:13 [config_prove] smt2: starting process "cd config_prove/model; /nix/store/y4qxzapi73hszjabd2wb1hs3c47v4b05-yosys-2020.07.07/bin/yosys -ql design_smt2.log design_smt2.ys"
-SBY 15:24:13 [config_prove] smt2: finished (returncode=0)
-SBY 15:24:13 [config_prove] engine_0.basecase: starting process "cd config_prove; /nix/store/y4qxzapi73hszjabd2wb1hs3c47v4b05-yosys-2020.07.07/bin/yosys-smtbmc -s boolector --presat --unroll --noprogress -t 64  --append 0 --dump-vcd engine_0/trace.vcd --dump-vlogtb engine_0/trace_tb.v --dump-smtc engine_0/trace.smtc model/design_smt2.smt2"
-SBY 15:24:14 [config_prove] engine_0.induction: starting process "cd config_prove; /nix/store/y4qxzapi73hszjabd2wb1hs3c47v4b05-yosys-2020.07.07/bin/yosys-smtbmc -s boolector --presat --unroll -i --noprogress -t 64  --append 0 --dump-vcd engine_0/trace_induct.vcd --dump-vlogtb engine_0/trace_induct_tb.v --dump-smtc engine_0/trace_induct.smtc model/design_smt2.smt2"
-SBY 15:24:14 [config_prove] engine_0.basecase: ##   0:00:00  Solver: boolector
-SBY 15:24:14 [config_prove] engine_0.induction: ##   0:00:00  Solver: boolector
-SBY 15:24:14 [config_prove] engine_0.basecase: ##   0:00:00  Checking assumptions in step 0..
-SBY 15:24:14 [config_prove] engine_0.basecase: ##   0:00:00  Checking assertions in step 0..
-SBY 15:24:14 [config_prove] engine_0.induction: ##   0:00:00  Trying induction in step 64..
-SBY 15:24:14 [config_prove] engine_0.induction: ##   0:00:00  Trying induction in step 63..
-SBY 15:24:14 [config_prove] engine_0.basecase: ##   0:00:00  Checking assumptions in step 1..
-SBY 15:24:14 [config_prove] engine_0.basecase: ##   0:00:00  Checking assertions in step 1..
-SBY 15:24:14 [config_prove] engine_0.basecase: ##   0:00:00  Checking assumptions in step 2..
-SBY 15:24:14 [config_prove] engine_0.induction: ##   0:00:00  Trying induction in step 62..
-SBY 15:24:14 [config_prove] engine_0.induction: ##   0:00:00  Temporal induction successful.
-SBY 15:24:14 [config_prove] engine_0.induction: ##   0:00:00  Status: passed
-SBY 15:24:14 [config_prove] engine_0.basecase: ##   0:00:00  Checking assertions in step 2..
-SBY 15:24:14 [config_prove] engine_0.induction: finished (returncode=0)
-SBY 15:24:14 [config_prove] engine_0: Status returned by engine for induction: pass
-SBY 15:24:14 [config_prove] engine_0.basecase: ##   0:00:00  Checking assumptions in step 3..
-SBY 15:24:14 [config_prove] engine_0.basecase: ##   0:00:00  Checking assertions in step 3..
-SBY 15:24:14 [config_prove] engine_0.basecase: ##   0:00:00  Checking assumptions in step 4..
-SBY 15:24:14 [config_prove] engine_0.basecase: ##   0:00:00  Checking assertions in step 4..
-SBY 15:24:14 [config_prove] engine_0.basecase: ##   0:00:00  Checking assumptions in step 5..
-SBY 15:24:14 [config_prove] engine_0.basecase: ##   0:00:00  Checking assertions in step 5..
-SBY 15:24:14 [config_prove] engine_0.basecase: ##   0:00:00  Checking assumptions in step 6..
-SBY 15:24:14 [config_prove] engine_0.basecase: ##   0:00:00  Checking assertions in step 6..
-SBY 15:24:14 [config_prove] engine_0.basecase: ##   0:00:00  Checking assumptions in step 7..
-SBY 15:24:14 [config_prove] engine_0.basecase: ##   0:00:00  Checking assertions in step 7..
-SBY 15:24:14 [config_prove] engine_0.basecase: ##   0:00:00  Checking assumptions in step 8..
-SBY 15:24:14 [config_prove] engine_0.basecase: ##   0:00:00  Checking assertions in step 8..
-SBY 15:24:14 [config_prove] engine_0.basecase: ##   0:00:00  Checking assumptions in step 9..
-SBY 15:24:14 [config_prove] engine_0.basecase: ##   0:00:00  Checking assertions in step 9..
-SBY 15:24:14 [config_prove] engine_0.basecase: ##   0:00:00  Checking assumptions in step 10..
-SBY 15:24:14 [config_prove] engine_0.basecase: ##   0:00:00  Checking assertions in step 10..
-SBY 15:24:14 [config_prove] engine_0.basecase: ##   0:00:00  Checking assumptions in step 11..
-SBY 15:24:14 [config_prove] engine_0.basecase: ##   0:00:00  Checking assertions in step 11..
-SBY 15:24:14 [config_prove] engine_0.basecase: ##   0:00:00  Checking assumptions in step 12..
-SBY 15:24:14 [config_prove] engine_0.basecase: ##   0:00:00  Checking assertions in step 12..
-SBY 15:24:14 [config_prove] engine_0.basecase: ##   0:00:00  Checking assumptions in step 13..
-SBY 15:24:14 [config_prove] engine_0.basecase: ##   0:00:00  Checking assertions in step 13..
-SBY 15:24:14 [config_prove] engine_0.basecase: ##   0:00:00  Checking assumptions in step 14..
-SBY 15:24:14 [config_prove] engine_0.basecase: ##   0:00:00  Checking assertions in step 14..
-SBY 15:24:14 [config_prove] engine_0.basecase: ##   0:00:00  Checking assumptions in step 15..
-SBY 15:24:14 [config_prove] engine_0.basecase: ##   0:00:00  Checking assertions in step 15..
-SBY 15:24:14 [config_prove] engine_0.basecase: ##   0:00:00  Checking assumptions in step 16..
-SBY 15:24:14 [config_prove] engine_0.basecase: ##   0:00:00  Checking assertions in step 16..
-SBY 15:24:14 [config_prove] engine_0.basecase: ##   0:00:00  Checking assumptions in step 17..
-SBY 15:24:14 [config_prove] engine_0.basecase: ##   0:00:00  Checking assertions in step 17..
-SBY 15:24:14 [config_prove] engine_0.basecase: ##   0:00:00  Checking assumptions in step 18..
-SBY 15:24:14 [config_prove] engine_0.basecase: ##   0:00:00  Checking assertions in step 18..
-SBY 15:24:14 [config_prove] engine_0.basecase: ##   0:00:00  Checking assumptions in step 19..
-SBY 15:24:14 [config_prove] engine_0.basecase: ##   0:00:00  Checking assertions in step 19..
-SBY 15:24:14 [config_prove] engine_0.basecase: ##   0:00:00  Checking assumptions in step 20..
-SBY 15:24:15 [config_prove] engine_0.basecase: ##   0:00:00  Checking assertions in step 20..
-SBY 15:24:15 [config_prove] engine_0.basecase: ##   0:00:00  Checking assumptions in step 21..
-SBY 15:24:15 [config_prove] engine_0.basecase: ##   0:00:01  Checking assertions in step 21..
-SBY 15:24:15 [config_prove] engine_0.basecase: ##   0:00:01  Checking assumptions in step 22..
-SBY 15:24:15 [config_prove] engine_0.basecase: ##   0:00:01  Checking assertions in step 22..
-SBY 15:24:15 [config_prove] engine_0.basecase: ##   0:00:01  Checking assumptions in step 23..
-SBY 15:24:15 [config_prove] engine_0.basecase: ##   0:00:01  Checking assertions in step 23..
-SBY 15:24:15 [config_prove] engine_0.basecase: ##   0:00:01  Checking assumptions in step 24..
-SBY 15:24:15 [config_prove] engine_0.basecase: ##   0:00:01  Checking assertions in step 24..
-SBY 15:24:15 [config_prove] engine_0.basecase: ##   0:00:01  Checking assumptions in step 25..
-SBY 15:24:15 [config_prove] engine_0.basecase: ##   0:00:01  Checking assertions in step 25..
-SBY 15:24:15 [config_prove] engine_0.basecase: ##   0:00:01  Checking assumptions in step 26..
-SBY 15:24:15 [config_prove] engine_0.basecase: ##   0:00:01  Checking assertions in step 26..
-SBY 15:24:15 [config_prove] engine_0.basecase: ##   0:00:01  Checking assumptions in step 27..
-SBY 15:24:15 [config_prove] engine_0.basecase: ##   0:00:01  Checking assertions in step 27..
-SBY 15:24:15 [config_prove] engine_0.basecase: ##   0:00:01  Checking assumptions in step 28..
-SBY 15:24:15 [config_prove] engine_0.basecase: ##   0:00:01  Checking assertions in step 28..
-SBY 15:24:15 [config_prove] engine_0.basecase: ##   0:00:01  Checking assumptions in step 29..
-SBY 15:24:15 [config_prove] engine_0.basecase: ##   0:00:01  Checking assertions in step 29..
-SBY 15:24:15 [config_prove] engine_0.basecase: ##   0:00:01  Checking assumptions in step 30..
-SBY 15:24:15 [config_prove] engine_0.basecase: ##   0:00:01  Checking assertions in step 30..
-SBY 15:24:15 [config_prove] engine_0.basecase: ##   0:00:01  Checking assumptions in step 31..
-SBY 15:24:15 [config_prove] engine_0.basecase: ##   0:00:01  Checking assertions in step 31..
-SBY 15:24:15 [config_prove] engine_0.basecase: ##   0:00:01  Checking assumptions in step 32..
-SBY 15:24:15 [config_prove] engine_0.basecase: ##   0:00:01  Checking assertions in step 32..
-SBY 15:24:15 [config_prove] engine_0.basecase: ##   0:00:01  Checking assumptions in step 33..
-SBY 15:24:15 [config_prove] engine_0.basecase: ##   0:00:01  Checking assertions in step 33..
-SBY 15:24:15 [config_prove] engine_0.basecase: ##   0:00:01  Checking assumptions in step 34..
-SBY 15:24:16 [config_prove] engine_0.basecase: ##   0:00:01  Checking assertions in step 34..
-SBY 15:24:16 [config_prove] engine_0.basecase: ##   0:00:01  Checking assumptions in step 35..
-SBY 15:24:16 [config_prove] engine_0.basecase: ##   0:00:02  Checking assertions in step 35..
-SBY 15:24:16 [config_prove] engine_0.basecase: ##   0:00:02  Checking assumptions in step 36..
-SBY 15:24:16 [config_prove] engine_0.basecase: ##   0:00:02  Checking assertions in step 36..
-SBY 15:24:16 [config_prove] engine_0.basecase: ##   0:00:02  Checking assumptions in step 37..
-SBY 15:24:16 [config_prove] engine_0.basecase: ##   0:00:02  Checking assertions in step 37..
-SBY 15:24:16 [config_prove] engine_0.basecase: ##   0:00:02  Checking assumptions in step 38..
-SBY 15:24:16 [config_prove] engine_0.basecase: ##   0:00:02  Checking assertions in step 38..
-SBY 15:24:16 [config_prove] engine_0.basecase: ##   0:00:02  Checking assumptions in step 39..
-SBY 15:24:16 [config_prove] engine_0.basecase: ##   0:00:02  Checking assertions in step 39..
-SBY 15:24:16 [config_prove] engine_0.basecase: ##   0:00:02  Checking assumptions in step 40..
-SBY 15:24:16 [config_prove] engine_0.basecase: ##   0:00:02  Checking assertions in step 40..
-SBY 15:24:16 [config_prove] engine_0.basecase: ##   0:00:02  Checking assumptions in step 41..
-SBY 15:24:16 [config_prove] engine_0.basecase: ##   0:00:02  Checking assertions in step 41..
-SBY 15:24:16 [config_prove] engine_0.basecase: ##   0:00:02  Checking assumptions in step 42..
-SBY 15:24:16 [config_prove] engine_0.basecase: ##   0:00:02  Checking assertions in step 42..
-SBY 15:24:16 [config_prove] engine_0.basecase: ##   0:00:02  Checking assumptions in step 43..
-SBY 15:24:16 [config_prove] engine_0.basecase: ##   0:00:02  Checking assertions in step 43..
-SBY 15:24:16 [config_prove] engine_0.basecase: ##   0:00:02  Checking assumptions in step 44..
-SBY 15:24:17 [config_prove] engine_0.basecase: ##   0:00:02  Checking assertions in step 44..
-SBY 15:24:17 [config_prove] engine_0.basecase: ##   0:00:02  Checking assumptions in step 45..
-SBY 15:24:17 [config_prove] engine_0.basecase: ##   0:00:03  Checking assertions in step 45..
-SBY 15:24:17 [config_prove] engine_0.basecase: ##   0:00:03  Checking assumptions in step 46..
-SBY 15:24:17 [config_prove] engine_0.basecase: ##   0:00:03  Checking assertions in step 46..
-SBY 15:24:17 [config_prove] engine_0.basecase: ##   0:00:03  Checking assumptions in step 47..
-SBY 15:24:17 [config_prove] engine_0.basecase: ##   0:00:03  Checking assertions in step 47..
-SBY 15:24:17 [config_prove] engine_0.basecase: ##   0:00:03  Checking assumptions in step 48..
-SBY 15:24:17 [config_prove] engine_0.basecase: ##   0:00:03  Checking assertions in step 48..
-SBY 15:24:17 [config_prove] engine_0.basecase: ##   0:00:03  Checking assumptions in step 49..
-SBY 15:24:17 [config_prove] engine_0.basecase: ##   0:00:03  Checking assertions in step 49..
-SBY 15:24:17 [config_prove] engine_0.basecase: ##   0:00:03  Checking assumptions in step 50..
-SBY 15:24:17 [config_prove] engine_0.basecase: ##   0:00:03  Checking assertions in step 50..
-SBY 15:24:17 [config_prove] engine_0.basecase: ##   0:00:03  Checking assumptions in step 51..
-SBY 15:24:17 [config_prove] engine_0.basecase: ##   0:00:03  Checking assertions in step 51..
-SBY 15:24:17 [config_prove] engine_0.basecase: ##   0:00:03  Checking assumptions in step 52..
-SBY 15:24:17 [config_prove] engine_0.basecase: ##   0:00:03  Checking assertions in step 52..
-SBY 15:24:17 [config_prove] engine_0.basecase: ##   0:00:03  Checking assumptions in step 53..
-SBY 15:24:18 [config_prove] engine_0.basecase: ##   0:00:04  Checking assertions in step 53..
-SBY 15:24:18 [config_prove] engine_0.basecase: ##   0:00:04  Checking assumptions in step 54..
-SBY 15:24:18 [config_prove] engine_0.basecase: ##   0:00:04  Checking assertions in step 54..
-SBY 15:24:18 [config_prove] engine_0.basecase: ##   0:00:04  Checking assumptions in step 55..
-SBY 15:24:18 [config_prove] engine_0.basecase: ##   0:00:04  Checking assertions in step 55..
-SBY 15:24:18 [config_prove] engine_0.basecase: ##   0:00:04  Checking assumptions in step 56..
-SBY 15:24:18 [config_prove] engine_0.basecase: ##   0:00:04  Checking assertions in step 56..
-SBY 15:24:18 [config_prove] engine_0.basecase: ##   0:00:04  Checking assumptions in step 57..
-SBY 15:24:18 [config_prove] engine_0.basecase: ##   0:00:04  Checking assertions in step 57..
-SBY 15:24:18 [config_prove] engine_0.basecase: ##   0:00:04  Checking assumptions in step 58..
-SBY 15:24:18 [config_prove] engine_0.basecase: ##   0:00:04  Checking assertions in step 58..
-SBY 15:24:18 [config_prove] engine_0.basecase: ##   0:00:04  Checking assumptions in step 59..
-SBY 15:24:18 [config_prove] engine_0.basecase: ##   0:00:04  Checking assertions in step 59..
-SBY 15:24:18 [config_prove] engine_0.basecase: ##   0:00:04  Checking assumptions in step 60..
-SBY 15:24:18 [config_prove] engine_0.basecase: ##   0:00:04  Checking assertions in step 60..
-SBY 15:24:18 [config_prove] engine_0.basecase: ##   0:00:04  Checking assumptions in step 61..
-SBY 15:24:19 [config_prove] engine_0.basecase: ##   0:00:04  Checking assertions in step 61..
-SBY 15:24:19 [config_prove] engine_0.basecase: ##   0:00:05  Checking assumptions in step 62..
-SBY 15:24:19 [config_prove] engine_0.basecase: ##   0:00:05  Checking assertions in step 62..
-SBY 15:24:19 [config_prove] engine_0.basecase: ##   0:00:05  Checking assumptions in step 63..
-SBY 15:24:19 [config_prove] engine_0.basecase: ##   0:00:05  Checking assertions in step 63..
-SBY 15:24:19 [config_prove] engine_0.basecase: ##   0:00:05  Status: passed
-SBY 15:24:19 [config_prove] engine_0.basecase: finished (returncode=0)
-SBY 15:24:19 [config_prove] engine_0: Status returned by engine for basecase: pass
-SBY 15:24:19 [config_prove] summary: Elapsed clock time [H:MM:SS (secs)]: 0:00:05 (5)
-SBY 15:24:19 [config_prove] summary: Elapsed process time [H:MM:SS (secs)]: 0:00:05 (5)
-SBY 15:24:19 [config_prove] summary: engine_0 (smtbmc boolector) returned pass for induction
-SBY 15:24:19 [config_prove] summary: engine_0 (smtbmc boolector) returned pass for basecase
-SBY 15:24:19 [config_prove] summary: successful proof by k-induction.
-SBY 15:24:19 [config_prove] DONE (PASS, rc=0)
+SBY 16:57:04 [config_prove] Removing directory 'config_prove'.
+SBY 16:57:04 [config_prove] Copy 'accumulator_formal.v' to 'config_prove/src/accumulator_formal.v'.
+SBY 16:57:04 [config_prove] engine_0: smtbmc boolector
+SBY 16:57:04 [config_prove] base: starting process "cd config_prove/src; /nix/store/svjngm0d7kz6d7q5d0g3lhdv2capczbh-yosys-0.9+3675/bin/yosys -ql ../model/design.log ../model/design.ys"
+SBY 16:57:04 [config_prove] base: Warning: Found one of those horrible `(synopsys|synthesis) translate_off' comments.
+SBY 16:57:04 [config_prove] base: Yosys does support them but it is recommended to use `ifdef constructs instead!
+SBY 16:57:04 [config_prove] base: finished (returncode=0)
+SBY 16:57:04 [config_prove] smt2: starting process "cd config_prove/model; /nix/store/svjngm0d7kz6d7q5d0g3lhdv2capczbh-yosys-0.9+3675/bin/yosys -ql design_smt2.log design_smt2.ys"
+SBY 16:57:04 [config_prove] smt2: finished (returncode=0)
+SBY 16:57:04 [config_prove] engine_0.basecase: starting process "cd config_prove; /nix/store/svjngm0d7kz6d7q5d0g3lhdv2capczbh-yosys-0.9+3675/bin/yosys-smtbmc -s boolector --presat --unroll --noprogress -t 16  --append 0 --dump-vcd engine_0/trace.vcd --dump-vlogtb engine_0/trace_tb.v --dump-smtc engine_0/trace.smtc model/design_smt2.smt2"
+SBY 16:57:04 [config_prove] engine_0.induction: starting process "cd config_prove; /nix/store/svjngm0d7kz6d7q5d0g3lhdv2capczbh-yosys-0.9+3675/bin/yosys-smtbmc -s boolector --presat --unroll -i --noprogress -t 16  --append 0 --dump-vcd engine_0/trace_induct.vcd --dump-vlogtb engine_0/trace_induct_tb.v --dump-smtc engine_0/trace_induct.smtc model/design_smt2.smt2"
+SBY 16:57:04 [config_prove] engine_0.basecase: ##   0:00:00  Solver: boolector
+SBY 16:57:04 [config_prove] engine_0.induction: ##   0:00:00  Solver: boolector
+SBY 16:57:04 [config_prove] engine_0.basecase: ##   0:00:00  Checking assumptions in step 0..
+SBY 16:57:04 [config_prove] engine_0.induction: ##   0:00:00  Trying induction in step 16..
+SBY 16:57:04 [config_prove] engine_0.basecase: ##   0:00:00  Checking assertions in step 0..
+SBY 16:57:04 [config_prove] engine_0.basecase: ##   0:00:00  Checking assumptions in step 1..
+SBY 16:57:04 [config_prove] engine_0.induction: ##   0:00:00  Trying induction in step 15..
+SBY 16:57:04 [config_prove] engine_0.basecase: ##   0:00:00  Checking assertions in step 1..
+SBY 16:57:04 [config_prove] engine_0.basecase: ##   0:00:00  Checking assumptions in step 2..
+SBY 16:57:04 [config_prove] engine_0.induction: ##   0:00:00  Trying induction in step 14..
+SBY 16:57:04 [config_prove] engine_0.basecase: ##   0:00:00  Checking assertions in step 2..
+SBY 16:57:04 [config_prove] engine_0.induction: ##   0:00:00  Temporal induction successful.
+SBY 16:57:04 [config_prove] engine_0.induction: ##   0:00:00  Status: passed
+SBY 16:57:04 [config_prove] engine_0.induction: finished (returncode=0)
+SBY 16:57:04 [config_prove] engine_0: Status returned by engine for induction: pass
+SBY 16:57:04 [config_prove] engine_0.basecase: ##   0:00:00  Checking assumptions in step 3..
+SBY 16:57:04 [config_prove] engine_0.basecase: ##   0:00:00  Checking assertions in step 3..
+SBY 16:57:04 [config_prove] engine_0.basecase: ##   0:00:00  Checking assumptions in step 4..
+SBY 16:57:04 [config_prove] engine_0.basecase: ##   0:00:00  Checking assertions in step 4..
+SBY 16:57:04 [config_prove] engine_0.basecase: ##   0:00:00  Checking assumptions in step 5..
+SBY 16:57:04 [config_prove] engine_0.basecase: ##   0:00:00  Checking assertions in step 5..
+SBY 16:57:04 [config_prove] engine_0.basecase: ##   0:00:00  Checking assumptions in step 6..
+SBY 16:57:04 [config_prove] engine_0.basecase: ##   0:00:00  Checking assertions in step 6..
+SBY 16:57:04 [config_prove] engine_0.basecase: ##   0:00:00  Checking assumptions in step 7..
+SBY 16:57:04 [config_prove] engine_0.basecase: ##   0:00:00  Checking assertions in step 7..
+SBY 16:57:04 [config_prove] engine_0.basecase: ##   0:00:00  Checking assumptions in step 8..
+SBY 16:57:04 [config_prove] engine_0.basecase: ##   0:00:00  Checking assertions in step 8..
+SBY 16:57:04 [config_prove] engine_0.basecase: ##   0:00:00  Checking assumptions in step 9..
+SBY 16:57:04 [config_prove] engine_0.basecase: ##   0:00:00  Checking assertions in step 9..
+SBY 16:57:04 [config_prove] engine_0.basecase: ##   0:00:00  Checking assumptions in step 10..
+SBY 16:57:04 [config_prove] engine_0.basecase: ##   0:00:00  Checking assertions in step 10..
+SBY 16:57:04 [config_prove] engine_0.basecase: ##   0:00:00  Checking assumptions in step 11..
+SBY 16:57:04 [config_prove] engine_0.basecase: ##   0:00:00  Checking assertions in step 11..
+SBY 16:57:04 [config_prove] engine_0.basecase: ##   0:00:00  Checking assumptions in step 12..
+SBY 16:57:04 [config_prove] engine_0.basecase: ##   0:00:00  Checking assertions in step 12..
+SBY 16:57:04 [config_prove] engine_0.basecase: ##   0:00:00  Checking assumptions in step 13..
+SBY 16:57:04 [config_prove] engine_0.basecase: ##   0:00:00  Checking assertions in step 13..
+SBY 16:57:04 [config_prove] engine_0.basecase: ##   0:00:00  Checking assumptions in step 14..
+SBY 16:57:05 [config_prove] engine_0.basecase: ##   0:00:00  Checking assertions in step 14..
+SBY 16:57:05 [config_prove] engine_0.basecase: ##   0:00:00  Checking assumptions in step 15..
+SBY 16:57:05 [config_prove] engine_0.basecase: ##   0:00:00  Checking assertions in step 15..
+SBY 16:57:05 [config_prove] engine_0.basecase: ##   0:00:00  Status: passed
+SBY 16:57:05 [config_prove] engine_0.basecase: finished (returncode=0)
+SBY 16:57:05 [config_prove] engine_0: Status returned by engine for basecase: pass
+SBY 16:57:05 [config_prove] summary: Elapsed clock time [H:MM:SS (secs)]: 0:00:01 (1)
+SBY 16:57:05 [config_prove] summary: Elapsed process time [H:MM:SS (secs)]: 0:00:01 (1)
+SBY 16:57:05 [config_prove] summary: engine_0 (smtbmc boolector) returned pass for induction
+SBY 16:57:05 [config_prove] summary: engine_0 (smtbmc boolector) returned pass for basecase
+SBY 16:57:05 [config_prove] summary: successful proof by k-induction.
+SBY 16:57:05 [config_prove] DONE (PASS, rc=0)

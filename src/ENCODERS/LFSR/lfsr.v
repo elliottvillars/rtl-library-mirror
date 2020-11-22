@@ -65,6 +65,6 @@ generate
 endgenerate
 
 always@(*)
-	o_DATA_OUT = i_DATA_IN ^ r_LFSR[p_BITS_PER_CLOCK-1:0];
+	o_DATA_OUT = i_DATA_IN ^ r_LFSR[22:15];
 
 endmodule

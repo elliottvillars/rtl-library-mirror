@@ -39,7 +39,7 @@ int main(int argc, char ** argv) {
 	tick(top);
 	top->i_RESET = 0;
 
-	for (int i = 0; i < 256; i++) {
+	for (int i = 0; i < 3; i++) {
 		printf("Byte %d: %x\n",i,top->o_DATA_OUT);
 		printf("LFSR State: %x\n\n",top->o_STATE_OUT);
 		tick(top);

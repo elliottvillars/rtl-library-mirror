@@ -1,6 +1,6 @@
 # running in config_prove/src/
-read -formal accumulator.v
-prep -top accumulator
+read -formal accumulator_formal.v
+prep -top accumulator_formal
 memory_nordff
 async2sync
 chformal -assume -early

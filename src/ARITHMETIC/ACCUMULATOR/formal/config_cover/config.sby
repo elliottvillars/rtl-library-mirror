@@ -5,11 +5,11 @@
 
 [options]
 mode cover
-depth 64
+depth 16
 [engines]
 smtbmc boolector
 [files]
-accumulator.v
+accumulator_formal.v
 [script]
-read -formal accumulator.v
-prep -top accumulator
+read -formal accumulator_formal.v
+prep -top accumulator_formal

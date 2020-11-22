@@ -19,31 +19,33 @@
  |                                                                            |
  \----------------------------------------------------------------------------/
 
- Yosys 0.9+2406 (git sha1 000fd08198, g++ 9.3.0 -fPIC -Os)
+ Yosys 0.9+3675 (git sha1 71ca9a8253, g++ 9.3.0 -fPIC -Os)
 
 
 -- Executing script file `../model/design.ys' --
 
-1. Executing Verilog-2005 frontend: accumulator.v
-Parsing formal SystemVerilog input from `accumulator.v' to AST representation.
-Storing AST representation for module `$abstract\accumulator'.
+1. Executing Verilog-2005 frontend: accumulator_formal.v
+Parsing formal SystemVerilog input from `accumulator_formal.v' to AST representation.
+Warning: Found one of those horrible `(synopsys|synthesis) translate_off' comments.
+Yosys does support them but it is recommended to use `ifdef constructs instead!
+Storing AST representation for module `$abstract\accumulator_formal'.
 Successfully finished Verilog frontend.
 
 2. Executing PREP pass.
 
 2.1. Executing HIERARCHY pass (managing design hierarchy).
 
-2.2. Executing AST frontend in derive mode using pre-parsed AST for module `\accumulator'.
-Generating RTLIL representation for module `\accumulator'.
+2.2. Executing AST frontend in derive mode using pre-parsed AST for module `\accumulator_formal'.
+Generating RTLIL representation for module `\accumulator_formal'.
 
 2.2.1. Analyzing design hierarchy..
-Top module:  \accumulator
+Top module:  \accumulator_formal
 
 2.2.2. Analyzing design hierarchy..
-Top module:  \accumulator
-Removing unused module `$abstract\accumulator'.
+Top module:  \accumulator_formal
+Removing unused module `$abstract\accumulator_formal'.
 Removed 1 unused modules.
-Module accumulator directly or indirectly contains formal properties -> setting "keep" attribute.
+Module accumulator_formal directly or indirectly contains formal properties -> setting "keep" attribute.
 
 2.3. Executing PROC pass (convert processes to netlists).
 
@@ -51,240 +53,257 @@ Module accumulator directly or indirectly contains formal properties -> setting 
 Cleaned up 0 empty switches.
 
 2.3.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
-Marked 2 switch rules as full_case in process $proc$accumulator.v:67$25 in module accumulator.
-Marked 2 switch rules as full_case in process $proc$accumulator.v:53$21 in module accumulator.
+Marked 1 switch rules as full_case in process $proc$accumulator_formal.v:102$29 in module accumulator_formal.
+Marked 1 switch rules as full_case in process $proc$accumulator_formal.v:77$27 in module accumulator_formal.
 Removed a total of 0 dead cases.
 
 2.3.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
-Removed 1 redundant assignment.
-Promoted 24 assignments to connections.
+Removed 0 redundant assignments.
+Promoted 29 assignments to connections.
 
 2.3.4. Executing PROC_INIT pass (extract init attributes).
-Found init rule in `\accumulator.$proc$accumulator.v:0$104'.
-  Set init value: $formal$accumulator.v:85$20_EN = 1'0
-Found init rule in `\accumulator.$proc$accumulator.v:0$102'.
-  Set init value: $formal$accumulator.v:84$19_EN = 1'0
-Found init rule in `\accumulator.$proc$accumulator.v:0$100'.
-  Set init value: $formal$accumulator.v:83$18_EN = 1'0
-Found init rule in `\accumulator.$proc$accumulator.v:0$98'.
-  Set init value: $formal$accumulator.v:79$17_EN = 1'0
-Found init rule in `\accumulator.$proc$accumulator.v:0$96'.
-  Set init value: $formal$accumulator.v:77$16_EN = 1'0
-Found init rule in `\accumulator.$proc$accumulator.v:0$94'.
-  Set init value: $formal$accumulator.v:75$15_EN = 1'0
-Found init rule in `\accumulator.$proc$accumulator.v:0$92'.
-  Set init value: $formal$accumulator.v:73$14_EN = 1'0
-Found init rule in `\accumulator.$proc$accumulator.v:0$90'.
-  Set init value: $formal$accumulator.v:72$13_EN = 1'0
-Found init rule in `\accumulator.$proc$accumulator.v:0$88'.
-  Set init value: $formal$accumulator.v:68$12_EN = 1'0
-Found init rule in `\accumulator.$proc$accumulator.v:66$87'.
-  Set init value: \r_PAST_VALID = 1'0
+Found init rule in `\accumulator_formal.$proc$accumulator_formal.v:0$125'.
+  Set init value: $formal$accumulator_formal.v:121$25_EN = 1'0
+Found init rule in `\accumulator_formal.$proc$accumulator_formal.v:0$123'.
+  Set init value: $formal$accumulator_formal.v:120$24_EN = 1'0
+Found init rule in `\accumulator_formal.$proc$accumulator_formal.v:0$121'.
+  Set init value: $formal$accumulator_formal.v:119$23_EN = 1'0
+Found init rule in `\accumulator_formal.$proc$accumulator_formal.v:0$119'.
+  Set init value: $formal$accumulator_formal.v:115$22_EN = 1'0
+Found init rule in `\accumulator_formal.$proc$accumulator_formal.v:0$117'.
+  Set init value: $formal$accumulator_formal.v:113$21_EN = 1'0
+Found init rule in `\accumulator_formal.$proc$accumulator_formal.v:0$115'.
+  Set init value: $formal$accumulator_formal.v:111$20_EN = 1'0
+Found init rule in `\accumulator_formal.$proc$accumulator_formal.v:0$113'.
+  Set init value: $formal$accumulator_formal.v:109$19_EN = 1'0
+Found init rule in `\accumulator_formal.$proc$accumulator_formal.v:0$111'.
+  Set init value: $formal$accumulator_formal.v:108$18_EN = 1'0
+Found init rule in `\accumulator_formal.$proc$accumulator_formal.v:0$109'.
+  Set init value: $formal$accumulator_formal.v:107$17_EN = 1'0
+Found init rule in `\accumulator_formal.$proc$accumulator_formal.v:0$107'.
+  Set init value: $formal$accumulator_formal.v:104$16_EN = 1'0
+Found init rule in `\accumulator_formal.$proc$accumulator_formal.v:101$106'.
+  Set init value: \f_past_valid = 1'0
 
 2.3.5. Executing PROC_ARST pass (detect async resets in processes).
 
 2.3.6. Executing PROC_MUX pass (convert decision trees to multiplexers).
-Creating decoders for process `\accumulator.$proc$accumulator.v:0$104'.
-Creating decoders for process `\accumulator.$proc$accumulator.v:0$102'.
-Creating decoders for process `\accumulator.$proc$accumulator.v:0$100'.
-Creating decoders for process `\accumulator.$proc$accumulator.v:0$98'.
-Creating decoders for process `\accumulator.$proc$accumulator.v:0$96'.
-Creating decoders for process `\accumulator.$proc$accumulator.v:0$94'.
-Creating decoders for process `\accumulator.$proc$accumulator.v:0$92'.
-Creating decoders for process `\accumulator.$proc$accumulator.v:0$90'.
-Creating decoders for process `\accumulator.$proc$accumulator.v:0$88'.
-Creating decoders for process `\accumulator.$proc$accumulator.v:66$87'.
-Creating decoders for process `\accumulator.$proc$accumulator.v:67$25'.
-     1/16: $0$formal$accumulator.v:72$13_EN[0:0]$40
-     2/16: $0$formal$accumulator.v:72$13_CHECK[0:0]$39
-     3/16: $0$formal$accumulator.v:73$14_EN[0:0]$42
-     4/16: $0$formal$accumulator.v:73$14_CHECK[0:0]$41
-     5/16: $0$formal$accumulator.v:75$15_EN[0:0]$44
-     6/16: $0$formal$accumulator.v:75$15_CHECK[0:0]$43
-     7/16: $0$formal$accumulator.v:77$16_EN[0:0]$46
-     8/16: $0$formal$accumulator.v:77$16_CHECK[0:0]$45
-     9/16: $0$formal$accumulator.v:79$17_EN[0:0]$48
-    10/16: $0$formal$accumulator.v:79$17_CHECK[0:0]$47
-    11/16: $0$formal$accumulator.v:83$18_EN[0:0]$50
-    12/16: $0$formal$accumulator.v:83$18_CHECK[0:0]$49
-    13/16: $0$formal$accumulator.v:84$19_EN[0:0]$52
-    14/16: $0$formal$accumulator.v:84$19_CHECK[0:0]$51
-    15/16: $0$formal$accumulator.v:85$20_EN[0:0]$54
-    16/16: $0$formal$accumulator.v:85$20_CHECK[0:0]$53
-Creating decoders for process `\accumulator.$proc$accumulator.v:53$21'.
-     1/1: $0\o_ACCUMULATION[7:0]
+Creating decoders for process `\accumulator_formal.$proc$accumulator_formal.v:0$125'.
+Creating decoders for process `\accumulator_formal.$proc$accumulator_formal.v:0$123'.
+Creating decoders for process `\accumulator_formal.$proc$accumulator_formal.v:0$121'.
+Creating decoders for process `\accumulator_formal.$proc$accumulator_formal.v:0$119'.
+Creating decoders for process `\accumulator_formal.$proc$accumulator_formal.v:0$117'.
+Creating decoders for process `\accumulator_formal.$proc$accumulator_formal.v:0$115'.
+Creating decoders for process `\accumulator_formal.$proc$accumulator_formal.v:0$113'.
+Creating decoders for process `\accumulator_formal.$proc$accumulator_formal.v:0$111'.
+Creating decoders for process `\accumulator_formal.$proc$accumulator_formal.v:0$109'.
+Creating decoders for process `\accumulator_formal.$proc$accumulator_formal.v:0$107'.
+Creating decoders for process `\accumulator_formal.$proc$accumulator_formal.v:101$106'.
+Creating decoders for process `\accumulator_formal.$proc$accumulator_formal.v:102$29'.
+     1/18: $0$formal$accumulator_formal.v:107$17_EN[0:0]$48
+     2/18: $0$formal$accumulator_formal.v:107$17_CHECK[0:0]$47
+     3/18: $0$formal$accumulator_formal.v:108$18_EN[0:0]$50
+     4/18: $0$formal$accumulator_formal.v:108$18_CHECK[0:0]$49
+     5/18: $0$formal$accumulator_formal.v:109$19_EN[0:0]$52
+     6/18: $0$formal$accumulator_formal.v:109$19_CHECK[0:0]$51
+     7/18: $0$formal$accumulator_formal.v:111$20_EN[0:0]$54
+     8/18: $0$formal$accumulator_formal.v:111$20_CHECK[0:0]$53
+     9/18: $0$formal$accumulator_formal.v:113$21_EN[0:0]$56
+    10/18: $0$formal$accumulator_formal.v:113$21_CHECK[0:0]$55
+    11/18: $0$formal$accumulator_formal.v:115$22_EN[0:0]$58
+    12/18: $0$formal$accumulator_formal.v:115$22_CHECK[0:0]$57
+    13/18: $0$formal$accumulator_formal.v:119$23_EN[0:0]$60
+    14/18: $0$formal$accumulator_formal.v:119$23_CHECK[0:0]$59
+    15/18: $0$formal$accumulator_formal.v:120$24_EN[0:0]$62
+    16/18: $0$formal$accumulator_formal.v:120$24_CHECK[0:0]$61
+    17/18: $0$formal$accumulator_formal.v:121$25_EN[0:0]$64
+    18/18: $0$formal$accumulator_formal.v:121$25_CHECK[0:0]$63
+Creating decoders for process `\accumulator_formal.$proc$accumulator_formal.v:77$27'.
+     1/1: $0\total[31:0]
 
 2.3.7. Executing PROC_DLATCH pass (convert process syncs to latches).
 
 2.3.8. Executing PROC_DFF pass (convert process syncs to FFs).
-Creating register for signal `\accumulator.\r_PAST_VALID' using process `\accumulator.$proc$accumulator.v:67$25'.
-  created $dff cell `$procdff$174' with positive edge clock.
-Creating register for signal `\accumulator.$past$accumulator.v:69$1$0' using process `\accumulator.$proc$accumulator.v:67$25'.
-  created $dff cell `$procdff$175' with positive edge clock.
-Creating register for signal `\accumulator.$past$accumulator.v:71$2$0' using process `\accumulator.$proc$accumulator.v:67$25'.
-  created $dff cell `$procdff$176' with positive edge clock.
-Creating register for signal `\accumulator.$past$accumulator.v:75$3$0' using process `\accumulator.$proc$accumulator.v:67$25'.
-  created $dff cell `$procdff$177' with positive edge clock.
-Creating register for signal `\accumulator.$past$accumulator.v:77$4$0' using process `\accumulator.$proc$accumulator.v:67$25'.
-  created $dff cell `$procdff$178' with positive edge clock.
-Creating register for signal `\accumulator.$past$accumulator.v:78$5$0' using process `\accumulator.$proc$accumulator.v:67$25'.
-  created $dff cell `$procdff$179' with positive edge clock.
-Creating register for signal `\accumulator.$past$accumulator.v:78$6$0' using process `\accumulator.$proc$accumulator.v:67$25'.
-  created $dff cell `$procdff$180' with positive edge clock.
-Creating register for signal `\accumulator.$past$accumulator.v:80$7$0' using process `\accumulator.$proc$accumulator.v:67$25'.
-  created $dff cell `$procdff$181' with positive edge clock.
-Creating register for signal `\accumulator.$past$accumulator.v:82$8$0' using process `\accumulator.$proc$accumulator.v:67$25'.
-  created $dff cell `$procdff$182' with positive edge clock.
-Creating register for signal `\accumulator.$past$accumulator.v:84$9$0' using process `\accumulator.$proc$accumulator.v:67$25'.
-  created $dff cell `$procdff$183' with positive edge clock.
-Creating register for signal `\accumulator.$past$accumulator.v:85$10$0' using process `\accumulator.$proc$accumulator.v:67$25'.
-  created $dff cell `$procdff$184' with positive edge clock.
-Creating register for signal `\accumulator.$past$accumulator.v:86$11$0' using process `\accumulator.$proc$accumulator.v:67$25'.
-  created $dff cell `$procdff$185' with positive edge clock.
-Creating register for signal `\accumulator.$formal$accumulator.v:68$12_CHECK' using process `\accumulator.$proc$accumulator.v:67$25'.
-  created $dff cell `$procdff$186' with positive edge clock.
-Creating register for signal `\accumulator.$formal$accumulator.v:68$12_EN' using process `\accumulator.$proc$accumulator.v:67$25'.
-  created $dff cell `$procdff$187' with positive edge clock.
-Creating register for signal `\accumulator.$formal$accumulator.v:72$13_CHECK' using process `\accumulator.$proc$accumulator.v:67$25'.
+Creating register for signal `\accumulator_formal.\f_past_valid' using process `\accumulator_formal.$proc$accumulator_formal.v:102$29'.
   created $dff cell `$procdff$188' with positive edge clock.
-Creating register for signal `\accumulator.$formal$accumulator.v:72$13_EN' using process `\accumulator.$proc$accumulator.v:67$25'.
+Creating register for signal `\accumulator_formal.$past$accumulator_formal.v:105$1$0' using process `\accumulator_formal.$proc$accumulator_formal.v:102$29'.
   created $dff cell `$procdff$189' with positive edge clock.
-Creating register for signal `\accumulator.$formal$accumulator.v:73$14_CHECK' using process `\accumulator.$proc$accumulator.v:67$25'.
+Creating register for signal `\accumulator_formal.$past$accumulator_formal.v:106$2$0' using process `\accumulator_formal.$proc$accumulator_formal.v:102$29'.
   created $dff cell `$procdff$190' with positive edge clock.
-Creating register for signal `\accumulator.$formal$accumulator.v:73$14_EN' using process `\accumulator.$proc$accumulator.v:67$25'.
+Creating register for signal `\accumulator_formal.$past$accumulator_formal.v:108$3$0' using process `\accumulator_formal.$proc$accumulator_formal.v:102$29'.
   created $dff cell `$procdff$191' with positive edge clock.
-Creating register for signal `\accumulator.$formal$accumulator.v:75$15_CHECK' using process `\accumulator.$proc$accumulator.v:67$25'.
+Creating register for signal `\accumulator_formal.$past$accumulator_formal.v:109$4$0' using process `\accumulator_formal.$proc$accumulator_formal.v:102$29'.
   created $dff cell `$procdff$192' with positive edge clock.
-Creating register for signal `\accumulator.$formal$accumulator.v:75$15_EN' using process `\accumulator.$proc$accumulator.v:67$25'.
+Creating register for signal `\accumulator_formal.$past$accumulator_formal.v:110$5$0' using process `\accumulator_formal.$proc$accumulator_formal.v:102$29'.
   created $dff cell `$procdff$193' with positive edge clock.
-Creating register for signal `\accumulator.$formal$accumulator.v:77$16_CHECK' using process `\accumulator.$proc$accumulator.v:67$25'.
+Creating register for signal `\accumulator_formal.$past$accumulator_formal.v:111$6$0' using process `\accumulator_formal.$proc$accumulator_formal.v:102$29'.
   created $dff cell `$procdff$194' with positive edge clock.
-Creating register for signal `\accumulator.$formal$accumulator.v:77$16_EN' using process `\accumulator.$proc$accumulator.v:67$25'.
+Creating register for signal `\accumulator_formal.$past$accumulator_formal.v:113$7$0' using process `\accumulator_formal.$proc$accumulator_formal.v:102$29'.
   created $dff cell `$procdff$195' with positive edge clock.
-Creating register for signal `\accumulator.$formal$accumulator.v:79$17_CHECK' using process `\accumulator.$proc$accumulator.v:67$25'.
+Creating register for signal `\accumulator_formal.$past$accumulator_formal.v:114$8$0' using process `\accumulator_formal.$proc$accumulator_formal.v:102$29'.
   created $dff cell `$procdff$196' with positive edge clock.
-Creating register for signal `\accumulator.$formal$accumulator.v:79$17_EN' using process `\accumulator.$proc$accumulator.v:67$25'.
+Creating register for signal `\accumulator_formal.$past$accumulator_formal.v:114$9$0' using process `\accumulator_formal.$proc$accumulator_formal.v:102$29'.
   created $dff cell `$procdff$197' with positive edge clock.
-Creating register for signal `\accumulator.$formal$accumulator.v:83$18_CHECK' using process `\accumulator.$proc$accumulator.v:67$25'.
+Creating register for signal `\accumulator_formal.$past$accumulator_formal.v:115$10$0' using process `\accumulator_formal.$proc$accumulator_formal.v:102$29'.
   created $dff cell `$procdff$198' with positive edge clock.
-Creating register for signal `\accumulator.$formal$accumulator.v:83$18_EN' using process `\accumulator.$proc$accumulator.v:67$25'.
+Creating register for signal `\accumulator_formal.$past$accumulator_formal.v:116$11$0' using process `\accumulator_formal.$proc$accumulator_formal.v:102$29'.
   created $dff cell `$procdff$199' with positive edge clock.
-Creating register for signal `\accumulator.$formal$accumulator.v:84$19_CHECK' using process `\accumulator.$proc$accumulator.v:67$25'.
+Creating register for signal `\accumulator_formal.$past$accumulator_formal.v:118$12$0' using process `\accumulator_formal.$proc$accumulator_formal.v:102$29'.
   created $dff cell `$procdff$200' with positive edge clock.
-Creating register for signal `\accumulator.$formal$accumulator.v:84$19_EN' using process `\accumulator.$proc$accumulator.v:67$25'.
+Creating register for signal `\accumulator_formal.$past$accumulator_formal.v:120$13$0' using process `\accumulator_formal.$proc$accumulator_formal.v:102$29'.
   created $dff cell `$procdff$201' with positive edge clock.
-Creating register for signal `\accumulator.$formal$accumulator.v:85$20_CHECK' using process `\accumulator.$proc$accumulator.v:67$25'.
+Creating register for signal `\accumulator_formal.$past$accumulator_formal.v:121$14$0' using process `\accumulator_formal.$proc$accumulator_formal.v:102$29'.
   created $dff cell `$procdff$202' with positive edge clock.
-Creating register for signal `\accumulator.$formal$accumulator.v:85$20_EN' using process `\accumulator.$proc$accumulator.v:67$25'.
+Creating register for signal `\accumulator_formal.$past$accumulator_formal.v:122$15$0' using process `\accumulator_formal.$proc$accumulator_formal.v:102$29'.
   created $dff cell `$procdff$203' with positive edge clock.
-Creating register for signal `\accumulator.\o_ACCUMULATION' using process `\accumulator.$proc$accumulator.v:53$21'.
+Creating register for signal `\accumulator_formal.$formal$accumulator_formal.v:104$16_CHECK' using process `\accumulator_formal.$proc$accumulator_formal.v:102$29'.
   created $dff cell `$procdff$204' with positive edge clock.
+Creating register for signal `\accumulator_formal.$formal$accumulator_formal.v:104$16_EN' using process `\accumulator_formal.$proc$accumulator_formal.v:102$29'.
+  created $dff cell `$procdff$205' with positive edge clock.
+Creating register for signal `\accumulator_formal.$formal$accumulator_formal.v:107$17_CHECK' using process `\accumulator_formal.$proc$accumulator_formal.v:102$29'.
+  created $dff cell `$procdff$206' with positive edge clock.
+Creating register for signal `\accumulator_formal.$formal$accumulator_formal.v:107$17_EN' using process `\accumulator_formal.$proc$accumulator_formal.v:102$29'.
+  created $dff cell `$procdff$207' with positive edge clock.
+Creating register for signal `\accumulator_formal.$formal$accumulator_formal.v:108$18_CHECK' using process `\accumulator_formal.$proc$accumulator_formal.v:102$29'.
+  created $dff cell `$procdff$208' with positive edge clock.
+Creating register for signal `\accumulator_formal.$formal$accumulator_formal.v:108$18_EN' using process `\accumulator_formal.$proc$accumulator_formal.v:102$29'.
+  created $dff cell `$procdff$209' with positive edge clock.
+Creating register for signal `\accumulator_formal.$formal$accumulator_formal.v:109$19_CHECK' using process `\accumulator_formal.$proc$accumulator_formal.v:102$29'.
+  created $dff cell `$procdff$210' with positive edge clock.
+Creating register for signal `\accumulator_formal.$formal$accumulator_formal.v:109$19_EN' using process `\accumulator_formal.$proc$accumulator_formal.v:102$29'.
+  created $dff cell `$procdff$211' with positive edge clock.
+Creating register for signal `\accumulator_formal.$formal$accumulator_formal.v:111$20_CHECK' using process `\accumulator_formal.$proc$accumulator_formal.v:102$29'.
+  created $dff cell `$procdff$212' with positive edge clock.
+Creating register for signal `\accumulator_formal.$formal$accumulator_formal.v:111$20_EN' using process `\accumulator_formal.$proc$accumulator_formal.v:102$29'.
+  created $dff cell `$procdff$213' with positive edge clock.
+Creating register for signal `\accumulator_formal.$formal$accumulator_formal.v:113$21_CHECK' using process `\accumulator_formal.$proc$accumulator_formal.v:102$29'.
+  created $dff cell `$procdff$214' with positive edge clock.
+Creating register for signal `\accumulator_formal.$formal$accumulator_formal.v:113$21_EN' using process `\accumulator_formal.$proc$accumulator_formal.v:102$29'.
+  created $dff cell `$procdff$215' with positive edge clock.
+Creating register for signal `\accumulator_formal.$formal$accumulator_formal.v:115$22_CHECK' using process `\accumulator_formal.$proc$accumulator_formal.v:102$29'.
+  created $dff cell `$procdff$216' with positive edge clock.
+Creating register for signal `\accumulator_formal.$formal$accumulator_formal.v:115$22_EN' using process `\accumulator_formal.$proc$accumulator_formal.v:102$29'.
+  created $dff cell `$procdff$217' with positive edge clock.
+Creating register for signal `\accumulator_formal.$formal$accumulator_formal.v:119$23_CHECK' using process `\accumulator_formal.$proc$accumulator_formal.v:102$29'.
+  created $dff cell `$procdff$218' with positive edge clock.
+Creating register for signal `\accumulator_formal.$formal$accumulator_formal.v:119$23_EN' using process `\accumulator_formal.$proc$accumulator_formal.v:102$29'.
+  created $dff cell `$procdff$219' with positive edge clock.
+Creating register for signal `\accumulator_formal.$formal$accumulator_formal.v:120$24_CHECK' using process `\accumulator_formal.$proc$accumulator_formal.v:102$29'.
+  created $dff cell `$procdff$220' with positive edge clock.
+Creating register for signal `\accumulator_formal.$formal$accumulator_formal.v:120$24_EN' using process `\accumulator_formal.$proc$accumulator_formal.v:102$29'.
+  created $dff cell `$procdff$221' with positive edge clock.
+Creating register for signal `\accumulator_formal.$formal$accumulator_formal.v:121$25_CHECK' using process `\accumulator_formal.$proc$accumulator_formal.v:102$29'.
+  created $dff cell `$procdff$222' with positive edge clock.
+Creating register for signal `\accumulator_formal.$formal$accumulator_formal.v:121$25_EN' using process `\accumulator_formal.$proc$accumulator_formal.v:102$29'.
+  created $dff cell `$procdff$223' with positive edge clock.
+Creating register for signal `\accumulator_formal.\total' using process `\accumulator_formal.$proc$accumulator_formal.v:77$27'.
+  created $dff cell `$procdff$224' with positive edge clock.
 
 2.3.9. Executing PROC_CLEAN pass (remove empty switches from decision trees).
-Removing empty process `accumulator.$proc$accumulator.v:0$104'.
-Removing empty process `accumulator.$proc$accumulator.v:0$102'.
-Removing empty process `accumulator.$proc$accumulator.v:0$100'.
-Removing empty process `accumulator.$proc$accumulator.v:0$98'.
-Removing empty process `accumulator.$proc$accumulator.v:0$96'.
-Removing empty process `accumulator.$proc$accumulator.v:0$94'.
-Removing empty process `accumulator.$proc$accumulator.v:0$92'.
-Removing empty process `accumulator.$proc$accumulator.v:0$90'.
-Removing empty process `accumulator.$proc$accumulator.v:0$88'.
-Removing empty process `accumulator.$proc$accumulator.v:66$87'.
-Found and cleaned up 4 empty switches in `\accumulator.$proc$accumulator.v:67$25'.
-Removing empty process `accumulator.$proc$accumulator.v:67$25'.
-Found and cleaned up 2 empty switches in `\accumulator.$proc$accumulator.v:53$21'.
-Removing empty process `accumulator.$proc$accumulator.v:53$21'.
-Cleaned up 6 empty switches.
+Removing empty process `accumulator_formal.$proc$accumulator_formal.v:0$125'.
+Removing empty process `accumulator_formal.$proc$accumulator_formal.v:0$123'.
+Removing empty process `accumulator_formal.$proc$accumulator_formal.v:0$121'.
+Removing empty process `accumulator_formal.$proc$accumulator_formal.v:0$119'.
+Removing empty process `accumulator_formal.$proc$accumulator_formal.v:0$117'.
+Removing empty process `accumulator_formal.$proc$accumulator_formal.v:0$115'.
+Removing empty process `accumulator_formal.$proc$accumulator_formal.v:0$113'.
+Removing empty process `accumulator_formal.$proc$accumulator_formal.v:0$111'.
+Removing empty process `accumulator_formal.$proc$accumulator_formal.v:0$109'.
+Removing empty process `accumulator_formal.$proc$accumulator_formal.v:0$107'.
+Removing empty process `accumulator_formal.$proc$accumulator_formal.v:101$106'.
+Found and cleaned up 5 empty switches in `\accumulator_formal.$proc$accumulator_formal.v:102$29'.
+Removing empty process `accumulator_formal.$proc$accumulator_formal.v:102$29'.
+Found and cleaned up 2 empty switches in `\accumulator_formal.$proc$accumulator_formal.v:77$27'.
+Removing empty process `accumulator_formal.$proc$accumulator_formal.v:77$27'.
+Cleaned up 7 empty switches.
 
 2.4. Executing OPT_EXPR pass (perform const folding).
-Optimizing module accumulator.
-<suppressed ~12 debug messages>
+Optimizing module accumulator_formal.
+<suppressed ~16 debug messages>
 
 2.5. Executing OPT_CLEAN pass (remove unused cells and wires).
-Finding unused cells or wires in module \accumulator..
-Removed 1 unused cells and 75 unused wires.
-<suppressed ~2 debug messages>
+Finding unused cells or wires in module \accumulator_formal..
+Removed 3 unused cells and 80 unused wires.
+<suppressed ~4 debug messages>
 
 2.6. Executing CHECK pass (checking for obvious problems).
-checking module accumulator..
+checking module accumulator_formal..
 found and reported 0 problems.
 
 2.7. Executing OPT pass (performing simple optimizations).
 
 2.7.1. Executing OPT_EXPR pass (perform const folding).
-Optimizing module accumulator.
+Optimizing module accumulator_formal.
 
 2.7.2. Executing OPT_MERGE pass (detect identical cells).
-Finding identical cells in module `\accumulator'.
-<suppressed ~33 debug messages>
-Removed a total of 11 cells.
+Finding identical cells in module `\accumulator_formal'.
+<suppressed ~48 debug messages>
+Removed a total of 16 cells.
 
 2.7.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
-Running muxtree optimizer on module \accumulator..
+Running muxtree optimizer on module \accumulator_formal..
   Creating internal representation of mux trees.
   Evaluating internal representation of mux trees.
   Analyzing evaluation results.
 Removed 0 multiplexer ports.
-<suppressed ~17 debug messages>
+<suppressed ~19 debug messages>
 
 2.7.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
-  Optimizing cells in module \accumulator.
+  Optimizing cells in module \accumulator_formal.
 Performed a total of 0 changes.
 
 2.7.5. Executing OPT_MERGE pass (detect identical cells).
-Finding identical cells in module `\accumulator'.
-<suppressed ~18 debug messages>
-Removed a total of 6 cells.
+Finding identical cells in module `\accumulator_formal'.
+<suppressed ~24 debug messages>
+Removed a total of 8 cells.
 
 2.7.6. Executing OPT_CLEAN pass (remove unused cells and wires).
-Finding unused cells or wires in module \accumulator..
-Removed 0 unused cells and 17 unused wires.
+Finding unused cells or wires in module \accumulator_formal..
+Removed 0 unused cells and 24 unused wires.
 <suppressed ~1 debug messages>
 
 2.7.7. Executing OPT_EXPR pass (perform const folding).
-Optimizing module accumulator.
+Optimizing module accumulator_formal.
 
 2.7.8. Rerunning OPT passes. (Maybe there is more to do..)
 
 2.7.9. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
-Running muxtree optimizer on module \accumulator..
+Running muxtree optimizer on module \accumulator_formal..
   Creating internal representation of mux trees.
   Evaluating internal representation of mux trees.
   Analyzing evaluation results.
 Removed 0 multiplexer ports.
-<suppressed ~14 debug messages>
+<suppressed ~15 debug messages>
 
 2.7.10. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
-  Optimizing cells in module \accumulator.
+  Optimizing cells in module \accumulator_formal.
 Performed a total of 0 changes.
 
 2.7.11. Executing OPT_MERGE pass (detect identical cells).
-Finding identical cells in module `\accumulator'.
+Finding identical cells in module `\accumulator_formal'.
 Removed a total of 0 cells.
 
 2.7.12. Executing OPT_CLEAN pass (remove unused cells and wires).
-Finding unused cells or wires in module \accumulator..
+Finding unused cells or wires in module \accumulator_formal..
 
 2.7.13. Executing OPT_EXPR pass (perform const folding).
-Optimizing module accumulator.
+Optimizing module accumulator_formal.
 
 2.7.14. Finished OPT passes. (There is nothing left to do.)
 
 2.8. Executing WREDUCE pass (reducing word size of cells).
-Removed top 31 bits (of 32) from port B of cell accumulator.$and$accumulator.v:0$57 ($and).
-Removed top 31 bits (of 32) from port Y of cell accumulator.$and$accumulator.v:0$57 ($and).
-Removed top 31 bits (of 32) from port B of cell accumulator.$and$accumulator.v:0$59 ($and).
-Removed top 31 bits (of 32) from port Y of cell accumulator.$and$accumulator.v:0$59 ($and).
-Removed top 31 bits (of 32) from port B of cell accumulator.$eq$accumulator.v:73$62 ($eq).
-Removed top 24 bits (of 32) from port B of cell accumulator.$eq$accumulator.v:74$63 ($eq).
-Removed top 31 bits (of 32) from wire accumulator.$and$accumulator.v:0$57_Y.
-Removed top 31 bits (of 32) from wire accumulator.$and$accumulator.v:0$59_Y.
+Removed top 31 bits (of 32) from port B of cell accumulator_formal.$and$accumulator_formal.v:0$66 ($and).
+Removed top 31 bits (of 32) from port Y of cell accumulator_formal.$and$accumulator_formal.v:0$66 ($and).
+Removed top 31 bits (of 32) from port B of cell accumulator_formal.$and$accumulator_formal.v:0$68 ($and).
+Removed top 31 bits (of 32) from port Y of cell accumulator_formal.$and$accumulator_formal.v:0$68 ($and).
+Removed top 25 bits (of 32) from port B of cell accumulator_formal.$eq$accumulator_formal.v:109$75 ($eq).
+Removed top 31 bits (of 32) from wire accumulator_formal.$and$accumulator_formal.v:0$66_Y.
+Removed top 31 bits (of 32) from wire accumulator_formal.$and$accumulator_formal.v:0$68_Y.
 
 2.9. Executing MEMORY_DFF pass (merging $dff cells to $memrd and $memwr).
 
 2.10. Executing OPT_CLEAN pass (remove unused cells and wires).
-Finding unused cells or wires in module \accumulator..
+Finding unused cells or wires in module \accumulator_formal..
 Removed 0 unused cells and 2 unused wires.
 <suppressed ~1 debug messages>
 
@@ -293,15 +312,15 @@ Removed 0 unused cells and 2 unused wires.
 2.12. Executing OPT pass (performing simple optimizations).
 
 2.12.1. Executing OPT_EXPR pass (perform const folding).
-Optimizing module accumulator.
+Optimizing module accumulator_formal.
 <suppressed ~2 debug messages>
 
 2.12.2. Executing OPT_MERGE pass (detect identical cells).
-Finding identical cells in module `\accumulator'.
+Finding identical cells in module `\accumulator_formal'.
 Removed a total of 0 cells.
 
 2.12.3. Executing OPT_CLEAN pass (remove unused cells and wires).
-Finding unused cells or wires in module \accumulator..
+Finding unused cells or wires in module \accumulator_formal..
 Removed 0 unused cells and 2 unused wires.
 <suppressed ~1 debug messages>
 
@@ -309,37 +328,37 @@ Removed 0 unused cells and 2 unused wires.
 
 2.13. Printing statistics.
 
-=== accumulator ===
+=== accumulator_formal ===
 
-   Number of wires:                 64
-   Number of wire bits:            120
-   Number of public wires:           6
-   Number of public wire bits:      20
+   Number of wires:                 75
+   Number of wire bits:            354
+   Number of public wires:           9
+   Number of public wire bits:     133
    Number of memories:               0
    Number of memory bits:            0
    Number of processes:              0
-   Number of cells:                 69
+   Number of cells:                 79
      $add                            2
      $assert                         3
      $assume                         4
-     $cover                          2
-     $dff                           21
+     $cover                          3
+     $dff                           24
      $eq                             7
-     $logic_and                      2
-     $logic_not                      2
-     $mux                           25
+     $logic_and                      7
+     $logic_not                      4
+     $mux                           24
      $ne                             1
 
 2.14. Executing CHECK pass (checking for obvious problems).
-checking module accumulator..
+checking module accumulator_formal..
 found and reported 0 problems.
 
-3. Executing MEMORY_NORDFF pass (extracting $dff cells from $mem).
+3. Executing MEMORY_NORDFF pass (extracting $dff cells from memories).
 
 4. Executing ASYNC2SYNC pass.
 
 5. Executing OPT_CLEAN pass (remove unused cells and wires).
-Finding unused cells or wires in module \accumulator..
+Finding unused cells or wires in module \accumulator_formal..
 Removed 5 unused cells and 4 unused wires.
 <suppressed ~6 debug messages>
 
@@ -348,54 +367,58 @@ Removed 5 unused cells and 4 unused wires.
 7. Executing OPT pass (performing simple optimizations).
 
 7.1. Executing OPT_EXPR pass (perform const folding).
-Optimizing module accumulator.
+Optimizing module accumulator_formal.
 
 7.2. Executing OPT_MERGE pass (detect identical cells).
-Finding identical cells in module `\accumulator'.
+Finding identical cells in module `\accumulator_formal'.
 Removed a total of 0 cells.
 
-7.3. Executing OPT_RMDFF pass (remove dff with constant values).
-Promoting init spec $formal$accumulator.v:83$18_EN = 1'0 to constant driver in module accumulator.
-Promoted 1 init specs to constant drivers.
+7.3. Executing OPT_DFF pass (perform DFF optimizations).
+Adding SRST signal on $procdff$224 ($dff) from module accumulator_formal (D = $procmux$183_Y, Q = \total, rval = 0).
+Adding EN signal on $auto$opt_dff.cc:702:run$253 ($sdff) from module accumulator_formal (D = \total$D_IN, Q = \total).
+Adding SRST signal on $procdff$217 ($dff) from module accumulator_formal (D = $procmux$157_Y, Q = $formal$accumulator_formal.v:115$22_EN, rval = 1'0).
+Adding SRST signal on $procdff$215 ($dff) from module accumulator_formal (D = $procmux$148_Y, Q = $formal$accumulator_formal.v:113$21_EN, rval = 1'0).
+Adding SRST signal on $procdff$213 ($dff) from module accumulator_formal (D = $procmux$139_Y, Q = $formal$accumulator_formal.v:111$20_EN, rval = 1'0).
 
 7.4. Executing OPT_CLEAN pass (remove unused cells and wires).
-Finding unused cells or wires in module \accumulator..
-Removed 0 unused cells and 1 unused wires.
-<suppressed ~1 debug messages>
+Finding unused cells or wires in module \accumulator_formal..
+Removed 6 unused cells and 6 unused wires.
+<suppressed ~7 debug messages>
 
 7.5. Rerunning OPT passes. (Removed registers in this run.)
 
 7.6. Executing OPT_EXPR pass (perform const folding).
-Optimizing module accumulator.
+Optimizing module accumulator_formal.
 
 7.7. Executing OPT_MERGE pass (detect identical cells).
-Finding identical cells in module `\accumulator'.
+Finding identical cells in module `\accumulator_formal'.
 Removed a total of 0 cells.
 
-7.8. Executing OPT_RMDFF pass (remove dff with constant values).
+7.8. Executing OPT_DFF pass (perform DFF optimizations).
 
 7.9. Executing OPT_CLEAN pass (remove unused cells and wires).
-Finding unused cells or wires in module \accumulator..
+Finding unused cells or wires in module \accumulator_formal..
 
 7.10. Finished fast OPT passes.
 
 8. Executing CHECK pass (checking for obvious problems).
-checking module accumulator..
+checking module accumulator_formal..
 found and reported 0 problems.
 
 9. Executing HIERARCHY pass (managing design hierarchy).
 
 9.1. Analyzing design hierarchy..
-Top module:  \accumulator
+Top module:  \accumulator_formal
 
 9.2. Analyzing design hierarchy..
-Top module:  \accumulator
+Top module:  \accumulator_formal
 Removed 0 unused modules.
-Module accumulator directly or indirectly contains formal properties -> setting "keep" attribute.
+Module accumulator_formal directly or indirectly contains formal properties -> setting "keep" attribute.
 
-10. Executing ILANG backend.
+10. Executing RTLIL backend.
 Output filename: ../model/design.il
 
-End of script. Logfile hash: 0662c7a3b9, CPU: user 0.08s system 0.00s, MEM: 13.86 MB peak
-Yosys 0.9+2406 (git sha1 000fd08198, g++ 9.3.0 -fPIC -Os)
-Time spent: 24% 8x opt_clean (0 sec), 16% 6x opt_merge (0 sec), ...
+Warnings: 1 unique messages, 1 total
+End of script. Logfile hash: 45640c523e, CPU: user 0.07s system 0.00s, MEM: 14.31 MB peak
+Yosys 0.9+3675 (git sha1 71ca9a8253, g++ 9.3.0 -fPIC -Os)
+Time spent: 26% 8x opt_clean (0 sec), 21% 7x opt_expr (0 sec), ...
