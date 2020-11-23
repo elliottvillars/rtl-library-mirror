@@ -1,6 +1,6 @@
 # running in config_cover/src/
-read -formal accumulator_formal.v
-prep -top accumulator_formal
+read -formal mkAccumulator_formal.v
+prep -top mkAccumulator_formal
 memory_nordff
 async2sync
 chformal -assume -early

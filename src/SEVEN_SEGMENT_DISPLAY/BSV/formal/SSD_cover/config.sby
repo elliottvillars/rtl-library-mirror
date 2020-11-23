@@ -1,0 +1,13 @@
+[engines]
+smtbmc yices
+
+[options]
+mode cover
+depth 16
+
+[files]
+./ssd_driver_formal.v
+
+[script]
+read -formal ./ssd_driver_formal.v
+prep -top ssd_driver_formal

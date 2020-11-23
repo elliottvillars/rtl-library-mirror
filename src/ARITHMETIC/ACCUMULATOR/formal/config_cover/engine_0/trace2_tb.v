@@ -12,7 +12,7 @@ module testbench(input clock, output reg genclock);
   reg [0:0] PI_i_ENABLE;
   reg [31:0] PI_i_DATA_IN;
   reg [0:0] PI_i_RESET_N;
-  accumulator_formal UUT (
+  mkAccumulator_formal UUT (
     .i_CLK(PI_i_CLK),
     .i_ENABLE(PI_i_ENABLE),
     .i_DATA_IN(PI_i_DATA_IN),
@@ -35,25 +35,25 @@ module testbench(input clock, output reg genclock);
 `ifndef VERILATOR
     #1;
 `endif
-    // UUT.$and$accumulator_formal.\v:0$66_Y  = 1'b1;
-    // UUT.$formal$accumulator_formal.\v:107$17_CHECK  = 1'b0;
-    // UUT.$formal$accumulator_formal.\v:107$17_EN  = 1'b0;
-    // UUT.$formal$accumulator_formal.\v:108$18_CHECK  = 1'b0;
-    // UUT.$formal$accumulator_formal.\v:109$19_CHECK  = 1'b0;
-    // UUT.$formal$accumulator_formal.\v:111$20_CHECK  = 1'b0;
-    // UUT.$formal$accumulator_formal.\v:111$20_EN  = 1'b0;
-    // UUT.$formal$accumulator_formal.\v:113$21_CHECK  = 1'b0;
-    // UUT.$formal$accumulator_formal.\v:113$21_EN  = 1'b0;
-    // UUT.$formal$accumulator_formal.\v:115$22_CHECK  = 1'b0;
-    // UUT.$formal$accumulator_formal.\v:115$22_EN  = 1'b0;
-    // UUT.$past$accumulator_formal.\v:108$3$0  = 32'b00000000000000000000000000000000;
-    // UUT.$past$accumulator_formal.\v:111$6$0  = 1'b1;
-    // UUT.$past$accumulator_formal.\v:113$7$0  = 1'b0;
-    // UUT.$past$accumulator_formal.\v:114$9$0  = 32'b11111111111111111111111111100000;
-    // UUT.$past$accumulator_formal.\v:115$10$0  = 1'b0;
-    // UUT.$past$accumulator_formal.\v:120$13$0  = 1'b1;
+    // UUT.$and$mkAccumulator_formal.\v:0$66_Y  = 1'b1;
+    // UUT.$formal$mkAccumulator_formal.\v:106$17_CHECK  = 1'b0;
+    // UUT.$formal$mkAccumulator_formal.\v:106$17_EN  = 1'b0;
+    // UUT.$formal$mkAccumulator_formal.\v:107$18_CHECK  = 1'b0;
+    // UUT.$formal$mkAccumulator_formal.\v:108$19_CHECK  = 1'b0;
+    // UUT.$formal$mkAccumulator_formal.\v:110$20_CHECK  = 1'b0;
+    // UUT.$formal$mkAccumulator_formal.\v:110$20_EN  = 1'b0;
+    // UUT.$formal$mkAccumulator_formal.\v:112$21_CHECK  = 1'b0;
+    // UUT.$formal$mkAccumulator_formal.\v:112$21_EN  = 1'b0;
+    // UUT.$formal$mkAccumulator_formal.\v:114$22_CHECK  = 1'b0;
+    // UUT.$formal$mkAccumulator_formal.\v:114$22_EN  = 1'b0;
+    // UUT.$past$mkAccumulator_formal.\v:107$3$0  = 32'b00000000000000000000000000000000;
+    // UUT.$past$mkAccumulator_formal.\v:110$6$0  = 1'b1;
+    // UUT.$past$mkAccumulator_formal.\v:112$7$0  = 1'b0;
+    // UUT.$past$mkAccumulator_formal.\v:113$9$0  = 32'b11111111111111111111111111100000;
+    // UUT.$past$mkAccumulator_formal.\v:114$10$0  = 1'b0;
+    // UUT.$past$mkAccumulator_formal.\v:119$13$0  = 1'b1;
+    UUT.acc_total = 32'b00000000000000000000000000000000;
     UUT.f_past_valid = 1'b0;
-    UUT.total = 32'b00000000000000000000000000000000;
 
     // state 0
     PI_i_CLK = 1'b0;

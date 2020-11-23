@@ -1,0 +1,34 @@
+reg f_past_data = 0;
+always@(posedge i_CLK)
+begin
+	f_past_data <= 1;
+	assume($changed(i_CLK));
+	if($rose(i_CLK) && f_past_data)
+	begin
+		if($past(!i_RESET_N))
+		begin
+			assert(digits_0 == 0);
+			assert(digits_1 == 0);
+			assert(digits_2 == 0);
+			assert(digits_3 == 0);
+			assert(d_switch == 0);
+		end
+		else
+		begin
+			cover(o_ANODES == 'b0111 && $past(o_ANODES == 'b1011));
+			if($past(i_SW_ENABLE && i_DRIVE_ENABLE))
+			begin
+				assert($changed(d_switch));
+				assert($changed(digits_0));
+				if($past(digits_0) == 'hF)
+					assert($changed(digits_1));
+				if($past(digits_1) == 'hF)
+					assert($changed(digits_2));
+				if($past(digits_2) == 'hF)
+					assert($changed(digits_3));
+
+			end
+		end
+	end
+end
+

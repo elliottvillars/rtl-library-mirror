@@ -1,5 +1,5 @@
 
-set top "accumulator"
+set top "mkAccumulator"
 set vdir "./hdl"
 set bdir "./build"
 set simdir "./sim"

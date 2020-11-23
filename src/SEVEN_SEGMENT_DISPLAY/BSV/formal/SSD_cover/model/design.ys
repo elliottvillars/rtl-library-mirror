@@ -1,0 +1,13 @@
+# running in SSD_cover/src/
+read -formal ./ssd_driver_formal.v
+prep -top ssd_driver_formal
+memory_nordff
+async2sync
+chformal -assume -early
+chformal -live -fair -remove
+opt_clean
+setundef -anyseq
+opt -keepdc -fast
+check
+hierarchy -simcheck
+write_ilang ../model/design.il

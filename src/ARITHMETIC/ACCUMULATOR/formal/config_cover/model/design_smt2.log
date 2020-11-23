@@ -31,7 +31,7 @@ Input filename: design.il
 
 3. Printing statistics.
 
-=== accumulator_formal ===
+=== mkAccumulator_formal ===
 
    Number of wires:                 85
    Number of wire bits:            364
@@ -56,8 +56,8 @@ Input filename: design.il
      $reduce_or                      1
 
 4. Executing SMT2 backend.
-Creating SMT-LIBv2 representation of module accumulator_formal.
+Creating SMT-LIBv2 representation of module mkAccumulator_formal.
 
-End of script. Logfile hash: 97f8b05342, CPU: user 0.01s system 0.00s, MEM: 13.36 MB peak
+End of script. Logfile hash: 418ce1ace0, CPU: user 0.01s system 0.00s, MEM: 13.51 MB peak
 Yosys 0.9+3675 (git sha1 71ca9a8253, g++ 9.3.0 -fPIC -Os)
-Time spent: 51% 2x write_smt2 (0 sec), 41% 2x read_ilang (0 sec), ...
+Time spent: 54% 2x write_smt2 (0 sec), 38% 2x read_ilang (0 sec), ...

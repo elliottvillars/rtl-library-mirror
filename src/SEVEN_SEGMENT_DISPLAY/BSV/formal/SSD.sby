@@ -1,0 +1,19 @@
+[tasks]
+prove prove
+cover cover
+
+[engines]
+smtbmc yices
+
+[options]
+prove: mode prove
+prove: depth 16
+cover: mode cover
+cover: depth 16
+
+[files]
+./ssd_driver_formal.v
+
+[script]
+read -formal ./ssd_driver_formal.v
+prep -top ssd_driver_formal

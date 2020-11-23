@@ -1,16 +1,27 @@
 package accu;
 	(* always_ready *)
-	interface Accumulator;
+	interface AccIFC#(type valType);
 	(* prefix = "" *)
 	(* enable = "i_ENABLE" *)
 	(* result = "o_SUM" *)
-	method ActionValue#(int) load(int i_DATA_IN);
+	method ActionValue#(valType) load(valType i_DATA_IN);
 endinterface
+
+module accumulator (AccIFC#(valType)) 
+	provisos (Bits#(valType,valTypeSz),Arith#(valType));
+
+	Reg#(valType) total <- mkReg(0);
+
+	method ActionValue#(valType) load(valType i_DATA_IN);
+		total <= total + i_DATA_IN;
+		return total;
+	endmethod
+
+endmodule
 
 (* doc = "Author: Elliott Villars" *)
 (* doc = "Name: Accumulator" *)
 (* doc = "Date: 11/21/2020:" *)
-(* doc = "Format: Verilog" *)
 (* doc = "Description: A formally verified accumulator. Every clock cycle adds the summand to the total accumulation. Registered." *)
 (* doc = "Ports:" *) 
 (* doc = "i_CLK: System clock input. All module operation is predicated on a rising edge clock signal." *)
@@ -22,13 +33,12 @@ endinterface
 
 (* default_clock_osc = "i_CLK" *)
 (* default_reset = "i_RESET_N" *)
-module accumulator (Accumulator);
-
-	Reg#(int) total <- mkReg(0);
+module mkAccumulator (AccIFC#(int));
+	AccIFC#(int) acc <- accumulator;
 
 	method ActionValue#(int) load(int i_DATA_IN);
-		total <= total + i_DATA_IN;
-		return total;
+		let res <- acc.load(i_DATA_IN);
+		return res;
 	endmethod
 
 endmodule
