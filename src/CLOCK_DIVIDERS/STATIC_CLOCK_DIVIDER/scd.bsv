@@ -1,27 +1,26 @@
 package scd;
 
 	(* always_ready *)
-	(* always_enabled *)
-	interface ClockDiv;
+	interface ClockDiv#(type cntType);
 
+	(* enable = "i_EN" *)
 	(* prefix = "" *)
-	method Action en(Bool i_ENABLE);
-
 	(* result = "o_ENOUT"  *)
-	method Bit#(1) out();
+	method ActionValue#(Bit#(1)) start;
 endinterface
 
 (* default_clock_osc = "i_CLK" *)
 (* default_reset = "i_RESET_N" *)
-(* doc = "A static clock divider that generates an enable pulse every N clock cycles" *)
-(* doc = "NOTE: Do not forget to set the dival parameter, it defaults to zero" *)
-module static_clock_divider #(parameter UInt#(32) dival) (ClockDiv);
+(* doc = "Author: Elliott Villars" *)
+(* doc = "Date: 11/23/2020" *)
+(* doc = "Description: A static clock divider that generates an enable pulse every N clock cycles" *)
+module static_clock_divider #(parameter cntType dival) (ClockDiv#(cntType)) 
+	provisos (Bits#(cntType,cntTypeSz), Eq#(cntType),Arith#(cntType));
 
-	Reg#(UInt#(32)) counter <- mkReg(0);
+	Reg#(cntType) counter <- mkReg(0);
 	Reg#(Bit#(1)) en_OUT <- mkReg(0);
-	Wire#(Bool) r_EN <- mkWire();
 
-	rule run (r_EN == True);
+	method ActionValue#(Bit#(1)) start;
 		if(counter == (dival - 1))
 		begin
 			counter <= 0;
@@ -32,14 +31,16 @@ module static_clock_divider #(parameter UInt#(32) dival) (ClockDiv);
 			counter <= (counter + 1);
 			en_OUT <= 0;
 		end
-	endrule
-
-	method Action en(i_ENABLE);
-		r_EN <= i_ENABLE;
-	endmethod
-
-	method Bit#(1) out();
 		return en_OUT;
+	endmethod
+endmodule
+
+(* synthesize *)
+module mkStaticClockDivider (ClockDiv#(UInt#(32)));
+	ClockDiv#(UInt#(32)) cntr <- static_clock_divider(1000);
+
+	method start;
+		return cntr.start;
 	endmethod
 endmodule
 endpackage

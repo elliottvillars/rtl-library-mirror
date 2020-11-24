@@ -17,7 +17,8 @@ endinterface
 (* default_reset = "i_RESET_N" *)
 (* doc = "Author: Elliott Villars" *)
 (* doc = "Date: 11/22/2020" *)
-(* doc = "Description: A seven segment display driver. Can drive four seven segment digits. Common anodes." *)
+(* doc = "Description: A seven segment display driver. Can drive four seven segment digits. Common anode." *)
+(* doc = "Ports: " *)
 
 module ssd_driver(Driver);
 	Reg#(UInt#(4)) anodes <- mkReg(0);
