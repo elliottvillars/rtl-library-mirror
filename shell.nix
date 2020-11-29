@@ -2,15 +2,19 @@
 let
   hsEnv = pkgs.haskellPackages.ghcWithPackages (ps:
     with ps; [
-      clash-ghc
+      #clash-ghc
       ghc-typelits-natnormalise
       ghc-typelits-knownnat
       ghc-typelits-extra
-      haddock
+      #haddock
     ]);
 in pkgs.mkShell {
   buildInputs = with pkgs; [
     z3
+    z3-tptp
+    vampire
+    eprover
+    cvc4
     yices
     boolector
     symbiyosys
@@ -27,5 +31,7 @@ in pkgs.mkShell {
     ormolu
     hsEnv
     bluespec
+    coq
+    coqPackages.coqhammer
   ];
 }
