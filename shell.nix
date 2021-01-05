@@ -22,7 +22,7 @@ in pkgs.mkShell {
     gtkwave
     verilator
     verilog
-    #    ghdl
+    ghdl
     ddd
     gdb
     cmake
