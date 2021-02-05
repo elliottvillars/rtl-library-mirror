@@ -7,7 +7,7 @@ set formal "./formal"
 
 file mkdir $vdir $bdir $simdir $formal
 
-set files [glob *.bsv]
+set files "accu.bsv"
 
 exec bsc -verilog -bdir $bdir -vdir $vdir -g $top -u $files
 

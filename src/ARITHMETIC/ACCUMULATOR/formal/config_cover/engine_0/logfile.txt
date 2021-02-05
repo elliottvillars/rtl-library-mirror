@@ -2,17 +2,17 @@
 ##   0:00:00  Checking cover reachability in step 0..
 ##   0:00:00  Checking cover reachability in step 1..
 ##   0:00:00  Checking cover reachability in step 2..
-##   0:00:00  Reached cover statement at mkAccumulator_formal.v:108.44-109.41 in step 2.
+##   0:00:00  Reached cover statement at mkAccumulator_formal.v:114 in step 2.
 ##   0:00:00  Writing trace to VCD file: engine_0/trace0.vcd
 ##   0:00:00  Writing trace to Verilog testbench: engine_0/trace0_tb.v
 ##   0:00:00  Writing trace to constraints file: engine_0/trace0.smtc
 ##   0:00:00  Checking cover reachability in step 2..
-##   0:00:00  Reached cover statement at mkAccumulator_formal.v:107.44-108.43 in step 2.
+##   0:00:00  Reached cover statement at mkAccumulator_formal.v:113 in step 2.
 ##   0:00:00  Writing trace to VCD file: engine_0/trace1.vcd
 ##   0:00:00  Writing trace to Verilog testbench: engine_0/trace1_tb.v
 ##   0:00:00  Writing trace to constraints file: engine_0/trace1.smtc
 ##   0:00:00  Checking cover reachability in step 2..
-##   0:00:00  Reached cover statement at mkAccumulator_formal.v:106.7-107.43 in step 2.
+##   0:00:00  Reached cover statement at mkAccumulator_formal.v:112 in step 2.
 ##   0:00:00  Writing trace to VCD file: engine_0/trace2.vcd
 ##   0:00:00  Writing trace to Verilog testbench: engine_0/trace2_tb.v
 ##   0:00:00  Writing trace to constraints file: engine_0/trace2.smtc

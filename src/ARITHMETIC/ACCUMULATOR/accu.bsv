@@ -4,7 +4,9 @@ package accu;
 	(* prefix = "" *)
 	(* enable = "i_ENABLE" *)
 	(* result = "o_SUM" *)
-	method ActionValue#(valType) load(valType i_DATA_IN);
+	method Action write(valType i_DATA_IN);
+	(* result = "o_SUM" *)
+	method valType read;
 endinterface
 
 module accumulator (AccIFC#(valType)) 
@@ -12,8 +14,11 @@ module accumulator (AccIFC#(valType))
 
 	Reg#(valType) total <- mkReg(0);
 
-	method ActionValue#(valType) load(valType i_DATA_IN);
+	method Action write(valType i_DATA_IN);
 		total <= total + i_DATA_IN;
+	endmethod
+
+	method valType read;
 		return total;
 	endmethod
 
@@ -36,9 +41,12 @@ endmodule
 module mkAccumulator (AccIFC#(int));
 	AccIFC#(int) acc <- accumulator;
 
-	method ActionValue#(int) load(int i_DATA_IN);
-		let res <- acc.load(i_DATA_IN);
-		return res;
+	method Action write(int i_DATA_IN);
+		acc.write(i_DATA_IN);
+	endmethod
+
+	method int read;
+		return acc.read;
 	endmethod
 
 endmodule

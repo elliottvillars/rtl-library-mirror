@@ -3,7 +3,7 @@
  |                                                                            |
  |  yosys -- Yosys Open SYnthesis Suite                                       |
  |                                                                            |
- |  Copyright (C) 2012 - 2020  Claire Wolf <claire@symbioticeda.com>          |
+ |  Copyright (C) 2012 - 2019  Clifford Wolf <clifford@clifford.at>           |
  |                                                                            |
  |  Permission to use, copy, modify, and/or distribute this software for any  |
  |  purpose with or without fee is hereby granted, provided that the above    |
@@ -19,45 +19,42 @@
  |                                                                            |
  \----------------------------------------------------------------------------/
 
- Yosys 0.9+3675 (git sha1 71ca9a8253, g++ 9.3.0 -fPIC -Os)
+ Yosys 0.9+932 (git sha1 65f197e2, clang 6.0.0-1ubuntu2 -fPIC -Os)
 
 
 -- Executing script file `design_smt2.ys' --
 
-1. Executing RTLIL frontend.
+1. Executing ILANG frontend.
 Input filename: design.il
 
-2. Executing DFFUNMAP pass (unmap clock enable and synchronous reset from FFs).
-
-3. Printing statistics.
+2. Printing statistics.
 
 === mkAccumulator_formal ===
 
-   Number of wires:                 85
-   Number of wire bits:            364
+   Number of wires:                 65
+   Number of wire bits:            344
    Number of public wires:           9
    Number of public wire bits:     133
    Number of memories:               0
    Number of memory bits:            0
    Number of processes:              0
-   Number of cells:                 88
+   Number of cells:                 66
      $add                            2
-     $anyseq                        13
+     $anyseq                        12
      $assert                         3
-     $assume                         4
+     $assume                         1
      $cover                          3
-     $dff                           19
-     $eq                             7
-     $logic_and                      7
-     $logic_not                      4
-     $mux                           23
+     $dff                           14
+     $eq                             3
+     $logic_and                      6
+     $logic_not                      3
+     $mux                           18
      $ne                             1
-     $not                            1
-     $reduce_or                      1
 
-4. Executing SMT2 backend.
+3. Executing SMT2 backend.
 Creating SMT-LIBv2 representation of module mkAccumulator_formal.
 
-End of script. Logfile hash: 418ce1ace0, CPU: user 0.01s system 0.00s, MEM: 13.51 MB peak
-Yosys 0.9+3675 (git sha1 71ca9a8253, g++ 9.3.0 -fPIC -Os)
-Time spent: 54% 2x write_smt2 (0 sec), 38% 2x read_ilang (0 sec), ...
+End of script. Logfile hash: fb50db4bd1
+CPU: user 0.01s system 0.00s, MEM: 44.52 MB total, 8.50 MB resident
+Yosys 0.9+932 (git sha1 65f197e2, clang 6.0.0-1ubuntu2 -fPIC -Os)
+Time spent: 64% 2x write_smt2 (0 sec), 31% 2x read_ilang (0 sec), ...
