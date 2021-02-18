@@ -1,25 +1,59 @@
 package accu;
 	(* always_ready *)
-	interface AccIFC#(type valType);
+	interface AccIFC#(numeric type sz);
 	(* prefix = "" *)
 	(* enable = "i_ENABLE" *)
+	method Action write(Bit#(sz) i_DATA_IN);
 	(* result = "o_SUM" *)
-	method Action write(valType i_DATA_IN);
-	(* result = "o_SUM" *)
-	method valType read;
+	method Bit#(sz) read;
 endinterface
 
-module accumulator (AccIFC#(valType)) 
-	provisos (Bits#(valType,valTypeSz),Arith#(valType));
+interface AccIFCWithOverflowCarry#(numeric type sz);
+	interface AccIFC#(sz) base;
+	(* result = "o_OVERFLOW" *)
+	method bit getOverflow;
+endinterface
+module accumulator (AccIFC#(sz));
 
-	Reg#(valType) total <- mkReg(0);
+	Reg#(Bit#(sz)) total <- mkReg(0);
 
-	method Action write(valType i_DATA_IN);
+	method Action write(Bit#(sz) i_DATA_IN);
 		total <= total + i_DATA_IN;
 	endmethod
 
-	method valType read;
+	method Bit#(sz) read;
 		return total;
+	endmethod
+
+endmodule
+
+module accumulatorWithOverflowCarry (AccIFCWithOverflowCarry#(sz)) provisos (Add#(_,1,sz));
+
+	Reg#(Bit#(TAdd#(1,sz))) total <- mkReg(0);
+
+	Reg#(bit) ovf <- mkReg(0);
+
+
+	rule checkOverflow;
+		ovf <= msb(total);
+	endrule
+
+	rule resetOverflow (ovf == 1);
+		total <= total + {1'b1,zeroExtend(1'b1)};
+	endrule
+
+	interface AccIFC base;
+		method Action write(Bit#(sz) i_DATA_IN);
+			total <= total + extend(i_DATA_IN);
+		endmethod
+
+		method Bit#(sz) read;
+			return truncate(total);
+		endmethod
+	endinterface
+
+	method bit getOverflow;
+		return ovf;
 	endmethod
 
 endmodule
@@ -38,16 +72,32 @@ endmodule
 
 (* default_clock_osc = "i_CLK" *)
 (* default_reset = "i_RESET_N" *)
-module mkAccumulator (AccIFC#(int));
-	AccIFC#(int) acc <- accumulator;
+module mkAccumulator (AccIFC#(sz));
+	AccIFC#(sz) acc <- accumulator;
 
-	method Action write(int i_DATA_IN);
+	method Action write(Bit#(sz) i_DATA_IN);
 		acc.write(i_DATA_IN);
 	endmethod
 
-	method int read;
+	method Bit#(sz) read;
 		return acc.read;
 	endmethod
 
+endmodule
+
+module mkAccumulatorWithOverflowCarry (AccIFCWithOverflow#(sz));
+	AccIFCWithOverflow#(sz) acc <- mkAccumulatorWithOverflow;
+	method bit getOverflow;
+		return acc.getOverflow;
+	endmethod
+
+	interface AccIFC base;
+		method Bit#(sz) read;
+			return acc.base.read;
+		endmethod
+		method Action write(Bit#(sz) i_DATA_IN);
+			acc.base.write(i_DATA_IN);
+		endmethod
+	endinterface
 endmodule
 endpackage
