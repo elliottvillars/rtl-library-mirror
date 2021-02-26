@@ -83,7 +83,7 @@ module mkAccumulator (AccIFC#(sz));
 
 endmodule
 
-module mkAccumulatorWithOverflowCarry (AccIFCWithOverflowCarry#(sz));
+module mkAccumulatorWithOverflowCarry (AccIFCWithOverflowCarry#(sz)) provisos (Add#(_,1,sz));
 
 	AccIFCWithOverflowCarry#(sz) acc <- accumulatorWithOverflowCarry;
 	method bit getOverflow;

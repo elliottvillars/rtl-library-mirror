@@ -10,7 +10,8 @@ Inductive Flag : Type :=
 |None.
 
 Inductive ROp : Type :=
-|Reg (name: nat) (val: Z).
+|Reg (name: nat) (val: Z)
+|Imm (val:Z).
 
 Inductive ArithROp : Type :=
 | Add (arg: ROp * ROp)
@@ -23,6 +24,7 @@ Inductive ArithROp : Type :=
 | Not (arg: ROp)
 | Sll (arg: ROp * ROp)
 | Srl (arg: ROp * ROp)
+| Mov (arg: ROp * ROp)
 | Cmp (arg: ROp * ROp).
 
 
@@ -32,10 +34,13 @@ Definition mul_signed (a : Z) (b : Z) : Z := a * b.
 Definition div_signed (a : Z) (b : Z) : Z := a / b.
 
 
+(* Should immediate values be allowed? Or should all ops be defined on registers? *)
 Definition exec (inst: ArithROp) : ROp := 
 match inst with
-|Add (Reg dest a,Reg _ b) => Reg dest (add_signed a b)
-|Sub (Reg dest a,Reg _ b) => Reg dest (sub_signed a b)
+|Add (Reg dest a,Reg _ b) => Reg dest (add_signed a b) (* ADD  *)
+|Add (Reg dest a,Imm b)   => Reg dest (add_signed a b) (* ADDI *)
+|Sub (Reg dest a,Reg _ b) => Reg dest (sub_signed a b) (* SUB  *)
+|Sub (Reg dest a,Imm b)   => Reg dest (sub_signed a b) (* SUBI *)
 |Mul (Reg dest a,Reg _ b) => Reg dest (mul_signed a b)
 |Div (Reg dest a,Reg _ b) => Reg dest (div_signed a b)
 |And (Reg dest a,Reg _ b) => Reg dest (Z.land     a b)
@@ -44,7 +49,8 @@ match inst with
 |Not (Reg dest a)         => Reg dest (-a)
 |Sll (Reg dest a,Reg _ b) => Reg dest (Z.shiftl a b)
 |Srl (Reg dest a,Reg _ b) => Reg dest (Z.shiftl a b)
-|_ =>  Reg 0 (Z.land 1 1)
+|Mov (Reg dest a,Imm b)   => Reg dest (b)
+|_ =>  Imm 0
 end.
 
 

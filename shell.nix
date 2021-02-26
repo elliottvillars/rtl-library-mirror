@@ -12,7 +12,6 @@ in pkgs.mkShell {
   buildInputs = with pkgs; [
     z3
     z3-tptp
-    vampire
     eprover
     cvc4
     yices
@@ -31,7 +30,5 @@ in pkgs.mkShell {
     ormolu
     hsEnv
     bluespec
-    coq
-    coqPackages.coqhammer
   ];
 }
