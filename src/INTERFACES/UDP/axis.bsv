@@ -27,17 +27,17 @@ endinterface
 endinterface
 
 (* doc = "Reference AXI4 Stream slave" *)
-module basicSlave (AXIS_S_IFC#(n,i,d,u)) provisos (Max#(i,8,8),Max#(d,4,4),Literal#(Bool));
+module basicSlave (AXIS_S_IFC#(n,i,d,u)) provisos (Max#(i,8,8),Max#(d,4,4));
 	Reg#(Bit#(TMul#(n,8)))      m_data <- mkReg(0);
 	Reg#(Bit#(n))               m_strb <- mkReg(0);
 	Reg#(Bit#(n))		    m_keep <- mkReg(0);
-	Reg#(Bool)		    m_last <- mkReg(0);
+	Reg#(Bool)		    m_last <- mkReg(False);
 	Reg#(Bit#(i))		    m_id   <- mkReg(0);
 	Reg#(Bit#(d))		    m_dest <- mkReg(0);
 	Reg#(Bit#(u))		    m_user <- mkReg(0);
-	Reg#(Bool)		    m_rdy  <- mkReg(0);
-	Reg#(Bool)		    m_val  <- mkReg(0);
-	Reg#(Bool)		    m_hdsk <- mkReg(0);
+	Reg#(Bool)		    m_rdy  <- mkReg(False);
+	Reg#(Bool)		    m_val  <- mkReg(False);
+	Reg#(Bool)		    m_hdsk <- mkReg(False);
 
 	rule handshake;
 		m_rdy <= True;

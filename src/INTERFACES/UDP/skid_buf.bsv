@@ -12,13 +12,13 @@ endinterface
 //TODO: name these better
 //TODO: Test with BlueCheck
 //if !uprdy and ! dowrdy, ddata == udata
-module mkSkidBuffer(Buffer#(n)) provisos (Literal#(Bool));
+module mkSkidBuffer(Buffer#(n));
 	Wire#(Bool) uvalid <- mkWire;
 	Wire#(Bool) uprdy <- mkWire;
 	Wire#(Bit#(n)) udata <- mkWire;
-	Reg#(Bool) dwnrdy   <- mkReg(0);
+	Reg#(Bool) dwnrdy   <- mkReg(False);
 	Reg#(Bit#(n)) ddata <- mkReg(0);
-	Reg#(Bool) dvalid   <- mkReg(0);
+	Reg#(Bool) dvalid   <- mkReg(False);
 
 	Reg#(Bit#(TAdd#(n,1))) buffer <- mkReg(0);
 

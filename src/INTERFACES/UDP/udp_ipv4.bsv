@@ -5,6 +5,7 @@ package udp_ipv4;
 	import onesCompAdder::*;
 	import Vector::*;
 
+	import StmtFSM::*;
 	typedef union tagged {
 		struct{
 			Bit#(4) version;
@@ -32,7 +33,9 @@ package udp_ipv4;
 	method Bit#(32) sendData;
 endinterface
 //TODO: FSM to build data packet
-module basicUdpSlaveIPv4 (AXIS_IPV4_IFC#(n,i,d,u)) provisos (Literal#(Bool),Max#(i,8,8),Max#(d,4,4),Div#(n,2,16));
+//EDIT: NO
+
+module basicUdpSlaveIPv4 (AXIS_IPV4_IFC#(n,i,d,u)) provisos (Literal#(Bool),Literal#(IPv4_Header),Bits#(IPv4_Header,_),Max#(i,8,8),Max#(d,4,4),Div#(n,2,16));
 	Reg#(Bit#(TMul#(n,8)))      m_data <- mkReg(0);
 	Reg#(Bit#(n))               m_strb <- mkReg(0);
 	Reg#(Bit#(n))		    m_keep <- mkReg(0);
@@ -54,7 +57,6 @@ module basicUdpSlaveIPv4 (AXIS_IPV4_IFC#(n,i,d,u)) provisos (Literal#(Bool),Max#
 	Buffer#(16) lsbskb2 <- mkSkidBuffer;
 
 	AdderWithOverflow#(16) adr <- mkOnesCompAdder;
-
 
 	function Bit#(TDiv#(n,2)) getHighHalf (Bit#(TMul#(n,8)) data);
 		let high = valueOf(n);
@@ -101,6 +103,7 @@ module basicUdpSlaveIPv4 (AXIS_IPV4_IFC#(n,i,d,u)) provisos (Literal#(Bool),Max#
 			m_val <= tValid;
 		endmethod
 
+		//TODO: remove unneeded signals
 		method Action getPayload(Axi4StreamPayload#(n,i,d,u) payload);
 			if(m_hdsk)
 			begin

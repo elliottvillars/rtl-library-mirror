@@ -5,9 +5,9 @@ package onesCompAdder;
 	method Bool getOverflow;
 endinterface
 
-module mkOnesCompAdder (AdderWithOverflow#(n)) provisos (Literal#(Bool), Add#(_,1,n));
+module mkOnesCompAdder (AdderWithOverflow#(n)) provisos (Add#(_,1,n));
 	Reg#(Bit#(TAdd#(1,n))) sum <- mkReg(0);
-	Reg#(Bool) ovf <- mkReg(0);
+	Reg#(Bool) ovf <- mkReg(False);
 
 	Wire#(Bit#(n)) w_A <- mkWire;
 	Wire#(Bit#(n)) w_B <- mkWire;
