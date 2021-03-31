@@ -67,12 +67,12 @@ endinterface
 endinterface
 
 (*default_clock_osc = "i_CLK" *)
-(* default_reset = "i_RESETN" *)
+(* no_default_reset *)
 (* doc = "A module to build an ARP packet in parallel." *)
 (* doc = "Mostly a glorified concatenation block."  *)
 (* doc = "Current setup implies Ethernet and IPv4." *)
-module arp_packetizer(ARPPacketizer) provisos (Literal#(ARPPacket));
-	Reg#(ARPPacket) arp <- mkReg(0);
+module arp_packetizer(ARPPacketizer);
+	Reg#(ARPPacket) arp <- mkRegU;
 	Wire#(Bit#(16)) w_HTYPE <- mkWire;
 	Wire#(Bit#(16)) w_PTYPE <- mkWire;
 	Wire#(Bit#(8)) w_HLEN <- mkWire;
@@ -85,15 +85,18 @@ module arp_packetizer(ARPPacketizer) provisos (Literal#(ARPPacket));
 
 	//Packs an ARPPacket struct with incoming data.
 	rule buildPacket;
-		arp.hTYPE <= w_HTYPE;
-		arp.pTYPE <= w_PTYPE;
-		arp.hLEN <= w_HLEN;
-		arp.pLEN <= w_PLEN;
-		arp.oPER <= w_OPER;
-		arp.sHA <= w_SHA;
-		arp.sPA <= w_SPA;
-		arp.tHA <= w_THA;
-		arp.tPA <= w_TPA;
+		let packet = ARPPacket {
+		hTYPE: w_HTYPE,
+		pTYPE: w_PTYPE,
+		hLEN:  w_HLEN,
+		pLEN: w_PLEN,
+		oPER: w_OPER,
+		sHA:  w_SHA,
+		sPA:  w_SPA,
+		tHA:  w_THA,
+		tPA:  w_TPA
+	};
+	arp <= packet;
 	endrule
 
 	method Action putHardwareType(Bit#(16) i_HTYPE);
@@ -129,7 +132,7 @@ module arp_packetizer(ARPPacketizer) provisos (Literal#(ARPPacket));
 endmodule
 
 (*default_clock_osc = "i_CLK" *)
-(* default_reset = "i_RESETN" *)
+(* no_default_reset *)
 (* doc = "A module to strip an ARP packet in parallel." *)
 (* doc = "Mostly a glorified splice block."  *)
 (* doc = "Current setup implies Ethernet and IPv4." *)
